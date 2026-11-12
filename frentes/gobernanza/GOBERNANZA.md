@@ -64,7 +64,7 @@ La instrucción directa del operador autorizó expresamente este aligeramiento c
 3. **Cierre:** mostrar qué se ejecutó, qué quedó verificado, qué falló o no se ejecutó, bloqueantes, preocupaciones, trabajo diferido y próximo paso.
 4. **Límite:** «semivivo» significa actualizaciones por hitos y relecturas puntuales durante el ciclo; no implica vigilancia continua, polling indefinido ni ejecución en segundo plano. No anunciar automatización o monitorización que no exista.
 
-### Formato ejecutivo obligatorio
+### Formato de salida
 
 Cada resumen usa, en este orden, los campos aplicables:
 
@@ -106,6 +106,32 @@ Priorizar líneas breves, etiquetas visibles y cifras relevantes. No repetir met
 🔎 Corte: [fuente + fecha/hora/zona]
 ```
 
+### Contrato de salida para telemetría
+
+La plantilla anterior es la salida humana de Gobernanza; no constituye por sí sola el esquema de eventos. Cada frente conserva un contrato técnico versionado propio. No mezclar en un único evento los datos de Sink y los eventos de ciclo de Harmonia.
+
+**Campos mínimos de una salida estructurada, cuando la operación los produzca:**
+- **Identidad del evento:** versión del esquema, identificador único/idempotente, tipo de evento y componente emisor.
+- **Tiempo:** timestamp UTC; fuente de reloj y duración monotónica solo cuando exista medición real. No convertir un timeout, intervalo configurado o ETA en duración observada.
+- **Correlación:** referencia de ciclo y sesión. Usar folio global solo cuando FOL1 esté ACTIVO; mientras tanto, marcar toda referencia local como local y no como CV/CY.
+- **Operación y recurso:** acción ejecutada, principio/módulo/objeto afectado y transporte cuando corresponda.
+- **Resultado:** estado inequívoco (SUCCESS, FAILED, NOT_RUN, NOT_VERIFIED o NOT_MEASURED), código de causa saneado y métricas numéricas permitidas.
+- **Procedencia e integridad:** versión de fuente, commit/blob y huellas de contenido/paquete necesarias para reproducir la verificación.
+- **Privacidad:** allowlist estricta; nunca incluir credenciales, tokens, cookies, audio, transcripciones, texto de mensajes/prompts/respuestas, contenido del compositor, datos personales ni URLs/títulos que identifiquen al usuario. El evento guarda metadatos y huellas; el contenido normativo íntegro se entrega por separado cuando la operación Sink lo requiera.
+
+**Sink / recuperación de principios**
+- Cada resultado vincula principle_id, título canónico, resultado de recuperación y pin exacto del DUG (versión, firma, commit y blob), más SHA-256 del texto íntegro.
+- El texto íntegro es la respuesta funcional al modelo; la telemetría registra su procedencia y huella, no una segunda copia del texto.
+- Solo SUCCESS tras recuperar el texto completo y cotejar sus huellas incrementa la frecuencia del principio. Los intentos, errores, consultas fallidas, reconsultas y entregas duplicadas se identifican por separado. El fallback directo al DUG se etiqueta como fallback y no se contabiliza como invocación Sink.
+- En lotes, conservar el orden solicitado, el resultado independiente por principio y el hash del paquete completo. Un hash de la lista de IDs, sin el pin y las huellas de cada texto, no satisface el contrato.
+
+**Harmonia / telemetría de ciclos**
+- El contrato confirmado en apps/harmonia-observability/CYCLE-TELEMETRY.md es harmonia.event.v1; sus únicos tipos actuales son client.cycle.started y client.cycle.completed. La envolvente contiene schema, eventId, sessionId, type, source, capturedAt y payload.
+- El evento started contiene conversation_id, cycle_id, phase, timestamp_utc, monotonic_ms, clock_source, clock_precision_ms, coverage y settle_window_ms. completed añade duration_ms, calculado con reloj monotónico; la ventana de asentamiento de 1.500 ms no se suma a esa duración. Los ciclos sin final verificable deben quedar NOT_MEASURED, no recibir duración parcial.
+- La sección §10 del OCP de Harmonia se denomina actualmente «Formato de ciclo», aunque sus diez campos describen el informe/salida del frente. La denominación correcta es «Formato de salida». Debe separar el informe humano del esquema técnico harmonia.event.v1; además, el campo que hoy pide estimar tiempo/ciclos al próximo hito o cierre debe sustituirse por duración realmente observada con fuente de reloj, o NOT_MEASURED. Metacanon §4 no exige pronósticos ni estimaciones temporales.
+- La lista de APIs aportada para esta revisión (temporizadores, MutationObserver, PerformanceObserver, navegación, AudioContext, SpeechSynthesis, micrófono/RTCPeerConnection, relay/sync y adaptadores) se considera un inventario de superficies candidatas, no evidencia de que todas estén instrumentadas en main. No emitir un evento por cada setTimeout, setInterval o callback. La telemetría ampliada debe capturar transiciones y resultados agregados relevantes: salud de observers/watchdogs y navegación; estado/resultado de audio y guard del micrófono; resultado/latencia/reintentos de relay/sync; y disponibilidad/cobertura de adaptadores. No guardar muestras de audio, texto hablado, transcripciones, IDs de pistas ni datos crudos de mutaciones. Cualquier ampliación requiere un esquema versionado y validación propia; no altera el contrato de ciclo existente.
+
+**Límite interfrente:** esta actualización define el contrato de salida de Gobernanza y los requisitos de reconciliación. El OCP y el código de Harmonia permanecen bajo su control titular independiente; no se modifican aquí. En la revisión actual, la titularidad de Harmonia está en generación 15 y su alcance de escritura no acredita permiso para publicar cambios en main.
 
 ---
 
@@ -183,7 +209,7 @@ Esta sección sustituye los resúmenes ejecutivos repetidos y fotografías anter
 1. **GOV-TASK-010 — admisión fail-closed:** ninguna operación sustantiva sin frente asignado explícitamente y titularidad/generación/autorización/exclusividad verificadas. Rechazar consultas ajenas al frente. No afirmar bloqueo físico de creación de chats en la plataforma.
 2. **GOV-TASK-007 — IPZ/FOL1:** máximo 1.500 caracteres; primer enlace Sync acortado GOW/§ARR, segundo enlace Sync acortado DUG; después, refuerzo de admisión. Preservar salvaguardas v0.7. Instalar y leer de vuelta antes del corte FOL1.
 3. **GOV-TASK-001/008 — catálogo y principios:** revisar los 43 MDP; nombres de vista `Principio DI · [1–3 términos]` mapeados a ID/título canónicos sin modificar el DUG; MDP solo para comprender y detectar pertinencia, no para aplicar.
-4. **OCP MCP — ciclo:** validar vínculo folio global de ciclo/sesión autorizada; considerar los 43, seleccionar pertinentes; entregar enlaces Sync individuales a textos desarrollados; telemetría de frecuencia por enlace; permitir reconsulta por insuficiencia; devolver hash del paquete exacto de enlaces para la salida.
+4. **OCP MCP — ciclo Sink/IPZ y salida de telemetría:** mantener las dos capas: los 43 MDP permiten reconocer pertinencia; por cada principio aplicable, recuperar el texto normativo íntegro mediante SINK:Pxxx en MCP-OCP local por STDIO/RDC. El primer corte es GOW:ARR → DUG vigente → SINK:P004; generalizar P001–P043 y lotes solo después del PASS P004. La respuesta individual incluye ID/título canónicos, texto íntegro, versión/firma DUG, commit/blob y SHA-256 del texto. En lotes conserva el orden solicitado, el subresultado y la huella de cada principio, y un package_sha256 determinista del manifiesto ordenado, pin DUG y hashes individuales. La frecuencia se incrementa solo ante recuperación íntegra y hashes coincidentes; solicitud, intento, fallo, reconsulta y reenvío se distinguen, y no se cuentan como éxito por sí mismos. La reconsulta conserva referencia al intento previo y motivo. Vincular operación, respuesta y evento al ciclo/sesión disponible: FOL1 está inactiva, por lo que no se exige ni inventa folio global; en pruebas puede usarse una referencia local expresamente rotulada como tal. Si Sink no está disponible, aplicar únicamente el fallback exacto permitido por ART-027 desde DUG main, fijando commit/blob y SHA-256; nunca sustituir el texto por MDP o memoria. La aceptación E2E requiere IPZ real → RDC autorizado → MCP-OCP STDIO → respuesta visible al modelo; un smoke de consola no basta. MOD-SYNC es ajeno a Sink, no usar URLs Sync ni endpoints públicos. MCP-NORMATIVO permanece DESACTIVADO. Antes de validar P004, rebaselinar SourcePin, fixtures y paquete al DUG vigente v392/NX-392m, blob 9f0745618f9b38d8fb366be7ea84e8dff1a5673a; los pins v388/v389 de los informes anteriores son históricos y no sirven para aceptación vigente.
 5. **GOV-TASK-003 — aceptación E2E:** probar en forma positiva y negativa la admisión, el vínculo ciclo/sesión, catálogo, selección, lectura individual, frecuencia, reconsulta y hash.
 6. **GOV-TASK-009 — entrada léxica:** §ARR/GOW es primera referencia; DUG es segunda y fuente normativa única.
 7. **GOV-TASK-006 — Gobernanza 1.0:** resolver divergencias y satélites del DUG con procedencia y destino. `identidad.md` no se localizó en la búsqueda acotada de refs Git accesibles; no concluir inexistencia ni borrarlo por inferencia.
