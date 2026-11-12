@@ -2,9 +2,12 @@
 
 **Estado:** materialización operativa provisional; no modifica ni sustituye el OEP, no crea un ámbito funcional ni canoniza un sistema general de gestión de tareas.  
 **Contenedor:** `frentes/ep/📁 🧭 - Tareas provisionales/`  
-**OCP padre y especificación general única:** `frentes/ep/OEP.md` §137. Cada ficha de tarea contiene solo su ejecución específica y referencia a esa especificación.  
+**OCP padre y especificación general única:** `frentes/ep/OEP.md` §§137–138. Cada ficha de tarea contiene solo su ejecución específica y referencia a esa especificación.  
 **Evento de creación:** instrucción directa del operador en esta conversación · 2026-10-31.  
 **Fuente normativa consultada:** DUG Samantha v389 · NX-389m · Metacanon 1.30 · GOW 2.19, en main; commit 199bf03ade7aceeedcabc10eeb1c06b1d0e53eaf; blob bcd99e72113f444a045d7f1c91b4ad36865b8ea8.
+
+
+**Revisión viva 2026-11-12:** la regla del operador en OEP §138 prohíbe todas las GUI hasta disponer de segundo monitor activo y autorización expresa; todas las herramientas EP se operan por CLI. Cryptomator Desktop 1.19.6.6588 y WinFsp 2.1.25156 están instalados de una fase previa; no se volverá a abrir Desktop. El CLI con comando create se construirá desde el commit oficial firmado f09851d3990f4b7dc6f572f8a9eb9a5f2882f439; la build y pruebas están pendientes. No existe bóveda real, no hay migración y el origen permanece intacto y sin cifrar. Esta revisión sustituye cualquier fotografía anterior de esta tabla que señale BitLocker/VHDX como destino o Cryptomator como no instalado.
 
 ## Naturaleza y límites
 
@@ -18,7 +21,7 @@ El patrón de materialización sigue el registro de tareas provisionales de Gobe
 
 | ID local | Estado | Alcance específico vigente | Núcleo |
 |---|---|---|---|
-| EP-TASK-003 | `en_curso · CRYPTOMATOR_SELECTED · INSTALLATION_NOT_STARTED · VAULT_NOT_CREATED · APP_DATA_CONFINEMENT_PENDING · MIGRATION_NOT_STARTED · LEGACY_CLEANUP_PENDING` | Base del workspace: inventario, bóveda, árbol SeryMente, migración verificada y retiro seguro de residuos EP VHDX/BitLocker. | [núcleo](./📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md) |
+| EP-TASK-003 | `en_curso · CLI_ONLY_POLICY_ADOPTED · CRYPTOMATOR_DESKTOP_AND_WINFSP_INSTALLED · CLI_BUILD_PENDING · VAULT_NOT_CREATED · APP_DATA_CONFINEMENT_PENDING · MIGRATION_NOT_STARTED · LEGACY_CLEANUP_PENDING` | Base del workspace: build Cryptomator CLI, bóveda, árbol SeryMente, migración verificada y retiro seguro de residuos EP VHDX/BitLocker. | [núcleo](./📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md) |
 | EP-TASK-004 | `en_curso · APP_DATA_CONFINEMENT_PENDING · VAULT_RELOCATION_NOT_STARTED` | EP Vault: herramienta, almacén, configuración, logs y temporales dentro del workspace. | [núcleo](./📁%20🧩%20-%20EP-TASK-004%20-%20Reconstrucción%20de%20bóveda/README.md) |
 | EP-TASK-006 | `en_curso · APP_DATA_CONFINEMENT_PENDING · VAULT_RELOCATION_NOT_STARTED · ADAPTERS_NOT_IMPLEMENTED` | Variables y adaptadores: catálogo y distribución autorizada sin copias locales ni valores en claro fuera del workspace. | [núcleo](./📁%20🧩%20-%20EP-TASK-006%20-%20Centralización%20de%20variables%20de%20entorno/README.md) |
 | EP-TASK-001 | `en_curso · APP_DATA_CONFINEMENT_PENDING · PROFILE_AND_SESSIONS_NOT_MIGRATED` | NCL: Chrome, perfil, sesiones, extensiones, KeePassXC y datos confinados en la bóveda. | [núcleo](./📁%20🧩%20-%20EP-TASK-001%20-%20Integración%20NCL/README.md) |
