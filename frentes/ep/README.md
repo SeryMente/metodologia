@@ -6,7 +6,7 @@
 
 - [Persistencia DTC EP/MCP-OCP](OEP.md#95-persistencia-dtc-integrada-epmetodologia-y-continuidad-mcp-ocp--v0325--vcu-ep-v27): continuidad multiubicación EP/Metodología y estado operativo MCP-OCP, con autoridad técnica propia de MCP-OCP.
 
-- [OEP.md](OEP.md): único estado vivo del frente, v0.3.72; §137 contiene la especificación general del workspace y §138 establece operación exclusiva por CLI y prohibición de GUI hasta segundo monitor activo y autorización expresa. La compilación CLI, creación de bóveda, migración, limpieza de residuos y aceptación siguen pendientes.
+- [OEP.md](OEP.md): único estado vivo del frente, v0.3.73; §137 fija la arquitectura del workspace, §138 la operación CLI-only y su compuerta de GUI, y §139 define MOD-EP-CRYPTO con instalación/confinamiento y estado vivo.
 - [Especificación general y operación CLI-only](OEP.md#137-especificación-general-única-del-workspace-ep-protegido--2026-11-12): árbol SeryMente, Cryptomator CLI, Herramientas, Repositorios, Datos, Temporal y confinamiento. [Política CLI-only §138](OEP.md#138-operación-cli-only-de-ep-hasta-disponer-de-segundo-monitor--2026-11-12).
 - [Objeto de coordinación DTC](entregas/COORDINACION-GOBERNANZA-EP-v0.1.md): único registro de comunicación Gobernanza ↔ EP; historial reconciliado en `main`.
 - [Control de responsabilidad EP](CONTROL-RESPONSABILIDAD.json): registro autoritativo de titularidad y generación; generación 3; titularidad transferida por TRANSFER_RESPONSIBILITY el 2026-11-09; un titular activo, evento C-EP-TRANSFER-RESPONSIBILITY-20261109-01.
@@ -55,7 +55,8 @@ OEP vigente: v0.3.59. PREFLIGHT_FILA4=PARTIAL_FAIL. EP reanuda la ejecución de 
 ## Canon vigente de seguridad y operación del workspace · 2026-11-12
 
 - [OEP §137](OEP.md#137-especificación-general-única-del-workspace-ep-protegido--2026-11-12): Cryptomator como motor de bóveda, árbol SeryMente y confinamiento integral de datos de aplicaciones.
-- [OEP §138](OEP.md#138-operación-cli-only-de-ep-hasta-disponer-de-segundo-monitor--2026-11-12): CLI obligatorio; GUI prohibida hasta segundo monitor activo y autorización expresa.
-- [EP-TASK-003](./📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md): Cryptomator Desktop 1.19.6.6588 y WinFsp 2.1.25156 instalados antes de la regla CLI-only; GUI no se volverá a utilizar. CLI local desde fuente oficial firmada pendiente de build; bóveda no creada y migración no iniciada.
+- [OEP §138](OEP.md#138-operación-cli-only-de-ep-hasta-disponer-de-segundo-monitor--2026-11-12): CLI obligatorio hasta verificar segundo monitor activo y autorización expresa; la autorización de este ciclo no bastó porque la sesión RDC enumeró una sola pantalla y el segundo monitor físico quedó NO VERIFICADO.
+- [OEP §139 · MOD-EP-CRYPTO](OEP.md#139-módulo-funcional-mod-ep-crypto--operación-y-confinamiento-de-cryptomator--2026-11-12): módulo interno del frente EP, sin OCP independiente; CLI build y pruebas sintéticas PASS, bóveda real y migración pendientes.
+- [EP-TASK-003](./📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md): build CLI local desde upstream firmado; 12 pruebas unitarias, 5 de integración y E2E sintética PASS. Siguen pendientes wrapper PowerShell 5.1, desmontaje graceful Windows, limpieza staging, bóveda real, confinamiento, migración y aceptación.
 
-La crónica histórica se conserva para procedencia; las decisiones operativas actuales son las de OEP §§137–138 y el último estado verificado de cada tarea. No interpretar snapshots anteriores como estado vivo.
+La crónica histórica se conserva para procedencia; las decisiones operativas actuales son las de OEP §§137–139 y el último estado verificado de cada tarea. No interpretar snapshots anteriores como estado vivo.
