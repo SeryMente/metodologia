@@ -1,11 +1,15 @@
 # EP-TASK-007 · Guardián de sesión efímera e inventario del host
 
-**Estado:** `en_curso · HOST_INVENTORY_PARTIAL_READ_ONLY · C_XTSAES128_100_PROTECTION_OFF_NO_PROTECTORS · W_FULLY_DECRYPTED_0_PROTECTION_OFF_NO_PROTECTORS · LOCATION_UNCLASSIFIED · GUARDIAN_NOT_RUN · LEASE_NOT_RUN · CRYPTO_ERASURE_NOT_RUN`
+**Estado:** `en_curso · HOST_INVENTORY_PARTIAL_READ_ONLY · CRYPTOMATOR_LOCK_UNMOUNT_NOT_RUN · APP_DATA_CONFINEMENT_PENDING · LOCATION_UNCLASSIFIED · GUARDIAN_NOT_RUN · LEASE_NOT_RUN · SESSION_CLEANUP_NOT_RUN`
 **Prioridad:** P0 para protección de sesión después del hito de persistencia mínima; P1 para inventario extendido y optimización.  
 **Responsable:** frente Entorno Persistente (EP).  
 **OEP padre:** `frentes/ep/OEP.md`.  
 **Coordinación:** GOV-TASK-015 · OCP MCP 1.0.  
 **Objeto:** tarea provisional EP; no crea OCP, control, titularidad, sesión ni folio independientes.
+
+## Rectificación vigente · OEP §137
+
+EP-TASK-007 no utiliza BitLocker ni VHDX. El workspace persistente se abre y cierra mediante Cryptomator; el cierre de una sesión EP debe bloquear/desmontar la bóveda según el contrato aprobado y comprobar que la ruta lógica deja de exponer los datos. La limpieza de sesión solo alcanza datos temporales/efímeros creados para esa sesión. No se elimina, volatiliza ni modifica el workspace persistente ni datos de proyecto para ejecutar un cierre. Inventario de host solo identifica dependencias y verifica que las aplicaciones no persisten datos de usuario fuera de SeryMente.
 
 ## 1. Objetivo
 
