@@ -1,9 +1,13 @@
 # EP-TASK-004 — Reconstrucción integral de la bóveda EP
 
-**Estado provisional:** `en_curso` · **Frente:** Entorno Persistente (EP) · **OCP padre:** `frentes/ep/OEP.md`  
+**Estado provisional:** `en_curso · APP_DATA_CONFINEMENT_PENDING · VAULT_RELOCATION_NOT_STARTED` · **Frente:** Entorno Persistente (EP) · **OCP padre:** `frentes/ep/OEP.md`  
 **Origen:** instrucción directa del operador recibida en conversación el 2026-11-08; hora nativa no expuesta.  
 **Índice padre:** [Registro de tareas provisionales EP](../README.md) · **Gobernanza:** OEP §90–§93; DUG v383 / NX-383m, especialmente P012–P013.  
 **Base de persistencia de esta entrada:** `d732fe5bbcabbfcedbcdc6151a779cccef282086` (main, consultado y cotejado antes de la escritura).
+
+## Especificación vigente aplicable · OEP §137
+
+EP Vault es una herramienta instalada bajo SeryMente/Herramientas/EP-Vault/. Su almacén formal, configuración, perfiles, cachés, logs, bases locales y temporales se alojan bajo SeryMente/Datos/EP/Seguridad/EP-Vault/ o SeryMente/Temporal/, siempre dentro de la bóveda Cryptomator desbloqueada. No se permite persistir el archivo formal de Vault en LocalAppData ni mantener datos de usuario fuera del workspace. La contraseña maestra Cryptomator se introduce localmente y no se guarda dentro de la propia bóveda. La implementación actual debe revalidarse antes de mover cualquier dato; esta rectificación no declara migración realizada.
 
 ## Propósito
 
