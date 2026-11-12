@@ -136,3 +136,132 @@ Retomé la responsabilidad primaria del frente **GOBERNANZA** y conservé ínteg
 **Gobierno:** DUG Samantha v389 · NX-389m · Metacanon 1.30 · GOW 2.19. MCP-NORMATIVO DESACTIVADO.
 
 El sprint SINK-P004 conserva el último estado documentado. Esta retoma no declara implementación, instalación ni aceptación E2E.
+
+
+## 6. Continuación visible de la conversación · 2026-11-12
+
+**Alcance de esta ampliación:** conservar la continuación visible en esta captura Markdown existente. No se generan registros A/B nuevos, crónica ni evidencia independiente. No se modifican DUG, GOW, IPZ nativa ni el control de responsabilidad.
+
+### 6.1 Pregunta del operador
+
+Que dice complementos?
+
+### 6.2 Respuesta visible del modelo
+
+El apartado **5. COMPLEMENTOS** de la IPZ enlaza a ART-032. Su función es reunir las instrucciones transversales que deben aplicarse junto con las otras cuatro partes.
+
+En ART-032, sección **«5. Complementos vigentes del operador»**, se establecen seis bloques:
+
+1. **No burocracia adicional:** no inventar formularios, reportes, aprobaciones, folios, listas de control ni registros que no sean exigidos. Tampoco duplicar artefactos.
+
+2. **Continuidad y procedencia:** A identifica la entrada literal del operador y B la salida final visible del modelo. Se deben relacionar instrucciones, resultados y evidencias respetando su secuencia y procedencia. Un UUIDv7 local no equivale a un ID nativo. Está prohibido simular capturas, persistencia, sincronización o lecturas de vuelta.
+
+3. **Contrato de salida:** cuando corresponda, conservar estos campos y su orden:
+
+   - IPZ: versión · caracteres usados/1500 · d.h.m.
+   - DUG: versión + firma · d.h.m.
+   - CONV: CV-G######## | OCP: CV-OCP-[código]-########
+   - CICLO: CY-G######## | OCP: CY-OCP-[código]-########
+   - A: A-G######## | OCP: A-OCP-[código]-########
+   - B: B-G######## | OCP: B-OCP-[código]-########
+
+   El indicador temporal d.h.m solo puede calcularse con el commit, reloj y zona horaria verificables. De lo contrario, se declara NO VERIFICADO. No se inventan identificadores ni folios.
+
+4. **Integridad de cambios:** antes de escribir, comprobar control, titularidad, generación, alcance y autorización. Preservar rutas, cotejar SHA y realizar lectura de vuelta. Diferenciar los estados PROPUESTO, AUTORIZADO, INTENTADO, EJECUTADO, VERIFICADO y ACEPTADO.
+
+5. **Foliación:** asignar folios únicamente cuando FOL1 esté ACTIVO y exista verificación mediante SHA/read-back. Mientras esté inactivo, usar PENDIENTE/NO ASIGNADO.
+
+6. **Estado de mecanismos:** MCP-NORMATIVO permanece DESACTIVADO salvo activación expresa, válida y verificable.
+
+Además, ART-032 tiene una sección 6 dedicada a **la actualización de IPZ mediante AT**: preservar la versión anterior, verificar su procedencia, revisar las fuentes normativas, comparar cambios, comprobar el límite de caracteres y separar la publicación documental de la instalación nativa.
+
+**Una distinción importante:** los complementos no son una sexta fuente normativa independiente. Son instrucciones del operador organizadas en ART-032 y subordinadas al DUG. La quinta parte de IPZ sirve para dirigir al modelo hacia ellas y exigir su aplicación.
+
+[Consultar ART-032 completo](https://github.com/SeryMente/metodologia/blob/main/gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-032)
+
+### 6.3 Instrucción de continuidad del operador (texto visible)
+
+~~~~text
+Persiste ultimo tramo de la covneracion, y rapidamente y sin demor adquiere contexto y repite salida del ultimo ciclo
+
+Continúa de
+GOBERNANZA
+Usa AT; para actualizar IPZ, revisa que el marco de trabajo oblgigue a revisar anexo de IPZ cuando se le actualize, por la via de AT. 
+Revisa que el marco de trabajo incluya un  principio bien redactado que impida que cualquier ctualziacion al marco de trabajo se lleve a cabo si no es por AT. 
+Revisa que AT siempre que se trate de IPZ, incluya el guardado de la version actual de IPZ. 
+
+Esta es la que estoy usando ahora. 
+Por cierto verifica que se adhiera al diseño de IPZ segunel anexo. Y verifica que AT,  si este comprobando que IPZ se adhiera a lo que dice el anexo.
+
+IPZ v0.7
+
+📚 ARRANQUE
+Lee §ARR; después consulta DUG y sigue sus principios en orden. Anexos solo por remisión.
+https://github.com/SeryMente/metodologia/blob/main/gobernanza/METAPROMPT-CANONICO-SAMANTHA.html
+
+🧩 CONTINUIDAD
+A=entrada/B=salida visible: literales, secuencia/procedencia. UUIDv7 local (no ID nativo). Vincula instrucciones/resultados/evidencia; no finjas captura/persistencia.
+
+🔐 INTEGRIDAD
+Antes de escribir, verifica control/titular/generación/autorización. Transfiere solo con autorización expresa, SHA cotejado y read-back. Preserva rutas. Distingue propuesto/autorizado/intentado/ejecutado/verificado/aceptado. Revisa GOW inicio/cierre. MCP normativo DESACTIVADO.
+
+⚡ EFICIENCIA
+Prioridad: tiempo estrictamente necesario. Delimita y elige antes de actuar. Evita redundancias; agrupa lecturas y secuencia escrituras con SHA/read-back. No omitas controles esenciales. Ciclos breves: entrega resultado, límites y siguiente acción. No prometas segundo plano.
+
+📋 SALIDA · CADA TURNO
+IPZ: v0.7 · d.h.m
+DUG: versión + firma · d.h.m
+CONV: CV-G######## | OCP: CV-OCP-<código>-########
+CICLO n: CY-G######## | OCP: CY-OCP-<código>-########
+A: A-G######## | OCP: A-OCP-<código>-########
+B: B-G######## | OCP: B-OCP-<código>-########
+d.h.m = días.horas.minutos desde último commit en main de cada ruta. Sin fuente/reloj/zona: NO VERIFICADO. La edad IPZ no prueba instalación nativa. Folios solo con FOL1 ACTIVO y SHA/read-back; si no, PENDIENTE/NO ASIGNADO. No inventes ni renumeres legados.
+…
+Sigue
+
+Hallazgos confirmados
+1. AT existe como Articulación Trazable, versión operativa v1.2, pero está marcada como propuesta no canonizada. Su flujo A–F no contiene controles específicos para IPZ: no exige revisar ART-025 ni conservar la versión de IPZ que se va a sustituir.
+
+2. El DUG v389 no contiene un principio que obligue a tramitar todas las actualizaciones metodológicas mediante AT. P005 exige autorización expresa para modificar el DUG, pero no impone AT como vía exclusiva. P038 fija main como fuente canónica, pero tampoco establece esa compuerta.
+
+3. La IPZ que acabas de proporcionar no cumple íntegramente ART-025. Incluye §ARR y la consulta del DUG, pero omite dos requisitos explícitos del anexo: consultar el directorio taxonómico ART-031 y considerar el texto completo de los cinco principios del Conjunto Nuclear de Principios en cada turno.
+
+El procedimiento AT tampoco está comprobando actualmente esa conformidad de IPZ, porque no incluye ese control en su flujo ni en sus criterios de aceptación.
+
+Fuentes: AT v1.2 · ART-025 · DUG v389.
+~~~~
+
+### 6.4 Salida del último ciclo repetida
+
+**Hallazgos confirmados en ese ciclo:**
+
+1. **AT v1.2:** existe como Articulación Trazable y está identificada como propuesta no canonizada. Su flujo A–F no incluye controles específicos para IPZ: no exige revisar ART-025 ni guardar la versión de IPZ que será sustituida.
+
+2. **DUG v389:** no contiene un principio que obligue a tramitar todas las actualizaciones metodológicas mediante AT. P005 exige autorización expresa para modificar el DUG, pero no establece AT como vía exclusiva. P038 fija main como fuente canónica, pero tampoco establece esa compuerta.
+
+3. **IPZ v0.7:** no cumple íntegramente ART-025. Incluye §ARR y la consulta del DUG, pero omite consultar el directorio taxonómico ART-031 y considerar el texto completo de los cinco principios del CNP en cada turno.
+
+4. **Control de conformidad:** AT no estaba comprobando que la IPZ cumpliera ART-025, porque ese control no figuraba en su flujo ni en sus criterios de aceptación.
+
+**Fuentes declaradas en aquel ciclo:** AT v1.2 · ART-025 · DUG v389.
+
+*Nota de vigencia:* esta es la salida histórica recuperada; no debe confundirse con el contraste efectuado después contra DUG v391.
+
+### 6.5 Contexto actual cotejado en main para continuidad
+
+**Fuente canónica:** rama main; último commit consultado d86d202a52eff2b3a9f325f746f67c9a9f816a3b (2026-11-12 21:31:46 UTC).
+
+- **DUG:** Samantha v391 · NX-391m; blob 98c38d977d8d667fa5a3dad4e21d9d7b9f19a0c8; Metacanon 1.30; GOW 2.21; 43 principios y 25 anexos.
+- **ART-025:** exige GOW §ARR, directorio taxonómico ART-031 y consulta del texto íntegro de P001/P004/P005/P038/P043 en cada turno.
+- **ART-032:** define IPZ como interfaz de cinco partes, cada una con enlace e instrucción de uso. Su §6 exige que las modificaciones de IPZ se tramiten por AT y, antes de editar, se preserve la versión vigente con procedencia y hashes; además exige revisar ART-025, ART-027, ART-032 y los cinco destinos, cotejar la candidata, verificar el límite UTF-16 y separar propuesta documental de instalación nativa.
+- **AT v1.2:** continúa como propuesta operativa no canonizada; blob 4ab56401381deadb873f84b58a9e02c5960cb4d0. El texto completo no contiene controles explícitos de IPZ, ART-025 ni ART-032. Por tanto, no acredita aún que AT compruebe la conformidad de IPZ con el anexo.
+- **Exclusividad general de AT:** no se encontró un principio dedicado que obligue a tramitar por AT toda actualización metodológica. ART-032 §6 limita expresamente su regla de AT a actualizaciones de IPZ y no canoniza la exclusividad general. La propuesta permanece en GOV-TASK-016, pendiente y no incorporada al DUG.
+- **GOV-TASK-016:** sigue pendiente; blob a830622e9b9e4832e38bfcba37eda14fc931fd26. Su ficha ya exige preservar baseline, verificar ART-025/ART-027, revisar conformidad y preparar la propuesta de exclusividad sin canonizarla por la ficha.
+- **IPZ v0.7:** el operador declara que es la versión que usa. La baseline suministrada está preservada en frentes/gobernanza/entregas/CHATGPT-v0.10/IPZ-CAMPO-CHATGPT-v0.7-BASELINE-OPERADOR.txt, blob 685a0f53a543fa23570d7adf9e10bc0dc81eb63a; su procedencia es texto suministrado por el operador, no lectura nativa del campo.
+- **Conformidad de IPZ v0.7:** no satisface el diseño vigente de ART-025/ART-032: no presenta los cinco enlaces ordenados (GOW §ARR, ART-031, CNP, Metacanon §4 y ART-032), ni las instrucciones compactas de uso para cada destino.
+- **IPZ v0.12:** existe como propuesta documental en frentes/gobernanza/entregas/CHATGPT-v0.12/IPZ-CAMPO-CHATGPT-v0.12-PROPUESTA.txt, blob 34e749c596125d7595d4d8c90c932238ec51dd3b; no es prueba de instalación nativa.
+- **Responsabilidad:** control único activo, generación 21; la instrucción vigente autoriza esta captura Markdown y excluye cambios a DUG/GOW/IPZ nativa. La corresponsabilidad activa existente se conserva.
+- **FOL1:** PREPARADO/NO ACTIVO. No se asignan folios.
+- **MCP-NORMATIVO:** DESACTIVADO.
+
+**Límite de esta continuación:** se guardó el tramo visible y se refrescó el contexto. No se actualizó AT v1.2, GOV-TASK-016, el DUG, GOW ni el campo nativo de IPZ. No se crearon registros A/B, crónica ni evidencia adicional.
