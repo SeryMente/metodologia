@@ -3233,3 +3233,25 @@ Cada escritura se leyó de vuelta desde el commit y se cotejó por contenido exa
 Continuar EP-TASK-003 desde su gate de almacenamiento y custodia ya documentado, sin repetir diagnósticos ni tocar los discos hasta superar su compuerta. EP-TASK-005 queda detrás de EP-TASK-003 y de la entrega consistente de MCP-OCP P004/03/04. EP-TASK-001 se retoma al final.
 
 **Estado del ciclo:** `PROCESADO → DOCUMENTADO_AL_CIERRE → READBACK_VERIFICADO → CERRADO_PARCIAL`; no se declara completada ninguna de las tres tareas en curso.
+
+
+---
+
+## EP · build CLI Cryptomator y verificación sintética · 2026-11-12 · 11:54 America/Mexico_City
+
+**UUIDv7 local de continuidad:** `01a1d0e5-5b79-77b8-9cf2-b123a10ff447` · **ID nativo de conversación:** NO EXPUESTO · **Control de responsabilidad:** EP generación 3 sin cambios; no se asigna titularidad nueva ni folio FOL1/CV/CY/A/B.
+
+### Resultado de EP-TASK-003
+
+- **Fuente:** `cryptomator/cli` commit `f09851d3990f4b7dc6f572f8a9eb9a5f2882f439`; GitHub verificó firma SSH válida de Armin Schrenk. Los seis blobs críticos de build, pom, creación, prueba de creación y args jlink/jpackage cotejaron con upstream.
+- **Dependencias:** Temurin JDK 25.0.5+8 portátil; SHA-256 local `636BDC13DC649DDC7D5921C5C7D23CCA6E44FD19D662B45CC9C02135A6C96C42`, coincidente con checksum Adoptium. ZIP de fuente SHA-256 `8926DCE2DE8C1FFC2A80C24B3562AA583DDD0530D959E2D9B09DA04389FDC8EB`.
+- **Build:** JAR SHA-256 `26681D2F53710B952510784DF83FA7DD5F721460D498F9861CB8601D0A7E9BE3`; EXE SHA-256 `0F59F11CCD8829E0FB8A5634184C5664442CDE60741A812543E3235F15E6BDE5`. Clasificación `LOCAL_BUILD_FROM_SIGNED_UPSTREAM_SOURCE`; `--version=0.1.0-local`, binario sin firma Authenticode. No es release oficial.
+- **Suites:** 12 pruebas unitarias y 5 de integración PASS; CLI version/help/create help/unlock help/list-mounters exit 0.
+- **E2E sintética:** create exit 0; FallbackMounter levantó WebDAV en localhost:49321; PUT 201 y GET 200; round-trip exacto de 37 bytes con .NET HttpClient; cinco archivos físicos y ninguna coincidencia del nombre/contenido sintético en claro. AppData/Temp redirigidos al staging.
+- **Cierre:** Ctrl+C no alcanzó al proceso Windows; el árbol de procesos sintéticos fue terminado forzadamente y el read-back mostró puerto 49321 cerrado y procesos ausentes. No se declara desmontaje graceful PASS. La limpieza del directorio staging no se ejecutó: el verificador de comandos RDC agotó el tiempo antes de ejecutar, por lo que el directorio sintético permanece pendiente de retirada.
+
+### Límites y siguiente gate
+
+No se creó la bóveda real, no se introdujo contraseña real y no se migró `Desktop\\SeryMente`. El directorio destino `C:\\Users\\fila4\\EP\\ProtectedWorkspace\\SeryMente-Vault` ya existe vacío y no es una bóveda; Cryptomator CLI `create` necesita que el destino no exista. No se elimina ni renombra ese placeholder sin autorización expresa. El wrapper reproducible para PowerShell 5.1, la selección/aceptación final de destino, la introducción local de contraseña por `--password:stdin`, el confinamiento de datos, migración, recuperación y aceptación siguen pendientes. No se tocaron BitLocker, VHDX, volúmenes, ACL, GUI ni datos reales.
+
+**Estado:** `PARCIAL · CLI_BUILD_PASS_LOCAL · SYNTHETIC_CREATE_UNLOCK_CIPHERTEXT_PASS · REAL_VAULT_NOT_CREATED · WINDOWS_GRACEFUL_UNMOUNT_NOT_VERIFIED · SYNTHETIC_STAGING_CLEANUP_PENDING · MIGRATION_NOT_STARTED`.
