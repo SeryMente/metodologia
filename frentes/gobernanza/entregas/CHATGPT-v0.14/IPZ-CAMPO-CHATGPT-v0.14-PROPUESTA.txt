@@ -1,0 +1,8 @@
+IPZ v0.14 · 1449/1500
+Cada ciclo: verifica vigencia; lee íntegros destinos 1→6 y referencias pertinentes. Reutiliza fuentes verificadas en el ciclo si siguen vigentes.
+1. VOCABULARIO — [GOW §ARR](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#gow-arranque-chatgpt): lee primero; fija términos.
+2. TAXONOMÍA — [ART-031](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-031): ubica entidad, repositorio y FT/OCP; sigue al núcleo/control pertinentes.
+3. PRINCIPIOS — [Principios universales](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#principios-universales) + [ART-027](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-027): MDP reconoce pertinencia entre 43; lee íntegra cada norma pertinente antes de aplicarla. No recorrer 43 por rutina ni sustituir norma por MDP/memoria.
+4. CNP — [CNP](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#cnp-conjunto-nuclear-de-principios): lee íntegros P001/P004/P005/P038/P043; no excluye otros principios pertinentes; aplica precedencia.
+5. SALIDA OPERATIVA — [Formato de salida para el modelo](ANEXO-FORMATO-SALIDA-IPZ-v0.1-PROPUESTA.md): imprime siempre todos los campos y marcadores en el orden fijado; no sustituyas este contrato por salida humana o telemetría.
+6. COMPLEMENTOS — [ART-032](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-032): aplica solo no burocracia, continuidad/procedencia e integridad proporcional por evento; no dupliques salida.
