@@ -127,7 +127,7 @@ Retomé la responsabilidad primaria del frente **GOBERNANZA** y conservé ínteg
 - [Evidencia](https://github.com/SeryMente/metodologia/blob/main/frentes/gobernanza/evidencias/C-GOBERNANZA-RETOMA-16.json)
 - [Control único](https://github.com/SeryMente/metodologia/blob/main/frentes/gobernanza/CONTROL-RESPONSABILIDAD.json) · [README](https://github.com/SeryMente/metodologia/blob/main/frentes/gobernanza/README.md) · [Manifiesto](https://github.com/SeryMente/metodologia/blob/main/frentes/gobernanza/documentos/MANIFIESTO-DOCUMENTAL.json)
 
-**Integridad:** los artefactos se escribieron con un único commit atómico y se leyeron de vuelta desde `main`; el cotejo de blob SHA y SHA-256 es parte del cierre de este ciclo.
+**Integridad:** los artefactos se publicaron en dos commits secuenciales con CAS: el primero realizó la escritura y el segundo registró el read-back, el estado final y la actualización de control/índices. Ambos commits se leyeron de vuelta desde `main`.
 
 **Responsabilidad:** evento `C-GOBERNANZA-RETOMA-16`; generación 20 → 21; alias operativo `chatgpt-C-GOBERNANZA-RETOMA-16-01a1d0ea3e9e71b1b12dfbc1bc60d2f2`; UUIDv7 local `01a1d0ea-3e9e-71b1-b12d-fbc1bc60d2f2`; ciclo local `C-GOBERNANZA-RETOMA-16-CY01` / `01a1d0ea-3e9e-7fc0-b3cb-69b8c913e971`. Titular anterior supersedido; corresponsable generación 20 preservado. ID nativo no expuesto.
 

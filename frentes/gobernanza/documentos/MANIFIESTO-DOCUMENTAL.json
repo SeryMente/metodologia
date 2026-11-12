@@ -302,9 +302,9 @@
       "source_path": "Mensajes visibles recuperables de la conversación ChatGPT actual; no se proporcionó export nativo.",
       "captured_via": "Transcripción literal ordenada de instrucciones visibles del operador y salida B anterior recuperada del OCP; Markdown añadido como estructura. No incluye llamadas internas a herramientas ni razonamiento oculto.",
       "media_type": "text/markdown",
-      "size_bytes": 10084,
-      "sha256": "3F5A0BE2E5DC2D180BA89D18C717939BBE4E8ADFB2796573DD4F29362712AFD2",
-      "git_blob_sha": "697c687c0b2239be7fbaaa4364bcc757a29f4300",
+      "size_bytes": 10162,
+      "sha256": "4F633D4E34DB8BEC17AD6AD528DA67B50593D47A74D086845C756DE2BF78E737",
+      "git_blob_sha": "05948eab133f02307316810dcbc405ed15a8d012",
       "status": "PERSISTIDO_Y_VERIFICADO",
       "verification": {
         "readback": true,

@@ -85,15 +85,17 @@
       "path": "frentes/gobernanza/documentos/derivados/ChatGPT-Gobernanza-1-20261112-1133-captura-visible.md",
       "class": "derived_conversation_capture",
       "status": "PERSISTIDO_Y_VERIFICADO",
-      "sha256": "3F5A0BE2E5DC2D180BA89D18C717939BBE4E8ADFB2796573DD4F29362712AFD2",
-      "bytes": 10084
+      "sha256": "4F633D4E34DB8BEC17AD6AD528DA67B50593D47A74D086845C756DE2BF78E737",
+      "bytes": 10162,
+      "git_blob_sha": "05948eab133f02307316810dcbc405ed15a8d012"
     },
     {
       "path": "frentes/gobernanza/conversaciones/C-GOBERNANZA-RETOMA-16-dialogo.jsonl",
       "status": "PERSISTIDO_Y_VERIFICADO",
-      "sha256": "308752A365D6B458E2DE04285B83A8D877CEF1371035C8437B29E9AD4C329106",
-      "bytes": 8888,
-      "records": 6
+      "sha256": "20794920921B8639869775D72E1F83C95B7653C1ACDC15A87E019C806010B3EE",
+      "bytes": 8966,
+      "records": 6,
+      "git_blob_sha": "1f8b0559b3e2fde9864dee8d4c65a2d9ba93c782"
     },
     {
       "path": "frentes/gobernanza/cronica/C-GOBERNANZA-RETOMA-16.md",
@@ -129,7 +131,10 @@
     "initial_write_tree_sha": "b27375e375af478bd0d3e86e8b424977c643867a",
     "initial_write_readback_verified": true,
     "final_control_blob_sha": null,
-    "note": "El primer commit se leyó de vuelta exactamente; este commit incorpora el recibo de verificación al control, README y manifiesto. Se realiza una última lectura de vuelta después de este commit."
+    "note": "El primer commit se leyó de vuelta exactamente; este commit incorpora el recibo de verificación al control, README y manifiesto. Se realiza una última lectura de vuelta después de este commit.",
+    "verification_commit_sha": "c3afb7785c0c36ad3b9fbaf0e1f2bdda1df3c5e4",
+    "final_main_before_record_correction": "c3afb7785c0c36ad3b9fbaf0e1f2bdda1df3c5e4",
+    "final_readback_of_verification_commit": true
   },
   "verification": {
     "write_commit_sha": "ba369c4c321f1355907d9b5fc2d7aa7ad13ad3a3",
@@ -193,6 +198,8 @@
         "bytes": 30197,
         "content_exact": true
       }
-    ]
+    ],
+    "verification_commit_sha": "c3afb7785c0c36ad3b9fbaf0e1f2bdda1df3c5e4",
+    "note": "Commit1 wrote the cycle and responsibility change; commit2 recorded the verified read-back in control/index/manifest. This correction aligns the A/B capture with the executed two-commit sequence."
   }
 }
