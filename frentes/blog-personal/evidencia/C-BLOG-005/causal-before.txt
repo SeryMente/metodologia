@@ -1,0 +1,66 @@
+✖ regression: source above60000 is processed without truncating its tail (1.821258ms)
+✖ regression: reject general BEFORE provider call (38.384897ms)
+✖ regression: reject conversacion_maya BEFORE provider call (1.05118ms)
+✖ regression: reject interpretacion_simultanea BEFORE provider call (0.799095ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 0
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 363.214033
+
+✖ failing tests:
+
+test at tests/unit/blog-metadata-hardening.test.ts:2:1729
+✖ regression: source above60000 is processed without truncating its tail (1.821258ms)
+  Error: METADATA_REQUIRES_CHUNKING
+      at proposeMetadata (/vercel/sandbox/data/blog-build/base/khora-web/lib/server/blog/metadata.ts:6:38)
+      at TestContext.<anonymous> (/vercel/sandbox/data/blog-build/base/khora-web/tests/unit/blog-metadata-hardening.test.ts:8:177)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.start (node:internal/test_runner/test:1015:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17)
+
+test at tests/unit/blog-metadata-hardening.test.ts:2:2501
+✖ regression: reject general BEFORE provider call (38.384897ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (/vercel/sandbox/data/blog-build/base/khora-web/tests/unit/blog-metadata-hardening.test.ts:9:157)
+      at async Test.run (node:internal/test_runner/test:1125:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /SOURCE_NOT_BLOG/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/unit/blog-metadata-hardening.test.ts:2:2501
+✖ regression: reject conversacion_maya BEFORE provider call (1.05118ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (/vercel/sandbox/data/blog-build/base/khora-web/tests/unit/blog-metadata-hardening.test.ts:9:157)
+      at async Test.run (node:internal/test_runner/test:1125:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /SOURCE_NOT_BLOG/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/unit/blog-metadata-hardening.test.ts:2:2501
+✖ regression: reject interpretacion_simultanea BEFORE provider call (0.799095ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (/vercel/sandbox/data/blog-build/base/khora-web/tests/unit/blog-metadata-hardening.test.ts:9:157)
+      at async Test.run (node:internal/test_runner/test:1125:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /SOURCE_NOT_BLOG/,
+    operator: 'rejects',
+    diff: 'simple'
+  }

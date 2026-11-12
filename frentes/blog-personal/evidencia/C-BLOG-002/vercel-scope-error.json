@@ -1,0 +1,16 @@
+{
+  "message": "Vercel API request failed (403: forbidden). Not authorized: Trying to access resource under scope \"victorhugotorresmendez-8991s-projects\". You must re-authenticate to this scope or use a token with access to this scope.",
+  "recovery": "Try an available mapped CLI fallback first for the same authorized action, with the same explicit team/project and the CLI's own credentials. If it succeeds, use its result. If it fails or no CLI fallback is available, No automatic fix is known from this response. Report the error to the user. Do not retry unchanged or assume re-authentication will fix it.",
+  "remediation": {
+    "actor": "unknown",
+    "action": "none"
+  },
+  "status": 403,
+  "code": "forbidden",
+  "operation": "GET /v7/deployments",
+  "saml": false,
+  "ssoEnforced": false,
+  "scope": "victorhugotorresmendez-8991s-projects",
+  "teamId": "team_QBa5UlffJWznZ8ogFfKjaGQb",
+  "requestId": "pdx1:sfo1::lkftx-1792430573702-f035cd34cf99"
+}

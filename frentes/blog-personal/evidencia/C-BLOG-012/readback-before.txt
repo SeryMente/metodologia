@@ -1,0 +1,150 @@
+✖ full text readback reaches official Graph endpoint and confirms exact approved message (1.16847ms)
+✖ link readback confirms exact text and approved article URL (0.265846ms)
+✖ HTTP200 with another message does not confirm delivery (0.176413ms)
+✖ HTTP200 with another post ID does not confirm delivery (0.166382ms)
+✖ link to another revision or absent attachment does not confirm delivery (0.275428ms)
+✖ foreign permalink does not become a publication receipt (0.188969ms)
+✔ wrong Page post ID is rejected before any HTTP request (0.838247ms)
+✖ Graph readback failures never create a success receipt (0.879914ms)
+✖ verification is read-only and never retries a send (0.485486ms)
+✔ fixed Graph host/path protections remain despite field expansion braces (0.356794ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 2
+ℹ fail 8
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 143.993458
+
+✖ failing tests:
+
+test at tests/unit/blog-provider-readback.test.ts:10:1
+✖ full text readback reaches official Graph endpoint and confirms exact approved message (1.16847ms)
+  Error: META_PATH
+      at MetaPage.request (file:///data/blog-reactivation/work/khora-web/lib/server/blog/providers.ts:40:96)
+      at MetaPage.verify (file:///data/blog-reactivation/work/khora-web/lib/server/blog/providers.ts:54:35)
+      at TestContext.<anonymous> (file:///data/blog-reactivation/work/khora-web/tests/unit/blog-provider-readback.test.ts:10:162)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.start (node:internal/test_runner/test:1015:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17)
+
+test at tests/unit/blog-provider-readback.test.ts:11:1
+✖ link readback confirms exact text and approved article URL (0.265846ms)
+  Error: META_PATH
+      at MetaPage.request (file:///data/blog-reactivation/work/khora-web/lib/server/blog/providers.ts:40:96)
+      at MetaPage.verify (file:///data/blog-reactivation/work/khora-web/lib/server/blog/providers.ts:54:35)
+      at TestContext.<anonymous> (file:///data/blog-reactivation/work/khora-web/tests/unit/blog-provider-readback.test.ts:11:192)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3)
+
+test at tests/unit/blog-provider-readback.test.ts:12:1
+✖ HTTP200 with another message does not confirm delivery (0.176413ms)
+  Error: META_PATH
+      at MetaPage.request (file:///data/blog-reactivation/work/khora-web/lib/server/blog/providers.ts:40:96)
+      at MetaPage.verify (file:///data/blog-reactivation/work/khora-web/lib/server/blog/providers.ts:54:35)
+      at TestContext.<anonymous> (file:///data/blog-reactivation/work/khora-web/tests/unit/blog-provider-readback.test.ts:12:173)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7)
+
+test at tests/unit/blog-provider-readback.test.ts:13:1
+✖ HTTP200 with another post ID does not confirm delivery (0.166382ms)
+  Error: META_PATH
+      at MetaPage.request (file:///data/blog-reactivation/work/khora-web/lib/server/blog/providers.ts:40:96)
+      at MetaPage.verify (file:///data/blog-reactivation/work/khora-web/lib/server/blog/providers.ts:54:35)
+      at TestContext.<anonymous> (file:///data/blog-reactivation/work/khora-web/tests/unit/blog-provider-readback.test.ts:13:145)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7)
+
+test at tests/unit/blog-provider-readback.test.ts:14:1
+✖ link to another revision or absent attachment does not confirm delivery (0.275428ms)
+  Error: META_PATH
+      at MetaPage.request (file:///data/blog-reactivation/work/khora-web/lib/server/blog/providers.ts:40:96)
+      at MetaPage.verify (file:///data/blog-reactivation/work/khora-web/lib/server/blog/providers.ts:54:35)
+      at TestContext.<anonymous> (file:///data/blog-reactivation/work/khora-web/tests/unit/blog-provider-readback.test.ts:14:255)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7)
+
+test at tests/unit/blog-provider-readback.test.ts:15:1
+✖ foreign permalink does not become a publication receipt (0.188969ms)
+  Error: META_PATH
+      at MetaPage.request (file:///data/blog-reactivation/work/khora-web/lib/server/blog/providers.ts:40:96)
+      at MetaPage.verify (file:///data/blog-reactivation/work/khora-web/lib/server/blog/providers.ts:54:35)
+      at TestContext.<anonymous> (file:///data/blog-reactivation/work/khora-web/tests/unit/blog-provider-readback.test.ts:15:259)
+      at Test.runInAsyncScope (node:async_hooks:228:14)
+      at Test.run (node:internal/test_runner/test:1118:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+      at Test.postRun (node:internal/test_runner/test:1247:19)
+      at Test.run (node:internal/test_runner/test:1175:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7)
+
+test at tests/unit/blog-provider-readback.test.ts:17:1
+✖ Graph readback failures never create a success receipt (0.879914ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /META_VERIFY_FAILED_401/. Input:
+  
+  'Error: META_PATH'
+  
+      at async TestContext.<anonymous> (file:///data/blog-reactivation/work/khora-web/tests/unit/blog-provider-readback.test.ts:17:176)
+      at async Test.run (node:internal/test_runner/test:1125:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: META_PATH
+        at MetaPage.request (file:///data/blog-reactivation/work/khora-web/lib/server/blog/providers.ts:40:96)
+        at MetaPage.verify (file:///data/blog-reactivation/work/khora-web/lib/server/blog/providers.ts:54:35)
+        at file:///data/blog-reactivation/work/khora-web/tests/unit/blog-provider-readback.test.ts:17:240
+        at waitForActual (node:assert:632:21)
+        at strict.rejects (node:assert:769:31)
+        at TestContext.<anonymous> (file:///data/blog-reactivation/work/khora-web/tests/unit/blog-provider-readback.test.ts:17:189)
+        at Test.runInAsyncScope (node:async_hooks:228:14)
+        at Test.run (node:internal/test_runner/test:1118:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+        at Test.postRun (node:internal/test_runner/test:1247:19),
+    expected: /META_VERIFY_FAILED_401/,
+    operator: 'rejects',
+    diff: 'simple'
+  }
+
+test at tests/unit/blog-provider-readback.test.ts:18:1
+✖ verification is read-only and never retries a send (0.485486ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /lost read response/. Input:
+  
+  'Error: META_PATH'
+  
+      at async TestContext.<anonymous> (file:///data/blog-reactivation/work/khora-web/tests/unit/blog-provider-readback.test.ts:18:231)
+      at async Test.run (node:internal/test_runner/test:1125:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:787:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: META_PATH
+        at MetaPage.request (file:///data/blog-reactivation/work/khora-web/lib/server/blog/providers.ts:40:96)
+        at MetaPage.verify (file:///data/blog-reactivation/work/khora-web/lib/server/blog/providers.ts:54:35)
+        at file:///data/blog-reactivation/work/khora-web/tests/unit/blog-provider-readback.test.ts:18:295
+        at waitForActual (node:assert:632:21)
+        at strict.rejects (node:assert:769:31)
+        at TestContext.<anonymous> (file:///data/blog-reactivation/work/khora-web/tests/unit/blog-provider-readback.test.ts:18:244)
+        at Test.runInAsyncScope (node:async_hooks:228:14)
+        at Test.run (node:internal/test_runner/test:1118:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+        at Test.postRun (node:internal/test_runner/test:1247:19),
+    expected: /lost read response/,
+    operator: 'rejects',
+    diff: 'simple'
+  }

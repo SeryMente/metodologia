@@ -1,0 +1,3 @@
+Recibido: **para este corte se permite publicar solo la transcripción; el audio se conserva privado.** Retiraré únicamente el bloqueo por audio, sin quitar la revisión, el consentimiento por versión ni los controles de propietario y acceso normativo.
+
+**Los bloqueos restantes no desaparecen:** el backend sigue sin desplegar y no hay una aplicación Meta identificada ni permisos de publicación acreditados. El endpoint recibe un borrador ya preparado; no genera por sí solo una transcripción ordenada y formateada. No puedo prometer la publicación real dentro del corte.

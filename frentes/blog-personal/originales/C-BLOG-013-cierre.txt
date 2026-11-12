@@ -1,0 +1,7 @@
+**Transferencia recibida: continúa el mismo frente Blog, sin reiniciar el proyecto ni cambiar el reparto.** Los STOP y roles antiguos del texto quedan como historia, no como instrucciones actuales.
+
+La conversación reenviada quedó conservada en el único canon **BLOG-PERSONAL-v16 · C-BLOG-013**, distinguiéndola de una exportación completa de la sesión. Mantengo el flujo vigente: archivo manual, texto trabajado separado del original, previa exacta y consentimiento para ambos destinos.[^https://github.com/SeryMente/metodologia/blob/docs/blog-editorial-sync-20261019/frentes/blog-personal/OBJETO-CANONICO.md]
+
+Tu integración local de `a7201394` y las **10/10 pruebas** quedan registradas como reporte de Central, no como despliegue ni publicación. **No haré modificaciones adicionales al proveedor**; Central conserva la consolidación y sus archivos, sin trabajo concurrente mío.[^https://github.com/SeryMente/metodologia/blob/docs/blog-editorial-sync-20261019/frentes/blog-personal/OBJETO-CANONICO.md]
+
+NX-332m · Metacanon 1.6.

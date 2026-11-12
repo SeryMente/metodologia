@@ -1,0 +1,7 @@
+Retomo la construcción Blog con el reparto indicado. Revisaré el código vigente contra la conversación antes de modificarlo; trabajaré en rama separada y no tocaré Ingreso, custodia ni sus archivos reservados. Primero identificaré qué falta realmente para cerrar Blog y qué depende de accesos o consentimiento del operador.
+
+Sí. **Blog conserva su propio objeto canónico, separado del de Dictado**, aunque coordinemos la integración. Documentaré cada ciclo sustantivo —incluidos investigación, fallos y bloqueos— en ese mismo objeto: instrucción recibida, acción, evidencia, límites, estado vivo y siguiente paso. No crearé otro canon ni dejaré la continuidad solo en el chat.
+
+La revisión encontró un hueco concreto en la extracción autobiográfica: el código rechaza transcripciones de más de 60 000 caracteres, aunque el flujo textual admite hasta 200 000. Corregiré esa diferencia con extracción acotada por fragmentos y anclas sobre el original intacto, sin truncar ni ratificar automáticamente los resultados.
+
+También probaré que el extractor rechace otros tipos de entrada antes de llamar al proveedor. Este trabajo queda dentro de Blog; no modifica captura ni archivo de Dictado.

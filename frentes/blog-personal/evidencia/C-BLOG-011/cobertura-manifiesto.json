@@ -1,0 +1,40 @@
+{
+  "cycle": "C-BLOG-011",
+  "seal": "BLOG-PERSONAL-v14",
+  "base_document_commit": "9b594235337be4e0c077c0288830d4a37c3d28ec",
+  "method": "METACANON-OBJETOS-v1.6",
+  "encoding": "UTF-8 without BOM",
+  "line_endings": "LF",
+  "operator_bodies": [
+    {
+      "id": "U-C039-01",
+      "path": "originales/U-C039-01-suficiencia.txt"
+    },
+    {
+      "id": "U-C039-02",
+      "path": "originales/U-C039-02-medios-texto.txt"
+    },
+    {
+      "id": "U-C039-03",
+      "path": "originales/U-C039-03-progresividad-avatar.txt"
+    }
+  ],
+  "scope": "All files added/changed in C011 except self-referential manifest; inherited map retained as historical not fully revalidated. Not an exhaustive inventory of all past cycle files.",
+  "inherited_entries_not_revalidated": [
+    "README.md",
+    "originales/U01-necesidad.txt",
+    "originales/U02-autorizacion.txt",
+    "originales/README.md",
+    "originales/cierre.txt",
+    "originales/asistencia-01.txt",
+    "originales/asistencia-02.txt",
+    "originales/asistencia-03.txt",
+    "evidencia/recibos-locales.json",
+    "evidencia/incidencias.md",
+    "evidencia/publicacion.json"
+  ],
+  "stale_object_hash_replaced": "f5f8d8ce79cbd0bb6726c526284851fdca9f6ddee4a90ae7ecbb5fcd09e5573e",
+  "source_privacy_checked": true,
+  "research": "received central report, no new web validation",
+  "code_or_runtime_changes": false
+}

@@ -1,0 +1,11 @@
+**Hito del proveedor corregido y entregado a Central**, sin reinventar el flujo editorial: la comprobación de Facebook rechazaba su propia consulta antes de salir a red (`META_PATH`). El parche admite los campos Graph ya solicitados y conserva las comprobaciones de texto, publicación y enlace exactos.[^https://github.com/SeryMente/khora/commit/a7201394f2d1befcb3ce76c61c66f95904373dec]
+
+- **Entrega:** `a7201394f2d1befcb3ce76c61c66f95904373dec`, solo `providers.ts` y una prueba nueva. Diez pruebas aisladas pasan sin omisiones; antes fallaban ocho. Tipos estrictos y lectura posterior de los dos archivos comprobados.
+- **Bloqueo revalidado:** Khora vuelve a rechazar la credencial normativa con `SI_MAIN_FETCH 401`; no la reintenté ni cambié secretos. No se comprobaron permisos reales de Meta ni se publicó una nota.[^https://github.com/SeryMente/metodologia/blob/docs/blog-editorial-sync-20261019/frentes/blog-personal/evidencia/C-BLOG-012/khora-health.json]
+- **Continuidad:** Central conserva elaboración sobria, consumidor y ruta editorial; Blog conserva proveedores y comprobantes. Siguiente paso: integrar este único parche en su candidata y ejecutar la regresión. El cierre público no tiene plazo verificable mientras falten accesos y la aprobación exacta.[^https://github.com/SeryMente/metodologia/blob/docs/blog-editorial-sync-20261019/frentes/blog-personal/OBJETO-CANONICO.md]
+
+Canon único actualizado a **BLOG-PERSONAL-v15 / C-BLOG-012**. Adjunto reenviado custodiado con su procedencia, sin afirmar exportación completa ni identidad binaria del archivo citado. **NX-332m · Metacanon adquirido: 1.6 — METACANON-OBJETOS-v1.6.**
+
+<edit_reference ids="editref_N8PFu0AklNHN,editref_Rw_oWVXw-DZA">
+Registrada causa y verificación de la corrección Meta
+</edit_reference>

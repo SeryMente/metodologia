@@ -1,0 +1,3 @@
+Fuente cargada · NX-330m. Tomo esta conversación como referencia. Buscaré el objeto canónico existente, contrastaré su estado con el último checkpoint y actualizaré solo la continuidad documental; mantendré congelados el código, los despliegues y las publicaciones.
+
+Encontré el objeto único: `frentes/blog-personal/OBJETO-CANONICO.md`. En `main` sigue en versión 2; la solicitud documental 17 contiene la versión 5, pero le faltan la entrega del módulo de formato y el congelamiento final. La consolidación 330 sigue en borrador, ahora en una revisión posterior al checkpoint de tu conversación. Actualizaré el mismo objeto, sin fusionar ni activar nada. [^https://github.com/SeryMente/metodologia/pull/17][^https://github.com/SeryMente/khora/pull/330]

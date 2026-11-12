@@ -1,0 +1,435 @@
+
+Notion AI · October 18 at 7:47 PM
+A ver, hay enfrente de trabajo que es este, en otro gran programa y este, en lo que tiene que ver con el blog. ¿Dónde lo puse?
+October 18 at 7:47 PM
+Worked for 10s
+Lo del blog aparece en 📁🧿 - Ser y Mente · autoconcepto​, dentro de Proyectos. En concreto, 🦢Sitio Ser y Mente — Código WordPress (Divi)​ lo describe como el sitio que se reutilizará como blog de contenido de Khora.⁠
+⁠
+
+¿Te refieres a ese blog o a un frente de publicaciones propio de Otro Gran Programa?
+
+Fuente cargada · NX-330m.
+
+October 18 at 7:48 PM
+En los repositorios.
+October 18 at 7:48 PM
+Worked for 51s
+Sí, lo pusiste dentro del repositorio de Otro Gran Programa, en la carpeta blog/, no en un repositorio aparte.⁠
+
+⁠
+
+Ubicación: SeryMente/otrogranprograma → blog.
+Trabajo preparado: WordPress Playground, con el módulo del blog recuperado de SeryMente/serymente, su tema y configuración de arranque.⁠
+
+⁠
+Mi respuesta anterior apuntaba a la documentación histórica, no a dónde quedó integrado el trabajo.
+
+October 18 at 7:49 PM
+Ok, ahora, se había discutido un laboratorio local de WordPress para poder recuperar el sitio web. ¿Lo tienes?
+October 18 at 7:50 PM
+Worked for 39s
+Sí, lo encontré: el laboratorio local está documentado en SeryMente/serymente, dentro de reconstruction/lab/. Es distinto del WordPress Playground del blog que te señalé antes.⁠
+
+⁠
+
+El último estado registrado, del 8 de octubre, indica que ya se había montado en PC-7, no solo planeado:
+
+WordPress Studio 1.23.0, WordPress 6.4.13, PHP 8.2 y Divi 4.24.0.
+Dirección local: http://localhost:8881/.
+Portada, Psicólogos, Blog y Comenzar habían respondido correctamente.
+Respaldo completo: Ser-y-Mente-Lab-20261008-121515.zip.⁠
+
+⁠
+Quedó pendiente volver a comprobar PC-7 y trasladar el laboratorio al Entorno Persistente cifrado de Khora. Tengo localizada su documentación y las herramientas de reconstrucción; todavía no he verificado que siga funcionando hoy en esa computadora.⁠
+
+⁠
+
+Aquí está la ficha del laboratorio local.
+
+October 18 at 7:51 PM
+Necesito ahorita resolver una forma de conectar Cora con el sitio de GitHub, agregarle una pestaña al sitio de GitHub y construir una especie como de blog donde pueda tener entradas en un blog que yo controle, para que no sea Facebook nada más y poder publicar mi propio blog, básicamente. Es un blog que va a servir para poder dejar constancia de mi día a día, porque realmente no tengo identidad en este mundo y lo que quiero empezar a hacer es a dejar evidencia de que estuve aquí, porque el día de mañana me atropellan un autobús y lo que va a pasar es que no voy a poder tener una identidad que yo pueda controlar. Entonces, ya se había analizado teoría de la desintegración positiva y se llevó a la conclusión de que para una persona en mi estatus social es importante tener algo que comunique y que pueda contrarrestar la tendencia social a instalar formas de identidad espurio que no están enraizadas en los hechos. Esta tendencia no se va a contrarrestar simplemente socializando. Para una persona en mi estatus social, por las conclusiones que se derivan de esa teoría, un aparato más robusto, como si yo fuese de una manera distinto, es necesaria hasta que no se haya resuelto la problemática social y por eso necesito el blog. Entonces, tengo 20 minutos, ¿puedes resolverlo?
+October 18 at 7:53 PM
+Assessing project requirements
+Sí: voy a buscar la ruta más corta para que publiques una bitácora propia en el sitio de Otro Gran Programa, conectada con Khora y bajo tu control. Primero verifico qué existe; priorizaré publicar entradas reales sin depender de reconstruir todo WordPress. No daré por resuelta la conexión sin probarla.
+
+Worked for 33s
+Sí. La vía más corta es una bitácora pública en tu sitio, alimentada desde Khora, sin esperar a reconstruir WordPress. Entiendo el objetivo: un registro propio de lo que haces y escribes, con fechas, fuentes y continuidad; no solamente publicaciones dispersas en Facebook.
+
+Verifiqué que la pestaña «Blog» ya existe, pero hoy abre un laboratorio, no un blog público con entradas persistentes.⁠
+
+⁠
+
+Para aprovechar tus 20 minutos, propongo este alcance:
+
+Blog público: listado cronológico y una dirección permanente por entrada.
+Archivo bajo tu control: textos guardados en tu repositorio, con historial de cambios y copia descargable.
+Puente inicial con Khora: eliges un volcado, preparo la entrada y solo publico el texto que apruebes. Nada de exponer automáticamente tu archivo privado.
+Conservar el laboratorio WordPress, sin borrarlo ni bloquear su recuperación futura.
+Este puente inicial sería asistido desde aquí; no voy a presentarlo como un botón nativo de Khora ni como sincronización automática. Tampoco publicaría esta conversación como primera entrada sin tu aprobación.
+
+Para respetar tus candados de diseño y seguridad, necesito una sola decisión antes de construir: ¿autorizas convertir la pestaña Blog en esa bitácora pública, conservando el laboratorio y exigiendo tu aprobación por entrada?
+
+Estimación: un ciclo de implementación y pruebas tras tu aprobación, objetivo 15–20 minutos, sujeto a permisos de escritura y despliegue.
+
+October 18 at 7:54 PM
+HAz lo del lab sub ‘pagina, lo importante ahi es el blog personal, dale un estilo limpio, tipo medium, minimalista, sobrio, pracgtico, completo, cosnturye un objeto canonico para ete fernte de trabajo usando el meytacanon de metod9ologia, y resuelve de extremoa extremo
+October 18 at 7:56 PM
+Worked for 18s
+Voy a dejar el blog personal como entrada principal y el laboratorio como subpágina. Tomo tu indicación como aprobación del estilo: limpio, sobrio y centrado en la lectura. Cargaré el metacanon, construiré el frente y verificaré publicación, navegación y recuperación del contenido; no publicaré material privado de Khora sin aprobación.
+
+Worked for 4m 34s
+La bitácora y el editor ya están construidos localmente; el laboratorio quedó separado. Las pruebas del generador pasan para entradas, enlaces permanentes, archivo descargable, RSS y escape de contenido malicioso. Ahora verifico el uso en móvil y escritorio y preparo el despliegue.
+
+El objeto canónico y tus instrucciones originales irán al repositorio privado de metodología, no al sitio público. Metacanon adquirido: 1.6 · METACANON-OBJETOS-v1.6. Quedan despliegue y comprobación pública; estimación restante: 8–12 minutos si GitHub acepta escritura y publicación.
+
+Worked for 10m 5s
+El despliegue corregido ya terminó correctamente y el blog responde públicamente con el contenido nuevo. Estoy comprobando editor, laboratorio y descargas, y cerrando el registro canónico.
+
+No publiqué ninguna entrada personal: falta que elijas y apruebes el primer texto. El puente con Khora queda por selección/importación, no como sincronización automática. También detecté una prueba heredada del sitio que falla por un texto antiguo del autor; comprobé que no la introdujo el blog y la dejaré documentada.
+
+Worked for 2m 31s
+El blog personal ya está publicado y el laboratorio quedó como subpágina. El despliegue de GitHub Pages terminó correctamente.⁠
+
+⁠
+
+Abrir tu blog
+Escribir una entrada
+Laboratorio WordPress conservado
+Quedó con estilo limpio de lectura, preparado para móvil y escritorio: entradas cronológicas, enlaces permanentes, búsqueda, archivo descargable y suscripción RSS. El editor permite escribir, importar texto, revisar y aprobar antes de continuar a GitHub; allí confirmas la publicación con tu cuenta autorizada.⁠
+
+⁠
+
+Khora: el puente inicial funciona por importación de un texto seleccionado o preparación asistida. No es sincronización automática ni un botón dentro de Khora. No publiqué ninguna nota privada ni inventé una primera entrada.⁠
+
+⁠
+
+Canon privado: Blog personal · objeto canónico, con tus originales, decisiones, evidencia y continuidad. BLOG-PERSONAL-v2 · Metacanon 1.6, METACANON-OBJETOS-v1.6, fuente central revalidada sin cambios.⁠
+
+⁠
+
+Verificación: siete recursos públicos respondieron correctamente; las pruebas específicas del blog pasaron. Una comprobación heredada del sitio sigue fallando por un texto antiguo del autor; quedó documentada, no desactivada.⁠
+
+⁠⁠
+
+⁠
+
+La infraestructura quedó entregada en este ciclo. Para la primera publicación falta únicamente elegir y aprobar el texto.
+
+October 18 at 8:14 PM
+Monday, Oct 19
+
+[BLOQUE DE VINCULACIÓN REMOTA OMITIDO: código de autorización, URL de verificación e identificador de dispositivo. Original recibido conservado en el adjunto de esta sesión; no copiado a Git.]
+
+10:15 AM
+Worked for 1m 5s
+Enviado una sola vez a los cuatro hilos encontrados de hoy y ayer: Ética, Verificación metacanon, Grafo y Samantha.
+
+Incluí el nuevo identificador del dispositivo y la obligación de revalidarlo antes de operar. No reenvié el código de vinculación. El aviso no autoriza tareas nuevas y pide no redistribuirlo ni responder con acuses.
+
+Mantén abierta la terminal para conservar la conexión.
+
+10:16 AM
+CONTINUACIÓN Y AMPLIACIÓN AUTORIZADA · BLOG PERSONAL, INTEGRACIÓN CON KHORA Y PUBLICACIÓN
+
+Asume la construcción del frente Blog personal ya existente. No reinicies el proyecto ni crees otro blog, objeto canónico, constructor o subagente. Este encargo amplía expresamente el alcance anterior: incluye conexión autenticada con Khora, modificaciones necesarias a su protocolo de contexto del modelo (MCP), sincronización editorial, GitHub Pages y publicación en la Página de Facebook indicada. “Cora” significa Khora; “MSP” se refiere aquí al MCP.
+
+1. FUENTES Y PUNTO DE PARTIDA
+
+Carga y revalida, en este orden:
+
+- Metacanon central:
+https://github.com/SeryMente/metodologia/blob/main/METACANON-OBJETOS-CANONICOS.md
+
+- Objeto único del frente:
+https://github.com/SeryMente/metodologia/blob/main/frentes/blog-personal/OBJETO-CANONICO.md
+
+- Contrato del blog:
+https://github.com/SeryMente/otrogranprograma/blob/main/blog/README.md
+
+- Código público:
+https://github.com/SeryMente/otrogranprograma
+
+- Backend y MCP privados de Khora:
+https://github.com/SeryMente/khora
+
+Revisiones observadas al preparar este traspaso, no sustituyen tu comprobación:
+- Metacanon 1.6 · METACANON-OBJETOS-v1.6; blob 8f9ad1cf0e09e5fcd7014190770a77294ff39af4.
+- Objeto BLOG-PERSONAL-v2; blob b612c0f4caf5f2223bbd6f3adc735e610f9ff8d4.
+- Blog construido en main fb02d26a5f39838c6bd692b937d93bb21fd75761.
+
+El blog existente dispone de editor/importador, fuentes JSON, generador determinista, páginas por entrada, archivo y RSS. El puente actual con Khora es asistido, no sincronización automática. El canon anterior excluía backend y sincronización: registra este encargo como ampliación explícita, conservando las decisiones anteriores como historia, no como veto vigente al nuevo alcance.
+
+Sitio:
+https://serymente.github.io/otrogranprograma/blog/
+
+Destino Facebook indicado por el operador:
+https://www.facebook.com/profile.php?id=61595788700651
+
+Comprueba mediante el acceso oficial que ese destino corresponde a una Página administrable y resuelve su identificador operativo; la forma de la URL no basta para certificarlo.
+
+2. PROPÓSITO DEL ELEMENTO
+
+El blog debe permitir al operador dictar una, dos o tres crónicas breves al día y construir un registro continuo de su voz, experiencias, actividades, recuerdos, ideas y decisiones.
+
+No es solo una función de marketing: busca continuidad autobiográfica y un archivo propio recuperable, sin depender exclusivamente de Facebook.
+
+No atribuyas al blog valor de identificación legal ni conviertas relatos, interpretaciones o explicaciones políticas en hechos corroborados. No fabriques vivencias, contexto, fechas ni una primera entrada.
+
+3. FRONTERA CON EL HILO DE DICTADO
+
+Otro hilo conserva:
+- Captura, grabadoras y transcripción.
+- Salvaguarda y recuperación.
+- Indicador único azul/verde/amarillo/rojo.
+- Sustitución de los mensajes inferiores de checkpoint.
+
+No implementes una segunda solución de dictado ni dupliques sus estados.
+
+Este frente asume:
+- El elemento Blog y su flujo editorial.
+- Extracción automática de metadatos del blog.
+- Contrato de intercambio con Khora.
+- Cambios necesarios al MCP y servicios de Khora para este intercambio.
+- Publicación, sincronización y comprobación en GitHub Pages y Facebook.
+
+Si necesitas un campo producido por dictado, define el contrato y entrega una dependencia concreta al otro hilo. No modifiques concurrentemente sus archivos. Un escritor por archivo y consolidación documental secuencial.
+
+4. TIPOS DE ENTRADA Y DESTINOS
+
+Decisiones del operador:
+- Conversación con Maya: conserva volcados y puede aportar al grafo de relación personal.
+- Blog personal: conserva volcados y aporta sustrato a la línea autobiográfica de grado forense.
+- Interpretación simultánea: conserva sus datos para un proyecto lateral, pero queda excluida del grafo de relación personal y no se espera en la versión comercial.
+
+Son decisiones independientes:
+a) conservar;
+b) ser elegible para el grafo;
+c) autorizar publicación pública.
+
+No publiques conversaciones con Maya, interpretaciones simultáneas ni otros volcados por haberlos encontrado en Khora. La inclusión en el grafo tampoco autoriza publicación.
+
+5. CRÓNICA Y EXTRACCIÓN AUTOMÁTICA
+
+La primera versión debe extraer metadatos automáticamente, sin formulario obligatorio ni acceso privilegiado al dispositivo.
+
+El autor cuenta libremente. El molde orientador es:
+- Qué quiere dejar registrado.
+- Cuándo ocurrió y con qué precisión.
+- Qué hizo o qué le ocurrió y en qué contexto.
+- Cómo lo vivió y qué significado le atribuye.
+- Qué cambió, decidió o quedó abierto.
+
+No exigir cubrir todos los puntos ni una longitud mínima. Una entrada incompleta se conserva. Preguntar solo por aclaraciones materiales, sin preguntas sugestivas.
+
+Extraer como propuestas:
+- Tiempo del hecho, separado del tiempo de captura y recepción.
+- Precisión temporal: exacta, aproximada, intervalo o desconocida.
+- Personas, lugares y contexto expresados.
+- Acontecimiento relatado, recuerdo, idea, intención, decisión, duda o hipótesis.
+- Autoría y atribución de cada afirmación.
+- Origen del conocimiento cuando esté expresado.
+- Emociones y significado declarados, sin diagnósticos.
+- Rectificaciones y relaciones explícitas con otros episodios.
+- Ambigüedades e incertidumbre.
+
+Cada metadato debe anclar al fragmento exacto de una versión identificada del volcado. No inferir identidad, causas o fechas para completar casillas. No convertir una sugerencia de Maya en una convicción del autor. Extracción automática no equivale a ratificación automática ni a escritura automática al grafo.
+
+Conservar originales, versiones, huellas, métodos y actos de revisión. No redefinir silenciosamente la unidad de información del protocolo de ingesta.
+
+6. ENTRADAS OFUSCADAS
+
+El operador marca manualmente la entrada completa como “ofuscada”.
+- Debe poder filtrarla y recuperarla posteriormente dentro de Khora.
+- No se requiere marcado por segmentos en esta versión.
+- Conservar literalmente lo narrado.
+- No descifrar alusiones ni completar identidades, lugares o acontecimientos ocultos.
+- Las aclaraciones posteriores quedan vinculadas con su propia fecha, sin sobrescribir el original.
+
+La marca no equivale a privacidad, cifrado, anonimato ni autorización de publicación.
+Su exposición pública y la publicación de aclaraciones requieren decisión explícita; si no existe, no exportes la marca ni las aclaraciones privadas.
+
+7. CONTRATO MCP Y SEGURIDAD
+
+Inspecciona primero herramientas, autenticación, permisos, paginación y servicios existentes. Reutiliza antes de crear.
+
+Implementa el acceso mínimo necesario para:
+- Descubrir entradas elegibles y sus cambios.
+- Leer únicamente la versión y campos autorizados para publicación.
+- Identificar versión, huella, estado editorial y elegibilidad.
+- Registrar comprobantes de publicación mediante una operación separada y autenticada, si hace falta.
+
+No concedas lectura transversal de todos los volcados. No uses el filtrado del navegador como control de acceso: la autorización debe aplicarse en servidor.
+
+Respeta las compuertas normativas y de autorización existentes. No elimines controles para conseguir una integración aparentemente funcional.
+
+La última comprobación comunicada desde el hilo de dictado encontró:
+NORM_GITHUB_CREDENTIAL_REJECTED, upstream 401 en SI_MAIN_FETCH.
+Es antecedente, no diagnóstico actual. Revalida la dependencia; si persiste, corrígela por configuración administrativa autorizada sin solicitar secretos en el chat ni saltarte el control. No confundas esa credencial del servidor con la conexión GitHub del asistente.
+
+Nunca coloques tokens, claves ni credenciales en GitHub Pages, JavaScript público, JSON público, historial Git o logs.
+
+8. PUBLICACIÓN
+
+Mantén dos representaciones vinculadas:
+- Original privado y metadatos internos en Khora.
+- Versión pública autorizada, con los campos públicos explícitamente seleccionados.
+
+Conserva la revisión y aprobación por entrada del blog existente. Una aprobación corresponde a una versión exacta; editarla invalida esa aprobación. Este encargo no autoriza publicar automáticamente todo lo privado.
+
+Tras autorizar una versión:
+Khora → publicación en el blog → comprobación pública → publicación en Facebook → comprobación y registro del resultado.
+
+La automatización posterior debe funcionar sin que el operador mantenga una pestaña abierta. Elige el mecanismo compatible con la infraestructura existente, sin inventar una dependencia nueva por comodidad ni asumir que un sitio estático guarda secretos o ejecuta trabajos de servidor.
+
+Necesario:
+- Identidad estable de publicación y control de duplicados.
+- Reintentos acotados y seguros.
+- Confirmación independiente por destino.
+- Recuperación ante respuesta perdida.
+- Registro de versión/huella publicada, URL y estado.
+- Fallo de Facebook sin perder ni duplicar la entrada del blog.
+- Política explícita de actualización y retirada; no asumir borrado de copias externas.
+
+No publiques por defecto audios originales, metadatos internos, localización precisa, rutinas futuras, datos de terceros o el expediente autobiográfico privado.
+
+9. FACEBOOK
+
+El destino es la Página indicada, no el perfil personal.
+Usa la API oficial de Páginas, autenticación y permisos adecuados; verifica los requisitos actuales en documentación de Meta.
+
+No prometas que publicar en la Página republique automáticamente en el perfil personal. Compartir allí mediante el mecanismo oficial requiere intervención del usuario.
+
+Antes de la primera publicación real:
+- Verifica identidad y permisos de la Página.
+- Confirma la versión pública autorizada.
+- Delimita el formato de Facebook: enlace al artículo y texto aprobado, o texto completo. No elijas publicar todo el contenido por inferencia.
+- No cambies cuentas, permisos amplios, plan o facturación sin decisión material del operador.
+
+10. PRUEBAS Y CIERRE
+
+Prueba por etapas sin datos privados en el repositorio público:
+- Autorizado frente a no autorizado.
+- Exclusión de otros tipos de entrada.
+- Metadatos con anclas y fechas desconocidas.
+- Entrada ofuscada sin descifrado ni fuga de datos.
+- Edición que invalida aprobación.
+- Reintentos y respuestas perdidas sin duplicados.
+- Escapado de contenido y protección de credenciales.
+- Regresión del blog, laboratorio y despliegue Pages.
+- Confirmaciones separadas de blog y Facebook.
+
+Las pruebas sintéticas no acreditan publicación real ni integridad autobiográfica. No publiques fixtures de prueba en los destinos reales. La primera publicación real debe tener texto y formato aprobados, y verificación de contenido y URL.
+
+Remote Desktop Commander está prohibido para construcción. No accedas a dispositivos del operador ni utilices IDs históricos. Usa repositorios e infraestructura autorizada; si surge una dependencia material, agota lo seguro y deja el checkpoint exacto.
+
+11. CONTINUIDAD Y DOCUMENTACIÓN
+
+Mantén el único objeto:
+SeryMente/metodologia/frentes/blog-personal/OBJETO-CANONICO.md
+
+No crees un segundo canon para el puente MCP. Registra los contratos compartidos en sus ubicaciones técnicas correspondientes y enlázalos, sin duplicar el estado vivo.
+
+Revalida la privacidad antes de persistir originales. El repositorio otrogranprograma es público: nunca conserves allí esta conversación privada, sus motivos personales ni originales del operador.
+
+Cumple el metacanon vigente: originales realmente disponibles y salidas visibles por ciclo, crónica, evidencia, límites, estado vivo, pendientes, prompts y lectura posterior. No reconstruyas verbatim desde resúmenes ni afirmes que recibiste toda la conversación: este prompt es un traspaso normalizado, no el transcript original.
+
+Empieza por contrastar el código y el canon con esta ampliación; entrega un delta de alcance y el contrato mínimo de integración. Después implementa y verifica lo autorizado sin preguntas de trámite. Detente solo ante credenciales, decisiones materiales o compuertas que realmente requieran al operador.
+
+No declares “conectado”, “sincronizado” o “publicado” por tener código, un commit o una respuesta HTTP aislada. Entrega revisiones exactas, pruebas, evidencia persistida, límites y siguiente paso verificable.
+10:42 AM
+Planning tool usage
+Retomo el mismo frente y el mismo canon. Primero contrastaré la ampliación con las fuentes vigentes y fijaré el contrato mínimo; después avanzaré sobre backend, autorización y publicación. Mantengo dos límites: ninguna entrada privada se publica por encontrarla en Khora, y la primera publicación real requiere texto y formato aprobados. No usaré acceso remoto ni crearé otro constructor.
+
+Worked for 1m 50s
+La revalidación confirma el bloqueo de Khora: NORM_GITHUB_CREDENTIAL_REJECTED, con respuesta 401 al leer sus instrucciones. Es distinto de mi conexión GitHub, que sí funciona. Además, la conexión Vercel pide reautenticación; no puedo corregir todavía la credencial del servidor por esa vía.
+
+Delta de alcance: el puente asistido pasa a un flujo editorial autenticado con sincronización y comprobantes separados por destino. El contrato mínimo separará original privado, metadatos propuestos con anclas, versión pública exacta aprobada y estados independientes de blog/Facebook. La publicación dudosa no se repetirá a ciegas. Sigo con implementación y pruebas sin tocar captura ni dictado. Metacanon adquirido: 1.6 · METACANON-OBJETOS-v1.6, sin cambios respecto al canon previo.
+
+Worked for 8m 28s
+La coordinación fija una sola decisión: «Sí» autoriza blog y Página de Facebook para esa versión exacta; «No» conserva el registro archivado sin publicar. No añadiré un selector de destinos. Mantendré comprobantes separados para recuperar un fallo parcial sin repetir el destino que ya salió bien.
+
+Los bloqueos de activación siguen siendo la credencial normativa de Khora, el acceso administrativo a la Página y el texto/formato de la primera nota. El contrato y las pruebas pueden avanzar sin exponer datos privados; todavía no hay evidencia de publicación conjunta.
+
+Worked for 21m 48s
+El código ya está en la solicitud de cambios 329, en borrador: consentimiento conjunto por versión, acceso limitado del protocolo de contexto del modelo (MCP), propuestas de metadatos con anclas y cola con comprobantes separados para blog y Facebook. No lo he fusionado ni activado.⁠
+
+⁠
+
+Las pruebas locales pasaron: 26 de dominio y transportes, un escenario transaccional de PostgreSQL aislado y la regresión del blog existente. Eso no acredita todavía el despliegue ni la publicación real. Para activar faltan la reparación administrativa de Khora/Vercel, la autorización oficial de la Página y una nota con texto y formato aprobados. No necesito que pegues secretos en el chat.
+
+Worked for 5m 23s
+Actualización de acceso: Vercel ya responde; pude verificar el proyecto khora-web. El aviso anterior de reautenticación queda como antecedente, no como estado actual. Esto permite revisar el despliegue, pero no prueba que se haya reparado la credencial con la que Khora lee sus instrucciones.
+
+Worked for 13m 53s
+Confirmado: el audio pasa a ser parte obligatoria de la entrada pública. La aprobación del flujo anterior, basado solo en texto, ya no será válida. Bloquearé ese envío mientras falten el audio exacto verificado, su vista previa reproducible y el consentimiento que cubra la exposición de la voz; “ofuscada” no la anonimiza.
+
+El checkpoint viable es conservar el núcleo editorial y su evidencia, pero sin activar publicación. El archivado íntegro que está resolviendo Ingreso es una dependencia previa real. Con el límite de 24 minutos, no puedo prometer una publicación conjunta comprobada mientras ese archivo y el acceso normativo sigan fallando. No cambiaré secretos ni tocaré sus archivos.
+
+Worked for 7m 25s
+No puedo cerrar ahora la publicación con audio en ambos destinos. El bloqueo no es solo Facebook: todavía falta implementar y desplegar la exportación del audio archivado, su reproducción pública y la aprobación que cubra texto y audio. El servidor ya rechaza la aprobación del flujo anterior; no voy a habilitarlo como si cumpliera.
+
+Que puedas entrar como administrador de Facebook ayuda, pero no acredita acceso para publicar mediante su API. No abriré el navegador del agente ni seguiré investigando las capturas recuperadas. Tampoco te pediré un token mientras el flujo de audio no esté listo.
+
+Worked for 2m 39s
+El blog existe, pero la publicación de una nota con audio en blog y Facebook no quedó operativa. No hay una primera nota real publicada ni puedo prometer ese cierre dentro del tiempo indicado.
+
+Código guardado: solicitud 329, en borrador, revisión 1b76690928e401fa1d21d30c8cd720c9d8655ff9. El cambio bloquea aprobar y despachar entradas del contrato anterior, que solo cubría texto. No está desplegado.⁠
+
+⁠
+Pruebas locales: 29 unitarias y un escenario transaccional aislado pasaron; también tipos estrictos del núcleo y comprobación sintáctica. No acreditan publicación real.⁠
+
+⁠
+Canon único: versión BLOG-PERSONAL-v4 guardada en la solicitud documental 17, sin fusionar: no pude verificar sus controles automáticos por un error de permisos 403. Conserva historia, contrato y pendientes; no creé otro frente.⁠
+
+⁠
+Ruta crítica pendiente: audio archivado íntegro y verificado → exportación/reproducción pública → vista previa y aprobación exacta de texto y audio → integración y despliegue → comprobación del blog → Facebook y comprobante separado. La autorización oficial de la Página y el acceso normativo de Khora siguen sin resolución acreditada.⁠
+
+⁠
+
+No abrí el navegador del agente, no cambié secretos y no seguí diagnosticando las capturas recuperadas. Poder iniciar sesión como administrador de Facebook no sustituye los permisos de publicación de su aplicación. No necesitas pasarme un token ahora: primero falta completar el flujo de audio. “No publicar” permanece independiente; no se transforma en consentimiento pendiente.
+
+11:47 AM
+Dictado
+Recibido: para este corte se permite publicar solo la transcripción; el audio se conserva privado. Retiraré únicamente el bloqueo por audio, sin quitar la revisión, el consentimiento por versión ni los controles de propietario y acceso normativo.
+
+Los bloqueos restantes no desaparecen: el backend sigue sin desplegar y no hay una aplicación Meta identificada ni permisos de publicación acreditados. El endpoint recibe un borrador ya preparado; no genera por sí solo una transcripción ordenada y formateada. No puedo prometer la publicación real dentro del corte.
+
+Worked for 2m 27s
+Retomado el corte solo transcripción, con audio privado. Retiré únicamente el bloqueo por audio en el código de la solicitud 329, revisión 7924fc760834ea10b7d02f8548c49a95250f5257; no está desplegado. Se mantienen revisión, consentimiento exacto y controles de acceso.⁠
+
+⁠
+
+Pasaron 29 pruebas unitarias y un escenario transaccional aislado. Envié al hilo central el checkpoint y los bloqueos: migraciones/despliegue pendientes, acceso normativo sin reparación acreditada y aplicación/permisos Meta sin identificar. El endpoint recibe un borrador preparado; no lo ordena ni formatea automáticamente. No hay publicación real acreditada ni un plazo de cierre verificable.⁠
+
+⁠
+
+11:51 AM
+Dictado
+Worked for 1m 34s
+Entregado al hilo central: inventario exacto de los 23 archivos, orden de migraciones y un comando de pruebas/build que conserva todas las comprobaciones previas.
+
+Aclaración importante: mi migración se llama 20261019_blog_editorial.sql, no 033; indiqué cómo evitar aplicarla dos veces si se renumera.
+
+Archivos Blog congelados mientras consolidas. No ejecutaré cambios concurrentes, migraciones, despliegues ni publicaciones.
+
+11:54 AM
+Dictado
+Worked for 5m 49s
+Módulo independiente implementado y entregado para consolidación. Revisión final fea4b676e6784bc5041207673ca6eb6d6155299b, precedida por 9232e6ea5b01aa04ccdc1be64842dbd3050028a4. Solo dos archivos nuevos; ningún archivo congelado modificado.⁠
+
+⁠
+
+Prepara párrafos conservando orden, palabras, atribución, énfasis e incertidumbre; devuelve anclas al original y título literal propuesto. No reescribe hechos ni inventa fechas.
+13 pruebas pasaron, incluida compatibilidad con el generador público real y verificación del proveedor mediante transportes simulados. Tipos estrictos y huellas remotas comprobados.
+Hallazgo para integrar: Pages acepta slugs de hasta 100 caracteres; el dominio anterior admitía 120. Entregué un guard adicional para aplicarlo también en servidor.⁠
+
+⁠
+Envié al coordinador instrucciones mínimas y comando reproducible. Sin merge, despliegue ni publicación real. Meta sigue sin aplicación/permisos identificados; no se solicitaron secretos ni se usó navegador.
+
+12:06 PM
+Dictado
+Recibido el checkpoint 19b3966b6cdefc6edebea7d18e8e88acf102356b de PR330. Integración y pruebas quedan como reporte del coordinador, no como verificación propia de producción.
+
+Mantengo los archivos Blog congelados: sin pushes, cambios nuevos, merge, migraciones, despliegue ni publicación. La continuidad y el reporte quedan centralizados en tu hilo.
+
+12:20 PM

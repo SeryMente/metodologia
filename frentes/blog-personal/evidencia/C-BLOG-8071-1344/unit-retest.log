@@ -1,0 +1,17 @@
+✔ revision starts at 1 and replacement preview follows inspected server revision (2.309933ms)
+✔ proposal binds owner, receipt version, source hash, publication and UTF8 body hash (15.473249ms)
+✔ proposal is not consent, not an exact preview and does not duplicate original (1.238217ms)
+✔ tokens and arbitrary model response fields are not serialized into proposal (0.874667ms)
+✔ another owner, source, version, publication or revision cannot reuse proposal (3.791363ms)
+✔ edited body/title/facebook/review flag without recomputed binding is rejected (2.814024ms)
+✔ context required; limits reject rather than truncate and original remains unchanged (0.457923ms)
+✔ legacy rows without proposal remain readable and no proof is invented (0.09559ms)
+✔ prepared proposal cannot silently differ from the requested public revision (1.453912ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 266.055777

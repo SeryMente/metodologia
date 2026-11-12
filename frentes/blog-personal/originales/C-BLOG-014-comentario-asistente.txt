@@ -1,0 +1,1 @@
+Actualizaré el mismo canon desde **v16**, usando el evento **1478** como fuente literal y el Metacanon **1.8**. Separaré la historia técnica de la verificación actual reportada por Central, sin tocar código, proveedores ni despliegues.

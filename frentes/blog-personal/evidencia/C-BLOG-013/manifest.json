@@ -1,0 +1,37 @@
+{
+  "cycle": "C-BLOG-013",
+  "coverage": "Solo seis archivos del delta y objeto; excluye este manifiesto, no revalida históricos",
+  "baseObjectBlob": "1e827bbb3966ec4035bb60923fc091a6a2c4b326",
+  "files": {
+    "originales/C-BLOG-013-evento1515-normalizado.json": {
+      "sha256": "d92d9acca6db98e0163e7ce719d2d2790239fb2454b1729a050db9e5e761d99c",
+      "git_blob": "3a7b9f2d891bb3fc0493d54ce568d20f4dbb7b33",
+      "bytes": 22434
+    },
+    "originales/C-BLOG-013-transferencia-blog2.txt": {
+      "sha256": "04c2259518089daa1a7094a66d069ece8a91219f6d1589e02d898926a3f5645c",
+      "git_blob": "f7cdea4a514cb974830a425c6dde2c33c84d4574",
+      "bytes": 22121
+    },
+    "evidencia/C-BLOG-013/objeto-anterior-v15.md": {
+      "sha256": "838f2ec0e96193146a8f5bb76c8a7d164cb6fa74d31820385e717920a1521109",
+      "git_blob": "1e827bbb3966ec4035bb60923fc091a6a2c4b326",
+      "bytes": 101930
+    },
+    "originales/C-BLOG-013-cierre.txt": {
+      "sha256": "7d46d53981411b333ff8d92b4f1b95d94272e99d9870c7e30c9494dcda515e5b",
+      "git_blob": "3912d9d0da381fea9cc5af6b9839829ef03a2ba6",
+      "bytes": 1044
+    },
+    "evidencia/C-BLOG-013/procedencia.md": {
+      "sha256": "6958c6d124673e16832ff277000f3f0722fa6eb5d3b8b730480aa3d68db3bb55",
+      "git_blob": "40cf0c5787403490f7bc1c585130f8c14cd635a8",
+      "bytes": 2592
+    },
+    "OBJETO-CANONICO.md": {
+      "sha256": "80a27247f688dc2890dede66aa9189f55e8ff8a178fe3a1be90327d612f81656",
+      "git_blob": "ae8fef30a9fc4bd34988ec41e13869bd787b0ef3",
+      "bytes": 104536
+    }
+  }
+}

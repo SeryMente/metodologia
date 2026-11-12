@@ -1,0 +1,3 @@
+La coordinación fija una sola decisión: **«Sí» autoriza blog y Página de Facebook para esa versión exacta; «No» conserva el registro archivado sin publicar.** No añadiré un selector de destinos. Mantendré comprobantes separados para recuperar un fallo parcial sin repetir el destino que ya salió bien.
+
+Los bloqueos de activación siguen siendo la credencial normativa de Khora, el acceso administrativo a la Página y el texto/formato de la primera nota. El contrato y las pruebas pueden avanzar sin exponer datos privados; todavía no hay evidencia de publicación conjunta.

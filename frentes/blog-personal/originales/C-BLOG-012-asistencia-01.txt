@@ -1,0 +1,3 @@
+**Identidad confirmada: este hilo es BLOG; Central conserva Ingreso/Dictado y la elaboración editorial. Fuente personal cargada: NX-332m.** Revalidé también el metacanon 1.6 y el canon Blog v14/C011.
+
+Retomo una tarea independiente: cotejar que el proveedor publique y compruebe **la representación exacta aprobada**, sin confundir texto prellenado, entrega o respuesta HTTP con consentimiento y publicación verificadas. Asumo para ese trabajo `khora-web/lib/server/blog/providers.ts` y una prueba nueva `khora-web/tests/unit/blog-provider-readback.test.ts`; anunciaré cualquier necesidad de otro archivo antes de tocarlo. No modificaré el consumidor compartido ni el criterio editorial de Central.

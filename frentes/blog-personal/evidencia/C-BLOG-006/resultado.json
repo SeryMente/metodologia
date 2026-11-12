@@ -1,0 +1,53 @@
+{
+  "base": "7826aa537e6573fd99edffd4bd19eae57cc8b94f",
+  "commit": "3fcfe4cd0b186c80bfe6b55b579eb6c99a620398",
+  "readback": "7/7 initial + 4/4 changed final Git blobs exact; unchanged3 inherited",
+  "files": {
+    "khora-web/app/sistema/blog/page.tsx": {
+      "blob": "c6dad872cf68d08c46ad2d2cdb2adde9e83e502d",
+      "sha256": "c543a7515cfe8b4638a0f424ae8d4839c1192f18691c899f598bab713df2c254"
+    },
+    "khora-web/app/components/blog/BlogTextWorkspace.tsx": {
+      "blob": "ebe51ef876079b13385abef0ebada8449c6123d0",
+      "sha256": "e5bc67bac0a2688285a844394e3ddfb77ec54cbedf3f08ebca713b47514f849d"
+    },
+    "khora-web/lib/blog/text-workflow.ts": {
+      "blob": "8703abf9eae6e367d948807711e630939d44bf92",
+      "sha256": "a71eca1997e9a866a012281906da0d773aad849452cd695abfeef972260c9330"
+    },
+    "khora-web/tests/unit/blog-text-workflow.test.ts": {
+      "blob": "2262915b371770a0e82ae527e239e27443422944",
+      "sha256": "af292f18ec2661ba613b054cd096d4e07001b9a4dce023d3c7fc75292409c3ac"
+    },
+    "khora-web/tests/browser/blog-text-workflow.local.test.mjs": {
+      "blob": "31e76c7853c08fa44fb02b8b27231190109afb11",
+      "sha256": "d70969fcdc4b31d851ebefd533271b4a0b8cad3275f868d65893778d942ee912"
+    },
+    "khora-web/lib/server/blog/repository.ts": {
+      "blob": "af06eb949053b0f466bf77c55eed702c916ef8cc",
+      "sha256": "5d9005cb2b0fcf702f21007b1ad298dff81fa55db803c41c9b0adc741195b7a9"
+    },
+    "khora-web/app/api/blog/editorial/route.ts": {
+      "blob": "ef7be16e4eb22923804445e2f66bdbf388505f52",
+      "sha256": "fbff3b0e83fc5faf4d1579722c11d46df3b6881199a905aa020714a69452b831"
+    }
+  },
+  "unit": {
+    "tests": 88,
+    "pass": 88,
+    "skip": 0
+  },
+  "browser": {
+    "scope": "isolated local React/WebCrypto; synthetic HTTP API, receipts and auth/normative; NO real publication",
+    "checks": 27,
+    "apiRequests": 12,
+    "archiveRequests": 2,
+    "approvalRequests": 1,
+    "errors": []
+  },
+  "strict_types": "TypeScript5.9.3 core+ReactJSX, exit0",
+  "publication": false,
+  "intermediate_commit": "0345946aa826f6a2cce33dfa4cb7dff3f7a9903e",
+  "causal_approval": "0345946 fails new negative; final passes, no approved fabrication",
+  "technical_remaining": "integration/fullNextBuild/real gated runtime/operator review and provider configuration/approved note/receipts pending"
+}

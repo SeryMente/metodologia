@@ -1,0 +1,5 @@
+Recibida la referencia del nuevo central. Auditaré solo el consumidor y su contrato de fuente/recibo; no tocaré Ingreso ni el test reservado. Después guardaré el resultado en el canon Blog y comunicaré el delta mínimo, sin publicar ni promover cambios.
+
+El consumidor ya está conectado en código: recibe el texto y el recibo de Ingreso y prepara la previa sin pasar por `/sistema/blog`. No veo necesaria otra captura. Quedan dos cautelas para la prueba integrada: Facebook preselecciona `full_text`, y el guardado local conserva el primer borrador en los reintentos. Las registraré como riesgos concretos, no como fallos reproducidos.
+
+La nueva orden levanta la pausa para el trabajo seguro, no las compuertas de publicación. Validaré el consumidor real en Chromium con texto y recibos sintéticos, sin modificar Ingreso ni el test reservado. Asumo únicamente el nuevo test `khora-web/tests/browser/blog-ingreso-receipt.local.test.mjs`; cualquier corrección compartida se coordinará antes de escribir.

@@ -1,0 +1,977 @@
+TAP version 13
+# Subtest: stable contract and mandatory sufficient labels, empty remains pending
+not ok 1 - stable contract and mandatory sufficient labels, empty remains pending
+  ---
+  duration_ms: 5.672422
+  type: 'test'
+  location: '/data/cronica-c015/baseline-out/tests/unit/cronica-coverage.test.js:10:25'
+  failureType: 'testCodeFailure'
+  error: |-
+    The input did not match the regular expression /mínimo suficiente/. Input:
+    
+    'Momento o fecha (opcional)'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual: 'Momento o fecha (opcional)'
+  operator: 'match'
+  stack: |-
+    TestContext.<anonymous> (/data/cronica-c015/baseline-out/tests/unit/cronica-coverage.test.js:16:26)
+    Test.runInAsyncScope (node:async_hooks:228:14)
+    Test.run (node:internal/test_runner/test:1118:25)
+    Test.start (node:internal/test_runner/test:1015:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17)
+  ...
+# Subtest: explicit narrative: Hoy trabajé en casa.
+ok 2 - explicit narrative: Hoy trabajé en casa.
+  ---
+  duration_ms: 7.991999
+  type: 'test'
+  ...
+# Subtest: explicit narrative: Ayer caminé en el parque.
+ok 3 - explicit narrative: Ayer caminé en el parque.
+  ---
+  duration_ms: 3.126097
+  type: 'test'
+  ...
+# Subtest: explicit narrative: El lunes escribí en la biblioteca.
+ok 4 - explicit narrative: El lunes escribí en la biblioteca.
+  ---
+  duration_ms: 0.25541
+  type: 'test'
+  ...
+# Subtest: explicit narrative: El 19 de octubre de 2026 estudié en Querétaro.
+ok 5 - explicit narrative: El 19 de octubre de 2026 estudié en Querétaro.
+  ---
+  duration_ms: 0.450326
+  type: 'test'
+  ...
+# Subtest: explicit narrative: 2026-10-19 estuve en la oficina.
+ok 6 - explicit narrative: 2026-10-19 estuve en la oficina.
+  ---
+  duration_ms: 0.178353
+  type: 'test'
+  ...
+# Subtest: uncertain/negative/future/attributed remains pending: Quizá ayer fui al parque.
+ok 7 - uncertain/negative/future/attributed remains pending: Quizá ayer fui al parque.
+  ---
+  duration_ms: 0.19779
+  type: 'test'
+  ...
+# Subtest: uncertain/negative/future/attributed remains pending: Tal vez hoy trabajé en casa.
+ok 8 - uncertain/negative/future/attributed remains pending: Tal vez hoy trabajé en casa.
+  ---
+  duration_ms: 0.130428
+  type: 'test'
+  ...
+# Subtest: uncertain/negative/future/attributed remains pending: Creo que estuve en Querétaro.
+ok 9 - uncertain/negative/future/attributed remains pending: Creo que estuve en Querétaro.
+  ---
+  duration_ms: 0.201347
+  type: 'test'
+  ...
+# Subtest: uncertain/negative/future/attributed remains pending: No recuerdo si ayer caminé en casa.
+ok 10 - uncertain/negative/future/attributed remains pending: No recuerdo si ayer caminé en casa.
+  ---
+  duration_ms: 0.270377
+  type: 'test'
+  ...
+# Subtest: uncertain/negative/future/attributed remains pending: No fui ayer a la biblioteca.
+ok 11 - uncertain/negative/future/attributed remains pending: No fui ayer a la biblioteca.
+  ---
+  duration_ms: 3.424089
+  type: 'test'
+  ...
+# Subtest: uncertain/negative/future/attributed remains pending: Nunca trabajé en casa.
+ok 12 - uncertain/negative/future/attributed remains pending: Nunca trabajé en casa.
+  ---
+  duration_ms: 0.151744
+  type: 'test'
+  ...
+# Subtest: uncertain/negative/future/attributed remains pending: Mañana iré a la oficina.
+ok 13 - uncertain/negative/future/attributed remains pending: Mañana iré a la oficina.
+  ---
+  duration_ms: 0.072596
+  type: 'test'
+  ...
+# Subtest: uncertain/negative/future/attributed remains pending: Si hoy estuviera en casa, escribiría.
+ok 14 - uncertain/negative/future/attributed remains pending: Si hoy estuviera en casa, escribiría.
+  ---
+  duration_ms: 0.054027
+  type: 'test'
+  ...
+# Subtest: uncertain/negative/future/attributed remains pending: Según Ana, ayer fui a la biblioteca.
+ok 15 - uncertain/negative/future/attributed remains pending: Según Ana, ayer fui a la biblioteca.
+  ---
+  duration_ms: 0.069617
+  type: 'test'
+  ...
+# Subtest: uncertain/negative/future/attributed remains pending: Me dijeron que ayer trabajé en casa.
+ok 16 - uncertain/negative/future/attributed remains pending: Me dijeron que ayer trabajé en casa.
+  ---
+  duration_ms: 0.085025
+  type: 'test'
+  ...
+# Subtest: uncertain/negative/future/attributed remains pending: “Hoy trabajé en casa”.
+ok 17 - uncertain/negative/future/attributed remains pending: “Hoy trabajé en casa”.
+  ---
+  duration_ms: 0.210262
+  type: 'test'
+  ...
+# Subtest: uncertain/negative/future/attributed remains pending: Ella dijo que hoy trabajé en casa.
+ok 18 - uncertain/negative/future/attributed remains pending: Ella dijo que hoy trabajé en casa.
+  ---
+  duration_ms: 0.060598
+  type: 'test'
+  ...
+# Subtest: uncertain/negative/future/attributed remains pending: Ella trabajó ayer en casa.
+ok 19 - uncertain/negative/future/attributed remains pending: Ella trabajó ayer en casa.
+  ---
+  duration_ms: 0.07982
+  type: 'test'
+  ...
+# Subtest: deletion reopens every item, no sticky state
+ok 20 - deletion reopens every item, no sticky state
+  ---
+  duration_ms: 0.277214
+  type: 'test'
+  ...
+# Subtest: independent clauses do not inherit an earlier denial
+ok 21 - independent clauses do not inherit an earlier denial
+  ---
+  duration_ms: 0.132961
+  type: 'test'
+  ...
+# Subtest: contrast correction uses literal positive clause
+ok 22 - contrast correction uses literal positive clause
+  ---
+  duration_ms: 0.217336
+  type: 'test'
+  ...
+# Subtest: literal evidence, no normalization/inferred date
+ok 23 - literal evidence, no normalization/inferred date
+  ---
+  duration_ms: 0.222883
+  type: 'test'
+  ...
+# Subtest: each cue is analyzed independently, not a conservation gate
+ok 24 - each cue is analyzed independently, not a conservation gate
+  ---
+  duration_ms: 0.167017
+  type: 'test'
+  ...
+# Subtest: identity assertion is not activity or proof
+ok 25 - identity assertion is not activity or proof
+  ---
+  duration_ms: 0.118417
+  type: 'test'
+  ...
+# Subtest: emotion not guessed into location
+ok 26 - emotion not guessed into location
+  ---
+  duration_ms: 0.094005
+  type: 'test'
+  ...
+# Subtest: platform is not inferred physical location
+ok 27 - platform is not inferred physical location
+  ---
+  duration_ms: 0.077075
+  type: 'test'
+  ...
+# Subtest: month and number are not inferred location
+ok 28 - month and number are not inferred location
+  ---
+  duration_ms: 0.150283
+  type: 'test'
+  ...
+# Subtest: unknown lowercase place may remain pending
+ok 29 - unknown lowercase place may remain pending
+  ---
+  duration_ms: 0.107803
+  type: 'test'
+  ...
+# Subtest: quoted cues cannot cover reported content
+ok 30 - quoted cues cannot cover reported content
+  ---
+  duration_ms: 0.098095
+  type: 'test'
+  ...
+# Subtest: unquoted own activity survives quoted embedded content
+ok 31 - unquoted own activity survives quoted embedded content
+  ---
+  duration_ms: 0.154172
+  type: 'test'
+  ...
+# Subtest: unqualified third person cannot cover own activity
+ok 32 - unqualified third person cannot cover own activity
+  ---
+  duration_ms: 0.084496
+  type: 'test'
+  ...
+# Subtest: vague reflection not filled with invented clues
+ok 33 - vague reflection not filled with invented clues
+  ---
+  duration_ms: 0.089457
+  type: 'test'
+  ...
+# Subtest: arbitrary long free narrative is not truncated or rejected
+ok 34 - arbitrary long free narrative is not truncated or rejected
+  ---
+  duration_ms: 8.346443
+  type: 'test'
+  ...
+# Subtest: repeatability and returned values do not leak state
+ok 35 - repeatability and returned values do not leak state
+  ---
+  duration_ms: 0.220642
+  type: 'test'
+  ...
+# Subtest: past morning is not confused with future tomorrow
+ok 36 - past morning is not confused with future tomorrow
+  ---
+  duration_ms: 0.105044
+  type: 'test'
+  ...
+# Subtest: activity noun alone does not assert first person
+ok 37 - activity noun alone does not assert first person
+  ---
+  duration_ms: 0.090608
+  type: 'test'
+  ...
+# Subtest: contracted locative al is recognized
+ok 38 - contracted locative al is recognized
+  ---
+  duration_ms: 0.079677
+  type: 'test'
+  ...
+# Subtest: unclosed quote in live transcript never becomes own evidence
+ok 39 - unclosed quote in live transcript never becomes own evidence
+  ---
+  duration_ms: 0.11266
+  type: 'test'
+  ...
+# Subtest: past morning phrase is retained without guessing future
+ok 40 - past morning phrase is retained without guessing future
+  ---
+  duration_ms: 0.111499
+  type: 'test'
+  ...
+# Subtest: quoted multi-sentence narrative never becomes operator evidence
+ok 41 - quoted multi-sentence narrative never becomes operator evidence
+  ---
+  duration_ms: 0.111935
+  type: 'test'
+  ...
+# Subtest: unclosed multi-sentence quote stays masked during live dictation
+ok 42 - unclosed multi-sentence quote stays masked during live dictation
+  ---
+  duration_ms: 0.094807
+  type: 'test'
+  ...
+# Subtest: own narrative after closed quote remains eligible
+ok 43 - own narrative after closed quote remains eligible
+  ---
+  duration_ms: 0.082668
+  type: 'test'
+  ...
+# Subtest: reported own general location: Estoy en el cibercafé Louis Pasteur.
+not ok 44 - reported own general location: Estoy en el cibercafé Louis Pasteur.
+  ---
+  duration_ms: 0.835489
+  type: 'test'
+  location: '/data/cronica-c015/baseline-out/tests/unit/cronica-coverage.test.js:78:29'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    false !== true
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/data/cronica-c015/baseline-out/tests/unit/cronica-coverage.test.js:80:26)
+    Test.runInAsyncScope (node:async_hooks:228:14)
+    Test.run (node:internal/test_runner/test:1118:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+    Test.postRun (node:internal/test_runner/test:1247:19)
+    Test.run (node:internal/test_runner/test:1175:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:787:7)
+  ...
+# Subtest: reported own general location: Estoy en el cybernet de la calle Luis Pasteur.
+not ok 45 - reported own general location: Estoy en el cybernet de la calle Luis Pasteur.
+  ---
+  duration_ms: 0.270993
+  type: 'test'
+  location: '/data/cronica-c015/baseline-out/tests/unit/cronica-coverage.test.js:78:29'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    false !== true
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/data/cronica-c015/baseline-out/tests/unit/cronica-coverage.test.js:80:26)
+    Test.runInAsyncScope (node:async_hooks:228:14)
+    Test.run (node:internal/test_runner/test:1118:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+    Test.postRun (node:internal/test_runner/test:1247:19)
+    Test.run (node:internal/test_runner/test:1175:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:787:7)
+  ...
+# Subtest: explicit street correction keeps latest literal anchor
+not ok 46 - explicit street correction keeps latest literal anchor
+  ---
+  duration_ms: 0.237702
+  type: 'test'
+  location: '/data/cronica-c015/baseline-out/tests/unit/cronica-coverage.test.js:85:25'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    false !== true
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/data/cronica-c015/baseline-out/tests/unit/cronica-coverage.test.js:88:22)
+    Test.runInAsyncScope (node:async_hooks:228:14)
+    Test.run (node:internal/test_runner/test:1118:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+    Test.postRun (node:internal/test_runner/test:1247:19)
+    Test.run (node:internal/test_runner/test:1175:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:787:7)
+  ...
+# Subtest: date assertion with del and following weekday
+ok 47 - date assertion with del and following weekday
+  ---
+  duration_ms: 0.138199
+  type: 'test'
+  ...
+# Subtest: bare estoy is not an activity: Estoy cansado.
+not ok 48 - bare estoy is not an activity: Estoy cansado.
+  ---
+  duration_ms: 0.226153
+  type: 'test'
+  location: '/data/cronica-c015/baseline-out/tests/unit/cronica-coverage.test.js:98:29'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    true !== false
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: false
+  actual: true
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/data/cronica-c015/baseline-out/tests/unit/cronica-coverage.test.js:98:95)
+    Test.runInAsyncScope (node:async_hooks:228:14)
+    Test.run (node:internal/test_runner/test:1118:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+    Test.postRun (node:internal/test_runner/test:1247:19)
+    Test.run (node:internal/test_runner/test:1175:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:787:7)
+  ...
+# Subtest: bare estoy is not an activity: Estoy aquí.
+not ok 49 - bare estoy is not an activity: Estoy aquí.
+  ---
+  duration_ms: 0.167212
+  type: 'test'
+  location: '/data/cronica-c015/baseline-out/tests/unit/cronica-coverage.test.js:98:29'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    true !== false
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: false
+  actual: true
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/data/cronica-c015/baseline-out/tests/unit/cronica-coverage.test.js:98:95)
+    Test.runInAsyncScope (node:async_hooks:228:14)
+    Test.run (node:internal/test_runner/test:1118:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+    Test.postRun (node:internal/test_runner/test:1247:19)
+    Test.run (node:internal/test_runner/test:1175:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:787:7)
+  ...
+# Subtest: bare estoy is not an activity: Estoy en casa.
+not ok 50 - bare estoy is not an activity: Estoy en casa.
+  ---
+  duration_ms: 0.141017
+  type: 'test'
+  location: '/data/cronica-c015/baseline-out/tests/unit/cronica-coverage.test.js:98:29'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    true !== false
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: false
+  actual: true
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/data/cronica-c015/baseline-out/tests/unit/cronica-coverage.test.js:98:95)
+    Test.runInAsyncScope (node:async_hooks:228:14)
+    Test.run (node:internal/test_runner/test:1118:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+    Test.postRun (node:internal/test_runner/test:1247:19)
+    Test.run (node:internal/test_runner/test:1175:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:787:7)
+  ...
+# Subtest: bare estoy is not an activity: Estoy seguro.
+not ok 51 - bare estoy is not an activity: Estoy seguro.
+  ---
+  duration_ms: 0.131969
+  type: 'test'
+  location: '/data/cronica-c015/baseline-out/tests/unit/cronica-coverage.test.js:98:29'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    true !== false
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: false
+  actual: true
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/data/cronica-c015/baseline-out/tests/unit/cronica-coverage.test.js:98:95)
+    Test.runInAsyncScope (node:async_hooks:228:14)
+    Test.run (node:internal/test_runner/test:1118:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+    Test.postRun (node:internal/test_runner/test:1247:19)
+    Test.run (node:internal/test_runner/test:1175:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:787:7)
+  ...
+# Subtest: present first-person dictation is activity
+ok 52 - present first-person dictation is activity
+  ---
+  duration_ms: 0.09464
+  type: 'test'
+  ...
+# Subtest: remote qualifier cannot revoke earlier own assertion:  y no recuerdo si mañana iré al parque
+not ok 53 - remote qualifier cannot revoke earlier own assertion:  y no recuerdo si mañana iré al parque
+  ---
+  duration_ms: 0.685891
+  type: 'test'
+  location: '/data/cronica-c015/baseline-out/tests/unit/cronica-coverage.test.js:101:29'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+    
+      [
+    +   false,
+    +   false,
+    +   false
+    -   true,
+    -   true,
+    -   true
+      ]
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    0: true
+    1: true
+    2: true
+  actual:
+    0: false
+    1: false
+    2: false
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (/data/cronica-c015/baseline-out/tests/unit/cronica-coverage.test.js:104:26)
+    Test.runInAsyncScope (node:async_hooks:228:14)
+    Test.run (node:internal/test_runner/test:1118:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+    Test.postRun (node:internal/test_runner/test:1247:19)
+    Test.run (node:internal/test_runner/test:1175:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:787:7)
+  ...
+# Subtest: remote qualifier cannot revoke earlier own assertion:  y supongamos que ella fue ayer a casa
+not ok 54 - remote qualifier cannot revoke earlier own assertion:  y supongamos que ella fue ayer a casa
+  ---
+  duration_ms: 0.30671
+  type: 'test'
+  location: '/data/cronica-c015/baseline-out/tests/unit/cronica-coverage.test.js:101:29'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+    
+      [
+    +   false,
+    +   false,
+    +   false
+    -   true,
+    -   true,
+    -   true
+      ]
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    0: true
+    1: true
+    2: true
+  actual:
+    0: false
+    1: false
+    2: false
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (/data/cronica-c015/baseline-out/tests/unit/cronica-coverage.test.js:104:26)
+    Test.runInAsyncScope (node:async_hooks:228:14)
+    Test.run (node:internal/test_runner/test:1118:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+    Test.postRun (node:internal/test_runner/test:1247:19)
+    Test.run (node:internal/test_runner/test:1175:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:787:7)
+  ...
+# Subtest: remote qualifier cannot revoke earlier own assertion:  no recuerdo si fui ayer al parque
+not ok 55 - remote qualifier cannot revoke earlier own assertion:  no recuerdo si fui ayer al parque
+  ---
+  duration_ms: 0.247766
+  type: 'test'
+  location: '/data/cronica-c015/baseline-out/tests/unit/cronica-coverage.test.js:101:29'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+    
+      [
+    +   false,
+    +   false,
+    +   false
+    -   true,
+    -   true,
+    -   true
+      ]
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    0: true
+    1: true
+    2: true
+  actual:
+    0: false
+    1: false
+    2: false
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (/data/cronica-c015/baseline-out/tests/unit/cronica-coverage.test.js:104:26)
+    Test.runInAsyncScope (node:async_hooks:228:14)
+    Test.run (node:internal/test_runner/test:1118:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+    Test.postRun (node:internal/test_runner/test:1247:19)
+    Test.run (node:internal/test_runner/test:1175:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:787:7)
+  ...
+# Subtest: remote qualifier cannot revoke earlier own assertion:  entonces quizá mañana vaya a casa
+not ok 56 - remote qualifier cannot revoke earlier own assertion:  entonces quizá mañana vaya a casa
+  ---
+  duration_ms: 0.21146
+  type: 'test'
+  location: '/data/cronica-c015/baseline-out/tests/unit/cronica-coverage.test.js:101:29'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+    
+      [
+    +   false,
+    +   false,
+    +   false
+    -   true,
+    -   true,
+    -   true
+      ]
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    0: true
+    1: true
+    2: true
+  actual:
+    0: false
+    1: false
+    2: false
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (/data/cronica-c015/baseline-out/tests/unit/cronica-coverage.test.js:104:26)
+    Test.runInAsyncScope (node:async_hooks:228:14)
+    Test.run (node:internal/test_runner/test:1118:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+    Test.postRun (node:internal/test_runner/test:1247:19)
+    Test.run (node:internal/test_runner/test:1175:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:787:7)
+  ...
+# Subtest: local qualification and examples remain pending: Si digo estoy en el cibercafé Louis Pasteur.
+ok 57 - local qualification and examples remain pending: Si digo estoy en el cibercafé Louis Pasteur.
+  ---
+  duration_ms: 0.104171
+  type: 'test'
+  ...
+# Subtest: local qualification and examples remain pending: Por ejemplo si digo estoy en el cibercafé Louis Pasteur.
+ok 58 - local qualification and examples remain pending: Por ejemplo si digo estoy en el cibercafé Louis Pasteur.
+  ---
+  duration_ms: 0.049425
+  type: 'test'
+  ...
+# Subtest: local qualification and examples remain pending: Ella está en el cibercafé Louis Pasteur.
+ok 59 - local qualification and examples remain pending: Ella está en el cibercafé Louis Pasteur.
+  ---
+  duration_ms: 0.049759
+  type: 'test'
+  ...
+# Subtest: local qualification and examples remain pending: No estoy en el cibercafé Louis Pasteur.
+ok 60 - local qualification and examples remain pending: No estoy en el cibercafé Louis Pasteur.
+  ---
+  duration_ms: 0.044128
+  type: 'test'
+  ...
+# Subtest: local qualification and examples remain pending: Quizá estoy en el cibercafé Louis Pasteur.
+ok 61 - local qualification and examples remain pending: Quizá estoy en el cibercafé Louis Pasteur.
+  ---
+  duration_ms: 0.039731
+  type: 'test'
+  ...
+# Subtest: local qualification and examples remain pending: Según Ana estoy en el cibercafé Louis Pasteur.
+ok 62 - local qualification and examples remain pending: Según Ana estoy en el cibercafé Louis Pasteur.
+  ---
+  duration_ms: 0.043951
+  type: 'test'
+  ...
+# Subtest: local qualification and examples remain pending: «Estoy en el cibercafé Louis Pasteur».
+ok 63 - local qualification and examples remain pending: «Estoy en el cibercafé Louis Pasteur».
+  ---
+  duration_ms: 0.043442
+  type: 'test'
+  ...
+# Subtest: local qualification and examples remain pending: Si es 19 de octubre del 2026.
+ok 64 - local qualification and examples remain pending: Si es 19 de octubre del 2026.
+  ---
+  duration_ms: 0.038724
+  type: 'test'
+  ...
+# Subtest: local qualification and examples remain pending: No es 19 de octubre del 2026.
+ok 65 - local qualification and examples remain pending: No es 19 de octubre del 2026.
+  ---
+  duration_ms: 0.038518
+  type: 'test'
+  ...
+# Subtest: local qualification and examples remain pending: Creo que es 19 de octubre del 2026.
+ok 66 - local qualification and examples remain pending: Creo que es 19 de octubre del 2026.
+  ---
+  duration_ms: 0.069786
+  type: 'test'
+  ...
+# Subtest: live deletion and replacement reopens, no previously saved coverage
+not ok 67 - live deletion and replacement reopens, no previously saved coverage
+  ---
+  duration_ms: 0.250966
+  type: 'test'
+  location: '/data/cronica-c015/baseline-out/tests/unit/cronica-coverage.test.js:110:25'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+    
+      [
+        true,
+    +   false,
+        true,
+    -   true
+      ]
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    0: true
+    1: true
+    2: true
+  actual:
+    0: true
+    1: false
+    2: true
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (/data/cronica-c015/baseline-out/tests/unit/cronica-coverage.test.js:111:22)
+    Test.runInAsyncScope (node:async_hooks:228:14)
+    Test.run (node:internal/test_runner/test:1118:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+    Test.postRun (node:internal/test_runner/test:1247:19)
+    Test.run (node:internal/test_runner/test:1175:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:787:7)
+  ...
+# Subtest: earlier remote denial does not swallow new explicit date predicate
+not ok 68 - earlier remote denial does not swallow new explicit date predicate
+  ---
+  duration_ms: 0.198298
+  type: 'test'
+  location: '/data/cronica-c015/baseline-out/tests/unit/cronica-coverage.test.js:115:25'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    false !== true
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/data/cronica-c015/baseline-out/tests/unit/cronica-coverage.test.js:117:22)
+    Test.runInAsyncScope (node:async_hooks:228:14)
+    Test.run (node:internal/test_runner/test:1118:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+    Test.postRun (node:internal/test_runner/test:1247:19)
+    Test.run (node:internal/test_runner/test:1175:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:787:7)
+  ...
+# Subtest: qualified date not split into certainty: No sé si hoy es 19 de octubre del 2026.
+ok 69 - qualified date not split into certainty: No sé si hoy es 19 de octubre del 2026.
+  ---
+  duration_ms: 0.078737
+  type: 'test'
+  ...
+# Subtest: qualified date not split into certainty: Quizá hoy es 19 de octubre del 2026.
+ok 70 - qualified date not split into certainty: Quizá hoy es 19 de octubre del 2026.
+  ---
+  duration_ms: 0.054499
+  type: 'test'
+  ...
+# Subtest: qualified date not split into certainty: Según Ana hoy es 19 de octubre del 2026.
+ok 71 - qualified date not split into certainty: Según Ana hoy es 19 de octubre del 2026.
+  ---
+  duration_ms: 0.072183
+  type: 'test'
+  ...
+# Subtest: qualified date not split into certainty: Supongamos que hoy es 19 de octubre del 2026.
+not ok 72 - qualified date not split into certainty: Supongamos que hoy es 19 de octubre del 2026.
+  ---
+  duration_ms: 0.155604
+  type: 'test'
+  location: '/data/cronica-c015/baseline-out/tests/unit/cronica-coverage.test.js:120:29'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    true !== false
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: false
+  actual: true
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/data/cronica-c015/baseline-out/tests/unit/cronica-coverage.test.js:120:105)
+    Test.runInAsyncScope (node:async_hooks:228:14)
+    Test.run (node:internal/test_runner/test:1118:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+    Test.postRun (node:internal/test_runner/test:1247:19)
+    Test.run (node:internal/test_runner/test:1175:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:787:7)
+  ...
+# Subtest: explicit self-retraction clears prior cues without deleting source
+not ok 73 - explicit self-retraction clears prior cues without deleting source
+  ---
+  duration_ms: 0.212534
+  type: 'test'
+  location: '/data/cronica-c015/baseline-out/tests/unit/cronica-coverage.test.js:121:25'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+    
+      [
+    +   true,
+    +   true,
+    +   true
+    -   false,
+    -   false,
+    -   false
+      ]
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    0: false
+    1: false
+    2: false
+  actual:
+    0: true
+    1: true
+    2: true
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (/data/cronica-c015/baseline-out/tests/unit/cronica-coverage.test.js:121:119)
+    Test.runInAsyncScope (node:async_hooks:228:14)
+    Test.run (node:internal/test_runner/test:1118:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+    Test.postRun (node:internal/test_runner/test:1247:19)
+    Test.run (node:internal/test_runner/test:1175:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:787:7)
+  ...
+# Subtest: uncertain correction reopens rather than retaining the old assertion
+not ok 74 - uncertain correction reopens rather than retaining the old assertion
+  ---
+  duration_ms: 0.189466
+  type: 'test'
+  location: '/data/cronica-c015/baseline-out/tests/unit/cronica-coverage.test.js:122:25'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+    
+      [
+    +   true,
+    +   true,
+    +   true
+    -   false,
+    -   false,
+    -   false
+      ]
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    0: false
+    1: false
+    2: false
+  actual:
+    0: true
+    1: true
+    2: true
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (/data/cronica-c015/baseline-out/tests/unit/cronica-coverage.test.js:122:121)
+    Test.runInAsyncScope (node:async_hooks:228:14)
+    Test.run (node:internal/test_runner/test:1118:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+    Test.postRun (node:internal/test_runner/test:1247:19)
+    Test.run (node:internal/test_runner/test:1175:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:787:7)
+  ...
+# Subtest: discourse boundary cannot release conditional or reported scope: Si ahora trabajo en casa.
+ok 75 - discourse boundary cannot release conditional or reported scope: Si ahora trabajo en casa.
+  ---
+  duration_ms: 0.081481
+  type: 'test'
+  ...
+# Subtest: discourse boundary cannot release conditional or reported scope: Creo que ahora trabajo en casa.
+ok 76 - discourse boundary cannot release conditional or reported scope: Creo que ahora trabajo en casa.
+  ---
+  duration_ms: 0.042269
+  type: 'test'
+  ...
+# Subtest: discourse boundary cannot release conditional or reported scope: Según Ana entonces hoy trabajé en casa.
+ok 77 - discourse boundary cannot release conditional or reported scope: Según Ana entonces hoy trabajé en casa.
+  ---
+  duration_ms: 0.09663
+  type: 'test'
+  ...
+# Subtest: discourse boundary cannot release conditional or reported scope: Supongamos que trabajo en casa y yo escribo en la biblioteca.
+not ok 78 - discourse boundary cannot release conditional or reported scope: Supongamos que trabajo en casa y yo escribo en la biblioteca.
+  ---
+  duration_ms: 0.201057
+  type: 'test'
+  location: '/data/cronica-c015/baseline-out/tests/unit/cronica-coverage.test.js:124:29'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly deep-equal:
+    + actual - expected
+    
+      [
+        false,
+    +   true,
+    +   true
+    -   false,
+    -   false
+      ]
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+    0: false
+    1: false
+    2: false
+  actual:
+    0: false
+    1: true
+    2: true
+  operator: 'deepStrictEqual'
+  stack: |-
+    TestContext.<anonymous> (/data/cronica-c015/baseline-out/tests/unit/cronica-coverage.test.js:124:129)
+    Test.runInAsyncScope (node:async_hooks:228:14)
+    Test.run (node:internal/test_runner/test:1118:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+    Test.postRun (node:internal/test_runner/test:1247:19)
+    Test.run (node:internal/test_runner/test:1175:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:787:7)
+  ...
+# Subtest: actual unpunctuated date/checklist feedback preserves explicit date
+not ok 79 - actual unpunctuated date/checklist feedback preserves explicit date
+  ---
+  duration_ms: 0.183891
+  type: 'test'
+  location: '/data/cronica-c015/baseline-out/tests/unit/cronica-coverage.test.js:126:25'
+  failureType: 'testCodeFailure'
+  error: |-
+    Expected values to be strictly equal:
+    
+    false !== true
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected: true
+  actual: false
+  operator: 'strictEqual'
+  stack: |-
+    TestContext.<anonymous> (/data/cronica-c015/baseline-out/tests/unit/cronica-coverage.test.js:129:22)
+    Test.runInAsyncScope (node:async_hooks:228:14)
+    Test.run (node:internal/test_runner/test:1118:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:787:18)
+    Test.postRun (node:internal/test_runner/test:1247:19)
+    Test.run (node:internal/test_runner/test:1175:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:787:7)
+  ...
+# Subtest: explicit same-statement retraction cannot leave a positive cue
+ok 80 - explicit same-statement retraction cannot leave a positive cue
+  ---
+  duration_ms: 0.100132
+  type: 'test'
+  ...
+1..80
+# tests 80
+# suites 0
+# pass 61
+# fail 19
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 174.918194

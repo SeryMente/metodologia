@@ -1,0 +1,72 @@
+{
+  "cycle": "C-BLOG-8071-1344",
+  "session": "session://ecea4187-8241-819b-af83-0003b7c205f7/3fea4187-8241-8071-ba63-00a9a1b52f89",
+  "sender_central": "session://ecea4187-8241-819b-af83-0003b7c205f7/3fea4187-8241-805a-a526-00a99e9d743d",
+  "persona": "SamanthaL",
+  "role": "constructor Blog en hilo8071, registro de su entrega técnica y custodia posterior",
+  "technical_model": "NO VERIFICADO; persona no identifica modelo",
+  "platform": "Notion chat",
+  "native_span": [
+    1082,
+    1344
+  ],
+  "coverage": "selección explícita de orden, salida técnica y recibo/mandato documental; NO exportación íntegra de la sesión ni todos los mensajes del tramo",
+  "literal_segments": [
+    {
+      "event": 1082,
+      "path": "conversaciones/C-BLOG-8071-1344-1082.txt",
+      "sha256": "9c4551b980d0e793c030d6536edaa3651fa6cf07816ae5a3c624cd31d6a47149",
+      "transformation": "cuerpo literal devuelto por notion_read_session_event; se separa cabecera de evento/tipo; UTF-8 y un LF terminal de archivo"
+    },
+    {
+      "event": 1340,
+      "path": "conversaciones/C-BLOG-8071-1344-1340.txt",
+      "sha256": "d785d6179e62474970bf28e7fcbda22c1fca0c6b0e5058f7e81a5b0310c3e99a",
+      "transformation": "cuerpo literal devuelto por notion_read_session_event; se separa cabecera de evento/tipo; UTF-8 y un LF terminal de archivo"
+    },
+    {
+      "event": 1344,
+      "path": "conversaciones/C-BLOG-8071-1344-1344.txt",
+      "sha256": "019d1d30147b8f54099c67bf04df1c44b2774acc6fed3f24bb316c10c00cb266",
+      "transformation": "cuerpo literal devuelto por notion_read_session_event; se separa cabecera de evento/tipo; UTF-8 y un LF terminal de archivo"
+    }
+  ],
+  "internal_reasoning": "no incluido",
+  "secrets": "no valores/códigos de vinculación incluidos",
+  "source_wrappers": "cabeceras de secuencia/tipo separadas; wrapper session_message_context no forma parte del cuerpo devuelto; procedencia del emisor anotada aparte",
+  "workspace_loss": {
+    "evidence_events": [
+      1231,
+      1235,
+      1239
+    ],
+    "observed": "exec_session not_found y /data sin archivos previos; no se conoce causa raíz del reinicio",
+    "recovery": "herramientas Notion leyeron comandos exactos1154/1166/1180/1208/1216, artefactos de resultados restaurados; pequeños cambios posteriores reconstruidos de comandos visibles, sin reconstrucción de originales desde resúmenes",
+    "reverified_events": [
+      1304,
+      1312
+    ],
+    "old_results_not_substituted": true
+  },
+  "concurrency": {
+    "loaded_doc_commit": "4e987891294ca5871bbf7f61fd5cee6e2da73f46",
+    "loaded_version": "BLOG-PERSONAL-v18, estado funcional C-BLOG-015",
+    "this_entry": "registro retrospectivo/conciliación del hilo8071; no sustituye C015 ni reasigna sus roles ni autoriza integrar ramas históricas",
+    "core_write": "condicionada por SHA del blob; abortar si cambió",
+    "manifest_coverage": "actualiza núcleo/delta nuevo; no revalida hashes históricos completos"
+  },
+  "method": {
+    "source_commit": "a8d612145cd64a46a13567c9779efd19b6cce9d7",
+    "source_blob": "ec67e18a34b1f0a48b579dc1edf96d54b38fbd6f",
+    "version": "1.9",
+    "seal": "METACANON-OBJETOS-v1.9",
+    "acquisition_scope": "reglas pertinentes de actualización documental, fuentes/privacidad/concurrencia/continuidad; recepción de otros hilos y sincronización no probadas",
+    "native_personalization_received": "v330 NX-330m en este hilo; no se afirma carga nativa333 ni modificación del espejo"
+  },
+  "privacy": {
+    "repo": "SeryMente/metodologia",
+    "private": true,
+    "checked_tool_event": 1380
+  },
+  "inherited_manifest_root_hash_matches_received_canon": true
+}

@@ -1,0 +1,139 @@
+{
+  "source": "central1478 + reporte central actual separado",
+  "classification": "reported_history_not_rerun",
+  "stages": [
+    {
+      "stage": "blog inicial v2",
+      "reported": "generador blog; siete recursos públicos; prueba heredada autor falla",
+      "paths": [
+        "SeryMente/otrogranprograma/blog/",
+        "blog/escribir/",
+        "blog/laboratorio/"
+      ],
+      "limit": "infraestructura reportada, no nota privada ni sincronización Khora real"
+    },
+    {
+      "stage": "PR329 núcleo editorial",
+      "reported": "26 dominio/transportes + escenarioPostgres aislado + regresiónblog",
+      "ref": "https://github.com/SeryMente/khora/pull/329",
+      "limit": "borrador sin activación; no permisosMeta reales"
+    },
+    {
+      "stage": "audio obligatorio histórico",
+      "commit": "1b76690928e401fa1d21d30c8cd720c9d8655ff9",
+      "reported": "29unit +1escenario transaccional; tipos núcleo",
+      "limit": "no desplegado; contrato audio bloqueante entonces, no requisito activado ahora"
+    },
+    {
+      "stage": "corte solo texto histórico",
+      "commit": "7924fc760834ea10b7d02f8548c49a95250f5257",
+      "reported": "29unit+1transaccional; inventario23ARCHIVOS (no23pruebas)",
+      "paths": [
+        "khora-web/db/migrations/20261019_blog_editorial.sql"
+      ],
+      "limit": "migración no033; no aplicar dosveces porrenumerar; no migración ejecutada en este ciclo"
+    },
+    {
+      "stage": "preparación literal histórica",
+      "commit": "fea4b676e6784bc5041207673ca6eb6d6155299b",
+      "previous": "9232e6ea5b01aa04ccdc1be64842dbd3050028a4",
+      "reported": "13pruebas; Pages slug100 frente dominio120",
+      "limit": "párrafos/anclas/títuloliteral NO elaboraciónsobria ni publicación"
+    },
+    {
+      "stage": "integración reportada",
+      "commit": "19b3966b6cdefc6edebea7d18e8e88acf102356b",
+      "reported": "checkpointPR330 central",
+      "limit": "no prueba propia productiva"
+    },
+    {
+      "stage": "Meta comprobación causal C012",
+      "commit": "a7201394f2d1befcb3ce76c61c66f95904373dec",
+      "reported": "8fallosantes ->10/10sin omisiones; tipos/2blobs",
+      "paths": [
+        "khora-web/lib/server/blog/providers.ts",
+        "khora-web/tests/unit/blog-provider-readback.test.ts"
+      ],
+      "limit": "META_PATH impedía consulta Graph propia; transporteaislado, no Página/token/envío real; 401 entonces histórico"
+    },
+    {
+      "stage": "C013 y candidatura central",
+      "commits": [
+        "eda718288fa61bf4df016751d46631fa8e71054a",
+        "1ca4f69c…"
+      ],
+      "reported": "10/10central-local; previewREADYeda; luego prebuildERROR1ca4",
+      "limit": "trayectoria histórica, no estado productivo actual91d729"
+    },
+    {
+      "stage": "causal SQL/catalogo/autenticación",
+      "branch": "fix/blog-test-catalog-e48aea2",
+      "base": "e48aea2…",
+      "commits": [
+        "4fbf9f06…",
+        "9ba66e50…"
+      ],
+      "reported": "4pruebasiniciales;9catálogo;13dirigidas+10auth=23 alcanceacotado, sin omisiones en susbancos",
+      "paths": [
+        "khora-web/tests/unit/blog-postgres.test.ts",
+        "blog-mcp-evidencia-causal.zip"
+      ],
+      "failures": [
+        "awaitsuperior transformadoCJS",
+        "catálogo17esperadasfrente19reales",
+        "dependenciaBlog ausente enbanco",
+        "contaminaciónentornoauth"
+      ],
+      "limit": "solo7archivosautorizados pruebas/tabla; sinruntime/permisos/deploy; mediosyauditoría aislados adicionalmente en10auth; rutasde7archivos NO completas enreenvío, no inventar lista"
+    },
+    {
+      "stage": "integración/tipos central posteriores",
+      "commit": "8925bfaf…",
+      "reported": "NODE_ENVreadonly;722total=719aprobadas+1fallida+2omitidas",
+      "limit": "sin aislamiento extra; scenariosauth/MCP ya no fallan según reporte, no fullNext acreditado; fallorestante lecturametodologíaprivada/alternativagh no disponible entonces"
+    },
+    {
+      "stage": "última candidata del reenvío1478",
+      "commit": "564652c9…",
+      "reported": "BUILDING; configuraciónsensible solo rama/preview",
+      "limit": "noREADY/producción/Meta/nota acreditadas por esereenvío; no mantenerBUILDINGcomoactual"
+    },
+    {
+      "stage": "revalidación central actual, fuera1478",
+      "commit": "91d729396398240f0b4745fd5645f15c7c9fd935",
+      "reported": "/api/versionproducción coincide;healthSUCCESSfull_access=true",
+      "correlation": "bd4994c4-106c-4816-8e25-0f0d2b2891fb",
+      "limit": "REPORTECENTRAL, no herramienta propia enC014, no permisoMeta ni publicación real ni aceptación inferidos"
+    }
+  ],
+  "zip": {
+    "filename": "blog-mcp-evidencia-causal.zip",
+    "reportedSizeBytes": 20453,
+    "reportedEntries": 14,
+    "reportedExpandedBytes": 58879,
+    "reportedSha256": "f70fbda1210f35ff9e85f3d50ca4a94f864168e5f27c056f885894540e5edf5a",
+    "reportedContents": [
+      "README-evidence.txt",
+      "manifest.json",
+      "delta.patch",
+      "before.log",
+      "after-default.log",
+      "after-pglite.log",
+      "concordance-before.log",
+      "concordance-after.log",
+      "auth-before-boundaries.log",
+      "auth-after-boundaries.log",
+      "final-13.log",
+      "final-auth-10.log",
+      "types-all.log",
+      "auth-boundaries.cjs"
+    ],
+    "purpose": "evidencia histórica no instalador/acciónoperador",
+    "limit": "archivo citado NO recibido ni descargado/reconstruido/reabierto enC014; integridad interna/rutasseguras y revisiónsecretos son reporte histórico acotado; auth-boundaries.cjs NO activar enruntime"
+  },
+  "permissionGap": {
+    "scope": "blog:read",
+    "observedThen": "catálogo anuncia, emisores noadmiten",
+    "current": "NO REVALIDADO; no afirmar arreglado ni ampliar permisos para ocultarlo"
+  }
+}

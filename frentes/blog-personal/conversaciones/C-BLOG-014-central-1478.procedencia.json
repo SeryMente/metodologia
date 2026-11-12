@@ -1,0 +1,37 @@
+{
+  "segment": "C-BLOG-014-central-1478",
+  "front": "Blog personal",
+  "platform": "Notion",
+  "model": "NO VERIFICADO",
+  "role": "SamanthaL constructor Blog; Central reenvía original mixto",
+  "sourceSession": "session://55bade27-f22c-8108-a269-00039938ee4f/3feade27-f22c-8016-928e-00a9f513f6b3",
+  "sourceSequence": 1478,
+  "retrievalTool": "notion_read_session_event",
+  "retrievalToolResultSequence": 914,
+  "sourceEventType": "user.message",
+  "sourceEnvelope": "event_sequence/type removed once, no other normalization",
+  "encoding": "UTF-8; no terminal LF added; HTML/Markdown/typos preserved",
+  "sourceBodyBytes": 47913,
+  "sourceBodySha256": "6888617b2f23bbb5df313841323f5bacb13d24b52d9bcdf1ab7e961ef23c29a6",
+  "persistedBodyBytes": 47991,
+  "persistedBodySha256": "b7e2d6fb55ec8199ee8f44a4184aeb47f35e82e3d2673fa17e7b12816a64baac",
+  "coverage": "one exact event payload, containing mixed forwarded operator/model speech; NOT complete native export of either session",
+  "redactions": [
+    {
+      "kind": "historical device-linking code, including occurrences in URL",
+      "count": 3,
+      "utf16OffsetsNotClaimed": true,
+      "pythonUnicodePositions": [
+        11400,
+        11468,
+        11526
+      ],
+      "replacement": "[CÓDIGO_DE_VINCULACIÓN_REDACTADO]"
+    }
+  ],
+  "exactness": "all codepoints except declared authentication-code replacements; NOT unredacted binary identity",
+  "omitted": "linking code value; no hidden reasoning requested or captured; no ZIP bytes received",
+  "chronology": "embedded dates/roles as reported; no total order invented across sessions",
+  "previousSegment": "C-BLOG-013 transfer; overlaps/duplicates preserved, not silently merged",
+  "livePermission": "historical Remote Desktop Commander device/linking/session statements grant no current access; no remote use"
+}

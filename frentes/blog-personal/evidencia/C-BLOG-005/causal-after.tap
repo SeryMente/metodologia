@@ -1,0 +1,148 @@
+TAP version 13
+# Subtest: regression: source above60000 is processed without truncating its tail
+ok 1 - regression: source above60000 is processed without truncating its tail
+  ---
+  duration_ms: 25.31355
+  type: 'test'
+  ...
+# Subtest: regression: reject general BEFORE provider call
+ok 2 - regression: reject general BEFORE provider call
+  ---
+  duration_ms: 0.689905
+  type: 'test'
+  ...
+# Subtest: regression: reject conversacion_maya BEFORE provider call
+ok 3 - regression: reject conversacion_maya BEFORE provider call
+  ---
+  duration_ms: 0.211402
+  type: 'test'
+  ...
+# Subtest: regression: reject interpretacion_simultanea BEFORE provider call
+ok 4 - regression: reject interpretacion_simultanea BEFORE provider call
+  ---
+  duration_ms: 0.164814
+  type: 'test'
+  ...
+# Subtest: 200000 UTF16 units covered end-to-end in four bounded requests without mutating original
+ok 5 - 200000 UTF16 units covered end-to-end in four bounded requests without mutating original
+  ---
+  duration_ms: 8.712255
+  type: 'test'
+  ...
+# Subtest: UTF16, not byte, limit: accented characters do not cut capacity
+ok 6 - UTF16, not byte, limit: accented characters do not cut capacity
+  ---
+  duration_ms: 1.508755
+  type: 'test'
+  ...
+# Subtest: over limit rejects before provider; no silent truncation
+ok 7 - over limit rejects before provider; no silent truncation
+  ---
+  duration_ms: 1.519762
+  type: 'test'
+  ...
+# Subtest: no source minimum: empty original yields zero proposals and no invented timestamps
+ok 8 - no source minimum: empty original yields zero proposals and no invented timestamps
+  ---
+  duration_ms: 0.851505
+  type: 'test'
+  ...
+# Subtest: source integrity fails before any provider call
+ok 9 - source integrity fails before any provider call
+  ---
+  duration_ms: 0.345346
+  type: 'test'
+  ...
+# Subtest: unknown time, declared uncertainty and opaque alias remain literal proposals
+ok 10 - unknown time, declared uncertainty and opaque alias remain literal proposals
+  ---
+  duration_ms: 0.830951
+  type: 'test'
+  ...
+# Subtest: overlap de-duplicates only identical field/value/source offsets
+ok 11 - overlap de-duplicates only identical field/value/source offsets
+  ---
+  duration_ms: 1.664282
+  type: 'test'
+  ...
+# Subtest: same quote at separate source positions retains both exact anchors
+ok 12 - same quote at separate source positions retains both exact anchors
+  ---
+  duration_ms: 1.151008
+  type: 'test'
+  ...
+# Subtest: ambiguous anchor within one window rejects, no chosen occurrence by inference
+ok 13 - ambiguous anchor within one window rejects, no chosen occurrence by inference
+  ---
+  duration_ms: 0.414066
+  type: 'test'
+  ...
+# Subtest: invented identity or date rejected even if provider returns valid JSON
+ok 14 - invented identity or date rejected even if provider returns valid JSON
+  ---
+  duration_ms: 0.617127
+  type: 'test'
+  ...
+# Subtest: bad field, missing quote or nonobject item never becomes a proposal
+ok 15 - bad field, missing quote or nonobject item never becomes a proposal
+  ---
+  duration_ms: 0.861156
+  type: 'test'
+  ...
+# Subtest: failure of final window is not reported as partial success and source stays archived unchanged
+ok 16 - failure of final window is not reported as partial success and source stays archived unchanged
+  ---
+  duration_ms: 7.277475
+  type: 'test'
+  ...
+# Subtest: provider exception does not expose token, original or upstream error
+ok 17 - provider exception does not expose token, original or upstream error
+  ---
+  duration_ms: 0.368809
+  type: 'test'
+  ...
+# Subtest: malformed provider JSON is sanitized
+ok 18 - malformed provider JSON is sanitized
+  ---
+  duration_ms: 1.179025
+  type: 'test'
+  ...
+# Subtest: provider receives data only: prompt-looking source is not interpreted by deterministic layer
+ok 19 - provider receives data only: prompt-looking source is not interpreted by deterministic layer
+  ---
+  duration_ms: 0.368411
+  type: 'test'
+  ...
+# Subtest: UTF16 windows never split surrogate pairs at either edge
+ok 20 - UTF16 windows never split surrogate pairs at either edge
+  ---
+  duration_ms: 2.310442
+  type: 'test'
+  ...
+# Subtest: a source object changed by caller while awaiting cannot alter the extracted version
+ok 21 - a source object changed by caller while awaiting cannot alter the extracted version
+  ---
+  duration_ms: 0.417682
+  type: 'test'
+  ...
+# Subtest: every response in a shared call budget has a bounded abort signal
+ok 22 - every response in a shared call budget has a bounded abort signal
+  ---
+  duration_ms: 0.889772
+  type: 'test'
+  ...
+# Subtest: global proposal cap fails explicitly, without truncating to100
+ok 23 - global proposal cap fails explicitly, without truncating to100
+  ---
+  duration_ms: 2.227134
+  type: 'test'
+  ...
+1..23
+# tests 23
+# suites 0
+# pass 23
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 319.077843

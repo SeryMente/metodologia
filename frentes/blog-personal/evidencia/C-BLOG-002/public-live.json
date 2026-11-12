@@ -1,0 +1,35 @@
+{
+  "checked_at": "2026-10-19T17:06:44.120388+00:00",
+  "resources": [
+    {
+      "url": "https://serymente.github.io/otrogranprograma/blog/",
+      "status": 200,
+      "expected": "Bitácora personal.",
+      "matches": true
+    },
+    {
+      "url": "https://serymente.github.io/otrogranprograma/blog/escribir/",
+      "status": 200,
+      "expected": "Una nueva entrada.",
+      "matches": true
+    },
+    {
+      "url": "https://serymente.github.io/otrogranprograma/blog/laboratorio/",
+      "status": 200,
+      "expected": "WordPress",
+      "matches": true
+    },
+    {
+      "url": "https://serymente.github.io/otrogranprograma/blog/archivo.json",
+      "status": 200,
+      "expected": "\"schema\": 1",
+      "matches": true
+    },
+    {
+      "url": "https://serymente.github.io/otrogranprograma/blog/feed.xml",
+      "status": 200,
+      "expected": "<rss",
+      "matches": true
+    }
+  ]
+}
