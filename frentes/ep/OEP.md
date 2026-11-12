@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.83. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.84. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -4499,3 +4499,20 @@ La elevación administrativa y la identidad de los datos de usuario son dimensio
 - Escritura/read-back BMAD permanece aprobado en §142.15.
 - Recuperación de binario y rutas de OpenCode aprobada para proceso nuevo; recuperación de proveedor/credencial pendiente.
 - Recuperación tras reinicio del equipo, segunda terminal física y auditoría integral de confinamiento permanecen pendientes. No se declara aceptación integral del frente EP.
+
+
+### 142.17 Auditoría puntual de procesos Chrome y disponibilidad multi-terminal · 2026-11-12
+
+**Chrome**
+- Se enumeraron los procesos `chrome.exe` activos en el host. El proceso principal observado usa el ejecutable global `C:\Program Files\Google\Chrome\Application\chrome.exe` y su línea de comandos no incluye `--user-data-dir` ni `--disk-cache-dir` de `MOD-EP-CHROME`. Los procesos auxiliares observados tampoco identifican las rutas EP.
+- No se cerró, alteró ni reclamó como parte de EP esa instancia de Chrome; corresponde a una sesión del perfil predeterminado del host, no a evidencia de uso actual del perfil EP.
+- Las siete rutas previstas del módulo EP existen: `data/Fila4/user-data`, `cache/Fila4/disk-cache`, `downloads/Fila4`, `data/Fila4/appdata`, `data/Fila4/localappdata`, `temp/Fila4` y `logs/Fila4`. Esto acredita presencia de directorios, no confinamiento de todos los procesos ni actividad EP en esta sesión.
+- La tarea `EP-Fila4-Chrome-Launch` existe y está en estado Ready. No se lanzó una instancia nueva durante esta inspección.
+- Resultado: `CHROME_EP_DIRECTORIES=PASS_PRESENT`; `HOST_DEFAULT_CHROME_PROCESS=OBSERVED`; `CHROME_EP_PROCESS_ACTIVE=NOT_OBSERVED`; `CHROME_FULL_CONFINEMENT_AUDIT=PENDING`.
+
+**Disponibilidad de terminales**
+- El inventario RDC devolvió una única terminal conectada: `PC10RCIF4EI4`, ID `952ad493-0a54-48a8-b0a2-de7aba24b0e4`. No se observó un segundo dispositivo en línea en este corte.
+- No se probó ni se presume continuidad entre terminales físicas. La prueba multi-terminal requiere incorporar una segunda terminal física autorizada, con su propio perfil DPAPI y conexión independiente.
+- Resultado: `AUTHORIZED_TERMINALS_ONLINE=1`; `MULTI_TERMINAL_CONTINUITY=PENDING_SECOND_DEVICE`.
+
+No se modificó ni cerró la instancia Chrome global del host. La aceptación integral del frente EP permanece pendiente de credencial persistente, recuperación DPAPI/reinicio, segunda terminal y auditoría de confinamiento.
