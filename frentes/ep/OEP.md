@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.85. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.86. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -4552,3 +4552,18 @@ El módulo contempla descubrimiento, definición de producto, UX, UI, prototipad
 - Siguiente paso: adquirir ese documento, conservar el original y clasificar lo que demuestra (prototipo conceptual/visual/navegable/funcional, PoC, MVP o implementación productiva) antes de derivar requisitos y plan de diseño.
 
 **Resultado:** `MOD-EP-PRODUCT-DESIGN=INITIALIZED`; `OPERATIONAL_INVOCATION=FRENTE_PRODUCT_DESIGN`; `PARENT_GOVERNANCE=EP_INHERITED`; `INDEPENDENT_OCP_OR_CONTROL=NONE`.
+
+---
+
+## Reconciliación de apertura GUI y ubicación de vault-store · 2026-11-12 · 17:22 America/Mexico_City
+
+**Base y alcance:** actualización de ciclo sobre OEP v0.3.85, con lectura de DUG v393 · NX-393m (Metacanon 1.31; GOW 2.21). La versión documental pasa a v0.3.86. Se registra estado de ejecución y evidencia; no cambia la arquitectura ni los criterios de aceptación de §§137–§140.
+
+- **Identidad de ejecución:** CENTRAL\fila4; SID S-1-5-21-1529298404-1161420656-882029410-5167; perfil real C:\Users\fila4; sesión interactiva 1. La sesión administrativa CENTRAL\MantenimientoRCI no fue utilizada como perfil de trabajo.
+- **Aplicación:** Cryptomator Desktop 1.19.6.6588, ejecutable C:\Users\fila4\Desktop\SeryMente\Herramientas\Cryptomator\Cryptomator.exe, firma Authenticode Valid, firmante Skymatic GmbH. Por instrucción expresa del operador se abrió la GUI en la sesión interactiva de Fila 4. Verificación posterior: ventana Cryptomator, proceso PID 10196, sesión 1, propietario CENTRAL\fila4, ventana no nula.
+- **Destino físico resuelto:** C:\Users\fila4\EP\modulos\MOD-EP-CRYPTO\vault-store\. El directorio ya existía, estaba vacío y admitió una prueba local de escritura/eliminación que pasó; después quedó vacío nuevamente. Esta ruta es el contenedor físico previsto fuera del futuro punto de montaje SeryMente/; no se confunde con la carpeta de instalación Desktop ni con el placeholder ProtectedWorkspace\SeryMente-Vault.
+- **Origen preservado:** C:\Users\fila4\Desktop\SeryMente registró un inventario preliminar de 22.890 archivos y 2.125.828.543 bytes. Se contó un directorio con atributo reparse point, pero su ruta/objetivo no quedó capturado; por tanto no existe aún un manifiesto completo ni una autorización técnica para migrar. No se copió, movió, renombró ni eliminó contenido del origen.
+- **Resultado de este ciclo:** GUI_OPEN_AND_WINDOW_VERIFIED · VAULT_STORE_EXISTS_EMPTY_WRITABLE · REAL_VAULT_NOT_CREATED · PASSWORD_NOT_ENTERED · SOURCE_PRESERVED · MIGRATION_NOT_STARTED. La GUI quedó abierta para que el operador cree la bóveda en la ruta resuelta; no se ejecutó creación por CLI ni se introdujeron contraseñas.
+- **Seguridad frente a exfiltración:** el objetivo es que el almacén físico contenga ciphertext, no datos en claro ni la contraseña maestra. La copia del ciphertext por sí sola no debe incluir la contraseña ni claves recuperables junto a ella. La resistencia depende de una contraseña maestra fuerte, única y mantenida separada; no se declara invulnerabilidad absoluta ni se equipara creación de bóveda con migración/cifrado del workspace.
+
+**Siguiente acción:** el operador crea la bóveda desde la GUI en vault-store/ e introduce la contraseña localmente. Después se verificará read-only la existencia y estructura (vault.cryptomator, masterkey.cryptomator, árbol físico) sin leer ni registrar la contraseña. La migración del árbol de 22.890 archivos sigue siendo una fase independiente con manifiesto estable, manejo del reparse point, copia, SHA-256 y read-back.
