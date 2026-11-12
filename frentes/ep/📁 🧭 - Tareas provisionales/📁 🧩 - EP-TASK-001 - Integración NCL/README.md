@@ -1,11 +1,15 @@
 # 📝 EP-TASK-001 · NCL — Navegador Compartido Local: integración de Playwright y KeePassXC
 
 **Naturaleza:** OCP provisional de tarea; no es un frente independiente ni una capacidad ya implementada.  
-**Estado:** `en_curso · NCL_PREFLIGHT_PARTIAL · OCP_PROFILE_36_CONFIRMED · PLAYWRIGHT_EXTENSION_PRESENT_0.4.0 · KEEPASSXC_BROWSER_PRESENT_1.10.4.1 · EXTENSION_ENABLEMENT_UNVERIFIED · NATIVE_MESSAGING_REGISTRY_UNVERIFIED · KEEPASSXC_PROCESS_NOT_RUNNING · KEEPSHARE_ROTATION_PENDING`
+**Estado:** `en_curso · NCL_PREFLIGHT_PARTIAL · APP_DATA_CONFINEMENT_PENDING · PROFILE_AND_SESSIONS_NOT_MIGRATED · EXTENSION_ENABLEMENT_UNVERIFIED · NATIVE_MESSAGING_REGISTRY_UNVERIFIED · KEEPSHARE_ROTATION_PENDING`
 **Responsabilidad:** vinculada al frente Entorno Persistente, `frentes/ep/`; sin control ni sesión propios.  
 **task_id:** `EP-TASK-001` (identificador local de este registro; no es folio global).  
 **scope_ref:** `frentes/ep/`  
 **Condición de activación:** REACTIVADA el 2026-11-11 por instrucción expresa del operador; la espera anterior queda levantada para preflight y trabajo independiente, sin omitir dependencias técnicas ni compuertas de seguridad.
+
+## Especificación vigente aplicable · OEP §137
+
+Esta tarea se ejecuta dentro del único workspace persistente SeryMente, montado por Cryptomator. Chrome, Playwright, KeePassXC y las demás herramientas se instalan bajo Herramientas/ dentro del workspace cuando su distribución lo permita. El perfil del navegador, cookies, sesiones autenticadas, configuración, extensiones, cachés, descargas, bases, logs y temporales se alojan bajo Datos/ o Temporal/ dentro de la bóveda. No se reutiliza un perfil personal ni se permite escritura persistente en AppData/LocalAppData, TEMP/TMP u otra ruta externa. La prueba de aceptación observa las escrituras reales del proceso y verifica read-back; si un componente no puede confinar sus datos, no se inicia en EP.
 
 ## 1. Enunciado
 
