@@ -1,7 +1,7 @@
 # EP-TASK-003 · Materialización del workspace Cryptomator y confinamiento de aplicaciones
 
 **Naturaleza:** tarea provisional del frente EP; sin titularidad, control, sesión ni folio propios.  
-**Estado:** `en_curso · CLI_ONLY_POLICY_ADOPTED · CRYPTOMATOR_DESKTOP_AND_WINFSP_INSTALLED · CLI_BUILD_PASS_LOCAL · CLI_BUILD_WRAPPER_PENDING · UNIT_TESTS_12_PASS · INTEGRATION_TESTS_5_PASS · SYNTHETIC_CREATE_UNLOCK_CIPHERTEXT_PASS · WINDOWS_GRACEFUL_UNMOUNT_NOT_VERIFIED · SYNTHETIC_STAGING_CLEANUP_PENDING · REAL_VAULT_NOT_CREATED · APP_DATA_CONFINEMENT_PENDING · MIGRATION_NOT_STARTED · LEGACY_ARTIFACT_AUDIT_PENDING`
+**Estado:** `en_curso · CLI_DEFAULT_POLICY_ADOPTED · GUI_EXCEPTION_OPENED_BY_OPERATOR · VAULT_STORE_READY_EMPTY · CRYPTOMATOR_DESKTOP_AND_WINFSP_INSTALLED · CLI_BUILD_PASS_LOCAL · CLI_BUILD_WRAPPER_PENDING · UNIT_TESTS_12_PASS · INTEGRATION_TESTS_5_PASS · SYNTHETIC_CREATE_UNLOCK_CIPHERTEXT_PASS · WINDOWS_GRACEFUL_UNMOUNT_NOT_VERIFIED · SYNTHETIC_STAGING_CLEANUP_PENDING · REAL_VAULT_NOT_CREATED · APP_DATA_CONFINEMENT_PENDING · MIGRATION_NOT_STARTED · LEGACY_ARTIFACT_AUDIT_PENDING`
 **Responsabilidad:** frente EP.  
 **OEP padre:** [OEP](../../OEP.md), especialmente §137.
 
@@ -15,9 +15,9 @@
 6. Demostrar que no quedan escrituras persistentes de datos de usuario de aplicaciones fuera del workspace durante arranque y uso representativos. Si una aplicación no puede confinar sus datos, bloquearla para la sesión EP hasta corregirla o sustituirla.
 
 
-## Régimen operativo CLI-only vigente · OEP §138
+## Régimen operativo por CLI por defecto y excepción GUI expresa · OEP §138.1
 
-**Instrucción adoptada el 2026-11-12:** todas las herramientas de EP se operan exclusivamente por CLI. Se prohíbe iniciar o utilizar cualquier GUI —incluida Cryptomator Desktop— para instalar, configurar, autenticar, desbloquear, montar, administrar, trabajar o cerrar herramientas, hasta que haya un segundo monitor físicamente conectado y activo y el operador autorice expresamente reconsiderar la restricción. Terminales, TUI y prompts textuales sí están permitidos. Si una capacidad no dispone de CLI suficiente, queda bloqueada; no se recurre a clicks, UIAutomation ni GUI como fallback.
+El régimen predeterminado de EP es CLI. Conforme a OEP §138.1, una instrucción expresa e inequívoca del operador para abrir o utilizar una GUI concreta constituye autorización directa y excepción suficiente para esa aplicación y el alcance solicitado; no exige un segundo monitor adicional. La autorización no habilita otras GUI, automatización de clicks ni operaciones no pedidas. En este ciclo el operador ordenó abrir Cryptomator Desktop para crear personalmente la bóveda; la GUI se abrió y verificó en la sesión interactiva de CENTRAL\\fila4. Esta excepción no altera el confinamiento de datos de OEP §137 ni equivale a aceptación del workspace.
 
 ### Vía técnica Cryptomator
 
@@ -29,7 +29,7 @@
 
 ### Estado físico que gobierna la tarea
 
-Cryptomator Desktop 1.19.6.6588 y WinFsp 2.1.25156 fueron instalados antes de esta instrucción. El motor Desktop no se volverá a iniciar por GUI. La carpeta de instalación Desktop bajo SeryMente no acredita protección ni aceptación. Existe una copia bootstrap Desktop y directorios de perfil/log/montaje bajo C:\Users\fila4\EP\Bootstrap\Cryptomator; requieren auditoría y retirada de datos de usuario no autorizados. Solo podrá permanecer un binario CLI mínimo como bootstrap, sin configuración/logs/cachés externos.
+Cryptomator Desktop 1.19.6.6588 y WinFsp 2.1.25156 fueron instalados antes de esta instrucción. En el ciclo del 2026-11-12 la GUI se abrió por instrucción expresa del operador conforme a OEP §138.1; la apertura quedó verificada en la sesión interactiva CENTRAL\\fila4. La carpeta de instalación Desktop bajo SeryMente no acredita protección ni aceptación. Existe una copia bootstrap Desktop y directorios de perfil/log/montaje bajo C:\Users\fila4\EP\Bootstrap\Cryptomator; requieren auditoría y retirada de datos de usuario no autorizados. Solo podrá permanecer un binario CLI mínimo como bootstrap, sin configuración/logs/cachés externos.
 
 El directorio C:\Users\fila4\EP\ProtectedWorkspace\SeryMente-Vault fue creado previamente, pero permanece vacío y no es todavía una bóveda. El origen C:\Users\fila4\Desktop\SeryMente continúa sin cifrar y se conserva intacto; no se movió ni copió contenido del workspace a la bóveda. No se ingresó contraseña, no existe bóveda real, no se ejecutó migración y no se aceptó confinamiento de datos. El VHDX histórico permanece intacto.
 
@@ -779,3 +779,18 @@ Referencia: OEP §136; documentación oficial Cryptomator Security Architecture,
 - La ruta `C:\Users\fila4\EP\ProtectedWorkspace\SeryMente-Vault` observada antes de la prueba es un directorio vacío, no una bóveda. El comando `create` requiere que la ruta de destino no exista; no se retira ni renombra ese placeholder sin autorización expresa del operador. La contraseña real solo se introducirá localmente mediante `--password:stdin`; no se transmite al chat.
 - El staging sintético continúa presente: los intentos de limpieza no llegaron al host porque el verificador de comandos RDC expiró antes de ejecutar. No se borró ningún archivo en esos intentos; retirar únicamente ese directorio sigue pendiente.
 - No se alteraron BitLocker, VHDX, volúmenes, ACL, WinFsp, Cryptomator Desktop ni datos reales. La GUI permaneció cerrada. Persisten pendientes el wrapper reproducible, el cierre graceful Windows, limpieza staging, destino real, confinamiento completo de datos por aplicación, migración íntegra, recuperación y aceptación.
+
+---
+
+## Apertura GUI y resolución de vault-store · 2026-11-12 · 17:22 America/Mexico_City
+
+- **Identidad efectiva:** CENTRAL\\fila4; SID S-1-5-21-1529298404-1161420656-882029410-5167; perfil C:\\Users\\fila4; sesión interactiva 1. No se ejecutó materialización bajo CENTRAL\\MantenimientoRCI.
+- **GUI:** Cryptomator Desktop 1.19.6.6588 abierto por instrucción expresa del operador. Proceso visible verificado: Cryptomator.exe PID 10196, sesión 1, propietario CENTRAL\\fila4, ventana principal Cryptomator.
+- **Destino:** C:\\Users\\fila4\\EP\\modulos\\MOD-EP-CRYPTO\\vault-store\\. Existe, estaba vacío, la prueba de escritura/eliminación pasó y quedó vacío tras la comprobación. Es el directorio que debe seleccionarse en la GUI para crear la bóveda.
+- **Origen:** C:\\Users\\fila4\\Desktop\\SeryMente; inventario preliminar 22.890 archivos / 2.125.828.543 bytes. Se contó un reparse point sin registrar su ruta/objetivo; aún no hay manifiesto completo ni base para migrar.
+- **Sin mutación del workspace:** no se creó la bóveda real, no se introdujo contraseña, no se copió/movió/renombró/eliminó el origen, no se montó la bóveda y no se aceptó confinamiento de aplicaciones.
+- **Seguridad:** el almacén físico debe contener ciphertext sin contraseña ni clave maestra junto al ciphertext. La resistencia a exfiltración depende de una contraseña maestra fuerte, única y separada; no se declara inmunidad absoluta.
+
+**Estado de la transición:** GUI_OPEN_AND_WINDOW_VERIFIED · VAULT_STORE_EXISTS_EMPTY_WRITABLE · REAL_VAULT_NOT_CREATED · PASSWORD_NOT_ENTERED · SOURCE_PRESERVED · MIGRATION_NOT_STARTED · APP_DATA_CONFINEMENT_PENDING.
+
+**Siguiente acción:** creación manual por el operador desde Cryptomator en la ruta anterior. Después se verifica la estructura de bóveda sin leer ni registrar la contraseña. La migración del árbol SeryMente requiere manifiesto, resolución del reparse point, copia y read-back SHA-256.
