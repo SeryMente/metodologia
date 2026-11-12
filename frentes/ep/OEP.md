@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.72. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.73. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -3963,3 +3963,45 @@ La interfaz operativa de EP para Cryptomator será **Cryptomator CLI oficial**. 
 **Estado del frente tras esta decisión:** CLI_ONLY_POLICY_ADOPTED · GUI_PROHIBITED_UNTIL_SECOND_MONITOR_AND_EXPLICIT_AUTHORIZATION · CLI_BUILD_PENDING · VAULT_NOT_CREATED · MIGRATION_NOT_STARTED · SOURCE_PRESERVED · ACCEPTANCE_PENDING.
 
 **Fuentes:** https://github.com/cryptomator/cli/releases ; https://github.com/cryptomator/cli ; https://github.com/cryptomator/cli/commit/f09851d3990f4b7dc6f572f8a9eb9a5f2882f439 ; https://adoptium.net/temurin/releases/?version=25&package=jdk.
+
+
+---
+
+## §139. Módulo funcional MOD-EP-CRYPTO — operación y confinamiento de Cryptomator · 2026-11-12
+
+### 139.1 Identidad, subordinación y responsabilidad
+
+- **Identificador interno:** `MOD-EP-CRYPTO`, módulo funcional del frente de trabajo Entorno Persistente (EP), conforme a DUG ART-021/ART-029.
+- **Padre y OCP único:** EP; este documento `frentes/ep/OEP.md`. No se crea un FT, OCP, núcleo operativo, control de responsabilidad, titularidad, sesión ni folio independiente. El módulo hereda autoridad, límites, criterios de seguridad y aceptación del frente padre.
+- **Propósito derivado:** integrar y operar Cryptomator como motor de protección del workspace EP, mediante componentes delimitados de bootstrap, unlock, mount, lock, guardian, recovery y audit definidos en §136.5. No implementa algoritmos criptográficos propios ni sustituye la CLI oficial.
+- **Alcance:** preparar el motor y sus dependencias; crear y abrir la bóveda; verificar montaje, cifrado, bloqueo, recuperación y rutas efectivas de datos; coordinar el confinamiento de la propia herramienta y conservar evidencia técnica en el OCP padre.
+
+### 139.2 Instalación y estructura del módulo
+
+La instalación y los datos de Cryptomator se organizan como parte del árbol canónico de §137.2, no como una instalación independiente del workspace:
+
+- **Herramienta y componentes del módulo:** `SeryMente/Herramientas/Cryptomator/`.
+- **Datos persistentes de usuario/configuración:** `SeryMente/Datos/EP/Aplicaciones/Cryptomator/`.
+- **Logs, cachés y temporales:** `SeryMente/Temporal/Logs/` y `SeryMente/Temporal/Cache/`.
+- **Bootstrap previo al unlock:** fuera de la bóveda solo puede permanecer el ejecutable mínimo indispensable de Cryptomator CLI y las dependencias estrictamente administradas por Windows, como WinFsp. No se permiten allí perfiles, configuración de usuario, contraseña, claves, logs, cachés, temporales, JDK, repositorios de build ni datos persistentes.
+- **Build y mantenimiento:** fuente, JDK, Maven, cachés, pruebas y artefactos de construcción quedan dentro de `SeryMente/Herramientas/` o `SeryMente/Temporal/` una vez disponible el workspace desbloqueado. Un staging previo fuera de la bóveda no se considera instalación persistente aceptada; deberá incorporarse y cotejarse dentro del perímetro protegido antes de aceptar el módulo.
+- **Contraseña real:** se introduce localmente mediante el mecanismo CLI `--password:stdin`; nunca se incluye en argumentos, variables de entorno, archivos, logs ni conversación.
+
+### 139.3 Estado comprobado del módulo · 2026-11-12
+
+- **Build CLI local:** PASS desde el commit upstream firmado indicado en EP-TASK-003. Resultado reportado: 12 pruebas unitarias y 5 de integración PASS; smoke CLI PASS; prueba E2E sintética de creación, unlock, WebDAV PUT/GET y comprobación de ciphertext PASS. La evidencia, procedencia y hashes permanecen en el núcleo de EP-TASK-003; este apartado no duplica sus manifiestos.
+- **Bóveda sintética:** creada y desbloqueada únicamente para ensayo; no es la bóveda real ni autoriza migración.
+- **Perfil y destino:** la conexión administrativa RDC se utiliza como canal de elevación/acceso, no como raíz de trabajo. Toda ruta operativa se resuelve contra el perfil Windows de `fila4`; no se redirigen escrituras al perfil administrativo ni se persisten identificadores efímeros de conexión/dispositivo/sesión.
+- **Comprobación de pantalla:** la sesión RDC actual enumeró una sola pantalla activa. La conexión no acredita que exista un segundo monitor físico conectado y activo; por tanto, `SECOND_MONITOR=NOT_VERIFIED`.
+- **Autorización GUI:** el operador autorizó expresamente abrir Cryptomator GUI en este ciclo. Sin embargo, la condición adicional de segundo monitor activo de §138.1 y DUG §40 no quedó verificada. Resultado: `GUI_GATE=BLOCKED_SECOND_MONITOR_NOT_VERIFIED`; no se abrió GUI, no se automatizaron clicks ni se simuló interacción.
+- **Destino real:** `C:\Users\fila4\EP\ProtectedWorkspace\SeryMente-Vault` existe como directorio vacío y permanece intacto. No contiene una bóveda Cryptomator verificada; no se renombró ni eliminó.
+- **Sin mutaciones reales:** no se introdujo contraseña real, no se creó bóveda real, no se migró el workspace, no se modificaron BitLocker/VHDX/ACL ni datos de usuario y no se aceptó el confinamiento de aplicaciones.
+- **Pendientes:** superar el gate de segundo monitor para cualquier GUI; resolver el destino real sin perder el placeholder; wrapper reproducible PowerShell 5.1; desmontaje graceful Windows; limpieza del staging sintético; auditoría/confinamiento de datos de Cryptomator; migración con manifiestos SHA-256 y read-back; recuperación y aceptación.
+
+### 139.4 Estado del módulo y siguiente transición
+
+`MOD-EP-CRYPTO=IN_PROGRESS · CLI_BUILD_PASS_LOCAL · UNIT_TESTS_12_PASS · INTEGRATION_TESTS_5_PASS · SYNTHETIC_E2E_PASS · GUI_BLOCKED_SECOND_MONITOR_NOT_VERIFIED · REAL_VAULT_NOT_CREATED · MIGRATION_NOT_STARTED · APP_DATA_CONFINEMENT_PENDING · ACCEPTANCE_PENDING`.
+
+La transición a creación de bóveda real solo se realizará por una vía permitida por §138 y después de resolver el destino. La autorización específica para GUI no elimina la condición del segundo monitor. Mientras esta condición no esté verificada, la operación sigue siendo CLI-only; no se cambia la política ni se usa GUI como fallback.
+
+**Trazabilidad:** DUG v389 · NX-389m, §40–§45 y ART-029; OEP §§136.5, 137–138; evidencia de build y E2E en EP-TASK-003 (reconciliación del 2026-11-12).
