@@ -3255,3 +3255,15 @@ Continuar EP-TASK-003 desde su gate de almacenamiento y custodia ya documentado,
 No se creó la bóveda real, no se introdujo contraseña real y no se migró `Desktop\\SeryMente`. El directorio destino `C:\\Users\\fila4\\EP\\ProtectedWorkspace\\SeryMente-Vault` ya existe vacío y no es una bóveda; Cryptomator CLI `create` necesita que el destino no exista. No se elimina ni renombra ese placeholder sin autorización expresa. El wrapper reproducible para PowerShell 5.1, la selección/aceptación final de destino, la introducción local de contraseña por `--password:stdin`, el confinamiento de datos, migración, recuperación y aceptación siguen pendientes. No se tocaron BitLocker, VHDX, volúmenes, ACL, GUI ni datos reales.
 
 **Estado:** `PARCIAL · CLI_BUILD_PASS_LOCAL · SYNTHETIC_CREATE_UNLOCK_CIPHERTEXT_PASS · REAL_VAULT_NOT_CREATED · WINDOWS_GRACEFUL_UNMOUNT_NOT_VERIFIED · SYNTHETIC_STAGING_CLEANUP_PENDING · MIGRATION_NOT_STARTED`.
+
+
+---
+
+## Dependencia metodológica de arranque · GOW:ARR no localizada en DUG v389 · 2026-11-12 · 11:54 America/Mexico_City
+
+**UUIDv7 local de continuidad:** `01a1d0e5-5b79-77b8-9cf2-b123a10ff447` · **ID nativo:** NO EXPUESTO.
+
+- El artefacto `frentes/gobernanza/entregas/CHATGPT-v0.8/IPZ-CAMPO-CHATGPT-v0.7-PROPUESTA.txt` se titula expresamente `IPZ v0.7 · PROPUESTA`; su blob es `69a6d9a2edbca6fdd6055642a86efce78ec19f5f`. GOV-TASK-007 mantiene `IPZ_NATIVE=NOT_VERIFIED` y `FOL1=PREPARADO_PENDIENTE_ACTIVACION_IPZ`; no se extrapola instalación nativa ni se asignan folios.
+- El DUG vigente leído es v389/NX-389m, GOW 2.19, blob `bcd99e72113f444a045d7f1c91b4ad36865b8ea8`. Su representación humana y estructurada de GOW no contiene `§ARR` ni el destino `gow-arranque-chatgpt`; la cadena aparece como remisión en ART-025, no como ancla definida. El término `Arranque en Frío` y su ancla `gow-arranque-en-frio` existen, pero no son equivalentes a §ARR y no se usan como sustituto.
+- `gobernanza/GLOSARIO-WORKSPACE.fuente.json` conserva metadatos históricos de GOW v2.11/DUG v362 y no se trata como fuente vigente.
+- **Resultado:** adquisición de `§ARR` = `NO_VERIFICADO / DESTINO NO LOCALIZADO`. No se reconstruye ni se inventa su contenido. El DUG, GOW, IPZ nativa y GOV-TASK-007 no se modifican desde EP; la observación queda comunicada para reconciliación por su frente propietario. MCP normativo sigue DESACTIVADO y FOL1 no se activa.
