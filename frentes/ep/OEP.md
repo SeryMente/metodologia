@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.88. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.89. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -4649,3 +4649,15 @@ Ambas conexiones alcanzan el mismo host físico observado; no representan dos te
 - Aceptación global de vMAT: `PENDING` hasta verificar carga y enumeración real de skills por OpenCode, ejecutar una prueba sintética completa de captura → tarea → plan → ejecución/revisión/verificación y confirmar el read-back de sus entregables. La tarea EP-TASK-008 permanece `en_curso`.
 
 **Resultado documental:** `VMAT_SPEC=CREATED`; `EP_TASK_008=CREATED`; `SUPERPOWERS_V7.0.2_CONFIGURED=YES`; `SUPERPOWERS_PACKAGE_AND_15_SKILL_DIRS=OBSERVED`; `SUPERPOWERS_RUNTIME_DISCOVERY=PENDING`; `VMAT_ACCEPTANCE=PENDING`.
+
+
+## Promoción verificada de la llave de recuperación y cierre EP Vault · 2026-11-12 · 17:39 America/Mexico_City
+
+**Continuación del cierre parcial anterior:** se verificó una sesión EP Vault local activa antes del vencimiento de la nota. Sin revelar su valor, se ejecutó `PromoteNote` para `N-20261112232420-0DC228D3` bajo el nombre formal `EP_WORKSPACE_CRYPTOMATOR_RECOVERY_KEY`.
+
+- **Resultado:** `PROMOTED_READBACK_VERIFIED_NOTE_REMOVED`. El listado `ListVariables` confirmó el nombre `EP_WORKSPACE_CRYPTOMATOR_RECOVERY_KEY`; el propio módulo verificó la lectura de vuelta del valor, sin exponerlo al chat.
+- **Eventos:** `VAULT_DATA_UPDATED` → `WORKING_NOTE_DELETED` → `WORKING_NOTE_PROMOTED` → `VAULT_LOCKED`. Read-back final: nota efímera ausente, EP Vault `ENCRYPTED_FILE_PRESENT`, `sessionActive=false`.
+- **Cryptomator:** read-back posterior: cero procesos Cryptomator y ausencia de `D:\`; el almacén físico `C:\Users\fila4\entorno-persistente\` conserva `vault.cryptomator` y `masterkey.cryptomator`. La bóveda está bloqueada.
+- **Límite no resuelto:** la carpeta completa `C:\Users\fila4\Desktop\SeryMente\` no se migró; permanece intacta y en claro. La promoción de llave no cambia ese estado ni convierte la bóveda de pocos KB en un cifrado integral del workspace.
+
+**Estado actualizado:** `RECOVERY_KEY_PROMOTED_READBACK_VERIFIED_AND_EPVAULT_LOCKED` · `CRYPTOMATOR_MOUNT_ABSENT` · `FULL_WORKSPACE_ENCRYPTION_PENDING`.
