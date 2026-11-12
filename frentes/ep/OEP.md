@@ -3750,6 +3750,25 @@ Toda aplicación que participe en una sesión EP se registra en un inventario ca
 
 **Fail closed:** si una aplicación no puede confinar sus datos persistentes dentro del workspace, no se inicia en la sesión EP hasta resolverlo o sustituirla. Se prohíben perfiles globales del host, sincronización automática fuera del workspace, auto-updaters no controlados, caches por defecto fuera del perímetro y exportaciones de datos a carpetas externas.
 
+### 136.3.1. Catálogo canónico inicial de herramientas
+
+| Aplicación/componente | Estado canónico | Instalación y datos |
+|---|---|---|
+| Cryptomator Desktop | MOTOR ADOPTADO | Bootstrap mínimo previo al unlock; configuración/logs y datos de usuario dentro del workspace una vez desbloqueado. |
+| WinFsp | DEPENDENCIA DE SISTEMA | Driver requerido para WinFsp volume type; componente OS-managed, inventariado como dependencia, no como datos de usuario. |
+| Visual Studio Code | HERRAMIENTA REQUERIDA · REVALIDAR | Distribución portable bajo Herramientas; user-data, extensiones, cachés y logs dentro del workspace. |
+| Notepad++ | HERRAMIENTA REQUERIDA · REVALIDAR | Preferir distribución portable; configuración y plugins dentro del workspace. |
+| OBS Studio | HERRAMIENTA REQUERIDA · REVALIDAR | Instalación portable si es compatible; perfiles, escenas, plugins, logs y grabaciones dentro del workspace. |
+| AutoHotkey 2.x | HERRAMIENTA REQUERIDA · REVALIDAR | Binarios/scripts dentro del workspace; configuración y logs confinados. |
+| Google Chrome | HERRAMIENTA REQUERIDA · REVALIDAR | Binarios y perfil dedicado EP dentro del workspace; no reutilizar perfil personal del host. |
+| Git / GitHub CLI | DEPENDENCIAS DE DESARROLLO · REVALIDAR | Binarios/configuración/cache dentro del workspace; credenciales solo en almacén aprobado y memoria cuando corresponda. |
+| Node.js / npm | DEPENDENCIAS DE DESARROLLO · REVALIDAR | Runtime, global prefix, cache y configuración npm dentro del workspace. |
+| Python | DEPENDENCIA DE DESARROLLO · REVALIDAR | Runtime, venv, pip cache y configuración dentro del workspace. |
+| Vercel CLI | DEPENDENCIA DE DESPLIEGUE · REVALIDAR | Instalación local bajo runtime Node del workspace; cache/config y tokens no salen del perímetro. |
+| .NET SDK/runtime | REQUERIDO POR MCP-OCP · REUBICACIÓN PENDIENTE | Detectado en C:\Users\fila4\.dotnet; esta ruta está fuera del workspace y no se acepta para sesiones EP hasta instalar/reubicar y verificar dentro del perímetro. |
+
+La lista refleja herramientas previamente definidas en OEP y decisiones actuales; no acredita que estén instaladas, actualizadas, verificadas o aceptadas en Fila 4. La selección y versiones efectivas se registran tras inventario firmado/hash y pruebas de confinamiento.
+
 ### 136.4. Bootstrap y dependencias del sistema
 
 Cryptomator necesita ejecutarse para desbloquear la bóveda que contiene el workspace; por tanto, sus binarios no pueden depender exclusivamente de una ruta que solo existe después de desbloquear esa misma bóveda. Este ciclo de arranque se resuelve con una **capa bootstrap mínima**, disponible antes del montaje y limitada a los binarios imprescindibles para abrir la bóveda. El bootstrap no puede conservar perfiles, contraseñas, claves, logs, cachés ni datos de usuario fuera del workspace. Una vez desbloqueado, la configuración y los datos operativos de Cryptomator se redirigen al workspace.
