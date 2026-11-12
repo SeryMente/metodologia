@@ -323,6 +323,31 @@
         "chronicle_path": "frentes/gobernanza/cronica/C-GOBERNANZA-RETOMA-16.md",
         "evidence_path": "frentes/gobernanza/evidencias/C-GOBERNANZA-RETOMA-16.json"
       }
+    },
+    {
+      "document_id": "DOC-GOV-CHATGPT-GOBERNANZA-20261112-1635",
+      "original_name": "ChatGPT-GOBERNANZA-20261112-1635.md",
+      "path": "documentos/originales/ChatGPT-GOBERNANZA-20261112-1635.md",
+      "class": "original",
+      "source_path": "C:\\Users\\fila4\\Downloads\\ChatGPT-GOBERNANZA-20261112-1635.md",
+      "source_device": "PC10RCIF4EI4",
+      "source_device_id": "952ad493-0a54-48a8-b0a2-de7aba24b0e4",
+      "source_front": "Gobernanza",
+      "captured_via": "RDC; bytes originales transportados como Base64, decodificados como UTF-8 y cotejados byte por byte; lectura de vuelta exacta desde SeryMente/metodologia/main.",
+      "media_type": "text/markdown; charset=utf-8",
+      "size_bytes": 112987,
+      "sha256": "6D5E33605457DA0C50E8FFD3BD4C424229DC770189347518092115D10627A839",
+      "git_blob_sha": "e3290cfaafc3c1577884a0e0aabd936dc3a8126f",
+      "status": "PERSISTIDO_Y_VERIFICADO",
+      "verification": {
+        "readback": true,
+        "content_cotejo": true,
+        "method": "SHA-256 del archivo origen RDC + reconstrucción UTF-8 byte a byte + comparación literal de lectura de vuelta en main; Git blob SHA cotejado.",
+        "readback_blob_sha": "e3290cfaafc3c1577884a0e0aabd936dc3a8126f",
+        "verified_on": "2026-11-12",
+        "write_commit_sha": "b7453e141c251315a7e6a4aa22243621de0fa3ba"
+      },
+      "recorded_in_event_id": "C-GOBERNANZA-RETOMA-16"
     }
   ],
   "originals_commit_sha": "c3c47a7f185d8e9482b55942e00c7da9ff1e802c",
