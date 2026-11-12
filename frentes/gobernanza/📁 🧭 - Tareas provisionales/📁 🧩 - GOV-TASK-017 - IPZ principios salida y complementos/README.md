@@ -136,3 +136,22 @@ El operador instruye modificar la candidata actual conforme a todas las decision
 - [ART-032](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-032), [ART-025](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-025), [ART-027](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-027), [Formato de salida](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#meta-4).
 
 Esta ficha es una tarea provisional de planificación y persistencia. No canoniza por sí misma cambios en DUG/ART-032 ni modifica el campo nativo IPZ.
+
+
+## Decisión del operador · destino operativo exclusivo para la salida IPZ · 2026-11-12
+
+**Aclaración vinculante de propósito:** IPZ es una instrucción operativa-funcional para el modelo, no un reporte humano ni un esquema de telemetría. El enlace de su parte 5 no debe apuntar al contrato mixto de Metacanon §4 (`#meta-4`) porque ese destino contiene síntesis humana y telemetría técnica, ajenas al propósito específico de imprimir la salida requerida.
+
+**Decisión:** preparar un anexo separado, exclusivo para el modelo, denominado provisionalmente **Formato de salida operativo para IPZ**. Debe ser un contrato ejecutable de presentación: campos obligatorios, orden fijo, sintaxis, condiciones para datos ausentes/no disponibles/no asignados, estados admitidos y reglas para no omitir ni inventar contenido. El modelo debe imprimir el esquema en todos los ciclos; cuando un valor no exista, debe conservar el campo con el marcador definido, no eliminarlo ni usar la ausencia como excusa para omitir la salida.
+
+**Separación de responsabilidades:**
+- Metacanon §4 permanece como formato humano y contrato de telemetría técnica para gobernanza/observabilidad; puede conservarse íntegro.
+- El nuevo anexo operativo es el único destino de la parte 5 de IPZ. No incorpora telemetría, eventos, instrumentación, informes de auditoría ni explicaciones dirigidas a responsables humanos.
+- La parte 6 continúa enlazando exclusivamente ART-032 y sus complementos; no absorbe contenido de salida.
+- No enlazar IPZ a `#meta-4` ni a apartados humanos/técnicos de §4.
+
+**Contrato de impresión a especificar:** cabecera fija IPZ, DUG, CONV, CICLO, A y B, en ese orden; cuerpo con Resultado/estado, Evidencia/límites, Bloqueos reales y Siguiente acción, más Continuidad cuando corresponda. Todos los campos aplicables deben imprimirse. Para datos no disponibles, no expuestos, no asignados o no aplicables se usarán marcadores distintos y explícitos; nunca se inventarán IDs, folios, versiones, hashes, capturas, lecturas de vuelta ni resultados. El formato respetará FOL1 y las restricciones temporales vigentes: no asignar folios si FOL1 no está ACTIVO; no agregar d.h.m., duración ni latencia mientras §52 mantenga desactivadas las métricas temporales.
+
+**Alcance de esta etapa:** crear una propuesta autónoma del anexo y una nueva candidata IPZ que enlace directamente a ella, preservando v0.13. El destino aún será documental/propuesto, no anexo canónico hasta su incorporación formal al DUG. El IPZ candidato tampoco se instalará en el campo nativo. AT permanece aplazada por instrucción expresa; no modificar ART-032 ni el DUG durante esta etapa.
+
+**Condición posterior:** cuando el operador retome AT, promover el contrato a un anexo DUG independiente (propuesta de ID ART-033, sujeto a validación del catálogo), actualizar el catálogo/versionado y sustituir en IPZ la ruta provisional por el ancla canónica estable. La integración debe mantener §4 humano/telemetría sin convertirlo en destino de IPZ.
