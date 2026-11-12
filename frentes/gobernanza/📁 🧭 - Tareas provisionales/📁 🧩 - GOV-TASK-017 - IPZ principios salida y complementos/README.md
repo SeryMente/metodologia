@@ -82,10 +82,10 @@ El operador instruye modificar la candidata actual conforme a todas las decision
 
 - **Ruta:** `frentes/gobernanza/entregas/CHATGPT-v0.13/IPZ-CAMPO-CHATGPT-v0.13-PROPUESTA.txt`
 - **Enlace:** https://github.com/SeryMente/metodologia/blob/main/frentes/gobernanza/entregas/CHATGPT-v0.13/IPZ-CAMPO-CHATGPT-v0.13-PROPUESTA.txt
-- **Versión/contador:** `IPZ v0.13 · 1331/1500`.
-- **Conteo verificado:** UTF-16 LF 1.324; UTF-16 CRLF 1.331; puntos de código 1.324. El encabezado refleja el máximo CRLF.
-- **Blob SHA actual:** `c57537a99f4c6fc01897288e76b6afba6bd1445f`.
-- **Commit de creación:** `1dec260be2edf5e4b507f34b56abd448d3f3ef40`; commit de última optimización y corrección del contador: `1a1c72a8713d90a47cce013ebb7b3141b2279e82`.
+- **Versión/contador:** `IPZ v0.13 · 1353/1500`.
+- **Conteo verificado:** UTF-16 LF 1.346; UTF-16 CRLF 1.353; puntos de código 1.346. El encabezado refleja el máximo CRLF.
+- **Blob SHA actual:** `5a30a2e305cd0547b7c4f087a0f8848e3e7241e2`.
+- **Commit de creación:** `1dec260be2edf5e4b507f34b56abd448d3f3ef40`; commit de última optimización y corrección del contador: `2817dda3ae5783adba052771dfd1ac651e5e5536`.
 - **Read-back:** contenido recuperado desde `main`; versión, contador, texto y blob cotejados. Los siete destinos/anclas se verificaron contra el DUG vigente.
 - **Preservación:** v0.12 continúa en su ruta histórica y no fue sobrescrita; baseline v0.7 no fue modificada ni declarada instalada.
 - **Límites:** campo nativo IPZ sin modificar; ART-032 sin modificar; AT aplazada; FOL1 y MCP-NORMATIVO no activados.
