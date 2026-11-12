@@ -13,20 +13,21 @@ Revisar secuencialmente la candidata documental de Instrucciones Personalizadas 
 
 ## Decisiones expresas del operador que esta tarea debe conservar
 
-1. **Parte 3:** conjunto general de principios, anclado en «Principios universales»; no es el CNP.
-2. **Parte 4:** Conjunto Nuclear de Principios (CNP), con sus cinco principios nucleares.
-3. **Parte 5:** salida, exclusivamente mediante Metacanon §4.
-4. **Parte 6:** complementos, exclusivamente mediante ART-032. La parte 6 no contendrá formatos, campos, contratos ni instrucciones de salida.
-4. **Continuidad y procedencia:** conservar como requisito. No se elimina ni se reduce a metadatos decorativos.
-5. **Complementos ART-032 §5 (parte 6 de IPZ):**
+1. **Parte 1:** vocabulario — GOW §ARR.
+2. **Parte 2:** taxonomía — ART-031.
+3. **Parte 3:** principios universales — conjunto general de los 43 principios, con ART-027/MDP para reconocer pertinencia y lectura íntegra de cada norma pertinente antes de aplicarla; no recorrer los 43 por rutina.
+4. **Parte 4:** CNP — lectura íntegra de P001/P004/P005/P038/P043; no sustituye ni excluye otros principios pertinentes.
+5. **Parte 5:** salida — exclusivamente Metacanon §4.
+6. **Parte 6:** complementos — exclusivamente ART-032. No incluir aquí formatos, campos, cabeceras, contadores, contrato ni instrucciones de salida.
+7. **Continuidad y procedencia:** conservar como requisito dentro de los complementos, sin reducirlo a metadatos decorativos. Fundamento: P017/P039 para continuidad; P037 para procedencia técnica; P038 para fuente canónica.
+8. **Complementos ART-032 §5 (parte 6 de IPZ):**
    - **Conservar sin ampliar** el complemento de no burocracia adicional.
-   - **Conservar continuidad y procedencia** como un único complemento breve. Su fundamento se remite a P017/P039 (continuidad), P037 (procedencia técnica) y P038 (fuente canónica); no copiar sus enunciados ni volver a imponer sus procedimientos dentro de ART-032.
-   - **Eliminar el antiguo punto 3 (contrato de salida del operador).** Ese contenido no debe trasladarse ni resumirse en los complementos IPZ. Metacanon §4 es el destino exclusivo para salida; la parte 6 no contendrá formatos, campos, cabeceras, contadores, contratos ni instrucciones de salida.
-   - **Reformular el antiguo punto 4 (integridad) como una regla mínima, activada por evento y sin checklist repetitivo.** Debe remitir a los principios que ya gobiernan cada salvaguarda: P005 antes de modificar normas del DUG; P037 para CAS/SHA cuando exista escritura concurrente o cambio del asiento de responsabilidad; P004 al declarar hechos/resultados que requieran verificación; P038 para resolver la fuente canónica. La lectura de vuelta se aplica después de una persistencia efectuada cuando haga falta comprobarla, no como ceremonia en cada turno. No duplicar el procedimiento de AT ni el contrato de salida de §4.
+   - **Conservar continuidad y procedencia** como un único complemento breve. No copiar los enunciados de los principios ni duplicar sus procedimientos.
+   - **Retirar el antiguo punto 3 (contrato de salida del operador)** del conjunto de complementos. No trasladarlo ni resumirlo en la parte 6; la salida corresponde solo a la parte 5/Metacanon §4.
+   - **Reformular el antiguo punto 4 (integridad)** como una regla mínima activada por evento: P005 ante modificación normativa; P037 ante concurrencia o cambio del asiento de responsabilidad; P004 al afirmar hechos/resultados que requieran verificación; P038 para identificar la fuente canónica. La lectura de vuelta se aplica a una persistencia efectuada que deba comprobarse, no como ceremonia en cada turno.
    - **Eliminar el antiguo punto 5 (foliación).**
    - **Eliminar el antiguo punto 6 (estado MCP-NORMATIVO).**
-6. No instalar ni modificar el campo nativo IPZ en esta tarea. No activar FOL1 ni MCP-NORMATIVO.
-
+9. No instalar ni modificar el campo nativo IPZ en esta tarea. No activar FOL1 ni MCP-NORMATIVO.
 ## Fundamento en principios vigentes
 
 Fuente de referencia: DUG Samantha v393 · NX-393m, Metacanon 1.31, archivo `gobernanza/METAPROMPT-CANONICO-SAMANTHA.html`, blob `844fc507a2a9a0bfc8f4e68884cca9f6d2912c96`.
