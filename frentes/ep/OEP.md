@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.79. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.80. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -4390,3 +4390,30 @@ Hasta superar estos gates, EP Vault permanece como release candidata materializa
 - `core` y `bmm` 6.12.4 instalados y reconocidos por `bmad-cli status`; 29 directorios de skills y 29 comandos generados para OpenCode. El proyecto no contiene un proyecto productivo.
 - El paso pendiente es una ejecución BMAD real por OpenCode con una respuesta de Groq y lectura de vuelta de un artefacto de prueba dentro del workspace aislado.
 
+
+
+### 142.12 Integración E2E BMAD–OpenCode–Groq confirmada · Fila 4 · 2026-11-12
+
+**Corrección de configuración**
+- Configuración local: `MOD-EP-OPENCODE/config/Fila4/xdg-config/opencode/opencode.json`.
+- SHA-256 después del cambio y read-back: `5F24F3F43822C65113D9EEEC71AAFD67EC96287C7068679E52E4BE89DF777CC6`.
+- Configuración efectiva: `$schema=https://opencode.ai/config.json`, `model=groq/openai/gpt-oss-120b`; sin proveedor personalizado ni adaptador OpenAI-compatible.
+- El adaptador anterior provocó `property 'reasoning_content' is unsupported` al reconstruir el historial de una conversación con tool calls. La configuración nativa evita el replay incompatible y conserva el modelo solicitado.
+
+**Ejecución verificada**
+- Origen RDC: sesión administrativa elevada `CENTRAL\MantenimientoRCI` en PC10RCIF4EI4.
+- Destino de trabajo: `C:\Users\fila4\Desktop\SeryMente`.
+- La tarea E2E se ejecutó como `CENTRAL\fila4` en sesión interactiva 1, con `USERPROFILE=C:\Users\fila4`; la lectura DPAPI CurrentUser se realizó bajo esa identidad. No se usó el perfil administrativo para descifrar secretos.
+- Sesión Vault importada desde `MOD-EPVAULT/v1.0.0/data/Fila4/Khora/secrets/` mediante el hotfix de TTL de 3600 segundos. En el test de 16:18:09 local se observó `VAULT_SESSION=ACTIVE` y 3161 segundos restantes. La expiración de sesión y la de nota son independientes.
+- Nota temporal usada: `N-20261112221106-E270CD5E`, creación `2026-11-12T22:11:06.1364694Z`, expiración `2026-11-12T22:41:06.1364694Z`. No se expuso su valor.
+- Proyecto aislado: `MOD-EP-BMAD/data/Fila4/bmad-opencode-smoke/`; no se seleccionó ni modificó un repositorio productivo.
+- OpenCode 1.19.5 ejecutado con `groq/openai/gpt-oss-120b`; respuesta observada: Core/BMM detectables y skill `bmad-help` identificada. Marcador exacto `BMAD_GROQ_E2E_OK`; `OPENCODE_EXIT=0`; `EXIT_CODE=0`; finalización local `2026-11-12T16:18:21.0932094-06:00`.
+- La instrucción de prueba prohibía modificar archivos. Esta aprobación acredita autenticación, inferencia, interacción con el proyecto y descubrimiento/uso de skills en modo de lectura; no acredita todavía generación de artefacto, escritura/read-back BMAD ni aceptación integral.
+
+**Launcher y seguridad**
+- `Start-OpenCode-Groq-Ephemeral.ps1` importa ahora `Import-EpSharedSession` explícitamente en el ámbito del módulo después de redirigir `LOCALAPPDATA` a los datos de EP Vault. Esto corrige el fallo previo `VAULT_SESSION_NOT_OPEN` causado por invocar una función privada fuera del ámbito del módulo.
+- SHA-256 del launcher después de la corrección: `3B77576F2B6DDC09F74646A1478F60B3C808C93777FA1F69E06714779EB84421`.
+- La API key se entregó solo mediante `GROQ_API_KEY` al proceso. La configuración contiene únicamente la selección de modelo; el bloque `finally` elimina la variable del proceso lanzador. No se escribió la clave a disco, Git, `auth.json` ni logs.
+- La configuración personalizada anterior se preservó fuera de la configuración activa como respaldo de diagnóstico.
+
+Resultado: `BMAD_GROQ_E2E=PASS_READ_ONLY_SKILL_DISCOVERY`; `GROQ_INFERENCE=PASS_OBSERVED`; `GROQ_SECRET_PERSISTENCE=NONE_OBSERVED`; `PRODUCTIVE_REPO_WRITES=NONE`. Pendientes globales: prueba de generación y read-back sintético dentro del workspace aislado, auditoría física completa del confinamiento de datos, Chrome modular y continuidad multi-terminal.
