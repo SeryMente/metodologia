@@ -1,11 +1,11 @@
 # EP-TASK-003 · Materialización del workspace Cryptomator y confinamiento de aplicaciones
 
 **Naturaleza:** tarea provisional del frente EP; sin titularidad, control, sesión ni folio propios.  
-**Estado:** `en_curso · CRYPTOMATOR_SELECTED · INSTALLATION_NOT_STARTED · VAULT_NOT_CREATED · APP_DATA_CONFINEMENT_PENDING · MIGRATION_NOT_STARTED · LEGACY_BITLOCKER_VHDX_CLEANUP_PENDING`
+**Estado:** `en_curso · CLI_ONLY_POLICY_ADOPTED · CRYPTOMATOR_DESKTOP_AND_WINFSP_INSTALLED · CLI_BUILD_PENDING · VAULT_NOT_CREATED · APP_DATA_CONFINEMENT_PENDING · MIGRATION_NOT_STARTED · LEGACY_BITLOCKER_VHDX_CLEANUP_PENDING`
 **Responsabilidad:** frente EP.  
 **OEP padre:** [OEP](../../OEP.md), especialmente §137.
 
-## Alcance vigente · OEP §137
+## Alcance vigente · OEP §§137–138
 
 1. Materializar una bóveda Cryptomator como único contenedor de protección del workspace persistente SeryMente; no usar ni crear VHDX o configuración BitLocker para EP.
 2. Materializar dentro de la bóveda el árbol canónico Herramientas/, Repositorios/, Datos/ y Temporal/, conservando las rutas lógicas y agrupación por frente definidas en OEP §137.
@@ -13,6 +13,36 @@
 4. Migrar únicamente después de inventario, preservación del origen y manifiesto; verificar conteos, tamaños, SHA-256, read-back, apertura de repositorios y funcionamiento de aplicaciones. No borrar el original antes de aceptación.
 5. Inventariar y retirar, tras comprobar propiedad y contenido, los artefactos locales específicos del diseño descartado BitLocker/VHDX: VHDX EP, puntos de montaje, scripts, configuraciones, instaladores, accesos directos y trabajos asociados. No retirar a ciegas información útil ni componentes ajenos a EP.
 6. Demostrar que no quedan escrituras persistentes de datos de usuario de aplicaciones fuera del workspace durante arranque y uso representativos. Si una aplicación no puede confinar sus datos, bloquearla para la sesión EP hasta corregirla o sustituirla.
+
+
+## Régimen operativo CLI-only vigente · OEP §138
+
+**Instrucción adoptada el 2026-11-12:** todas las herramientas de EP se operan exclusivamente por CLI. Se prohíbe iniciar o utilizar cualquier GUI —incluida Cryptomator Desktop— para instalar, configurar, autenticar, desbloquear, montar, administrar, trabajar o cerrar herramientas, hasta que haya un segundo monitor físicamente conectado y activo y el operador autorice expresamente reconsiderar la restricción. Terminales, TUI y prompts textuales sí están permitidos. Si una capacidad no dispone de CLI suficiente, queda bloqueada; no se recurre a clicks, UIAutomation ni GUI como fallback.
+
+### Vía técnica Cryptomator
+
+- El último tag estable comprobado de Cryptomator CLI es 0.6.2; su alcance documentado es unlock/mount de bóvedas formato 8 y no incluye creación.
+- La rama oficial develop incluye un subcomando create, con versión de proyecto 0.7.0-SNAPSHOT. Se encuentra en el commit firmado/verificado f09851d3990f4b7dc6f572f8a9eb9a5f2882f439 (Armin Schrenk, 2026-11-05). Requiere JDK 25 y usa bibliotecas oficiales Cryptomator para generar la Masterkey e inicializar la bóveda; no se incorpora criptografía propia.
+- La build local solo se acepta tras fijar el commit, verificar firma e integridad de blobs, comprobar SHA-256 del artefacto, compilar y pasar pruebas unitarias/de integración de create, unlock, escritura/lectura, ciphertext y cierre/reapertura. Se etiqueta LOCAL_BUILD_FROM_SIGNED_UPSTREAM_SOURCE, no versión estable publicada.
+- En operaciones reales, la contraseña solo se introduce mediante --password:stdin con prompt oculto de la propia CLI en consola local. Quedan prohibidos argumentos con contraseña, variables de entorno, ficheros de contraseña, keychain, DPAPI y logs con secretos.
+- WinFsp se conserva como dependencia de sistema para el montaje local CLI; no es una interfaz gráfica.
+
+### Estado físico que gobierna la tarea
+
+Cryptomator Desktop 1.19.6.6588 y WinFsp 2.1.25156 fueron instalados antes de esta instrucción. El motor Desktop no se volverá a iniciar por GUI. La carpeta de instalación Desktop bajo SeryMente no acredita protección ni aceptación. Existe una copia bootstrap Desktop y directorios de perfil/log/montaje bajo C:\Users\fila4\EP\Bootstrap\Cryptomator; requieren auditoría y retirada de datos de usuario no autorizados. Solo podrá permanecer un binario CLI mínimo como bootstrap, sin configuración/logs/cachés externos.
+
+El directorio C:\Users\fila4\EP\ProtectedWorkspace\SeryMente-Vault fue creado previamente, pero permanece vacío y no es todavía una bóveda. El origen C:\Users\fila4\Desktop\SeryMente continúa sin cifrar y se conserva intacto; no se movió ni copió contenido del workspace a la bóveda. No se ingresó contraseña, no existe bóveda real, no se ejecutó migración y no se aceptó confinamiento de datos. El VHDX histórico permanece intacto.
+
+### Secuencia bloqueante
+
+1. Compilar la revisión oficial firmada de CLI 0.7.0-SNAPSHOT con JDK 25 portable y todas las cachés/temporales dentro de SeryMente.
+2. Pasar pruebas de build e integración y crear/desbloquear una bóveda sintética por CLI.
+3. Crear la bóveda real por CLI cuando la revisión supere los gates; el operador introduce la contraseña directamente en el prompt local.
+4. Migrar por copia, con inventario completo, conteos, tamaño, SHA-256 por ruta y read-back; preservar el origen hasta aceptación.
+5. Verificar bloqueo/desmontaje, rutas efectivas de escritura y limpiar únicamente los residuos bootstrap cuyo contenido y titularidad hayan sido auditados.
+
+**Estado:** CLI_ONLY_POLICY_ADOPTED · SOURCE_COMMIT_SIGNATURE_VERIFIED · CLI_BUILD_PENDING · REAL_VAULT_NOT_CREATED · MIGRATION_NOT_STARTED · SOURCE_PRESERVED · ACCEPTANCE_PENDING. La evidencia de procedencia y el estado detallado se conservan en OEP §138.
+
 
 ## Diseño histórico revisado — ANTECEDENTE NO VIGENTE
 
