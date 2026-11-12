@@ -155,3 +155,18 @@ Esta ficha es una tarea provisional de planificación y persistencia. No canoniz
 **Alcance de esta etapa:** crear una propuesta autónoma del anexo y una nueva candidata IPZ que enlace directamente a ella, preservando v0.13. El destino aún será documental/propuesto, no anexo canónico hasta su incorporación formal al DUG. El IPZ candidato tampoco se instalará en el campo nativo. AT permanece aplazada por instrucción expresa; no modificar ART-032 ni el DUG durante esta etapa.
 
 **Condición posterior:** cuando el operador retome AT, promover el contrato a un anexo DUG independiente (propuesta de ID ART-033, sujeto a validación del catálogo), actualizar el catálogo/versionado y sustituir en IPZ la ruta provisional por el ancla canónica estable. La integración debe mantener §4 humano/telemetría sin convertirlo en destino de IPZ.
+
+
+## Ejecución · anexo operativo exclusivo y candidata IPZ v0.14 · 2026-11-12
+
+**Anexo propuesto creado:** `frentes/gobernanza/entregas/CHATGPT-v0.14/ANEXO-FORMATO-SALIDA-IPZ-v0.1-PROPUESTA.md`. Blob SHA tras lectura de vuelta: `2a82560e2cffad8facba60d8d02e5f05940a8292`; commit de creación: `98b94c2a6b9657f9123efe01c968e26bd402a00a`. Es un contrato exclusivo para el modelo/IPZ, no formato humano ni telemetría. Contiene estructura fija, campos obligatorios, marcadores diferenciados para valores ausentes y criterio de conformidad.
+
+**Candidata IPZ v0.14 creada y optimizada:** `frentes/gobernanza/entregas/CHATGPT-v0.14/IPZ-CAMPO-CHATGPT-v0.14-PROPUESTA.txt`. Blob SHA final: `686c521de95ab4ce41d3af02f27adf0a6bdf6671`; último commit: `c805db83c8a2b3f949ffacf1286e2ca811f8211a`. Conteo UTF-16: LF 1.315; CRLF 1.322; puntos de código 1.315; encabezado `1322/1500`.
+
+**Verificación de lectura de vuelta:** la candidata recuperada desde `main` contiene seis posiciones; la posición 5 enlaza directamente al archivo del anexo propuesto; no enlaza a `#meta-4`. La posición 6 continúa enlazando exclusivamente ART-032 y conserva únicamente la indicación de los complementos decididos. El anexo recuperado contiene los seis campos de cabecera (IPZ, DUG, CONV, CICLO, A, B) y los cinco campos del cuerpo (RESULTADO/ESTADO, EVIDENCIA/LÍMITES, BLOQUEOS REALES, SIGUIENTE ACCIÓN, CONTINUIDAD), así como reglas para no inventar datos y para no mostrar métricas temporales desactivadas.
+
+**Separación de contenido confirmada:** Metacanon §4 (`#meta-4`) conserva su función humana y de telemetría; queda fuera del enlace IPZ. El anexo operativo propuesto no incluye el contrato general de reporte humano ni telemetría técnica. El formato operativo no habilita `d.h.m.`, duración ni latencia mientras DUG §52 mantenga desactivadas las métricas temporales.
+
+**Estado y límites:** el nuevo anexo es una propuesta documental enlazada desde la candidata, no está todavía incorporado al DUG ni canonizado como ART-033. La ruta/ID final se resolverá al retomar AT y validar el catálogo. ART-032, DUG v393, GOW y controles ajenos no se modificaron; AT sigue aplazada. IPZ v0.14 no está instalada en el campo nativo; v0.13 y las versiones anteriores se preservan.
+
+**Próxima etapa normativa:** cuando el operador retome AT, incorporar formalmente el anexo específico al DUG, validar su ID/ancla y catálogo, resolver la compatibilidad de ART-032 con la composición de seis partes y sustituir el enlace provisional por el ancla canónica estable. Hasta entonces, v0.14 y su anexo son candidatos documentales, no instrucciones nativas instaladas.
