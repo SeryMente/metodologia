@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.89. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.90. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -4661,3 +4661,14 @@ Ambas conexiones alcanzan el mismo host físico observado; no representan dos te
 - **Límite no resuelto:** la carpeta completa `C:\Users\fila4\Desktop\SeryMente\` no se migró; permanece intacta y en claro. La promoción de llave no cambia ese estado ni convierte la bóveda de pocos KB en un cifrado integral del workspace.
 
 **Estado actualizado:** `RECOVERY_KEY_PROMOTED_READBACK_VERIFIED_AND_EPVAULT_LOCKED` · `CRYPTOMATOR_MOUNT_ABSENT` · `FULL_WORKSPACE_ENCRYPTION_PENDING`.
+
+
+### 142.20 Prueba de carga runtime Superpowers y gate EP Vault · 2026-11-12
+
+- La configuración OpenCode V1 para Superpowers `v7.0.2` conserva el modelo Groq existente; el paquete y los 15 directorios de skills están presentes en el caché local de OpenCode.
+- La primera prueba se inició con una sesión EP Vault activa, pero OpenCode no devolvió enumeración observable de skills ni salida útil del prompt. El proceso de prueba terminó con `OPENCODE_EXIT=1` después de quedar sin progreso observable; no se modificó el proyecto sintético.
+- El reintento posterior fue detenido por `VAULT_SESSION_NOT_OPEN`, antes de iniciar OpenCode, porque la sesión EP Vault había vencido. No se solicitó ni leyó contraseña maestra y no se intentó eludir DPAPI.
+- Resultado: `SUPERPOWERS_CONFIG=PASS`; `SUPERPOWERS_PACKAGE_DOWNLOAD=PASS`; `SUPERPOWERS_SKILL_DIRECTORIES=15_OBSERVED`; `SUPERPOWERS_RUNTIME_DISCOVERY=NOT_VERIFIED`; `RUNTIME_RETRY=BLOCKED_VAULT_SESSION_NOT_OPEN`.
+- Condición de desbloqueo: el operador deberá desbloquear EP Vault localmente bajo `CENTRAL\fila4`; después se podrá repetir la prueba breve de descubrimiento. La credencial Groq sigue separada y no se expuso ni se persistió en texto plano.
+- La tarea `EP-TASK-008` permanece `en_curso`; no declarar aceptación runtime ni cierre de vMAT hasta obtener una enumeración observable de skills y una prueba sintética de captura → tarea → plan → ejecución/revisión/verificación.
+
