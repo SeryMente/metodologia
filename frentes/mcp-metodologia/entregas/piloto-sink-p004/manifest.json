@@ -1,0 +1,90 @@
+{
+  "schema": "mcp-ocp-pilot-package-manifest/v1",
+  "product": "MCP-OCP SINK:P004 pilot",
+  "package": "MCP-OCP-SINK-P004-f8973a19-candidate.zip",
+  "package_size": 137784,
+  "package_sha256": "705716c7aa581a98817869eb281b87500b591c4e811653c3a6825e1ceb59a3d2",
+  "status": "CANDIDATE_NOT_ACCEPTED",
+  "source_repository": "SeryMente/metodologia",
+  "source_branch": "feat/mcp-ocp-p004-reconciled-20261111-7ab0c555",
+  "source_commit": "f8973a1958fb1e6d259786c2828a19dae05aeee6",
+  "main_base_at_build": "cb9b6a704bb18ccd219d847a48e810f22b4e2c3e",
+  "latest_main_after_sync": "9ec698fbe27fd087c2cc9939b3afd604984e6154",
+  "latest_sync_merge": "720fc22ecad3ecdcfe3087778472e51aaa939068",
+  "review_pr": {
+    "number": 28,
+    "status": "OPEN_DRAFT_NOT_MERGED",
+    "base": "9ec698fbe27fd087c2cc9939b3afd604984e6154"
+  },
+  "dug_version": "v388",
+  "dug_signature": "NX-388m",
+  "dug_commit": "3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c",
+  "dug_git_blob": "4db0ebadfd1e48b2bdec9236ba7f344921e4a865",
+  "sdk": "10.0.403",
+  "target_framework": "net10.0",
+  "runtime_used": "Microsoft.NETCore.App 10.0.14 x64",
+  "required_runtime": "Microsoft.NETCore.App 10.0.x x64",
+  "runtime_identifier": null,
+  "deployment_mode": "framework-dependent",
+  "network_listener": false,
+  "normative_engine": "DISABLED",
+  "ipz_e2e": "NOT_ACCEPTED",
+  "validation": {
+    "restore": "PASS",
+    "build": "PASS",
+    "build_warnings": 0,
+    "build_errors": 0,
+    "p004_tests": "18/18 PASS",
+    "monitor_readiness_tests": "23/23 PASS",
+    "stdio_smoke": "PASS",
+    "package_extract_hash_readback": "PASS",
+    "packaged_executable_smoke": "PASS"
+  },
+  "files": [
+    {
+      "path": "RUNBOOK.md",
+      "size": 2013,
+      "sha256": "4190999bee65bfb590c5a3ef24ec2faa5ba8f415c6e2530b3028ee06d7cabfb2"
+    },
+    {
+      "path": "server/OcpMcp.deps.json",
+      "size": 819,
+      "sha256": "a4f40d142e6e520b2e3b61d3e886a2937e204694cd0b1cd83184839b3c180b79"
+    },
+    {
+      "path": "server/OcpMcp.dll",
+      "size": 57344,
+      "sha256": "a812d492a01b05ef7a2c65c9ad655bef003bb8926ac4a9f1b2788db2dd39d043"
+    },
+    {
+      "path": "server/OcpMcp.exe",
+      "size": 162304,
+      "sha256": "b46bab47f6d0d7107f9aea4e4af88b4c169345e25f77e6d517936c94d5f80d0c"
+    },
+    {
+      "path": "server/OcpMcp.Monitoring.dll",
+      "size": 41984,
+      "sha256": "26b25d60a928518bfbe738be2722226c31207bedf276a0fad1e80278ca36cc73"
+    },
+    {
+      "path": "server/OcpMcp.Monitoring.pdb",
+      "size": 18080,
+      "sha256": "ae61af9f89dc77bab487cd6c5b1b8f23d2c303a778a133040e5c9ff6e7ac9a0d"
+    },
+    {
+      "path": "server/OcpMcp.pdb",
+      "size": 19120,
+      "sha256": "d13a9c783f12d0ed9e2eaafd6c5f43d6b68820a4c9047aef65ab29e5d3e1202c"
+    },
+    {
+      "path": "server/OcpMcp.runtimeconfig.json",
+      "size": 342,
+      "sha256": "c230a317a54dd960bcbeb5f347f52e18dc665a26f7efda2159fced9a5ac7e097"
+    },
+    {
+      "path": "SOURCE-PIN.json",
+      "size": 6120,
+      "sha256": "9116d63197b20c6c4587081103574e02330543aaf56f4e679c7054141b1ff86f"
+    }
+  ]
+}

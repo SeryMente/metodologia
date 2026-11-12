@@ -1,0 +1,103 @@
+{
+  "schema": "mcp-ocp-pilot-validation-receipt/v1",
+  "status": "PASS_LOCAL_BUILD_TESTS_AND_PACKAGE",
+  "validated_at": "2026-11-11T15:07:23.3527331-06:00",
+  "time_zone": "America/Mexico_City",
+  "source_repository": "SeryMente/metodologia",
+  "source_branch": "feat/mcp-ocp-p004-reconciled-20261111-7ab0c555",
+  "source_commit": "f8973a1958fb1e6d259786c2828a19dae05aeee6",
+  "main_base_at_build": "cb9b6a704bb18ccd219d847a48e810f22b4e2c3e",
+  "latest_main_after_sync": "9ec698fbe27fd087c2cc9939b3afd604984e6154",
+  "latest_sync_merge": "720fc22ecad3ecdcfe3087778472e51aaa939068",
+  "review_pr": 28,
+  "host": {
+    "os": "Windows 10.0.26200",
+    "architecture": "x64",
+    "powershell": "7.4.22",
+    "sdk": "10.0.403",
+    "runtime": "10.0.14"
+  },
+  "source_integrity": {
+    "checkout_head": "720fc22ecad3ecdcfe3087778472e51aaa939068",
+    "build_source_commit": "f8973a1958fb1e6d259786c2828a19dae05aeee6",
+    "clean_before_build": true,
+    "dug_git_blob": "4db0ebadfd1e48b2bdec9236ba7f344921e4a865"
+  },
+  "results": {
+    "restore": "PASS",
+    "builds": "PASS; 0 warnings; 0 errors",
+    "p004_tests": {
+      "pass": 18,
+      "fail": 0
+    },
+    "monitor_readiness_tests": {
+      "pass": 23,
+      "fail": 0
+    },
+    "stdio_eof_smoke": "PASS",
+    "package_extract_hash_readback": "PASS",
+    "packaged_executable_stdio_smoke": "PASS"
+  },
+  "package": {
+    "file": "MCP-OCP-SINK-P004-f8973a19-candidate.zip",
+    "size": 137784,
+    "sha256": "705716c7aa581a98817869eb281b87500b591c4e811653c3a6825e1ceb59a3d2",
+    "manifest": "manifest.json",
+    "manifest_size": 3050,
+    "manifest_sha256": "03ef3b75d21a153d6b659056c4e401ca65fd6e7f2355cc57d48ed6e71746f750",
+    "files_in_archive": 9
+  },
+  "diagnostic_logs": {
+    "dotnet-info.log": {
+      "sha256": "cf63f9432519bc6777afeab903d1651c3c7cefa5a37b53a64f4d01b512b86db4",
+      "size": 2006
+    },
+    "restore-pilot-tests.log": {
+      "sha256": "a3928c3fdf591e949f7c764bccc63ebdcb5bffaa771eb953c269c23fecb2af3b",
+      "size": 142
+    },
+    "restore-monitor-tests.log": {
+      "sha256": "a3928c3fdf591e949f7c764bccc63ebdcb5bffaa771eb953c269c23fecb2af3b",
+      "size": 142
+    },
+    "build-server.log": {
+      "sha256": "52332c1ba301d8959ac8feac3e2a1089148ef019f0c7938eb32c5f27c6304f36",
+      "size": 376
+    },
+    "build-pilot-tests.log": {
+      "sha256": "e793376fb736b64d8131c971a9ae3d61c77398a53d28b4930dec99d2dcd8f164",
+      "size": 528
+    },
+    "pilot-contract-tests.log": {
+      "sha256": "d6f21749d8898b6624988bf056da2bcc66da3a5df1cae8ffa1fa2db36deb338b",
+      "size": 1098
+    },
+    "build-monitor-tests.log": {
+      "sha256": "3b0f5d40dbb16b876f726fca57a6abf09ea7b880dd935638ffc3c68d9c50d395",
+      "size": 429
+    },
+    "monitor-contract-tests.log": {
+      "sha256": "b9b3f2b5a42285cc3d81ae5eefbdc678104e5e408a861bb5d1045885cbc29989",
+      "size": 1384
+    },
+    "smoke-summary.log": {
+      "sha256": "2d5c90d467b5508a9fad22f0c00902035d9f3fe7f703b052aab13365be2c0b31",
+      "size": 78
+    },
+    "stdio-stdout.jsonl": {
+      "sha256": "7818b9894239d7760ead89d18ba78244096041fe2738c639f840a5fcd9918938",
+      "size": 8215
+    },
+    "stdio-stderr.log": {
+      "sha256": "682f9c873520c4d9c5074c926994cb2e33bb5e0da31ecec26b365c1f3e3a30bf",
+      "size": 449
+    }
+  },
+  "limitations": {
+    "github_hosted_ci": "NOT_VERIFIED",
+    "ep_installation": "NOT_PERFORMED",
+    "fila4_persistent_runtime": "NOT_VERIFIED",
+    "ipz_e2e": "NOT_ACCEPTED",
+    "mcp_normativo": "DESACTIVADO"
+  }
+}

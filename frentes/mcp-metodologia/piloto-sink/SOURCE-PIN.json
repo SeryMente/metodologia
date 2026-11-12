@@ -1,0 +1,162 @@
+{
+  "schema": "mcp-ocp-sink-source-pin/v1",
+  "repository": "SeryMente/metodologia",
+  "ref": "main",
+  "commit": "3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c",
+  "path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+  "git_blob_sha": "4db0ebadfd1e48b2bdec9236ba7f344921e4a865",
+  "dug": {
+    "version": "v388",
+    "signature": "NX-388m",
+    "event": "C-GOBERNANZA-ART027-SINK-LOCAL-RECONCILIACION-20261110-01",
+    "principles": 43,
+    "metacanon": "1.29",
+    "gow": "2.18",
+    "commit": "3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c"
+  },
+  "gow_arr": {
+    "section_id": "gow-sec-14",
+    "anchor": "#gow-arranque-chatgpt"
+  },
+  "sink": {
+    "principle_id": "P004",
+    "title": "Principio de No-Simulación 🔒",
+    "human_anchor": "#P004",
+    "microdescriptor": "Exigir hechos verificables; activarlo ante afirmaciones sobre capacidades, datos, acciones o certezas.",
+    "normative_text": "No finjas capacidades, datos, resultados ni certezas, ni declares límites sin verificar con herramientas. Marca tu certeza y nombra los huecos sin rellenarlos. Precedencia absoluta sobre la exhaustividad y el buen trato."
+  },
+  "build": {
+    "sdk": "10.0.403",
+    "external_package_dependencies": [],
+    "pilot_runtime_identifier": null,
+    "pilot_mode": "framework-dependent",
+    "release_runtime_identifier": "win-x64",
+    "release_self_contained": true,
+    "monitoring_library": "net10.0",
+    "panel_target_framework": "net10.0-windows",
+    "panel_runtime_identifier": "win-x64",
+    "panel_publish_profile": "src/OcpMcp.Panel/Properties/PublishProfiles/win-x64.pubxml",
+    "monitor_schema_version": 1
+  },
+  "verification": "LOCAL_WINDOWS_VALIDATION_PASS on f8973a1958fb1e6d259786c2828a19dae05aeee6: SDK 10.0.403; restores/builds PASS with zero warnings/errors; P004 18/18; monitor/readiness 23/23; STDIO initialize/tools/list/call(P004)/EOF PASS. EP install and IPZ E2E not claimed.",
+  "branch_base_sha": "7ab0c555b774adc5b930aad700f101ab2660b79a",
+  "branch": "feat/mcp-ocp-p004-reconciled-20261111-7ab0c555",
+  "reconciliation": {
+    "date": "2026-11-11",
+    "initial_main": "7ab0c555b774adc5b930aad700f101ab2660b79a",
+    "latest_main": "9ec698fbe27fd087c2cc9939b3afd604984e6154",
+    "port_commit": "6dda16a2fe9a5173f21ccdaaa23ba1ac9f9721c4",
+    "latest_sync_merge": "720fc22ecad3ecdcfe3087778472e51aaa939068",
+    "report": "frentes/mcp-metodologia/piloto-sink/RECONCILIACION-20261111.md",
+    "status": "BUILD_TESTS_SMOKE_AND_PACKAGE_VERIFIED_CANDIDATE_NOT_ACCEPTED",
+    "historical_build_commit": "b6ce37af1dc32b2e3bb8af3ded2a77c7ba6d7648",
+    "note": "Code/test blobs match an older local validation, but this branch has not had a fresh restore/build/test/smoke. Historical ZIP/manifest are not reused.",
+    "review_pr": {
+      "number": 28,
+      "url": "https://github.com/SeryMente/metodologia/pull/28",
+      "status": "OPEN_DRAFT_NOT_MERGED",
+      "base": "9ec698fbe27fd087c2cc9939b3afd604984e6154"
+    }
+  },
+  "validation": {
+    "status": "PASS",
+    "validated_at": "2026-11-11T15:07:22.0488444-06:00",
+    "time_zone": "America/Mexico_City",
+    "source_commit": "f8973a1958fb1e6d259786c2828a19dae05aeee6",
+    "source_branch": "feat/mcp-ocp-p004-reconciled-20261111-7ab0c555",
+    "main_base": "cb9b6a704bb18ccd219d847a48e810f22b4e2c3e",
+    "host_platform": "Windows 10.0.26200 x64",
+    "powershell": "7.4.22",
+    "sdk": "10.0.403",
+    "runtime_used": "Microsoft.NETCore.App 10.0.14 x64",
+    "sdk_mode": "isolated temporary SDK; no machine-wide installation",
+    "checkout_mode": "ephemeral clone under C:\\Temp",
+    "dug_commit": "3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c",
+    "dug_git_blob": "4db0ebadfd1e48b2bdec9236ba7f344921e4a865",
+    "restore_pilot_tests": "PASS",
+    "restore_monitor_tests": "PASS",
+    "server_build": "PASS",
+    "pilot_test_build": "PASS",
+    "monitor_test_build": "PASS",
+    "build_warnings": 0,
+    "build_errors": 0,
+    "p004_tests": {
+      "pass": 18,
+      "fail": 0
+    },
+    "monitor_readiness_tests": {
+      "pass": 23,
+      "fail": 0
+    },
+    "stdio_smoke": {
+      "status": "PASS",
+      "initialize": "PASS",
+      "tools_list": "PASS",
+      "sink_P004": "PASS",
+      "eof": "PASS",
+      "responses": 3,
+      "success_event": "SINK_READ_SUCCESS"
+    },
+    "logs": {
+      "dotnet-info.log": {
+        "sha256": "cf63f9432519bc6777afeab903d1651c3c7cefa5a37b53a64f4d01b512b86db4",
+        "size": 2006
+      },
+      "restore-pilot-tests.log": {
+        "sha256": "a3928c3fdf591e949f7c764bccc63ebdcb5bffaa771eb953c269c23fecb2af3b",
+        "size": 142
+      },
+      "restore-monitor-tests.log": {
+        "sha256": "a3928c3fdf591e949f7c764bccc63ebdcb5bffaa771eb953c269c23fecb2af3b",
+        "size": 142
+      },
+      "build-server.log": {
+        "sha256": "52332c1ba301d8959ac8feac3e2a1089148ef019f0c7938eb32c5f27c6304f36",
+        "size": 376
+      },
+      "build-pilot-tests.log": {
+        "sha256": "e793376fb736b64d8131c971a9ae3d61c77398a53d28b4930dec99d2dcd8f164",
+        "size": 528
+      },
+      "pilot-contract-tests.log": {
+        "sha256": "d6f21749d8898b6624988bf056da2bcc66da3a5df1cae8ffa1fa2db36deb338b",
+        "size": 1098
+      },
+      "build-monitor-tests.log": {
+        "sha256": "3b0f5d40dbb16b876f726fca57a6abf09ea7b880dd935638ffc3c68d9c50d395",
+        "size": 429
+      },
+      "monitor-contract-tests.log": {
+        "sha256": "b9b3f2b5a42285cc3d81ae5eefbdc678104e5e408a861bb5d1045885cbc29989",
+        "size": 1384
+      },
+      "smoke-summary.log": {
+        "sha256": "2d5c90d467b5508a9fad22f0c00902035d9f3fe7f703b052aab13365be2c0b31",
+        "size": 78
+      },
+      "stdio-stdout.jsonl": {
+        "sha256": "7818b9894239d7760ead89d18ba78244096041fe2738c639f840a5fcd9918938",
+        "size": 8215
+      },
+      "stdio-stderr.log": {
+        "sha256": "682f9c873520c4d9c5074c926994cb2e33bb5e0da31ecec26b365c1f3e3a30bf",
+        "size": 449
+      }
+    },
+    "package": {
+      "status": "PASS",
+      "file": "MCP-OCP-SINK-P004-f8973a19-candidate.zip",
+      "size": 137784,
+      "sha256": "705716c7aa581a98817869eb281b87500b591c4e811653c3a6825e1ceb59a3d2",
+      "manifest_sha256": "03ef3b75d21a153d6b659056c4e401ca65fd6e7f2355cc57d48ed6e71746f750",
+      "receipt_sha256": "b068287641fa908d56bc2196dad2a4e840a0120eacf6538c74914e1bc1fdcffd",
+      "archive_file_count": 9,
+      "extract_readback": "PASS",
+      "packaged_executable_smoke": "PASS"
+    },
+    "ep_installation": "NOT_PERFORMED",
+    "ipz_e2e_acceptance": "NOT_ACCEPTED",
+    "github_hosted_ci": "NOT_VERIFIED",
+    "mcp_normativo": "DESACTIVADO"
+  }
+}

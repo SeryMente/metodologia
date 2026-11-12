@@ -1869,3 +1869,72 @@ Este suplemento solo registra la actualización de navegación y su cotejo. No r
 **Estado:** MCP-OCP-14 permanece PROPOSED / NOT ACCEPTED; solo P14-01_SCHEMA_FIXTURES_PASS_20_20. No hay runtime/IO ni ampliación de permisos. H1 permanece PAUSED_PENDING_EP_RESTORE_GATE; PR #27 continúa OPEN/DRAFT/NOT MERGED. MCP-NORMATIVO DESACTIVADO; FOL1 no activo. No se crea un nuevo folio ni ciclo DTC por esta nota incremental.
 
 **Siguiente acción:** respetar la pausa H1/EP. Mantener H2 en diseño/fixtures; la siguiente actividad útil será cerrar canonicalización e idempotencia con datos sintéticos, y revisar consistencia entre datasets/objects y semántica temporal antes de proponer ratificación de MCP-OCP-14.
+
+### Reanudación y resultado MCP-OCP · ciclo local 14 · 2026-11-11
+
+**Desviación de apertura:** el trabajo de inspección y reconciliación técnica comenzó antes de releer este objeto bilateral y GOV-TASK-015. Se registra `DTC_OPENING_LATE=TRUE`; no se reconstruye ni simula una apertura anterior. El ciclo local 13 permanece como antecedente sin renumeración.
+
+**Cursor y autoridad revalidados:** main incorporado hasta `9fa37906373e0a9af01f4ccec5060d59b8194ccb`; DUG Samantha v388/NX-388m, commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`, blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`; §ARR/`gow-sec-14` presente. Control MCP-OCP `owned`, generación 6, blob `76bd465909f5c68d623cc82dbf9c2467091cd98b`, sin modificación. FOL1 preparado/inactivo y CV/CY/A/B globales pendientes/no asignados.
+
+**Respuesta inicial al frente centralizador:** `ACKNOWLEDGED` al orden de GOV-TASK-015: rama limpia, portación selectiva, recibos ligados al commit, pruebas reproducibles y separación de las dependencias EP/IPZ. La PR #27 se conserva como referencia de lectura; no se fusiona ni se usa como base por su divergencia (53 ahead / 100 behind frente al main `7ab0c555...`).
+
+**Resultado de MCP-OCP-02:** rama `feat/mcp-ocp-p004-reconciled-20261111-7ab0c555`; commit de portación `6dda16a2fe9a5173f21ccdaaa23ba1ac9f9721c4` desde main `7ab0c555...`; sincronizaciones de dos padres incorporan commits EP posteriores, con último main `9fa37906373e0a9af01f4ccec5060d59b8194ccb`, último merge `d69bec6a9a56e3f5fb90bec6ce04fc7c56d86722`. Compare inmediato después de ese merge: AHEAD / 0 behind. Se portaron 19 archivos del ámbito MCP-OCP; el inventario REUSE/ADAPT/DROP/DEFER está en `piloto-sink/RECONCILIACION-20261111.md`. El core v0.1.31 y la lista provisional v0.13 reflejan los estados nuevos y los límites de validación.
+
+**Resultado MCP-OCP-03/04/05:** fuentes, proyectos y suites P004/monitor/readiness portados. Los siete blobs relevantes coinciden con contenidos de una validación local histórica (18/18 P004, 23/23 monitor/readiness, restore/build y STDIO/EOF PASS). Esa evidencia es histórica y no se declara reejecución en el commit actual. El entorno de esta sesión no dispone de `dotnet` ni `pwsh`: build, tests y smoke de la rama actual = `NOT_RUN`. No se generó ni reutilizó ZIP, manifest o checksum histórico.
+
+**Dependencias y límites:** EP-TASK-003/005 conservan sus gates; no se instala, extrae ni transfiere paquete a Fila 4. No se opera EP, B2, Vault, credenciales, host, IPZ ni Khora. Gobernanza mantiene la aceptación E2E desde contexto IPZ. MCP-NORMATIVO continúa DESACTIVADO.
+
+**Siguiente acción:** ejecutar restore/build, 18 pruebas P004, 23 monitor/readiness y smoke STDIO/EOF en un entorno con .NET SDK 10.0.403 y PowerShell 7.4+; después regenerar ZIP/manifest/checksums y verificar read-back del paquete exacto. Mantener la PR en DRAFT y no hacer merge. El ciclo no se declara completamente aceptado: `DTC_CYCLE_STATUS=INCOMPLETE` por apertura tardía y validación actual pendiente.
+
+**Estado:** `MCP_OCP_02=SELECTIVE_PORT_PERSISTED`; `MCP_OCP_03=HISTORICAL_BLOB_EQUIVALENCE_REEXEC_PENDING`; `MCP_OCP_04=SMOKE_REEXEC_PENDING_IPZ_E2E_NOT_ACCEPTED`; `MCP_OCP_05=P004_PORTED_BUILD_PACKAGE_PENDING`; `EP_INSTALL=BLOCKED_EP_GATES`; `HOSTED_CI=NOT_VERIFIED`; `MCP_NORMATIVO=DESACTIVADO`; `FOL1=PREPARADO_PENDIENTE_ACTIVACION_IPZ`.
+
+**Actualización posterior al read-back:** PR #28 creada para revisión, `OPEN/DRAFT/NOT MERGED`, base `1867af0c69f250aaee2b35b585eec8b74827b69c`, head inicial `d981953da84eaede38cb25649eb76b30a454a7ef`, 16 ahead / 0 behind y 23 archivos. PR #27 permanece abierta/draft como antecedente no integrado. Esta publicación no cambia el estado `DTC_CYCLE_STATUS=INCOMPLETE` ni declara build, pruebas, paquete o E2E aceptados.
+
+### Addendum de resultados verificados y publicación del piloto P004 · ciclo local 14 · 2026-11-11
+
+**Rectificación del estado técnico:** la nota de apertura tardía del ciclo 14 se conserva sin reescribirla. Después se ejecutó el build y las suites en el checkout temporal de la rama; por tanto, los estados `NOT_RUN` de la apertura quedan supersedidos por este resultado, no borrados.
+
+**Fuente ejecutada:** `SeryMente/metodologia`, rama `feat/mcp-ocp-p004-reconciled-20261111-7ab0c555`, source commit `4600086c492582c5d854145db64097310ac73686`; DUG v388/NX-388m commit `3ba8e7373324c3dfbdf6d5d26f9da31e2418e71c`, blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`.
+
+**Entorno y procedimiento:** Windows 10.0.26200 x64; PowerShell 7.4.22; SDK .NET 10.0.403 y runtime 10.0.14 x64 en ubicación temporal aislada. Checkout fresco bajo `C:\Temp\MCP-OCP-P004-20261111\repo`. Se cotejaron HEAD local/remoto, estado limpio pre-build y blob Git del DUG. No se modificó el checkout persistente, la instalación global ni el PATH.
+
+**Resultados ejecutados:**
+- Restore de proyectos P004 y monitor/readiness: PASS.
+- Build servidor/monitor y dos proyectos de pruebas: PASS; 0 warnings, 0 errors.
+- P004: 18 PASS / 0 FAIL.
+- Monitor/readiness: 23 PASS / 0 FAIL.
+- STDIO/EOF: initialize, tools/list, tools/call(P004), 3 respuestas JSON-RPC, evento `SINK_READ_SUCCESS` por STDERR y EOF limpio: PASS.
+- Publicación framework-dependent `net10.0`: PASS.
+
+**Paquete exacto publicado:**
+- `frentes/mcp-metodologia/entregas/piloto-sink-p004/MCP-OCP-SINK-P004-4600086c-candidate.zip`, 138.142 bytes.
+- SHA-256 ZIP: `50c0c68f769aefec95dfde3e45c74594d34b3fbcb25916814181fad241e8e3a6`.
+- Manifest SHA-256: `ac491edc7fadad65715b58d1275592bca86f506584489683012e74779da87627`.
+- Validation receipt SHA-256: `5652b3298b083c72faa59a48d98a644402581bdf7e0718a8bac52b1313f7b6ee`.
+- SHA256SUMS SHA-256: `aa688cf2e63a44f5edaba2650f05a2c6aaca2b86f111ee663b24a3d07576d58f`.
+- 9 archivos; extracción y cotejo manifest por tamaño/SHA-256 PASS; smoke sobre el ejecutable exacto extraído PASS.
+- Commit de publicación package/pin: `69f17be96e6a5e406d59ce66ffe0ac89589831c4`.
+
+**Sincronización y revisión:** main `cb9b6a704bb18ccd219d847a48e810f22b4e2c3e` integrado mediante merge `d1625f9345e54b90ac1ad884d4ee8476c78af491`; comparación posterior 34 ahead / 0 behind. PR #28 OPEN/DRAFT/NOT MERGED, mergeable=true. PR #27 sigue sin integrar.
+
+**Límites y gates:** hosted CI NOT_VERIFIED (el PASS proviene de ejecución local real); EP-TASK-003/005 continúan como gates de instalación/recepción; no hubo handoff, instalación, importación privada, REGISTER ni operación de host; runtime persistente de Fila 4 NO_VERIFICADO; IPZ E2E NOT_RUN/NOT_ACCEPTED; MCP-NORMATIVO DESACTIVADO; panel WPF y release 1.0.0 pendientes. El ZIP es `CANDIDATE_NOT_ACCEPTED`.
+
+**Estado técnico actualizado:** `MCP_OCP_02=PASS_SELECTIVE_RECONCILIATION`; `MCP_OCP_03=PASS_P004_18_18_AND_MONITOR_23_23`; `MCP_OCP_04=PASS_STDIO_EOF_SMOKE_IPZ_E2E_PENDING`; `MCP_OCP_05=PASS_P004_VERTICAL_SLICE_GENERALIZATION_PENDING`; `MCP_OCP_PILOT_PACKAGE=PASS_CANDIDATE_NOT_ACCEPTED`; `EP_INSTALL=BLOCKED_EP_TASK_003_005`; `HOSTED_CI=NOT_VERIFIED`; `IPZ_E2E=NOT_ACCEPTED`; `MCP_NORMATIVO=DESACTIVADO`.
+
+**Estado de ciclo conservado:** `DTC_CYCLE_STATUS=INCOMPLETE` por `DTC_OPENING_LATE=TRUE`. La ejecución y sus hashes se documentan como hechos posteriores; no se simula una apertura puntual ni se cierra retrospectivamente el ciclo.
+
+### Addendum de resultado final y read-back del paquete · ciclo local 14 · 2026-11-11
+
+**Sincronización:** main `9ec698fbe27fd087c2cc9939b3afd604984e6154`; merge de dos padres `720fc22ecad3ecdcfe3087778472e51aaa939068`. Compare final verificado: 47 ahead / 0 behind y 29 rutas. PR #28 OPEN/DRAFT/NOT MERGED, mergeable=true. PR #27 no se integra.
+
+**Código ejecutado:** source commit `f8973a1958fb1e6d259786c2828a19dae05aeee6`, antecesor del HEAD documental actual. Windows 10.0.26200 x64; PowerShell 7.4.22; SDK 10.0.403/runtime 10.0.14 en ubicación temporal. Restore/build PASS, 0 warnings/0 errors; 18/18 P004 y 23/23 monitor/readiness; STDIO/EOF PASS.
+
+**Paquete vigente, sustituto del ZIP anterior 460:** `MCP-OCP-SINK-P004-f8973a19-candidate.zip`, 137.784 bytes; ZIP SHA-256 `705716c7aa581a98817869eb281b87500b591c4e811653c3a6825e1ceb59a3d2`; manifest SHA `03ef3b75d21a153d6b659056c4e401ca65fd6e7f2355cc57d48ed6e71746f750`; recibo SHA `b068287641fa908d56bc2196dad2a4e840a0120eacf6538c74914e1bc1fdcffd`; SHA256SUMS SHA `6097ca2315bf531bde31b1df6a69d21f1d668436eef35eb7d92822b6389ed9db`. Nueve archivos; extracción/hash read-back PASS; smoke sobre el ejecutable exacto extraído PASS.
+
+**Read-back remoto:** mediante GitHub API autenticada, los bytes de ZIP, manifest, recibo, SHA256SUMS, RUNBOOK y SOURCE-PIN descargados desde el commit de publicación coincidieron con los hashes locales. `REMOTE_READBACK=PASS`. El pin/manifest/recibo declaran main sincronizado `9ec698f...` y merge `720fc22...`.
+
+**Gates no aceptados:** EP-TASK-003 mantiene bloqueo de almacenamiento y checkout/root del host; EP-TASK-005 no ha realizado handoff, extracción, importación ni instalación. Gobernanza/GOV-TASK-003 no ha hecho E2E IPZ real. Hosted CI NOT_VERIFIED; runtime persistente Fila 4 NO VERIFICADO; MCP-NORMATIVO DESACTIVADO.
+
+**Estado técnico:** `MCP_OCP_02=PASS_MAIN_0_BEHIND`; `MCP_OCP_03=PASS_18_P004_23_MONITOR`; `MCP_OCP_04=PASS_STDIO_EOF_IPZ_PENDING`; `MCP_OCP_05=PASS_P004_SLICE_GENERALIZATION_PENDING`; `MCP_OCP_PACKAGE=PASS_CANDIDATE_NOT_ACCEPTED_READBACK_MATCHED`; `EP_INSTALL=BLOCKED_EP_TASK_003_005`; `IPZ_E2E=NOT_ACCEPTED`; `HOSTED_CI=NOT_VERIFIED`.
+
+Se conserva `DTC_OPENING_LATE=TRUE` y `DTC_CYCLE_STATUS=INCOMPLETE`; no se corrige retrospectivamente la apertura. Los resultados de ejecución y publicación son asientos posteriores, no una aceptación del ciclo completo.
