@@ -9,7 +9,7 @@
 - [Persistencia DTC EP/MCP-OCP](OEP.md#95-persistencia-dtc-integrada-epmetodologia-y-continuidad-mcp-ocp--v0325--vcu-ep-v27): continuidad multiubicación EP/Metodología y estado operativo MCP-OCP, con autoridad técnica propia de MCP-OCP.
 
 - [OEP.md](OEP.md): único estado vivo del frente, v0.3.74; §§137–140 fijan estructura directa de SeryMente, módulos, bóveda y confinamiento de datos de usuario; §138 mantiene el régimen CLI-only; §139 define MOD-EP-CRYPTO; §141 documenta BMAD/OpenCode/Groq/RDC y sus pruebas/pendientes.
-- [Especificación general y operación CLI-only](OEP.md#137-especificación-general-única-del-workspace-ep-protegido--2026-11-12): árbol SeryMente, Cryptomator CLI, Herramientas, Repositorios, Datos, Temporal y confinamiento. [Política CLI-only §138](OEP.md#138-operación-cli-only-de-ep-hasta-disponer-de-segundo-monitor--2026-11-12).
+- [Especificación general y operación CLI-only](OEP.md#137-especificación-general-única-del-workspace-ep-protegido--2026-11-12): Cryptomator como motor de bóveda, SeryMente como raíz, repositorios hijos directos, frentes, ámbitos, módulos y confinamiento total. [Política CLI-only §138](OEP.md#138-operación-cli-only-de-ep-hasta-disponer-de-segundo-monitor--2026-11-12). [Jerarquía y confinamiento §140](OEP.md#140-estructura-canónica-de-serymente-módulos-y-confinamiento-de-aplicaciones--2026-11-12). [BMAD/OpenCode/Groq/RDC §141](OEP.md#141-módulo-bmad--opencode--groq-y-acceso-mediante-chatgpt-rdc--2026-11-12).
 - [Objeto de coordinación DTC](entregas/COORDINACION-GOBERNANZA-EP-v0.1.md): único registro de comunicación Gobernanza ↔ EP; historial reconciliado en `main`.
 - [Control de responsabilidad EP](CONTROL-RESPONSABILIDAD.json): registro autoritativo de titularidad y generación; generación 3; titularidad transferida por TRANSFER_RESPONSIBILITY el 2026-11-09; un titular activo, evento C-EP-TRANSFER-RESPONSIBILITY-20261109-01.
 - [MOD-SYNC](OEP.md#mod-sync): propósito aprobado; [especificación de implementación §111](OEP.md#mod-sync-implementation), pendiente de validación técnica.
@@ -49,7 +49,7 @@ El destino de trabajo e instalación del sprint MCP-OCP es **Fila 4**, alias fun
 - [EP-TASK-003 · workspace Fila 4](./📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md)
 - [EP-TASK-005 · piloto SINK:P004 y aceptación MCP-OCP 1.0.0](./📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20EP-TASK-005%20-%20Instalación%20y%20aceptación%20de%20MCP-OCP%20local/README.md)
 
-OEP vigente: v0.3.59. PREFLIGHT_FILA4=PARTIAL_FAIL. EP reanuda la ejecución de EP-TASK-003/005 al recibir el encargo del operador; esta sesión queda como coordinadora interfrente. Control EP generación 3 sin cambios. El VHDX de 30 GiB quedó creado y montado como W: (última observación), GPT/NTFS, vacío y sin BitLocker; no se copió ni sustituyó Desktop/SeryMente. El diseño para conservar la ruta original sigue PROPOSED_NOT_ACCEPTED. Checkout protegido, dead-man si corresponde, instalación y SINK/IPZ E2E permanecen pendientes.
+Antecedente histórico del 2026-11-10: OEP v0.3.59 y PREFLIGHT_FILA4=PARTIAL_FAIL; sus estados VHDX/W: y destinos provisionales quedaron supersedidos por la decisión de Cryptomator y la estructura de SeryMente en OEP §§137–141. Conservar este registro solo como procedencia, no como instrucción vigente.
 
 - [OEP §122 · preflight vivo parcial Fila 4](OEP.md#122-preflight-vivo-parcial-de-fila-4--2026-11-10--ejecución-provisional-del-frente-ep)
 - [OEP §123 · VHDX de preparación, discrepancia del punto de montaje y pausa operativa](OEP.md#123-rectificación-del-estado-de-almacenamiento-fila-4-y-continuidad-del-sprint--2026-11-10)
@@ -63,7 +63,7 @@ OEP vigente: v0.3.59. PREFLIGHT_FILA4=PARTIAL_FAIL. EP reanuda la ejecución de 
 - [OEP §139 · MOD-EP-CRYPTO](OEP.md#139-módulo-funcional-mod-ep-crypto--operación-y-confinamiento-de-cryptomator--2026-11-12): módulo interno del frente EP, sin OCP independiente; CLI build y pruebas sintéticas PASS, bóveda real y migración pendientes.
 - [EP-TASK-003](./📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md): build CLI local desde upstream firmado; 12 pruebas unitarias, 5 de integración y E2E sintética PASS. Siguen pendientes wrapper PowerShell 5.1, desmontaje graceful Windows, limpieza staging, bóveda real, confinamiento, migración y aceptación.
 
-La crónica histórica se conserva para procedencia; las decisiones operativas actuales son las de OEP §§137–139 y el último estado verificado de cada tarea. No interpretar snapshots anteriores como estado vivo.
+La crónica histórica se conserva para procedencia; las decisiones operativas actuales son las de OEP §§137–141 y el último estado verificado de cada tarea. No interpretar snapshots anteriores como estado vivo.
 
 
 Estado documental añadido: OEP v0.3.74, §§140–141. La organización física de Fila 4 ha empezado; la consolidación de Cryptomator, confinamiento de perfiles, autenticación Groq, pruebas BMAD/OpenCode E2E y continuidad multi-terminal siguen sus propios estados en OEP. No inferir aceptación de la mera existencia de carpetas o paquetes.
