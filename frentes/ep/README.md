@@ -3,12 +3,12 @@
 **Repositorio propietario:** `SeryMente/metodologia` (privado).  
 **Rama canónica vigente:** `main`; las ramas documentales anteriores se conservan como antecedentes y no prevalecen sobre `main`.
 
-**OEP vigente:** v0.3.74 (`OEP.md`), leído de vuelta desde `main`. La raíz local del workspace es `SeryMente/`: repositorios como carpetas hijas directas, dentro los frentes, y cada frente con `ambitos/` y `modulos/`. No utilizar `SeryMente/Repositorios/`.
+**OEP vigente:** v0.3.76 (`OEP.md`), leído de vuelta desde `main`. La raíz local del workspace es `SeryMente/`: repositorios como carpetas hijas directas, dentro los frentes, y cada frente con `ambitos/` y `modulos/`. No utilizar `SeryMente/Repositorios/`.
 
 
 - [Persistencia DTC EP/MCP-OCP](OEP.md#95-persistencia-dtc-integrada-epmetodologia-y-continuidad-mcp-ocp--v0325--vcu-ep-v27): continuidad multiubicación EP/Metodología y estado operativo MCP-OCP, con autoridad técnica propia de MCP-OCP.
 
-- [OEP.md](OEP.md): único estado vivo del frente, v0.3.74; §§137–140 fijan estructura directa de SeryMente, módulos, bóveda y confinamiento de datos de usuario; §138 mantiene el régimen CLI-only; §139 define MOD-EP-CRYPTO; §141 documenta BMAD/OpenCode/Groq/RDC y sus pruebas/pendientes.
+- [OEP.md](OEP.md): único estado vivo del frente, v0.3.76; §§137–142 fijan estructura directa de SeryMente, módulos, bóveda y confinamiento de datos de usuario; §138 mantiene el régimen CLI-only; §139 define MOD-EP-CRYPTO; §141 documenta BMAD/OpenCode/Groq/RDC y sus pruebas/pendientes; §142 documenta MOD-EPVAULT, cifrado, notas efímeras, CLI/GUI y estado de Fila 4.
 - [Especificación general y operación CLI-only](OEP.md#137-especificación-general-única-del-workspace-ep-protegido--2026-11-12): Cryptomator como motor de bóveda, SeryMente como raíz, repositorios hijos directos, frentes, ámbitos, módulos y confinamiento total. [Política CLI-only §138](OEP.md#138-operación-cli-only-de-ep-hasta-disponer-de-segundo-monitor--2026-11-12). [Jerarquía y confinamiento §140](OEP.md#140-estructura-canónica-de-serymente-módulos-y-confinamiento-de-aplicaciones--2026-11-12). [BMAD/OpenCode/Groq/RDC §141](OEP.md#141-módulo-bmad--opencode--groq-y-acceso-mediante-chatgpt-rdc--2026-11-12).
 - [Objeto de coordinación DTC](entregas/COORDINACION-GOBERNANZA-EP-v0.1.md): único registro de comunicación Gobernanza ↔ EP; historial reconciliado en `main`.
 - [Control de responsabilidad EP](CONTROL-RESPONSABILIDAD.json): registro autoritativo de titularidad y generación; generación 3; titularidad transferida por TRANSFER_RESPONSIBILITY el 2026-11-09; un titular activo, evento C-EP-TRANSFER-RESPONSIBILITY-20261109-01.
