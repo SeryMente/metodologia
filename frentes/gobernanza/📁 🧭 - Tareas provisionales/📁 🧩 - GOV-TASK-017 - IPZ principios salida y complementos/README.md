@@ -9,18 +9,19 @@
 
 ## Enunciado
 
-Revisar secuencialmente la candidata documental de Instrucciones Personalizadas de ChatGPT (IPZ), recoger las decisiones expresas del operador y preparar una candidata nueva que refleje la estructura de cinco partes y el Metacanon §4 vigente. Preservar continuidad y procedencia con sustento explícito en los principios, y reducir fricción sin debilitar controles de integridad necesarios. La reconciliación normativa de ART-032 mediante Articulación Trazable (AT) queda aplazada para una etapa posterior: no iniciar AT ni modificar ART-032 durante la revisión actual de la candidata. La instalación en el campo nativo queda fuera de esta tarea y requiere autorización y verificación independientes.
+Revisar secuencialmente la candidata documental de Instrucciones Personalizadas de ChatGPT (IPZ), recoger las decisiones expresas del operador y preparar una candidata nueva que refleje la estructura de seis partes y el Metacanon §4 vigente. Preservar continuidad y procedencia con sustento explícito en los principios, y reducir fricción sin debilitar controles de integridad necesarios. La reconciliación normativa de ART-032 mediante Articulación Trazable (AT) queda aplazada para una etapa posterior: no iniciar AT ni modificar ART-032 durante la revisión actual de la candidata. La instalación en el campo nativo queda fuera de esta tarea y requiere autorización y verificación independientes.
 
 ## Decisiones expresas del operador que esta tarea debe conservar
 
 1. **Parte 3:** conjunto general de principios, anclado en «Principios universales»; no es el CNP.
 2. **Parte 4:** Conjunto Nuclear de Principios (CNP), con sus cinco principios nucleares.
-3. **Parte 5:** salida y complementos. Debe dirigir a Metacanon §4 para el formato de salida y a ART-032 para los complementos y el procedimiento IPZ, distinguiendo ambos destinos.
+3. **Parte 5:** salida, exclusivamente mediante Metacanon §4.
+4. **Parte 6:** complementos, exclusivamente mediante ART-032. La parte 6 no contendrá formatos, campos, contratos ni instrucciones de salida.
 4. **Continuidad y procedencia:** conservar como requisito. No se elimina ni se reduce a metadatos decorativos.
-5. **Complementos ART-032 §5:**
+5. **Complementos ART-032 §5 (parte 6 de IPZ):**
    - **Conservar sin ampliar** el complemento de no burocracia adicional.
    - **Conservar continuidad y procedencia** como un único complemento breve. Su fundamento se remite a P017/P039 (continuidad), P037 (procedencia técnica) y P038 (fuente canónica); no copiar sus enunciados ni volver a imponer sus procedimientos dentro de ART-032.
-   - **Eliminar el antiguo punto 3 (contrato de salida del operador).** Metacanon §4 será la única fuente del formato visible, sus campos y su proporcionalidad. ART-032 no repetirá cabeceras, contadores, campos A/B, folios ni formatos que ya estén definidos allí.
+   - **Eliminar el antiguo punto 3 (contrato de salida del operador).** Ese contenido no debe trasladarse ni resumirse en los complementos IPZ. Metacanon §4 es el destino exclusivo para salida; la parte 6 no contendrá formatos, campos, cabeceras, contadores, contratos ni instrucciones de salida.
    - **Reformular el antiguo punto 4 (integridad) como una regla mínima, activada por evento y sin checklist repetitivo.** Debe remitir a los principios que ya gobiernan cada salvaguarda: P005 antes de modificar normas del DUG; P037 para CAS/SHA cuando exista escritura concurrente o cambio del asiento de responsabilidad; P004 al declarar hechos/resultados que requieran verificación; P038 para resolver la fuente canónica. La lectura de vuelta se aplica después de una persistencia efectuada cuando haga falta comprobarla, no como ceremonia en cada turno. No duplicar el procedimiento de AT ni el contrato de salida de §4.
    - **Eliminar el antiguo punto 5 (foliación).**
    - **Eliminar el antiguo punto 6 (estado MCP-NORMATIVO).**
@@ -53,18 +54,28 @@ El complemento no debe volver a explicar las normas ni crear un flujo de comprob
 
 El operador instruye modificar la candidata actual conforme a todas las decisiones nuevas registradas en esta conversación, no limitarse a mostrarla. Se revisaron la candidata v0.12 y el DUG vigente v393/NX-393m, blob `844fc507a2a9a0bfc8f4e68884cca9f6d2912c96`, en particular ART-025, ART-027, ART-032, el bloque de Principios universales y el CNP.
 
-**Estructura acordada para la nueva candidata (cinco partes fijas):**
+**Estructura acordada para la nueva candidata (seis partes fijas):**
 1. Vocabulario — GOW §ARR.
 2. Taxonomía — ART-031.
 3. Principios universales — bloque general de los 43 principios + ART-027. Los MDP sirven para reconocer pertinencia; se lee el texto normativo íntegro de cada principio pertinente antes de aplicarlo. No se recorren los 43 por rutina.
 4. CNP — lectura íntegra de P001/P004/P005/P038/P043. El CNP no sustituye ni excluye los demás principios pertinentes; rige la precedencia.
-5. Salida y complementos — Metacanon §4 gobierna exclusivamente la salida visible; ART-032 dirige a los complementos y mantenimiento IPZ. Se conservan no burocracia, continuidad/procedencia e integridad proporcional activada por evento; no duplicar el contrato de salida de §4.
+5. Salida — exclusivamente Metacanon §4 y su formato visible.
+6. Complementos — exclusivamente ART-032: no burocracia, continuidad/procedencia e integridad proporcional activada por evento. Excluir de esta parte cualquier contenido relativo a salida.
 
-**Decisiones que deben reflejarse sin reintroducir contenido retirado:** retirar del ámbito de complementos el antiguo contrato de salida del operador, la foliación y el estado MCP-NORMATIVO; conservar continuidad/procedencia; conservar integridad con activadores proporcionales (P005 ante cambio normativo, P037 ante concurrencia/cambio de responsabilidad, P004 al afirmar resultados verificables, P038 para fuente canónica); no repetir controles por rutina. No iniciar AT ni editar ART-032 en esta etapa.
+**Decisiones que deben reflejarse sin reintroducir contenido retirado:** parte 5 solo salida conforme a Metacanon §4; parte 6 solo complementos ART-032, sin formatos, campos, contrato ni instrucciones de salida. En los complementos retirar el antiguo contrato de salida, la foliación y el estado MCP-NORMATIVO; conservar no burocracia, continuidad/procedencia e integridad con activadores proporcionales (P005 ante cambio normativo, P037 ante concurrencia/cambio de responsabilidad, P004 al afirmar resultados verificables, P038 para fuente canónica); no repetir controles por rutina. No iniciar AT ni editar ART-032 en esta etapa.
 
 **Nueva candidata en preparación:** v0.13, ruta prevista `frentes/gobernanza/entregas/CHATGPT-v0.13/IPZ-CAMPO-CHATGPT-v0.13-PROPUESTA.txt`. v0.12 y baseline histórica se preservan sin sobrescritura. La candidata v0.13 no se considerará persistida hasta creación y lectura de vuelta; tampoco equivale a instalación en el campo nativo.
 
 **Procedencia de anclas revisadas:** `#gow-arranque-chatgpt`, `#ART-031`, `#principios-universales`, `#ART-027`, `#cnp-conjunto-nuclear-de-principios`, `#meta-4` y `#ART-032` corresponden a destinos presentes en el DUG vigente. Los enlaces de la candidata se resolverán desde su ruta relativa en el repositorio.
+
+## Última decisión del operador · separación de salida y complementos · 2026-11-12
+
+- **Instrucción expresa:** la IPZ tendrá seis partes, no cinco. La posición 5 es «Salida» y la posición 6 es «Complementos».
+- **Parte 5:** destino exclusivo Metacanon §4. Contiene la remisión al contrato/formato de salida, sin mezclar ART-032.
+- **Parte 6:** destino exclusivo ART-032. Retirar de esta posición cualquier contenido relacionado con salida: formato, campos, cabeceras, contadores, contrato, instrucciones de presentación o duplicación de §4.
+- **Complementos que permanecen en parte 6:** no burocracia adicional; continuidad/procedencia; integridad mínima activada por evento. Permanecen retirados el antiguo contrato de salida, foliación y estado MCP-NORMATIVO.
+- **Alcance de la acción actual:** actualizar solo la candidata IPZ v0.13 y esta ficha de continuidad. AT sigue aplazada; ART-032 y el campo nativo no se modifican.
+- **Orden de ejecución:** esta decisión se registra antes de editar la candidata. Tras persistirla, releer candidata y ficha y registrar sus nuevos hashes y conteo antes de continuar.
 
 ## Evidencia de persistencia · candidata v0.13
 
@@ -82,7 +93,7 @@ El operador instruye modificar la candidata actual conforme a todas las decision
 
 1. **Pendiente:** releer la IPZ baseline v0.7 y documentar su procedencia/hash; no presentar la baseline declarada por el operador como lectura nativa. La candidata histórica v0.12 ya fue recuperada y permanece preservada.
 2. **Realizado para esta revisión:** adquirir DUG vigente desde `main` (v393/NX-393m; blob `844fc507a2a9a0bfc8f4e68884cca9f6d2912c96`) y revisar ART-025, ART-027, ART-032, el bloque de Principios universales y el CNP. La revisión no constituye modificación normativa.
-3. **Realizado:** fijar la estructura de cinco partes acordada: GOW §ARR; ART-031; Principios universales + ART-027/MDP; CNP; Metacanon §4 + complementos ART-032 con responsabilidades diferenciadas.
+3. **Actualizado tras la última decisión:** estructura de seis partes: GOW §ARR; ART-031; Principios universales + ART-027/MDP; CNP; salida exclusiva por Metacanon §4; complementos exclusivos por ART-032.
 4. **Realizado:** verificar los siete destinos/anclas usados por v0.13: `#gow-arranque-chatgpt`, `#ART-031`, `#principios-universales`, `#ART-027`, `#cnp-conjunto-nuclear-de-principios`, `#meta-4` y `#ART-032`. Los enlaces relativos se resuelven desde la ruta de la candidata en el repositorio.
 5. **APLAZADO:** en una etapa posterior y cuando el operador indique retomarlo, abordar mediante AT la reconciliación de ART-032: orden y función de las cinco partes; complementos conservados/eliminados; continuidad/procedencia y su fundamento; controles de integridad proporcionales; eliminación de foliación y del punto MCP-NORMATIVO de los complementos. Hasta entonces, no iniciar AT ni modificar ART-032.
 6. **Realizado:** crear candidata documental v0.13 sin sobrescribir v0.7 ni v0.12; verificar las cinco partes, enlaces y conteo UTF-16 LF/CRLF. La candidata queda como propuesta pendiente de revisión, no instalada.
@@ -91,8 +102,8 @@ El operador instruye modificar la candidata actual conforme a todas las decision
 
 ## Criterios de aceptación
 
-- Estructura de cinco partes coherente con las decisiones expresas del operador. La reconciliación de ART-032 no es requisito de esta etapa y permanece aplazada hasta que el operador indique retomarla.
-- Parte 3 enlaza a Principios universales y ART-027 (MDP para reconocer pertinencia entre 43 principios y lectura íntegra de cada norma pertinente); parte 4 enlaza al CNP; parte 5 distingue Metacanon §4 (salida visible) de ART-032 (complementos IPZ).
+- Estructura de seis partes: salida en parte 5 exclusivamente por Metacanon §4 y complementos en parte 6 exclusivamente por ART-032, sin contenido de salida en los complementos. La reconciliación de ART-032 no es requisito de esta etapa y permanece aplazada hasta que el operador indique retomarla.
+- Parte 3 enlaza a Principios universales y ART-027; parte 4 enlaza al CNP; parte 5 enlaza únicamente a Metacanon §4; parte 6 enlaza únicamente a ART-032 y no contiene elementos de salida.
 - Continuidad/procedencia conservadas y justificadas mediante P017, P039, P037 y P038.
 - Complementos 3, 5 y 6 anteriores retirados; complemento 4 reformulado de forma proporcional y sin controles redundantes; complemento 1 conservado.
 - Baseline y candidatas históricas preservadas con procedencia/hash; candidata nueva con conteo UTF-16 verificado y dentro de 1.500.
