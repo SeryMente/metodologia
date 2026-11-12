@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.81. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.82. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -4449,3 +4449,32 @@ La elevación administrativa y la identidad de los datos de usuario son dimensio
 **Estado de integración al cierre de ese ciclo:** BMAD 6.12.4 instalado; 29 skills y 29 comandos; OpenCode 1.19.5 ejecutable; inferencia real Groq con `groq/openai/gpt-oss-120b` y descubrimiento de `bmad-help` verificados en modo de solo lectura; Chrome 157.0.8103.51 reutilizado con perfil EP aislado. No estaban aceptados: escritura/read-back sintético BMAD, persistencia de API key entre sesiones, recuperación tras reinicio, continuidad con segunda terminal física y auditoría integral de confinamiento. La credencial usada en la prueba era una nota efímera y no se considera persistente.
 
 **Siguiente ciclo:** continuar desde el estado anterior sin reinstalar componentes ya verificados. Priorizar (1) generar un artefacto sintético dentro del proyecto aislado BMAD y leerlo de vuelta verificando SHA-256; (2) definir y probar recuperación segura de la credencial desde EP Vault sin persistirla en texto plano; (3) documentar el procedimiento de alta de otra terminal cuando exista un segundo dispositivo autorizado. No modificar proyectos productivos durante las pruebas.
+
+
+### 142.15 Archivo de continuidad y BMAD write/read-back verificado · 2026-11-12
+
+**Exportación de conversación**
+- Fuente original en Fila 4: `C:\Users\fila4\Downloads\ChatGPT-EP (1)-20261112-1632.md`.
+- Copia materializada en la carpeta canónica local de entregas: `Metodologia/frentes/ep/entregas/ChatGPT-EP (1)-20261112-1632.md`.
+- Copia binaria, sin conversión de codificación ni sobrescritura. Read-back por comparación de SHA-256 y tamaño: origen/destino idénticos, 99.410 bytes; SHA-256 `9A64A7265901B70D92DBB2752BB23E273915B99CEC3D98115979660766FCF617`.
+- La exportación contiene 1.506 líneas de texto. Esta medición corrige el dato de 1.926 líneas consignado en §142.14; la cifra anterior fue un error de conteo. Se conserva el archivo original sin modificaciones.
+
+**Prueba BMAD → OpenCode → Groq: escritura y lectura**
+- Se ejecutó la tarea programada `EP-Fila4-GroqBMAD-WriteReadback` en contexto interactivo `CENTRAL\fila4`, preservando el contexto DPAPI CurrentUser. El canal de acceso RDC se mantuvo bajo `CENTRAL\MantenimientoRCI`; no se intentó descifrar DPAPI desde esa identidad.
+- Proyecto aislado: `MOD-EP-BMAD/data/Fila4/bmad-opencode-smoke/`; no se utilizó un repositorio productivo.
+- La instrucción al agente fue crear exactamente `EP-GROQ-E2E-READBACK.txt`, leerlo de vuelta y reproducir todo el contenido. Resultado leído:
+  
+  ```text
+  BMAD_VERSION=6.12.4
+  OPENCODE_VERSION=1.19.5
+  GROQ_MODEL=groq/openai/gpt-oss-120b
+  RESULT=PASS
+  ```
+- SHA-256 cotejado sobre el archivo materializado: `F63DF4C6CC4F5A5161B69925DBA598B16C885433CE35C7C441488D6038099EB0`.
+- La salida del agente incluyó el marcador exacto `EP_GROQ_WRITE_READBACK_OK`; también quedaron observables la identidad Fila 4, sesión Vault activa, inyección de `GROQ_API_KEY` en memoria del proceso y el modelo Groq solicitado.
+- Anomalía del envoltorio: el Programador de tareas devolvió `LastTaskResult=1` y no produjo el archivo auxiliar `groq-bmad-write-readback.result.txt`, pese a que el log contiene el marcador de éxito, el archivo está presente y el read-back/hash externo coinciden. Por ello se registra `BMAD_WRITE_READBACK=PASS` y `TASK_WRAPPER_RESULT=ANOMALOUS_1`; queda pendiente corregir el envoltorio, no repetir la generación funcional ya acreditada.
+
+**Estado y límites**
+- `BMAD_WRITE_READBACK=PASS`; `GROQ_INFERENCE=PASS`; `ARTIFACT_SHA256_READBACK=PASS`.
+- `GROQ_CREDENTIAL_PERSISTENCE=PENDING`: la API key se obtuvo de una nota efímera, se inyectó únicamente a memoria del proceso y no se promovió a variable permanente cifrada de EP Vault. No se conserva ni se registra el valor del secreto.
+- Recuperación después de cerrar procesos/reinicio, continuidad con otra terminal física y auditoría integral de confinamiento siguen pendientes. La aceptación integral del frente EP no se declara.
