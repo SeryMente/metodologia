@@ -18,5 +18,6 @@ Frente de trabajo para desarrollar un sistema de desarrollo semiautomatizado gui
 - [Revisión externa GPT-OSS 120B vía Groq](evidencias/C-LOOP-003-GPT-OSS-120B-review.md) y [evidencia C-LOOP-003](evidencias/C-LOOP-003.json).
 - [Evento de renombramiento](cronica/C-OCP2.0-RENOMBRE-01.md) y [evidencia de migración/segmentación](evidencias/C-OCP2.0-RENOMBRE-01.json).
 - [Registro de continuidad conversacional (2026-11-11)](conversaciones/CONTINUIDAD-20261111.md), con la transcripción suministrada por el operador preservada sin normalización.
+- [Registro de continuidad conversacional (2026-11-12)](conversaciones/ChatGPT-OCP20-20261112-1140.md), con la transcripción del tramo sobre Superpowers y WORKSPACE, ficha de continuidad y repetición de la última salida del modelo.
 
 Los IDs C-LOOP-* son referencias históricas originales; el nombre vigente del frente es OCP2.0. No se crea un núcleo ni control por segmento.
