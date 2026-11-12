@@ -73,3 +73,26 @@ El módulo se considerará funcionalmente completo cuando el proceso de diseño 
 - DUG canónico de Metodología: v393 · NX-393m; ART-015, ART-019, ART-021 y ART-029.
 - Metacanon §46.5: módulo funcional hereda autoridad, OCP, núcleo y control del FT padre.
 - OEP EP: único objeto rector, con registro integrado de módulos.
+
+
+## Reorientación rectora: vMAT Product Design · 2026-11-12
+
+**Propósito operativo actualizado:** permitir que el operador use directamente ChatGPT para dictar instrucciones y que esas instrucciones se conviertan en el mínimo conjunto de tareas provisionales ejecutables de los frentes existentes. Cada tarea debe conservar la fuente verbatim, asignación de responsabilidad, requisitos derivados, entregables y criterios de aceptación. La descomposición debe cubrir todo lo extraíble de la fuente y no incorporar alcance que no esté solicitado.
+
+**Especificación funcional:** [ESPECIFICACION-OPERATIVA-VMAT.md](./ESPECIFICACION-OPERATIVA-VMAT.md).  
+**Primera tarea provisional que materializa el encargo:** [EP-TASK-008 — vMAT Product Design: captura verbatim y tareas ejecutables con Superpowers](../../📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20EP-TASK-008%20-%20vMAT%20Product%20Design%20-%20Captura%20verbatim%20y%20tareas%20ejecutables%20con%20Superpowers/README.md).
+
+### Encaje de herramientas
+
+- **BMAD 6.12.4:** se reutiliza para descubrimiento, definición de producto, requisitos, UX, arquitectura, historias y planificación cuando el dictado lo requiera.
+- **Superpowers v7.0.2:** se integra como catálogo de skills de ingeniería para OpenCode V1; planificación, worktrees, subagentes, ejecución de planes, TDD, debugging, revisión, verificación y cierre.
+- **OpenCode 1.19.5 + Groq:** conserva el agente local y proveedor/modelo ya configurados; la clave permanece administrada por EP Vault y solo se expone al proceso autorizado.
+- **ChatGPT + RDC:** constituye el canal de captura, coordinación, creación documental y consulta de resultados. La disponibilidad de skills locales no significa que se conviertan en herramientas nativas de ChatGPT.
+
+La configuración local de OpenCode incorpora el plugin V1 fijado a `v7.0.2`. La configuración y el paquete descargado fueron observados; el descubrimiento efectivo de skills por el agente todavía requiere un resultado de runtime verificable. La existencia del plugin no se toma como aceptación completa.
+
+### Regla de trabajo derivada
+
+Para cada nuevo dictado, conservar literalmente el mensaje fuente y crear el menor número de tareas provisionales que cubra todos los resultados, restricciones y condiciones expresas. Cada requisito debe quedar trazado a una tarea, entregable y criterio de aceptación. No crear tareas para posibilidades mencionadas como opcionales ni añadir funcionalidades por iniciativa propia. Las tareas se alojan en el contenedor provisional del frente responsable; la gobernanza y el OCP padre no se duplican.
+
+Esta reorientación supersede como siguiente acción del módulo la espera de un documento general de implementación que no fue adjuntado en este ciclo. No altera el gobierno de EP ni promueve Product Design a FT independiente.
