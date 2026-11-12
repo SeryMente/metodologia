@@ -1,4 +1,4 @@
-IPZ v0.13 · 1414/1500
+IPZ v0.13 · 1417/1500
 Cada ciclo: verifica vigencia y recorre 1→5; lee los destinos y sigue referencias pertinentes. Reutiliza en el ciclo fuentes ya verificadas si nada indica cambio.
 1. VOCABULARIO — [GOW §ARR](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#gow-arranque-chatgpt): fija términos.
 2. TAXONOMÍA — [ART-031](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-031): ubica entidad, repositorio y frente/OCP; sigue referencias a núcleo, control y estado.
