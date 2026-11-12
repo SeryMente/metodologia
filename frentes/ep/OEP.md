@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.75. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.76. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -3935,12 +3935,12 @@ El workspace EP solo se acepta cuando la bóveda Cryptomator abre/cierra correct
 
 ### 138.1. Regla obligatoria del operador
 
-Hasta que Fila 4 disponga de un segundo monitor físicamente conectado y activo, **toda herramienta utilizada en una sesión EP debe operarse exclusivamente mediante interfaz de línea de comandos (CLI)**. Queda prohibido abrir o utilizar interfaces gráficas para instalar, configurar, autenticar, desbloquear, montar, administrar, trabajar, actualizar o cerrar herramientas. La prohibición incluye Cryptomator Desktop, navegadores, editores, instaladores gráficos y paneles de configuración.
+El régimen predeterminado de trabajo en EP es CLI. **Una instrucción expresa e inequívoca del operador para abrir o utilizar una GUI concreta constituye autorización directa y excepción suficiente a la restricción CLI-only para esa aplicación y el alcance solicitado.** No se exige un segundo monitor como condición adicional ni puede invocarse esa condición para negar, demorar o contradecir la orden del operador. La autorización se limita a la GUI y actuación expresamente pedidas; no habilita por extensión otras interfaces, aplicaciones, automatizaciones de clicks ni operaciones no solicitadas.
 
 - Terminales, shells, prompts textuales, TUI y comandos interactivos en consola sí son CLI y están permitidos.
-- Una aplicación que ofrezca CLI debe utilizarse por esa vía; no se invoca su GUI como alternativa ni fallback.
-- Una capacidad sin CLI suficiente queda BLOCKED_NO_CLI; no se improvisa automatización de clicks, UIAutomation, atajos ni control de ventanas para simular CLI.
-- La presencia de dos monitores no levanta automáticamente la restricción: debe comprobarse que ambos están activos y el operador debe autorizar expresamente cualquier uso gráfico posterior.
+- A falta de una instrucción expresa de GUI, las aplicaciones se operan por CLI cuando exista una interfaz suficiente; una capacidad sin CLI suficiente queda pendiente de instrucción del operador, sin simular clicks/UIAutomation.
+- Antes de abrir una GUI, conservar identidad efectiva del usuario operativo, rutas de datos por terminal, redirección local de datos y protección de credenciales. No ejecutar una GUI bajo el perfil administrativo como sustituto de Fila 4.
+- Una instrucción expresa de abrir una GUI no autoriza revelar contraseñas, exponer valores al modelo ni omitir comprobaciones de integridad, confinamiento o autenticación.
 - Ningún parámetro de esta regla relaja el confinamiento de datos de usuario de §137 ni autoriza persistencia fuera de la bóveda.
 
 ### 138.2. Motor Cryptomator por CLI
@@ -4310,7 +4310,7 @@ Antes de utilizar GUI en una terminal se requiere un lanzador específico que:
 4. Verifique que Status apunta al ciphertext esperado antes de permitir operaciones.
 5. Mantenga la contraseña, notas y valores fuera de logs y de la salida visible del modelo.
 
-Permanece vigente la compuerta general de §138. Solo se permite GUI cuando existan al menos dos monitores físicamente conectados y activos y el operador haya autorizado expresamente su uso. La autorización expresa no sustituye la prueba de monitores. En esta comprobación del 2026-11-12, ejecutada bajo `CENTRAL\fila4` en sesión interactiva 1, Windows enumeró `ACTIVE_SCREEN_COUNT=1`, `\\.\DISPLAY1` a 1366×768 y un único monitor PnP HP V193b con estado OK. El operador solicitó abrir EP Vault GUI en este ciclo, lo cual constituye autorización expresa; sin embargo, el segundo monitor no está presente/activo en la evidencia observada. Resultado: `GUI_OPEN=BLOCKED_SECOND_MONITOR_NOT_VERIFIED`. No se inició GUI ni automatización de interfaz. La vía CLI sigue disponible.
+La comprobación de pantalla del 2026-11-12, ejecutada bajo `CENTRAL\fila4` en sesión interactiva 1, enumeró `ACTIVE_SCREEN_COUNT=1`, `\\.\DISPLAY1` a 1366×768 y un monitor PnP HP V193b con estado OK. Este dato describe la configuración observada, pero no es un bloqueo: el operador emitió una instrucción expresa para abrir EP Vault GUI, que conforme a §138 constituye autorización directa y excepción suficiente a CLI-only, sin requerir segundo monitor. La GUI se inició en esa misma sesión mediante PowerShell `-STA`, con identidad efectiva `CENTRAL\fila4` y `LOCALAPPDATA` redirigido por proceso a `data/Fila4/` del módulo. El proceso WPF quedó activo tras el lanzamiento. Resultado: `GUI_OPEN=LAUNCHED_PROCESS_RUNNING`; `WINDOW_CONTENT_VISUAL_CONFIRMATION=NOT_CAPTURED`. No se introdujo contraseña maestra, no se desbloqueó la bóveda ni se revelaron variables/notas.
 
 ### 142.9 Estado real, aceptación y pendientes
 
@@ -4323,7 +4323,7 @@ Estado de Fila 4 a 2026-11-12:
 - `VARIABLE_READ_WRITE=NOT_TESTED`; no se revelaron ni modificaron valores formales.
 - `EPHEMERAL_NOTE_CAPTURE=NOT_TESTED`; no se ha capturado la clave de la aplicación ni otra nota en este ciclo.
 - `NOTE_TTL_AND_PURGE=NOT_TESTED_ON_FILA4`; el comportamiento está descrito por código/documentación, pero falta prueba de aceptación en esta terminal.
-- `GUI=BLOCKED_SECOND_MONITOR_NOT_VERIFIED`; la autorización del operador existe, pero solo se detectó un monitor activo.
+- `GUI=LAUNCHED_PROCESS_RUNNING`; la orden expresa del operador fue ejecutada bajo Fila 4 con redirección local de datos; ventana visible no capturada, bóveda aún bloqueada.
 - `TERMINAL_LAUNCHER_WITH_LOCALAPPDATA_REDIRECTION=NOT_WRITTEN`; el lanzador general actual no confina por sí mismo la ruta de datos en Fila 4.
 - `HEADLESS_CONTRACT_CAPTURENOTE=DOCUMENTATION_CODE_MISMATCH`; corregir antes de declarar el contrato coherente.
 - `EXACT_RELEASE_RETEST= PENDING`; `H10= PENDING`; `MAIN_MERGE= PENDING`; `ACCEPTANCE=PENDING`.
