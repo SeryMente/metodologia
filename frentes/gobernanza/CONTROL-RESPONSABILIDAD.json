@@ -6,7 +6,7 @@
   "instance": "chatgpt-gobernanza-1-2026-11-11-375BE087",
   "generation": 21,
   "authorization_ref": "C-GOBERNANZA-RETOMA-16",
-  "scope": "Retomar la responsabilidad primaria del frente GOBERNANZA en esta instancia, adoptar el lugar operativo del modelo predecesor y persistir el último tramo visible de la conversación como registro Markdown. Conservar íntegra la corresponsabilidad activa existente y el máximo de dos responsables. No modificar DUG/GOW/IPZ nativa, ni actuar sobre código, controles o hosts de otros frentes. FOL1 permanece PREPARADO/NO ACTIVO; no asignar folios globales ni por OCP.",
+  "scope": "Retomar la responsabilidad primaria del frente GOBERNANZA en esta instancia, adoptar el lugar operativo del modelo predecesor y persistir el último tramo visible de la conversación como registro Markdown. Conservar íntegra la corresponsabilidad activa existente y el máximo de dos responsables. No modificar DUG/GOW/IPZ nativa, ni actuar sobre código, controles o hosts de otros frentes. FOL1 permanece PREPARADO/NO ACTIVO; no asignar folios globales ni por OCP. Excepción puntual autorizada el 2026-11-12: actualizar exclusivamente Metacanon §4 (título y contenido del formato de salida/telemetría) en gobernanza/METAPROMPT-CANONICO-SAMANTHA.html y su referencia directa en ART-032, con versión DUG v393/NX-393m y Metacanon 1.31. No autoriza otras secciones del DUG, §52, GOW, IPZ nativa, cambios al OCP/código de MCP u Harmonia ni actuación sobre otros frentes.",
   "expiry": null,
   "handoff": "Titularidad primaria transferida de generación 19 a 21 por instrucción explícita del operador; corresponsable generación 20 preservada. Máximo dos responsables activos. ID nativo no expuesto; UUIDv7 local registrado. FOL1 PREPARADO/NO ACTIVO; sin folios globales ni por OCP.",
   "session_folio": null,
@@ -1636,5 +1636,26 @@
     }
   ],
   "generation_semantics": "AUDIT_METADATA_ONLY_NOT_AUTHORITY_OR_EXECUTION_GATE",
-  "operator_instruction_authority": "An explicit operator instruction naming the front and action/scope authorizes work and corresponding control/document updates within that scope. Consult controls for route, current state and provenance only; no previous-holder consent, generation, session folio, alias or UUID is prerequisite. Keep one active writer by default. Actual platform policies and permissions remain binding."
+  "operator_instruction_authority": "An explicit operator instruction naming the front and action/scope authorizes work and corresponding control/document updates within that scope. Consult controls for route, current state and provenance only; no previous-holder consent, generation, session folio, alias or UUID is prerequisite. Keep one active writer by default. Actual platform policies and permissions remain binding.",
+  "scope_authorizations": [
+    {
+      "authorization_status": "explicit",
+      "authorized_on": "2026-11-12",
+      "source": "Instrucción directa del operador en la conversación actual, contextualizada por la propuesta inmediatamente precedente de actualizar Metacanon §4.",
+      "verbatim": "Ok hagamos esa actualizacion",
+      "operation": "UPDATE_CANONICAL_METACANON_SECTION",
+      "target": {
+        "repository": "SeryMente/metodologia",
+        "path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+        "anchor": "meta-4"
+      },
+      "scope": "Renombrar Metacanon §4 a «4. Formato de salida», actualizar su contrato humano y técnico de salida/telemetría, y corregir su referencia directa en ART-032. Incluye los metadatos de versión v393/NX-393m y Metacanon 1.31. No autoriza modificar otras secciones del DUG, §52, GOW, IPZ nativa, OCP/código de MCP u Harmonia, ni controles o hosts de otros frentes.",
+      "result": {
+        "status": "EXECUTED_AND_READBACK_VERIFIED",
+        "repository_commit": "6507334b6ef45fb5d4ba0615d788539a7d328642",
+        "content_blob_sha": "844fc507a2a9a0bfc8f4e68884cca9f6d2912c96"
+      },
+      "responsibility_generation_unchanged": 21
+    }
+  ]
 }
