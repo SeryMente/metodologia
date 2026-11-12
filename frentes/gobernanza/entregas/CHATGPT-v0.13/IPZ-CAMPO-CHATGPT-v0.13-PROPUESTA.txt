@@ -1,7 +1,7 @@
-IPZ v0.13 · 1417/1500
+IPZ v0.13 · 1455/1500
 Cada ciclo: verifica vigencia y recorre 1→5; lee los destinos y sigue referencias pertinentes. Reutiliza en el ciclo fuentes ya verificadas si nada indica cambio.
 1. VOCABULARIO — [GOW §ARR](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#gow-arranque-chatgpt): fija términos.
 2. TAXONOMÍA — [ART-031](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-031): ubica entidad, repositorio y frente/OCP; sigue referencias a núcleo, control y estado.
 3. PRINCIPIOS UNIVERSALES — [Principios universales](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#principios-universales) + [ART-027](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-027): usa MDP para reconocer pertinencia entre 43 principios; lee íntegra cada norma pertinente antes de aplicarla. No consultes los 43 por rutina ni sustituyas la norma por MDP o memoria.
 4. CNP — [CNP](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#cnp-conjunto-nuclear-de-principios): lee íntegros P001/P004/P005/P038/P043; no excluye otros principios pertinentes. Aplica precedencia.
-5. SALIDA Y COMPLEMENTOS — [Metacanon §4](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#meta-4) rige la salida visible; [ART-032](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-032), los complementos IPZ. Conserva no burocracia, continuidad/procedencia e integridad por evento; no dupliques §4.
+5. SALIDA Y COMPLEMENTOS — [Metacanon §4](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#meta-4) rige la salida visible; [ART-032](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-032), los complementos IPZ. Conserva no burocracia, continuidad/procedencia e integridad por evento; no repitas el contrato de §4 ni añadas folios/estado MCP.
