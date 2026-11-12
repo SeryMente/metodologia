@@ -699,3 +699,20 @@ Este cierre DTC no completa EP-TASK-002. Autenticación B2, cuenta/región, buck
 6. Tras P004 PASS, generalización 43+8; panel WPF obligatorio para release 1.0.0, no para P004.
 
 **Estado:** `MCP_OCP_02=OPEN` · `MCP_OCP_05=PENDING` · `EP_TASK_003=PARTIAL_FAIL` · `EP_TASK_005=PENDING` · `GOV_E2E=PENDING` · `IPZ_NATIVE=NOT_VERIFIED` · `FOL1=PREPARED_NOT_ACTIVE` · `MCP_NORMATIVO=DESACTIVADO`. Este asiento no declara código, pruebas, instalación ni E2E completados.
+
+
+---
+
+## Continuidad · export GOBERNANZA 2026-11-12 16:35 · reanudación RDC
+
+El export original [ChatGPT-GOBERNANZA-20261112-1635.md](documentos/originales/ChatGPT-GOBERNANZA-20261112-1635.md) ya está persistido y registrado en MANIFIESTO-DOCUMENTAL.json como `PERSISTIDO_Y_VERIFICADO`; no crear duplicado. SHA-256 de origen: `6D5E33605457DA0C50E8FFD3BD4C424229DC770189347518092115D10627A839`; Git blob: `e3290cfaafc3c1577884a0e0aabd936dc3a8126f`; commit de incorporación: `b7453e141c251315a7e6a4aa22243621de0fa3ba`.
+
+**Corte normativo del export:** Samantha v393 · NX-393m; Metacanon 1.31; GOW 2.21; 43 principios y 25 anexos. Metacanon §4 se titula `4. Formato de salida`; §52 conserva desactivadas las métricas temporales. Se conserva la nota histórica de que la autorización puntual de §4 quedó asentada después del commit normativo.
+
+**Condición crítica Sink/RDC:** la aceptación P004 exige el recorrido real `IPZ → RDC autorizado → MCP-OCP por STDIO → respuesta visible al modelo`. Un smoke o una llamada JSON-RPC desde consola no acredita E2E. Antes de validar P004, MCP-OCP debe rebaselinar `SourcePin`, fixtures, manifiesto y paquete contra DUG v393/NX-393m, verificando que todos los sidecars correspondan al mismo pin y artefacto.
+
+**Estado de continuidad:** GOV-TASK-015 sigue EN_CURSO; H1 SINK-P004 continúa BLOQUEADO/NO ACEPTADO. El último estado documentado de EP mantiene EP-TASK-003 en PARTIAL_FAIL y EP-TASK-005 en BLOCKED; no se revalidó el host en esta reanudación. GOV-TASK-003 conserva pendiente la aceptación E2E desde contexto IPZ real.
+
+**Siguiente actuación:** actualizar de forma coherente el pin y todos los artefactos derivados de MCP-OCP a DUG v393; superar después los gates propietarios de EP; finalmente ejecutar la aceptación de GOV-TASK-003 por el recorrido IPZ/RDC/STDIO real. No confundir preparación documental, smoke de consola, instalación local ni E2E aceptado.
+
+**Límites:** esta reanudación no modifica DUG, ART-032, IPZ nativa, OCP/código MCP-OCP, Harmonia ni hosts. AT sigue aplazada; FOL1 continúa PREPARADO/NO ACTIVO y MCP-NORMATIVO DESACTIVADO.
