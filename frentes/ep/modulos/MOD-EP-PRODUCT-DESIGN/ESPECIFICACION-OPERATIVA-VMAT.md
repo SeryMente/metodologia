@@ -147,3 +147,8 @@ No incorporar por anticipación funciones que el operador dejó como posibilidad
 9. Cada tarea implementada pasa revisión, prueba y verificación con evidencia antes de cerrarse.
 10. No se crean frentes, OCP, controles de responsabilidad ni almacenes de estado paralelos.
 
+
+
+## Estado real del runtime al cierre de este ciclo · 2026-11-12
+
+La configuración del plugin V1 y el paquete Superpowers v7.0.2 quedaron verificados localmente, incluidos 15 directorios de skills en el caché. El primer lanzamiento OpenCode se inició con sesión EP Vault activa, pero no devolvió una enumeración de skills y acabó con código 1 después de no mostrar progreso observable. Un segundo lanzamiento fue bloqueado antes de iniciar OpenCode porque la sesión EP Vault había expirado (`VAULT_SESSION_NOT_OPEN`). No se obtuvo ni se usó una contraseña maestra y no se expuso la API key. Por ello, la integración runtime permanece pendiente de desbloquear EP Vault localmente bajo `CENTRAL\fila4` y repetir la comprobación con evidencia de skills descubiertas. La configuración del plugin no equivale a aceptación runtime.
