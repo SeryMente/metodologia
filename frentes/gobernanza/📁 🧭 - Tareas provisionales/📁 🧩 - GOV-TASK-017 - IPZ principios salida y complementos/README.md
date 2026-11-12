@@ -9,7 +9,7 @@
 
 ## Enunciado
 
-Revisar secuencialmente la candidata documental de Instrucciones Personalizadas de ChatGPT (IPZ), recoger las decisiones expresas del operador y preparar una candidata nueva que refleje la estructura de seis partes y el Metacanon §4 vigente. Preservar continuidad y procedencia con sustento explícito en los principios, y reducir fricción sin debilitar controles de integridad necesarios. La reconciliación normativa de ART-032 mediante Articulación Trazable (AT) queda aplazada para una etapa posterior: no iniciar AT ni modificar ART-032 durante la revisión actual de la candidata. La instalación en el campo nativo queda fuera de esta tarea y requiere autorización y verificación independientes.
+Revisar secuencialmente la candidata documental de Instrucciones Personalizadas de ChatGPT (IPZ), recoger las decisiones expresas del operador y preparar una candidata nueva que refleje la estructura de seis partes y el anexo Formato de salida vigente. Preservar continuidad y procedencia con sustento explícito en los principios, y reducir fricción sin debilitar controles de integridad necesarios. La reconciliación normativa de ART-032 mediante Articulación Trazable (AT) queda aplazada para una etapa posterior: no iniciar AT ni modificar ART-032 durante la revisión actual de la candidata. La instalación en el campo nativo queda fuera de esta tarea y requiere autorización y verificación independientes.
 
 ## Decisiones expresas del operador que esta tarea debe conservar
 
@@ -17,13 +17,13 @@ Revisar secuencialmente la candidata documental de Instrucciones Personalizadas 
 2. **Parte 2:** taxonomía — ART-031.
 3. **Parte 3:** principios universales — conjunto general de los 43 principios, con ART-027/MDP para reconocer pertinencia y lectura íntegra de cada norma pertinente antes de aplicarla; no recorrer los 43 por rutina.
 4. **Parte 4:** CNP — lectura íntegra de P001/P004/P005/P038/P043; no sustituye ni excluye otros principios pertinentes.
-5. **Parte 5:** salida — exclusivamente Metacanon §4.
+5. **Parte 5:** salida — exclusivamente el anexo Formato de salida (`#meta-4`).
 6. **Parte 6:** complementos — exclusivamente ART-032. No incluir aquí formatos, campos, cabeceras, contadores, contrato ni instrucciones de salida.
 7. **Continuidad y procedencia:** conservar como requisito dentro de los complementos, sin reducirlo a metadatos decorativos. Fundamento: P017/P039 para continuidad; P037 para procedencia técnica; P038 para fuente canónica.
 8. **Complementos ART-032 §5 (parte 6 de IPZ):**
    - **Conservar sin ampliar** el complemento de no burocracia adicional.
    - **Conservar continuidad y procedencia** como un único complemento breve. No copiar los enunciados de los principios ni duplicar sus procedimientos.
-   - **Retirar el antiguo punto 3 (contrato de salida del operador)** del conjunto de complementos. No trasladarlo ni resumirlo en la parte 6; la salida corresponde solo a la parte 5/Metacanon §4.
+   - **Retirar el antiguo punto 3 (contrato de salida del operador)** del conjunto de complementos. No trasladarlo ni resumirlo en la parte 6; la salida corresponde solo a la parte 5/Formato de salida (`#meta-4`).
    - **Reformular el antiguo punto 4 (integridad)** como una regla mínima activada por evento: P005 ante modificación normativa; P037 ante concurrencia o cambio del asiento de responsabilidad; P004 al afirmar hechos/resultados que requieran verificación; P038 para identificar la fuente canónica. La lectura de vuelta se aplica a una persistencia efectuada que deba comprobarse, no como ceremonia en cada turno.
    - **Eliminar el antiguo punto 5 (foliación).**
    - **Eliminar el antiguo punto 6 (estado MCP-NORMATIVO).**
@@ -60,10 +60,10 @@ El operador instruye modificar la candidata actual conforme a todas las decision
 2. Taxonomía — ART-031.
 3. Principios universales — bloque general de los 43 principios + ART-027. Los MDP sirven para reconocer pertinencia; se lee el texto normativo íntegro de cada principio pertinente antes de aplicarlo. No se recorren los 43 por rutina.
 4. CNP — lectura íntegra de P001/P004/P005/P038/P043. El CNP no sustituye ni excluye los demás principios pertinentes; rige la precedencia.
-5. Salida — exclusivamente Metacanon §4 y su formato visible.
+5. Salida — exclusivamente Formato de salida (`#meta-4`) y su contrato visible.
 6. Complementos — exclusivamente ART-032: no burocracia, continuidad/procedencia e integridad proporcional activada por evento. Excluir de esta parte cualquier contenido relativo a salida.
 
-**Decisiones que deben reflejarse sin reintroducir contenido retirado:** parte 5 solo salida conforme a Metacanon §4; parte 6 solo complementos ART-032, sin formatos, campos, contrato ni instrucciones de salida. En los complementos retirar el antiguo contrato de salida, la foliación y el estado MCP-NORMATIVO; conservar no burocracia, continuidad/procedencia e integridad con activadores proporcionales (P005 ante cambio normativo, P037 ante concurrencia/cambio de responsabilidad, P004 al afirmar resultados verificables, P038 para fuente canónica); no repetir controles por rutina. No iniciar AT ni editar ART-032 en esta etapa.
+**Decisiones que deben reflejarse sin reintroducir contenido retirado:** parte 5 solo salida conforme al anexo Formato de salida (`#meta-4`); parte 6 solo complementos ART-032, sin formatos, campos, contrato ni instrucciones de salida. En los complementos retirar el antiguo contrato de salida, la foliación y el estado MCP-NORMATIVO; conservar no burocracia, continuidad/procedencia e integridad con activadores proporcionales (P005 ante cambio normativo, P037 ante concurrencia/cambio de responsabilidad, P004 al afirmar resultados verificables, P038 para fuente canónica); no repetir controles por rutina. No iniciar AT ni editar ART-032 en esta etapa.
 
 **Nueva candidata en preparación:** v0.13, ruta prevista `frentes/gobernanza/entregas/CHATGPT-v0.13/IPZ-CAMPO-CHATGPT-v0.13-PROPUESTA.txt`. v0.12 y baseline histórica se preservan sin sobrescritura. La candidata v0.13 no se considerará persistida hasta creación y lectura de vuelta; tampoco equivale a instalación en el campo nativo.
 
@@ -72,7 +72,7 @@ El operador instruye modificar la candidata actual conforme a todas las decision
 ## Última decisión del operador · separación de salida y complementos · 2026-11-12
 
 - **Instrucción expresa:** la IPZ tendrá seis partes, no cinco. La posición 5 es «Salida» y la posición 6 es «Complementos».
-- **Parte 5:** destino exclusivo Metacanon §4. Contiene la remisión al contrato/formato de salida, sin mezclar ART-032.
+- **Parte 5:** destino exclusivo Formato de salida (`#meta-4`). Contiene la remisión al contrato de salida, sin mezclar ART-032.
 - **Parte 6:** destino exclusivo ART-032. Retirar de esta posición cualquier contenido relacionado con salida: formato, campos, cabeceras, contadores, contrato, instrucciones de presentación o duplicación de §4.
 - **Complementos que permanecen en parte 6:** no burocracia adicional; continuidad/procedencia; integridad mínima activada por evento. Permanecen retirados el antiguo contrato de salida, foliación y estado MCP-NORMATIVO.
 - **Alcance de la acción actual:** actualizar solo la candidata IPZ v0.13 y esta ficha de continuidad. AT sigue aplazada; ART-032 y el campo nativo no se modifican.
@@ -89,8 +89,8 @@ El operador instruye modificar la candidata actual conforme a todas las decision
 - **Read-back:** contenido recuperado desde `main`; versión, contador, texto y blob cotejados. Los siete destinos/anclas se verificaron contra el DUG vigente.
 - **Preservación:** v0.12 continúa en su ruta histórica y no fue sobrescrita; baseline v0.7 no fue modificada ni declarada instalada.
 - **Límites:** campo nativo IPZ sin modificar; ART-032 sin modificar; AT aplazada; FOL1 y MCP-NORMATIVO no activados.
-- **Verificación de estructura:** parte 5 contiene solo Metacanon §4 y la instrucción de salida; parte 6 contiene solo ART-032 y los complementos no burocracia, continuidad/procedencia e integridad por evento. La parte 6 no contiene formato, campos ni contrato de salida.
-- **Última actualización:** commit `1a1c72a8713d90a47cce013ebb7b3141b2279e82`; blob `c57537a99f4c6fc01897288e76b6afba6bd1445f`.
+- **Verificación de estructura:** parte 5 contiene solo el anexo Formato de salida (`#meta-4`) y la instrucción de salida; parte 6 contiene solo ART-032 y los complementos no burocracia, continuidad/procedencia e integridad por evento. La parte 6 no contiene formato, campos ni contrato de salida.
+- **Última actualización:** commit `2817dda3ae5783adba052771dfd1ac651e5e5536`; blob `5a30a2e305cd0547b7c4f087a0f8848e3e7241e2`.
 
 ## Nueva decisión · nombre funcional de salida y economía de IPZ · 2026-11-12
 
@@ -101,18 +101,18 @@ El operador instruye modificar la candidata actual conforme a todas las decision
 
 ## Ejecución · nombre Formato de salida y optimización IPZ · 2026-11-12
 
-- **Parte 5 actualizada:** etiqueta visible `FORMATO DE SALIDA — Formato de salida`; destino canónico `#meta-4`. Se retiró la mención de marca «Metacanon §4» de la candidata. El título real del destino en el DUG ya era «4. Formato de salida», por lo que no se cambió el DUG ni su ancla estable.
+- **Parte 5 actualizada:** etiqueta visible `FORMATO DE SALIDA — Formato de salida`; destino canónico `#meta-4`. La candidata usa el nombre funcional del anexo, no «Metacanon §4». El título real del destino en el DUG ya era «4. Formato de salida», por lo que no se cambió el DUG ni su ancla estable.
 - **Separación conservada:** parte 5 contiene exclusivamente el acceso a salida; parte 6 conserva solo ART-032 y los complementos no burocracia, continuidad/procedencia e integridad proporcional por evento. No hay instrucciones de salida en parte 6.
 - **Optimización aplicada:** se compactó redacción y se eliminaron repeticiones sin quitar las seis posiciones, verificación de vigencia, lectura íntegra y seguimiento de referencias, reconocimiento MDP, lectura íntegra de cada principio pertinente, lectura del CNP, distinción salida humana/telemetría ni los tres complementos.
-- **Ahorro medido:** anterior 1.462 UTF-16 CRLF; actual 1.331 UTF-16 CRLF; reducción de 131 unidades (8,96%). Actual: LF 1.324; CRLF 1.331; puntos de código 1.324. No se añadieron consultas ni pasos de ejecución.
-- **Candidata actual:** blob `c57537a99f4c6fc01897288e76b6afba6bd1445f`; commit `1a1c72a8713d90a47cce013ebb7b3141b2279e82`. **Read-back completado:** recuperada desde `main`; encabezado, seis posiciones, etiquetas y separación de las partes 5/6 cotejadas. Conteos LF/CRLF coinciden con 1.324/1.331.
+- **Ahorro medido:** candidata anterior 1.462 UTF-16 CRLF; actual 1.353 UTF-16 CRLF; reducción neta de 109 unidades (7,46%). Actual: LF 1.346; CRLF 1.353; puntos de código 1.346. No se añadieron consultas ni pasos de ejecución.
+- **Candidata actual:** blob `5a30a2e305cd0547b7c4f087a0f8848e3e7241e2`; commit `2817dda3ae5783adba052771dfd1ac651e5e5536`. **Read-back completado:** recuperada desde `main`; encabezado, seis posiciones, etiquetas y separación de las partes 5/6 cotejadas. Conteos LF/CRLF coinciden con 1.346/1.353.
 - **Límites sin cambio:** no se renombró contenido del DUG; no se modificó ART-032; AT continúa aplazada; campo nativo IPZ no modificado.
 
 ## Trabajo pendiente
 
 1. **Pendiente:** releer la IPZ baseline v0.7 y documentar su procedencia/hash; no presentar la baseline declarada por el operador como lectura nativa. La candidata histórica v0.12 ya fue recuperada y permanece preservada.
 2. **Realizado para esta revisión:** adquirir DUG vigente desde `main` (v393/NX-393m; blob `844fc507a2a9a0bfc8f4e68884cca9f6d2912c96`) y revisar ART-025, ART-027, ART-032, el bloque de Principios universales y el CNP. La revisión no constituye modificación normativa.
-3. **Actualizado tras la última decisión:** estructura de seis partes: GOW §ARR; ART-031; Principios universales + ART-027/MDP; CNP; salida exclusiva por Metacanon §4; complementos exclusivos por ART-032.
+3. **Actualizado tras la última decisión:** estructura de seis partes: GOW §ARR; ART-031; Principios universales + ART-027/MDP; CNP; salida exclusiva por Formato de salida (`#meta-4`); complementos exclusivos por ART-032.
 4. **Realizado:** verificar los siete destinos/anclas usados por v0.13: `#gow-arranque-chatgpt`, `#ART-031`, `#principios-universales`, `#ART-027`, `#cnp-conjunto-nuclear-de-principios`, `#meta-4` y `#ART-032`. Los enlaces relativos se resuelven desde la ruta de la candidata en el repositorio.
 5. **APLAZADO:** en una etapa posterior y cuando el operador indique retomarlo, abordar mediante AT la reconciliación de ART-032: orden y función de las seis partes; separación de salida en la parte 5 y complementos en la parte 6; continuidad/procedencia y su fundamento; controles de integridad proporcionales; eliminación de foliación y del punto MCP-NORMATIVO de los complementos. Hasta entonces, no iniciar AT ni modificar ART-032.
 6. **Realizado:** crear candidata documental v0.13 sin sobrescribir v0.7 ni v0.12; verificar las seis partes, enlaces y conteo UTF-16 LF/CRLF. La candidata queda como propuesta pendiente de revisión, no instalada.
@@ -121,8 +121,8 @@ El operador instruye modificar la candidata actual conforme a todas las decision
 
 ## Criterios de aceptación
 
-- Estructura de seis partes: salida en parte 5 exclusivamente por Metacanon §4 y complementos en parte 6 exclusivamente por ART-032, sin contenido de salida en los complementos. La reconciliación de ART-032 no es requisito de esta etapa y permanece aplazada hasta que el operador indique retomarla.
-- Parte 3 enlaza a Principios universales y ART-027; parte 4 enlaza al CNP; parte 5 enlaza únicamente a Metacanon §4; parte 6 enlaza únicamente a ART-032 y no contiene elementos de salida.
+- Estructura de seis partes: salida en parte 5 exclusivamente por Formato de salida (`#meta-4`) y complementos en parte 6 exclusivamente por ART-032, sin contenido de salida en los complementos. La reconciliación de ART-032 no es requisito de esta etapa y permanece aplazada hasta que el operador indique retomarla.
+- Parte 3 enlaza a Principios universales y ART-027; parte 4 enlaza al CNP; parte 5 enlaza únicamente a Formato de salida (`#meta-4`); parte 6 enlaza únicamente a ART-032 y no contiene elementos de salida.
 - Continuidad/procedencia conservadas y justificadas mediante P017, P039, P037 y P038.
 - Complementos 3, 5 y 6 anteriores retirados; complemento 4 reformulado de forma proporcional y sin controles redundantes; complemento 1 conservado.
 - Baseline y candidatas históricas preservadas con procedencia/hash; candidata nueva con conteo UTF-16 verificado y dentro de 1.500.
@@ -133,6 +133,6 @@ El operador instruye modificar la candidata actual conforme a todas las decision
 
 - [GOV-TASK-007](../📁%20🧩%20-%20GOV-TASK-007%20-%20IPZ%20y%20FOL1/README.md): candidata e instalación IPZ/FOL1.
 - [GOV-TASK-016](../📁%20🧩%20-%20GOV-TASK-016%20-%20Revisar%20AT%20para%20IPZ%20y%20cambios%20del%20marco/README.md): AT, baseline IPZ y principio general propuesto.
-- [ART-032](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-032), [ART-025](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-025), [ART-027](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-027), [Metacanon §4](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#meta-4).
+- [ART-032](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-032), [ART-025](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-025), [ART-027](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-027), [Formato de salida](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#meta-4).
 
 Esta ficha es una tarea provisional de planificación y persistencia. No canoniza por sí misma cambios en DUG/ART-032 ni modifica el campo nativo IPZ.
