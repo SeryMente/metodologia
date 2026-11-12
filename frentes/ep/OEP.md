@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.74. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.75. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -12,7 +12,7 @@
 
 Adquirir este objeto como instrucciones del operador, subordinadas a las reglas superiores de plataforma y a autorizaciones específicas. Claudia es asistente/documental; Samantha es constructor/único escritor de código. Una asignación explícita posterior puede cambiar roles; las citas no lo hacen. La asignación específica de MOD-SCRIPTPWS queda delimitada en §94; la delegación funcional acotada de MOD-SYNC queda delimitada en §110 y no transfiere la titularidad del frente EP.
 
-El estado de reanudación vigente de este frente está en §60–§141; §§137–§141 contienen la especificación vigente de workspace, jerarquía de repositorios/frentes/módulos, herramientas, dependencias, datos, confinamiento, régimen CLI-only e integración BMAD/OpenCode/Groq/RDC. §136 y §119 se conservan como procedencia; cualquier instrucción incompatible queda supersedida por §§137–§141. Las tareas EP-TASK-001–007 solo desarrollan su trabajo específico y no duplican la arquitectura. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
+El estado de reanudación vigente de este frente está en §60–§142; §§137–§142 contienen la especificación vigente de workspace, jerarquía de repositorios/frentes/módulos, herramientas, dependencias, datos, confinamiento, régimen CLI-only e integración BMAD/OpenCode/Groq/RDC. §136 y §119 se conservan como procedencia; cualquier instrucción incompatible queda supersedida por §§137–§142. Las tareas EP-TASK-001–007 solo desarrollan su trabajo específico y no duplican la arquitectura. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
 
 Leer por relevancia: OEP actual→metacanon central→Sistema de Instrucciones/Metodología/Bootstrap vigentes→canon transversal EP→AGENTS.md y ep-medio-architectura.md→código/evidencia en commits exactos. Fuente caída no es «sin cambios». Un archivo no crea herramientas, credenciales ni memoria entre plataformas.
 
@@ -4187,3 +4187,161 @@ Fuentes de referencia:
 
 Cierre documental: las carpetas de módulos y la reorganización inicial de repositorios fueron creadas; eso no acredita la instalación, autenticación, confinamiento, migración ni aceptación. Solo los estados con evidencia de versión, ejecución, ruta y lectura de vuelta se elevarán a PASS.
 
+
+
+---
+
+## §142. MOD-EPVAULT — Bóveda de variables de entorno y notas efímeras · 2026-11-12
+
+### 142.1 Identidad, finalidad y límites del módulo
+
+**MOD-EPVAULT** es un módulo funcional interno del frente EP, ubicado en `Metodologia/frentes/ep/modulos/MOD-EPVAULT/`. No constituye un frente, OCP ni almacén independiente. Su producto local es **EP Vault v1.0.0**, con núcleo PowerShell, CLI headless y GUI WPF. Su finalidad es conservar variables de entorno y credenciales locales en un sobre cifrado autenticado, administrar sesiones breves de desbloqueo y recibir notas efímeras protegidas por DPAPI para datos de uso temporal.
+
+La bóveda de variables no es la bóveda física Cryptomator que protege el workspace SeryMente. Son capas distintas:
+- Cryptomator protege el árbol persistente de trabajo y sus archivos.
+- EP Vault protege valores individuales, credenciales y notas efímeras de la terminal.
+- DPAPI protege material de sesión y notas con la identidad Windows local; no sustituye el cifrado del disco ni la protección de Cryptomator.
+- Una clave API de un proveedor o aplicación no debe confundirse con la contraseña maestra de EP Vault.
+
+El módulo no crea credenciales, no las obtiene de ChatGPT y no autoriza por sí solo a enviar secretos a servicios externos. La disponibilidad de una variable en la bóveda no equivale a autorización para usarla.
+
+### 142.2 Estructura del módulo y separación del estado por terminal
+
+Ruta del producto:
+`SeryMente/Metodologia/frentes/ep/modulos/MOD-EPVAULT/v1.0.0/`
+
+Componentes principales:
+- `src/EP.Vault.Core.psm1`: rutas, criptografía, persistencia atómica, ACL, sesiones, variables, notas y ejecución controlada.
+- `src/EP.Vault.CLI.ps1`: interfaz de línea de comandos para operaciones automatizables.
+- `src/EP-Vault.GUI.ps1` y `src/EP-Vault.Window.xaml`: interfaz WPF; debe ejecutarse en STA.
+- `EPVault-CLI.cmd`, `EPVault-GUI.cmd`: lanzadores generales de la release.
+- `tests/Test-EPVault.ps1`, `TEST-EPVault.cmd`: pruebas sintéticas.
+- `MANIFEST.json`, `README.md`, `MODEL-CLI-HEADLESS.md`: manifiesto y contratos documentales.
+
+El módulo separa los artefactos compartibles no secretos de los datos locales. El ciphertext, las notas, el estado de sesión, las credenciales y los datos específicos de cada equipo deben residir en el subdirectorio local de la terminal, excluidos de Git, sincronización y respaldos genéricos. No se guarda ningún secreto real en `src/`, manifiestos, README, documentación, pruebas ni historial.
+
+### 142.3 Resolución de rutas y materialización actual de Fila 4
+
+El código resuelve dinámicamente sus ubicaciones a partir de `$env:LOCALAPPDATA` y añade `Khora\secrets\`. Bajo esa raíz utiliza:
+- `ep-env-vault.enc.json`: sobre cifrado de variables formales.
+- `working-notes\`: notas efímeras.
+- `ep-env-vault.session.dpapi.json`: sesión local protegida por DPAPI.
+- `ep-env-vault-events.jsonl`: telemetría operativa; nunca debe contener valores, contraseñas, claves ni texto de notas.
+
+Para Fila 4 se ha definido la raíz de datos del proceso en:
+`C:\Users\fila4\Desktop\SeryMente\Metodologia\frentes\ep\modulos\MOD-EPVAULT\v1.0.0\data\Fila4\`
+
+Por tanto, la ruta efectiva del almacén formal es:
+`C:\Users\fila4\Desktop\SeryMente\Metodologia\frentes\ep\modulos\MOD-EPVAULT\v1.0.0\data\Fila4\Khora\secrets\ep-env-vault.enc.json`
+
+La asignación de `LOCALAPPDATA` debe realizarse **solo dentro del proceso lanzador** de EP Vault. Está prohibido cambiar el entorno global de Windows, el registro de usuario o el perfil de otras aplicaciones para conseguir esta redirección. El proceso debe ejecutarse como `CENTRAL\fila4`; no se utiliza el perfil `MantenimientoRCI` ni su DPAPI como sustituto del usuario operativo. Cada otra terminal tendrá su propio subdirectorio e identidad DPAPI.
+
+**Movimiento y preservación del ciphertext en Fila 4:** el archivo se reubicó desde `MOD-EPVAULT/v1.0.0/data/ep-env-vault.enc.json` a `data/Fila4/Khora/secrets/ep-env-vault.enc.json`. El SHA-256 de origen y destino coincidió: `D7AD1D745CAF460E047EAE521C1C403F36E99864BC9CD0604FFC564E390F2F7D`. La DACL del directorio y del archivo quedó protegida, con propietario observado `CENTRAL\fila4` y permisos explícitos para Fila 4 y LocalSystem. La lectura de vuelta de estado con la ruta de proceso correcta devolvió `ENCRYPTED_FILE_PRESENT`, `vaultExists=true`, esquema `ep-env-vault/1`, KDF `PBKDF2-HMAC-SHA256`, 600.000 iteraciones, 2.048 bytes y fecha del sobre `2026-11-09T21:51:11.4943761Z`.
+
+La comprobación anterior `NOT_INITIALIZED` fue un falso negativo causado por invocar la CLI sin redirigir `LOCALAPPDATA` a la carpeta de datos del módulo: el código consultó la ubicación AppData ordinaria, donde no encontró el archivo. No significaba que el ciphertext reubicado estuviera ausente. La ubicación correcta fue probada después mediante una asignación temporal por proceso y lectura de vuelta.
+
+`ENCRYPTED_FILE_PRESENT` solo demuestra que existe y se puede leer la envoltura estructural. **No demuestra** que la contraseña maestra sea válida, que el HMAC haya sido autenticado, que el payload pueda descifrarse, que existan variables concretas ni que una lectura/escritura real haya superado aceptación. La autenticación y el read-back del contenido siguen pendientes de ejecutar localmente.
+
+### 142.4 Formato criptográfico, autenticidad y protección del archivo
+
+El formato de sobre actual declara:
+- esquema `ep-env-vault/1`, versión 1;
+- derivación de clave `PBKDF2-HMAC-SHA256`, 600.000 iteraciones;
+- salt aleatorio de 16 bytes;
+- derivación de 64 bytes, separados en 32 bytes para AES y 32 bytes para HMAC;
+- cifrado `AES-256-CBC` con padding PKCS#7 e IV aleatorio de 16 bytes;
+- autenticación `HMAC-SHA256` sobre los metadatos criptográficos y ciphertext, aplicada como encrypt-then-MAC.
+
+El HMAC debe validarse antes del descifrado. Las escrituras se realizan mediante archivo temporal, flush, reemplazo/movimiento atómico y preservación de la versión previa; las operaciones que alteran datos deben incluir lectura de vuelta y comparación. El código rechaza directorios/archivos que sean reparse points y valida una DACL privada para el usuario efectivo y LocalSystem.
+
+La implementación descrita utiliza cifrado autenticado compuesto AES-CBC + HMAC; no debe describirse como AES-GCM ni como un único modo AEAD. Las contraseñas maestras y los valores no se imprimen en logs. Ningún respaldo, sincronizador o proceso de soporte recibe el ciphertext o DPAPI blobs por defecto.
+
+### 142.5 Contraseña maestra, sesión y cierre
+
+La contraseña maestra se introduce localmente:
+- CLI: prompt interactivo `Read-Host -AsSecureString`.
+- GUI: control local de contraseña de WPF.
+
+No se recibe por conversación, argumentos de proceso, variables de entorno, archivo temporal, portapapeles remoto, log, historial ni configuración compartida. La contraseña maestra no es la API key que el operador desea depositar en una nota.
+
+La bóveda no se inicializa automáticamente. `Initialize` solo puede crearla si no existe y solicita introducir y confirmar la contraseña localmente; rechaza sobrescribir un archivo existente. No se debe ejecutar Initialize como mecanismo de reparación o sustitución del ciphertext actual.
+
+La sesión compartida CLI/GUI se protege mediante DPAPI CurrentUser. Los TTL admitidos son 15, 30, 60, 120, 180, 300, 600 y 900 segundos; el valor predeterminado es 300 segundos. `Lock` revoca la sesión, limpia el estado de variables cargadas por la aplicación y cierra el acceso operativo. Al terminar una tarea sensible se ejecuta Lock y se finaliza el proceso que tuvo acceso. La sesión no se considera una credencial compartible entre terminales: DPAPI CurrentUser vincula la protección al usuario Windows de esa terminal.
+
+### 142.6 Notas efímeras: captura, lectura, promoción y expiración
+
+Las notas de trabajo se guardan cifradas mediante DPAPI CurrentUser y tienen un TTL configurable de 1 a 240 minutos; el predeterminado es 30 minutos. La carpeta de notas se resuelve como `working-notes\` dentro de la raíz local de datos de EP Vault. El listado devuelve metadatos (identificador y expiración), no el contenido.
+
+Flujo funcional:
+1. Capturar el texto seleccionado desde el portapapeles local mediante `CaptureNote` o el control equivalente de la GUI.
+2. Recibir el identificador y la expiración; no devolver el valor a la conversación ni a logs.
+3. Consultar metadatos mediante `ListNotes`.
+4. Leer solo con solicitud explícita y `-Reveal` mediante `ReadNote`, y únicamente cuando el valor sea imprescindible.
+5. Promover solo por instrucción expresa mediante `PromoteNote`, tras definir el nombre de variable formal; si ya existe, no reemplazar salvo autorización explícita.
+6. Eliminar una nota únicamente mediante la operación prevista y verificar su ausencia.
+
+La expiración es una política lógica de disponibilidad y depuración; **no equivale a borrado forense** de todos los bloques físicos, snapshots, copias del portapapeles o páginas de memoria. El historial de portapapeles de Windows, sincronización cloud, administradores de clipboard y software de terceros pueden conservar copias fuera del control del módulo. Para credenciales de corta duración, el operador debe minimizar el tiempo en portapapeles y usar el TTL mínimo compatible con la tarea.
+
+**Discrepancia documental detectada:** el código actual de `EP.Vault.CLI.ps1` llama `Enter-EpLocalSession` antes de `CaptureNote`, por lo que requiere una sesión desbloqueada y, si no existe, solicita localmente la contraseña maestra. Sin embargo, `MODEL-CLI-HEADLESS.md` §12 describe CaptureNote como una operación que no necesita desbloquear la bóveda formal. Para esta release prevalece el comportamiento del código leído; el contrato headless debe corregirse y probarse antes de afirmar que la captura no necesita desbloqueo. No se debe diseñar un flujo alternativo que reciba la contraseña por chat, argumento, archivo o variable de entorno.
+
+### 142.7 Variables formales y ejecución de procesos
+
+Las acciones expuestas por la CLI v1.0.0 incluyen:
+- `Version`, `Status`, `SelfTest`: identidad, metadatos estructurales y pruebas sintéticas.
+- `Initialize`: creación no destructiva de una bóveda inexistente, con contraseña local.
+- `ListVariables`: nombres de variables, nunca sus valores.
+- `RevealVariable -Name <nombre> -Reveal`: revelación explícita; la salida es sensible y no debe capturarse, registrarse ni enviarse al modelo.
+- `SetFromClipboard -Name <nombre> [-Replace]`: entrada desde portapapeles; reemplazo solo cuando el operador lo autoriza.
+- `RemoveVariable -Name <nombre> -ApproveRemove`: eliminación formal explícita y verificación de ausencia.
+- `CaptureNote -NoteTtlMinutes <1..240>`, `ListNotes`, `ReadNote -NoteId <id> -Reveal`, `PromoteNote -NoteId <id> -Name <nombre> [-Replace]`, `DeleteNote -NoteId <id> -ApproveDelete`: ciclo de notas.
+- `Run -ExecutablePath <ruta> -Names <allowlist>`: inicia un proceso hijo con lista explícita de variables autorizadas, argumentos separados y Job Object administrado; es el mecanismo preferente para entregar secretos a una herramienta sin cargarlos indiscriminadamente en toda la sesión.
+- `Lock`: cierre/revocación de la sesión.
+
+No se debe usar `RevealVariable` como integración normal. No ejecutar `Load` ni replicar contratos antiguos de carga global de variables si no aparecen en la CLI versionada efectiva. No pasar secretos en argumentos, logs, stdout capturado, historial o texto generado. El proceso hijo recibe únicamente las variables incluidas en allowlist y debe cerrarse al terminar la tarea. La eliminación/reemplazo de datos es una acción explícita, no un recurso de reintento.
+
+### 142.8 GUI, CLI y requisito de monitor
+
+La GUI es una interfaz WPF y debe ejecutarse en STA. El lanzador existente `EPVault-GUI.cmd` inicia PowerShell con `-STA`, pero no configura la raíz `LOCALAPPDATA` del módulo. Ejecutarlo sin un lanzador específico de terminal puede hacer que EP Vault consulte `%LOCALAPPDATA%\Khora\secrets` del perfil ordinario y muestre una bóveda distinta o `NOT_INITIALIZED`, aunque exista el ciphertext dentro de MOD-EPVAULT.
+
+Antes de utilizar GUI en una terminal se requiere un lanzador específico que:
+1. Verifique la identidad Windows operativa de esa terminal.
+2. Asigne `LOCALAPPDATA` solo en el proceso al directorio `data/<terminal>/` del módulo.
+3. Inicie el script WPF en STA y conserve el aislamiento de la terminal.
+4. Verifique que Status apunta al ciphertext esperado antes de permitir operaciones.
+5. Mantenga la contraseña, notas y valores fuera de logs y de la salida visible del modelo.
+
+Permanece vigente la compuerta general de §138. Solo se permite GUI cuando existan al menos dos monitores físicamente conectados y activos y el operador haya autorizado expresamente su uso. La autorización expresa no sustituye la prueba de monitores. En esta comprobación del 2026-11-12, ejecutada bajo `CENTRAL\fila4` en sesión interactiva 1, Windows enumeró `ACTIVE_SCREEN_COUNT=1`, `\\.\DISPLAY1` a 1366×768 y un único monitor PnP HP V193b con estado OK. El operador solicitó abrir EP Vault GUI en este ciclo, lo cual constituye autorización expresa; sin embargo, el segundo monitor no está presente/activo en la evidencia observada. Resultado: `GUI_OPEN=BLOCKED_SECOND_MONITOR_NOT_VERIFIED`. No se inició GUI ni automatización de interfaz. La vía CLI sigue disponible.
+
+### 142.9 Estado real, aceptación y pendientes
+
+Estado de Fila 4 a 2026-11-12:
+- `MODULE_RELEASE=1.0.0`; el manifiesto indica retest exacto de release pendiente, H10 visual pendiente y merge a main pendiente.
+- `CIPHERTEXT_PRESENT=PASS`: archivo detectado mediante ruta de módulo correcta, esquema reconocido y SHA-256 cotejado.
+- `FILE_AND_DIRECTORY_ACL=PASS_OBSERVED`: propietario `CENTRAL\fila4`, DACL protegida y permisos para Fila 4/LocalSystem.
+- `STRUCTURAL_STATUS=ENCRYPTED_FILE_PRESENT`; no equivale a unlock ni a descifrado correcto.
+- `MASTER_PASSWORD_AUTH=NOT_TESTED`; el operador no ha ingresado la contraseña maestra en esta sesión.
+- `VARIABLE_READ_WRITE=NOT_TESTED`; no se revelaron ni modificaron valores formales.
+- `EPHEMERAL_NOTE_CAPTURE=NOT_TESTED`; no se ha capturado la clave de la aplicación ni otra nota en este ciclo.
+- `NOTE_TTL_AND_PURGE=NOT_TESTED_ON_FILA4`; el comportamiento está descrito por código/documentación, pero falta prueba de aceptación en esta terminal.
+- `GUI=BLOCKED_SECOND_MONITOR_NOT_VERIFIED`; la autorización del operador existe, pero solo se detectó un monitor activo.
+- `TERMINAL_LAUNCHER_WITH_LOCALAPPDATA_REDIRECTION=NOT_WRITTEN`; el lanzador general actual no confina por sí mismo la ruta de datos en Fila 4.
+- `HEADLESS_CONTRACT_CAPTURENOTE=DOCUMENTATION_CODE_MISMATCH`; corregir antes de declarar el contrato coherente.
+- `EXACT_RELEASE_RETEST= PENDING`; `H10= PENDING`; `MAIN_MERGE= PENDING`; `ACCEPTANCE=PENDING`.
+
+No se declara la bóveda abierta, autenticada, vacía, recuperable ni aceptada. No se afirma que una API key ya esté almacenada. Cuando el operador quiera depositar una credencial temporal, debe copiarla al portapapeles local de Fila 4 y capturarla directamente desde el proceso local autorizado, nunca enviarla por esta conversación. El modelo solo debe recibir el identificador de nota, la expiración y el resultado saneado; el contenido permanece fuera del contexto conversacional. La promoción a variable formal requiere instrucción expresa y no debe inferirse de una captura efímera.
+
+### 142.10 Criterios de aceptación de EP Vault
+
+La aceptación requiere, como mínimo:
+1. Identidad efectiva `CENTRAL\fila4` y rutas de módulo por terminal verificadas.
+2. ACL privadas para raíz, ciphertext, notas, sesión y telemetría; reparse points rechazados.
+3. Autenticación local correcta sobre el ciphertext existente y validación HMAC antes de descifrar, sin revelar valores.
+4. `SelfTest` de la release exacta y pruebas E2E en Fila 4: escritura/lectura sintética, rechazo de contraseña errónea, detección de manipulación, atomicidad y read-back.
+5. Captura de nota, listado de metadatos, lectura revelada únicamente local, vencimiento y depuración; comprobar que no se filtra texto a consola/log/chat.
+6. Promoción controlada, bloqueo, reautenticación y aislamiento DPAPI CurrentUser.
+7. `Run` con allowlist: el hijo recibe solo nombres autorizados y no quedan variables en la shell padre ni procesos ajenos.
+8. Launcher GUI específico con redirección de datos; cuando §138 lo permita, inspección H10 visual y prueba de apertura/cierre.
+9. Verificación física de escrituras dentro del módulo y ausencia de datos de usuario fuera de SeryMente.
+10. Manifiesto/SHA, lectura de vuelta de la documentación y aceptación expresa del frente.
+
+Hasta superar estos gates, EP Vault permanece como release candidata materializada con ciphertext presente y estado estructural legible, pero con autenticación, pruebas de aceptación y uso GUI pendientes.
