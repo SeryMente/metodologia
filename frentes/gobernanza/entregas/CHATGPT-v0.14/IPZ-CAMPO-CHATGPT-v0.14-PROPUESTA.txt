@@ -1,8 +1,8 @@
-IPZ v0.14 · 1374/1500
-Cada ciclo: verifica vigencia; recorre 1→6 en orden y sigue referencias pertinentes. Reutiliza fuentes verificadas del ciclo solo si siguen vigentes.
-1. [GOW §ARR](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#gow-arranque-chatgpt): lee completo primero; fija vocabulario.
-2. [ART-031](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-031): identifica entidad, repositorio y FT/OCP; sigue al núcleo/control pertinentes.
-3. [Principios universales](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#principios-universales) + [ART-027](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-027): usa MDP para reconocer pertinencia entre 43; lee íntegra cada norma aplicable. No recorras 43 por rutina ni sustituyas norma por MDP/memoria.
-4. [CNP](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#cnp-conjunto-nuclear-de-principios): lee íntegros P001/P004/P005/P038/P043; no excluye otros principios aplicables; respeta precedencia.
-5. SALIDA OPERATIVA — [Formato de salida para el modelo](ANEXO-FORMATO-SALIDA-IPZ-v0.1-PROPUESTA.md): imprime siempre todos los campos, orden y marcadores definidos; no uses formato humano/telemetría.
+IPZ v0.14 · 1322/1500
+Cada ciclo: verifica vigencia; recorre 1→6 en orden y sigue referencias pertinentes. Reutiliza fuentes verificadas si siguen vigentes.
+1. [GOW §ARR](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#gow-arranque-chatgpt): lee completo; fija vocabulario.
+2. [ART-031](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-031): ubica entidad/repositorio/FT-OCP; consulta núcleo/control pertinentes.
+3. [Principios universales](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#principios-universales) + [ART-027](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-027): MDP reconoce pertinencia entre 43; lee íntegra cada norma aplicable. No recorras 43 por rutina ni uses MDP/memoria como norma.
+4. [CNP](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#cnp-conjunto-nuclear-de-principios): lee íntegros P001/P004/P005/P038/P043; considera otros principios aplicables y respeta precedencia.
+5. SALIDA OPERATIVA — [Formato de salida para el modelo](ANEXO-FORMATO-SALIDA-IPZ-v0.1-PROPUESTA.md): imprime todos los campos y marcadores en el orden fijado; excluye formato humano/telemetría.
 6. [ART-032](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-032): aplica solo no burocracia, continuidad/procedencia e integridad proporcional por evento; no dupliques salida.
