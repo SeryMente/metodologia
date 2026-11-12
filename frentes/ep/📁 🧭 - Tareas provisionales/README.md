@@ -7,7 +7,7 @@
 **Fuente normativa consultada:** DUG Samantha v389 · NX-389m · Metacanon 1.30 · GOW 2.19, en main; commit 199bf03ade7aceeedcabc10eeb1c06b1d0e53eaf; blob bcd99e72113f444a045d7f1c91b4ad36865b8ea8.
 
 
-**Revisión viva 2026-11-12:** la regla del operador en OEP §138 prohíbe todas las GUI hasta disponer de segundo monitor activo y autorización expresa; todas las herramientas EP se operan por CLI. Cryptomator Desktop 1.19.6.6588 y WinFsp 2.1.25156 están instalados de una fase previa; no se volverá a abrir Desktop. El CLI con comando create se construirá desde el commit oficial firmado f09851d3990f4b7dc6f572f8a9eb9a5f2882f439; la build y pruebas están pendientes. No existe bóveda real, no hay migración y el origen permanece intacto y sin cifrar. Esta revisión sustituye cualquier fotografía anterior de esta tabla que señale BitLocker/VHDX como destino o Cryptomator como no instalado.
+**Revisión viva 2026-11-12 · 11:54 America/Mexico_City:** CLI Cryptomator local construido desde el commit upstream firmado f09851d3990f4b7dc6f572f8a9eb9a5f2882f439; 12 pruebas unitarias y 5 de integración PASS; smoke CLI y E2E sintética create/unlock/WebDAV/ciphertext PASS. La build se clasifica LOCAL_BUILD_FROM_SIGNED_UPSTREAM_SOURCE, no release oficial. Wrapper reproducible PowerShell 5.1, desmontaje graceful Windows y limpieza del staging sintético pendientes. No existe bóveda real ni migración; el origen sigue intacto. GUI prohibida por OEP §138. Esta revisión sustituye fotografías anteriores que indiquen CLI pendiente, BitLocker/VHDX como destino o Cryptomator como no instalado.
 
 ## Naturaleza y límites
 
@@ -21,7 +21,7 @@ El patrón de materialización sigue el registro de tareas provisionales de Gobe
 
 | ID local | Estado | Alcance específico vigente | Núcleo |
 |---|---|---|---|
-| EP-TASK-003 | `en_curso · CLI_ONLY_POLICY_ADOPTED · CRYPTOMATOR_DESKTOP_AND_WINFSP_INSTALLED · CLI_BUILD_PENDING · VAULT_NOT_CREATED · APP_DATA_CONFINEMENT_PENDING · MIGRATION_NOT_STARTED · LEGACY_CLEANUP_PENDING` | Base del workspace: build Cryptomator CLI, bóveda, árbol SeryMente, migración verificada y retiro seguro de residuos EP VHDX/BitLocker. | [núcleo](./📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md) |
+| EP-TASK-003 | `en_curso · CLI_ONLY_POLICY_ADOPTED · CRYPTOMATOR_DESKTOP_AND_WINFSP_INSTALLED · CLI_BUILD_PASS_LOCAL · CLI_BUILD_WRAPPER_PENDING · UNIT_TESTS_12_PASS · INTEGRATION_TESTS_5_PASS · SYNTHETIC_E2E_PASS · WINDOWS_GRACEFUL_UNMOUNT_NOT_VERIFIED · SYNTHETIC_STAGING_CLEANUP_PENDING · REAL_VAULT_NOT_CREATED · APP_DATA_CONFINEMENT_PENDING · MIGRATION_NOT_STARTED · LEGACY_ARTIFACT_AUDIT_PENDING` | Base del workspace: build Cryptomator CLI, bóveda, árbol SeryMente, migración verificada y retiro seguro de residuos EP VHDX/BitLocker. | [núcleo](./📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md) |
 | EP-TASK-004 | `en_curso · APP_DATA_CONFINEMENT_PENDING · VAULT_RELOCATION_NOT_STARTED` | EP Vault: herramienta, almacén, configuración, logs y temporales dentro del workspace. | [núcleo](./📁%20🧩%20-%20EP-TASK-004%20-%20Reconstrucción%20de%20bóveda/README.md) |
 | EP-TASK-006 | `en_curso · APP_DATA_CONFINEMENT_PENDING · VAULT_RELOCATION_NOT_STARTED · ADAPTERS_NOT_IMPLEMENTED` | Variables y adaptadores: catálogo y distribución autorizada sin copias locales ni valores en claro fuera del workspace. | [núcleo](./📁%20🧩%20-%20EP-TASK-006%20-%20Centralización%20de%20variables%20de%20entorno/README.md) |
 | EP-TASK-001 | `en_curso · APP_DATA_CONFINEMENT_PENDING · PROFILE_AND_SESSIONS_NOT_MIGRATED` | NCL: Chrome, perfil, sesiones, extensiones, KeePassXC y datos confinados en la bóveda. | [núcleo](./📁%20🧩%20-%20EP-TASK-001%20-%20Integración%20NCL/README.md) |
@@ -526,3 +526,8 @@ Orden vigente para el ciclo actual: **EP-TASK-002 → EP-TASK-003 → EP-TASK-00
 ## Rectificación general de tareas por instrucción del operador · 2026-11-12
 
 La única especificación de arquitectura EP es [OEP §137](../OEP.md). La matriz anterior ordena las siete tareas conforme a sus dependencias. Las menciones históricas a VHDX/BitLocker permanecen como evidencia de estados anteriores, no como requisitos vigentes. Esta documentación no autoriza ni registra instalación, desinstalación, creación de bóveda, migración, limpieza de archivos ni cambio alguno en el host.
+
+
+## Reconciliación EP-TASK-003 · build CLI y E2E sintética · 2026-11-12 · 11:54 America/Mexico_City
+
+La build local desde upstream firmado y sus pruebas quedaron registradas en el núcleo EP-TASK-003. Resultado: 12 unit tests y 5 integration tests PASS; CLI `--version/help/create --help/unlock --help/list-mounters` PASS; bóveda sintética creada y desbloqueada por `FallbackMounter`; WebDAV PUT 201 / GET 200, round-trip de 37 bytes y ausencia de nombre/contenido sintético en el árbol físico cifrado. No es release estable ni aceptación de workspace. Windows graceful unmount no verificado, wrapper de build PowerShell 5.1 y limpieza del staging sintético pendientes. No se creó bóveda real, no se introdujo contraseña, no se migró el origen ni se alteró BitLocker/VHDX/GUI. El estado EP-TASK-004 permanece sin cambio.
