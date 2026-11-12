@@ -3,12 +3,12 @@
 **Repositorio propietario:** `SeryMente/metodologia` (privado).  
 **Rama canónica vigente:** `main`; las ramas documentales anteriores se conservan como antecedentes y no prevalecen sobre `main`.
 
-**OEP vigente:** v0.3.85 (`OEP.md`), leído de vuelta desde `main`. La raíz local del workspace es `SeryMente/`: repositorios como carpetas hijas directas, dentro los frentes, y cada frente con `ambitos/` y `modulos/`. No utilizar `SeryMente/Repositorios/`.
+**OEP vigente:** v0.3.87 (`OEP.md`), leído de vuelta desde `main`. La raíz local del workspace es `SeryMente/`: repositorios como carpetas hijas directas, dentro los frentes, y cada frente con `ambitos/` y `modulos/`. No utilizar `SeryMente/Repositorios/`.
 
 
 - [Persistencia DTC EP/MCP-OCP](OEP.md#95-persistencia-dtc-integrada-epmetodologia-y-continuidad-mcp-ocp--v0325--vcu-ep-v27): continuidad multiubicación EP/Metodología y estado operativo MCP-OCP, con autoridad técnica propia de MCP-OCP.
 
-- [OEP.md](OEP.md): único estado vivo del frente, v0.3.85; §§137–142 fijan estructura directa de SeryMente, módulos, bóveda y confinamiento de datos de usuario; §138 fija CLI por defecto y excepción ante orden expresa de GUI; §139 define MOD-EP-CRYPTO; §141 registra instalación BMAD/OpenCode, E2E Groq y pruebas RDC; §142 documenta MOD-EPVAULT, cifrado, notas efímeras, CLI/GUI y estado de Fila 4; §142.12 registra el E2E Groq, §142.13 el perfil Chrome confinado, §142.14 la continuidad RDC y §142.15 el archivo de continuidad y la prueba de escritura/read-back BMAD. §142.16 registra la recuperación parcial de OpenCode y el pendiente de credencial. §142.17 registra la auditoría puntual de Chrome y el estado multi-terminal.
+- [OEP.md](OEP.md): único estado vivo del frente, v0.3.87; §§137–142 fijan estructura directa de SeryMente, módulos, bóveda y confinamiento de datos de usuario; §138 fija CLI por defecto y excepción ante orden expresa de GUI; §139 define MOD-EP-CRYPTO; §141 registra instalación BMAD/OpenCode, E2E Groq y pruebas RDC; §142 documenta MOD-EPVAULT, cifrado, notas efímeras, CLI/GUI y estado de Fila 4; §142.12 registra el E2E Groq, §142.13 el perfil Chrome confinado, §142.14 la continuidad RDC y §142.15 el archivo de continuidad y la prueba de escritura/read-back BMAD. §142.16 registra la recuperación parcial de OpenCode y el pendiente de credencial. §142.17 registra la auditoría puntual de Chrome y el estado multi-terminal.
 - [Especificación general y operación CLI-only](OEP.md#137-especificación-general-única-del-workspace-ep-protegido--2026-11-12): Cryptomator como motor de bóveda, SeryMente como raíz, repositorios hijos directos, frentes, ámbitos, módulos y confinamiento total. [Régimen CLI por defecto y excepción por orden expresa §138](OEP.md#138-operación-cli-only-de-ep-hasta-disponer-de-segundo-monitor--2026-11-12). [Jerarquía y confinamiento §140](OEP.md#140-estructura-canónica-de-serymente-módulos-y-confinamiento-de-aplicaciones--2026-11-12). [BMAD/OpenCode/Groq/RDC §141](OEP.md#141-módulo-bmad--opencode--groq-y-acceso-mediante-chatgpt-rdc--2026-11-12). [EP Vault, incidencias y hotfix §142.11](OEP.md#14211-incidencias-verificadas-y-artefactos-de-integración--2026-11-12).
 - [Objeto de coordinación DTC](entregas/COORDINACION-GOBERNANZA-EP-v0.1.md): único registro de comunicación Gobernanza ↔ EP; historial reconciliado en `main`.
 - [Control de responsabilidad EP](CONTROL-RESPONSABILIDAD.json): registro autoritativo de titularidad y generación; generación 3; titularidad transferida por TRANSFER_RESPONSIBILITY el 2026-11-09; un titular activo, evento C-EP-TRANSFER-RESPONSIBILITY-20261109-01.
@@ -68,3 +68,11 @@ La crónica histórica se conserva para procedencia; las decisiones operativas a
 
 
 Estado documental añadido: OEP v0.3.74, §§140–141. La organización física de Fila 4 ha empezado; la consolidación de Cryptomator, confinamiento de perfiles, autenticación Groq, pruebas BMAD/OpenCode E2E y continuidad multi-terminal siguen sus propios estados en OEP. No inferir aceptación de la mera existencia de carpetas o paquetes.
+
+
+## Product Design · vMAT y tareas trazables a dictados
+
+- [MOD-EP-PRODUCT-DESIGN](modulos/MOD-EP-PRODUCT-DESIGN/README.md): módulo invocable como «Frente Product Design», subordinado a EP.
+- [Especificación operativa vMAT](modulos/MOD-EP-PRODUCT-DESIGN/ESPECIFICACION-OPERATIVA-VMAT.md): ChatGPT como entrada verbatim, asignación de frente, descomposición mínima/exhaustiva en tareas provisionales, y ejecución del agente con BMAD + Superpowers.
+- [EP-TASK-008](./%F0%9F%93%81%20%F0%9F%A7%AD%20-%20Tareas%20provisionales/%F0%9F%93%81%20%F0%9F%A7%A9%20-%20EP-TASK-008%20-%20vMAT%20Product%20Design%20-%20Captura%20verbatim%20y%20tareas%20ejecutables%20con%20Superpowers/README.md): primera tarea provisional con la instrucción fuente preservada y matriz de trazabilidad.
+- [OEP §142.19](OEP.md#14219-mod-ep-product-design--vmat-product-design-entrada-verbatim-tareas-provisionales-y-superpowers--2026-11-12): estado integrado y evidencia.
