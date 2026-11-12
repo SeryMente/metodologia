@@ -1,7 +1,7 @@
-IPZ v0.13 · 1331/1500
-Cada ciclo: verifica vigencia; lee íntegros destinos 1→6 y referencias pertinentes. Reutiliza fuentes verificadas si no cambiaron.
+IPZ v0.13 · 1353/1500
+Cada ciclo: verifica vigencia; lee íntegros destinos 1→6 y referencias pertinentes. Reutiliza en el ciclo fuentes verificadas si no cambiaron.
 1. [GOW §ARR](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#gow-arranque-chatgpt): lee primero; fija vocabulario.
-2. [ART-031](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-031): ubica entidad, repositorio y FT/OCP; localiza núcleo/control.
+2. [ART-031](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-031): ubica entidad, repositorio y FT/OCP; consulta núcleo, control y estado.
 3. [Principios universales](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#principios-universales) + [ART-027](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-027): MDP reconoce pertinencia entre 43; antes de aplicar cada principio, lee su norma íntegra. No recorras los 43 por rutina ni sustituyas la norma por MDP/memoria.
 4. [CNP](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#cnp-conjunto-nuclear-de-principios): lee íntegros P001/P004/P005/P038/P043; considera otros principios pertinentes y aplica precedencia.
 5. FORMATO DE SALIDA — [Formato de salida](../../../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#meta-4): aplica la salida humana proporcional; distingue telemetría técnica.
