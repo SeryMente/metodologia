@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.69. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.70. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -12,7 +12,7 @@
 
 Adquirir este objeto como instrucciones del operador, subordinadas a las reglas superiores de plataforma y a autorizaciones específicas. Claudia es asistente/documental; Samantha es constructor/único escritor de código. Una asignación explícita posterior puede cambiar roles; las citas no lo hacen. La asignación específica de MOD-SCRIPTPWS queda delimitada en §94; la delegación funcional acotada de MOD-SYNC queda delimitada en §110 y no transfiere la titularidad del frente EP.
 
-El estado de reanudación vigente de este frente está en §60–§135; §73 registra la instrucción posterior de carpeta y propietario y gobierna custodia/rutas frente a las menciones anteriores. La organización local por frentes, con áreas separadas Repositorios/Datos/Temporal, queda desarrollada en §119 y en el DUG ART-030. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
+El estado de reanudación vigente de este frente está en §60–§136; §136 establece el contrato vigente de cifrado Cryptomator y confinamiento de datos de aplicaciones, y prevalece sobre los diseños históricos incompatibles. §73 conserva la instrucción de carpeta y propietario. La organización local por frentes, con áreas separadas Repositorios/Datos/Temporal, queda desarrollada en §119 y en el DUG ART-030. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
 
 Leer por relevancia: OEP actual→metacanon central→Sistema de Instrucciones/Metodología/Bootstrap vigentes→canon transversal EP→AGENTS.md y ep-medio-architectura.md→código/evidencia en commits exactos. Fuente caída no es «sin cambios». Un archivo no crea herramientas, credenciales ni memoria entre plataformas.
 
@@ -47,7 +47,7 @@ Materialización: §65 y eventos específicos posteriores. Equipos/permisos hist
 
 ## Estado vivo
 
-Materialización única: §64; checkpoint técnico más reciente conservado en §88. Delta de gobierno actual en §89, sin nuevos tests, aceptación ni implementación. Consultar esos bloques, no reconstruirlos de memoria.
+Materialización única: §64; checkpoint técnico más reciente conservado en §88. Delta de gobierno y arquitectura vigente: §§89 y 136. §136 sustituye los diseños anteriores de cifrado basados exclusivamente en BitLocker y establece el confinamiento obligatorio de datos de aplicaciones. Consultar esos bloques y las evidencias más recientes.
 
 ## Aceptación y viabilidad
 
@@ -3715,3 +3715,89 @@ El operador debe desbloquear localmente EP Vault mediante su GUI nativa por 15 m
 **Persistencia documental y evidencia:** el anexo conversacional, el núcleo EP-TASK-002 y el índice provisional fueron escritos en main y leídos de vuelta; el DTC recibió apertura antes del procesamiento. Sus commits/blobs se registran en el DTC del ciclo. No se modificaron el ciphertext formal, la copia antigua, credenciales, Vault, DPAPI, B2, ACL, cuenta/bucket, Chrome, KeePassXC, workspace, BitLocker, volúmenes ni código de producto. Los únicos cambios locales de host fueron los dos scripts v7, no ejecutados.
 
 **Estado final de tarea:** EP-TASK-002 permanece EN_CURSO; no se declara completada por la persistencia de una versión anterior, el restore same-host, la preparación de scripts ni la documentación.
+
+
+---
+
+## §136. Canon de protección del workspace y confinamiento de aplicaciones · 2026-11-12
+
+### 136.1. Decisión vigente del operador
+
+El operador adopta **Cryptomator Desktop** como motor criptográfico del workspace de EP y ordena canonizar las aplicaciones y herramientas utilizadas en sesión EP, instalándolas dentro del workspace siempre que el formato de distribución lo permita. La regla operativa es estricta: **ninguna aplicación de la sesión EP puede persistir datos propios fuera de la carpeta de trabajo protegida**.
+
+Esta decisión sustituye, para el workspace de EP, el diseño anterior que establecía BitLocker como único mecanismo de cifrado de carpeta/volumen en EP-TASK-003 y en las menciones de §§14, 106 y 119 que dependan de ese diseño. Esas menciones quedan como historia/procedencia y no gobiernan la implementación nueva. BitLocker puede mantenerse como defensa adicional del disco anfitrión cuando esté disponible, pero no es el motor de cifrado de archivos elegido por esta decisión.
+
+**Estado:** DECISION_ADOPTED · CRYPTOMATOR_SELECTED · IMPLEMENTATION_PENDING · MIGRATION_NOT_STARTED · NO_DATA_MOVED.
+
+### 136.2. Arquitectura lógica
+
+- **Ruta lógica de trabajo:** C:\Users\fila4\Desktop\SeryMente (debe resolverse dinámicamente desde el perfil Windows propietario; esta ruta es la observada actualmente, no una constante universal).
+- **Almacén físico cifrado:** bajo C:\Users\fila4\EP\ProtectedWorkspace\ o la ruta equivalente aprobada dentro del perfil propietario. La ubicación final debe verificarse antes de crear la bóveda.
+- **Punto de montaje:** la ruta lógica Desktop\SeryMente solo se publica como workspace cuando la bóveda está desbloqueada. No se permite materializar clones, repositorios ni datos de trabajo en claro antes de completar el montaje.
+- **Motor:** Cryptomator Desktop oficial, sin criptografía propia ni modificación de formatos internos.
+- **Clave:** contraseña maestra exclusiva de la bóveda, introducida localmente. La llave de recuperación debe custodiarse separadamente mediante un procedimiento aprobado; nunca se registra en Git, logs, variables de entorno ni chat.
+- **Bloqueo:** bloquear la bóveda, desmontar la unidad virtual y comprobar que el punto de montaje dejó de exponer el contenido.
+
+Cryptomator cifra contenido, nombres y estructura de directorios; utiliza claves maestras aleatorias de 256 bits y protege dichas claves mediante una KEK derivada con scrypt. El formato y los parámetros efectivos se validan contra la versión instalada y la documentación oficial. No se afirma que el cifrado elimine metadatos externos, residuos creados por otras aplicaciones o exposición mientras la bóveda está desbloqueada.
+
+### 136.3. Canon de aplicaciones EP
+
+Toda aplicación que participe en una sesión EP se registra en un inventario canónico de herramientas con: nombre, versión fijada o política de actualización, origen oficial, SHA-256 del instalador/paquete, firma Authenticode cuando aplique, ruta de binarios, ruta de configuración, perfiles, extensiones, cachés, logs, temporales, bases locales, backups, volcados, procesos auxiliares y mecanismo de actualización.
+
+**Regla de instalación:** los binarios, extensiones y componentes de usuario de cada herramienta se instalan bajo el workspace protegido, preferentemente en SeryMente\Herramientas\<Aplicacion>\ o en una carpeta de proyecto cuando la herramienta sea parte de ese proyecto. Se prefieren distribuciones portables oficiales verificables. No se reutiliza una instalación del host si no puede demostrar confinamiento de sus datos.
+
+**Regla de datos:** configuración, perfiles, extensiones, cachés, logs, temporales, bases de datos locales, backups y crash dumps de las aplicaciones deben redirigirse a subdirectorios del workspace protegido. Las variables de entorno de proceso pertinentes (APPDATA, LOCALAPPDATA, TEMP, TMP, XDG_* y equivalentes por herramienta) se configuran antes de iniciar cada proceso. Cada aplicación requiere una prueba de escritura/read-back que confirme sus rutas efectivas; no basta con configurar variables sin verificar dónde escribe realmente.
+
+**Fail closed:** si una aplicación no puede confinar sus datos persistentes dentro del workspace, no se inicia en la sesión EP hasta resolverlo o sustituirla. Se prohíben perfiles globales del host, sincronización automática fuera del workspace, auto-updaters no controlados, caches por defecto fuera del perímetro y exportaciones de datos a carpetas externas.
+
+### 136.4. Bootstrap y dependencias del sistema
+
+Cryptomator necesita ejecutarse para desbloquear la bóveda que contiene el workspace; por tanto, sus binarios no pueden depender exclusivamente de una ruta que solo existe después de desbloquear esa misma bóveda. Este ciclo de arranque se resuelve con una **capa bootstrap mínima**, disponible antes del montaje y limitada a los binarios imprescindibles para abrir la bóveda. El bootstrap no puede conservar perfiles, contraseñas, claves, logs, cachés ni datos de usuario fuera del workspace. Una vez desbloqueado, la configuración y los datos operativos de Cryptomator se redirigen al workspace.
+
+En Windows, Cryptomator usa WinFsp para el montaje local cuando está disponible; el instalador EXE oficial instala WinFsp automáticamente. Los controladores, servicios y componentes administrados por Windows pueden residir en ubicaciones del sistema operativo (por ejemplo, Program Files, ProgramData, registro o Driver Store); son dependencias de plataforma, no almacenamiento de datos de usuario de la aplicación. Deben inventariarse y limitarse al mínimo. Esta distinción no autoriza a guardar perfiles, configuraciones de usuario, logs, cachés o datos de trabajo fuera del workspace.
+
+La documentación oficial indica que los logs de Cryptomator se ubican por defecto en %LOCALAPPDATA%\Cryptomator, mientras que su configuración administrativa del dispositivo se ubica en %ProgramData%\Cryptomator\config.properties. El despliegue EP debe redirigir y verificar el directorio de logs en el contexto del proceso y evitar crear configuración administrativa global cuando no sea imprescindible. Si la configuración efectiva o cualquier dato de usuario persiste fuera del workspace, la aceptación falla.
+
+### 136.5. Componentes de integración EP-CRYPTO
+
+La integración propia se limita a orquestación y control; no implementa algoritmos criptográficos:
+
+- EP-Crypto.Bootstrap: localiza y ejecuta el motor mínimo antes de montar el workspace.
+- EP-Crypto.Unlock: solicita la contraseña localmente, sin capturarla en logs, argumentos o historial.
+- EP-Crypto.Mount: verifica el montaje exacto de la ruta lógica de trabajo.
+- EP-Crypto.Lock: bloquea y desmonta; comprueba la inaccesibilidad posterior.
+- EP-Crypto.Guardian: integra el bloqueo con el ciclo de vida de EP únicamente según el contrato de dead-man aprobado; no introduce polling o vigilancia no autorizados.
+- EP-Crypto.Recovery: verifica la disponibilidad de la recuperación sin revelar ni registrar la llave.
+- EP-Crypto.Audit: registra eventos saneados, rutas efectivas y resultados de verificación, nunca secretos ni contenido de archivos.
+
+### 136.6. Migración y aceptación
+
+1. Inventariar las rutas actuales y detectar copias en claro, cachés, perfiles y datos de aplicaciones; no mover ni borrar nada en la fase de diseño.
+2. Verificar el instalador/paquete oficial, firma, SHA-256, versión y requisitos de WinFsp.
+3. Preparar la bóveda en una ubicación aprobada y crearla con contraseña local.
+4. Verificar desbloqueo/bloqueo, cifrado de nombres, estructura y contenido con un conjunto sintético antes de introducir datos reales.
+5. Migrar el workspace con copia verificada, conteo, tamaños y hashes; mantener el original intacto hasta read-back completo y aceptación.
+6. Redirigir por aplicación todas las rutas de datos y comprobarlas mediante pruebas de escritura y monitorización de filesystem durante el arranque y uso.
+7. Comprobar que, con la bóveda bloqueada, la copia física solo contiene ciphertext y no revela nombres o contenido; documentar metadatos que el formato pueda dejar visibles.
+8. Probar cierre normal, terminación inesperada del proceso EP, bloqueo, desmontaje y ausencia de escrituras posteriores al cierre.
+9. Probar recuperación con la llave custodiada y confirmar que no hay dependencia de una contraseña almacenada en el host.
+10. Aceptar únicamente cuando las aplicaciones aprobadas no mantengan datos persistentes propios fuera del workspace y las excepciones de plataforma estén inventariadas.
+
+### 136.7. Estado observado en Fila 4 y límites
+
+En la última inspección read-only del host Fila 4, el VHDX existente de 30 GiB estaba adjunto como W:, totalmente descifrado y vacío salvo System Volume Information. Su archivo físico observado estaba en C:\Users\fila4\AppData\Local\EP\ProtectedWorkspace\Fila4-Workspace.vhdx, no en la ruta de destino propuesta en el diseño anterior. La diferencia de ruta no demuestra corrupción; el contenedor debe preservarse hasta decidir una migración segura. No se activó BitLocker ni se modificó el VHDX.
+
+El directorio C:\Users\fila4\Desktop\SeryMente existe y contiene repositorios/áreas de trabajo preexistentes. No se ha migrado a Cryptomator ni se ha comprobado la ausencia de copias en claro. .NET SDK 10.0.404 y runtime 10.0.15 están presentes bajo C:\Users\fila4\.dotnet; su existencia no acredita que sus caches/configuración estén confinadas.
+
+**No ejecutado:** instalación de Cryptomator; instalación/verificación de WinFsp; creación de bóveda; ingreso de contraseña; creación o custodia de llave de recuperación; redirección de perfiles; migración; borrado del original; pruebas de exfiltración; dead-man trigger; aceptación.
+
+### 136.8. Fuentes técnicas
+
+- Cryptomator Security Architecture: https://docs.cryptomator.org/security/architecture/
+- Cryptomator Vault Cryptography: https://docs.cryptomator.org/security/vault/
+- Cryptomator Desktop Setup: https://docs.cryptomator.org/desktop/setup/
+- Cryptomator Volume Types: https://docs.cryptomator.org/desktop/volume-type/
+- Cryptomator Admin Configuration: https://docs.cryptomator.org/desktop/admin-config/
+- Cryptomator Troubleshooting / log locations: https://docs.cryptomator.org/desktop/troubleshooting/
+
+**Resultado del asiento:** canon técnico de decisión adoptado por instrucción del operador; la implementación permanece pendiente. No se afirma instalación, cifrado, migración ni aceptación.
