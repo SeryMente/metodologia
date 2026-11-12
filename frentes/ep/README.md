@@ -7,7 +7,7 @@
 - [Persistencia DTC EP/MCP-OCP](OEP.md#95-persistencia-dtc-integrada-epmetodologia-y-continuidad-mcp-ocp--v0325--vcu-ep-v27): continuidad multiubicación EP/Metodología y estado operativo MCP-OCP, con autoridad técnica propia de MCP-OCP.
 
 - [OEP.md](OEP.md): único estado vivo del frente, v0.3.71; §137 es la especificación general única del workspace Cryptomator, su directorio, herramientas, dependencias y confinamiento integral de datos de aplicaciones. Implementación, migración, limpieza del diseño anterior y aceptación siguen pendientes.
-- [Especificación general única del workspace](OEP.md#137-especificacion-general-del-workspace-protegido-y-confinamiento-integral): árbol SeryMente, Cryptomator, Herramientas, Repositorios, Datos, Temporal y confinamiento de todos los datos persistentes de aplicaciones.
+- [Especificación general única del workspace](OEP.md): árbol SeryMente, Cryptomator, Herramientas, Repositorios, Datos, Temporal y confinamiento de todos los datos persistentes de aplicaciones.
 - [Objeto de coordinación DTC](entregas/COORDINACION-GOBERNANZA-EP-v0.1.md): único registro de comunicación Gobernanza ↔ EP; historial reconciliado en `main`.
 - [Control de responsabilidad EP](CONTROL-RESPONSABILIDAD.json): registro autoritativo de titularidad y generación; generación 3; titularidad transferida por TRANSFER_RESPONSIBILITY el 2026-11-09; un titular activo, evento C-EP-TRANSFER-RESPONSIBILITY-20261109-01.
 - [MOD-SYNC](OEP.md#mod-sync): propósito aprobado; [especificación de implementación §111](OEP.md#mod-sync-implementation), pendiente de validación técnica.
