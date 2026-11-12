@@ -1,7 +1,7 @@
 # EP-TASK-003 · Materialización del workspace y dead-man trigger fuera de CECEQ
 
 **Naturaleza:** tarea provisional del frente EP; sin titularidad, control, sesión ni folio propios.  
-**Estado:** `en_curso · DISEÑO_ACEPTADO · BITLOCKER_GATE_FAIL · C_XTSAES128_100_PROTECTION_OFF_NO_PROTECTORS · W_FULLY_DECRYPTED_0_PROTECTION_OFF_NO_PROTECTORS · LOCATION_UNCLASSIFIED · NO_MUTATIONS`
+**Estado:** `en_curso · CRYPTOMATOR_SELECTED · APP_DATA_CONFINEMENT_REQUIRED · IMPLEMENTATION_PENDING · MIGRATION_NOT_STARTED · NO_DATA_MOVED · LOCATION_UNCLASSIFIED`
 **Responsabilidad:** frente EP.  
 **OEP padre:** [OEP](../../OEP.md), especialmente §106.
 
@@ -9,7 +9,7 @@
 
 1. Materializar el root `SeryMente` en el Escritorio efectivo de la sesión Windows, con los repositorios actuales de la organización SeryMente.
 2. En los repositorios que sean extensiones de Chrome, mantener la carpeta cargable `Extensión` sincronizada con el commit fuente.
-3. Cifrar el workspace completo con BitLocker en todas las ubicaciones. Se usa la misma contraseña maestra de la bóveda canónica de variables de entorno.
+3. Proteger el workspace completo mediante bóveda Cryptomator con contraseña maestra independiente. Las aplicaciones de sesión EP deben instalar sus binarios y persistir sus datos dentro del workspace protegido, con confinamiento de perfiles, configuración, extensiones, cachés, logs y temporales.
 4. En **CECEQ**, conservar el workspace cifrado al cierre; no aplicar volatilización automática.
 5. En ubicaciones **distintas de CECEQ**, implementar exclusivamente un dead-man trigger ligado a la terminación del proceso que mantiene abierta la sesión EP. Al dispararse: bloquear BitLocker, desmontar el volumen y eliminar únicamente el contenedor/carpeta de trabajo EP.
 
@@ -666,3 +666,49 @@ La observación anterior de que `Repositorios/KHORA/khora` no existía no signif
 ### Decisión
 
 `PREFLIGHT_FILA4=PARTIAL_FAIL`. El inventario de checkouts queda actualizado, pero no habilita materialización: no hay volumen XTS-AES256 con Protection On/100 % y protector recuperable; no hay clasificación física; el checkout Metodología no tiene `.git`; KHORA contiene cambios tracked que deben preservarse. No mover ni renombrar el VHDX existente, no reemplazar checkouts, no materializar repositorios en claro, no crear el root de datos ni cortar el workspace hasta superar los gates de almacenamiento/custodia.
+
+
+---
+
+## Decisión vigente del operador · Cryptomator y confinamiento integral de aplicaciones · 2026-11-12
+
+**Fuente canónica:** OEP §136, v0.3.70. Esta decisión sustituye los apartados históricos de esta tarea que establecían BitLocker como único mecanismo de cifrado del workspace. La crónica anterior se conserva como antecedente, no como especificación vigente.
+
+### Decisión adoptada
+
+- Motor criptográfico del workspace: Cryptomator Desktop oficial.
+- La bóveda física contiene todo el workspace SeryMente; la ruta lógica Desktop\SeryMente solo se utiliza mientras esté desbloqueada.
+- La contraseña de Cryptomator es propia e independiente de Windows y se introduce localmente.
+- BitLocker deja de ser el mecanismo primario de cifrado de la carpeta de trabajo. Puede actuar como defensa adicional del disco anfitrión.
+- No se implementa criptografía propia. EP-CRYPTO solo orquesta bootstrap, unlock, mount, lock, recovery y audit.
+
+### Regla canónica de aplicaciones
+
+Toda aplicación usada durante una sesión EP debe instalar sus binarios, extensiones y componentes de usuario dentro del workspace protegido cuando su distribución lo permita. Todos sus datos persistentes (perfiles, configuración, extensiones, cachés, logs, temporales, bases locales, backups y volcados) deben quedar dentro del workspace. Se verifican las rutas reales de escritura; no se acepta como prueba la mera configuración de variables de entorno.
+
+Si una aplicación no permite confinar sus datos persistentes, no puede iniciarse en la sesión EP hasta corregirlo o sustituirla. Las dependencias estrictamente administradas por Windows (por ejemplo, controlador WinFsp/Driver Store, servicios y registro) se inventarían como dependencias del sistema, sin almacenar allí datos de usuario de la aplicación.
+
+### Particularidad de Cryptomator
+
+Existe una dependencia circular: Cryptomator es necesario para desbloquear la bóveda que contiene el workspace. Por tanto, se requiere un bootstrap mínimo accesible antes del montaje. Fuera del workspace solo se permite el ejecutable mínimo indispensable y dependencias del sistema; no puede mantener perfiles, configuración de usuario, contraseñas, claves, logs, cachés ni temporales fuera del workspace. Tras el desbloqueo, la configuración y datos operativos de Cryptomator se redirigen y verifican dentro del workspace.
+
+La documentación oficial indica que Cryptomator escribe logs por defecto en %LOCALAPPDATA%\Cryptomator y que la configuración administrativa global está en %ProgramData%\Cryptomator\config.properties. El despliegue EP debe redirigir los logs al workspace y evitar la configuración administrativa global salvo necesidad justificada y documentada. WinFsp se instala automáticamente con el EXE oficial de Cryptomator; sus componentes de driver son dependencias de sistema.
+
+### Secuencia de implementación y aceptación
+
+1. Inventario read-only de las rutas existentes, aplicaciones, datos persistentes y copias en claro.
+2. Verificar origen oficial, firma, SHA-256, versión y requisitos de Cryptomator/WinFsp.
+3. Preparar bóveda y contraseña local, sin transmitir secretos al chat.
+4. Probar con datos sintéticos cifrado, nombres, estructura, montaje, bloqueo y recuperación.
+5. Migrar con conteos, tamaños, SHA-256 y read-back; no borrar el original hasta aceptación.
+6. Para cada aplicación, verificar rutas reales de binarios y datos mediante prueba de escritura/read-back y observación del filesystem.
+7. Bloquear y probar que la copia física de la bóveda no revela contenido ni nombres sin llave.
+8. Integrar bloqueo al ciclo EP y verificar que no haya escrituras posteriores al cierre.
+
+### Estado
+
+CRYPTOMATOR_SELECTED · INSTALLATION_NOT_STARTED · VAULT_NOT_CREATED · PASSWORD_NOT_ENTERED · MIGRATION_NOT_STARTED · APP_DATA_CONFINEMENT_NOT_VERIFIED · ACCEPTANCE_PENDING.
+
+El VHDX anterior W: y su archivo físico bajo AppData se preservan sin mutaciones hasta definir si se reutiliza, migra o descarta. No se materializan nuevos clones en claro. No se ejecutó instalación ni cifrado durante este asiento.
+
+Referencia: OEP §136; documentación oficial Cryptomator Security Architecture, Desktop Setup, Volume Types, Admin Configuration y Troubleshooting.
