@@ -1,11 +1,11 @@
 # GOV-TASK-015 · OCP MCP 1.0 · Coordinación Gobernanza / MCP-OCP / EP
 
-**Estado:** `EN_CURSO · coordinación H1–H9 · H1 SINK-P004 BLOQUEADO/NO ACEPTADO; gates EP y pin v389 pendientes`
+**Estado:** `EN_CURSO · coordinación H1–H9 · H1 SINK-P004 BLOQUEADO/NO ACEPTADO; gates EP pendientes y rebaseline integral de SourcePin/fixtures/manifiesto/paquete a DUG v393`
 **Objetivo de release:** entregar MCP-OCP software **1.0.0**, instalado en la carpeta local de Metodología descrita al final de este plan. El núcleo actual en main es MCP-OCP-v0.1.30 y el backlog LIST_VERSION 0.11; son artefactos auxiliares, no la versión del producto.
 **Tipo:** coordinación y aceptación de un único sprint; no crea un frente nuevo ni controles paralelos.
 **Responsabilidad:** frente Gobernanza. Las tareas técnicas conservan sus OCP y fuentes.
-**Fuente normativa:** Samantha v389 · NX-389m · Metacanon 1.30 · GOW 2.19.
-**DUG:** Samantha v389/NX-389m; commit `199bf03ade7aceeedcabc10eeb1c06b1d0e53eaf`; archivo blob `bcd99e72113f444a045d7f1c91b4ad36865b8ea8`.
+**Fuente normativa vigente:** Samantha v393 · NX-393m · Metacanon 1.31 · GOW 2.21. Los pins v388/v389 que aparezcan en informes y artefactos posteriores son referencias históricas/obsoletas hasta completar el rebaseline.
+**DUG vigente:** Samantha v393/NX-393m; commit `6507334b6ef45fb5d4ba0615d788539a7d328642`; archivo blob `844fc507a2a9a0bfc8f4e68884cca9f6d2912c96`. El pin que consume actualmente el candidato Sink debe verificarse y rebaselinarse; no asumir que se actualizó por cambiar esta cabecera.
 **MCP-OCP:** núcleo v0.1.30 · commit `4610a81f6522142859ecf7345bc3836763434bd6` · blob `4eea02bcc6dc086af7177ba8791b7e51fb205a2e`; backlog v0.11 · commit `a43d53543df79f659888997f332e86ef03cb97b8` · blob `a328dc4fcda6beb0a45ffcc09f68ab5c6407588f`.
 **EP:** OEP v0.3.69 · blob `34ba5fab053f07b79fb928babd07949aae97a5cc`. EP-TASK-003=`PARTIAL_FAIL`; EP-TASK-005=`BLOCKED`; consultar fichas EP para evidencia viva.
 **Autorización:** la implementación Sink local por STDIO, pruebas, build/paquete y panel siguen dentro del control MCP-OCP generación 6; control blob `76bd465909f5c68d623cc82dbf9c2467091cd98b`. La coordinación no amplía permisos de host EP ni altera los controles MCP-OCP/EP/Gobernanza.
@@ -1059,3 +1059,18 @@ Esta comparación se ejecutó después de los commits documentales de Gobernanza
 - Los deltas 52/17 y 53/168 del corte anterior pertenecen a main `a1ba2611fd1c218d8f7647f02f7adf5c1dbff8e8`; los commits posteriores movieron main, no las ramas. No existe merge ni cambio de aceptación.
 - DUG continúa v389/NX-389m, blob `bcd99e72113f444a045d7f1c91b4ad36865b8ea8`; control Gobernanza continúa generación 20, blob `02a9720dd0f4264d69a6d84f865fd97cca9a31f0`.
 
+
+
+---
+
+## Rebaseline requerido tras DUG v393 · continuidad export 2026-11-12
+
+El export [ChatGPT-GOBERNANZA-20261112-1635.md](../../documentos/originales/ChatGPT-GOBERNANZA-20261112-1635.md) fija la línea normativa en Samantha v393/NX-393m, Metacanon 1.31, GOW 2.21; DUG commit `6507334b6ef45fb5d4ba0615d788539a7d328642`, blob `844fc507a2a9a0bfc8f4e68884cca9f6d2912c96`.
+
+**Bloqueo vigente:** H1 SINK-P004 sigue BLOQUEADO/NO ACEPTADO. Los artefactos y reportes previos mantienen pins v388/v389. No se consideran compatibles con DUG v393 hasta reconciliarlos.
+
+**Siguiente acción técnica:** MCP-OCP debe rebaselinar de forma coordinada `SourcePin`, fixtures, manifiesto, sumas SHA, paquete ZIP y recibo contra el mismo DUG v393 (commit/blob/firma); regenerar el paquete completo y cotejar todos los sidecars. No corregir solo un archivo de pin de forma aislada.
+
+**Secuencia posterior:** EP conserva sus gates propios (último estado documentado: EP-TASK-003 PARTIAL_FAIL; EP-TASK-005 BLOCKED); tras superarlos, se podrá instalar/read-back el piloto por el frente EP. Gobernanza ejecutará GOV-TASK-003 solo desde contexto IPZ real: `IPZ → RDC autorizado → STDIO → respuesta visible al modelo`. Smoke de consola/JSON-RPC manual no satisface la aceptación E2E.
+
+**No realizado en este corte:** no se ejecutó RDC, no se consultó ni modificó el host, no se instaló el piloto, no se actualizó código MCP-OCP ni se declaró PASS de P004. Este asiento actualiza coordinación documental; no altera las responsabilidades técnicas de MCP-OCP o EP.
