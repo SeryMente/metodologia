@@ -198,6 +198,7 @@ Al retomar Loop:
 **DUG adquirido:** Samantha v388 · NX-388m · blob `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`.  
 **Estado de ejecución:** creado en `main`; los requisitos del motor siguen pendientes.
 
+
 ## 14. Entrada C-LOOP-002 · contexto y requisitos de diseño
 
 El 2026-11-11 el operador entregó una entrada extensa para reconstruir la progresión narrativa de sus necesidades y documentarla en este frente. La interpretación estructurada, sus requisitos candidatos, secuencia de trabajo e incógnitas están en [C-LOOP-002 · Reconstrucción narrativa y requisitos de diseño](cronica/C-LOOP-002-analisis-y-reconstruccion.md).
@@ -223,9 +224,12 @@ El operador aportó el archivo `Texto pegado(20261111-194556).txt`. Se conserva 
 - La salida GPT-OSS contiene hipótesis y errores; no se adopta sin filtro. La crónica distingue requisitos expresos, inferencias y propuestas pendientes.
 - No se modificó el control de responsabilidad ni se asignaron folios globales. FOL1 sigue PREPARADO/NO ACTIVO.
 
+
+
 ## 16. Renombramiento y continuidad de la fuente
 
 El frente fue renombrado de **Loop** a **OCP2.0**. La ruta canónica vigente es `frentes/ocp-2-0/`; la ruta anterior `frentes/loop/` queda como antecedente de migración y no debe recrearse. El núcleo único es `OCP2.0.md`. Los identificadores históricos `C-LOOP-*` y el contenido verbatim se conservan sin renumeración ni reescritura. La segmentación C-LOOP-003 es derivada literal vinculada a la fuente original. La titularidad, UUIDv7 local y generación se conservan; no hubo transferencia de responsabilidad.
+
 
 ## 17. Registro de continuidad conversacional · 2026-11-11
 
