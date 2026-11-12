@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.71. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.72. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -12,7 +12,7 @@
 
 Adquirir este objeto como instrucciones del operador, subordinadas a las reglas superiores de plataforma y a autorizaciones específicas. Claudia es asistente/documental; Samantha es constructor/único escritor de código. Una asignación explícita posterior puede cambiar roles; las citas no lo hacen. La asignación específica de MOD-SCRIPTPWS queda delimitada en §94; la delegación funcional acotada de MOD-SYNC queda delimitada en §110 y no transfiere la titularidad del frente EP.
 
-El estado de reanudación vigente de este frente está en §60–§137; §137 contiene la especificación general única y vigente de workspace, directorios, herramientas, dependencias, datos y confinamiento. §136 y §119 se conservan como procedencia; cualquier instrucción incompatible queda supersedida por §137. Las tareas EP-TASK-001–007 solo desarrollan su trabajo específico y no duplican la arquitectura. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
+El estado de reanudación vigente de este frente está en §60–§138; §137–§138 contienen la especificación general única y vigente de workspace, directorios, herramientas, dependencias, datos, confinamiento y régimen operativo CLI-only. §136 y §119 se conservan como procedencia; cualquier instrucción incompatible queda supersedida por §137–§138. Las tareas EP-TASK-001–007 solo desarrollan su trabajo específico y no duplican la arquitectura. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
 
 Leer por relevancia: OEP actual→metacanon central→Sistema de Instrucciones/Metodología/Bootstrap vigentes→canon transversal EP→AGENTS.md y ep-medio-architectura.md→código/evidencia en commits exactos. Fuente caída no es «sin cambios». Un archivo no crea herramientas, credenciales ni memoria entre plataformas.
 
@@ -47,7 +47,7 @@ Materialización: §65 y eventos específicos posteriores. Equipos/permisos hist
 
 ## Estado vivo
 
-Materialización única: §64; checkpoint técnico más reciente conservado en §88. Delta de gobierno y arquitectura vigente: §§89 y 136. §136 sustituye los diseños anteriores de cifrado basados exclusivamente en BitLocker y establece el confinamiento obligatorio de datos de aplicaciones. Consultar esos bloques y las evidencias más recientes.
+Materialización única: §64; checkpoint técnico más reciente conservado en §88. Delta de gobierno y arquitectura vigente: §§89 y 137–138. §137 sustituye los diseños anteriores de cifrado basados exclusivamente en BitLocker y establece el confinamiento obligatorio de datos de aplicaciones; §138 fija el uso exclusivo de CLI mientras no haya segundo monitor verificado. Consultar esos bloques y las evidencias más recientes.
 
 ## Aceptación y viabilidad
 
@@ -3830,7 +3830,7 @@ El directorio C:\Users\fila4\Desktop\SeryMente existe y contiene repositorios/á
 
 ### 137.1 Decisiones firmes
 
-1. **Motor de protección:** Cryptomator Desktop oficial. No se utilizarán VHDX ni BitLocker como mecanismo de protección del workspace EP. No se crearán nuevos volúmenes VHDX, unidades virtuales ni configuraciones BitLocker para este fin.
+1. **Motor de protección:** formato de bóveda Cryptomator oficial, operado exclusivamente mediante CLI. La interfaz gráfica de Cryptomator queda prohibida para EP hasta que exista un segundo monitor activo y su uso sea autorizado expresamente. No se utilizarán VHDX ni BitLocker como mecanismo de protección del workspace EP; no se crearán nuevos volúmenes VHDX, unidades virtuales ni configuraciones BitLocker para este fin.
 2. **Workspace persistente:** el árbol lógico completo SeryMente se utiliza a través del punto de montaje de una bóveda Cryptomator desbloqueada. El contenido de trabajo solo se abre y utiliza dentro de ese perímetro protegido.
 3. **Instalación de herramientas:** las herramientas de trabajo se instalan/materializan dentro de SeryMente/Herramientas/ siempre que su distribución lo permita. Las dependencias administradas exclusivamente por Windows se inventarían como componentes del sistema.
 4. **Confinamiento total de datos de aplicaciones:** perfiles, configuraciones, extensiones, cookies/sesiones, cachés, logs, temporales, descargas, bases locales, backups, volcados, archivos recientes y demás datos persistentes de usuario de cada aplicación deben permanecer dentro de SeryMente. No basta con que los binarios estén dentro.
@@ -3838,7 +3838,7 @@ El directorio C:\Users\fila4\Desktop\SeryMente existe y contiene repositorios/á
 6. **Sin filtración local:** no se permite persistencia de datos de usuario de aplicaciones en perfiles Windows, %APPDATA%, %LOCALAPPDATA%, %TEMP%, %TMP%, Escritorio, Descargas u otras rutas externas al workspace. Las credenciales no se exponen en texto claro en archivos, argumentos, logs, telemetría ni conversación.
 7. **Backups remotos:** cuando una tarea autorizada requiera respaldo remoto, el contenido de usuario solo puede salir del workspace como artefacto cifrado del lado cliente. No se suben archivos de aplicación ni paquetes de workspace en claro. El ciphertext remoto no sustituye la copia de trabajo protegida.
 8. **Retiro del diseño anterior:** los trabajos EP específicos de BitLocker/VHDX deben inventariarse y retirarse de la máquina cuando se verifique que son exclusivamente residuos del diseño supersedido. No borrar ni desinstalar a ciegas: primero identificar titularidad, contenido, dependencias y necesidad de conservación; preservar cualquier dato útil y obtener read-back de la limpieza. BitLocker como componente nativo de Windows no se elimina del sistema operativo; simplemente queda fuera de la arquitectura y del procedimiento EP.
-9. **Bootstrap de Cryptomator:** por la dependencia circular de desbloqueo, solo el ejecutable mínimo indispensable de Cryptomator y componentes estrictamente administrados por Windows pueden existir fuera de la bóveda. Esa excepción no permite perfiles, configuraciones de usuario, contraseñas, claves, logs, cachés, temporales ni datos de aplicación fuera del workspace. Tras desbloquear, los datos operativos de Cryptomator se confinan dentro.
+9. **Bootstrap de Cryptomator:** por la dependencia circular de desbloqueo, solo el ejecutable mínimo indispensable de Cryptomator CLI y componentes estrictamente administrados por Windows pueden existir fuera de la bóveda. Esa excepción no permite perfiles, configuraciones de usuario, contraseñas, claves, logs, cachés, temporales ni datos de aplicación fuera del workspace. Tras desbloquear, los datos operativos de Cryptomator se confinan dentro.
 10. **No se afirma ejecución:** selección de Cryptomator y esta especificación son decisiones/documentación. No prueban instalación, creación de bóveda, migración, confinamiento, limpieza ni aceptación física.
 
 ### 137.2 Árbol lógico canónico dentro de la bóveda
@@ -3912,3 +3912,54 @@ Las tareas 004, 006 y 001 pueden preparar sus requisitos en paralelo, pero ningu
 El workspace EP solo se acepta cuando la bóveda Cryptomator abre/cierra correctamente, el árbol y rutas están materializados, las herramientas aprobadas están dentro del workspace, cada aplicación demuestra por observación/read-back que sus datos persistentes quedan dentro, no se detectan escrituras de usuario fuera del perímetro durante pruebas representativas, los respaldos externos contienen solo ciphertext y los artefactos VHDX/BitLocker específicos del diseño anterior han sido retirados o tienen una excepción de conservación documentada. La mera instalación de Cryptomator o la configuración de variables de entorno no basta.
 
 **Estado al emitir esta especificación:** CRYPTOMATOR_SELECTED · SPECIFICATION_PERSISTED · INSTALLATION_NOT_STARTED · VAULT_NOT_CREATED · MIGRATION_NOT_STARTED · APP_DATA_CONFINEMENT_NOT_VERIFIED · LEGACY_CLEANUP_NOT_RUN · ACCEPTANCE_PENDING. Esta actualización es documental: no instala, desinstala, monta, cifra, migra, copia ni elimina nada en Fila 4.
+
+
+---
+
+## §138. Operación CLI-only de EP hasta disponer de segundo monitor · 2026-11-12
+
+### 138.1. Regla obligatoria del operador
+
+Hasta que Fila 4 disponga de un segundo monitor físicamente conectado y activo, **toda herramienta utilizada en una sesión EP debe operarse exclusivamente mediante interfaz de línea de comandos (CLI)**. Queda prohibido abrir o utilizar interfaces gráficas para instalar, configurar, autenticar, desbloquear, montar, administrar, trabajar, actualizar o cerrar herramientas. La prohibición incluye Cryptomator Desktop, navegadores, editores, instaladores gráficos y paneles de configuración.
+
+- Terminales, shells, prompts textuales, TUI y comandos interactivos en consola sí son CLI y están permitidos.
+- Una aplicación que ofrezca CLI debe utilizarse por esa vía; no se invoca su GUI como alternativa ni fallback.
+- Una capacidad sin CLI suficiente queda BLOCKED_NO_CLI; no se improvisa automatización de clicks, UIAutomation, atajos ni control de ventanas para simular CLI.
+- La presencia de dos monitores no levanta automáticamente la restricción: debe comprobarse que ambos están activos y el operador debe autorizar expresamente cualquier uso gráfico posterior.
+- Ningún parámetro de esta regla relaja el confinamiento de datos de usuario de §137 ni autoriza persistencia fuera de la bóveda.
+
+### 138.2. Motor Cryptomator por CLI
+
+La interfaz operativa de EP para Cryptomator será **Cryptomator CLI oficial**. Se empleará para crear (cuando la versión adoptada lo soporte), desbloquear, montar, listar mounters y cerrar/desmontar bóvedas. WinFsp es una dependencia del sistema para el mounter local de Windows; su driver/servicio se inventaría como componente del sistema y no como datos de usuario de Cryptomator.
+
+**Compatibilidad y procedencia conocidas al 2026-11-12:**
+
+- La última versión estable publicada comprobada es 0.6.2 (2025-04-10). Su alcance documentado es desbloquear y montar una bóveda de formato 8; no incluye un subcomando create en el tag estable.
+- La rama oficial develop contiene el subcomando create y declara 0.7.0-SNAPSHOT en pom.xml. El commit de punta consultado f09851d3990f4b7dc6f572f8a9eb9a5f2882f439 tiene firma SSH verificada por GitHub a nombre de Armin Schrenk (2026-11-05). El código de creación utiliza Masterkey.generate, MasterkeyFileAccess y CryptoFileSystemProvider.initialize de las bibliotecas oficiales Cryptomator; EP no implementa algoritmos ni formatos criptográficos propios.
+- Esa rama no es una versión estable publicada. Un binario construido desde ella se etiqueta LOCAL_BUILD_FROM_SIGNED_UPSTREAM_SOURCE, nunca OFFICIAL_STABLE_RELEASE. Antes de utilizarlo se fija el commit, se verifica la firma/identidad, se cotejan blobs de los archivos críticos, se registra SHA-256 del artefacto y se ejecutan pruebas unitarias/integración de creación, desbloqueo, escritura, ciphertext, cierre y reapertura.
+- El pom.xml de esa revisión requiere JDK 25. La compilación y sus cachés se mantienen bajo el workspace; no se usa el perfil global del host para Maven ni se guardan credenciales en variables de entorno.
+
+**Manejo de contraseña:** en operaciones reales solo se permite --password:stdin con prompt interactivo oculto en terminal local. Se prohíbe --password:env, --password:file, argumentos con contraseña, historial, ficheros temporales o gestores de credenciales/llaveros. La contraseña maestra no se almacena en Cryptomator, Windows Credential Manager, DPAPI, logs, entorno, repositorios ni conversación. La contraseña se introduce y confirma directamente en la consola; nunca se solicita ni se transcribe al chat.
+
+### 138.3. Secuencia de gates
+
+1. Descargar el código fuente desde el repositorio oficial, en el commit firmado y fijado; cotejar blobs críticos y registrar el SHA-256 del ZIP de fuente.
+2. Obtener JDK 25 portable desde un proveedor oficial, verificar SHA-256 y mantener binarios, JAVA_HOME, Maven user home, repositorio Maven, temporales y artefactos dentro de SeryMente/Herramientas/ o SeryMente/Temporal/.
+3. Compilar por CLI, ejecutar pruebas de integración del proyecto y validar --help, create, list-mounters y unlock. Si falla cualquier gate, no se crea la bóveda ni se utiliza GUI como salida alternativa.
+4. Crear primero una bóveda sintética, desbloquearla por CLI, escribir/leer datos de prueba, confirmar ciphertext físico y ausencia de nombres/contenido en claro, desmontar y volver a desbloquear.
+5. Solo con los gates anteriores en PASS, crear la bóveda real en el destino aprobado. El operador introduce localmente la contraseña mediante el prompt CLI.
+6. Migrar el árbol SeryMente desde el origen conservado mediante copia; verificar manifiestos por ruta/tamaño/SHA-256 y read-back desde la bóveda. No mover, renombrar, borrar ni sobrescribir el origen hasta integridad total, recuperación y aceptación.
+7. Probar bloqueo/desmontaje y que el punto de montaje no expone contenido tras cierre. Auditar rutas reales de escritura de cada herramienta y retirar los datos temporales de bootstrap que no estén autorizados por §137.
+
+### 138.4. Estado de implementación observado
+
+- Cryptomator Desktop 1.19.6.6588 fue instalado bajo SeryMente/Herramientas/Cryptomator antes de esta instrucción. Desde la adopción de §138 no se autoriza volver a abrir su GUI; la instalación no demuestra una bóveda creada ni cifrado del workspace.
+- WinFsp 2.1.25156 está instalado como dependencia del sistema.
+- Existe una copia bootstrap del runtime Desktop bajo C:\Users\fila4\EP\Bootstrap\Cryptomator\Runtime, además de directorios de perfil/log/montaje creados fuera del workspace. El contenido de esos directorios debe auditarse y los datos de usuario no autorizados deben retirarse; solo el binario mínimo de CLI podrá permanecer como bootstrap. Esta excepción no habilita logs/configuración externos.
+- El directorio C:\Users\fila4\EP\ProtectedWorkspace\SeryMente-Vault fue creado como directorio vacío; **no es una bóveda Cryptomator** mientras no exista vault.cryptomator, masterkey.cryptomator y la estructura válida generada por el CLI.
+- No se ha ingresado la contraseña maestra, no se ha creado bóveda real, no se han migrado datos ni se ha aceptado el confinamiento de aplicaciones. El workspace original continúa intacto y no cifrado.
+- El VHDX histórico y sus unidades/puntos de montaje no se modifican ni eliminan hasta completar inventario, preservación y comprobación de que son residuos exclusivamente EP.
+
+**Estado del frente tras esta decisión:** CLI_ONLY_POLICY_ADOPTED · GUI_PROHIBITED_UNTIL_SECOND_MONITOR_AND_EXPLICIT_AUTHORIZATION · CLI_BUILD_PENDING · VAULT_NOT_CREATED · MIGRATION_NOT_STARTED · SOURCE_PRESERVED · ACCEPTANCE_PENDING.
+
+**Fuentes:** https://github.com/cryptomator/cli/releases ; https://github.com/cryptomator/cli ; https://github.com/cryptomator/cli/commit/f09851d3990f4b7dc6f572f8a9eb9a5f2882f439 ; https://adoptium.net/temurin/releases/?version=25&package=jdk.
