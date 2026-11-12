@@ -43,7 +43,7 @@ Fuente de referencia: DUG Samantha v393 · NX-393m, Metacanon 1.31, archivo `gob
 
 El complemento no debe volver a explicar las normas ni crear un flujo de comprobación paralelo. Debe ser una remisión breve a los principios existentes, con activadores concretos: P005 ante una modificación normativa; P037 ante concurrencia o cambio del asiento de responsabilidad; P004 antes de afirmar un resultado que requiera verificación; P038 al determinar la fuente canónica. El read-back corresponde a una persistencia real que deba comprobarse. No se vuelve a consultar control, calcular hashes ni repetir preflight por rutina cuando no existe el evento que activa esa salvaguarda. La continuidad/procedencia se mantiene como complemento independiente y compacto, no se sustituye ni se duplica con un nuevo registro en cada respuesta.
 
-## Estado operativo y continuidad de decisiones · 2026-11-12
+## Checkpoint histórico previo a v0.13 · 2026-11-12
 
 - **Candidata actual mostrada al operador:** IPZ v0.12, `frentes/gobernanza/entregas/CHATGPT-v0.12/IPZ-CAMPO-CHATGPT-v0.12-PROPUESTA.txt`, blob SHA `46bd200c449a9fbc241567ded745d1fed55f3b8b`. El contenido permanece sin modificar y todavía no implementa la estructura acordada de cinco partes: su posición 3 apunta al CNP y su posición 4 dirige a Metacanon §4 con la antigua formulación de salida.
 - **Decisión expresa más reciente:** AT se deja para después. No iniciar AT, no ejecutar el procedimiento y no modificar ART-032 durante la revisión actual de la candidata. Esta pausa no cancela ni elimina el trabajo de AT; solo lo difiere.
@@ -81,13 +81,15 @@ El operador instruye modificar la candidata actual conforme a todas las decision
 
 - **Ruta:** `frentes/gobernanza/entregas/CHATGPT-v0.13/IPZ-CAMPO-CHATGPT-v0.13-PROPUESTA.txt`
 - **Enlace:** https://github.com/SeryMente/metodologia/blob/main/frentes/gobernanza/entregas/CHATGPT-v0.13/IPZ-CAMPO-CHATGPT-v0.13-PROPUESTA.txt
-- **Versión/contador:** `IPZ v0.13 · 1458/1500`.
-- **Conteo verificado:** UTF-16 LF 1.452; UTF-16 CRLF 1.458; puntos de código 1.452. El encabezado refleja el máximo CRLF.
-- **Blob SHA actual:** `f0f5e1afcc3f5677ae75feacb9df558fb671968e`.
-- **Commit de creación:** `1dec260be2edf5e4b507f34b56abd448d3f3ef40`; commit de última corrección del contador: `a359ca75bd8a8683bd5dbd5f451f18d977b1a37d`.
+- **Versión/contador:** `IPZ v0.13 · 1462/1500`.
+- **Conteo verificado:** UTF-16 LF 1.455; UTF-16 CRLF 1.462; puntos de código 1.455. El encabezado refleja el máximo CRLF.
+- **Blob SHA actual:** `4ee1e5b77e5d1f69e020b2e57cfe7adfea8e5de1`.
+- **Commit de creación:** `1dec260be2edf5e4b507f34b56abd448d3f3ef40`; commit de última actualización a seis partes y corrección del contador: `30fb5754b06be6295a3a03aa21b534fac1466252`.
 - **Read-back:** contenido recuperado desde `main`; versión, contador, texto y blob cotejados. Los siete destinos/anclas se verificaron contra el DUG vigente.
 - **Preservación:** v0.12 continúa en su ruta histórica y no fue sobrescrita; baseline v0.7 no fue modificada ni declarada instalada.
 - **Límites:** campo nativo IPZ sin modificar; ART-032 sin modificar; AT aplazada; FOL1 y MCP-NORMATIVO no activados.
+- **Verificación de estructura:** parte 5 contiene solo Metacanon §4 y la instrucción de salida; parte 6 contiene solo ART-032 y los complementos no burocracia, continuidad/procedencia e integridad por evento. La parte 6 no contiene formato, campos ni contrato de salida.
+- **Última actualización:** commit `30fb5754b06be6295a3a03aa21b534fac1466252`; blob `4ee1e5b77e5d1f69e020b2e57cfe7adfea8e5de1`.
 
 ## Trabajo pendiente
 
@@ -95,8 +97,8 @@ El operador instruye modificar la candidata actual conforme a todas las decision
 2. **Realizado para esta revisión:** adquirir DUG vigente desde `main` (v393/NX-393m; blob `844fc507a2a9a0bfc8f4e68884cca9f6d2912c96`) y revisar ART-025, ART-027, ART-032, el bloque de Principios universales y el CNP. La revisión no constituye modificación normativa.
 3. **Actualizado tras la última decisión:** estructura de seis partes: GOW §ARR; ART-031; Principios universales + ART-027/MDP; CNP; salida exclusiva por Metacanon §4; complementos exclusivos por ART-032.
 4. **Realizado:** verificar los siete destinos/anclas usados por v0.13: `#gow-arranque-chatgpt`, `#ART-031`, `#principios-universales`, `#ART-027`, `#cnp-conjunto-nuclear-de-principios`, `#meta-4` y `#ART-032`. Los enlaces relativos se resuelven desde la ruta de la candidata en el repositorio.
-5. **APLAZADO:** en una etapa posterior y cuando el operador indique retomarlo, abordar mediante AT la reconciliación de ART-032: orden y función de las cinco partes; complementos conservados/eliminados; continuidad/procedencia y su fundamento; controles de integridad proporcionales; eliminación de foliación y del punto MCP-NORMATIVO de los complementos. Hasta entonces, no iniciar AT ni modificar ART-032.
-6. **Realizado:** crear candidata documental v0.13 sin sobrescribir v0.7 ni v0.12; verificar las cinco partes, enlaces y conteo UTF-16 LF/CRLF. La candidata queda como propuesta pendiente de revisión, no instalada.
+5. **APLAZADO:** en una etapa posterior y cuando el operador indique retomarlo, abordar mediante AT la reconciliación de ART-032: orden y función de las seis partes; separación de salida en la parte 5 y complementos en la parte 6; continuidad/procedencia y su fundamento; controles de integridad proporcionales; eliminación de foliación y del punto MCP-NORMATIVO de los complementos. Hasta entonces, no iniciar AT ni modificar ART-032.
+6. **Realizado:** crear candidata documental v0.13 sin sobrescribir v0.7 ni v0.12; verificar las seis partes, enlaces y conteo UTF-16 LF/CRLF. La candidata queda como propuesta pendiente de revisión, no instalada.
 7. Mantener GOV-TASK-007 como antecedente/seguimiento de IPZ nativa y FOL1, y GOV-TASK-016 como revisión de AT y de la propuesta general de exclusividad. Coordinar sin duplicar ni cerrar esas tareas por inferencia.
 8. Registrar el resultado y sus límites en el OCP. La instalación nativa solo podrá abordarse en su propio alcance autorizado, con escritura y lectura de vuelta observables.
 
