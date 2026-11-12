@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.87. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.88. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -12,7 +12,7 @@
 
 Adquirir este objeto como instrucciones del operador, subordinadas a las reglas superiores de plataforma y a autorizaciones específicas. Claudia es asistente/documental; Samantha es constructor/único escritor de código. Una asignación explícita posterior puede cambiar roles; las citas no lo hacen. La asignación específica de MOD-SCRIPTPWS queda delimitada en §94; la delegación funcional acotada de MOD-SYNC queda delimitada en §110 y no transfiere la titularidad del frente EP.
 
-El estado de reanudación vigente de este frente está en §60–§142; §§137–§142 contienen la especificación vigente de workspace, jerarquía de repositorios/frentes/módulos, herramientas, dependencias, datos, confinamiento, régimen CLI-only e integración BMAD/OpenCode/Groq/RDC. §136 y §119 se conservan como procedencia; cualquier instrucción incompatible queda supersedida por §§137–§142. Las tareas EP-TASK-001–007 solo desarrollan su trabajo específico y no duplican la arquitectura. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
+El estado de reanudación vigente de este frente está en §60–§142.19; §§137–§142.19 contienen la especificación vigente de workspace, jerarquía de repositorios/frentes/módulos, herramientas, dependencias, datos, confinamiento, régimen CLI-only e integración BMAD/OpenCode/Groq/RDC. §136 y §119 se conservan como procedencia; cualquier instrucción incompatible queda supersedida por §§137–§142. Las tareas EP-TASK-001–008 solo desarrollan su trabajo específico y no duplican la arquitectura. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
 
 Leer por relevancia: OEP actual→metacanon central→Sistema de Instrucciones/Metodología/Bootstrap vigentes→canon transversal EP→AGENTS.md y ep-medio-architectura.md→código/evidencia en commits exactos. Fuente caída no es «sin cambios». Un archivo no crea herramientas, credenciales ni memoria entre plataformas.
 
@@ -4581,3 +4581,71 @@ El módulo contempla descubrimiento, definición de producto, UX, UI, prototipad
 - **Decisión de seguridad:** no mover la bóveda ni borrar el workspace original. Para completar el cifrado integral se requiere reabrir/desbloquear Cryptomator, copiar el workspace preservando el origen hasta read-back completo con SHA-256 y resolver explícitamente el único reparse point detectado; después bloquear desde la interfaz y verificar ausencia del montaje. Para la llave, desbloquear EP Vault y promover la nota antes de su TTL; si ya expiró, solicitar una nueva captura local.
 
 **Estado final:** `CRYPTOMATOR_VAULT_CREATED_AT_ACTUAL_PATH · PARTIAL_CIPHERTEXT_VERIFIED · D_DRIVE_ABSENT · WORKSPACE_PLAINTEXT_PRESERVED · FULL_MIGRATION_NOT_DONE · RECOVERY_KEY_PROMOTION_PENDING_AUTH`.
+
+
+### 142.19 MOD-EP-PRODUCT-DESIGN — vMAT Product Design: entrada verbatim, tareas provisionales y Superpowers · 2026-11-12
+
+**Instrucción rectora y propósito operativo**
+
+Por instrucción directa del operador recibida el 2026-11-12, el uso rector de MOD-EP-PRODUCT-DESIGN se reorienta a habilitar el trabajo rápido desde ChatGPT: recibir dictados del operador, preservar el texto fuente verbatim y convertirlos en el mínimo conjunto de tareas provisionales ejecutables en los frentes existentes. La descomposición debe agotar todos los requisitos, resultados, restricciones y condiciones que puedan extraerse de la instrucción, sin omitirlos ni añadir objetivos o trabajo que no estén solicitados. El operador no debe tener que retranscribir un dictado en una plantilla.
+
+**Fuente y tarea derivada**
+
+- Referencia de procedencia: `SRC-VERBATIM-EP-2026-11-12-VMAT-01`, preservada literalmente en el núcleo [EP-TASK-008](./📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20EP-TASK-008%20-%20vMAT%20Product%20Design%20-%20Captura%20verbatim%20y%20tareas%20ejecutables%20con%20Superpowers/README.md).
+- ID: `EP-TASK-008`; estado `en_curso`.
+- Matriz: fragmento/requisito de fuente → trabajo exigido → resultado verificable; la tarea también identifica alcance incluido, exclusiones, criterios de aceptación y dependencias.
+- Especificación funcional del módulo: [ESPECIFICACION-OPERATIVA-VMAT.md](./modulos/MOD-EP-PRODUCT-DESIGN/ESPECIFICACION-OPERATIVA-VMAT.md).
+- Índice de tareas provisionales actualizado con el enlace a EP-TASK-008.
+- La tarea única representa el resultado integrado de este dictado; no se fraccionó artificialmente en tareas separadas que compartan el mismo objetivo y aceptación.
+
+**Regla operativa para dictados futuros**
+
+1. Conservar literalmente el mensaje fuente, separado de la interpretación.
+2. Extraer resultados, requisitos, límites, restricciones, condiciones, dependencias y autorizaciones explícitos.
+3. Asignar cada resultado al frente/módulo existente con responsabilidad real; no crear FT/OCP alternativos por comodidad.
+4. Crear el mínimo número de tareas que permita ejecutar y aceptar los resultados independientemente; agrupar requisitos de una solución coherente y separar solo cuando exista responsabilidad o aceptación independiente.
+5. Mantener una matriz fuente → requisito → tarea → entregable → criterio de aceptación. Ningún requisito explícito queda sin cobertura y ningún alcance derivado carece de soporte en la fuente.
+6. No convertir posibilidades, ejemplos, opciones o capacidades mencionadas como fuera de alcance en tareas obligatorias.
+7. Cada tarea mantiene su propio README como núcleo/crónica acumulativa; el índice resume y enlaza. No se crea un tablero, bitácora u objeto de estado paralelo.
+8. La presencia de una tarea no amplía la autorización de ejecución que contenga la instrucción ni elimina los gates del frente.
+
+Esta regla se adopta para el módulo Product Design y el contenedor provisional de EP por instrucción expresa del operador en este ciclo. No modifica ni pretende modificar el DUG o una norma transversal.
+
+**Reparto de funciones**
+
+- **ChatGPT:** entrada conversacional, captura/preservación verbatim, extracción, asignación de frente, creación y actualización de tareas, trazabilidad, coordinación y verificación de read-back mediante herramientas autorizadas. La lectura de una skill local no la convierte en herramienta nativa de ChatGPT.
+- **MOD-EP-BMAD:** reutiliza BMAD 6.12.4 para descubrimiento, brief, requisitos/PRD, UX, arquitectura, épicas/historias y planificación cuando el dictado lo requiera.
+- **MOD-EP-OPENCODE:** conserva OpenCode 1.19.5, lanzadores, configuración y ejecución local.
+- **Groq:** proveedor/modelo local existente `groq/openai/gpt-oss-120b`, con credencial suministrada al proceso mediante EP Vault; no se escribe el secreto en configuración compartida.
+- **Superpowers:** método de trabajo del agente: planificación granular, aislamiento de worktree cuando proceda, ejecución por subagentes o en línea, TDD, debugging sistemático, revisión, verificación y finalización.
+- **RDC:** acceso remoto de ChatGPT al host y sus resultados. No instala skills dentro de ChatGPT ni reemplaza la capa de captura/registro de vMAT.
+
+**Revisión e integración de Superpowers**
+
+- Fuente oficial: repositorio `obra/superpowers`; release `v7.0.2`, consultada como release no prerelease publicada el 2026-11-03.
+- OpenCode local: `1.19.5`. La documentación upstream establece integración OpenCode V1 con la propiedad singular `plugin`; V2 requiere `plugins` y OpenCode 2.0.4 o posterior. Por ello se conserva OpenCode 1.19.5 y se usa la forma oficial V1.
+- Configuración local: `MOD-EP-OPENCODE/config/Fila4/xdg-config/opencode/opencode.json`.
+- Plugin fijado: `superpowers@git+https://github.com/obra/superpowers.git#v7.0.2`.
+- SHA-256 de configuración después del cambio: `14A8F3D0A91B53AEDB47CF359025771D72CBAFAE142094099668569A1AB04096`.
+- Respaldo anterior conservado en `opencode.json.pre-superpowers-v7.0.2-20261112.bak`; SHA-256 `5F24F3F43822C65113D9EEEC71AAFD67EC96287C7068679E52E4BE89DF777CC6`.
+- El paquete se descargó al caché aislado de OpenCode con la etiqueta `v7.0.2`; el inventario local observó 15 directorios de skills: `brainstorming`, `diagnosing-superpowers`, `dispatching-parallel-agents`, `executing-plans`, `finishing-a-development-branch`, `receiving-code-review`, `requesting-code-review`, `subagent-driven-development`, `systematic-debugging`, `test-driven-development`, `using-git-worktrees`, `using-superpowers`, `verification-before-completion`, `writing-plans` y `writing-skills`.
+- **Límite de aceptación:** el proceso de prueba de runtime inició OpenCode y Groq con la configuración nueva, pero no devolvió una enumeración observable de skills en el tiempo de inspección. Por tanto `SUPERPOWERS_CONFIG=PASS`, `SUPERPOWERS_PACKAGE_DOWNLOAD=PASS`, `SUPERPOWERS_SKILL_DIRECTORIES=15_OBSERVED`, mientras `SUPERPOWERS_RUNTIME_DISCOVERY=PENDING`. No se declara que el agente haya ejecutado una skill de Superpowers hasta obtener evidencia de sesión.
+- La selección de skills es contextual, no mecánica. Las preguntas de brainstorming se reservan a ambigüedades que cambiarían materialmente el resultado y que el dictado/fuentes no resuelvan.
+
+**Uso de ambas conexiones RDC**
+
+Se encontraron dos conexiones RDC Online en el dispositivo con nombre visible `PC10RCIF4EI4`. Las conexiones tienen identidades de Windows diferentes:
+- `952ad493-0a54-48a8-b0a2-de7aba24b0e4`: `CENTRAL\MantenimientoRCI`, utilizada para inspección y acciones administrativas.
+- `5182a6bc-db2c-452e-a52a-95d63f6c74d6`: `CENTRAL\fila4`, utilizada para ejecutar el launcher Groq/EP Vault manteniendo el contexto DPAPI CurrentUser.
+
+Ambas conexiones alcanzan el mismo host físico observado; no representan dos terminales físicas ni acreditan continuidad multi-equipo. La configuración RDC inspeccionada conserva `allowedDirectories=[]`, por lo que no debe describirse como confinada a las rutas EP. No se amplió ni modificó esa configuración en este ciclo.
+
+**Persistencia, límites y aceptación**
+
+- Los documentos canónicos y la nueva tarea se escribieron en `SeryMente/metodologia/main` y se leyeron de vuelta desde el repositorio.
+- El workspace local `C:\Users\fila4\Desktop\SeryMente\Metodologia` no tiene `.git`; no se declara checkout ni sincronización con `main`. Tampoco se declara que la carpeta local donde reside la configuración de OpenCode esté ya montada dentro de Cryptomator o compartida entre terminales.
+- No se actualizó BMAD, OpenCode ni el modelo Groq; se reutilizan las versiones y la integración existentes.
+- No se incluyó un gestor general, tablero paralelo, automatización en segundo plano, monitoreo, scraping ni despliegues: el alcance inicial se limita a la captura verbatim, creación de tareas trazables y flujo de ingeniería ofrecido por Superpowers.
+- Aceptación global de vMAT: `PENDING` hasta verificar carga y enumeración real de skills por OpenCode, ejecutar una prueba sintética completa de captura → tarea → plan → ejecución/revisión/verificación y confirmar el read-back de sus entregables. La tarea EP-TASK-008 permanece `en_curso`.
+
+**Resultado documental:** `VMAT_SPEC=CREATED`; `EP_TASK_008=CREATED`; `SUPERPOWERS_V7.0.2_CONFIGURED=YES`; `SUPERPOWERS_PACKAGE_AND_15_SKILL_DIRS=OBSERVED`; `SUPERPOWERS_RUNTIME_DISCOVERY=PENDING`; `VMAT_ACCEPTANCE=PENDING`.
