@@ -147,3 +147,13 @@ Completar la prueba de carga/discovery de Superpowers desde OpenCode `1.19.5` y 
 - **Pruebas:** read-back de configuración, SHA-256 de configuración/respaldo, paquete Superpowers v7.0.2 en caché y conteo físico de 15 directorios de skills. La prueba del agente continuaba sin salida final visible al registrar esta crónica.
 - **Limitaciones:** las dos conexiones RDC corresponden al mismo host físico y a dos identidades Windows; la carga efectiva de skills y el flujo completo de captura/creación/ejecución siguen pendientes de prueba. No se modificó la versión de OpenCode ni se alteró el proveedor Groq.
 - **Siguiente acción:** completar descubrimiento de Superpowers desde una nueva sesión OpenCode, ejecutar una prueba sintética de vMAT sin tocar proyectos productivos y actualizar estado/evidencia.
+
+
+### Reintento de verificación runtime Superpowers · 2026-11-12
+
+- **Primer intento:** el launcher EP Vault informó sesión activa y entregó `GROQ_API_KEY` solo a memoria del proceso. OpenCode 1.19.5 inició y cargó la configuración del workspace de prueba; sin embargo, no produjo una respuesta ni evidencia de skills descubiertas durante la ejecución observada. El proceso de OpenCode se terminó después de permanecer sin progreso observable; el launcher finalizó con `OPENCODE_EXIT=1`. No se modificaron archivos del proyecto sintético.
+- **Segundo intento:** el launcher detuvo la ejecución antes de iniciar OpenCode porque EP Vault devolvió `VAULT_SESSION_NOT_OPEN`. La sesión de bóveda ya había expirado; no se solicitó ni se leyó la contraseña maestra.
+- **Clasificación:** `SUPERPOWERS_CONFIG=PASS`; `PACKAGE_DOWNLOAD=PASS`; `SKILL_DIRECTORIES=15_OBSERVED`; `RUNTIME_DISCOVERY=NOT_VERIFIED`; `RUNTIME_RETRY=BLOCKED_VAULT_SESSION_NOT_OPEN`.
+- **Seguridad:** no se imprimió ni persistió la API key. No se alteró la política de ejecución del sistema; el bypass usado se limitó al proceso PowerShell de la prueba.
+- **Condición de desbloqueo:** abrir/desbloquear EP Vault localmente bajo `CENTRAL\fila4` y repetir la prueba breve de descubrimiento de skills. Este requisito depende de la autenticación local del operador y no debe eludirse mediante lectura de DPAPI desde otra identidad.
+- **Siguiente acción:** completar enumeración observable de skills Superpowers en OpenCode y prueba sintética de flujo vMAT; mantener `EP-TASK-008=en_curso` hasta entonces.
