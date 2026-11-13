@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<title>Product Design · Selector CIS</title>
+<style>
+:root{font-family:Inter,Segoe UI,Arial,sans-serif;color:#e8edf3;background:#10151d;font-synthesis:none}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(circle at 12% 0%,#23344b 0,transparent 34rem),#10151d;min-height:100vh}
+main{max-width:1120px;margin:0 auto;padding:34px 24px 64px}
+header{display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:30px}
+.brand{display:flex;align-items:center;gap:13px}
+.mark{width:42px;height:42px;border-radius:13px;background:#263a51;display:grid;place-items:center;font-size:22px}
+.eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#9cb4ca}
+h1{font-size:clamp(27px,4vw,42px);line-height:1.05;margin:9px 0 12px;letter-spacing:-.03em}
+h2{font-size:21px;margin:0 0 8px}
+h3{font-size:17px;margin:0 0 7px}
+p{line-height:1.52;color:#aebac8;margin:0}
+button,a{font:inherit}
+button{cursor:pointer}
+.top-link,.action{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;border:1px solid #405269;background:#1b2633;color:#eaf1f8;padding:10px 13px;border-radius:10px;font-size:13px;transition:.15s}
+.top-link:hover,.action:hover{background:#26384c;border-color:#7594b2}
+.primary{background:#244a6b;border-color:#3e719d}
+.primary:hover{background:#2e5d84}
+.hero{background:linear-gradient(120deg,rgba(35,63,90,.94),rgba(24,35,49,.96));border:1px solid #435a72;border-radius:20px;padding:26px;margin-bottom:28px}
+.hero p{max-width:760px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:23px}
+.step{background:rgba(7,12,18,.30);border:1px solid rgba(149,174,199,.19);border-radius:12px;padding:13px}
+.step b{display:block;font-size:13px;margin-bottom:5px}
+.step span{font-size:12px;color:#b3c0ce;line-height:1.4}
+.section{margin-top:32px}
+.section-head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:14px}
+.section-head p{font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{background:#171f2a;border:1px solid #344354;border-radius:16px;padding:18px;display:flex;flex-direction:column;min-height:210px}
+.card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.agent{display:flex;gap:11px;align-items:center}
+.avatar{width:42px;height:42px;border-radius:13px;background:#29394b;display:grid;place-items:center;font-size:23px;flex:none}
+.sub{font-size:12px;color:#8fa3b7}
+.desc{font-size:13px;margin:12px 0 15px;flex:1}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 14px}
+.tag{font-size:10px;color:#bfd0e1;background:#243344;border:1px solid #364d64;border-radius:99px;padding:4px 8px}
+.actions{display:flex;flex-wrap:wrap;gap:8px}
+.action{font-size:12px;padding:9px 11px}
+.action[aria-disabled=true]{opacity:.48;pointer-events:none}
+.pipeline{display:grid;grid-template-columns:repeat(5,1fr);gap:9px}
+.phase{border:1px solid #344354;background:#171f2a;border-radius:13px;padding:13px;min-height:110px}
+.phase .n{font-size:10px;color:#91a9c1;letter-spacing:.12em}
+.phase b{display:block;margin:7px 0 5px;font-size:14px}
+.phase p{font-size:12px}
+.collabs{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.collab{background:#171f2a;border:1px solid #344354;border-radius:14px;padding:16px}
+.notice{border-left:3px solid #c28f45;padding:10px 13px;background:#211d17;border-radius:6px;margin-top:18px;color:#cbb99d;font-size:12px;line-height:1.5}
+#copyFallback{display:none;width:100%;min-height:110px;margin-top:12px;border-radius:10px;background:#0e141c;color:#e6eef6;border:1px solid #52667d;padding:11px;font:12px/1.5 Consolas,monospace}
+#toast{position:fixed;right:22px;bottom:22px;z-index:10;background:#dce8f3;color:#11202d;padding:11px 16px;border-radius:10px;box-shadow:0 12px 30px #0008;font-size:13px;opacity:0;transform:translateY(8px);pointer-events:none;transition:.18s}
+#toast.show{opacity:1;transform:translateY(0)}
+footer{border-top:1px solid #344354;margin-top:34px;padding-top:18px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;color:#8293a5;font-size:12px}
+@media(max-width:850px){.grid{grid-template-columns:repeat(2,1fr)}.pipeline{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:590px){main{padding:22px 14px 48px}.steps,.grid,.collabs{grid-template-columns:1fr}.pipeline{grid-template-columns:repeat(2,1fr)}header{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<main>
+<header>
+ <div class="brand"><div class="mark">✦</div><div><div class="eyebrow">Entorno persistente · Product Design</div><div style="font-weight:650">Creative Intelligence Suite</div></div></div>
+ <a class="top-link" href="http://127.0.0.1:8765/brain-selector.html" target="_blank" rel="noopener">Abrir Brain Selector ↗</a>
+</header>
+
+<section class="hero">
+ <div class="eyebrow">Catálogo local de agentes y workflows</div>
+ <h1>Elige cómo quieres trabajar.</h1>
+ <p>Selecciona un agente CIS o una fase de diseño. La opción elegida se copia para pegarla en tu conversación de ChatGPT. Carson abre además el selector original de BMAD, donde eliges modalidad y técnicas de brainstorming.</p>
+ <div class="steps">
+  <div class="step"><b>1 · Selecciona</b><span>Escoge agente, especialidad o flujo de trabajo.</span></div>
+  <div class="step"><b>2 · Envía a ChatGPT</b><span>Pulsa «Copiar invocación» y pega el texto en la conversación.</span></div>
+  <div class="step"><b>3 · Ejecuta localmente</b><span>ChatGPT coordina; RDC accede al BMAD instalado y a los archivos persistentes.</span></div>
+ </div>
+</section>
+
+<section class="section">
+ <div class="section-head"><div><div class="eyebrow">CIS · 6 agentes oficiales</div><h2>Agentes</h2></div><p>Exploración individual prevista para Product Design V1.0</p></div>
+ <div class="grid">
+  <article class="card">
+   <div class="card-top"><div class="agent"><div class="avatar">🧠</div><div><h3>Carson</h3><div class="sub">Brainstorming Coach</div></div></div><span class="tag">BS</span></div>
+   <p class="desc">Ideación divergente con técnicas estructuradas, modalidades de facilitación y posterior convergencia.</p>
+   <div class="tags"><span class="tag">108 técnicas locales</span><span class="tag">13 categorías</span><span class="tag">3 modalidades</span></div>
+   <div class="actions"><a class="action primary" href="http://127.0.0.1:8765/brain-selector.html" target="_blank" rel="noopener">Abrir Brain Selector</a><button class="action" data-copy="carson">Copiar invocación</button></div>
+  </article>
+  <article class="card">
+   <div class="card-top"><div class="agent"><div class="avatar">🎨</div><div><h3>Maya</h3><div class="sub">Design Thinking Coach</div></div></div><span class="tag">DT</span></div>
+   <p class="desc">Diseño centrado en las personas: empatía, definición, ideación, prototipado y pruebas.</p>
+   <div class="tags"><span class="tag">5 fases</span><span class="tag">Métodos por fase</span><span class="tag">Human-centered</span></div>
+   <div class="actions"><button class="action primary" data-copy="maya">Copiar invocación</button></div>
+  </article>
+  <article class="card">
+   <div class="card-top"><div class="agent"><div class="avatar">🔬</div><div><h3>Dr. Quinn</h3><div class="sub">Creative Problem Solver</div></div></div><span class="tag">PS</span></div>
+   <p class="desc">Diagnóstico de causas raíz y resolución sistemática mediante TRIZ, restricciones y pensamiento sistémico.</p>
+   <div class="tags"><span class="tag">TRIZ</span><span class="tag">Theory of Constraints</span><span class="tag">Five Whys</span></div>
+   <div class="actions"><button class="action primary" data-copy="quinn">Copiar invocación</button></div>
+  </article>
+  <article class="card">
+   <div class="card-top"><div class="agent"><div class="avatar">⚡</div><div><h3>Victor</h3><div class="sub">Innovation Strategist</div></div></div><span class="tag">IS</span></div>
+   <p class="desc">Oportunidades de disrupción, Jobs-to-be-Done, Blue Ocean y modelos de negocio.</p>
+   <div class="tags"><span class="tag">JTBD</span><span class="tag">Blue Ocean</span><span class="tag">Business Model Canvas</span></div>
+   <div class="actions"><button class="action primary" data-copy="victor">Copiar invocación</button></div>
+  </article>
+  <article class="card">
+   <div class="card-top"><div class="agent"><div class="avatar">📖</div><div><h3>Sophia</h3><div class="sub">Master Storyteller</div></div></div><span class="tag">ST</span></div>
+   <p class="desc">Narrativas, marcos de storytelling, arcos emocionales y adaptación a audiencia y medio.</p>
+   <div class="tags"><span class="tag">25 marcos narrativos</span><span class="tag">Narrative arc</span></div>
+   <div class="actions"><button class="action primary" data-copy="sophia">Copiar invocación</button></div>
+  </article>
+  <article class="card">
+   <div class="card-top"><div class="agent"><div class="avatar">🎬</div><div><h3>Caravaggio</h3><div class="sub">Visual Communication + Presentation Expert</div></div></div><span class="tag">VM / PL / CR / EX</span></div>
+   <p class="desc">Presentaciones, pitches, guiones audiovisuales y elección de recursos visuales. Algunas capacidades se ofrecen como prompts de agente; sus workflows empaquetados están en desarrollo.</p>
+   <div class="tags"><span class="tag">Plan</span><span class="tag">Critique</span><span class="tag">Explainer</span><span class="tag">Visual metaphor</span></div>
+   <div class="actions"><button class="action primary" data-copy="caravaggio">Copiar invocación</button><button class="action" data-copy="caravaggio-menu">Ver menú</button></div>
+  </article>
+ </div>
+</section>
+
+<section class="section">
+ <div class="section-head"><div><div class="eyebrow">Fases y flujos CIS</div><h2>Ámbitos de trabajo</h2></div><p>Se amplía por fases en la V1.0</p></div>
+ <div class="pipeline">
+  <div class="phase"><div class="n">01 · DIVERGIR</div><b>Brainstorming</b><p>Carson · técnicas y modalidades</p></div>
+  <div class="phase"><div class="n">02 · COMPRENDER</div><b>Design Thinking</b><p>Maya · empatizar y definir</p></div>
+  <div class="phase"><div class="n">03 · DIAGNOSTICAR</div><b>Problem Solving</b><p>Dr. Quinn · causas y soluciones</p></div>
+  <div class="phase"><div class="n">04 · ESTRATEGIA</div><b>Innovation Strategy</b><p>Victor · mercado y modelo</p></div>
+  <div class="phase"><div class="n">05 · COMUNICAR</div><b>Storytelling / Presentation</b><p>Sophia y Caravaggio</p></div>
+ </div>
+ <div class="notice">Este portal es un catálogo y punto de entrada local. El paquete CIS aún no está instalado en MOD-EP-BMAD: los botones copian invocaciones para pegarlas en ChatGPT. La ejecución real de cada skill o workflow queda pendiente de integrar sus fuentes y comprobar el runtime. La interfaz distingue los workflows documentados de las capacidades que CIS ofrece solo como prompts o anuncia para después.</div>
+</section>
+
+<section class="section">
+ <div class="section-head"><div><div class="eyebrow">Configuraciones colaborativas CIS</div><h2>Trabajo con varios agentes</h2></div></div>
+ <div class="collabs">
+  <div class="collab"><h3>🎨 Creative Squad</h3><p>Sesión multidisciplinaria que combina perspectivas de los agentes CIS.</p><div style="margin-top:12px"><button class="action" data-copy="squad">Copiar invocación</button></div></div>
+  <div class="collab"><h3>🤝 Design Pair</h3><p>Configuración colaborativa de diseño descrita por la suite.</p><div style="margin-top:12px"><button class="action" data-copy="pair">Copiar invocación</button></div></div>
+ </div>
+</section>
+
+<section class="section">
+ <div class="eyebrow">Salida del proceso</div><h2>Brainstorm HTML Keepsake</h2>
+ <p>Al cerrar una sesión de brainstorming, BMAD puede producir un documento HTML autocontenido y visual, específico para esa sesión. No es este selector ni un programa separado: es un entregable que se genera desde el registro de ideas. El workflow lo recomienda como artefacto de cierre; en algunas modalidades se genera automáticamente y en otras se solicita al usuario.</p>
+</section>
+
+<textarea id="copyFallback" aria-label="Texto de invocación para copiar manualmente" readonly></textarea>
+<footer><span>Product Design · interfaz local de EP</span><span>Chrome local · 127.0.0.1 · RDC</span></footer>
+</main>
+<div id="toast" role="status" aria-live="polite"></div>
+<script>
+const brainUrl = "http://127.0.0.1:8765/brain-selector.html";
+const prompts = {
+ carson: "Quiero iniciar una sesión con Carson, el Brainstorming Coach de CIS. Abre el flujo de brainstorming y usa el Brain Selector local para que seleccione modalidad y técnicas. Después conduce la sesión conforme al método de BMAD, conserva las ideas en el registro persistente y separa divergencia de convergencia.",
+ maya: "Quiero trabajar con Maya, la Design Thinking Coach oficial de CIS. Carga y aplica su skill y el workflow oficial bmad-cis-design-thinking. Guíame por las cinco fases de Design Thinking, utilizando los métodos de cada fase y conservando los artefactos y checkpoints en el entorno persistente.",
+ quinn: "Quiero trabajar con Dr. Quinn, el Creative Problem Solver oficial de CIS. Carga y aplica su skill y el workflow oficial bmad-cis-problem-solving. Diagnostica el problema y utiliza los métodos oficiales, sin confundir diagnóstico con ideación.",
+ victor: "Quiero trabajar con Victor, el Innovation Strategist oficial de CIS. Carga y aplica su skill y el workflow oficial bmad-cis-innovation-strategy. Explora JTBD, Blue Ocean, disrupción y modelo de negocio según el contexto.",
+ sophia: "Quiero trabajar con Sophia, la Master Storyteller oficial de CIS. Carga y aplica su skill y el workflow oficial bmad-cis-storytelling. Construye la narrativa según el público, propósito y medio.",
+ caravaggio: "Quiero trabajar con Caravaggio, el agente Visual Communication + Presentation Expert de CIS. Carga su skill oficial y presenta las opciones que tiene realmente disponibles, diferenciando los prompts de agente de los workflows empaquetados que todavía están en desarrollo.",
+ "caravaggio-menu": "Con Caravaggio, muestra su menú oficial de capacidades: PL (planear deck/pitch/talk), CR (criticar presentación o visual), EX (guion de video explicativo) y VM (elegir visual: chart, diagram, metaphor o image). No supongas que hay workflows empaquetados donde CIS solo ofrece prompts.",
+ squad: "Quiero explorar Creative Squad, la configuración colaborativa de CIS. Explica qué agentes combina, qué aporta cada perspectiva y conduce una sesión multidisciplinaria usando sus configuraciones oficiales.",
+ pair: "Quiero explorar Design Pair, la configuración colaborativa de CIS. Usa la definición oficial y explícame la interacción entre sus agentes antes de iniciar el flujo."
+};
+const toast=document.getElementById("toast");
+const fallback=document.getElementById("copyFallback");
+async function copyPrompt(key){
+ const text=prompts[key];
+ if(!text)return;
+ try{
+  if(!navigator.clipboard?.writeText)throw new Error("Clipboard unavailable");
+  await navigator.clipboard.writeText(text);
+  fallback.style.display="none";
+  toast.textContent="Invocación copiada. Pégala en tu conversación de ChatGPT.";
+ }catch(e){
+  fallback.value=text;
+  fallback.style.display="block";
+  fallback.focus();fallback.select();
+  toast.textContent="Selecciona y copia el texto mostrado; el navegador no concedió acceso al portapapeles.";
+ }
+ toast.classList.add("show");
+ setTimeout(()=>toast.classList.remove("show"),3600);
+}
+document.querySelectorAll("[data-copy]").forEach(button=>{
+ button.addEventListener("click",()=>copyPrompt(button.dataset.copy));
+});
+</script>
+</body>
+</html>
+
+[executed on device: PC10RCIF4EI4 (5182a6bc-db2c-452e-a52a-95d63f6c74d6)]
