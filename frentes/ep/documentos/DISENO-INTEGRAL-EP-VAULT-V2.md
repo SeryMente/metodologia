@@ -123,7 +123,7 @@ El Host expone un Named Pipe local con ACL de Windows, aceptando únicamente el 
 
 **Bloqueo actual:** las conexiones RDC observadas tienen allowedDirectories=[] y shell PowerShell. La conexión Fila4 ejecuta con la identidad propietaria del workspace. Eso no es confinamiento. Mientras el modelo pueda ejecutar PowerShell/filesystem irrestricto con la misma identidad que abre EP Vault, cualquier intermediación puede saltarse y no se puede prometer secreto no revelado. No se habilita acceso de secretos al modelo hasta cambiar esa frontera o retirar el bypass de shell/filesystem. Si el aislamiento no puede hacerse efectivo en RDC, la función de uso delegado queda bloqueada; no se simula seguridad.
 
-El modelo no recibe bearer token, clave de sesión ni contraseña. La autorización reside en el Host. El modelo solo ve herramientas con operaciones enumeradas y su resultado permitido. Se permite RequestLock; no se permite Unlock ni reanudar después de bloqueo sin autenticación local del operador.
+El modelo no recibe bearer token, clave de sesión ni contraseña. La autorización reside en el Host. El modelo solo ve herramientas con operaciones enumeradas y su resultado permitido. Mientras exista una concesión activa iniciada por el operador y el Host conserve en memoria la credencial de apertura entregada localmente, el modelo puede solicitar RequestWorkspaceOpen o RequestLock. El Host valida la concesión y entrega la contraseña a Cryptomator CLI por stdin, sin devolvérsela al modelo. RequestWorkspaceOpen no crea sesión, no prolonga TTL y no puede reabrir después de PAUSED, LOCKED o EXPIRED: tras el sellado se eliminan concesión y credencial de apertura en memoria; el operador debe autenticarse localmente de nuevo.
 
 ### 3.3 Uso de secretos sin revelarlos
 
@@ -191,7 +191,7 @@ No se crea folio por defecto. La ubicación no sustituye la identidad de termina
 ### 4.2 EFIMERA
 
 - Sesión volátil.
-- La GUI ofrece el dropdown ya presente con 15 s, 30 s, 1 min, 2 min, 3 min, 5 min, 10 min y 15 min, más entrada manual dentro del límite de política. Predeterminado: 5 min. La opción de 1 hora del XAML actual no se hereda porque el CLI/Core v1.0.0 no la aceptan de forma consistente.
+- La GUI ofrece el dropdown con 15 s, 30 s, 1 min, 2 min, 3 min, 5 min, 10 min y 15 min, más entrada manual en segundos dentro del intervalo operativo 1–900 s. Predeterminado: 5 min. La opción de 1 hora del XAML actual no se hereda porque el CLI/Core v1.0.0 no la aceptan de forma consistente.
 - Los secretos/notas y artefactos creados en esa ubicación viven en un subárbol temporal controlado por sesión/terminal. Al vencer o dispararse el dead-man, se sella, elimina ese subárbol EP y verifica su ausencia.
 - La eliminación es lógica/controlada de los datos pertenecientes a esa ubicación efímera. No se promete borrado forense de bloques SSD, snapshots, memoria, pagefile ni copias de terceros.
 - La pausa manual sella acceso y exige reautenticación para reanudar; conserva el subárbol cifrado mientras la sesión no haya vencido. El dead-man por inactividad o expiración finaliza la sesión y lo elimina.
@@ -228,8 +228,8 @@ EP Vault y Cryptomator son dos bóvedas distintas:
 Secuencia mínima:
 
 1. Un bootstrap pequeño, no secreto, permite abrir la interfaz local antes del montaje. No contiene contraseñas ni ciphertext del almacén formal.
-2. El operador introduce localmente la contraseña maestra de Cryptomator. El controlador la entrega al CLI mediante stdin, nunca como argumento, variable de entorno persistente o archivo.
-3. Cryptomator CLI monta el workspace con WinFsp; se verifica el volumen.
+2. El operador introduce localmente la contraseña maestra de Cryptomator. El controlador la entrega al CLI mediante stdin, nunca como argumento, variable de entorno persistente o archivo. Mientras la concesión esté activa, el Host conserva la credencial de apertura solo en memoria para atender RequestWorkspaceOpen; no la persiste ni restaura la concesión desde disco.
+3. Cryptomator CLI monta el workspace con WinFsp; se verifica el volumen. El modelo puede solicitar el montaje únicamente mientras la concesión del operador siga vigente.
 4. Se inicia EP Vault desde el workspace protegido y el operador autentica su bóveda formal EP Vault.
 5. EP Vault Host conserva la clave de sesión en memoria. El operador puede cerrar la ventana y continuar mediante las operaciones headless autorizadas.
 6. En pausa/caducidad se bloquea primero la concesión, se drenan operaciones, se desmonta Cryptomator graceful y se verifica ausencia del volumen.
