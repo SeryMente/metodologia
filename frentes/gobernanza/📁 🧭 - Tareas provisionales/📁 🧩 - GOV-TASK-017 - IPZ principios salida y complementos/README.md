@@ -196,3 +196,24 @@ Esta ficha es una tarea provisional de planificación y persistencia. No canoniz
 **Estado de esta decisión:** criterio de depuración aprobado por el operador y registrado para orientar el análisis. La clasificación anterior es filtro de trabajo, no redacción normativa definitiva. No modifica DUG §4, ART-032, IPZ nativa, FOL1 ni MCP-NORMATIVO; no canoniza el anexo IPZ v0.1 ni la candidata v0.14. La telemetría existente conserva sus obligaciones técnicas donde corresponda.
 
 **Pendiente para la siguiente revisión:** resolver si la etiqueta breve DUG (versión/firma) debe aparecer en cada respuesta o solo al iniciar/retomar un frente, ante cambios de versión o cuando exista incertidumbre material. No asumir una frecuencia sin decisión del operador.
+
+
+## Decisión del operador · formato mínimo SAM y metadatos de vigencia · 2026-11-13
+
+**Formato visible decidido para la etapa actual — únicamente dos elementos:**
+1. **SAM:** versión/firma de Samantha, bajo la etiqueta SAM. La nomenclatura compacta exacta queda pendiente de redacción del operador.
+2. **Vigencia de SAM:** días, horas y minutos transcurridos desde la última actualización de SAM. La representación compacta exacta queda pendiente.
+
+No añadir otros campos de salida por rutina. Nuevos elementos solo se incorporarán cuando la experiencia pragmática del operador demuestre su utilidad o necesidad como interfaz. Esta decisión sustituye, para la salida actual, el inventario de campos propuesto anteriormente; no elimina los registros técnicos o administrativos que sean necesarios en sus sistemas de origen.
+
+**Clasificación conceptual en evaluación:**
+- **Telemetría de ejecución:** eventos y mediciones internos de los sistemas, preferentemente backend; no se imprimen salvo que su resultado sea útil para el operador.
+- **Metadatos de gobernanza del ciclo:** datos administrativos que identifican el marco aplicado y su vigencia.
+- **Carga administrativa de gobernanza:** trabajo recurrente de obtener, calcular y presentar esos metadatos.
+Los dos elementos decididos son metadatos de identidad y vigencia de SAM, no telemetría de ejecución.
+
+**Conflicto normativo detectado:** DUG v393, Metacanon §37.3, prohíbe expresamente calcular antigüedad d.h.m. La antigüedad de la fuente SAM no equivale a duración de ciclo, latencia, tiempo activo, procesamiento o espera; no obstante, la prohibición literal de §37.3 la alcanza. §52 mantiene desactivadas las métricas de duración/rendimiento y no debe ampliarse por interpretación para incluir automáticamente la frescura de una fuente. Será necesario resolver expresamente §37.3 antes de considerar conforme la presentación de la antigüedad SAM. No modificar §37.3 ni §52 en esta anotación.
+
+**Trabajo posterior indicado por el operador:** una vez concluida la definición del formato y tras revisar los principios pertinentes, preparar un anexo en el DUG con criterios generales de diseño para los elementos de salida. La elaboración de ese anexo no se inicia ni se canoniza con esta anotación.
+
+**Estado:** decisión de interfaz registrada; nomenclatura compacta y fuente temporal exacta de la última actualización pendientes de definición. No se modificó el DUG, ART-032, IPZ nativa, FOL1 ni MCP-NORMATIVO; no se creó ni canonizó un anexo.
