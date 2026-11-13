@@ -131,3 +131,8 @@ Esta reorientación, dictada por el operador el 2026-11-13, fija como arquitectu
 **Precedencia documental:** si los apartados históricos anteriores de este README, DISENO-ACUMULADO-BMAD-PRODUCT-DESIGN.md, ESPECIFICACION-OPERATIVA-VMAT.md, EP-TASK-008 u OEP §§142.19–142.20 contradicen el diseño vigente aquí enlazado, deben leerse como antecedentes de la línea anterior, no como decisiones objetivo vigentes. Se preservan sin borrado ni cambio de estado hasta una reconciliación documental explícita.
 
 **Límite:** el documento general es un borrador de diseño. No se ha instalado CIS, construido autoguardado, creado la biblioteca, generado un Keepsake local ni ejecutado una prueba integral.
+
+- CIS se adaptará como perfiles y procedimientos conversacionales propios a partir de sus fuentes oficiales; su repositorio es un módulo demostrativo en evolución y no se presume que todos sus workflows estén listos o instalados.
+- OpenCode no es requisito de la arquitectura objetivo ChatGPT + RDC; el estado de las configuraciones existentes se conserva como antecedente independiente.
+- Superpowers queda limitado a la consulta de sus habilidades como referencia para desarrollar capacidades propias. Su Visual Companion no forma parte del alcance actual.
+- El flujo de dictados debe mantener la relación fuente verbatim → requisito → tarea → entregable → criterio de aceptación → evidencia, con asignación al OCP responsable.
