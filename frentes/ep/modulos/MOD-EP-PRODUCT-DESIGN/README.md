@@ -138,3 +138,30 @@ Esta reorientación, dictada por el operador el 2026-11-13, fija como arquitectu
 - El flujo de dictados debe mantener la relación fuente verbatim → requisito → tarea → entregable → criterio de aceptación → evidencia, con asignación al OCP responsable.
 
 **Última salida visible del ciclo:** [ULTIMA-SALIDA-PRODUCT-DESIGN-20261113-1354.md](./fuentes/ULTIMA-SALIDA-PRODUCT-DESIGN-20261113-1354.md). Conserva el checkpoint B y los anclajes A correspondientes.
+
+## Implementación inicial Carson y persistencia por ciclo · 2026-11-13
+
+**Instrucción vigente:** SRC-PD-20261113-IDEACION-03, preservada literalmente en SPRINT-GENERAL-PRODUCT-DESIGN.md §18.
+
+**Diseño actual del primer release:**
+- ChatGPT conversación ordinaria como interfaz; Carson como coach y BMAD Core bmad-brainstorming como motor.
+- Tres modos: Facilitator, Creative Partner e Ideate for me.
+- Se omiten Brain Selector, Keepsake, portal y los otros cinco agentes CIS en el primer hito.
+- El guardado sucede al terminar ciclos de ideación, no carácter por carácter; proyectos auto-nombrados y etiquetados; borradores y resultados maduros se conservan; biblioteca FTS5 indexada y reutilizable.
+- La Prótesis Cognitiva queda como integración futura expresamente diferida.
+- A/B se mantiene como trazabilidad externa, no como característica del módulo.
+
+**Perfil conversacional:** [prompts/CARSON-CHAT.md](prompts/CARSON-CHAT.md). Blob de GitHub leído de vuelta: ef334c36d002e11c22b2de156fbff4775a3b56f3. El perfil está preparado; aún falta una prueba funcional completa con un tema real.
+
+**Documento general de diseño:** [SPRINT-GENERAL-PRODUCT-DESIGN.md](SPRINT-GENERAL-PRODUCT-DESIGN.md), blob actualizado/read-back 376348c0c184ed085b4f32ec2709706fcff0bee6.
+
+**Tareas provisionales derivadas:**
+- EP-TASK-009 — Carson conversacional en ChatGPT: en curso; perfil creado/read-back, prueba funcional pendiente.
+- EP-TASK-010 — Autoguardado por ciclo y biblioteca: pendiente; requiere desbloqueo de EP Vault y aceptación del backup EP.
+- EP-TASK-011 — Brain Selector: baja prioridad, posterior al núcleo.
+- EP-TASK-012 — Brainstorm HTML Keepsake: baja prioridad, posterior al núcleo.
+- Índice: [Tareas provisionales EP](../../📁%20🧭%20-%20Tareas%20provisionales/README.md), blob leído de vuelta 192894d04c978cdef9dade851d9b84e965363145.
+
+**Estado físico real:** BMAD Brainstorming local y Carson source fueron inspeccionados; 108 técnicas en 13 categorías observadas. SQLite FTS5 pasó una prueba en memoria. No se activó escritura local: la bóveda Cryptomator EP seguía bloqueada; no se escribió ideación fuera del workspace protegido. Respaldo y restauración de datos Product Design NO VERIFICADOS.
+
+**Secuencia vigente:** probar Carson desde el chat; desbloquear EP Vault localmente para habilitar EP-TASK-010; abordar tareas 011 y 012 solo después y sin hacerlas requisito del primer release.
