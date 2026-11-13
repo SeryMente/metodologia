@@ -6,10 +6,10 @@
     "id": "EP",
     "name": "Entorno Persistente",
     "canonical_oep": "frentes/ep/OEP.md",
-    "oep_version": "v0.3.101"
+    "oep_version": "v0.3.105"
   },
   "coverage": {
-    "scope": "Registro documental del frente EP con alcance por entrada. La cobertura de cada conversación/original se limita a las fuentes listadas; no se presume auditoría retrospectiva de archivos no enumerados. Las exportaciones EP 2026-11-12/13 anteriores a las 14:39 continúan en Downloads y no fueron transferidas a Git; ChatGPT-EP-20261113-1439.md sí fue archivado byte por byte en originales/ y su salida final se conserva en documentos/RETOMA-EP-2026-11-13-1439.md.",
+    "scope": "Registro documental del frente EP con alcance por entrada. La cobertura de cada conversación/original se limita a las fuentes listadas; no se presume auditoría retrospectiva de archivos no enumerados. La conversación EP-20261113-1439 y su salida literal están archivadas byte-exacto; el diseño integral y el sprint EP Vault v2 registran auditoría local v1.0.0 y programación, sin construcción ni cambios al almacén real.",
     "legacy_originals_path_preserved": "frentes/ep/originales/"
   },
   "documents": [
@@ -175,6 +175,103 @@
         "readback_method": "GitHub fetch_file content compared exactly with the complete generated document"
       },
       "captured_on": "2026-11-13"
+    },
+    {
+      "id": "EP-DOC-20261113-EPVAULT-V2-DISENO",
+      "original_name": "DISENO-INTEGRAL-EP-VAULT-V2.md",
+      "canonical_path": "frentes/ep/documentos/DISENO-INTEGRAL-EP-VAULT-V2.md",
+      "relative_path_from_front": "documentos/DISENO-INTEGRAL-EP-VAULT-V2.md",
+      "kind": "integrated_product_design",
+      "original_preserved": false,
+      "source": {
+        "inputs": [
+          "ChatGPT-EP-20261113-1439.md",
+          "EP-TASK-004/README.md",
+          "EP-TASK-004/MODEL-CLI-HEADLESS.md",
+          "MOD-EPVAULT/v1.0.0 local source tree",
+          "MOD-EPVAULT/v1.0.0/MANIFEST.json",
+          "EP-SYNTHETIC-V1.0.0-DB4138"
+        ],
+        "audit_scope": "Read-only source/manifests/contracts audit; isolated synthetic v1.0.0 test run; no real vault data opened or modified.",
+        "result": "EP_VAULT_V2_DESIGN=INTEGRATED_DRAFT; P012/P013 review required; build not dispatched.",
+        "v1_suite": "EP_VAULT_VALIDATION_PASS; exit 0; runtime 113.04 seconds; only manifest-matching synthetic package.",
+        "key_findings": [
+          "local MOD-EPVAULT/v1.0.0 Core/GUI/XAML Git blobs diverge from its MANIFEST; CLI/tests match",
+          "two distinct local ciphertext stores observed; active root unresolved",
+          "DPAPI CurrentUser shared session does not isolate same-user processes",
+          "Reveal/ReadNote -Reveal and generic Run cannot be exposed to the model",
+          "RDC allowedDirectories=[] and shell are not effective agent confinement",
+          "120-second idle dead-man is not implemented in v1"
+        ]
+      },
+      "persistence": {
+        "status": "PERSISTIDO_Y_READBACK_VERIFICADO",
+        "branch": "main",
+        "commit": "67a9a0dbabcf7a26c72e8b44847bd196fdb3246e",
+        "git_blob_sha1": "5800a7b558b8937c873ea3ed31596df72774fc1e",
+        "readback_verified": true,
+        "readback_method": "GitHub fetch_file read-back content compared exactly with authored design",
+        "readback_chars": 29611,
+        "readback_lines": 322
+      },
+      "captured_on": "2026-11-13"
+    },
+    {
+      "id": "EP-DOC-20261113-EPVAULT-V2-SPRINT",
+      "original_name": "SPRINT-EP-VAULT-V2.md",
+      "canonical_path": "frentes/ep/documentos/SPRINT-EP-VAULT-V2.md",
+      "relative_path_from_front": "documentos/SPRINT-EP-VAULT-V2.md",
+      "kind": "product_sprint_plan",
+      "original_preserved": false,
+      "source": {
+        "design": "frentes/ep/documentos/DISENO-INTEGRAL-EP-VAULT-V2.md",
+        "task_owner": "EP-TASK-004",
+        "work_packages": [
+          "EV2-01",
+          "EV2-02",
+          "EV2-03",
+          "EV2-04",
+          "EV2-05",
+          "EV2-06",
+          "EV2-07",
+          "EV2-08"
+        ],
+        "source_criteria": "Each package includes operator criterion verbatim.",
+        "dispatch_state": "PROGRAMMED_NOT_DISPATCHED",
+        "blockers": [
+          "P012/P013 in-person security/architecture review",
+          "baseline divergence and two distinct ciphertext roots unresolved",
+          "agent identity isolation not implemented"
+        ]
+      },
+      "persistence": {
+        "status": "PERSISTIDO_Y_READBACK_VERIFICADO",
+        "branch": "main",
+        "commit": "d972286557acfbadfc9ed7842dc35567273dd625",
+        "git_blob_sha1": "4addd75a49bc1eae3720c3397f45ddc4e58f8725",
+        "readback_verified": true,
+        "readback_method": "GitHub fetch_file read-back content compared exactly with authored sprint plan",
+        "readback_chars": 21283,
+        "readback_lines": 297
+      },
+      "captured_on": "2026-11-13"
+    }
+  ],
+  "cross_checked_sources": [
+    {
+      "path": "frentes/ep/OEP.md",
+      "version_before": "v0.3.104",
+      "blob_before": "7204e809dd5f2b29a88e73bd447056c4bcbaadce",
+      "version_after": "v0.3.105",
+      "blob_after": "83243b3be5670c866885c868e9a3a084f45065d9"
+    },
+    {
+      "path": "frentes/ep/📁 🧭 - Tareas provisionales/📁 🧩 - EP-TASK-004 - Reconstrucción de bóveda/README.md",
+      "blob_after": "961073f298775ba62978cb6a365248a004a7a0a5"
+    },
+    {
+      "path": "frentes/ep/README.md",
+      "blob_after": "052d5b0638f63eba49dacae15cf3390a450be6c6"
     }
   ]
 }
