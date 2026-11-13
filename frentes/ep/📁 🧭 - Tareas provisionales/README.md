@@ -28,7 +28,11 @@ El patrón de materialización sigue el registro de tareas provisionales de Gobe
 | EP-TASK-002 | `en_curso · B2_V7_UPLOAD_READBACK_PASS · ISOLATED_DECRYPT_PASS_30 · CLIENT_ENCRYPTED_WORKSPACE_BACKUP_PENDING · CROSS_HOST_PENDING` | Backups: solo ciphertext cliente remoto; evidencia Vault v7 no se extrapola al workspace ni a cross-host. | [núcleo](./📁%20🧩%20-%20EP-TASK-002%20-%20Persistencia%20provisional%20Backblaze/README.md) |
 | EP-TASK-005 | `pendiente · WORKSPACE_CRYPTOMATOR_GATE_PENDING · PACKAGE_V389_RECONCILIATION_PENDING · INSTALL_NOT_PERFORMED · IPZ_E2E_NOT_RUN` | MCP-OCP: instalación y todo su estado/caché/logs/runtime dentro del workspace; paquete reconciliado e íntegro antes de instalar. | [núcleo](./📁%20🧩%20-%20EP-TASK-005%20-%20Instalación%20y%20aceptación%20de%20MCP-OCP%20local/README.md) |
 | EP-TASK-007 | `en_curso · HOST_INVENTORY_PARTIAL_READ_ONLY · CRYPTOMATOR_LOCK_UNMOUNT_NOT_RUN · SESSION_CLEANUP_NOT_RUN` | Sesión: inventario, lock/unmount Cryptomator y limpieza limitada a efímeros; no borrar workspace persistente. | [núcleo](./📁%20🧩%20-%20EP-TASK-007%20-%20Guardián%20de%20sesión%20efímera%20e%20inventario%20del%20host/README.md) |
-| EP-TASK-008 | `en_curso · VMAT_VERBATIM_INTAKE_DEFINED · SUPERPOWERS_V7.0.2_CONFIGURED_AND_DOWNLOADED · RUNTIME_SKILL_DISCOVERY_BLOCKED_EPVAULT_SESSION` | vMAT Product Design: convertir dictados verbatim de ChatGPT en el mínimo conjunto exhaustivo de tareas ejecutables, integrando BMAD y Superpowers. | [núcleo](./📁%20🧩%20-%20EP-TASK-008%20-%20vMAT%20Product%20Design%20-%20Captura%20verbatim%20y%20tareas%20ejecutables%20con%20Superpowers/README.md) |
+| EP-TASK-008 | `pendiente · LEGACY_SCOPE_RECONCILIATION_REQUIRED · SUPERPOWERS_RUNTIME_NOT_TARGET` | Rama histórica de captura verbatim y conversión a tareas; alcance anterior en reconciliación. La configuración previa de Superpowers se conserva como antecedente, no como runtime del Product Design actual. | [núcleo](./📁%20🧩%20-%20EP-TASK-008%20-%20vMAT%20Product%20Design%20-%20Captura%20verbatim%20y%20tareas%20ejecutables%20con%20Superpowers/README.md) |
+| EP-TASK-009 | `en_curso · CARSON_CHAT_PROFILE_CREATED_READBACK_VERIFIED · LIVE_SESSION_ACCEPTANCE_PENDING` | Carson conversacional en ChatGPT con el motor BMAD Brainstorming; primer hito funcional. | [núcleo](./📁%20🧩%20-%20EP-TASK-009%20-%20Carson%20conversacional%20en%20ChatGPT%20con%20BMAD%20Brainstorming/README.md) |
+| EP-TASK-010 | `pendiente · WAITING_EP_VAULT_UNLOCK · BACKUP_ACCEPTANCE_PENDING` | Autoguardado de ideaciones por ciclo, proyectos con nombre/etiquetas esenciales, versiones recuperables y biblioteca indexada/reutilizable. | [núcleo](./📁%20🧩%20-%20EP-TASK-010%20-%20Autoguardado%20por%20ciclo%20y%20biblioteca%20de%20ideaciones/README.md) |
+| EP-TASK-011 | `pendiente · LOW_PRIORITY · DEFERRED_AFTER_CORE` | Brain Selector oficial: evaluación/adaptación opcional posterior; no es requisito de la experiencia chat-first. | [núcleo](./📁%20🧩%20-%20EP-TASK-011%20-%20Brain%20Selector%20opcional%20y%20de%20baja%20prioridad/README.md) |
+| EP-TASK-012 | `pendiente · LOW_PRIORITY · DEFERRED_AFTER_CORE` | Brainstorm HTML Keepsake: posible generación automática desde una sesión persistida, sin diseño del operador. | [núcleo](./📁%20🧩%20-%20EP-TASK-012%20-%20Brainstorm%20HTML%20Keepsake%20automático%20diferido/README.md) |
 
 ## Estado de continuidad · 2026-10-31
 
@@ -564,3 +568,17 @@ Rclone queda identificado como motor especializado de transferencia B2 invocado 
 ## Acumulado de diseño e implementación EP · 2026-11-11 a 2026-11-13
 
 El documento complementario [Acumulado de diseño e implementación EP](../documentos/ACUMULADO-DISENO-IMPLEMENTACION-EP-2026-11-11_A_2026-11-13.md) reconstruye el sprint desde tres exports EP leídos completos (4.444 líneas), cotejados con OEP §§136–144 y EP-TASK-002–008. Conserva cronología, decisiones, implementación realmente observada, pruebas sintéticas vs aceptación, backlog, bloqueos y secuencia de cierre. No sustituye el OEP ni cambia estados de tareas. **OEP §145** registra la revisión y la persistencia.
+
+
+## Secuencia Product Design · instrucción del operador · 2026-11-13
+
+**Fuente:** SRC-PD-20261113-IDEACION-03, conservada literalmente en MOD-EP-PRODUCT-DESIGN/SPRINT-GENERAL-PRODUCT-DESIGN.md §18. La prioridad alta corresponde al núcleo; las dos tareas de extras son expresamente de baja prioridad y posteriores.
+
+- **EP-TASK-009** entrega la herramienta Carson desde el chat y el motor BMAD Brainstorming. Su perfil conversacional está documentado y leído de vuelta; falta prueba funcional real.
+- **EP-TASK-010** entrega la persistencia por ciclo, el autoprovisionamiento de proyecto/etiquetas, versionado y biblioteca. Está pendiente hasta disponer de la bóveda EP desbloqueada y el respaldo EP aceptado.
+- **EP-TASK-011** conserva la investigación sobre Brain Selector como comodidad opcional posterior. No se requiere ni se abre automáticamente.
+- **EP-TASK-012** conserva la investigación sobre Brainstorm HTML Keepsake como artefacto que generaría el agente desde la sesión persistida. No se construye en el primer hito ni exige diseño del operador.
+
+**EP-TASK-008** se mantiene como antecedente pendiente de reconciliación. Su configuración histórica se preserva; Superpowers no se usa como runtime operativo del Product Design actual y no se desinstala ni se elimina por este cambio.
+
+La inspección de Harmonia se completó sobre su OCP y README. Su raíz no contiene un índice separado de tareas provisionales; sí contiene el patrón de rigor que aquí se aplica: originales literales, matrices requisito/estado/evidencia, criterios de aceptación y crónica acumulativa. El índice y los núcleos por tarea siguen el registro EP existente.
