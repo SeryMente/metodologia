@@ -92,8 +92,8 @@ Después del gate, EV2-01 sigue siendo el primer paquete técnico y debe cerrar 
 
 **Trabajo:**
 1. Implementar el Host local sin ventana, subordinado a MOD-EPVAULT, iniciado después de autenticación local y mantenido durante la concesión.
-2. Mantener clave de sesión y concesiones solo en memoria. No crear un archivo DPAPI CurrentUser que permita a procesos de la misma identidad recuperar la clave compartida.
-3. Exponer canal local (Named Pipe con ACL) únicamente para la identidad agente autorizada y la UI/operador.
+2. Mantener clave de sesión, credencial de apertura Cryptomator y concesiones solo en memoria durante la concesión activa. No crear un archivo DPAPI CurrentUser que permita a procesos de la misma identidad recuperar la clave compartida; al sellar, retirar la credencial y concesión de memoria.
+3. Exponer canal local (Named Pipe con ACL) únicamente para la identidad agente autorizada y la UI/operador. El canal admite `RequestWorkspaceOpen` y `RequestLock` solo con concesión activa.
 4. Crear/usar identidad Windows agente separada, estándar, no administradora y sin ACL de lectura sobre la bóveda, notas, backups, memoria del Host o volumen montado.
 5. Restringir RDC para que el agente no tenga shell ni filesystem directo que permita eludir el Host. La opción actual allowedDirectories=[] no satisface esto.
 6. Verificar la identidad real del cliente y cada operación; no emitir bearer token al contexto del modelo.
@@ -101,7 +101,9 @@ Después del gate, EV2-01 sigue siendo el primer paquete técnico y debe cerrar 
 
 **Criterios de aceptación:**
 - Cerrar la GUI no termina la sesión autorizada mientras Host esté activo y dentro de TTL.
-- Host bloqueado/reiniciado no restaura claves desde disco.
+- Con concesión activa, el modelo puede solicitar montar y bloquear Cryptomator; Host entrega la contraseña por stdin y nunca la devuelve al modelo.
+- `RequestWorkspaceOpen` no crea ni prolonga concesiones y falla tras pausa, bloqueo o expiración hasta nueva autenticación local.
+- Host bloqueado/reiniciado no restaura claves/credenciales desde disco.
 - La identidad agente no puede leer el archivo cifrado, descifrar DPAPI CurrentUser, inspeccionar memoria del Host, leer el volumen ni lanzar PowerShell arbitrario con identidad propietaria.
 - Una solicitud directa a archivos/rutas/secretos fuera del pipe se deniega.
 - Si RDC conserva shell/filesystem irrestricto bajo la identidad del operador, el uso delegado de secretos permanece deshabilitado; no se marca como excepción aceptable.
@@ -110,6 +112,8 @@ Después del gate, EV2-01 sigue siendo el primer paquete técnico y debe cerrar 
 
 **Criterio fuente (verbatim):**
 
+> Se tendria que abrir  y cerrar la boveda mediane el uso del token? Es decir, unmodelo con  el tokenpodria abrir la boveda y cerrarla al terminar?
+>
 > Como puedo tener unsecreto disponible enEP vault sintener la boveda abierta, para que los modelos lo tomen. Pero demanera segura?
 
 ## EV2-04 · CLI de configuración y operación de secretos
@@ -149,7 +153,7 @@ Después del gate, EV2-01 sigue siendo el primer paquete técnico y debe cerrar 
 1. Proponer en ART-013 del DUG un atributo obligatorio persistence_type: EFIMERA | NO_EFIMERA.
 2. Mantener terminal_id separado de location_id; el tipo pertenece a la ubicación y no constituye nivel de confianza.
 3. La sesión hereda tipo de ubicación. Registro mínimo: session_id técnico, location_id, terminal_id, persistence_type, opened_at_utc, expires_at_utc, state y scope.
-4. Para EFIMERA, dropdown con 15s, 30s, 1m, 2m, 3m, 5m, 10m y 15m; entrada manual dentro del límite de política; default 5m. Se elimina la opción 1h no soportada consistentemente por el CLI.
+4. Para EFIMERA, dropdown con 15s, 30s, 1m, 2m, 3m, 5m, 10m y 15m; entrada manual en segundos dentro del intervalo 1–900s; default 5m. Se elimina la opción 1h no soportada consistentemente por el CLI.
 5. Para NO_EFIMERA, seleccionar fecha/hora de expiración. Mostrar hora local y guardar UTC.
 6. Las ubicaciones EFIMERA tienen un subárbol EP temporal por terminal/sesión; NO_EFIMERA conserva ciphertext local.
 7. Preparar el texto exacto de ART-013 como patch propuesto, sin escribir DUG antes de aprobación P005/P012/P013.
