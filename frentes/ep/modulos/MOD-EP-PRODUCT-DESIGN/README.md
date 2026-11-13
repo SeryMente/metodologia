@@ -167,3 +167,12 @@ Esta reorientación, dictada por el operador el 2026-11-13, fija como arquitectu
 **Estado físico real:** BMAD Brainstorming local y Carson source fueron inspeccionados; 108 técnicas en 13 categorías observadas. SQLite FTS5 pasó una prueba en memoria. No se activó escritura local: la bóveda Cryptomator EP seguía bloqueada; no se escribió ideación fuera del workspace protegido. Respaldo y restauración de datos Product Design NO VERIFICADOS.
 
 **Secuencia vigente:** probar Carson desde el chat; desbloquear EP Vault localmente para habilitar EP-TASK-010; abordar tareas 011 y 012 solo después y sin hacerlas requisito del primer release.
+
+
+## Continuidad conversacional · 2026-11-13 · 15:05
+
+La exportación íntegra de esta retoma quedó archivada en [fuentes/ChatGPT-Product Design-20261113-1505.md](./fuentes/ChatGPT-Product%20Design-20261113-1505.md). Procedencia: C:\Users\fila4\Downloads\ChatGPT-Product Design-20261113-1505.md; 1.554 líneas, 95.543 bytes; SHA-256 2A91A2895572E2667D875084CED55B976F89E67564C40D6ED312C1649DAC2F1C. La copia en el repositorio pasó lectura de vuelta exacta.
+
+La última salida visible del ciclo, fechada 13/11/2026 a las 14:48:59, se conserva literalmente en [fuentes/ULTIMA-SALIDA-PRODUCT-DESIGN-20261113-1505.md](./fuentes/ULTIMA-SALIDA-PRODUCT-DESIGN-20261113-1505.md), también verificada mediante lectura de vuelta exacta.
+
+Esta retoma confirma el estado registrado en §148 del OEP: Carson como coach conversacional sobre BMAD Brainstorming; 108 técnicas en 13 categorías observadas; SQLite FTS5 comprobado solo en memoria; tareas EP-TASK-009–012 ya creadas; EP Vault como compuerta para la persistencia durable. No cambia alcance, estados de tareas, configuración ni criterios de aceptación.
