@@ -198,6 +198,14 @@ La sesión puede iniciarse de forma natural, por ejemplo: «Quiero idear alterna
 
 El Brain Selector puede ser un recurso alternativo de composición y copia de prompt, pero no es el mecanismo principal. Tampoco es un selector de agentes CIS: el HTML oficial elige modo y técnicas de brainstorming.
 
+### 5.4 Verificación local Carson/BMAD · 2026-11-13
+
+- Se leyó el archivo local MOD-EP-BMAD/app/node_modules/bmad-method/src/core-skills/bmad-brainstorming/SKILL.md; el motor instalado está presente en el entorno de Fila4.
+- Se leyó el archivo local scripts/brain.py y se ejecutó el subcomando categories. Resultado observado: 13 categorías y 108 técnicas.
+- Se leyó el perfil upstream de Carson y su customize.toml. La opción BS — Guided Brainstorming Session delega en bmad-brainstorming.
+- El perfil operativo de chat está materializado en [prompts/CARSON-CHAT.md](prompts/CARSON-CHAT.md), blob de read-back ef334c36d002e11c22b2de156fbff4775a3b56f3.
+- La adaptación conserva la identidad/función de Carson y reduce el estilo de comunicación al patrón conversacional acordado. No se afirma que el runtime CIS esté instalado en ChatGPT.
+
 ---
 
 ## 6. Brainstorm HTML Keepsake — tarea posterior de baja prioridad
@@ -459,7 +467,8 @@ Estos anclajes permiten recuperar las instrucciones anteriores sin reconstruirla
 | SRC-PD-20261113-CHAT-RDC-01 | mismo archivo, líneas 1407–1413 | Adaptar CIS al flujo ChatGPT + RDC, conservar el método local y desarrollar una capacidad propia; en ese momento se consideraba Carson como primer foco. | VIGENTE en arquitectura; el alcance de agentes fue ampliado posteriormente a los seis para V1.0. |
 | SRC-PD-20261113-CIS-V1-01 | mismo archivo, líneas 2073–2075 | Explorar todos los agentes CIS uno por uno en V1.0; la instrucción inicial también pedía una interfaz HTML local para agentes y técnicas, además del Keepsake. | TODOS LOS AGENTES VIGENTES; la obligatoriedad de la interfaz quedó corregida por SRC-PD-20261113-ALCANCE-02: selección conversacional como ruta preferida. |
 | SRC-PD-20261113-CORRECCION-01 | sección 18 de este documento | Superpowers solo como referencia de habilidades a desarrollar por cuenta propia; autoguardado tipo Office; biblioteca indexada; esquema visoespacial diferido; tareas según Harmonia. | VIGENTE. |
-| SRC-PD-20261113-ALCANCE-02 | sección 18 de este documento | Chat como interfaz suficiente; no crear interfaz si no aporta; Keepsake debe ser generado por el agente sin diseño del operador; investigar e integrar el autoguardado y la biblioteca. | VIGENTE Y MÁS RECIENTE PARA LA EXPERIENCIA DE USO. |
+| SRC-PD-20261113-ALCANCE-02 | sección 18 de este documento | Chat como interfaz suficiente; no crear interfaz si no aporta; Keepsake debe ser generado por el agente sin diseño del operador; investigar e integrar el autoguardado y la biblioteca. | VIGENTE; Brain Selector y Keepsake diferidos. |
+| SRC-PD-20261113-IDEACION-03 | mensaje del operador del 2026-11-13, reproducido literalmente en §18 | Carson chat-first; extras Brain Selector/Keepsake en tareas de baja prioridad; autoguardado por ciclo; proyecto con nombre automático/etiquetas esenciales; conservación de ideaciones parciales y maduras; biblioteca; integración futura con Prótesis Cognitiva; A/B fuera de la función de producto. | VIGENTE PARA LA PRIMERA VERSIÓN Y SU SECUENCIA. |
 
 **Regla de precedencia temporal:** los dictados anteriores se conservan íntegros. Cuando una decisión anterior y una rectificación posterior difieren, se mantiene la primera como historia y la última como objetivo vigente únicamente en el punto que modifica. La corrección de interfaz no elimina el requisito de explorar los seis agentes; la corrección sobre Superpowers no elimina el requisito de desarrollar capacidades propias a partir de referencias.
 
@@ -479,7 +488,7 @@ Estos anclajes permiten recuperar las instrucciones anteriores sin reconstruirla
 
 ### Límites de evidencia
 
-Este documento distingue la documentación upstream, los artefactos locales registrados en ciclos anteriores y el estado técnico que aún no se ha vuelto a probar. No declara que la integración CIS, el autoguardado, la biblioteca o el generador de Keepsake estén implementados. La existencia de un recurso upstream no acredita que esté instalado ni que funcione en el entorno EP actual.
+Este documento distingue la documentación upstream, los artefactos locales registrados y el estado técnico comprobado en el ciclo 2026-11-13. El perfil conversacional Carson está preparado como documento y el motor BMAD local está presente; la prueba de una sesión Carson completa sigue pendiente. Autoguardado y biblioteca no están implementados. Keepsake no se ha generado ni validado. La existencia de un recurso upstream no acredita un runtime CIS nativo.
 
 ---
 
@@ -519,3 +528,14 @@ Bueno, yo pensé que Brain Selector iba a poder ser utilizado para de alguna man
 ~~~
 
 **Regla de uso posterior:** cada requisito extraído de estas fuentes debe conservar vínculo al pasaje literal que lo origina. Las transcripciones erróneas se mantienen aquí intactas; cualquier normalización semántica se registra en campo separado y nunca se presenta como literal.
+
+
+### SRC-PD-20261113-IDEACION-03 · instrucción A · 13-11-2026
+
+~~~text
+Bueno, vamos a empezar con una implementación que me permita acceder a una herramienta para lluvia de ideas madura, apoyada en las habilidades, el motor de Carson para la primera versión vía chat prescindiendo de los elementos extras que son Brain Selector, Rush HTML Keep Safe. Nada más acota los resultados de tu investigación en cuanto a estos dos elementos en las tareas provisionales de baja prioridad, las que van a estar más adelante en la secuencia en el frente
+
+El autoguardado tipo Office y la biblioteca indexada no tiene que ser al carácter, sino por ciclo. Hacer un guardado básico del proyecto en curso autonombrándolo si el usuario no aporta alguna denominación y etiquetándolo de manera esencial. Es decir como es un módulo de lluvia de ideas, lo que yo estoy tratando de hacer es disponer de una persistencia de los borradores de las ideas que trabaje a veces de manera incompleta o poco finalizada, así como de las más maduras que también podré trabajar de manera profunda con la ayuda de la herramienta. Y disponer de estos diseños hasta el fin de los tiempos sin tener miedo a que se pierdan esas ideaciones. Por cierto, qué bueno que me acuerdo. Este módulo tiene que conectarse con la prótesis cognitiva. Pero bueno, de eso me encargo después porque sería demasiado para mantener el hilo con tanta divergencia. Ahora, ¿por qué le pones continuidad AB? ¿Eso qué tiene que ver? Resuelve el autoguardado, por así decirlo, y la biblioteca de manera que tengamos un marco esencial apegado única y estrictamente a lo necesario. Creo que con estas instrucciones tienes lo necesario para completar el diseño y verificar y garantizar la integridad del mismo antes de la ejecución
+~~~
+
+**Regla de trazabilidad:** el bloque A se conserva literalmente; el diseño derivado no redefine su texto. A/B pertenece al control documental del ciclo, no al modelo de datos ni a la interfaz de Product Design.
