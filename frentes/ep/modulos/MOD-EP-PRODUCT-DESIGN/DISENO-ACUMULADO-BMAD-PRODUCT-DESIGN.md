@@ -161,3 +161,12 @@ La categoría futura agrupa las operaciones visoespaciales, la tríada de proyec
 ## 8. Estado de planeación
 
 Este archivo acumula decisiones, evidencia y límites para el posterior desglose del Frente Product Design. **No constituye una tarea provisional** ni las crea. Las tareas se configurarán cuando el operador indique vaciar el acumulado, ordenando primero lo esencial y dejando la categoría visoespacial para una etapa ulterior.
+
+
+---
+
+## Continuidad documental · conversación del 13 de noviembre de 2026
+
+- **Conversación íntegra:** [ChatGPT-Product Design-20261113-1212.md](./fuentes/ChatGPT-Product%20Design-20261113-1212.md) — export recuperado desde Downloads mediante RDC; 2.466 líneas y 137.831 bytes.
+- **Última salida del ciclo, literal:** [ULTIMA-SALIDA-CICLO-20261113-1201.md](./fuentes/ULTIMA-SALIDA-CICLO-20261113-1201.md) — separada del export sin reescritura y conservando su formato Markdown.
+- **Integridad de origen:** SHA-256 del archivo fuente en Downloads: `506947c3e0497fb5bb731193a9f6ade45d90f948d8a647e45d0643bf99ac7c7e`. Ambas copias remotas se compararon mediante read-back exacto.
