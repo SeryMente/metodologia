@@ -153,14 +153,14 @@ Esta reorientación, dictada por el operador el 2026-11-13, fija como arquitectu
 
 **Perfil conversacional:** [prompts/CARSON-CHAT.md](prompts/CARSON-CHAT.md). Blob de GitHub leído de vuelta: ef334c36d002e11c22b2de156fbff4775a3b56f3. El perfil está preparado; aún falta una prueba funcional completa con un tema real.
 
-**Documento general de diseño:** [SPRINT-GENERAL-PRODUCT-DESIGN.md](SPRINT-GENERAL-PRODUCT-DESIGN.md), blob actualizado/read-back 376348c0c184ed085b4f32ec2709706fcff0bee6.
+**Documento general de diseño:** [SPRINT-GENERAL-PRODUCT-DESIGN.md](SPRINT-GENERAL-PRODUCT-DESIGN.md), blob actualizado/read-back 4e376047ee315a2fc4c97858743a96f69436a26f.
 
 **Tareas provisionales derivadas:**
 - EP-TASK-009 — Carson conversacional en ChatGPT: en curso; perfil creado/read-back, prueba funcional pendiente.
 - EP-TASK-010 — Autoguardado por ciclo y biblioteca: pendiente; requiere desbloqueo de EP Vault y aceptación del backup EP.
 - EP-TASK-011 — Brain Selector: baja prioridad, posterior al núcleo.
 - EP-TASK-012 — Brainstorm HTML Keepsake: baja prioridad, posterior al núcleo.
-- Índice: [Tareas provisionales EP](../../📁%20🧭%20-%20Tareas%20provisionales/README.md), blob leído de vuelta 192894d04c978cdef9dade851d9b84e965363145.
+- Índice: [Tareas provisionales EP](../../📁%20🧭%20-%20Tareas%20provisionales/README.md), blob leído de vuelta 192894d04c978cdef9dade851d9b84e965363145. EP-TASK-008 quedó pendiente de reconciliación de alcance; su configuración histórica de Superpowers no se modifica.
 
 **Estado físico real:** BMAD Brainstorming local y Carson source fueron inspeccionados; 108 técnicas en 13 categorías observadas. SQLite FTS5 pasó una prueba en memoria. No se activó escritura local: la bóveda Cryptomator EP seguía bloqueada; no se escribió ideación fuera del workspace protegido. Respaldo y restauración de datos Product Design NO VERIFICADOS.
 
