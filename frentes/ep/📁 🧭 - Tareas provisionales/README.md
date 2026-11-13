@@ -555,3 +555,8 @@ La variable `EP_WORKSPACE_CRYPTOMATOR_RECOVERY_KEY` quedó promovida en EP Vault
 ## Revisión EP-TASK-003 · 2026-11-13 · diseño y rendimiento
 
 Rclone queda identificado como motor especializado de transferencia B2 invocado por RDC; Git sigue reservado a repositorios y Robocopy a la migración local inicial. OEP §143 registra la comparación de hardware, la condición de Kamatera (no hay prueba gratis sin tarjeta ni depósito), el uso de Cryptomator CLI/WinFsp y la propuesta V0.1 de EP Access Broker. No hay implementación ni cambio de aceptación: migración integral, pruebas de rendimiento, B2 read-back y aislamiento del agente siguen pendientes.
+
+
+## EP-TASK-003 · concesión de sesión y custodia de secretos · 2026-11-13
+
+`Novelocker` retirado como etiqueta no verificada; no es dependencia. EP Access Broker V0.1 se plantea como concesión temporal emitida por EP Vault y retenida en el broker, sin revelar token al modelo. ChatGPT Custom MCP/OAuth queda como integración futura dependiente del plan; Codex Personal Vault solo aplica a Codex Cloud. Kamatera se difiere por requisito de tarjeta/depósito. Formato canónico mínimo de sesión EP: decidir al final de la fase de diseño. Sin implementación ni cambio de aceptación.
