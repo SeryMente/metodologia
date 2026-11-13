@@ -162,6 +162,8 @@ Esta reorientación, dictada por el operador el 2026-11-13, fija como arquitectu
 - EP-TASK-012 — Brainstorm HTML Keepsake: baja prioridad, posterior al núcleo.
 - Índice: [Tareas provisionales EP](../../📁%20🧭%20-%20Tareas%20provisionales/README.md), blob leído de vuelta 192894d04c978cdef9dade851d9b84e965363145. EP-TASK-008 quedó pendiente de reconciliación de alcance; su configuración histórica de Superpowers no se modifica.
 
+**Última salida visible del ciclo:** [ULTIMA-SALIDA-PRODUCT-DESIGN-CARSON-20261113.md](fuentes/ULTIMA-SALIDA-PRODUCT-DESIGN-CARSON-20261113.md), blob de read-back e6ff4f16938c090a160021dabc5c4f1734a03ce4.
+
 **Estado físico real:** BMAD Brainstorming local y Carson source fueron inspeccionados; 108 técnicas en 13 categorías observadas. SQLite FTS5 pasó una prueba en memoria. No se activó escritura local: la bóveda Cryptomator EP seguía bloqueada; no se escribió ideación fuera del workspace protegido. Respaldo y restauración de datos Product Design NO VERIFICADOS.
 
 **Secuencia vigente:** probar Carson desde el chat; desbloquear EP Vault localmente para habilitar EP-TASK-010; abordar tareas 011 y 012 solo después y sin hacerlas requisito del primer release.
