@@ -34,12 +34,28 @@ El primer dominio funcional que debe quedar bien resuelto es Brainstorming. El r
 | PD-D-010 | La integridad del diseño completo se revisará antes de ejecutar la implementación. | CONFIRMADA |
 | PD-D-011 | La categoría futura se denomina Cognición visoespacial y proyección visual; por ahora solo se conservan su categoría y sus documentos de referencia. | CONFIRMADA · DIFERIDA |
 | PD-D-012 | Las tareas provisionales se construirán después del vaciado completo del diseño, replicando la estructura y rigurosidad observadas en el frente Harmonia y asociando cada tarea a los dictados verbatim que la sustentan. | CONFIRMADA · FASE POSTERIOR |
+| PD-D-013 | OpenCode no es necesario para el flujo objetivo de esta etapa: ChatGPT + RDC es la ruta principal. La existencia de OpenCode/configuración anterior no autoriza eliminarla ni la convierte en dependencia. | CONFIRMADA |
 
 ### 2.1 Corrección explícita sobre Superpowers
 
 Superpowers queda fuera de la arquitectura operativa objetivo. Su única función en este sprint es servir como corpus de referencia para reconocer habilidades o capacidades que el equipo pueda diseñar e implementar por cuenta propia. No es una dependencia, motor de ejecución, plugin, conjunto de skills instaladas para el producto ni método de trabajo de los agentes Product Design. La configuración histórica existente en OpenCode no se elimina ni se modifica por esta decisión; su retirada sería una actuación separada y no está incluida aquí.
 
-### 2.2 Decisiones que no deben reabrirse por error de documentación
+### 2.2 Alcance de Superpowers como referencia
+
+El inventario upstream que se conserva únicamente como referencia comprende estas 15 habilidades: brainstorming, using-git-worktrees, writing-plans, subagent-driven-development, executing-plans, test-driven-development, requesting-code-review, receiving-code-review, dispatching-parallel-agents, finishing-a-development-branch, systematic-debugging, verification-before-completion, diagnosing-superpowers, writing-skills y using-superpowers.
+
+Este inventario no se instala, ejecuta ni adopta. Su único uso permitido dentro del proyecto es reconocer qué capacidades podrían diseñarse e implementarse independientemente. No se heredan automáticamente sus instrucciones, herramientas, plugins, workflows o procesos.
+
+### 2.3 Matriz breve de procedencia de decisiones
+
+- PD-D-001, PD-D-002 y PD-D-006: instrucción A SRC-PD-20261113-ALCANCE-02; antecedente de selección visual en ChatGPT-Product Design-20261113-1212.md.
+- PD-D-003 y PD-D-004: instrucciones del operador en las exportaciones de Product Design del 13-11-2026 y selección expresa de todos los agentes CIS para V1.0.
+- PD-D-005 y PD-D-013: corrección del operador en SRC-PD-20261113-CORRECCION-01 y decisión previa de mantener ChatGPT + RDC sin OpenCode como requisito.
+- PD-D-007: instrucción A SRC-PD-20261113-ALCANCE-02 y especificación oficial BMAD V6.12.
+- PD-D-008 y PD-D-009: instrucción A SRC-PD-20261113-CORRECCION-01.
+- PD-D-010, PD-D-011 y PD-D-012: instrucción A SRC-PD-20261113-CORRECCION-01.
+
+### 2.4 Decisiones que no deben reabrirse por error de documentación
 
 No volver a proponer Superpowers como instrumento de ejecución. No volver a presentar el portal auxiliar como la interfaz solicitada. No exigir Brain Selector para iniciar una sesión de brainstorming. No pedir al operador que diseñe el Keepsake. No trasladar la categoría visoespacial a la primera etapa. No convertir la lista de capacidades en una secuencia rígida si el problema concreto requiere otra ruta.
 
@@ -321,18 +337,24 @@ Un elemento de biblioteca puede referenciarse desde más de un proyecto. **Propu
 
 ## 9. Proceso de Product Design y ruta de trabajo
 
-El catálogo funcional contempla las siguientes capacidades, sin imponer una secuencia rígida:
+El catálogo funcional documentado en las instrucciones previas contempla estas capacidades, sin imponer una secuencia rígida y distinguiendo diseño de producto de entrega de ingeniería:
 
-1. Brainstorming / ideación divergente y convergente.
-2. Product Discovery / comprensión del problema y contexto.
-3. Product Brief / definición inicial del producto.
-4. Requirements / PRD / requisitos, historias y criterios de aceptación.
-5. UX & Interface Design / arquitectura de información, flujos, estados y especificaciones.
-6. Prototyping / artefactos conceptuales, visuales, navegables o funcionales con su fidelidad identificada.
-7. Evaluation & Validation / contraste con requisitos, evaluación y pruebas.
-8. Planning & Execution / transferencia a implementación y seguimiento de resultados.
+| Capacidad | Alcance |
+|---|---|
+| Product Discovery y análisis | Comprender contexto, necesidades, problema, usuarios, evidencia, supuestos y restricciones. |
+| Brainstorming | Ideación divergente, técnicas creativas, exploración y convergencia. |
+| Definición de producto / Product Brief | Objetivo, propuesta de valor, usuarios, alcance, objetivos y métricas. |
+| Requirements / PRD | Requisitos funcionales y no funcionales, historias, reglas y criterios de aceptación. |
+| UX / UI | Arquitectura de información, flujos, estados, contenido, interacción y especificaciones visuales. |
+| Arquitectura | Estructura funcional y técnica del producto, límites, interfaces y decisiones. |
+| Prototipado | Artefactos conceptuales, visuales, navegables o funcionales con su fidelidad identificada. |
+| Planificación y descomposición | Plan de trabajo y tareas trazables a fuentes, asignadas a los frentes responsables. |
+| Implementación | Construcción del producto en el frente técnico responsable; no se presume que el módulo Product Design sea dueño del código de todos los proyectos. |
+| Pruebas / QA | Diseño y ejecución de pruebas pertinentes, criterios y evidencia. |
+| Revisión | Revisión de requisitos, diseño, cambios y resultados contra criterios acordados. |
+| Retrospectiva | Captura de hallazgos y mejoras del proceso tras un ciclo o entrega. |
 
-La elección de capacidad deriva de la necesidad real. No todo problema empieza con brainstorming ni todo producto debe recorrer todas las capacidades en un orden lineal.
+La primera línea —descubrimiento, análisis, brainstorming, definición, requisitos, UX y arquitectura— pertenece al núcleo de diseño. Planificación, tareas, implementación, QA, revisión y retrospectiva son capacidades de continuidad y entrega que pueden activarse cuando la instrucción las requiera y deben asignarse al FT que realmente tenga la responsabilidad. La selección deriva de la necesidad real; no todo problema empieza con brainstorming ni todo producto debe recorrer las capacidades en orden lineal.
 
 ### Primer hito funcional
 
@@ -455,7 +477,18 @@ Ninguna compuerta queda aceptada por la mera existencia de un archivo, una maque
 
 ## 14. Preparación de tareas provisionales — fase posterior
 
-No se crean tareas en este documento. Cuando se termine el vaciado del diseño y el operador revise su integridad:
+No se crean tareas en este documento. La capacidad de convertir dictados en tareas provisionales queda dentro del diseño objetivo y deberá funcionar así:
+
+1. Conservar cada instrucción del operador literalmente como fuente primaria, con secuencia, fecha disponible y procedencia; la normalización se guarda separada y nunca sustituye al original.
+2. Dividir la instrucción en fragmentos de requisito solo cuando sea necesario para preservar cobertura y trazabilidad.
+3. Extraer resultados, requisitos, restricciones, negaciones, condiciones, dependencias, autorizaciones y criterios de aceptación explícitos.
+4. Asignar cada requisito al frente/módulo/OCP existente que tenga la responsabilidad material; no crear FT/OCP por comodidad.
+5. Construir la relación fuente verbatim → requisito normalizado → tarea provisional → entregable → criterio de aceptación → evidencia.
+6. Crear el mínimo número de tareas que permita ejecutar y aceptar independientemente los resultados. No fraccionar una solución común artificialmente ni fusionar trabajos con responsabilidades o aceptaciones diferentes.
+7. No convertir sugerencias, ejemplos, posibilidades o elementos expresamente diferidos en trabajo obligatorio.
+8. Cada tarea conserva su propio README/núcleo y crónica acumulativa; el índice solo resume y enlaza. La tarea no amplía por sí sola la autorización de ejecución.
+
+Cuando se termine el vaciado del diseño y el operador revise su integridad:
 
 1. Inspeccionar el OCP del frente Harmonia en SeryMente/khora/docs/frentes/harmonia/.
 2. Revisar su índice de tareas, núcleos/README y la relación entre cada instrucción fuente verbatim y sus tareas derivadas.
