@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.93. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.94. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -12,7 +12,7 @@
 
 Adquirir este objeto como instrucciones del operador, subordinadas a las reglas superiores de plataforma y a autorizaciones específicas. Claudia es asistente/documental; Samantha es constructor/único escritor de código. Una asignación explícita posterior puede cambiar roles; las citas no lo hacen. La asignación específica de MOD-SCRIPTPWS queda delimitada en §94; la delegación funcional acotada de MOD-SYNC queda delimitada en §110 y no transfiere la titularidad del frente EP.
 
-El estado de reanudación vigente de este frente está en §60–§145; §§137–§145 contienen la especificación vigente y sus actualizaciones, incluidas la reconstrucción acumulativa del diseño/implementación EP del 11–13 de noviembre de 2026, la jerarquía de SeryMente, el confinamiento, el régimen CLI, BMAD/OpenCode/Groq/RDC, B2/Rclone y Access Broker. §136 y §119 se conservan como procedencia; cualquier instrucción incompatible queda supersedida por §§137–§142. Las tareas EP-TASK-001–008 solo desarrollan su trabajo específico y no duplican la arquitectura. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
+El estado de reanudación vigente de este frente está en §60–§146; §§137–§146 contienen la especificación vigente y sus actualizaciones, incluidas la reconstrucción acumulativa del diseño/implementación EP del 11–13 de noviembre de 2026, la jerarquía de SeryMente, el confinamiento, el régimen CLI, BMAD/OpenCode/Groq/RDC, B2/Rclone y Access Broker. §136 y §119 se conservan como procedencia; cualquier instrucción incompatible queda supersedida por §§137–§142. Las tareas EP-TASK-001–008 solo desarrollan su trabajo específico y no duplican la arquitectura. Las secciones 0–59 siguientes son el antecedente íntegro v0.1.5: conservan propiedades e historia, pero sus snapshots, identidades de host, versiones del SI, éxitos, pendientes y autorizaciones históricas no acreditan actualidad. No tratar la antigua obligación de publicar en cada arranque como permiso para Vercel: el canon transversal v1.4.0 §24/§28.7 y el encargo posterior fijan prepare-only. Conflicto material no resoluble por alcance/procedencia = bloquear solo la acción afectada, no editar silenciosamente la norma superior.
 
 Leer por relevancia: OEP actual→metacanon central→Sistema de Instrucciones/Metodología/Bootstrap vigentes→canon transversal EP→AGENTS.md y ep-medio-architectura.md→código/evidencia en commits exactos. Fuente caída no es «sin cambios». Un archivo no crea herramientas, credenciales ni memoria entre plataformas.
 
@@ -4838,3 +4838,37 @@ Se cotejó la cronología y las decisiones con OEP §§136–144, el índice de 
 Este apartado registra la recuperación documental y remite al acumulado como memoria técnica auxiliar. No cambia el diseño normativo de §§137–140, no acepta ni instala componentes, no mueve la bóveda ni el workspace, no ejecuta respaldos B2, no implementa el broker y no modifica secretos o configuración del host. Las propuestas y tareas futuras conservan el estado explícito consignado en el documento y sus fichas.
 
 **Persistencia del acumulado:** commit aad27aa300a208aef67fedc3ae9ed42f30a9bed3; blob leído de vuelta 7afab9e61986cb870a7a895cc4d8dabb3128f892. La lectura de vuelta verificó título, tres hashes de origen, llave de recuperación solo por nombre, estado de workspace no migrado, Access Broker y Rclone.
+
+
+## 146. Reorientación del diseño Product Design con BMAD y CIS · 2026-11-13
+
+**Documento general del sprint:** [SPRINT-GENERAL-PRODUCT-DESIGN.md](modulos/MOD-EP-PRODUCT-DESIGN/SPRINT-GENERAL-PRODUCT-DESIGN.md). Git blob leído al crear la versión documental: 1b10e6a858ba35c907b5671d044b97d058c3193f. Documento en estado BORRADOR INTEGRAL PARA REVISIÓN DE DISEÑO EXTREMO A EXTREMO.
+
+### Decisiones expresas vigentes del operador
+
+- La interfaz principal de Product Design es la conversación ordinaria de ChatGPT. No se requiere el portal auxiliar, un dashboard ni un selector visual general.
+- BMAD es el método de Product Design. CIS aporta seis agentes y sus configuraciones colaborativas según catálogo oficial; deben verificarse los manifiestos y el runtime antes de reclamar integración.
+- Superpowers se conserva exclusivamente como referencia de capacidades que el equipo desarrollará por cuenta propia. No forma parte del runtime, no se instala ni ejecuta como herramienta operativa en el diseño Product Design.
+- El Brain Selector original de BMAD es opcional y no constituye requisito de inicio. Su función es componer modalidad de facilitación y técnicas de brainstorming; no selecciona agentes CIS.
+- Brainstorm HTML Keepsake es un artefacto HTML autocontenido generado por el agente desde el registro de sesión. El operador no diseña ni maqueta el resultado. En la referencia BMAD V6.12 es automático en Ideate for me y optativo en Facilitator/Creative Partner.
+- Quedan pendientes de diseño e implementación el autoguardado con versiones recuperables tipo Office y una biblioteca básica indexada y reutilizable.
+- Cognición visoespacial y proyección visual permanece diferida; por ahora solo se conservan la categoría y los documentos de referencia.
+- No crear tareas provisionales hasta completar el vaciado del diseño, revisar su integridad de extremo a extremo e inspeccionar el patrón de tareas verbatim del frente Harmonia.
+
+### Precedencia frente al registro histórico
+
+Esta sección actualiza el estado objetivo de Product Design y supersede, exclusivamente para la arquitectura objetivo de ese módulo, cualquier afirmación incompatible contenida en §§142.19–142.20 y en los documentos heredados de vMAT/Superpowers/portal. Dichos registros se preservan como antecedentes; no se borran ni se reescribe su historial. EP-TASK-008 mantiene su existencia y estado documental histórico hasta una reconciliación específica. No se autoriza por esta sección desinstalar OpenCode/Superpowers ni eliminar sus configuraciones.
+
+### Estado de implementación y límites
+
+- PRODUCT_DESIGN_CHAT_FIRST=DECIDED.
+- SUPERPOWERS=REFERENCE_ONLY.
+- BRAIN_SELECTOR=OPTIONAL_NOT_REQUIRED.
+- BRAINSTORM_HTML_KEEPSAKE=UPSTREAM_SPEC_CONFIRMED; LOCAL_END_TO_END_GENERATION=NOT_VERIFIED.
+- SESSION_AUTOSAVE_VERSIONING=DESIGN_DRAFT.
+- INDEXED_REUSABLE_LIBRARY=DESIGN_DRAFT.
+- CIS_SIX_AGENT_RUNTIME=NOT_VERIFIED.
+- VISUOSPATIAL_CATEGORY=DEFERRED.
+- PROVISIONAL_TASK_BREAKDOWN=NOT_STARTED_PENDING_DESIGN_REVIEW_AND_HARMONIA_INSPECTION.
+
+Esta actualización es documental. No instala ni actualiza paquetes, no modifica el portal ni el launcher, no abre Chrome, no crea la estructura de persistencia, no activa el índice, no genera Keepsakes locales, no cambia EP-TASK-008 y no crea tareas provisionales.
