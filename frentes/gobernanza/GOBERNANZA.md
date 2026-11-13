@@ -1,6 +1,14 @@
-## Estado operativo vigente · C-GOBERNANZA-RETOMA-17 · 2026-11-13
+## Estado operativo vigente · C-GOBERNANZA-OBSERVABILIDAD-PRINCIPIOS-01 · 2026-11-13
 
-DUG Samantha v393 · NX-393m · Metacanon 1.31 · GOW 2.21 · 43 principios · 25 anexos. Responsabilidad primaria generación 22; corresponsable generación 20 preservado. FOL1 PREPARADO/NO ACTIVO; IPZ v0.7 baseline declarada, instalación nativa NO VERIFICADA; MCP-NORMATIVO DESACTIVADO. La interfaz actual decidida por el operador contiene solo SAM (versión/firma) y vigencia en días, horas y minutos; nomenclatura compacta y fuente temporal exacta pendientes. El campo DUG `document.updated_at` es requisito/propuesta pendiente; GESTIÓN sigue como término recomendado, no ratificado. Objetivo operativo: reducir la carga recurrente de retoma, control y persistencia sin debilitar integridad ni read-back.
+DUG Samantha v394 · NX-394m · Metacanon 1.31 · GOW 2.23 · 45 principios · 27 anexos. P044 establece la precedencia de la instrucción vigente del operador dentro del DUG, con límites obligatorios de plataforma, permisos, legalidad y seguridad; P045 normaliza la advertencia de colisión. Se incorpora el ámbito Observabilidad y retroalimentación y ART-033/034. Los títulos P001–P043 se ajustan a «Principio D · concepto»; los textos largos se preservan para revisión asistida, sin declarar atomicidad ni conformidad de longitud. Harmonia overlay/captura ampliada: especificados, NO implementados ni aceptados. FOL1 PREPARADO/NO ACTIVO; IPZ nativa NO VERIFICADA; MCP-NORMATIVO DESACTIVADO.
+
+## Resultado de la revisión del sistema de principios
+
+Auditoría mecánica de 45 principios: 45/45 títulos conformes; 45/45 microdescriptores dentro de 11–16 palabras; 36 enunciados superan 300 caracteres y 0 exceden cinco oraciones por recuento aproximado. La atomicidad y la redundancia requieren revisión semántica. Se entrega [herramienta local de lectura y retroalimentación](entregas/CHATGPT-v0.15/REVISION-PRINCIPIOS-DUG-v0.1.html); las notas permanecen locales hasta exportar JSON.
+
+## Ámbito de Observabilidad y retroalimentación
+
+ART-034 establece el contrato funcional para telemetría estructural, Registro de incidencias y retroalimentación contextual; la captura del contenido de conversaciones permanece vinculada a Gestión conversacional/ART-024. El OCP Harmonia revisado documenta telemetría de ciclos, pero no acredita aceptación natural E2E del overlay ni de la captura ampliada.
 
 ## Historial y auditorías anteriores
 

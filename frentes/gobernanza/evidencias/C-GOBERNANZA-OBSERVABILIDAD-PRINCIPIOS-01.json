@@ -1,0 +1,104 @@
+{
+  "schema": "governance-cycle-evidence/1",
+  "event": "C-GOBERNANZA-OBSERVABILIDAD-PRINCIPIOS-01",
+  "date": "2026-11-13",
+  "source": {
+    "repository": "SeryMente/metodologia",
+    "branch": "main",
+    "parent_commit": "9e8a607b3728b1d9be23a4b7e3cb361d6d5e6aa4",
+    "dug_blob_before": "844fc507a2a9a0bfc8f4e68884cca9f6d2912c96"
+  },
+  "responsibility": {
+    "front": "gobernanza",
+    "generation": 22,
+    "owner_alias": "chatgpt-C-GOBERNANZA-RETOMA-17-01a1d62f99ab7446a79ec75de7961ebd"
+  },
+  "changes": {
+    "principles_added": [
+      "P044",
+      "P045"
+    ],
+    "principles_retitled": 43,
+    "annexes_added": [
+      "ART-033",
+      "ART-034"
+    ],
+    "functional_area_added": "Observabilidad y retroalimentación",
+    "glossary_terms_added": [
+      "gow-region-del-flujo-de-trabajo",
+      "gow-observabilidad-y-retroalimentacion",
+      "gow-registro-de-incidencias",
+      "gow-retroalimentacion-contextual"
+    ],
+    "equivalence": {
+      "canonical": "Región del flujo de trabajo",
+      "equivalent": "región",
+      "interchangeable": true
+    }
+  },
+  "audit": {
+    "total": 45,
+    "titles_compliant": 45,
+    "mdp_compliant": 45,
+    "over_300": 36,
+    "over_300_ids": [
+      "P038",
+      "P003",
+      "P005",
+      "P037",
+      "P007",
+      "P008",
+      "P039",
+      "P040",
+      "P009",
+      "P010",
+      "P011",
+      "P012",
+      "P013",
+      "P014",
+      "P015",
+      "P031",
+      "P016",
+      "P017",
+      "P032",
+      "P035",
+      "P018",
+      "P034",
+      "P019",
+      "P020",
+      "P033",
+      "P021",
+      "P036",
+      "P022",
+      "P024",
+      "P025",
+      "P027",
+      "P028",
+      "P029",
+      "P030",
+      "P042",
+      "P043"
+    ],
+    "over_five_sentences_ids": [],
+    "atomicity": "REQUIRES_OPERATOR_SEMANTIC_REVIEW"
+  },
+  "harmonia": {
+    "existing_cycle_telemetry": "harmonia.event.v1 / client.cycle.started + client.cycle.completed",
+    "overlay_and_expanded_capture": "SPECIFIED_NOT_IMPLEMENTED_NOT_ACCEPTED",
+    "no_harmonia_files_modified": true
+  },
+  "limits": [
+    "Enunciados extensos preservados para evitar pérdida de salvaguardas.",
+    "El recuento de oraciones es heurístico; no demuestra atomicidad.",
+    "La herramienta guarda localmente y requiere exportación JSON; no tiene sincronización remota.",
+    "No se modificó código, control ni runtime de Harmonia."
+  ],
+  "expected_blobs": {
+    "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html": "00feff2a3b4c4f5397f515d63fc14901eb9bdcf8",
+    "frentes/gobernanza/GOBERNANZA.md": "ce04b4818e12a932b88a020a358cf783b1a33395",
+    "frentes/gobernanza/README.md": "df6ba55543de0ed5d698e868e378110ef51b4d9e",
+    "frentes/gobernanza/PENDIENTES.md": "faa90ddb88ed695aa9a90c46e6e6c6b3d6a244ea",
+    "frentes/gobernanza/entregas/CHATGPT-v0.15/REVISION-PRINCIPIOS-DUG-v0.1.html": "ed427c7717ad7cceb1eb9e80a3e7c0009d9747c8",
+    "frentes/gobernanza/cronica/C-GOBERNANZA-OBSERVABILIDAD-PRINCIPIOS-01.md": "7ae63b0311059a46b700167844e4c32822bf4e6b"
+  }
+}

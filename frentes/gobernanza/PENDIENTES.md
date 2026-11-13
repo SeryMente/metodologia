@@ -1,6 +1,6 @@
-## Estado vigente · C-GOBERNANZA-STREAMLINE-RESPONSABILIDAD-FOLIACION-20261111-01
+## Estado vigente · C-GOBERNANZA-OBSERVABILIDAD-PRINCIPIOS-01
 
-DUG v389/NX-389m · Metacanon 1.30 · GOW 2.19. Responsabilidad: autorización directa frente+actuación; relevo por defecto al asumir/retomar; corresponsabilidad solo expresa. Los folios son metadatos y no bloquean el trabajo. Registro A/B consolidado por cambio sustantivo. Sink preferente y fallback DUG canónico. GOV-TASK-013 cancelada; no medir tiempo. FOL1 PREPARADO/no activo; IPZ v0.10 candidata documental, campo nativo NO MODIFICADO/NO VERIFICADO; GOV-TASK-016 pendiente.
+DUG v394/NX-394m · Metacanon 1.31 · GOW 2.23 · 45 principios · 27 anexos. El ámbito Observabilidad y retroalimentación y los contratos ART-033/034 están definidos. Pendiente: revisión humana de atomicidad, redundancias y 36 enunciados >300 caracteres mediante la herramienta entregada; implementación y aceptación E2E de la ampliación Harmonia no ejecutadas. FOL1 PREPARADO/no activo; IPZ nativa NO VERIFICADA; MCP-NORMATIVO DESACTIVADO.
 
 ## Snapshot histórico del frente · sprint Sink local · 2026-11-10 · supersedido por rebaseline 2026-11-11
 
