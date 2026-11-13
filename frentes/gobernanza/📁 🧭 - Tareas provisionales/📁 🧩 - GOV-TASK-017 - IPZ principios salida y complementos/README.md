@@ -217,3 +217,44 @@ Los dos elementos decididos son metadatos de identidad y vigencia de SAM, no tel
 **Trabajo posterior indicado por el operador:** una vez concluida la definición del formato y tras revisar los principios pertinentes, preparar un anexo en el DUG con criterios generales de diseño para los elementos de salida. La elaboración de ese anexo no se inicia ni se canoniza con esta anotación.
 
 **Estado:** decisión de interfaz registrada; nomenclatura compacta y fuente temporal exacta de la última actualización pendientes de definición. No se modificó el DUG, ART-032, IPZ nativa, FOL1 ni MCP-NORMATIVO; no se creó ni canonizó un anexo.
+
+## Auditoría integral preliminar · Administración, telemetría y carga por ciclo · 2026-11-13
+
+**Fuente examinada:** DUG Samantha v393 · NX-393m, main, HTML blob 844fc507a2a9a0bfc8f4e68884cca9f6d2912c96; 43 principios y 25 anexos.
+
+**Término de una palabra recomendado, aún no ratificado:** **GESTIÓN** como categoría paralela a **TELEMETRÍA**. «Datos/metadatos de gestión» identifica los datos administrativos; «carga de gestión» identifica el trabajo de adquirirlos, validarlos, persistirlos y presentarlos. No reducir todo el concepto a «metadatos», pues incluye operaciones/procedimientos además de datos.
+
+**Requisito de independencia de infraestructura:** el documento DUG debe declarar su propia fecha/hora global de última actualización, en un campo embebido en el documento (propuesta técnica: updated_at, ISO 8601 UTC), actualizado en el mismo acto de cada revisión efectiva. El objeto document actual contiene nombre, versión, firma, evento, fuente y conteos, pero no fecha/hora global updated_at; workspace_directory.last_updated refiere al directorio taxonómico ART-031, no al DUG completo. El §37 humano aún determina la fecha por el último commit de la ruta GitHub, lo que no satisface la independencia pedida. La hora embebida permite calcular antigüedad con reloj fiable, pero no sustituye la comprobación de identidad/integridad del archivo. La modificación requiere autorización normativa separada.
+
+**Principios vinculados a la gestión y carga por ciclo:**
+- Alta frecuencia/carga: P008 (revisión GOW), P018 (refresco de ventana/contexto), P035 (continuidad y registro por ciclo), P020/P043 (eficiencia y proporcionalidad), P006 (autonomía sin trámite), P025 (anti-duplicación).
+- Inicio, retoma, handoff o cambio de responsabilidad: P017, P021, P037, P039, P040, P038.
+- Persistencia, identidad y trazabilidad: P041, P042.
+- Integridad, autoridad y escritura condicional: P001, P004, P005, P019, P022, P024.
+- Condicionales de operación/arquitectura: P010, P011, P012, P013, P016, P023, P031, P032, P033 y P036; aplicar solo al contexto que los activa. P027–P030 y P034 son ámbitos de producto específicos, no carga universal del marco.
+
+**Anexos relacionados:**
+- Responsabilidad/OCP/taxonomía: ART-015, ART-019, ART-020, ART-021, ART-029, ART-031.
+- Persistencia y registro: ART-012, ART-014, ART-022, ART-024.
+- Adquisición de marco e IPZ: ART-025, ART-027, ART-032; ART-026 fundamenta PAI.
+- Continuidad/operación específica: ART-007 (handoff), ART-010 (errores de terminal), ART-013 (RDC), ART-028 (persistencia EP local/remota para consumidores específicos), ART-030 (workspace local).
+- Infraestructura GitHub específica a abstraer/revisar para migración: ART-016, ART-017, ART-018. ART-008/009/011 son objetos de infraestructura o procedimiento de alcance especializado, no requisitos generales de cada ciclo.
+
+**Reglas/metacanon de mayor impacto en trabajo recurrente:**
+- §4: diez componentes actuales de salida/ciclo, incluyendo identidad/gobierno, delta, evidencia, pendientes, viabilidad, pronóstico, siguiente acción y persistencia.
+- §§22–23: versión/frescura visible y recuperación del gobierno central + OCP con delta de gobierno en cada ciclo.
+- §37: refresco por ciclo sustantivo; consulta GitHub/helper de actualidad y edad de actualización derivada de la ruta.
+- §44 + P008: revisión de GOW al inicio y comprobación al cierre.
+- §28 + P035 + ART-024: registro consolidado por ciclo sustantivo, A/B disponibles, crónica y read-back; no por cada llamada/acuse.
+- §38: el control de responsabilidad se revisa al asumir/retomar o cambiar el asiento, y expresamente no se repite cada ciclo si nada cambió.
+- §42.5: declara preflight obligatorio en cada ciclo activo. Existe tensión directa con §38.2; requiere reconciliación.
+- ART-025: exige leer los cinco principios CNP íntegros en cada turno.
+- ART-027: usa MDP para reconocer pertinencia y exige texto íntegro solo de los principios pertinentes; telemetría Sink limitada a invocaciones reales satisfactorias.
+- ART-032: mantiene cinco partes canónicas y exige revisión secuencial en cada ciclo. La candidata IPZ v0.14 de seis partes continúa siendo propuesta, no modifica ART-032 ni el campo nativo.
+- §52 humano: medición objetiva del procesamiento por ciclo y, cuando sea observable, operaciones, llamadas, reintentos, fallos y esperas; corresponde a instrumentación/telemetría, no a campos visibles de salida.
+
+**Divergencia de representación dentro del DUG:** el HTML renderiza el contenido humano sections[].content; el propio DUG declara que el contenido humano precede a la representación estructurada de máquina. La proyección estructurada metacanon.sections difiere del contenido humano en §§4, 37 y 52: incorpora un contrato de telemetría en §4 que no aparece igual en la sección humana; prohíbe d.h.m. en §37 mientras el texto humano lo permite; y marca §52 como desactivado mientras el texto humano contiene medición objetiva activa. La representación estructurada requiere reconciliación; no tratarla como fuente normativa competidora.
+
+**Consecuencia para el objetivo de rendimiento:** separar cuatro frecuencias: (1) por ciclo, (2) solo al iniciar/retomar/cambiar responsabilidad, (3) solo ante evento documental/escritura, y (4) backend/telemetría. Candidatos de mayor carga repetitiva: §§22–23/37, P008/§44, P018, P035/§28, ART-025 y ART-032. La persistencia de adjuntos ART-014 y los controles P037/P039 deberían activarse por evento, no por cada respuesta sin delta. No cambiar reglas hasta contar con autorización explícita y una propuesta de reconciliación.
+
+**Estado:** inventario y conflictos documentados; no se modificó el DUG, sus principios/anexos, ART-032, IPZ nativa, FOL1 ni MCP-NORMATIVO. El término GESTIÓN es recomendación pendiente de ratificación. El campo updated_at y la conciliación de §4/§37/§52 son requisitos/propuestas pendientes de enmienda normativa.
