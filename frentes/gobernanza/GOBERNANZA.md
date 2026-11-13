@@ -798,3 +798,64 @@ Además del DUG, la arquitectura utiliza elementos que se materializan fuera de 
 
 SAM: v393 · NX-393m
 Antigüedad desde la última actualización: **NO VERIFICADA**; el DUG todavía no contiene la fecha/hora global independiente que has solicitado.
+
+
+---
+
+## Retoma 18 · C-GOBERNANZA-RETOMA-18 · 2026-11-13
+
+**Responsabilidad:** retoma primaria transferida de generación 22 a 23 por instrucción expresa del operador. Se conserva sin cambios la corresponsabilidad activa de generación 20; roster activo 2/2. FOL1 permanece PREPARADO/NO ACTIVO; no se asignan folios globales, SES ni OCP.
+
+**Export original:** [ChatGPT-Gobernanza-20261113-1456.md](documentos/originales/ChatGPT-Gobernanza-20261113-1456.md). Origen: `C:\Users\fila4\Downloads\ChatGPT-Gobernanza-20261113-1456.md`; dispositivo `PC10RCIF4EI4`, RDC device `5182a6bc-db2c-452e-a52a-95d63f6c74d6`. Tamaño: 81,694 bytes. SHA-256 de origen: `AD3ADFB310FCF4D170FEC2153A866796C3324EC6499424C3CF86835631842110`. Git blob: `021e0b968994fa6b34ab9c4839dcb62fd8e5938c`.
+
+**Contexto para continuar:** DUG Samantha v396 · NX-396m; Metacanon 1.31; GOW 2.24; 45 principios y 27 anexos. La lista de principios y su mecanismo de revisión están integrados en el mismo HTML canónico. La llave Groq anterior expuesta no debe reutilizarse; el dictado con credencial nueva queda pendiente de prueba real. IPZ nativa NO VERIFICADA; FOL1 PREPARADO/NO ACTIVO; MCP-NORMATIVO DESACTIVADO.
+
+**Límite y continuidad:** esta retoma persiste el export original sin transformación, reproduce su última salida y actualiza el estado/control del frente. No modifica DUG, GOW, IPZ nativa, FOL1, MCP-NORMATIVO, código, hosts ni otros frentes.
+
+### Última salida del último ciclo · reproducción literal
+
+No utilizaré la llave incrustada en Athanor. Está expuesta en un documento público de GitHub y debe tratarse como comprometida; copiarla al DUG perpetuaría la exposición y podría permitir consumos no autorizados de tu cuenta.
+
+Conservaré el mecanismo Groq/Whisper, pero la llave se introducirá de forma privada en el propio DUG, almacenada solo en el navegador. Para usarlo de forma segura hay que revocar la anterior y generar una nueva. No la incluiré en el HTML, en las notas ni en GitHub.
+
+(GitHub y copia física verificados)
+
+### DUG v396 · NX-396m
+
+**Un solo documento operativo.** La revisión independiente v0.1 y v0.2 fue retirada.
+
+El DUG integra ahora:
+
+- Los 45 principios y sus 27 anexos.
+- Estado por principio: sin revisar, revisado o pendiente.
+- Avance global y navegación al siguiente principio.
+- Valoración 👍 / 👎 y comentarios individuales.
+- Dictado continuo en español, pausa, reanudación y avance por instrucciones habladas.
+- Groq Whisper como alternativa directa de dictado.
+
+Se conserva el identificador local de las notas anteriores (`samantha-review-v340`). Groq utiliza el endpoint oficial y `whisper-large-v3-turbo`. [Speech to Text](https://console.groq.com/docs/speech-to-text?utm_source=chatgpt.com); [API Reference](https://console.groq.com/docs/api-reference?utm_source=chatgpt.com)
+
+**Ubicaciones**
+
+1. [github.com](https://github.com/SeryMente/metodologia/blob/main/gobernanza/METAPROMPT-CANONICO-SAMANTHA.html?utm_source=chatgpt.com)
+2. Copia física:
+   `C:\Users\fila4\Desktop\SeryMente\Metodologia\gobernanza\METAPROMPT-CANONICO-SAMANTHA.html`
+
+**Integridad:** blob SHA Git de ambas copias: `038e29762038c96afa7291b86ba4c12fab338ff0`. El SHA coincidió en lectura de vuelta. JavaScript: sintaxis validada. No se ha probado una transcripción real con micrófono ni API.
+
+### Credencial Groq
+
+La llave pública anterior no fue copiada. Debes revocarla y crear una nueva. El documento incluye un modal para pegarla y guardarla localmente; no se publicará en GitHub ni se incluirá en las exportaciones. El dictado Groq queda integrado, pero pendiente de probar con la nueva credencial.
+
+---
+
+**Registro IPZ**
+
+- IPZ: v0.7 · antigüedad: NO VERIFICADO.
+- DUG: Samantha v396 · NX-396m · antigüedad: NO VERIFICADO.
+- CONV / OCP: folios NO ASIGNADOS.
+- CICLO: C-GOBERNANZA-REVISION-INTEGRADA-01 · folio global NO ASIGNADO.
+- A / B: folios NO ASIGNADOS.
+- FOL1: PREPARADO / NO ACTIVO. UUIDv7 local: NO REGISTRADO.
+
+La lista y su mecanismo de revisión ya comparten un único HTML canónico, tanto en GitHub como en la carpeta física indicada.
