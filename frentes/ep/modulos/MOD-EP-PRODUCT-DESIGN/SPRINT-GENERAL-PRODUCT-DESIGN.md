@@ -44,7 +44,7 @@ Superpowers queda fuera de la arquitectura operativa objetivo. Su única funció
 
 El inventario upstream que se conserva únicamente como referencia comprende estas 15 habilidades: brainstorming, using-git-worktrees, writing-plans, subagent-driven-development, executing-plans, test-driven-development, requesting-code-review, receiving-code-review, dispatching-parallel-agents, finishing-a-development-branch, systematic-debugging, verification-before-completion, diagnosing-superpowers, writing-skills y using-superpowers.
 
-Este inventario no se instala, ejecuta ni adopta. Su único uso permitido dentro del proyecto es reconocer qué capacidades podrían diseñarse e implementarse independientemente. No se heredan automáticamente sus instrucciones, herramientas, plugins, workflows o procesos.
+Este inventario no se instala, ejecuta ni adopta. Su único uso permitido dentro del proyecto es reconocer qué capacidades podrían diseñarse e implementarse independientemente. No se heredan automáticamente sus instrucciones, herramientas, plugins, workflows o procesos. El Visual Companion de Superpowers es una interfaz opcional, no una habilidad del catálogo; queda fuera del diseño actual porque no se ha solicitado una interfaz de brainstorming y la interacción será conversacional.
 
 ### 2.3 Matriz breve de procedencia de decisiones
 
@@ -120,9 +120,9 @@ Los seis agentes que integran el alcance exploratorio de CIS son:
 
 Caravaggio tiene referencias de menú PL (plan de presentación/pitch), CR (crítica de deck o visual), EX (guion explicativo) y VM (selección de recurso visual). No se declara que esos workflows estén instalados o aceptados localmente solo por existir el agente.
 
-CIS también ofrece configuraciones colaborativas Creative Squad y Design Pair. Sus integrantes, reglas y comportamiento deben leerse directamente de la configuración oficial; no se infieren por los nombres.
+CIS también ofrece configuraciones colaborativas Creative Squad y Design Pair. Sus integrantes, reglas y comportamiento deben leerse directamente de la configuración oficial; no se infieren por los nombres. El repositorio upstream describe CIS como un módulo demostrativo de agentes/workflows al que se incorporan capacidades progresivamente. No debe tratarse como producto completo ni asumir que todos sus flujos están listos, instalados o probados.
 
-**Regla de cobertura:** Product Design V1.0 no se limita a Carson. La integración y evaluación debe abarcar los seis agentes y las configuraciones colaborativas que la fuente oficial confirme, distinguiendo siempre entre documentación upstream, instalación local, invocación observable y aceptación.
+**Regla de cobertura:** Product Design V1.0 no se limita a Carson. La integración y evaluación debe abarcar los seis agentes y las configuraciones colaborativas que la fuente oficial confirme, distinguiendo siempre entre documentación upstream, instalación local, invocación observable y aceptación. En la arquitectura ChatGPT + RDC, los agentes CIS se adaptan como perfiles y procedimientos conversacionales propios, apoyados en las fuentes oficiales locales. No se afirmará que se está ejecutando un runtime CIS nativo ni subagentes independientes cuando solo se haya leído o aplicado su documentación.
 
 ---
 
