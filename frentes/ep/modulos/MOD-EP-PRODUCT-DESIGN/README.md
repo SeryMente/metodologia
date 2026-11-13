@@ -111,3 +111,23 @@ El diseño acumulado, el flujo local ChatGPT + RDC, el portal CIS/Brain Selector
 Las ideas recuperadas de Notion sobre cognición visoespacial, los once esquemas, la TCV, D-PROY y la taxonomía emergente se conservan en [FUENTES-CAPACIDADES-VISOESPACIALES.md](./FUENTES-CAPACIDADES-VISOESPACIALES.md). Esa categoría queda diferida a una etapa posterior, sin tareas provisionales creadas.
 
 **Corrección de nomenclatura:** «vMAT» fue un error de transcripción por dictado; la referencia pretendida es BMAD. No es una denominación de producto aprobada.
+
+
+## Diseño vigente del sprint · 2026-11-13
+
+**Documento general actual:** [SPRINT-GENERAL-PRODUCT-DESIGN.md](./SPRINT-GENERAL-PRODUCT-DESIGN.md). Estado: borrador integral para revisión de diseño extremo a extremo; aún no autoriza implementación ni crea tareas provisionales.
+
+Esta reorientación, dictada por el operador el 2026-11-13, fija como arquitectura objetivo:
+
+- ChatGPT en conversación ordinaria como interfaz principal. No se requiere el portal auxiliar ni una nueva interfaz de selección.
+- BMAD como método de Product Design y CIS como catálogo de seis agentes; la selección se resuelve en el chat, sin desplegar el catálogo completo por defecto.
+- Superpowers exclusivamente como referencia para habilidades que se desarrollarán por cuenta propia. No forma parte del runtime ni del proceso operativo de Product Design.
+- Brain Selector oficial como recurso opcional no requerido; selecciona modalidad y técnicas de brainstorming, no agentes CIS.
+- Brainstorm HTML Keepsake como resultado HTML autocontenido generado por el agente a partir de la sesión. El operador no diseña ni maqueta este resultado.
+- Diseño pendiente de autoguardado y versiones recuperables tipo Office, más biblioteca básica indexada y reutilizable.
+- Cognición visoespacial y proyección visual diferida; solo se conservan sus documentos y categoría.
+- Desglose de tareas posterior al vaciado y revisión integral del diseño, replicando el arreglo verbatim del frente Harmonia.
+
+**Precedencia documental:** si los apartados históricos anteriores de este README, DISENO-ACUMULADO-BMAD-PRODUCT-DESIGN.md, ESPECIFICACION-OPERATIVA-VMAT.md, EP-TASK-008 u OEP §§142.19–142.20 contradicen el diseño vigente aquí enlazado, deben leerse como antecedentes de la línea anterior, no como decisiones objetivo vigentes. Se preservan sin borrado ni cambio de estado hasta una reconciliación documental explícita.
+
+**Límite:** el documento general es un borrador de diseño. No se ha instalado CIS, construido autoguardado, creado la biblioteca, generado un Keepsake local ni ejecutado una prueba integral.
