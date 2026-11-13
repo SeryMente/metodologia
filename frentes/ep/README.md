@@ -3,7 +3,7 @@
 **Repositorio propietario:** `SeryMente/metodologia` (privado).  
 **Rama canónica vigente:** `main`; las ramas documentales anteriores se conservan como antecedentes y no prevalecen sobre `main`.
 
-**OEP vigente:** v0.3.101 (`OEP.md`), leído de vuelta desde `main`. La raíz local del workspace es `SeryMente/`: repositorios como carpetas hijas directas, dentro los frentes, y cada frente con `ambitos/` y `modulos/`. No utilizar `SeryMente/Repositorios/`.
+**OEP vigente:** v0.3.105 (`OEP.md`), leído de vuelta desde `main`. La raíz local del workspace es `SeryMente/`: repositorios como carpetas hijas directas, dentro los frentes, y cada frente con `ambitos/` y `modulos/`. No utilizar `SeryMente/Repositorios/`.
 
 
 - [Persistencia DTC EP/MCP-OCP](OEP.md#95-persistencia-dtc-integrada-epmetodologia-y-continuidad-mcp-ocp--v0325--vcu-ep-v27): continuidad multiubicación EP/Metodología y estado operativo MCP-OCP, con autoridad técnica propia de MCP-OCP.
@@ -89,3 +89,10 @@ Estado documental añadido: OEP v0.3.74, §§140–141. La organización física
 - [Salida literal del último ciclo](documentos/RETOMA-EP-2026-11-13-1439.md): reproducción exacta de la respuesta final del export.
 - [OEP §147](OEP.md#147-retoma-de-conversación-y-propuesta-ep-vault-v2--2026-11-13--1439-america-mexico_city): registra la continuidad y el alcance propuesto EP Vault v2.
 - [EP-TASK-004](./📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20EP-TASK-004%20-%20Reconstrucción%20de%20bóveda/README.md): adenda de alcance y gates, sin aceptación de implementación.
+
+## EP Vault v2 · diseño y sprint · 2026-11-13
+
+- [Diseño integral EP Vault v2](documentos/DISENO-INTEGRAL-EP-VAULT-V2.md): alcance, auditoría del código local, arquitectura de custodia/uso delegado, sesiones por tipo de ubicación, dead-man, Cryptomator y pruebas de aceptación. Estado: borrador integrado para revisión; construcción no despachada.
+- [Sprint EP Vault v2](documentos/SPRINT-EP-VAULT-V2.md): ocho paquetes EV2-01…EV2-08 dentro de EP-TASK-004, cada uno con criterio fuente del operador verbatim. Estado: programado, bloqueado antes de construcción por P012/P013.
+- [OEP §150](OEP.md#150-diseño-integral-y-sprint-ep-vault-v2--2026-11-13): auditoría, compuertas, hashes y estados.
+- [EP-TASK-004](./📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20EP-TASK-004%20-%20Reconstrucción%20de%20bóveda/README.md): adenda de auditoría y continuidad.
