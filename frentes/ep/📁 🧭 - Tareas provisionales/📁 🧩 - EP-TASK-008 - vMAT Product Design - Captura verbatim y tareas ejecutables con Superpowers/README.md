@@ -157,3 +157,55 @@ Completar la prueba de carga/discovery de Superpowers desde OpenCode `1.19.5` y 
 - **Seguridad:** no se imprimió ni persistió la API key. No se alteró la política de ejecución del sistema; el bypass usado se limitó al proceso PowerShell de la prueba.
 - **Condición de desbloqueo:** abrir/desbloquear EP Vault localmente bajo `CENTRAL\fila4` y repetir la prueba breve de descubrimiento de skills. Este requisito depende de la autenticación local del operador y no debe eludirse mediante lectura de DPAPI desde otra identidad.
 - **Siguiente acción:** completar enumeración observable de skills Superpowers en OpenCode y prueba sintética de flujo vMAT; mantener `EP-TASK-008=en_curso` hasta entonces.
+
+
+---
+
+## Retoma de contexto — conversación 2026-11-13
+
+**Fuente conversacional completa:** [ChatGPT-PRODUCT-20261113-0951.md](../../modulos/MOD-EP-PRODUCT-DESIGN/fuentes/ChatGPT-PRODUCT-20261113-0951.md). El archivo exportado desde Downloads fue incorporado íntegro: 1.320 líneas; lectura de vuelta en GitHub coincidente con el texto recuperado mediante RDC.
+
+**Contexto operativo para continuidad**
+- «Frente Product Design» es la invocación de `MOD-EP-PRODUCT-DESIGN`, módulo funcional subordinado a EP. No es un FT ni un OCP independiente.
+- `EP-TASK-008` continúa `en_curso`. La configuración de Superpowers v7.0.2 y sus 15 directorios de skills están observados; el descubrimiento efectivo de skills en runtime sigue `NOT_VERIFIED`. El gate documentado es abrir EP Vault localmente bajo `CENTRAL\fila4` y repetir la prueba, sin eludir DPAPI ni exponer credenciales.
+- El último intercambio no valida «vMAT» como denominación formal. La respuesta reconoce que se asumió sin confirmación; no ampliar ni tratar ese término como nombre aprobado hasta que el operador lo aclare.
+
+### Instrucción de retoma — verbatim
+
+```text
+Frente Product Design
+
+ChatGPT-PRODUCT-20261113-0951.md
+
+Persiste conversacion, esta en  downloads, por rdc.
+
+No tardes mucho, con cuestiones burocráticas innecesarias. Mantén la burocracia relacionada al marco de trabajo, limitada a estrictamente lo esencial. Es absurdo el tiempo que nos estamos tardando en resolver los ciclos de retoma de responsabilidad, etcétera.
+
+At quiere cuidadosamente el contexto tomando el lugar del modelo en la conversación, adoptando su postura, su tono, su Lugar De manera que la transición sea sin costuras entre una conversación y otra.
+
+, te pido que durante la conversación seas amigable, conciso, sobrio, poco extenso en lo que tiene que ver con la forma en la que utilizas el lenguaje en tus salidas
+
+Finalmente, repite la salida del último ciclo en la conversación que te pido que adjuntes al frente de trabajo de manera literal y textual en el mismo formato visual que lo tenía el modelo en la conversación original.
+```
+
+### Salida del último ciclo — reproducción literal
+
+El término **vMAT** salió literalmente de tu mensaje anterior. Escribiste:
+
+> «mi vMAT de product design»
+
+Y volviste a mencionarlo como «implementación de vMAT de product design».
+
+Yo lo interpreté como el nombre que querías darle a la implementación y lo propagé a la especificación, la tarea EP-TASK-008 y el OEP.
+
+**Pero cometí un error de interpretación:** asumí que era un acrónimo intencional sin comprobarlo contigo. No sé qué significa vMAT, no conozco una expansión autorizada y no proviene de Superpowers ni de BMAD.
+
+Por tanto, no debería haberlo establecido como denominación formal.
+
+¿Fue un error de transcripción por voz o realmente querías utilizar ese término?
+
+### Registro de persistencia
+
+- Conversación fuente archivada en `MOD-EP-PRODUCT-DESIGN/fuentes/`.
+- Última respuesta del modelo reproducida en este núcleo sin resumir ni reescribir.
+- La continuidad de trabajo permanece en `EP-TASK-008`; no se creó una tarea paralela ni se alteró el estado de aceptación Superpowers.
