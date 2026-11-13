@@ -170,3 +170,29 @@ Esta ficha es una tarea provisional de planificación y persistencia. No canoniz
 **Estado y límites:** el nuevo anexo es una propuesta documental enlazada desde la candidata, no está todavía incorporado al DUG ni canonizado como ART-033. La ruta/ID final se resolverá al retomar AT y validar el catálogo. ART-032, DUG v393, GOW y controles ajenos no se modificaron; AT sigue aplazada. IPZ v0.14 no está instalada en el campo nativo; v0.13 y las versiones anteriores se preservan.
 
 **Próxima etapa normativa:** cuando el operador retome AT, incorporar formalmente el anexo específico al DUG, validar su ID/ancla y catálogo, resolver la compatibilidad de ART-032 con la composición de seis partes y sustituir el enlace provisional por el ancla canónica estable. Hasta entonces, v0.14 y su anexo son candidatos documentales, no instrucciones nativas instaladas.
+
+
+## Criterio rector del operador · formato de salida como interfaz exclusiva · 2026-11-13
+
+**Decisión expresa:** el formato de salida visible ciclo a ciclo es única y exclusivamente una interfaz para el operador. La presencia de cualquier elemento debe justificarse por su utilidad o necesidad pragmática para el operador: comprender, decidir, verificar, localizar o retomar el trabajo. Un dato que un subsistema necesita para telemetría no pertenece por ese solo motivo a la interfaz.
+
+**Separación funcional:**
+- La telemetría puede permanecer íntegramente en backend mediante contratos y eventos técnicos propios.
+- Un dato técnico solo se expone en la salida cuando aporta utilidad directa al operador o resulta necesario para su actuación.
+- No duplicar en la respuesta campos de instrumentación, payloads, event_id, esquemas/productores, eventos Sink/Harmonia, marcas temporales de auditoría ni trazas internas por el mero hecho de que existan en telemetría.
+- Los resultados o fallos técnicos pueden traducirse a información comprensible para el operador cuando afecten el resultado, la confianza, una decisión o la continuidad.
+
+**Filtro aplicado al inventario de §4.1:**
+- Referencia metodológica: referencia DUG breve; frecuencia de impresión pendiente de decisión del operador.
+- Frente/OCP/rol/alcance: condicional a inicio, retoma, cambio de frente o incidencia de alcance.
+- Identidad/correlación: no imprimir por rutina; mostrar solo referencias reales útiles para localizar o recuperar.
+- Estado/delta y resultado: conservar como información central de interfaz.
+- Viabilidad/avance/aceptación: integrar en el estado del resultado; ampliar ante hitos o decisiones relevantes.
+- Evidencia/procedencia/integridad: mostrar lo necesario para confiar, comprobar o actuar; detalle técnico bajo demanda o cuando sea material.
+- Pendientes/riesgos/bloqueos: mostrar solo los que afecten una acción o requieran decisión.
+- Siguiente acción: conservar cuando exista una acción útil que comunicar.
+- Persistencia/continuidad: mostrar cuando haya un cambio de custodia, verificación o punto de retoma relevante; no repetir estados invariables.
+
+**Estado de esta decisión:** criterio de depuración aprobado por el operador y registrado para orientar el análisis. La clasificación anterior es filtro de trabajo, no redacción normativa definitiva. No modifica DUG §4, ART-032, IPZ nativa, FOL1 ni MCP-NORMATIVO; no canoniza el anexo IPZ v0.1 ni la candidata v0.14. La telemetría existente conserva sus obligaciones técnicas donde corresponda.
+
+**Pendiente para la siguiente revisión:** resolver si la etiqueta breve DUG (versión/firma) debe aparecer en cada respuesta o solo al iniciar/retomar un frente, ante cambios de versión o cuando exista incertidumbre material. No asumir una frecuencia sin decisión del operador.
