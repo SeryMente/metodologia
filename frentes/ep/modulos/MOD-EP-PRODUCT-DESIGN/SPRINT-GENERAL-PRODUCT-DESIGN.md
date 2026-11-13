@@ -138,6 +138,41 @@ La referencia BMAD V6.12 define tres modalidades:
 
 La modalidad se conserva durante toda la sesión. No se debe cambiar de modo silenciosamente a mitad de una lluvia de ideas.
 
+### 5.2.1 Carson: identidad, menú y motor real
+
+Carson no es un modelo de inteligencia artificial separado ni un motor de ideación independiente. En la suite Creative Intelligence Suite (CIS), Carson aporta identidad, personalidad, reglas de facilitación y configuración; su entrada de menú es **BS — Guided Brainstorming Session**, que delega en la habilidad central de BMAD **bmad-brainstorming**.
+
+La activación funcional documentada es:
+
+1. Cargar las instrucciones y la configuración del agente Carson.
+2. Incorporar el contexto persistente del proyecto y las reglas de Product Design.
+3. Resolver la configuración de BMAD Core.
+4. Adoptar la identidad del coach Carson, adaptando su estilo de comunicación a la experiencia de trabajo acordada.
+5. Entrar en la sesión guiada y cargar el procedimiento central de brainstorming.
+6. Consultar el catálogo de técnicas únicamente según la necesidad de la sesión.
+
+La implementación objetivo no necesita un segundo modelo local. ChatGPT conduce la conversación y ejecuta intelectualmente el rol; RDC consulta los archivos locales, recupera instrucciones, registra resultados y materializa los artefactos.
+
+### 5.2.2 Diferencia entre los catálogos de técnicas
+
+Las fuentes históricas de CIS describen 36 técnicas en 7 categorías. La instalación local de BMAD Core 6.12.4, en cambio, fue reportada con 108 técnicas en 13 categorías; la consulta de categorías mediante brain.py se había ejecutado y observado en el ciclo anterior.
+
+Para el diseño se establece como **fuente operativa prevista** el catálogo del Core local de 108 técnicas, sujeto a una nueva comprobación de versión y contenido antes de implementar. La cifra antigua de CIS se conserva como procedencia histórica, no se suma al catálogo actual ni se presenta como si fuera la misma revisión. El agente no debe enumerar las 108 técnicas al operador: debe consultar solo las categorías y métodos que correspondan al objetivo y recomendar un conjunto pequeño y justificable.
+
+### 5.2.3 Selección y progresión de la sesión
+
+La secuencia de trabajo documentada para una sesión es:
+
+1. Delimitar tema, objetivo, contexto y restricciones.
+2. Proponer una primera ronda pequeña, normalmente de tres o cuatro técnicas adecuadas.
+3. Aplicar cada técnica sin mezclar generación y evaluación de forma prematura.
+4. Registrar ideas, preguntas, direcciones, supuestos y decisiones, identificando autoría cuando el modo lo requiera.
+5. Cuando una línea se agote, cambiar de técnica o de dominio creativo.
+6. Cerrar la divergencia antes de iniciar la convergencia.
+7. Seleccionar el método de convergencia apropiado y producir la síntesis.
+
+La síntesis posterior puede añadir conexiones no obvias, pero debe distinguirlas de las ideas que el operador produjo.
+
 ### 5.2 Técnicas
 
 BMAD Core dispone de un catálogo consultable por categorías y técnicas. La referencia oficial V6.12 describe 108 técnicas en 13 categorías en el selector original observado en el entorno. La existencia del catálogo no significa que el operador deba leerlo completo ni seleccionar entre 108 tarjetas.
@@ -171,6 +206,17 @@ La especificación indica que cada técnica puede recibir un tratamiento visual 
 | Ideate for me | Keepsake automático. | Generarlo al completar la síntesis, sin exigir diseño ni composición al operador. |
 
 La generación del Keepsake es una operación de síntesis visual de cierta carga, no una exportación trivial. Si el entorno no puede producirlo de manera fiable, debe informar del fallo y conservar la sesión; no debe simular que el HTML existe.
+
+### 6.5 ¿Está disponible «de caja» en nuestra instalación?
+
+Hay que separar dos afirmaciones:
+
+- **La capacidad está definida upstream:** BMAD V6.12 describe el resultado que se debe generar, el formato autocontenido y cuándo ofrecerlo.
+- **La generación completa no está acreditada en Product Design local:** no se ha presentado una prueba que vaya desde una sesión real, a través de su memlog persistido, hasta un brainstorm.html generado, validado y abierto en el host del operador.
+
+Por eso no se debe vender como un artefacto ya instalado y listo para abrir. El usuario no diseñará el documento, pero sí se requiere adaptar y verificar la generación dentro del flujo ChatGPT + RDC. El trabajo adicional está en conectar la fuente de sesión, producir automáticamente la composición HTML con CSS/JavaScript embebidos, validar que el contenido refleje el registro y conservar el archivo. No se requiere que el operador haga diseño gráfico ni que construyamos una aplicación visual de edición.
+
+La referencia V6.12 prescribe delegar el documento a un subagente. Como la disponibilidad de un runtime de subagentes compatible no está acreditada, la solución objetivo preferida es que ChatGPT genere el archivo directamente a partir del registro completo persistido. Esta sustitución debe someterse a una prueba de fidelidad y calidad visual. Si no alcanza el resultado, el Keepsake no se declara implementado.
 
 ### 6.3 Fuente y estructura del artefacto
 
@@ -257,7 +303,7 @@ Las carpetas y nombres son un esquema de diseño, no rutas ya implementadas. La 
 1. Al iniciar una sesión, crear su manifiesto y una primera versión de estado.
 2. Al completar cada intercambio, guardar A y B de forma íntegra y cronológica. La captura de A no debe normalizar ni corregir el texto original; cualquier lectura corregida se conserva separada.
 3. Registrar en el memlog las ideas, preguntas, insights, decisiones, direcciones y técnicas relevantes, conservando autoría en Creative Partner.
-4. Cada escritura se hace mediante archivo temporal, flush/fsync y reemplazo atómico o transacción equivalente.
+4. Cada escritura se hace mediante archivo temporal, flush/fsync y reemplazo atómico o transacción equivalente. El autoguardado no puede fingir ser un observador continuo del chat: la plataforma no ofrece aquí un hook que capture por sí solo cada mensaje mientras se escribe. En esta arquitectura, el asistente debe realizar la operación de persistencia como parte del procesamiento de cada intercambio de trabajo, usando el texto A recibido y la salida B que va a entregar. No se puede garantizar la captura de texto no enviado, borradores del usuario ni contenido intermedio del streaming.
 5. Después de guardar, comprobar tamaño/hash/read-back antes de marcar el intercambio como persistido.
 6. Actualizar el manifiesto/versionado sin destruir snapshots anteriores.
 7. Si falla el guardado, informar el fallo concreto, conservar el estado visible en la conversación y marcar el tramo como pendiente de persistir; nunca declarar autoguardado exitoso.
@@ -375,7 +421,7 @@ La instalación registrada en EP informa BMAD Core **6.12.4**. La investigación
 | BMAD assets/brain-selector.html | rama V6.12 · blob ac649b24fffa6b29a7c032cea2502207c8f39a92 | composer oficial de modo y técnicas; no es selector CIS. |
 | CIS | commit anteriormente adquirido 658e71030be808181c1031f5461ee3613e7ff530 | nombres de agentes y configuraciones colaborativas; confirmar revisión viva antes de integrar. |
 
-**Compatibilidad pendiente:** CIS recomendó en la documentación previamente inspeccionada una versión posterior del core brainstorming que la instalación BMAD local. No se actualizará BMAD automáticamente. La alineación de versiones y el conjunto CIS deben probarse por separado antes de aceptar el runtime.
+**Compatibilidad pendiente:** CIS recomendó en la documentación previamente inspeccionada una versión posterior del core brainstorming que la instalación BMAD local. La referencia histórica precisa el desfase: el manifest de Carson/CIS declara BMAD 6.13.0, mientras EP registra BMAD Core 6.12.4. No se actualizará BMAD automáticamente. La alineación de versiones y el conjunto CIS deben probarse por separado antes de aceptar el runtime. El diseño parte de conservar 6.12.4 hasta que una prueba de regresión demuestre compatibilidad; no se eleva la versión ni se instala CIS por inferencia.
 
 ---
 
