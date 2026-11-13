@@ -840,3 +840,36 @@ Se conserva EP Vault como producto único. `Novelocker` no es una dependencia ni
 `EP_VAULT_V2=DESIGN_PROPOSAL_NOT_IMPLEMENTED`; `CODE_AUDIT=REQUIRED`; `CRYPTO_FORMAT_MIGRATION=NOT_DESIGNED`; `HEADLESS_SECRET_USE=PROPOSED`; `AGENT_ISOLATION=NOT_VERIFIED`; `EFIMERA_NO_EFIMERA=REQUIREMENTS_CAPTURED`; `120S_AUTO_SEAL=NOT_IMPLEMENTED`; `ACCEPTANCE=NOT_GRANTED`.
 
 Esta adenda no declara terminado Hito 0, no acredita auditoría de código, no cambia el contrato CLI actual, no modifica el almacén real ni sus secretos y no acepta la construcción. El siguiente trabajo técnico debe comenzar con el inventario del código fuente Hito 0, pruebas y ubicación efectiva de los datos, sin modificar valores reales.
+
+## EP Vault v2 · diseño integral y sprint programado · 2026-11-13
+
+- **Diseño integral:** [DISENO-INTEGRAL-EP-VAULT-V2.md](../../documentos/DISENO-INTEGRAL-EP-VAULT-V2.md), commit `67a9a0dbabcf7a26c72e8b44847bd196fdb3246e`, blob `5800a7b558b8937c873ea3ed31596df72774fc1e`, read-back exacto.
+- **Sprint:** [SPRINT-EP-VAULT-V2.md](../../documentos/SPRINT-EP-VAULT-V2.md), commit `d972286557acfbadfc9ed7842dc35567273dd625`, blob `4addd75a49bc1eae3720c3397f45ddc4e58f8725`, read-back exacto. EV2-01…EV2-08 mantienen EP-TASK-004 como tarea propietaria; cada paquete incluye criterio fuente verbatim.
+- **OEP:** §150, versión v0.3.105; commit `d4938cf12636e8aed92eac69c5ada4fb0e961b70`, blob `83243b3be5670c866885c868e9a3a084f45065d9`.
+
+### Contraste del código v1.0.0
+
+- La suite sintética del paquete cuyos archivos coinciden con el MANIFEST v1.0.0 pasó `EP_VAULT_VALIDATION_PASS`, exit 0, runtime 113,04 s. El alcance incluyó parser/XAML, pruebas criptográficas, contraseña incorrecta/tamper, Job Object y timeout, TTL del test, migración KDF 200k→600k, allowlist, DPAPI notes, CRUD, backup y revocación compartida GUI/CLI. No es aceptación de almacén real ni de v2.
+- La carpeta local etiquetada v1.0.0 difiere de su MANIFEST en `EP.Vault.Core.psm1`, `EP-Vault.GUI.ps1` y `EP-Vault.Window.xaml`; CLI y suite coinciden. El paquete sintético coincide con los hashes esperados. La carpeta `Metodologia` inspeccionada no es checkout Git.
+- El Core comparte sesión mediante DPAPI CurrentUser; otros procesos bajo la misma identidad pueden usar DPAPI para recuperar el material compartido. El CLI conserva acciones `RevealVariable -Reveal` y `ReadNote -Reveal`, así como `Run` de ejecutable/argumentos arbitrarios. El Job Object limita ciclo de vida, no egress ni filesystem.
+- El log de eventos absorbe errores de escritura. La sesión es de expiración absoluta; no se encontró dead-man de 120 segundos. El hotfix que amplía TTL a 1.800/3.600 segundos continúa separado y no aceptado.
+- Hay dos ciphertext locales distintos y respaldos asociados. No se determinó cuál es la copia activa; no se leyó contenido ni se alteraron archivos.
+- RDC sigue con `allowedDirectories=[]` y shell bajo la identidad propietaria; no hay aislamiento efectivo frente al modelo. No habilitar uso delegado hasta demostrar identidad separada, ACL y ausencia de bypass.
+
+### Estado del sprint
+
+`EP_VAULT_V2_DESIGN=INTEGRATED_DRAFT`; `SPRINT=PROGRAMMED_NOT_DISPATCHED`; `V1_SYNTHETIC_BASELINE_TEST=PASS`; `ACTIVE_STORE=UNRESOLVED`; `LOCAL_SOURCE_BASELINE=PARTIAL_HASH_DIVERGENCE`; `AGENT_ISOLATION=NOT_PRESENT`; `120S_DEADMAN=NOT_IMPLEMENTED`; `ART013=PROPOSAL_NOT_WRITTEN`; `P012_P013=REVIEW_REQUIRED`; `BUILD=NOT_DISPATCHED`.
+
+El trabajo de diseño y la programación del sprint están documentados. No se inicia construcción hasta revisión presencial P012/P013. No se modifica DUG por P005; la propuesta de `persistence_type` para ART-013 permanece en el diseño. No se han cambiado la bóveda real, variables, notas, backups, Cryptomator, host ni configuración RDC.
+
+### Criterio de continuidad del operador · verbatim
+
+> **El siguiente paso de diseño es consolidar estos criterios en la especificación EP Vault v2 y cotejarla contra el código real antes de aprobar su construcción.**
+>
+> Toma en cuenta todo el diseño, resuelve las tareas cuidadosamente. Siempre documenta el criteriov  verbatim detras de la tarea.
+>
+> Programa el sprint,no quiero nada mas de lo discutido y nada menos.
+>
+> **El siguiente paso de diseño es consolidar estos criterios en la especificación EP Vault v2 y cotejarla contra el código real antes de aprobar su construcción.**
+>
+> ## Pero primero finaliza todo el disñeo tomate los ciclos que necesites. Pero trabaja con la integridad y soldiez que te digo
