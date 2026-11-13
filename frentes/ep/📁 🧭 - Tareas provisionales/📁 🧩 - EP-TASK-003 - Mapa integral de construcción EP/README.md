@@ -834,3 +834,19 @@ Cryptomator permanece bloqueada (procesos=0, `D:\` ausente), pero la bóveda con
 - Kamatera queda diferido por exigir tarjeta o depósito; se conserva como etapa posterior de benchmark/provisión. No se acepta como superior en rendimiento sin prueba.
 - Al final de la fase de diseño se decidirá el formato canónico mínimo de sesión EP; queda pendiente y no se formaliza en esta actualización.
 - No se modificó host, vault, claves ni configuración RDC; EP-TASK-003 sigue `en_curso`.
+
+---
+
+## Reconstrucción integral del sprint de diseño e implementación · 2026-11-13
+
+Se creó y leyó de vuelta el documento complementario [Acumulado de diseño e implementación EP · 11–13 de noviembre](../../documentos/ACUMULADO-DISENO-IMPLEMENTACION-EP-2026-11-11_A_2026-11-13.md).
+
+### Fuentes revisadas
+- ChatGPT-EP (1)-20261112-1127.md — 1.619 líneas / 64.269 bytes; SHA-256 A858D82807A7F08B4B1B4CAF828136224F22AD8A086284BF9CE65B2DD5BA6F56.
+- ChatGPT-EP (1)-20261112-1632.md — 1.926 líneas / 99.410 bytes; SHA-256 9A64A7265901B70D92DBB2752BB23E273915B99CEC3D98115979660766FCF617.
+- ChatGPT-EP-20261113-0958.md — 899 líneas / 42.368 bytes; SHA-256 17E8F33F3425C7B2DF2ADC859EEC36D02D8B956FEC1B9247AEDA4C3955E7380A.
+
+Total leído: 4.444 líneas / 206.047 bytes. Los originales permanecen en Downloads; no se transfirieron a Git. El documento derivado está en main y su blob de lectura de vuelta es 7afab9e61986cb870a7a895cc4d8dabb3128f892.
+
+### Estado de ejecución
+Esta actualización es documental. No modifica el host, la bóveda, las claves, el montaje, el workspace, el backup B2 ni la configuración de acceso. Se mantiene el estado de EP-TASK-003: bóveda real parcial y bloqueada; llave de recuperación formalizada; workspace completo no migrado y aún en claro; app-data confinement, CLI oficial contra bóveda real y desmontaje graceful Windows pendientes.
