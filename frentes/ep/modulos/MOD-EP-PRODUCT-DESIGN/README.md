@@ -75,12 +75,12 @@ El módulo se considerará funcionalmente completo cuando el proceso de diseño 
 - OEP EP: único objeto rector, con registro integrado de módulos.
 
 
-## Reorientación rectora: vMAT Product Design · 2026-11-12
+## Reorientación rectora: Frente Product Design con BMAD · 2026-11-12
 
 **Propósito operativo actualizado:** permitir que el operador use directamente ChatGPT para dictar instrucciones y que esas instrucciones se conviertan en el mínimo conjunto de tareas provisionales ejecutables de los frentes existentes. Cada tarea debe conservar la fuente verbatim, asignación de responsabilidad, requisitos derivados, entregables y criterios de aceptación. La descomposición debe cubrir todo lo extraíble de la fuente y no incorporar alcance que no esté solicitado.
 
-**Especificación funcional:** [ESPECIFICACION-OPERATIVA-VMAT.md](./ESPECIFICACION-OPERATIVA-VMAT.md).  
-**Primera tarea provisional que materializa el encargo:** [EP-TASK-008 — vMAT Product Design: captura verbatim y tareas ejecutables con Superpowers](../../📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20EP-TASK-008%20-%20vMAT%20Product%20Design%20-%20Captura%20verbatim%20y%20tareas%20ejecutables%20con%20Superpowers/README.md).
+**Especificación funcional de origen:** [ESPECIFICACION-OPERATIVA-VMAT.md](./ESPECIFICACION-OPERATIVA-VMAT.md). El nombre del archivo conserva el rótulo histórico derivado del dictado; «vMAT» no es una denominación aprobada y la referencia correcta del diseño es BMAD.  
+**Tarea provisional en curso (rótulo histórico):** [EP-TASK-008 — registro de captura verbatim y tareas ejecutables con Superpowers](../../📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20EP-TASK-008%20-%20vMAT%20Product%20Design%20-%20Captura%20verbatim%20y%20tareas%20ejecutables%20con%20Superpowers/README.md). La carpeta conserva su nombre histórico; no se crea ni se configura una tarea nueva en esta actualización.
 
 ### Encaje de herramientas
 
@@ -102,7 +102,7 @@ Esta reorientación supersede como siguiente acción del módulo la espera de un
 
 La conversación completa que origina esta retoma quedó preservada en [fuentes/ChatGPT-PRODUCT-20261113-0951.md](./fuentes/ChatGPT-PRODUCT-20261113-0951.md). La última salida del modelo se reproduce literalmente en [EP-TASK-008 — retoma de contexto](../../📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20EP-TASK-008%20-%20vMAT%20Product%20Design%20-%20Captura%20verbatim%20y%20tareas%20ejecutables%20con%20Superpowers/README.md).
 
-**Continuidad:** conservar «Frente Product Design» como nombre de invocación. El término «vMAT» permanece sin confirmar como denominación formal; no atribuirle expansión ni significado aprobado. `EP-TASK-008` sigue `en_curso`; la verificación runtime de Superpowers continúa pendiente según el registro de la tarea.
+**Continuidad corregida:** el nombre de invocación es «Frente Product Design» y el método de producto es BMAD. «vMAT» fue un error de transcripción por dictado y no debe utilizarse como denominación activa. `EP-TASK-008` sigue `en_curso`; su carpeta y el nombre del archivo de especificación conservan rótulos históricos hasta una migración documental separada.
 
 ## Acumulado de diseño · BMAD, CIS y capacidades visoespaciales
 
