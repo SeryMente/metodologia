@@ -251,6 +251,17 @@ El sistema tiene que diferenciar:
 
 No se debe confundir la persistencia de Product Design con la arquitectura completa de IAR de Khora.
 
+### 7.1.1 Guardar y Guardar como
+
+El autoguardado crea y conserva una sesión recuperable sin que el usuario tenga que nombrarla previamente. La experiencia debe ofrecer además acciones explícitas equivalentes a **Guardar** y **Guardar como**:
+
+- **Guardar en proyecto:** asignar la sesión actual a un proyecto ya existente o crear uno con nombre y descripción.
+- **Guardar como:** crear un proyecto nuevo o una nueva línea de trabajo derivada, conservando el vínculo al origen. No sobrescribir la sesión fuente ni clonar silenciosamente sus turnos.
+- **Renombrar o reasignar:** cambiar el nombre/descripción del proyecto o su vínculo con una sesión mediante un evento y versión recuperables.
+- **Sesión sin proyecto:** sigue siendo recuperable y buscable como borrador; no se obliga a crear un proyecto para conservar el trabajo.
+
+La semántica precisa de «Guardar como» —si crea solo una relación nueva o inicia además una sesión derivada— debe concretarse en la revisión de integridad, pero en ambos casos el origen permanece inmutable y la procedencia no se pierde.
+
 ### 7.2 Modelo lógico propuesto
 
 | Entidad | Propósito | Datos mínimos |
@@ -365,6 +376,13 @@ La biblioteca no sustituye los originales. Guarda referencias a la fuente y cons
 Se propone un índice local SQLite con búsqueda de texto completo (FTS5) si la compilación local disponible lo soporta. El índice debe poder reconstruirse desde los archivos de origen. Si FTS5 no está disponible, se elegirá un mecanismo alternativo sencillo después de probarlo en el entorno real.
 
 La primera versión no necesita vectores, embeddings, GraphRAG, base de datos servidor ni otra interfaz web. La búsqueda básica debe cubrir texto, título, resumen, etiquetas, tipo y proyecto. El asistente puede ejecutar la consulta y mostrar resultados en el propio chat.
+
+### 8.3.1 Qué se indexa y cuándo se considera reutilizable
+
+- Todas las sesiones y sus artefactos finales pueden indexarse como unidades localizables, incluso si la sesión sigue siendo un borrador recuperable.
+- El sistema puede proponer como piezas reutilizables ideas, hallazgos, decisiones, briefs y otros resultados atómicos, pero no debe elevar una propuesta a decisión ratificada.
+- La clasificación `reutilizable` se conserva como estado explícito y reversible. La fuente de la sesión no se modifica por incorporarla a la biblioteca.
+- El usuario debe poder encontrar una sesión completa además de elementos discretos extraídos de ella.
 
 ### 8.4 Reutilización entre proyectos
 
