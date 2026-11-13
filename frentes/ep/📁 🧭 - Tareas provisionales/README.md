@@ -550,3 +550,8 @@ La variable `EP_WORKSPACE_CRYPTOMATOR_RECOVERY_KEY` quedó promovida en EP Vault
 
 
 **Estado de aceptación EP-TASK-008:** configuración Superpowers v7.0.2 y descarga local PASS; runtime discovery NOT_VERIFIED. El primer lanzamiento OpenCode no devolvió skills y finalizó con código 1 tras permanecer sin progreso observable; el reintento fue detenido por `VAULT_SESSION_NOT_OPEN`. El siguiente gate es desbloqueo local de EP Vault bajo `CENTRAL\\fila4`, sin transferir la clave ni el contexto DPAPI a otra identidad.
+
+
+## Revisión EP-TASK-003 · 2026-11-13 · diseño y rendimiento
+
+Rclone queda identificado como motor especializado de transferencia B2 invocado por RDC; Git sigue reservado a repositorios y Robocopy a la migración local inicial. OEP §143 registra la comparación de hardware, la condición de Kamatera (no hay prueba gratis sin tarjeta ni depósito), el uso de Cryptomator CLI/WinFsp y la propuesta V0.1 de EP Access Broker. No hay implementación ni cambio de aceptación: migración integral, pruebas de rendimiento, B2 read-back y aislamiento del agente siguen pendientes.
