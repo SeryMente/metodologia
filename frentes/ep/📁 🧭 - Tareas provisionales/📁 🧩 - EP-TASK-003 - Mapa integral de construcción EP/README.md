@@ -814,3 +814,12 @@ Referencia: OEP §136; documentación oficial Cryptomator Security Architecture,
 La nota efímera `N-20261112232420-0DC228D3` se promovió en EP Vault a la variable formal `EP_WORKSPACE_CRYPTOMATOR_RECOVERY_KEY`. Resultado: `PROMOTED_READBACK_VERIFIED_NOTE_REMOVED`; `ListVariables` confirmó el nombre. No se expuso el valor. Read-back: nota efímera ausente, EP Vault `ENCRYPTED_FILE_PRESENT`, sesión cerrada. Eventos `VAULT_DATA_UPDATED`, `WORKING_NOTE_DELETED`, `WORKING_NOTE_PROMOTED`, `VAULT_LOCKED`.
 
 Cryptomator permanece bloqueada (procesos=0, `D:\` ausente), pero la bóveda contiene solo datos parciales. El árbol original `Desktop\SeryMente` no se migró y permanece en claro; el cifrado integral sigue pendiente.
+
+
+## Investigación de persistencia B2, CLI estable y acceso delegado · 2026-11-13
+
+- Se documentó en OEP §143 el contraste Rclone/RDC/Git, las condiciones de prueba Kamatera, el inventario observado del host y el flujo propuesto Cryptomator CLI → ciphertext local → Rclone B2.
+- Cryptomator CLI oficial muestra release estable 0.6.2; la bóveda real observada tiene formato 8. El montaje de producción debe probar WinFsp nativo, no asumir que el fallback WebDAV es equivalente. El binario local `0.7.0-SNAPSHOT` / `0.1.0-local` sigue siendo build local, no release oficial aceptada.
+- La bóveda real permanece en `C:\\Users\\fila4\\entorno-persistente\\`; `vault-store` canónico definido en §140.5 continúa vacío. No mover ni sustituir hasta inventario y read-back.
+- EP Access Broker V0.1 queda como propuesta: concesión con nombre/TTL originada en EP Vault, alcance amplio limitado a `SeryMente/`, capacidad opaca no revelada al modelo y agente Windows separado. No implementado.
+- **Sin cambio de aceptación:** no se migró el workspace, no se probó CLI oficial contra la bóveda real, no se midió rendimiento ni transferencia B2, no se implementó confinamiento por identidad, y no se verificó desmontaje graceful Windows. EP-TASK-003 sigue `en_curso`.
