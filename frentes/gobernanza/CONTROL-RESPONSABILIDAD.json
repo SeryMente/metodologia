@@ -1608,7 +1608,32 @@
       "readback_required": true,
       "readback_verified": true,
       "readback_verified_on": "2026-11-13",
-      "verification_note": "Estado final registrado tras completar el read-back del commit y cotejar los blobs persistidos."
+      "verification_note": "Estado final registrado tras completar el read-back del commit y cotejar los blobs persistidos.",
+      "readback_sha": "c799730a61a81be38a3d66b2634cd7e69f8dd7bf",
+      "readback_verification": {
+        "status": "verified",
+        "verified_on": "2026-11-13",
+        "write_commit_sha": "49994e0cf349b7fbb743300e6139184977f4de9d",
+        "control_blob_sha": "c799730a61a81be38a3d66b2634cd7e69f8dd7bf",
+        "source_original_blob_sha": "021e0b968994fa6b34ab9c4839dcb62fd8e5938c",
+        "source_sha256": "AD3ADFB310FCF4D170FEC2153A866796C3324EC6499424C3CF86835631842110",
+        "checks": {
+          "source_original_byte_for_byte_equal": true,
+          "source_sha256_matches": true,
+          "original_git_blob_matches": true,
+          "control_blob_matches": true,
+          "front_state_blob_matches": true,
+          "front_index_blob_matches": true,
+          "literal_last_output_present": true,
+          "responsibility_generation_23_active": true,
+          "previous_primary_superseded": true,
+          "co_responsible_preserved": true,
+          "active_count_2": true,
+          "session_folio_unassigned": true,
+          "global_and_ocp_folios_unassigned": true,
+          "fol1_prepared_not_active": true
+        }
+      }
     }
   ],
   "active_responsibles": [

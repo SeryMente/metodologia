@@ -2,9 +2,9 @@
   "schema": "ser-y-mente-document-manifest/v1",
   "front": "Gobernanza",
   "ocp_path": "frentes/gobernanza/",
-  "event_id": "C-GOBERNANZA-RETOMA-16",
+  "event_id": "C-GOBERNANZA-RETOMA-18",
   "cycle_folio": null,
-  "recorded_on": "2026-11-12",
+  "recorded_on": "2026-11-13",
   "status": "PERSISTIDO_Y_VERIFICADO",
   "rule": "P041 + ART-014 + ART-022; conservar originales sin transformar y declarar persistencia solo tras lectura de vuelta y cotejo.",
   "documents": [
@@ -378,25 +378,56 @@
         "last_output_in": "frentes/gobernanza/GOBERNANZA.md",
         "evidence_path": "frentes/gobernanza/evidencias/C-GOBERNANZA-RETOMA-17.json"
       }
+    },
+    {
+      "document_id": "DOC-GOV-CHATGPT-GOBERNANZA-20261113-1456",
+      "original_name": "ChatGPT-Gobernanza-20261113-1456.md",
+      "path": "documentos/originales/ChatGPT-Gobernanza-20261113-1456.md",
+      "class": "original",
+      "source_path": "C:\\Users\\fila4\\Downloads\\ChatGPT-Gobernanza-20261113-1456.md",
+      "source_device": "PC10RCIF4EI4",
+      "source_device_id": "5182a6bc-db2c-452e-a52a-95d63f6c74d6",
+      "source_front": "Gobernanza",
+      "captured_via": "RDC; bytes originales transportados como Base64 sin transformación; lectura de vuelta cotejada.",
+      "media_type": "text/markdown; charset=utf-8",
+      "size_bytes": 81694,
+      "sha256": "AD3ADFB310FCF4D170FEC2153A866796C3324EC6499424C3CF86835631842110",
+      "git_blob_sha": "021e0b968994fa6b34ab9c4839dcb62fd8e5938c",
+      "status": "PERSISTIDO_Y_VERIFICADO",
+      "recorded_in_event_id": "C-GOBERNANZA-RETOMA-18",
+      "verification": {
+        "readback": true,
+        "content_cotejo": true,
+        "method": "SHA-256 del original en RDC + Git blob SHA + comparación exacta del texto de origen y del blob leído desde main.",
+        "readback_blob_sha": "021e0b968994fa6b34ab9c4839dcb62fd8e5938c",
+        "verified_on": "2026-11-13",
+        "write_commit_sha": "49994e0cf349b7fbb743300e6139184977f4de9d"
+      },
+      "relations": {
+        "last_output_in": "frentes/gobernanza/GOBERNANZA.md",
+        "evidence_path": "frentes/gobernanza/evidencias/C-GOBERNANZA-RETOMA-18.json"
+      }
     }
   ],
-  "originals_commit_sha": "c3c47a7f185d8e9482b55942e00c7da9ff1e802c",
+  "originals_commit_sha": "49994e0cf349b7fbb743300e6139184977f4de9d",
   "verification": {
     "readback": true,
     "content_cotejo": true,
-    "document_count": 16,
-    "source_sha256": "DB1FEAFC9F1EA3744F723330640905DAE03F0BF4C72D6C636F34207F405A6020",
-    "git_blob_sha": "f36a2319b8a70e526611509718814f2ec7ad1be8",
-    "method": "RDC Base64 origen vs GitHub main read-back exact; SHA-256 y Git blob cotejados.",
-    "verified_on": "2026-11-13"
+    "document_count": 17,
+    "source_sha256": "AD3ADFB310FCF4D170FEC2153A866796C3324EC6499424C3CF86835631842110",
+    "git_blob_sha": "021e0b968994fa6b34ab9c4839dcb62fd8e5938c",
+    "method": "RDC source SHA-256 + exact Git blob read-back and source-text comparison.",
+    "verified_on": "2026-11-13",
+    "write_commit_sha": "49994e0cf349b7fbb743300e6139184977f4de9d"
   },
   "latest_addition_event": {
-    "event_id": "C-GOBERNANZA-RETOMA-17",
-    "document_id": "DOC-GOV-CHATGPT-GOBERNANZA-20261113-1232",
-    "commit_sha": "6456cec5d724ace208cdc2ad1474650788276013",
-    "git_blob_sha": "f36a2319b8a70e526611509718814f2ec7ad1be8",
+    "event_id": "C-GOBERNANZA-RETOMA-18",
+    "document_id": "DOC-GOV-CHATGPT-GOBERNANZA-20261113-1456",
+    "commit_sha": "49994e0cf349b7fbb743300e6139184977f4de9d",
+    "git_blob_sha": "021e0b968994fa6b34ab9c4839dcb62fd8e5938c",
     "readback_verified": true,
-    "readback_verified_on": "2026-11-13"
+    "readback_verified_on": "2026-11-13",
+    "evidence_path": "frentes/gobernanza/evidencias/C-GOBERNANZA-RETOMA-18.json"
   },
-  "latest_original_commit_sha": "6456cec5d724ace208cdc2ad1474650788276013"
+  "latest_original_commit_sha": "49994e0cf349b7fbb743300e6139184977f4de9d"
 }

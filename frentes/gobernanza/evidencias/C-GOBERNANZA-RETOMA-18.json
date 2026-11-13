@@ -1,0 +1,125 @@
+{
+  "schema": "ser-y-mente-front-cycle-evidence/v1",
+  "event_id": "C-GOBERNANZA-RETOMA-18",
+  "front": "Gobernanza",
+  "ocp_path": "frentes/gobernanza/",
+  "recorded_on": "2026-11-13",
+  "status": "PERSISTIDO_Y_VERIFICADO",
+  "scope": "Persistir sin transformación el export original de Downloads; reproducir literalmente su última salida en GOBERNANZA.md; actualizar índice, manifiesto y control; retomar titularidad primaria conservando la corresponsabilidad. Sin cambios normativos al DUG/GOW/IPZ nativa/FOL1/MCP-NORMATIVO ni otros frentes.",
+  "responsibility": {
+    "operation": "TRANSFER_PRIMARY_OWNER",
+    "generation_before": 22,
+    "generation_after": 23,
+    "previous_primary": {
+      "alias": "chatgpt-C-GOBERNANZA-RETOMA-17-01a1d62f99ab7446a79ec75de7961ebd",
+      "generation": 22,
+      "status": "superseded"
+    },
+    "new_primary": {
+      "alias": "chatgpt-C-GOBERNANZA-RETOMA-18-01a1d6b356277d3d88f0f043c0db1e9b",
+      "generation": 23,
+      "instance": "chatgpt-gobernanza-1-2026-11-13-01a1d6b3",
+      "local_conversation_uuidv7": "01a1d6b3-5627-7d3d-88f0-f043c0db1e9b",
+      "native_conversation_id": "NOT_EXPOSED"
+    },
+    "retained_co_responsible": {
+      "alias": "chatgpt-C-GOBERNANZA-ASIENTO-02-OPTIMIZACION-01-SES-20261111-624B784A",
+      "generation": 20,
+      "folio": "SES-20261111-624B784A"
+    },
+    "active_responsibles_after_write": 2,
+    "maximum": 2,
+    "readback_verified": true,
+    "status": "VERIFIED_READBACK"
+  },
+  "cycle": {
+    "local_cycle_id": "C-GOBERNANZA-RETOMA-18-CY01",
+    "local_cycle_uuidv7": "01a1d6b3-5628-7ccd-9685-d7df3d25eb4f",
+    "global_folio": null,
+    "ocp_folio": null,
+    "status": "LEGACY_PRE_CUTOVER"
+  },
+  "source": {
+    "path": "C:\\Users\\fila4\\Downloads\\ChatGPT-Gobernanza-20261113-1456.md",
+    "device": "PC10RCIF4EI4",
+    "device_id": "5182a6bc-db2c-452e-a52a-95d63f6c74d6",
+    "size_bytes": 81694,
+    "sha256": "AD3ADFB310FCF4D170FEC2153A866796C3324EC6499424C3CF86835631842110"
+  },
+  "artifacts": [
+    {
+      "path": "frentes/gobernanza/documentos/originales/ChatGPT-Gobernanza-20261113-1456.md",
+      "git_blob_sha": "021e0b968994fa6b34ab9c4839dcb62fd8e5938c",
+      "sha256": "AD3ADFB310FCF4D170FEC2153A866796C3324EC6499424C3CF86835631842110",
+      "bytes": 81694,
+      "status": "PERSISTIDO_Y_VERIFICADO"
+    },
+    {
+      "path": "frentes/gobernanza/GOBERNANZA.md",
+      "git_blob_sha": "e11659210bfd512a0da0fb81e5491a542ee8e0e3",
+      "status": "PERSISTIDO_Y_VERIFICADO",
+      "contains_literal_last_output": true
+    },
+    {
+      "path": "frentes/gobernanza/CONTROL-RESPONSABILIDAD.json",
+      "git_blob_sha": "4a1829005d976aaee6a986764ee660e8688667fe",
+      "status": "PERSISTIDO_Y_VERIFICADO"
+    },
+    {
+      "path": "frentes/gobernanza/README.md",
+      "git_blob_sha": "6675199c737b291d82afd03c061eb3188ea7ed35",
+      "status": "PERSISTIDO_Y_VERIFICADO"
+    },
+    {
+      "path": "frentes/gobernanza/documentos/MANIFIESTO-DOCUMENTAL.json",
+      "git_blob_sha": "c912e85cdcf14e10bfb42b5da8e3784cb99e850f",
+      "status": "PERSISTIDO_Y_VERIFICADO"
+    }
+  ],
+  "continuity": {
+    "dug": "Samantha v396 · NX-396m",
+    "metacanon": "1.31",
+    "gow": "2.24",
+    "principles": 45,
+    "annexes": 27,
+    "ipz": "v0.7 baseline; native installation NOT_VERIFIED",
+    "fol1": "PREPARADO/NO ACTIVO",
+    "mcp_normativo": "DESACTIVADO",
+    "output_reproduced_literally": true,
+    "last_response_timestamp": "2026-11-13 14:44:27 America/Mexico_City"
+  },
+  "non_actions": [
+    "DUG/GOW unchanged",
+    "IPZ native unchanged",
+    "FOL1 unchanged and not activated",
+    "MCP-NORMATIVO unchanged and DESACTIVADO",
+    "No changes to code, hosts or other fronts"
+  ],
+  "operation": {
+    "main_parent_sha": "9e21c66a9d05ddb2109374fa68e6e4f7603ad394",
+    "core_write_commit_sha": "49994e0cf349b7fbb743300e6139184977f4de9d",
+    "source_sha256": "AD3ADFB310FCF4D170FEC2153A866796C3324EC6499424C3CF86835631842110",
+    "source_git_blob_sha": "021e0b968994fa6b34ab9c4839dcb62fd8e5938c",
+    "cas_expected_parent": true,
+    "readback_required": true,
+    "readback_verified": true,
+    "readback_verified_on": "2026-11-13",
+    "readback_method": "RDC file hash + exact text comparison between Downloads read-back and Git blob; control/index/state/content blob SHAs cotejados.",
+    "readback_checks": {
+      "source_original_byte_for_byte_equal": true,
+      "source_sha256_matches": true,
+      "original_git_blob_matches": true,
+      "control_blob_matches": true,
+      "front_state_blob_matches": true,
+      "front_index_blob_matches": true,
+      "literal_last_output_present": true,
+      "responsibility_generation_23_active": true,
+      "previous_primary_superseded": true,
+      "co_responsible_preserved": true,
+      "active_count_2": true,
+      "session_folio_unassigned": true,
+      "global_and_ocp_folios_unassigned": true,
+      "fol1_prepared_not_active": true
+    }
+  }
+}
