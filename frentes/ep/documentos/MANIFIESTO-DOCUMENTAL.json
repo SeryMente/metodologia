@@ -6,10 +6,10 @@
     "id": "EP",
     "name": "Entorno Persistente",
     "canonical_oep": "frentes/ep/OEP.md",
-    "oep_version": "v0.3.93"
+    "oep_version": "v0.3.101"
   },
   "coverage": {
-    "scope": "Registro documental del frente EP con alcance por entrada. La cobertura de cada conversación/original se limita a las fuentes listadas; no se presume auditoría retrospectiva de archivos no enumerados. Las exportaciones EP 2026-11-12/13 revisadas para el acumulado continúan en Downloads y no fueron transferidas a Git.",
+    "scope": "Registro documental del frente EP con alcance por entrada. La cobertura de cada conversación/original se limita a las fuentes listadas; no se presume auditoría retrospectiva de archivos no enumerados. Las exportaciones EP 2026-11-12/13 anteriores a las 14:39 continúan en Downloads y no fueron transferidas a Git; ChatGPT-EP-20261113-1439.md sí fue archivado byte por byte en originales/ y su salida final se conserva en documentos/RETOMA-EP-2026-11-13-1439.md.",
     "legacy_originals_path_preserved": "frentes/ep/originales/"
   },
   "documents": [
@@ -117,6 +117,62 @@
         "readback_method": "GitHub fetch_file desde main; título, fuentes, hashes, estado de migración y secciones de Access Broker/Rclone comprobados",
         "readback_lines": 420,
         "readback_characters": 46480
+      },
+      "captured_on": "2026-11-13"
+    },
+    {
+      "id": "EP-DOC-20261113-1439-CONVERSATION",
+      "original_name": "ChatGPT-EP-20261113-1439.md",
+      "canonical_path": "frentes/ep/originales/ChatGPT-EP-20261113-1439.md",
+      "relative_path_from_front": "originales/ChatGPT-EP-20261113-1439.md",
+      "kind": "conversation_export",
+      "original_preserved": true,
+      "source": {
+        "acquisition": "RDC read as Base64; byte-preserving transfer; GitHub read-back Base64 compared exactly",
+        "device_display_name": "PC10RCIF4EI4",
+        "device_id": "5182a6bc-db2c-452e-a52a-95d63f6c74d6",
+        "windows_identity": "fila4",
+        "source_path": "C:\\Users\\fila4\\Downloads\\ChatGPT-EP-20261113-1439.md",
+        "source_created": "2026-11-13T20:39:56.508Z",
+        "source_last_write_time": "2026-11-13T20:39:56.748Z",
+        "exported_local": "2026-11-13 14:39:56 America/Mexico_City",
+        "bytes": 158982,
+        "lines": 2811,
+        "format": "UTF-8, no BOM, LF line endings",
+        "sha256": "CB8D4DA12FC08851D1BE14B0D00962C696C455680FB10D059721D5BDB5D1DCE0"
+      },
+      "persistence": {
+        "status": "PERSISTIDO_Y_VERIFICADO",
+        "branch": "main",
+        "commit": "a9e33d6906faa7b4a3a09206a37364d4b65b4398",
+        "git_blob_sha1": "a382f65d1b146411ff0e67d240759e0f49074c62",
+        "readback_verified": true,
+        "readback_method": "GitHub fetch_file encoding=base64 compared byte-for-byte with fresh RDC Base64 source",
+        "readback_bytes": 158982,
+        "readback_sha256": "CB8D4DA12FC08851D1BE14B0D00962C696C455680FB10D059721D5BDB5D1DCE0",
+        "second_authorized_instance_recovery": "NOT_TESTED"
+      },
+      "captured_on": "2026-11-13"
+    },
+    {
+      "id": "EP-DOC-20261113-RETOMA-1439",
+      "original_name": "RETOMA-EP-2026-11-13-1439.md",
+      "canonical_path": "frentes/ep/documentos/RETOMA-EP-2026-11-13-1439.md",
+      "relative_path_from_front": "documentos/RETOMA-EP-2026-11-13-1439.md",
+      "kind": "conversation_cycle_output_verbatim",
+      "original_preserved": false,
+      "source": {
+        "conversation_export": "frentes/ep/originales/ChatGPT-EP-20261113-1439.md",
+        "source_sha256": "CB8D4DA12FC08851D1BE14B0D00962C696C455680FB10D059721D5BDB5D1DCE0",
+        "extract": "Final assistant response beginning at source line 2580; 13526 characters, exact textual extraction"
+      },
+      "persistence": {
+        "status": "PERSISTIDO_Y_READBACK_VERIFICADO",
+        "branch": "main",
+        "commit": "4deb33b8f72b5cf267d3ef05edd5de5d45b4827f",
+        "git_blob_sha1": "08b9b08317898b8b8fa153558c0f9fd6059b3982",
+        "readback_verified": true,
+        "readback_method": "GitHub fetch_file content compared exactly with the complete generated document"
       },
       "captured_on": "2026-11-13"
     }
