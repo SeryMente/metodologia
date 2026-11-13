@@ -823,3 +823,14 @@ Cryptomator permanece bloqueada (procesos=0, `D:\` ausente), pero la bóveda con
 - La bóveda real permanece en `C:\\Users\\fila4\\entorno-persistente\\`; `vault-store` canónico definido en §140.5 continúa vacío. No mover ni sustituir hasta inventario y read-back.
 - EP Access Broker V0.1 queda como propuesta: concesión con nombre/TTL originada en EP Vault, alcance amplio limitado a `SeryMente/`, capacidad opaca no revelada al modelo y agente Windows separado. No implementado.
 - **Sin cambio de aceptación:** no se migró el workspace, no se probó CLI oficial contra la bóveda real, no se midió rendimiento ni transferencia B2, no se implementó confinamiento por identidad, y no se verificó desmontaje graceful Windows. EP-TASK-003 sigue `en_curso`.
+
+
+## Corrección de Novelocker y diseño de concesión EP Access Broker · 2026-11-13
+
+- `Novelocker` se retira: fue una etiqueta conversacional sin producto ni definición canónica. No se incorpora como dependencia; las funciones de ciclo de vida permanecen en `MOD-EP-CRYPTO`.
+- El broker V0.1 no entregará al modelo un bearer token ni secretos en texto. EP Vault crea la concesión; el broker conserva su estado en memoria hasta TTL/revocación; el modelo recibe herramientas y referencia no secreta. El cierre de EP Vault no cancela automáticamente la concesión ya emitida.
+- La opción de integración futura más limpia para ChatGPT web es Custom MCP + OAuth cuando el plan lo permita. Codex Cloud Personal vault es útil para tareas Codex Cloud, no una inyección automática a RDC/self-hosted. Agents API Vault requiere integración API y no abastece directamente un entorno self-hosted.
+- Acceso inicial de baja fricción: raíz lógica `SeryMente/`, excluyendo EP Vault y secretos; sin aprobaciones por archivo. Gate indispensable: identidad de agente Windows separada y eliminación de rutas de bypass por shell/FS directo.
+- Kamatera queda diferido por exigir tarjeta o depósito; se conserva como etapa posterior de benchmark/provisión. No se acepta como superior en rendimiento sin prueba.
+- Al final de la fase de diseño se decidirá el formato canónico mínimo de sesión EP; queda pendiente y no se formaliza en esta actualización.
+- No se modificó host, vault, claves ni configuración RDC; EP-TASK-003 sigue `en_curso`.
