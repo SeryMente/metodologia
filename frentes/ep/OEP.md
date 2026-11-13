@@ -4966,3 +4966,19 @@ El registro único de tareas provisionales EP fue actualizado y leído de vuelta
 `CARSON_CHAT_PROFILE=PREPARED_READBACK_PASS`; `BMAD_BRAINSTORMING_LOCAL=OBSERVED`; `TECHNIQUE_CATALOG=108_13_OBSERVED`; `FTS5=IN_MEMORY_PASS`; `CYCLE_AUTOSAVE=NOT_IMPLEMENTED`; `LIBRARY_INDEX=NOT_IMPLEMENTED`; `EP_VAULT=LOCKED`; `REMOTE_BACKUP_RESTORE=NOT_VERIFIED`; `CARSON_LIVE_ACCEPTANCE=PENDING`.
 
 **Siguiente secuencia:** probar Carson mediante chat; habilitar acceso local al workspace EP protegido para EP-TASK-010; verificar persistencia por ciclo, búsqueda, versiones y restauración; abordar EP-TASK-011/012 solo después y sin bloquear el primer release.
+
+
+## 149. Retoma documental Product Design · 2026-11-13 · 15:05 America/Mexico_City
+
+**Export original:** [modulos/MOD-EP-PRODUCT-DESIGN/fuentes/ChatGPT-Product Design-20261113-1505.md](modulos/MOD-EP-PRODUCT-DESIGN/fuentes/ChatGPT-Product%20Design-20261113-1505.md). Leído desde C:\Users\fila4\Downloads\ChatGPT-Product Design-20261113-1505.md mediante RDC; 1.554 líneas / 95.543 bytes; SHA-256 2A91A2895572E2667D875084CED55B976F89E67564C40D6ED312C1649DAC2F1C. La copia de repositorio pasó read-back exacto.
+
+**Última salida literal del ciclo:** [modulos/MOD-EP-PRODUCT-DESIGN/fuentes/ULTIMA-SALIDA-PRODUCT-DESIGN-20261113-1505.md](modulos/MOD-EP-PRODUCT-DESIGN/fuentes/ULTIMA-SALIDA-PRODUCT-DESIGN-20261113-1505.md). Corresponde a la respuesta final de 13/11/2026 14:48:59; se archivó sin reformulación y pasó read-back exacto.
+
+### Estado retomado, sin cambio de alcance
+
+- Carson permanece como coach conversacional sobre BMAD Core bmad-brainstorming; el perfil es un contrato de comportamiento para el chat, no un runtime CIS nativo de ChatGPT.
+- Catálogo observado: 108 técnicas en 13 categorías. SQLite FTS5 comprobado en memoria; no equivale a una biblioteca persistente implementada.
+- EP-TASK-009–012 ya existen con los estados y alcances consignados en §148: Carson y persistencia como núcleo; Brain Selector y Keepsake como tareas posteriores de baja prioridad.
+- EP Vault permanece como compuerta para habilitar almacenamiento durable. No se escribieron ideaciones fuera del workspace protegido.
+
+Esta entrada registra continuidad y procedencia. No crea OCP, control, titularidad, sesión, generación ni folios independientes para MOD-EP-PRODUCT-DESIGN; no altera tareas, bóveda, configuración, código ni criterios de aceptación. No modifica el estado ni la aceptación del diseño o de EP.
