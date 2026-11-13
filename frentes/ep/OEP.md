@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.103. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.104. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -4920,7 +4920,7 @@ Esta sección registra continuidad y propuesta. No certifica paridad con un prod
 - EP-TASK-008 rectificado a pendiente: blob 483b96f9aba3a48fbee34ef2ed8411c576421491. Su configuración de Superpowers queda histórica, sin eliminación ni desinstalación.
 
 - Fuente rectora: instrucción directa SRC-PD-20261113-IDEACION-03, conservada literalmente en frentes/ep/modulos/MOD-EP-PRODUCT-DESIGN/SPRINT-GENERAL-PRODUCT-DESIGN.md §18 y en los núcleos de tareas pertinentes.
-- Gobierno adquirido al abrir/cerrar este ciclo: DUG v395 / NX-395m, blob 334522824074a3aff9683a8a389841c353bcd270; Metacanon 1.31; GOW 2.24. Frescura por edad de commit: NO VERIFICADA en esta revisión. MCP-NORMATIVO: DESACTIVADO.
+- Gobierno adquirido al abrir/cerrar este ciclo: DUG v396 / NX-396m, blob 038e29762038c96afa7291b86ba4c12fab338ff0; Metacanon 1.31; GOW 2.24. Frescura por edad de commit: NO VERIFICADA en esta revisión. MCP-NORMATIVO: DESACTIVADO.
 - Control EP leído: generación 3; no se creó control ni titularidad independiente para MOD-EP-PRODUCT-DESIGN. FOL1 no se activó y no se asignaron folios.
 - El diseño se mantiene dentro del FT EP y remite a este OEP. No modifica §§137–138 ni relaja confinamiento, autenticación o cifrado.
 
