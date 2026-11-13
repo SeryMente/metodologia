@@ -1490,9 +1490,33 @@
         "cycle_number": 1
       },
       "foliation_status": "LEGACY_PRE_CUTOVER",
-      "status": "WRITE_APPLIED_READBACK_PENDING",
+      "status": "VERIFIED_READBACK",
       "readback_required": true,
-      "readback_verified": false
+      "readback_verified": true,
+      "readback_verified_on": "2026-11-13",
+      "readback_sha": "2bb3ba649e8710774d3c8ab777d1e85fb08c6290",
+      "readback_verification": {
+        "status": "verified",
+        "verified_on": "2026-11-13",
+        "write_commit_sha": "6456cec5d724ace208cdc2ad1474650788276013",
+        "control_blob_sha": "2bb3ba649e8710774d3c8ab777d1e85fb08c6290",
+        "source_original_blob_sha": "f36a2319b8a70e526611509718814f2ec7ad1be8",
+        "source_sha256": "DB1FEAFC9F1EA3744F723330640905DAE03F0BF4C72D6C636F34207F405A6020",
+        "checks": {
+          "source_original_byte_for_byte_equal": true,
+          "source_sha256_matches": true,
+          "original_git_blob_matches": true,
+          "control_generation_22": true,
+          "new_primary_active": true,
+          "previous_primary_superseded": true,
+          "co_responsible_preserved": true,
+          "active_responsibles_count_2": true,
+          "session_folio_unassigned": true,
+          "global_and_ocp_folios_unassigned": true,
+          "fol1_prepared_not_active": true,
+          "literal_last_output_persisted": true
+        }
+      }
     }
   ],
   "active_responsibles": [

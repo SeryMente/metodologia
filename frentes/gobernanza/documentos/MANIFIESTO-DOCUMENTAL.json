@@ -5,7 +5,7 @@
   "event_id": "C-GOBERNANZA-RETOMA-16",
   "cycle_folio": null,
   "recorded_on": "2026-11-12",
-  "status": "PERSISTENCIA_EN_CURSO",
+  "status": "PERSISTIDO_Y_VERIFICADO",
   "rule": "P041 + ART-014 + ART-022; conservar originales sin transformar y declarar persistencia solo tras lectura de vuelta y cotejo.",
   "documents": [
     {
@@ -364,12 +364,15 @@
       "size_bytes": 101702,
       "sha256": "DB1FEAFC9F1EA3744F723330640905DAE03F0BF4C72D6C636F34207F405A6020",
       "git_blob_sha": "f36a2319b8a70e526611509718814f2ec7ad1be8",
-      "status": "WRITE_COMMITTED_READBACK_PENDING",
+      "status": "PERSISTIDO_Y_VERIFICADO",
       "recorded_in_event_id": "C-GOBERNANZA-RETOMA-17",
       "verification": {
-        "readback": false,
-        "content_cotejo": false,
-        "method": "Pendiente de comparación Base64 origen RDC vs lectura de vuelta desde main."
+        "readback": true,
+        "content_cotejo": true,
+        "method": "Comparación Base64 byte por byte: archivo fuente RDC == lectura de vuelta de main; SHA-256 de origen y Git blob SHA verificados.",
+        "readback_blob_sha": "f36a2319b8a70e526611509718814f2ec7ad1be8",
+        "verified_on": "2026-11-13",
+        "write_commit_sha": "6456cec5d724ace208cdc2ad1474650788276013"
       },
       "relations": {
         "last_output_in": "frentes/gobernanza/GOBERNANZA.md",
@@ -381,17 +384,19 @@
   "verification": {
     "readback": true,
     "content_cotejo": true,
-    "document_count": 12,
-    "source_sha256": "EB44223104BE0D581ECA28C9452E71EFD4F661C51CD108AA3F9B53B78746144D",
-    "git_blob_sha": "bb78f30a7696bd1a4dd526e5d17283739e95e692",
-    "method": "Dos originales transferidos vía RDC; SHA-256 de origen; lectura de vuelta Base64 exacta en main y Git blob SHA coincidente."
+    "document_count": 16,
+    "source_sha256": "DB1FEAFC9F1EA3744F723330640905DAE03F0BF4C72D6C636F34207F405A6020",
+    "git_blob_sha": "f36a2319b8a70e526611509718814f2ec7ad1be8",
+    "method": "RDC Base64 origen vs GitHub main read-back exact; SHA-256 y Git blob cotejados.",
+    "verified_on": "2026-11-13"
   },
   "latest_addition_event": {
     "event_id": "C-GOBERNANZA-RETOMA-17",
     "document_id": "DOC-GOV-CHATGPT-GOBERNANZA-20261113-1232",
-    "commit_sha": null,
+    "commit_sha": "6456cec5d724ace208cdc2ad1474650788276013",
     "git_blob_sha": "f36a2319b8a70e526611509718814f2ec7ad1be8",
-    "readback_verified": false
+    "readback_verified": true,
+    "readback_verified_on": "2026-11-13"
   },
-  "latest_original_commit_sha": "c3c47a7f185d8e9482b55942e00c7da9ff1e802c"
+  "latest_original_commit_sha": "6456cec5d724ace208cdc2ad1474650788276013"
 }

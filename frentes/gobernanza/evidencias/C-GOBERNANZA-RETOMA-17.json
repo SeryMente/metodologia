@@ -4,7 +4,7 @@
   "front": "Gobernanza",
   "ocp_path": "frentes/gobernanza/",
   "recorded_on": "2026-11-13",
-  "status": "WRITE_COMMITTED_READBACK_PENDING",
+  "status": "PERSISTIDO_Y_VERIFICADO",
   "scope": "Retomar la responsabilidad primaria del frente Gobernanza en esta conversación; conservar la corresponsabilidad activa; persistir sin transformación el export original de Downloads, registrar su salida final literalmente en GOBERNANZA.md y actualizar manifiesto/índice/control. No modificar DUG, GOW, IPZ nativa, FOL1, MCP-NORMATIVO ni otros frentes/código/hosts.",
   "responsibility": {
     "operation": "TRANSFER_PRIMARY_OWNER",
@@ -29,7 +29,8 @@
     },
     "active_responsibles_after_write": 2,
     "maximum": 2,
-    "readback_verified": false
+    "readback_verified": true,
+    "status": "VERIFIED_READBACK"
   },
   "cycle": {
     "local_cycle_id": "C-GOBERNANZA-RETOMA-17-CY01",
@@ -47,26 +48,21 @@
   },
   "artifacts": [
     {
-      "path": "frentes/gobernanza/documentos/originales/ChatGPT-GOBERNANZA (1)-20261113-1232.md",
-      "role": "original_export",
+      "path": "documentos/originales/ChatGPT-GOBERNANZA (1)-20261113-1232.md",
       "git_blob_sha": "f36a2319b8a70e526611509718814f2ec7ad1be8",
-      "status": "WRITE_COMMITTED_READBACK_PENDING"
-    },
-    {
-      "path": "frentes/gobernanza/GOBERNANZA.md",
-      "role": "front_state_and_literal_last_output"
-    },
-    {
-      "path": "frentes/gobernanza/documentos/MANIFIESTO-DOCUMENTAL.json",
-      "role": "document_manifest"
-    },
-    {
-      "path": "frentes/gobernanza/README.md",
-      "role": "front_index"
+      "sha256": "DB1FEAFC9F1EA3744F723330640905DAE03F0BF4C72D6C636F34207F405A6020",
+      "bytes": 101702,
+      "status": "PERSISTIDO_Y_VERIFICADO"
     },
     {
       "path": "frentes/gobernanza/CONTROL-RESPONSABILIDAD.json",
-      "role": "responsibility_control"
+      "git_blob_sha": "2bb3ba649e8710774d3c8ab777d1e85fb08c6290",
+      "status": "PERSISTIDO_Y_VERIFICADO"
+    },
+    {
+      "path": "frentes/gobernanza/documentos/MANIFIESTO-DOCUMENTAL.json",
+      "git_blob_sha": "2aee427013bf89d8421cbd80774db43bc804e6ad",
+      "status": "PERSISTIDO_Y_VERIFICADO"
     }
   ],
   "continuity": {
@@ -94,6 +90,25 @@
     "source_git_blob_sha": "f36a2319b8a70e526611509718814f2ec7ad1be8",
     "cas_expected_parent": true,
     "readback_required": true,
-    "readback_verified": false
+    "readback_verified": true,
+    "write_commit_sha": "6456cec5d724ace208cdc2ad1474650788276013",
+    "readback_verified_on": "2026-11-13",
+    "readback_method": "Comparación Base64 exacta de origen RDC vs main; control/índice/manifiesto/estado/evidencia cotejados por Git blob SHA.",
+    "readback_checks": {
+      "source_original_byte_for_byte_equal": true,
+      "source_sha256_matches": true,
+      "original_git_blob_matches": true,
+      "control_blob_matches": true,
+      "manifest_blob_matches": true,
+      "front_state_blob_matches": true,
+      "front_index_blob_matches": true,
+      "evidence_blob_matches": true,
+      "literal_last_output_present": true,
+      "responsibility_generation_22_active": true,
+      "previous_primary_superseded": true,
+      "co_responsible_preserved": true,
+      "active_count_2": true,
+      "fol1_not_active": true
+    }
   }
 }
