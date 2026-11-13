@@ -818,3 +818,25 @@ Consulta read-only de GitHub: PR #21, “EP Vault PC 7: endurecimiento CLI/GUI, 
 - H7/H8 sintéticos constan PASS para cortes concretos; persisten divergencias locales Core/GUI/XAML/manifest, CLI que rechazó 3.600 s y controles GUI persistentes inertes/deshabilitados según el último retest. H10 y revisión presencial P012/P013 siguen pendientes.
 
 **Decisión:** PR #21 NO LISTA PARA MERGE. Sin checkout, aprobación, merge ni instalación.
+
+## Adenda · Retoma y alcance propuesto EP Vault v2 · 2026-11-13 · 14:39
+
+**Fuentes:** export original [ChatGPT-EP-20261113-1439.md](../../originales/ChatGPT-EP-20261113-1439.md); salida literal del último ciclo [RETOMA-EP-2026-11-13-1439.md](../../documentos/RETOMA-EP-2026-11-13-1439.md). OEP §147 registra hashes, commits y lectura de vuelta.
+
+### Alcance de mejora propuesto
+
+Se conserva EP Vault como producto único. `Novelocker` no es una dependencia ni un producto comparativo verificado. La mejora EP Vault v2 debe resolver el salto entre almacenar secretos y permitir su uso temporal por procesos autorizados sin revelar sus valores al modelo.
+
+- Mantener el almacén cifrado y las notas efímeras; auditar primero el código Hito 0 y el formato existente antes de cambiar algoritmo o migrar datos.
+- Añadir autorización selectiva por secreto, consumidor, propósito, operación, duración y límite de uso; revocación, rotación, versiones y auditoría protegida sin valores.
+- Permitir cerrar la interfaz mientras el núcleo local de custodia conserva, durante una concesión válida, la capacidad temporal de descifrado. La bóveda bloqueada debe retirar el material de descifrado y requerir autenticación local para reanudar.
+- El modelo solicita acciones/operaciones; no recibe valores secretos, contraseña, clave maestra ni bearer token reutilizable. Un adaptador o proceso local confiable usa la credencial dentro de la operación autorizada.
+- No considerar seguro el broker mientras el agente conserve shell o filesystem irrestricto bajo la misma identidad propietaria. Separación de identidad Windows no administradora y canal local protegido son gates obligatorios.
+- Integrar las reglas de sesión EP por tipo de ubicación: `EFIMERA` (volátil, artefactos temporales eliminados al finalizar por hombre muerto) y `NO_EFIMERA` (semipermanente, con expiración y conservación del ciphertext local). Pausa manual o por inactividad; sellado a los 120 segundos; reanudación mediante contraseña maestra local.
+- Resolver el arranque sin dependencia circular: la contraseña maestra de Cryptomator no puede existir únicamente dentro del EP Vault alojado en la misma bóveda que debe abrirse.
+
+### Estado
+
+`EP_VAULT_V2=DESIGN_PROPOSAL_NOT_IMPLEMENTED`; `CODE_AUDIT=REQUIRED`; `CRYPTO_FORMAT_MIGRATION=NOT_DESIGNED`; `HEADLESS_SECRET_USE=PROPOSED`; `AGENT_ISOLATION=NOT_VERIFIED`; `EFIMERA_NO_EFIMERA=REQUIREMENTS_CAPTURED`; `120S_AUTO_SEAL=NOT_IMPLEMENTED`; `ACCEPTANCE=NOT_GRANTED`.
+
+Esta adenda no declara terminado Hito 0, no acredita auditoría de código, no cambia el contrato CLI actual, no modifica el almacén real ni sus secretos y no acepta la construcción. El siguiente trabajo técnico debe comenzar con el inventario del código fuente Hito 0, pruebas y ubicación efectiva de los datos, sin modificar valores reales.
