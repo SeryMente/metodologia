@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.105. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.106. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -4985,9 +4985,9 @@ Esta entrada registra continuidad y procedencia. No crea OCP, control, titularid
 
 ## 150. Diseño integral y sprint EP Vault v2 · 2026-11-13
 
-**Diseño técnico:** [DISENO-INTEGRAL-EP-VAULT-V2.md](documentos/DISENO-INTEGRAL-EP-VAULT-V2.md). Commit `67a9a0dbabcf7a26c72e8b44847bd196fdb3246e`; blob leído de vuelta `5800a7b558b8937c873ea3ed31596df72774fc1e`.
+**Diseño técnico:** [DISENO-INTEGRAL-EP-VAULT-V2.md](documentos/DISENO-INTEGRAL-EP-VAULT-V2.md). Commit `0b928ab9cd2e7fd6cd26f51a3c337a77fb9ec9a5`; blob leído de vuelta `66466a2bcf0fdea91f41ac63671c6060b33abe8e`.
 
-**Sprint programado:** [SPRINT-EP-VAULT-V2.md](documentos/SPRINT-EP-VAULT-V2.md). Commit `d972286557acfbadfc9ed7842dc35567273dd625`; blob leído de vuelta `4addd75a49bc1eae3720c3397f45ddc4e58f8725`. Ocho paquetes EV2-01…EV2-08 dentro de EP-TASK-004; cada paquete conserva el criterio fuente del operador verbatim. El sprint está programado, no despachado a construcción.
+**Sprint programado:** [SPRINT-EP-VAULT-V2.md](documentos/SPRINT-EP-VAULT-V2.md). Commit `3a241c19806d141a58b2158577c223e7a79185b6`; blob leído de vuelta `6d7da01deee5eee3ace7f482ed237f38e18aa096`. Ocho paquetes EV2-01…EV2-08 dentro de EP-TASK-004; cada paquete conserva el criterio fuente del operador verbatim. El sprint está programado, no despachado a construcción.
 
 ### Auditoría local v1.0.0
 
@@ -4999,12 +4999,12 @@ Esta entrada registra continuidad y procedencia. No crea OCP, control, titularid
 
 ### Diseño y secuencia
 
-- Se mantiene EP Vault como único producto; Novelocker no se incorpora como dependencia verificada. El Host local conservará autorización en memoria con GUI cerrable; el modelo invocará operaciones nominadas y no recibirá secretos, bearer token ni shell/Run arbitrario.
+- Se mantiene EP Vault como único producto; Novelocker no se incorpora como dependencia verificada. El Host local conservará autorización y credencial de apertura en memoria con GUI cerrable; dentro de una concesión activa, el modelo puede solicitar `RequestWorkspaceOpen`/`RequestLock` y Host entrega la contraseña a Cryptomator CLI por `stdin`. La operación no crea ni prolonga sesiones y falla después de pausa/bloqueo/expiración. El modelo no recibe secretos, bearer token ni shell/Run arbitrario.
 - El diseño define los tipos de ubicación `EFIMERA` y `NO_EFIMERA`, duración/expiración, pausa manual, dead-man de 120 s, reautenticación local y reglas diferentes de conservación del ciphertext. La propuesta de incorporar `persistence_type` obligatorio en ART-013 se conserva en el diseño, no se escribió en DUG.
 - EV2-01 reconcilia baseline y almacenes; EV2-02 formato/migración; EV2-03 Host/aislamiento; EV2-04 CLI/uso delegado; EV2-05 ubicación/sesión; EV2-06 dead-man/Cryptomator; EV2-07 GUI; EV2-08 seguridad/regresión/aceptación. Cada paquete incluye criterio fuente verbatim.
 
 ### Gates y estado
 
-`EP_VAULT_V2_DESIGN=INTEGRATED_DRAFT`; `SPRINT=PROGRAMMED_NOT_DISPATCHED`; `V1_SYNTHETIC_BASELINE_TEST=PASS`; `LOCAL_V1_TREE=HASH_DIVERGENCE`; `LOCAL_VAULT_ROOTS=2_DISTINCT_CIPHERTEXTS_UNRESOLVED`; `AGENT_ISOLATION=REQUIRED_NOT_PRESENT`; `120S_IDLE_DEADMAN=NOT_IMPLEMENTED`; `ART013_LOCATION_TYPES=PROPOSAL_NOT_WRITTEN`; `P012_P013_REVIEW=REQUIRED`; `BUILD=NOT_DISPATCHED`.
+`EP_VAULT_V2_DESIGN=INTEGRATED_DRAFT`; `SPRINT=PROGRAMMED_NOT_DISPATCHED`; `MODEL_CRYPTO_OPEN_LOCK=SCOPED_TO_ACTIVE_OPERATOR_GRANT`; `V1_SYNTHETIC_BASELINE_TEST=PASS`; `LOCAL_V1_TREE=HASH_DIVERGENCE`; `LOCAL_VAULT_ROOTS=2_DISTINCT_CIPHERTEXTS_UNRESOLVED`; `AGENT_ISOLATION=REQUIRED_NOT_PRESENT`; `120S_IDLE_DEADMAN=NOT_IMPLEMENTED`; `ART013_LOCATION_TYPES=PROPOSAL_NOT_WRITTEN`; `P012_P013_REVIEW=REQUIRED`; `BUILD=NOT_DISPATCHED`.
 
 **Compuerta:** P012/P013 exige revisión presencial de seguridad/arquitectura antes de iniciar construcción. P005 requiere confirmación activa antes de cualquier modificación de DUG. Por tanto esta sección solo registra auditoría, diseño, sprint y estados; no modifica DUG, código, secretos, almacenes, configuración RDC ni criterios de aceptación.
