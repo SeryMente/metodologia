@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.102. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.103. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -4909,6 +4909,15 @@ Esta sección registra continuidad y propuesta. No certifica paridad con un prod
 ## 148. Implementación inicial Product Design: Carson en chat y persistencia por ciclo · 2026-11-13
 
 ### 148.1 Fuente, gobierno y alcance
+
+**Documentos de producto leídos de vuelta:**
+- Sprint general: frentes/ep/modulos/MOD-EP-PRODUCT-DESIGN/SPRINT-GENERAL-PRODUCT-DESIGN.md · blob 4e376047ee315a2fc4c97858743a96f69436a26f.
+- Perfil Carson: frentes/ep/modulos/MOD-EP-PRODUCT-DESIGN/prompts/CARSON-CHAT.md · blob ef334c36d002e11c22b2de156fbff4775a3b56f3.
+- README del módulo: frentes/ep/modulos/MOD-EP-PRODUCT-DESIGN/README.md · blob fcc23847078b44eac38d8b4a8a0a8a45606a52a8.
+- Índice de tareas provisionales EP: frentes/ep/📁 🧭 - Tareas provisionales/README.md · blob 192894d04c978cdef9dade851d9b84e965363145.
+- Checkpoint B: frentes/ep/modulos/MOD-EP-PRODUCT-DESIGN/fuentes/ULTIMA-SALIDA-PRODUCT-DESIGN-CARSON-20261113.md · blob e6ff4f16938c090a160021dabc5c4f1734a03ce4.
+- Tareas: EP-TASK-009 blob bc58ea3353f65875ab2acfadd744a6d855ddbfe3; EP-TASK-010 blob de4cc94e9624323988985abb808929957ce72c08; EP-TASK-011 blob 37ae38e09c3ee981518046d68f18071eaf1d6215; EP-TASK-012 blob 386fbb4b9e0b04d99e88a4309f43512887fe56fd.
+- EP-TASK-008 rectificado a pendiente: blob 483b96f9aba3a48fbee34ef2ed8411c576421491. Su configuración de Superpowers queda histórica, sin eliminación ni desinstalación.
 
 - Fuente rectora: instrucción directa SRC-PD-20261113-IDEACION-03, conservada literalmente en frentes/ep/modulos/MOD-EP-PRODUCT-DESIGN/SPRINT-GENERAL-PRODUCT-DESIGN.md §18 y en los núcleos de tareas pertinentes.
 - Gobierno adquirido al abrir/cerrar este ciclo: DUG v395 / NX-395m, blob 334522824074a3aff9683a8a389841c353bcd270; Metacanon 1.31; GOW 2.24. Frescura por edad de commit: NO VERIFICADA en esta revisión. MCP-NORMATIVO: DESACTIVADO.
