@@ -1,6 +1,6 @@
-## Estado vigente · C-GOBERNANZA-OBSERVABILIDAD-PRINCIPIOS-01
+## Estado vigente · C-GOBERNANZA-OBSERVABILIDAD-PRINCIPIOS-02
 
-DUG v394/NX-394m · Metacanon 1.31 · GOW 2.23 · 45 principios · 27 anexos. El ámbito Observabilidad y retroalimentación y los contratos ART-033/034 están definidos. Pendiente: revisión humana de atomicidad, redundancias y 36 enunciados >300 caracteres mediante la herramienta entregada; implementación y aceptación E2E de la ampliación Harmonia no ejecutadas. FOL1 PREPARADO/no activo; IPZ nativa NO VERIFICADA; MCP-NORMATIVO DESACTIVADO.
+DUG v395/NX-395m · Metacanon 1.31 · GOW 2.24 · 45 principios · 27 anexos. Contratos de Observabilidad y retroalimentación/ART-033/034 definidos. Pendiente: revisión semántica de atomicidad y redundancias; 36 enunciados exceden 300 caracteres y 12 exceden cinco oraciones. Herramienta v0.2 disponible para capturar retroalimentación. Overlay/captura ampliada Harmonia no implementados ni aceptados. FOL1 PREPARADO/no activo; IPZ nativa NO VERIFICADA; MCP-NORMATIVO DESACTIVADO.
 
 ## Snapshot histórico del frente · sprint Sink local · 2026-11-10 · supersedido por rebaseline 2026-11-11
 

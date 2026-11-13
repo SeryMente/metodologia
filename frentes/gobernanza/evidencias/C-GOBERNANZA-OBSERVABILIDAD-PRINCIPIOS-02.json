@@ -1,0 +1,98 @@
+{
+  "schema": "governance-cycle-evidence/1",
+  "event": "C-GOBERNANZA-OBSERVABILIDAD-PRINCIPIOS-02",
+  "date": "2026-11-13",
+  "source": {
+    "repository": "SeryMente/metodologia",
+    "branch": "main",
+    "parent_commit": "438ae830352efb9000c74080edf082edd7b6ef4b",
+    "dug_blob_before": "00feff2a3b4c4f5397f515d63fc14901eb9bdcf8",
+    "dug_blob_after": "334522824074a3aff9683a8a389841c353bcd270"
+  },
+  "changes": {
+    "arr_cnp_count": "6",
+    "art025_cnp_members": [
+      "P044",
+      "P001",
+      "P004",
+      "P005",
+      "P038",
+      "P043"
+    ],
+    "art027_mdp_count": 45,
+    "review_html": "v0.2"
+  },
+  "audit": {
+    "principles": 45,
+    "title_conforming": 45,
+    "mdp_conforming": 45,
+    "enunciados_over_300": 36,
+    "ids_over_300": [
+      "P038",
+      "P003",
+      "P005",
+      "P037",
+      "P007",
+      "P008",
+      "P039",
+      "P040",
+      "P009",
+      "P010",
+      "P011",
+      "P012",
+      "P013",
+      "P014",
+      "P015",
+      "P031",
+      "P016",
+      "P017",
+      "P032",
+      "P035",
+      "P018",
+      "P034",
+      "P019",
+      "P020",
+      "P033",
+      "P021",
+      "P036",
+      "P022",
+      "P024",
+      "P025",
+      "P027",
+      "P028",
+      "P029",
+      "P030",
+      "P042",
+      "P043"
+    ],
+    "over_five_sentences": 12,
+    "ids_over_five_sentences": [
+      "P038",
+      "P037",
+      "P008",
+      "P039",
+      "P009",
+      "P010",
+      "P035",
+      "P020",
+      "P021",
+      "P036",
+      "P029",
+      "P042"
+    ],
+    "atomicity": "REQUIRES_OPERATOR_SEMANTIC_REVIEW"
+  },
+  "limits": [
+    "Enunciados extensos preservados para revisión, no reescritos automáticamente.",
+    "El recuento de oraciones es aproximado a nivel de puntuación; no demuestra atomicidad.",
+    "Harmonia overlay y captura ampliada no implementados ni aceptados."
+  ],
+  "expected_blobs": {
+    "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html": "334522824074a3aff9683a8a389841c353bcd270",
+    "frentes/gobernanza/entregas/CHATGPT-v0.15/REVISION-PRINCIPIOS-DUG-v0.2.html": "4d13268fa32c8be83f5b69ca6bd14ecc7611b938",
+    "frentes/gobernanza/GOBERNANZA.md": "bf3fcb2c7f6f86da4f3ace44f3efbe0bdbfc4d7b",
+    "frentes/gobernanza/README.md": "f1056cea63dfef3402a536aa83e6fca42bfef30b",
+    "frentes/gobernanza/PENDIENTES.md": "c45eb95ca263c90632b1fda68d3c16e0d77925b0",
+    "frentes/gobernanza/cronica/C-GOBERNANZA-OBSERVABILIDAD-PRINCIPIOS-02.md": "3af9b1ee4c4b4e9cb4552c078d4bf946589ec77f"
+  }
+}

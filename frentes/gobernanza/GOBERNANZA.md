@@ -1,14 +1,14 @@
-## Estado operativo vigente · C-GOBERNANZA-OBSERVABILIDAD-PRINCIPIOS-01 · 2026-11-13
+## Estado operativo vigente · C-GOBERNANZA-OBSERVABILIDAD-PRINCIPIOS-02 · 2026-11-13
 
-DUG Samantha v394 · NX-394m · Metacanon 1.31 · GOW 2.23 · 45 principios · 27 anexos. P044 establece la precedencia de la instrucción vigente del operador dentro del DUG, con límites obligatorios de plataforma, permisos, legalidad y seguridad; P045 normaliza la advertencia de colisión. Se incorpora el ámbito Observabilidad y retroalimentación y ART-033/034. Los títulos P001–P043 se ajustan a «Principio D · concepto»; los textos largos se preservan para revisión asistida, sin declarar atomicidad ni conformidad de longitud. Harmonia overlay/captura ampliada: especificados, NO implementados ni aceptados. FOL1 PREPARADO/NO ACTIVO; IPZ nativa NO VERIFICADA; MCP-NORMATIVO DESACTIVADO.
+DUG Samantha v395 · NX-395m · Metacanon 1.31 · GOW 2.24 · 45 principios · 27 anexos. P044 establece la precedencia de la instrucción vigente del operador dentro del DUG, con límites obligatorios de plataforma, permisos, legalidad y seguridad; P045 normaliza la advertencia de colisión. Se incorpora Observabilidad y retroalimentación y ART-033/034. Los títulos P001–P043 siguen «Principio D · concepto»; los textos largos se preservan para revisión asistida. Auditoría mecánica: 36 enunciados >300 caracteres; 12 superan cinco oraciones. La atomicidad y la redundancia requieren revisión semántica. Harmonia overlay/captura ampliada: especificados, NO implementados ni aceptados. FOL1 PREPARADO/NO ACTIVO; IPZ nativa NO VERIFICADA; MCP-NORMATIVO DESACTIVADO.
 
 ## Resultado de la revisión del sistema de principios
 
-Auditoría mecánica de 45 principios: 45/45 títulos conformes; 45/45 microdescriptores dentro de 11–16 palabras; 36 enunciados superan 300 caracteres y 0 exceden cinco oraciones por recuento aproximado. La atomicidad y la redundancia requieren revisión semántica. Se entrega [herramienta local de lectura y retroalimentación](entregas/CHATGPT-v0.15/REVISION-PRINCIPIOS-DUG-v0.1.html); las notas permanecen locales hasta exportar JSON.
+45/45 títulos conformes y 45/45 microdescriptores dentro del rango de 11–16 palabras. [Herramienta de lectura y retroalimentación v0.2](entregas/CHATGPT-v0.15/REVISION-PRINCIPIOS-DUG-v0.2.html). Los comentarios y likes/dislikes permanecen locales en el navegador hasta exportar JSON.
 
 ## Ámbito de Observabilidad y retroalimentación
 
-ART-034 establece el contrato funcional para telemetría estructural, Registro de incidencias y retroalimentación contextual; la captura del contenido de conversaciones permanece vinculada a Gestión conversacional/ART-024. El OCP Harmonia revisado documenta telemetría de ciclos, pero no acredita aceptación natural E2E del overlay ni de la captura ampliada.
+ART-034 establece telemetría estructural, Registro de incidencias y retroalimentación contextual. El contenido de conversaciones permanece vinculado a Gestión conversacional/ART-024. El OCP Harmonia revisado no acredita todavía aceptación E2E del overlay ni de la captura ampliada.
 
 ## Historial y auditorías anteriores
 
