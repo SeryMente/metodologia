@@ -533,6 +533,21 @@ La inspección de Harmonia está pendiente y se hará en esa fase, una vez concl
 - README.md del módulo: puerta de entrada que requiere reconciliar sus apartados históricos.
 - OEP EP §§142.18–142.20 y §145: estado heredado del módulo y antecedentes de la integración.
 
+### Registro de decisiones históricas y rectificaciones
+
+Estos anclajes permiten recuperar las instrucciones anteriores sin reconstruirlas de memoria. Las referencias de línea corresponden a los archivos de exportación conservados en el OCP del módulo.
+
+| Ancla de fuente | Ubicación | Contenido relevante | Estado actual |
+|---|---|---|---|
+| SRC-PD-20261112-TASK-01 | fuentes/ChatGPT-PRODUCT-20261113-0951.md, línea 1025 | El objetivo de usar ChatGPT para poblar tareas provisionales trazables a los dictados verbatim y crear el mínimo trabajo que agote la instrucción. | VIGENTE en cuanto a captura y trazabilidad; la referencia a Superpowers como complemento operativo queda rectificada. |
+| SRC-PD-20261113-OPENCODE-01 | fuentes/ChatGPT-Product Design-20261113-1212.md, líneas 700–729 | El operador aclara que no eligió OpenCode y pregunta si basta ChatGPT + RDC; la recomendación registrada es mantener OpenCode fuera del flujo necesario. | BASE DE LA DECISIÓN CHATGPT + RDC; OpenCode no es dependencia objetivo. |
+| SRC-PD-20261113-CHAT-RDC-01 | mismo archivo, líneas 1407–1413 | Adaptar CIS al flujo ChatGPT + RDC, conservar el método local y desarrollar una capacidad propia; en ese momento se consideraba Carson como primer foco. | VIGENTE en arquitectura; el alcance de agentes fue ampliado posteriormente a los seis para V1.0. |
+| SRC-PD-20261113-CIS-V1-01 | mismo archivo, líneas 2073–2075 | Explorar todos los agentes CIS uno por uno en V1.0; la instrucción inicial también pedía una interfaz HTML local para agentes y técnicas, además del Keepsake. | TODOS LOS AGENTES VIGENTES; la obligatoriedad de la interfaz quedó corregida por SRC-PD-20261113-ALCANCE-02: selección conversacional como ruta preferida. |
+| SRC-PD-20261113-CORRECCION-01 | sección 18 de este documento | Superpowers solo como referencia de habilidades a desarrollar por cuenta propia; autoguardado tipo Office; biblioteca indexada; esquema visoespacial diferido; tareas según Harmonia. | VIGENTE. |
+| SRC-PD-20261113-ALCANCE-02 | sección 18 de este documento | Chat como interfaz suficiente; no crear interfaz si no aporta; Keepsake debe ser generado por el agente sin diseño del operador; investigar e integrar el autoguardado y la biblioteca. | VIGENTE Y MÁS RECIENTE PARA LA EXPERIENCIA DE USO. |
+
+**Regla de precedencia temporal:** los dictados anteriores se conservan íntegros. Cuando una decisión anterior y una rectificación posterior difieren, se mantiene la primera como historia y la última como objetivo vigente únicamente en el punto que modifica. La corrección de interfaz no elimina el requisito de explorar los seis agentes; la corrección sobre Superpowers no elimina el requisito de desarrollar capacidades propias a partir de referencias.
+
 ### Fuentes oficiales BMAD examinadas
 
 - Repositorio: bmad-code-org/BMAD-METHOD.
