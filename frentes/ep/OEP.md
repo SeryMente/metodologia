@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.91. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.92. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -4760,3 +4760,54 @@ Objetivo: hacer que la bóveda no se monte ni exponga una vista en claro a los p
 `RESEARCH=COMPLETED`; `KAMATERA_NO_CARD_TRIAL=NOT_AVAILABLE`; `HOST_INVENTORY=OBSERVED`; `CRYPTOMATOR_CLI_STABLE_RELEASE=0.6.2`; `VAULT_FORMAT=8_OBSERVED`; `B2_RCLONE_FLOW=PROPOSED`; `ACCESS_BROKER_V0.1=PROPOSED_NOT_IMPLEMENTED`; `FULL_WORKSPACE_MIGRATION=PENDING`.
 
 No se modificaron el host, la bóveda, los datos del workspace, las credenciales, la configuración RDC ni la arquitectura normativa. No se creó cuenta ni servidor Kamatera. Este registro no declara aceptación de ninguna prueba E2E nueva.
+
+
+## 144. Corrección de Novelocker, custodia de secretos y sesión autorizada EP · 2026-11-13 · 12:09 America/Mexico_City
+
+### 144.1 Corrección de nomenclatura
+
+`Novelocker` fue un nombre provisional introducido en conversación sin correspondencia con producto, paquete o componente canónico verificado. Se retira como dependencia y no se crea un módulo separado. La coordinación de bootstrap, unlock, mount, lock, guardian, recovery y audit permanece dentro de `MOD-EP-CRYPTO` (§139) y del futuro `EP Access Broker` cuando aplique.
+
+### 144.2 Superficies OpenAI para credenciales
+
+Se distinguen tres mecanismos que no son intercambiables:
+
+- **ChatGPT Connected Apps / OAuth:** la conexión autoriza al proveedor y ChatGPT invoca las acciones publicadas; no implica entregar al modelo el valor del token. Las conexiones MCP personalizadas OAuth disponibles en ChatGPT web requieren plan Business o Enterprise/Edu según la documentación vigente; deben soportar refresh tokens/offline access si la sesión necesita continuidad.
+- **Codex Cloud Personal vault:** en `Settings > Codex Cloud > Personal vault` permite guardar variables y network secrets. Una variable de entorno es visible para la tarea que la recibe. Un network secret se sustituye mediante proxy para dominios permitidos en HTTPS/443, sin exponer el valor crudo al proceso ni a sus archivos. Este almacén corresponde a tareas de Codex Cloud; no inyecta secretos automáticamente en un Windows autohospedado operado por RDC.
+- **OpenAI Agents API Vault:** almacena credenciales fuera de instrucciones/configuración y puede asociarse a sesiones API para MCP o sandboxes `openai_hosted`. No proporciona por sí solo credenciales a entornos self-hosted; estos necesitan su propio proxy/servicio confiable.
+
+No introducir secretos en prompts, mensajes, logs, argumentos de proceso ni archivos temporales.
+
+### 144.3 EP Access Broker V0.1: concesión de sesión sin token en contexto
+
+Se adopta como diseño preliminar el concepto de **sesión autorizada** de bajo rozamiento, sin permisos por archivo ni confirmaciones repetitivas:
+
+1. El operador desbloquea EP Vault en GUI y crea una concesión con nombre y duración sencilla (sesión actual, 8 h o 24 h; valor final pendiente de prueba).
+2. El broker recibe la autorización por canal local protegido y mantiene el estado de la concesión en su servicio; el material secreto no se devuelve al modelo.
+3. El modelo recibe herramientas/referencia de sesión no secreta. La autenticación de cada llamada se resuelve con OAuth de la aplicación ChatGPT cuando esté disponible o con identidad de agente RDC separada; no con un bearer token visible en contexto.
+4. La concesión inicial puede abarcar la raíz lógica `SeryMente/` con lectura, escritura y creación para reducir fricción. Se excluyen EP Vault, master passwords, recovery keys, tokens y perfiles/secretos por terminal.
+5. EP Vault puede cerrarse después de emitir la concesión. La concesión sobrevive hasta vencimiento o revocación; V0.1 la conserva en memoria del broker. Reinicio del broker/host invalida la concesión y exige autorización nueva.
+6. Al vencer/revocar: se bloquean nuevas operaciones, se drenan escritores/handles, se cierran procesos autorizados, se desmonta Cryptomator de forma graceful y se verifica la ausencia del volumen.
+7. Una concesión no es una frontera efectiva si el agente conserva shell/FS directo bajo la identidad propietaria del workspace. Antes de aceptar el broker, el agente debe ejecutarse con identidad Windows no administradora separada y sin lectura directa del almacén físico, EP Vault o claves. El acceso al workspace se entrega por el broker o por una vista temporal cuyo ACL sea verificable. La configuración RDC previamente observada `allowedDirectories=[]` no constituye confinamiento.
+
+### 144.4 Límite de descifrado selectivo
+
+Una bóveda Cryptomator montada expone su namespace completo a la identidad que tiene acceso al montaje; no descifra criptográficamente una carpeta aislada dentro de una misma bóveda. El broker puede limitar las operaciones/rutas que expone al agente, sin crear una segunda bóveda. Si se requieren compartimentos criptográficos independientes, se evaluarán bóvedas separadas en una fase posterior, no en V0.1.
+
+El modelo recibirá texto claro de los archivos que esté autorizado a leer. El broker reduce superficie y duración, pero no impide que el agente copie o transmita los datos autorizados ni protege contra un administrador hostil con control del host.
+
+### 144.5 Kamatera diferido
+
+La prueba de Kamatera exige tarjeta válida o, en ciertos casos, depósito reembolsable por PayPal. No cumple el requisito actual de prueba sin tarjeta ni depósito; no se crea cuenta ni servidor. El benchmark/implementación de escritorio Windows cloud se difiere a una etapa posterior de la secuencia EP, conservando la intención de implementarlo cuando exista un medio de pago aceptable.
+
+La comparación preliminar observada sigue siendo: host HP ProDesk 400 G4 DM, i7-8700T 6C/12T, 15.8 GB RAM, SSD 238.5 GB y 23.1 GB libres en C:; candidato Kamatera 8 vCPU/16 GB/256 GB NVMe. No hay benchmark ni instancia real, por lo que no se declara superioridad de rendimiento. El cloud desktop se valora por aislamiento, administración y movilidad además de rendimiento.
+
+### 144.6 Punto de decisión pendiente al cierre del diseño
+
+Al terminar esta fase de diseño, decidir explícitamente el **formato canónico mínimo de sesión EP** y si el marco proporciona formalismo suficiente para delimitarla. Evaluar como mínimo: identificador/folio si corresponde, operador/terminal/host, modelo y canal de acceso, hora de apertura y expiración, alcance/permisos, fuente de autorización, estado, eventos de revocación/cierre y evidencia de read-back. Este punto queda pendiente; no asignar ahora folios ni convertir este esquema en formato canónico.
+
+### 144.7 Estado
+
+`NOVEOLOCKER=WITHDRAWN_AS_UNVERIFIED_LABEL`; `EP_ACCESS_BROKER_V0.1=DESIGN_PROPOSED`; `CHATGPT_CONNECTED_APP_OAUTH=PLAN_DEPENDENT`; `CODEX_PERSONAL_VAULT=CODEX_CLOUD_ONLY`; `AGENTS_API_VAULT=API_HOSTED_OR_MCP_SCOPE`; `KAMATERA=DEFERRED_CARD_CONSTRAINT`; `CANONICAL_EP_SESSION_FORMAT=DECISION_PENDING_END_OF_DESIGN`.
+
+No se modificaron la bóveda, el host, la configuración RDC, las credenciales ni la arquitectura del módulo Cryptomator. No hay implementación ni aceptación nueva.
