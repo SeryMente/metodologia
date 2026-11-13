@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.98. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.99. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -4842,7 +4842,7 @@ Este apartado registra la recuperación documental y remite al acumulado como me
 
 ## 146. Reorientación del diseño Product Design con BMAD y CIS · 2026-11-13
 
-**Documento general del sprint:** [SPRINT-GENERAL-PRODUCT-DESIGN.md](modulos/MOD-EP-PRODUCT-DESIGN/SPRINT-GENERAL-PRODUCT-DESIGN.md). Git blob actualizado y leído de vuelta: f166ef3cc5a5d6efb3a5da360a1fc4b12f2733ee. Documento en estado BORRADOR INTEGRAL PARA REVISIÓN DE DISEÑO EXTREMO A EXTREMO.
+**Documento general del sprint:** [SPRINT-GENERAL-PRODUCT-DESIGN.md](modulos/MOD-EP-PRODUCT-DESIGN/SPRINT-GENERAL-PRODUCT-DESIGN.md). Git blob actualizado y leído de vuelta: 3ee0e5270f0efc7190d9a1997b2fd66d0810dc57. Documento en estado BORRADOR INTEGRAL PARA REVISIÓN DE DISEÑO EXTREMO A EXTREMO.
 
 **Checkpoint de salida B:** modulos/MOD-EP-PRODUCT-DESIGN/fuentes/ULTIMA-SALIDA-PRODUCT-DESIGN-20261113-1350.md · blob leído de vuelta: 782a003802e66a47031a6fc6d0c5e6a83cea1b3e.
 
@@ -4864,6 +4864,8 @@ Este apartado registra la recuperación documental y remite al acumulado como me
 
 Esta sección actualiza el estado objetivo de Product Design y supersede, exclusivamente para la arquitectura objetivo de ese módulo, cualquier afirmación incompatible contenida en §§142.19–142.20 y en los documentos heredados de vMAT/Superpowers/portal. Dichos registros se preservan como antecedentes; no se borran ni se reescribe su historial. EP-TASK-008 mantiene su existencia y estado documental histórico hasta una reconciliación específica. No se autoriza por esta sección desinstalar OpenCode/Superpowers ni eliminar sus configuraciones.
 
+
+**Alcance concreto del Keepsake y persistencia:** Carson es la capa de coach sobre bmad-brainstorming; se registran la discrepancia 36/7 vs. 108/13, la diferencia BMAD 6.12.4/6.13.0, la limitación del autoguardado por turno y el contrato Guardar/Guardar como y biblioteca en el documento general.
 ### Estado de implementación y límites
 
 - PRODUCT_DESIGN_CHAT_FIRST=DECIDED.
