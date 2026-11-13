@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.90. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.91. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -4672,3 +4672,91 @@ Ambas conexiones alcanzan el mismo host físico observado; no representan dos te
 - Condición de desbloqueo: el operador deberá desbloquear EP Vault localmente bajo `CENTRAL\fila4`; después se podrá repetir la prueba breve de descubrimiento. La credencial Groq sigue separada y no se expuso ni se persistió en texto plano.
 - La tarea `EP-TASK-008` permanece `en_curso`; no declarar aceptación runtime ni cierre de vMAT hasta obtener una enumeración observable de skills y una prueba sintética de captura → tarea → plan → ejecución/revisión/verificación.
 
+
+
+## 143. Investigación de flujo cifrado, persistencia B2, Windows cloud y acceso delegado · 2026-11-13 · 12:09 America/Mexico_City
+
+**Clasificación:** investigación y diseño preliminar; no constituye aceptación de proveedor, migración, cambio normativo ni implementación del controlador.
+
+### 143.1 Inventario observado del host actual
+
+Inspección RDC de solo lectura sobre `PC10RCIF4EI4`, perfil `CENTRAL\\fila4`:
+
+- HP ProDesk 400 G4 DM.
+- Intel Core i7-8700T a 2.40 GHz; 6 núcleos físicos / 12 procesadores lógicos.
+- RAM instalada: 15.8 GB.
+- Windows 11 Pro; Intel UHD Graphics 630 integrada.
+- SSD reportado: 238.5 GB; volumen C: 237.5 GB, 23.1 GB libres.
+- W: `EP-FILA4`: 30 GB, 29.9 GB libres; W: aparece como disco virtual de Microsoft y no se contabiliza como SSD físico adicional.
+
+El inventario describe el equipo conectado, no todos los equipos posibles del operador.
+
+### 143.2 Kamatera: prueba, condiciones y comparación
+
+La prueba pública vigente ofrece 30 días, un servidor con configuración de hasta USD 100 y 1 TB de tráfico entrante/saliente. La activación exige tarjeta válida. Si no se acepta la tarjeta, Kamatera ofrece depósito previo reembolsable vía PayPal; sin tarjeta admitida ni depósito no activa la cuenta. Por tanto, **Kamatera no cumple el requisito de prueba gratuita sin tarjeta ni depósito**. El precio público de Windows Cloud Desktop parte de USD 12/mes, pero no representa una cotización de una estación de trabajo de desarrollo.
+
+Comparación preliminar, no benchmark:
+
+| Recurso | Host observado | Kamatera candidato |
+|---|---|---|
+| CPU | i7-8700T, 6C/12T | Probar 8 vCPU Tipo B; CPU Xeon/Cascade Lake anunciado, recursos reservados |
+| RAM | 15.8 GB | 16 GB como base; 32 GB solo si la cotización cabe en presupuesto |
+| Disco | SSD 238.5 GB, C: con 23.1 GB libres | NVMe 256 GB recomendado para prueba; precio por confirmar |
+| GPU | Intel UHD 630 integrada | No se presume GPU dedicada |
+| Windows | Windows 11 Pro local | Windows Desktop virtual accesible por RDP |
+| Rendimiento | Referencia física observada | Desconocido hasta prueba real de RDP, CPU, disco y carga EP |
+
+La combinación 4 vCPU/16 GB/128 GB es un candidato mínimo de comparación, pero ofrece menos procesadores lógicos que el host actual y no debe declararse más rápida. La configuración objetivo para benchmark es 8 vCPU/16 GB/256 GB NVMe Tipo B, sujeta a cotización y al límite de USD 100 de la prueba. No se creó cuenta ni servidor.
+
+### 143.3 Función de Rclone frente a RDC y Git
+
+RDC es el canal de ejecución remota: entrega comandos al host. Rclone es el ejecutable especializado que implementa transferencia/sincronización con backends de almacenamiento, incluido B2. El modelo puede invocar Rclone por RDC; no son alternativas excluyentes.
+
+- `git clone`: reconstruye un repositorio Git y su historial; no constituye respaldo integral del workspace ni conserva por sí solo archivos no versionados.
+- `robocopy`: adecuado para la migración local inicial desde el origen en claro al volumen Cryptomator montado, una vez inventariados reparse points y preservado el origen.
+- Rclone B2: copia objetos cifrados, omite elementos ya idénticos, aplica concurrencia/reintentos, filtros y comparación de checksums; permite operación repetible sin escribir lógica propia de B2.
+- `rclone copy` es el modo no destructivo predeterminado: no elimina excedentes del destino.
+- `rclone sync` modifica el destino para igualarlo y puede eliminar archivos; queda prohibido como rutina sin dry-run, revisión y política de retención.
+- `rclone check` compara tamaño/hash sin modificar los extremos. B2 expone SHA-1 para validación de transferencias.
+- No se añade `rclone crypt`: Cryptomator ya produce ciphertext; una segunda capa de cifrado en el transporte no aporta un requisito demostrado.
+
+### 143.4 Flujo eficiente propuesto con Cryptomator
+
+La bóveda real observada está en `C:\\Users\\fila4\\entorno-persistente\\`; el destino definido en §140.5, `C:\\Users\\fila4\\EP\\modulos\\MOD-EP-CRYPTO\\vault-store\\`, quedó vacío. No se mueve ni sustituye la bóveda real sin inventario y read-back. La estructura observada tiene formato de bóveda 8.
+
+El repositorio oficial de Cryptomator CLI muestra como última release estable publicada 0.6.2. La CLI admite `--password:stdin`; en Windows necesita WinFsp para integración nativa. El mounter WebDAV de fallback es de menor rendimiento y la documentación advierte restricciones dependientes del SO (incluido límite de 4 GB por archivo en Windows); no se elige como ruta normal. El binario local histórico `0.7.0-SNAPSHOT` / `0.1.0-local` no se etiqueta como release estable oficial.
+
+Secuencia objetivo:
+
+1. Resolver y validar la ubicación del almacén físico local sobre NVMe, fuera del punto de montaje para impedir recursión.
+2. Desbloquear con Cryptomator CLI y WinFsp, contraseña por `stdin`; montar una sola vez por sesión. La llave de recuperación formal existente no se presume equivalente a la contraseña maestra de desbloqueo; confirmar cómo se suministra esta última.
+3. Migrar el origen mediante copia local al volumen montado, después de manifiesto completo, resolución de reparse points y preservación del original. Comparar conteos/tamaños y SHA-256 desde la vista descifrada; no borrar el origen hasta aceptación.
+4. Trabajar directamente sobre la unidad montada. No crear una segunda copia de trabajo en claro, no montar B2 como disco operativo y no comprimir/archivar el workspace en cada ciclo.
+5. En checkpoint de persistencia, detener escrituras, cerrar handles y vaciar buffers; para el flujo inicial más seguro, bloquear/desmontar de forma graceful antes de ejecutar Rclone sobre el almacén físico estable.
+6. Ejecutar Rclone `copy` incremental del ciphertext a B2; ejecutar `check` y guardar resultado. Mantener versionado/retención B2. La concurrencia y `--fast-list` se ajustan con benchmark; la documentación de Rclone advierte que el óptimo depende del hardware y del tamaño/cantidad de archivos.
+7. Para reanudar en otra ubicación, descargar la bóveda completa al NVMe local de ese host, verificar ciphertext, desbloquear y montar localmente. Una sola ubicación escritora activa; no abrir/escribir la misma réplica desde dos hosts en paralelo.
+
+Cryptomator cifra contenido por archivo en chunks de hasta 32 KiB con AES-GCM y cifra nombres/estructura con AES-SIV. El chunking criptográfico no convierte cada objeto B2 en una transferencia parcial: un archivo modificado se trata como objeto/archivo modificado por el backend. La optimización principal es no retransmitir los archivos que no cambiaron y ajustar transferencias concurrentes.
+
+### 143.5 EP Access Broker · propuesta inicial de mínimo rozamiento
+
+Objetivo: hacer que la bóveda no se monte ni exponga una vista en claro a los procesos del modelo sin una concesión temporal originada por EP Vault.
+
+**V0.1 propuesta:**
+
+- EP Vault se desbloquea localmente en GUI; el operador crea una concesión con nombre y duración simple (`esta sesión`, 8 h o 24 h).
+- Alcance inicial deliberadamente amplio: raíz `SeryMente/` con lectura/escritura/creación y cambios de archivos; excluir EP Vault, contraseñas, recovery keys, tokens, perfiles y rutas de secretos. Sin prompts por archivo para el trabajo normal.
+- Generar capacidad opaca aleatoria de 256 bits; almacenar digest, alcance, fecha de expiración, sesión y estado de revocación en el broker. El modelo usa operaciones RDC del broker; el secreto bruto no se incluye en prompt, argumentos, entorno ni logs.
+- La concesión autoriza al broker, no reemplaza la contraseña ni la clave maestra de Cryptomator. El secreto de desbloqueo permanece local y se entrega a CLI por `stdin`.
+- Expiración/revocación: detener operaciones nuevas, drenar escritores y handles, cerrar aplicaciones, desmontar de forma graceful y verificar que no quede volumen accesible.
+- Requisito de enforcement: identidad Windows separada, no administradora, para el agente; el broker conserva la identidad con acceso al almacén. La configuración RDC observada tiene `allowedDirectories=[]`; por ello hoy no existe confinamiento efectivo y una concesión no sería segura si el modelo conserva shell directo con permisos amplios. Debe aislarse la identidad o limitar el canal a operaciones del broker antes de aceptar V0.1.
+- Una bóveda Cryptomator montada expone el namespace completo. El broker puede limitar la vista lógica a rutas permitidas; no hace que Cryptomator descifre criptográficamente una carpeta aislada mientras las demás continúan bloqueadas. Compartimentos criptográficos reales requerirían bóvedas separadas o un diseño de vistas de trabajo por operación.
+- El modelo recibirá en claro el contenido que necesite leer. La concesión reduce alcance y duración; no impide por sí sola la exfiltración de datos autorizados durante una sesión ni neutraliza a un administrador del host o al proveedor del modelo.
+
+**No aceptado todavía:** proveedor cloud; tamaño final de VM; ruta definitiva de vault-store; secreto de desbloqueo CLI; alcance y duración definitivos de la concesión; identidad de agente; política de salida de datos; montaje/desmontaje graceful en Windows.
+
+### 143.6 Resultado y siguiente gate
+
+`RESEARCH=COMPLETED`; `KAMATERA_NO_CARD_TRIAL=NOT_AVAILABLE`; `HOST_INVENTORY=OBSERVED`; `CRYPTOMATOR_CLI_STABLE_RELEASE=0.6.2`; `VAULT_FORMAT=8_OBSERVED`; `B2_RCLONE_FLOW=PROPOSED`; `ACCESS_BROKER_V0.1=PROPOSED_NOT_IMPLEMENTED`; `FULL_WORKSPACE_MIGRATION=PENDING`.
+
+No se modificaron el host, la bóveda, los datos del workspace, las credenciales, la configuración RDC ni la arquitectura normativa. No se creó cuenta ni servidor Kamatera. Este registro no declara aceptación de ninguna prueba E2E nueva.
