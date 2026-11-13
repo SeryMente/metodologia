@@ -28,9 +28,9 @@ El diseño incluye ahora, además de lo preservado en el checkpoint anterior:
 
 ## Persistencia verificada en este ciclo
 
-- Sprint: el contenido fue actualizado tras el read-back anterior; el blob vigente debe cotejarse al cerrar este checkpoint.
-- OEP §146 apunta al sprint vigente en el último write conocido.
-- README del módulo y el checkpoint anterior conservan los enlaces previos; este archivo será enlazado después de su lectura de vuelta.
+- Sprint `SPRINT-GENERAL-PRODUCT-DESIGN.md`: Git blob `3ee0e5270f0efc7190d9a1997b2fd66d0810dc57`, 60,050 caracteres, lectura de vuelta verificada.
+- OEP `frentes/ep/OEP.md`: v0.3.99, blob `06e3567dace4f79866e0778ef27c2b3273425236`; §146 apunta al blob vigente del sprint y todavía enlaza el checkpoint anterior de las 13:50.
+- README del módulo: blob previo `5d6a1409ac5129bd1e1070eba05db486582eee7b`; pendiente enlazar este checkpoint de 13:54.
 
 ## Límites y siguiente acción
 
