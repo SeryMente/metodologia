@@ -137,4 +137,4 @@ Esta reorientación, dictada por el operador el 2026-11-13, fija como arquitectu
 - Superpowers queda limitado a la consulta de sus habilidades como referencia para desarrollar capacidades propias. Su Visual Companion no forma parte del alcance actual.
 - El flujo de dictados debe mantener la relación fuente verbatim → requisito → tarea → entregable → criterio de aceptación → evidencia, con asignación al OCP responsable.
 
-**Última salida visible del ciclo:** [ULTIMA-SALIDA-PRODUCT-DESIGN-20261113-1350.md](./fuentes/ULTIMA-SALIDA-PRODUCT-DESIGN-20261113-1350.md). Conserva el checkpoint B y los anclajes A correspondientes.
+**Última salida visible del ciclo:** [ULTIMA-SALIDA-PRODUCT-DESIGN-20261113-1354.md](./fuentes/ULTIMA-SALIDA-PRODUCT-DESIGN-20261113-1354.md). Conserva el checkpoint B y los anclajes A correspondientes.
