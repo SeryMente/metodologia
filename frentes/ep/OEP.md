@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.95. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.96. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -4842,13 +4842,13 @@ Este apartado registra la recuperación documental y remite al acumulado como me
 
 ## 146. Reorientación del diseño Product Design con BMAD y CIS · 2026-11-13
 
-**Documento general del sprint:** [SPRINT-GENERAL-PRODUCT-DESIGN.md](modulos/MOD-EP-PRODUCT-DESIGN/SPRINT-GENERAL-PRODUCT-DESIGN.md). Git blob actualizado y leído de vuelta: b5c446a585407c44b0899d258574158cdf2f5409. Documento en estado BORRADOR INTEGRAL PARA REVISIÓN DE DISEÑO EXTREMO A EXTREMO.
+**Documento general del sprint:** [SPRINT-GENERAL-PRODUCT-DESIGN.md](modulos/MOD-EP-PRODUCT-DESIGN/SPRINT-GENERAL-PRODUCT-DESIGN.md). Git blob actualizado y leído de vuelta: 6950347c2652d10ad8b3e336f67400795fa4a824. Documento en estado BORRADOR INTEGRAL PARA REVISIÓN DE DISEÑO EXTREMO A EXTREMO.
 
 ### Decisiones expresas vigentes del operador
 
 - La interfaz principal de Product Design es la conversación ordinaria de ChatGPT. No se requiere el portal auxiliar, un dashboard ni un selector visual general.
-- BMAD es el método de Product Design. CIS aporta seis agentes y sus configuraciones colaborativas según catálogo oficial; deben verificarse los manifiestos y el runtime antes de reclamar integración.
-- Superpowers se conserva exclusivamente como referencia de capacidades que el equipo desarrollará por cuenta propia. No forma parte del runtime, no se instala ni ejecuta como herramienta operativa en el diseño Product Design.
+- BMAD es el método de Product Design. CIS aporta seis agentes y sus configuraciones colaborativas según catálogo oficial; upstream se describe como módulo demostrativo en evolución, por lo que se verifican madurez, manifiestos, workflows y runtime antes de reclamar integración. En ChatGPT + RDC se adaptan como perfiles conversacionales propios; no se afirma runtime CIS nativo por solo leer sus fuentes.
+- Superpowers se conserva exclusivamente como referencia de sus habilidades para desarrollar capacidades propias. No forma parte del runtime, no se instala ni ejecuta como herramienta operativa en el diseño Product Design. Su Visual Companion es una interfaz y queda fuera del objetivo actual.
 - El Brain Selector original de BMAD es opcional y no constituye requisito de inicio. Su función es componer modalidad de facilitación y técnicas de brainstorming; no selecciona agentes CIS.
 - Brainstorm HTML Keepsake es un artefacto HTML autocontenido generado por el agente desde el registro de sesión. El operador no diseña ni maqueta el resultado. En la referencia BMAD V6.12 es automático en Ideate for me y optativo en Facilitator/Creative Partner.
 - Quedan pendientes de diseño e implementación el autoguardado con versiones recuperables tipo Office y una biblioteca básica indexada y reutilizable.
