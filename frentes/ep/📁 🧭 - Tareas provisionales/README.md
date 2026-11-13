@@ -560,3 +560,7 @@ Rclone queda identificado como motor especializado de transferencia B2 invocado 
 ## EP-TASK-003 · concesión de sesión y custodia de secretos · 2026-11-13
 
 `Novelocker` retirado como etiqueta no verificada; no es dependencia. EP Access Broker V0.1 se plantea como concesión temporal emitida por EP Vault y retenida en el broker, sin revelar token al modelo. ChatGPT Custom MCP/OAuth queda como integración futura dependiente del plan; Codex Personal Vault solo aplica a Codex Cloud. Kamatera se difiere por requisito de tarjeta/depósito. Formato canónico mínimo de sesión EP: decidir al final de la fase de diseño. Sin implementación ni cambio de aceptación.
+
+## Acumulado de diseño e implementación EP · 2026-11-11 a 2026-11-13
+
+El documento complementario [Acumulado de diseño e implementación EP](../documentos/ACUMULADO-DISENO-IMPLEMENTACION-EP-2026-11-11_A_2026-11-13.md) reconstruye el sprint desde tres exports EP leídos completos (4.444 líneas), cotejados con OEP §§136–144 y EP-TASK-002–008. Conserva cronología, decisiones, implementación realmente observada, pruebas sintéticas vs aceptación, backlog, bloqueos y secuencia de cierre. No sustituye el OEP ni cambia estados de tareas. **OEP §145** registra la revisión y la persistencia.
