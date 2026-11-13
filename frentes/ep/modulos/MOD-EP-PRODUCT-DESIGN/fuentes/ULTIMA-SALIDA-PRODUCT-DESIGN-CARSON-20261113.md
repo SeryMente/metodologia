@@ -25,7 +25,7 @@ La conservación a largo plazo es el objetivo, pero no se promete permanencia li
 - Perfil conversacional creado: prompts/CARSON-CHAT.md, blob ef334c36d002e11c22b2de156fbff4775a3b56f3, read-back exacto.
 - Documento general: SPRINT-GENERAL-PRODUCT-DESIGN.md, blob 4e376047ee315a2fc4c97858743a96f69436a26f, read-back exacto.
 - EP-TASK-009 Carson: blob bc58ea3353f65875ab2acfadd744a6d855ddbfe3, read-back exacto.
-- EP-TASK-010 Persistencia: blob de núcleo de tarea decc94e9624323988985abb808929957ce72c08, read-back exacto.
+- EP-TASK-010 Persistencia: blob de núcleo de tarea de4cc94e9624323988985abb808929957ce72c08, read-back exacto.
 - EP-TASK-011 Brain Selector diferido, baja prioridad: blob 37ae38e09c3ee981518046d68f18071eaf1d6215, read-back exacto.
 - EP-TASK-012 Keepsake diferido, baja prioridad: blob 386fbb4b9e0b04d99e88a4309f43512887fe56fd, read-back exacto.
 - Índice de tareas EP: blob 192894d04c978cdef9dade851d9b84e965363145, read-back exacto.
