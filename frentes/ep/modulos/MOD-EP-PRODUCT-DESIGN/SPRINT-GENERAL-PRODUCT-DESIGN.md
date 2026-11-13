@@ -25,16 +25,21 @@ El primer dominio funcional que debe quedar bien resuelto es Brainstorming. El r
 | PD-D-001 | ChatGPT, en conversación ordinaria, es la interfaz principal de Product Design. | CONFIRMADA |
 | PD-D-002 | No se requiere un portal visual propio ni una interfaz cargada de controles para seleccionar agentes y técnicas. La selección puede realizarse por conversación. | CONFIRMADA |
 | PD-D-003 | BMAD es el método/framework de Product Design. | CONFIRMADA |
-| PD-D-004 | CIS aporta seis agentes que deben contemplarse, uno por uno, en Product Design V1.0. | CONFIRMADA |
+| PD-D-004 | Carson es el primer agente conversacional operativo para la versión inicial; los demás agentes CIS quedan para una secuencia posterior. | CONFIRMADA · ORDEN DE IMPLEMENTACIÓN |
 | PD-D-005 | Superpowers se utiliza exclusivamente como referencia para identificar capacidades que desarrollaremos por nuestra cuenta. No se instala, integra, ejecuta ni adopta como herramienta operativa de este diseño. | CONFIRMADA |
-| PD-D-006 | Brain Selector no es requisito de la experiencia inicial. Puede conservarse como recurso oficial disponible, pero la ruta preferente será seleccionar en el chat. | CONFIRMADA |
-| PD-D-007 | Brainstorm HTML Keepsake solo tiene sentido si se genera automáticamente a partir de la sesión; el operador no diseña ni compone ese HTML. | CONFIRMADA |
-| PD-D-008 | La implementación debe tener autoguardado y versiones recuperables, con una experiencia comparable a Office. | CONFIRMADA |
-| PD-D-009 | La implementación debe incluir una biblioteca indexada y reutilizable, inicialmente básica. | CONFIRMADA |
+| PD-D-006 | Brain Selector queda fuera del recorrido inicial y se registra como mejora opcional de baja prioridad, posterior al núcleo. | CONFIRMADA · DIFERIDA |
+| PD-D-007 | Brainstorm HTML Keepsake queda fuera del recorrido inicial y se registra como mejora opcional de baja prioridad; solo se abordará si se genera automáticamente sin trabajo de diseño del operador. | CONFIRMADA · DIFERIDA |
+| PD-D-008 | El autoguardado se ejecuta al terminar cada ciclo de ideación, no carácter por carácter ni por cada turno trivial; debe preservar borradores y resultados maduros con versiones recuperables. | CONFIRMADA |
+| PD-D-009 | La biblioteca inicial indexa proyectos, sesiones y piezas reutilizables; conserva fuente y procedencia y permite referenciar el mismo resultado desde distintos proyectos. | CONFIRMADA |
 | PD-D-010 | La integridad del diseño completo se revisará antes de ejecutar la implementación. | CONFIRMADA |
 | PD-D-011 | La categoría futura se denomina Cognición visoespacial y proyección visual; por ahora solo se conservan su categoría y sus documentos de referencia. | CONFIRMADA · DIFERIDA |
-| PD-D-012 | Las tareas provisionales se construirán después del vaciado completo del diseño, replicando la estructura y rigurosidad observadas en el frente Harmonia y asociando cada tarea a los dictados verbatim que la sustentan. | CONFIRMADA · FASE POSTERIOR |
+| PD-D-012 | Las tareas provisionales se construyen tras inspeccionar el método de trazabilidad de Harmonia: fuente literal, requisito, tarea, entregable, aceptación, evidencia y crónica; se materializan en el índice y los núcleos README que ya utiliza EP. | CONFIRMADA |
 | PD-D-013 | OpenCode no es necesario para el flujo objetivo de esta etapa: ChatGPT + RDC es la ruta principal. La existencia de OpenCode/configuración anterior no autoriza eliminarla ni la convierte en dependencia. | CONFIRMADA |
+| PD-D-014 | El módulo deberá conectarse posteriormente con la Prótesis Cognitiva; esa integración se conserva como dependencia futura, sin implementarla ni desglosarla ahora. | CONFIRMADA · DIFERIDA POR EL OPERADOR |
+| PD-D-015 | Si el operador no nombra el proyecto, Product Design lo crea con un nombre descriptivo automático y etiquetas esenciales. | CONFIRMADA |
+| PD-D-016 | Una ideación incompleta o madura conserva íntegramente su contenido significativo en un registro durable por ciclo. La síntesis no reemplaza ni elimina las ideas fuente. | CONFIRMADA |
+| PD-D-017 | A/B es notación de evidencia del marco de trabajo, no una función, pantalla ni objeto del producto de lluvia de ideas. | ACLARADA POR EL OPERADOR |
+| PD-D-018 | Brain Selector y Keepsake quedan documentados en tareas provisionales posteriores y de prioridad baja; no son dependencias del primer hito. | CONFIRMADA |
 
 ### 2.1 Corrección explícita sobre Superpowers
 
@@ -57,7 +62,7 @@ Este inventario no se instala, ejecuta ni adopta. Su único uso permitido dentro
 
 ### 2.4 Decisiones que no deben reabrirse por error de documentación
 
-No volver a proponer Superpowers como instrumento de ejecución. No volver a presentar el portal auxiliar como la interfaz solicitada. No exigir Brain Selector para iniciar una sesión de brainstorming. No pedir al operador que diseñe el Keepsake. No trasladar la categoría visoespacial a la primera etapa. No convertir la lista de capacidades en una secuencia rígida si el problema concreto requiere otra ruta.
+No volver a proponer Superpowers como instrumento de ejecución. No volver a presentar el portal auxiliar como la interfaz solicitada. No exigir Brain Selector ni Keepsake para iniciar o finalizar una sesión inicial. No pedir al operador que diseñe el Keepsake. No trasladar la categoría visoespacial ni la Prótesis Cognitiva a la primera etapa. No convertir la lista de capacidades en una secuencia rígida si el problema concreto requiere otra ruta.
 
 ---
 
@@ -99,9 +104,15 @@ No abrir un perfil aislado ni una instancia paralela que no corresponda a la ses
 
 ### 3.5 Interfaz visual: decisión mínima
 
-La interfaz inicial es el chat. No se construirá un portal, dashboard o selector general de agentes.
+La interfaz inicial es el chat. No se construirá un portal, dashboard o selector general de agentes. Brain Selector queda diferido como mejora opcional y de baja prioridad.
 
-El Brain Selector original de BMAD puede seguir disponible como recurso opcional, pero no se debe abrir automáticamente ni convertir en requisito. Si en una fase futura se demuestra que una interfaz mínima aporta valor, el alcance tendría que limitarse a una elección clara de agente, modo y técnicas pertinentes, con carga cognitiva baja. Esa adaptación no está aprobada ni se necesita para comenzar.
+### 3.6 Primer recorrido funcional: Carson
+
+La primera versión operativa se limita a Carson conversando en ChatGPT sobre el motor BMAD bmad-brainstorming. El usuario puede invocarlo por su nombre o iniciar una lluvia de ideas directamente; no se le pide abrir un portal ni un archivo HTML. Carson identifica el tema y el objetivo, adopta el modo que la petición implique y propone pocas técnicas apropiadas. Si la modalidad cambia materialmente la colaboración y no puede inferirse, hace una única pregunta breve.
+
+La versión inicial admite Facilitator, Creative Partner e Ideate for me. Si no hay indicación y no es material preguntar, se usa Creative Partner como opción equilibrada. La voz de Carson se mantiene como coach creativo, pero su comunicación se adapta al estilo sobrio del operador: nada de menús extensos, cuestionarios, ruido visual ni entusiasmo artificial.
+
+No se implementan todavía los otros cinco agentes CIS, Brain Selector ni Keepsake. Se conservan como fases posteriores sin bloquear el primer uso.
 
 ---
 
@@ -189,213 +200,75 @@ El Brain Selector puede ser un recurso alternativo de composición y copia de pr
 
 ---
 
-## 6. Brainstorm HTML Keepsake: resultado automático, no trabajo del operador
+## 6. Brainstorm HTML Keepsake — tarea posterior de baja prioridad
 
-### 6.1 Qué es
+La investigación de BMAD V6.12 queda acotada a la ficha provisional EP-TASK-012. BMAD define un archivo brainstorm.html autocontenido, visual, específico de cada sesión, con CSS y JavaScript embebidos y derivado del registro completo; no es un producto que el operador deba diseñar.
 
-El Keepsake no es un selector, un portal ni una aplicación que el operador deba diseñar. Es un archivo HTML autocontenido llamado brainstorm.html, generado después de finalizar una sesión. BMAD lo define como un artefacto creativo visual cuya composición se adapta al contenido, la energía y las técnicas utilizadas en esa sesión. No parte de una plantilla visual obligatoria.
+La regla upstream distingue modalidades: en Ideate for me se genera automáticamente; en Facilitator y Creative Partner se ofrece como artefacto opcional. La generación no está probada end-to-end en este entorno ChatGPT + RDC. Antes de abordarla se requiere que EP-TASK-009 y EP-TASK-010 estén aceptadas, una prueba de fidelidad contra el registro persistido y una forma segura de guardar el HTML en el proyecto.
 
-La especificación indica que cada técnica puede recibir un tratamiento visual propio, que las ideas deben representarse de una manera apropiada a su contenido y que la síntesis debe funcionar como punto culminante del artefacto. El HTML lleva CSS y JavaScript incorporados y no depende de recursos externos. **El agente genera el artefacto; el operador no diseña, maqueta ni compone el HTML.**
-
-### 6.2 Condición de generación según BMAD V6.12
-
-| Modalidad | Comportamiento indicado por BMAD | Adaptación objetivo |
-|---|---|---|
-| Facilitator | Artefactos optativos; al cerrar, el agente ofrece el Keepsake y lo recomienda como opción predeterminada. | Preguntar una sola vez al cierre. Si se acepta, generarlo desde el registro persistido. |
-| Creative Partner | Artefactos optativos; el agente ofrece el Keepsake y pide elección. | Igual que Facilitator. |
-| Ideate for me | Keepsake automático. | Generarlo al completar la síntesis, sin exigir diseño ni composición al operador. |
-
-La generación del Keepsake es una operación de síntesis visual de cierta carga, no una exportación trivial. Si el entorno no puede producirlo de manera fiable, debe informar del fallo y conservar la sesión; no debe simular que el HTML existe.
-
-### 6.5 ¿Está disponible «de caja» en nuestra instalación?
-
-Hay que separar dos afirmaciones:
-
-- **La capacidad está definida upstream:** BMAD V6.12 describe el resultado que se debe generar, el formato autocontenido y cuándo ofrecerlo.
-- **La generación completa no está acreditada en Product Design local:** no se ha presentado una prueba que vaya desde una sesión real, a través de su memlog persistido, hasta un brainstorm.html generado, validado y abierto en el host del operador.
-
-Por eso no se debe vender como un artefacto ya instalado y listo para abrir. El usuario no diseñará el documento, pero sí se requiere adaptar y verificar la generación dentro del flujo ChatGPT + RDC. El trabajo adicional está en conectar la fuente de sesión, producir automáticamente la composición HTML con CSS/JavaScript embebidos, validar que el contenido refleje el registro y conservar el archivo. No se requiere que el operador haga diseño gráfico ni que construyamos una aplicación visual de edición.
-
-La referencia V6.12 prescribe delegar el documento a un subagente. Como la disponibilidad de un runtime de subagentes compatible no está acreditada, la solución objetivo preferida es que ChatGPT genere el archivo directamente a partir del registro completo persistido. Esta sustitución debe someterse a una prueba de fidelidad y calidad visual. Si no alcanza el resultado, el Keepsake no se declara implementado.
-
-### 6.3 Fuente y estructura del artefacto
-
-Fuente canónica: el registro de sesión completo. El Keepsake no puede inventar ideas ni sustituir las formulaciones del operador. Debe separar claramente:
-
-- ideas originadas por el operador;
-- aportaciones del agente;
-- técnicas aplicadas y su secuencia;
-- agrupaciones, hallazgos y síntesis;
-- decisiones y asuntos aún abiertos.
-
-El documento final es independiente de la aplicación que lo generó, puede abrirse localmente y conserva los recursos necesarios dentro del mismo archivo. La presentación debe privilegiar legibilidad y jerarquía; no se requiere repetir la interfaz recargada del portal anterior.
-
-### 6.4 Restricción de integración descubierta
-
-La especificación upstream V6.12 prescribe delegar la generación a un subagente y hacer que este lea el memlog como fuente única. En el entorno de ChatGPT/RDC aún no se ha verificado un mecanismo de subagentes compatible que cumpla esa prescripción. No se debe fingir que existe.
-
-**Propuesta de adaptación para revisar:** generar el Keepsake desde el propio asistente con el registro persistido como única fuente de datos, aplicando una validación de integridad de contenido y HTML antes de presentarlo. La alternativa de usar otro runtime no se incorpora por defecto, y OpenCode/Superpowers no son dependencias del diseño.
+**Decisión actual:** no generar ni abrir Keepsake en la primera versión. No es condición para utilizar Carson ni para guardar las ideaciones. Su única ubicación en el plan actual es EP-TASK-012, de baja prioridad y secuencia posterior.
 
 ---
 
-## 7. Persistencia de sesiones y autoguardado tipo Office
+## 7. Autoguardado de ideaciones por ciclo y proyectos
 
-### 7.1 Objetivo de experiencia
+### 7.1 Objetivo
 
-El operador no debe preocuparse por guardar manualmente cada avance. Cada intercambio relevante debe quedar conservado automáticamente, con historial recuperable, y una interrupción no debe convertir en pérdida todo lo ocurrido desde el último guardado.
+Conservar tanto borradores incompletos como ideaciones maduras sin exigir al operador guardar manualmente ni crear nombres antes de empezar. El autoguardado trabaja por ciclo de lluvia de ideas, no por carácter ni por cada turno trivial. El asistente no afirmará que un ciclo está guardado hasta tener confirmación y lectura de vuelta del almacenamiento.
 
-El sistema tiene que diferenciar:
-- una sesión en curso o interrumpida;
-- un proyecto con nombre que reúne sesiones y resultados relacionados;
-- un elemento de biblioteca reutilizable que puede ser citado o incorporado a otros proyectos.
+### 7.2 Unidad mínima del modelo
 
-No se debe confundir la persistencia de Product Design con la arquitectura completa de IAR de Khora.
-
-### 7.1.1 Guardar y Guardar como
-
-El autoguardado crea y conserva una sesión recuperable sin que el usuario tenga que nombrarla previamente. La experiencia debe ofrecer además acciones explícitas equivalentes a **Guardar** y **Guardar como**:
-
-- **Guardar en proyecto:** asignar la sesión actual a un proyecto ya existente o crear uno con nombre y descripción.
-- **Guardar como:** crear un proyecto nuevo o una nueva línea de trabajo derivada, conservando el vínculo al origen. No sobrescribir la sesión fuente ni clonar silenciosamente sus turnos.
-- **Renombrar o reasignar:** cambiar el nombre/descripción del proyecto o su vínculo con una sesión mediante un evento y versión recuperables.
-- **Sesión sin proyecto:** sigue siendo recuperable y buscable como borrador; no se obliga a crear un proyecto para conservar el trabajo.
-
-La semántica precisa de «Guardar como» —si crea solo una relación nueva o inicia además una sesión derivada— debe concretarse en la revisión de integridad, pero en ambos casos el origen permanece inmutable y la procedencia no se pierde.
-
-### 7.2 Modelo lógico propuesto
-
-| Entidad | Propósito | Datos mínimos |
+| Objeto | Función | Campos esenciales |
 |---|---|---|
-| Project | Agrupa trabajo de producto relacionado. | id local, nombre, descripción breve, fechas, estado y referencias a sesiones. |
-| Session | Unidad de trabajo conversacional recuperable. | id local, tema, objetivo, proyecto opcional, agente CIS, modo BMAD, técnicas, estado, fechas y versión vigente. |
-| Turn | Conserva cada intercambio completo. | secuencia, A literal del operador, B visible del asistente, fecha, hash de cada lado y referencias de evidencia. |
-| SessionEvent | Conserva hechos internos de la lluvia de ideas. | secuencia, tipo, texto, autoría y referencias al turno de origen. |
-| Snapshot | Versión recuperable de un estado de sesión. | versión, fecha, hash, versión padre y referencias al contenido preservado. |
-| Artifact | Resultado derivado de una sesión. | tipo, ruta, versión, hash, estado y fuentes. |
-| LibraryItem | Unidad reusable indexada. | id local, tipo, título, resumen, contenido, etiquetas y procedencia. |
-| LibraryLink | Relación entre un elemento reusable y uno o más proyectos. | id de elemento, id de proyecto, tipo de relación y fecha. |
+| Proyecto | Agrupa sesiones de un mismo esfuerzo de ideación. | id local, nombre, origen del nombre (operador/automático), fechas, etiquetas, estado y puntero a última versión. |
+| Sesión | Una conversación de ideación de Carson. | id local, proyecto, tema, objetivo, modo, agente/motor, técnicas, estado y fechas. |
+| Ciclo | Unidad inmutable de guardado y recuperación. | id/orden, fecha, fase (divergencia/convergencia/síntesis), técnicas, nuevas ideas, preguntas, hallazgos, decisiones, autoría, madurez y referencias a ciclos anteriores. |
 
-Todos los identificadores de persistencia son locales al sistema. No se presentan como identificadores nativos de ChatGPT ni como folios FOL1. La asignación concreta de UUIDv7 local se verificará durante implementación.
+No se modelan turnos completos A/B como una característica de producto. Se conserva el contenido de las ideas y aportaciones significativas, con su autoría y secuencia; el original del operador puede quedar enlazado cuando sea relevante para comprender la instrucción.
 
-### 7.3 Distribución física candidata
+### 7.3 Cuándo se guarda un ciclo
 
-La estructura es una propuesta sujeta a la revisión de integridad y a las rutas autorizadas del OCP EP; todavía no se crean carpetas:
+Un ciclo termina al completar una tanda de técnica(s), antes de pasar de divergencia a convergencia, al hacer una pausa/interrupción solicitada o al cerrar la sesión. El asistente consolida todo el material generado desde el último ciclo y realiza un único guardado transaccional. No reduce ideas tentativas a un resumen: conserva su formulación íntegra y puede añadir aparte una síntesis.
 
-    MOD-EP-PRODUCT-DESIGN/
-    ├── SPRINT-GENERAL-PRODUCT-DESIGN.md
-    ├── sesiones/
-    │   └── <session-id>/
-    │       ├── session.json
-    │       ├── turns/
-    │       │   ├── 000001.json
-    │       │   └── 000002.json
-    │       ├── .memlog.md
-    │       ├── snapshots/
-    │       │   ├── v000001/
-    │       │   └── v000002/
-    │       └── artifacts/
-    │           └── brainstorm.html
-    ├── proyectos/
-    │   └── <project-id>/
-    │       └── project.json
-    └── biblioteca/
-        ├── catalog.sqlite
-        └── items/
-            └── <item-id>/
-                ├── item.json
-                └── versions/
-                    └── v000001/
-                        └── content.md
+### 7.4 Proyecto automático y etiquetas esenciales
 
-Las carpetas y nombres son un esquema de diseño, no rutas ya implementadas. La materialización definitiva respetará el OCP EP, la privacidad y el confinamiento del entorno.
+- Si el operador nombra un proyecto, se usa ese nombre.
+- Si no lo nombra, se crea automáticamente un título descriptivo derivado del tema y la fecha; si aún no hay tema, se usa «Ideación sin título — fecha» y se puede renombrar después.
+- Etiquetas mínimas: `lluvia-de-ideas`, tema/área, estado de madurez (`borrador`, `en-desarrollo`, `madura`) y estado del proyecto. `reutilizable` solo se añade a las piezas seleccionadas; no se asigna por defecto a todo.
+- No se bloquea una sesión por falta de nombre, descripción o etiquetas aportadas por el operador.
 
-### 7.4 Contrato de autoguardado propuesto
+### 7.5 Versiones, reanudación y «Guardar como»
 
-1. Al iniciar una sesión, crear su manifiesto y una primera versión de estado.
-2. Al completar cada intercambio, guardar A y B de forma íntegra y cronológica. La captura de A no debe normalizar ni corregir el texto original; cualquier lectura corregida se conserva separada.
-3. Registrar en el memlog las ideas, preguntas, insights, decisiones, direcciones y técnicas relevantes, conservando autoría en Creative Partner.
-4. Cada escritura se hace mediante archivo temporal, flush/fsync y reemplazo atómico o transacción equivalente. El autoguardado no puede fingir ser un observador continuo del chat: la plataforma no ofrece aquí un hook que capture por sí solo cada mensaje mientras se escribe. En esta arquitectura, el asistente debe realizar la operación de persistencia como parte del procesamiento de cada intercambio de trabajo, usando el texto A recibido y la salida B que va a entregar. No se puede garantizar la captura de texto no enviado, borradores del usuario ni contenido intermedio del streaming.
-5. Después de guardar, comprobar tamaño/hash/read-back antes de marcar el intercambio como persistido.
-6. Actualizar el manifiesto/versionado sin destruir snapshots anteriores.
-7. Si falla el guardado, informar el fallo concreto, conservar el estado visible en la conversación y marcar el tramo como pendiente de persistir; nunca declarar autoguardado exitoso.
-8. Al reanudar, leer el manifiesto, validar la última versión y reconstruir el estado desde los turnos/eventos conservados.
-9. Al cerrar, registrar el evento de cierre y congelar el estado de sesión, sin eliminar la posibilidad de lectura ni de exportación.
+Cada ciclo genera un registro inmutable con orden, fecha y SHA-256. El manifiesto de proyecto/sesión se actualiza atómicamente y conserva versiones previas. Una corrección posterior se agrega como nueva revisión o evento; no se reescribe un ciclo aceptado. La reanudación carga el último ciclo verificado y todos los ciclos previos necesarios.
 
-Los turnos son registros inmutables. El manifiesto puede cambiar mediante escritura atómica y mantener un historial de versiones. El índice de biblioteca es derivado y reconstruible; nunca debe ser la única copia de los contenidos canónicos.
+«Guardar» mantiene la sesión en el proyecto activo. «Guardar como» crea un proyecto derivado que referencia el original; no duplica ni altera el registro canónico. Si el usuario desea continuar desde ese punto, se abre una sesión nueva enlazada al mismo origen.
 
-### 7.5 Versiones y recuperación
+### 7.6 Archivos y ruta lógica
 
-La experiencia tipo Office debe proporcionar:
+Esquema lógico mínimo dentro del workspace protegido EP:
 
-- guardado automático tras cada intercambio finalizado;
-- versiones históricas identificables y ordenadas;
-- recuperación de una versión anterior sin borrar la versión actual;
-- recuperación de sesiones activas o incompletas;
-- indicación explícita de cuándo se produjo el último guardado verificado;
-- lectura de vuelta y comprobación SHA-256 de los artefactos persistidos;
-- restauración mediante una nueva versión, no sobrescritura irreversible.
+    SeryMente/Metodologia/frentes/ep/modulos/MOD-EP-PRODUCT-DESIGN/data/<terminal>/brainstorming/
+      projects/<project-id>/project.json
+      projects/<project-id>/sessions/<session-id>/session.json
+      projects/<project-id>/sessions/<session-id>/cycles/000001.json
+      projects/<project-id>/sessions/<session-id>/cycles/000002.json
+      library/library.sqlite
 
-No se fija todavía un intervalo periódico arbitrario. La granularidad primaria es el intercambio completo y los puntos de control que representen cambios materiales.
+Las rutas anteriores son esquema, no existen todavía. No se materializarán bajo Desktop, Downloads, AppData, Temp ni fuera del punto de montaje de Cryptomator. La escritura real depende de disponer de la bóveda EP desbloqueada.
 
-### 7.6 Compatibilidad BMAD memlog: conflicto a resolver
+### 7.7 Integridad, recuperación y duración
 
-La fuente oficial V6.12 contiene una inconsistencia interna: memlog.py se describe como append-only y declara que no existe un estado de ciclo de vida complete; sin embargo, SKILL.md consulta status para reanudar y references/finalize.md ordena usar memlog.py set --key status --value complete.
+La escritura de ciclo será atómica, con flush/fsync, hash, lectura de vuelta y actualización del manifiesto. Los ciclos son la fuente canónica; el índice es derivado y reconstruible. La persistencia local protegida será la copia de trabajo. El respaldo remoto seguirá el mecanismo EP vigente, exclusivamente como ciphertext cifrado del lado cliente y con lectura de vuelta y prueba de restauración; no se construirá un backup paralelo dentro del módulo.
 
-No se trasladará esa contradicción a la implementación sin resolverla. **Propuesta:** mantener el memlog como cronología append-only y gestionar el estado de sesión (active, paused, completed) en session.json o en el manifiesto de sesión. El cierre se agrega también como evento cronológico. Así no se reescribe la memoria semántica ni se pierde el estado operativo de la sesión.
+El producto se diseña para conservación a largo plazo, pero no se promete permanencia literal «hasta el fin de los tiempos». La garantía verificable depende de redundancia, integridad periódica, custodia de claves y pruebas de restauración. El bloqueo de la bóveda o la falta de backup aceptado se mostrará como riesgo de persistencia, no como guardado completo.
+
+### 7.8 Adaptación de BMAD memlog
+
+La skill de BMAD describe memlog como cronológico y append-only, pero la documentación de SKILL.md/finalize.md también recomienda mutar un campo status mediante el subcomando set. El script local efectivamente implementa ese subcomando genérico, aunque el propio encabezado de memlog.py niega que el log tenga estado de ciclo de vida. Para evitar inconsistencia, Product Design mantendrá el estado (`active`, `paused`, `completed`) en session.json y registrará el evento de cierre en el ciclo; no usará `set status` sobre el memlog como fuente canónica de estado.
 
 ---
 
-## 8. Biblioteca indexada y reutilizable
-
-### 8.1 Objetivo funcional mínimo
-
-La biblioteca debe permitir localizar y reutilizar resultados previos sin tener que recordar en qué conversación o archivo se produjeron. Debe indexar, como mínimo, sesiones concluidas, Keepsakes, síntesis, descubrimientos, decisiones, briefs y otros artefactos que efectivamente se generen.
-
-La biblioteca no sustituye los originales. Guarda referencias a la fuente y conserva versiones de los contenidos que se conviertan en elementos reutilizables.
-
-### 8.2 Modelo lógico
-
-| Campo | Función |
-|---|---|
-| item_id | Identidad local estable. |
-| title | Nombre legible. |
-| item_type | Sesión, idea, insight, decisión, brief, Keepsake u otro artefacto. |
-| summary | Síntesis breve para resultados de búsqueda. |
-| content_ref | Ruta del contenido conservado. |
-| tags | Etiquetas temáticas y funcionales sugeridas. |
-| project_refs | Proyectos asociados. |
-| source_session | Sesión de origen. |
-| source_turn_refs | Turnos A/B que sustentan el contenido. |
-| source_artifact_ref | Artefacto del que deriva, si aplica. |
-| version y sha256 | Integridad e historial. |
-| created_at / updated_at | Trazabilidad temporal. |
-| status | Estado de uso: candidato, reutilizable o sustituido. |
-
-### 8.3 Indexación mínima propuesta
-
-Se propone un índice local SQLite con búsqueda de texto completo (FTS5) si la compilación local disponible lo soporta. El índice debe poder reconstruirse desde los archivos de origen. Si FTS5 no está disponible, se elegirá un mecanismo alternativo sencillo después de probarlo en el entorno real.
-
-La primera versión no necesita vectores, embeddings, GraphRAG, base de datos servidor ni otra interfaz web. La búsqueda básica debe cubrir texto, título, resumen, etiquetas, tipo y proyecto. El asistente puede ejecutar la consulta y mostrar resultados en el propio chat.
-
-### 8.3.1 Qué se indexa y cuándo se considera reutilizable
-
-- Todas las sesiones y sus artefactos finales pueden indexarse como unidades localizables, incluso si la sesión sigue siendo un borrador recuperable.
-- El sistema puede proponer como piezas reutilizables ideas, hallazgos, decisiones, briefs y otros resultados atómicos, pero no debe elevar una propuesta a decisión ratificada.
-- La clasificación `reutilizable` se conserva como estado explícito y reversible. La fuente de la sesión no se modifica por incorporarla a la biblioteca.
-- El usuario debe poder encontrar una sesión completa además de elementos discretos extraídos de ella.
-
-### 8.4 Reutilización entre proyectos
-
-Un elemento de biblioteca puede referenciarse desde más de un proyecto. **Propuesta para revisión:** mantener una única copia canónica del elemento y crear relaciones de referencia hacia cada proyecto, en lugar de duplicar el contenido. La procedencia original permanece inmutable; adaptar un contenido para otro proyecto genera una versión o un derivado con vínculo explícito a su fuente.
-
-### 8.5 Ingesta y mantenimiento
-
-- Las sesiones y artefactos terminados se incorporan automáticamente al índice básico.
-- Los elementos con valor potencial de reutilización reciben título, resumen y etiquetas sugeridas por el agente.
-- La búsqueda no convierte por sí sola un elemento en requisito vigente ni en decisión ratificada.
-- Los elementos sustituidos siguen localizables con su estado histórico.
-- Cada resultado muestra de qué sesión, turnos y artefacto proviene.
-- Si el índice se corrompe o queda desactualizado, se reconstruye desde las fuentes; no se pierde el contenido canónico.
+section library
 
 ---
 
@@ -496,73 +369,53 @@ Su posición futura es posterior a los componentes esenciales de Product Design.
 
 ---
 
-## 13. Integridad de diseño extremo a extremo: propuesta de compuertas
+## 13. Integridad de extremo a extremo y gates de aceptación
 
-Antes de ejecutar cualquier implementación, el operador revisará el diseño completo. La revisión debe poder seguir el recorrido de la información desde la instrucción original hasta su recuperación y reutilización:
+El flujo mínimo debe conservar continuidad desde la ideación hasta su recuperación:
 
-    Instrucción / dictado del operador
-             ↓
-    ChatGPT: interpretación y agente CIS seleccionado
-             ↓
-    BMAD: modo, técnicas y actividad de diseño
-             ↓
-    Registro de sesión: A/B + eventos/memlog + procedencia
-             ↓
-    Autoguardado y snapshots verificables
-             ↓
-    Síntesis y decisiones
-             ↓
-    Keepsake HTML / otros artefactos acordados
-             ↓
-    Biblioteca indexada y referencias a proyectos
-             ↓
-    Búsqueda, recuperación, reutilización y nueva versión
+    Usuario → chat Carson → motor BMAD Brainstorming
+       → ciclos de ideación → proyecto nombrado/auto-nombrado
+       → persistencia por ciclo y versiones
+       → índice FTS5 derivado → búsqueda y referencias reutilizables
+       → respaldo cifrado EP → restauración comprobada
 
-### Criterios de revisión
+A/B no es un módulo ni un formato de dato que la lluvia de ideas deba manejar. Las sesiones conservan autoría, contenido, orden, técnicas y referencias de origen; el control documental A/B permanece fuera del producto.
 
-| Compuerta | Pregunta de integridad | Evidencia que habrá que exigir |
+| Gate | Criterio | Evidencia requerida |
 |---|---|---|
-| G1 · Entrada | ¿La instrucción original se conserva sin alteraciones y se separa de la interpretación? | A literal, metadatos de origen y hash. |
-| G2 · Selección | ¿La selección de agente, modo y técnicas es coherente y comprensible, sin sobrecargar al operador? | Agente/modo/técnicas de cada sesión y explicación breve. |
-| G3 · Ejecución | ¿Se respeta el modo de facilitación y la secuencia divergencia→convergencia? | Registro cronológico de técnicas, ideas y autoría. |
-| G4 · Persistencia | ¿Cada intercambio queda guardado y recuperable? | Turnos A/B, hash y read-back. |
-| G5 · Versiones | ¿Puede recuperarse cualquier versión relevante sin sobrescribir la actual? | Snapshots inmutables y prueba de restauración. |
-| G6 · Reanudación | ¿Una sesión interrumpida se puede continuar desde el último estado válido? | Prueba de reanudación con integridad de eventos. |
-| G7 · Keepsake | ¿El HTML se genera automáticamente sin trabajo de diseño del operador y refleja fielmente la sesión? | Archivo autónomo, validación HTML, fuentes y contraste contra el registro. |
-| G8 · Biblioteca | ¿Los resultados se pueden buscar y reutilizar sin perder procedencia? | Índice reconstruible, consultas, referencias cruzadas y hashes. |
-| G9 · Proyecto | ¿Se distingue sesión, proyecto y elemento reusable? | Esquemas, enlaces y pruebas de asociación. |
-| G10 · Seguridad | ¿Los datos permanecen en las rutas y perfiles autorizados? | Preflight, identidad, rutas, permisos y controles EP. |
-| G11 · Interfaz | ¿El flujo puede completarse desde el chat, sin portal o perfil de navegador adicional? | Prueba de usuario de punta a punta en la sesión principal. |
-| G12 · Aceptación | ¿El diseño se ha probado en un flujo completo antes de declararlo implementado? | Protocolo de pruebas, resultados, fallos y aceptación expresa. |
+| G1 · Activación | Carson puede invocarse desde chat normal sin portal ni selector. | Prueba conversacional en ChatGPT. |
+| G2 · Motor | Los tres modos se aplican correctamente y las técnicas provienen del catálogo BMAD local fijado. | Prueba por modo y trazas de técnica. |
+| G3 · Ideación | Ideas incompletas y maduras se conservan sin filtrado ni pérdida; autoría y secuencia quedan claras. | Comparación con el contenido de sesión. |
+| G4 · Ciclo | Al terminar una tanda, pausa, transición o cierre se genera un único registro durable. | Registro, SHA-256, read-back y contador del último ciclo. |
+| G5 · Reanudación | Una sesión interrumpida se reabre desde su último ciclo íntegro. | Prueba de reanudación natural. |
+| G6 · Proyectos | El proyecto se crea con el nombre indicado o uno automático y etiquetas esenciales. | Manifiesto y prueba de proyecto sin nombre. |
+| G7 · Versiones | Los ciclos anteriores se conservan y se puede volver a una versión sin destruir la actual. | Restauración y cotejo de hashes. |
+| G8 · Biblioteca | FTS5 permite localizar contenido, proyectos y etiquetas; el índice se reconstruye desde los originales. | Búsquedas reales, rebuild y comparación. |
+| G9 · Reutilización | Una idea puede vincularse a más de un proyecto sin perder ni duplicar el origen canónico. | Referencias cruzadas verificadas. |
+| G10 · Seguridad | Contenido solo en workspace EP protegido y respaldo cliente-cifrado. | Preflight de rutas, permisos, backup y restore. |
+| G11 · Durabilidad | Hay al menos copia de trabajo protegida y respaldo independiente aceptado. | Lectura de vuelta y restore test completo. |
+| G12 · Alcance | Brain Selector/Keepsake no bloquean el primer release y no se activan por omisión. | Aceptación del recorrido chat-only. |
 
-Ninguna compuerta queda aceptada por la mera existencia de un archivo, una maqueta o una descripción. La prueba debe demostrar el comportamiento real.
+Un diseño o documento no acredita el funcionamiento. Los gates se aceptan con pruebas reales; ningún índice sustituye a las fuentes originales. La duración indefinida se trata como objetivo de conservación con controles verificables, nunca como garantía absoluta.
 
 ---
 
-## 14. Preparación de tareas provisionales — fase posterior
+## 14. Desglose y secuencia de tareas provisionales
 
-No se crean tareas en este documento. La capacidad de convertir dictados en tareas provisionales queda dentro del diseño objetivo y deberá funcionar así:
+La inspección del frente Harmonia ya se realizó sobre su OCP v0.46, README y controles. No se encontró un índice independiente de tareas provisionales bajo la raíz de Harmonia; su rigor aparece en el OCP mediante instrucciones literales, matrices requisito/estado/evidencia, criterios de aceptación, crónicas y límites de verificación. Para materializar Product Design se conserva la estructura vigente de EP: índice único de tareas y un README núcleo/crónica por tarea.
 
-1. Conservar cada instrucción del operador literalmente como fuente primaria, con secuencia, fecha disponible y procedencia; la normalización se guarda separada y nunca sustituye al original.
-2. Dividir la instrucción en fragmentos de requisito solo cuando sea necesario para preservar cobertura y trazabilidad.
-3. Extraer resultados, requisitos, restricciones, negaciones, condiciones, dependencias, autorizaciones y criterios de aceptación explícitos.
-4. Asignar cada requisito al frente/módulo/OCP existente que tenga la responsabilidad material; no crear FT/OCP por comodidad.
-5. Construir la relación fuente verbatim → requisito normalizado → tarea provisional → entregable → criterio de aceptación → evidencia.
-6. Crear el mínimo número de tareas que permita ejecutar y aceptar independientemente los resultados. No fraccionar una solución común artificialmente ni fusionar trabajos con responsabilidades o aceptaciones diferentes.
-7. No convertir sugerencias, ejemplos, posibilidades o elementos expresamente diferidos en trabajo obligatorio.
-8. Cada tarea conserva su propio README/núcleo y crónica acumulativa; el índice solo resume y enlaza. La tarea no amplía por sí sola la autorización de ejecución.
+El conjunto mínimo derivado de la instrucción de implementación es:
 
-Cuando se termine el vaciado del diseño y el operador revise su integridad:
+| ID | Prioridad/secuencia | Resultado independiente | Fuente principal |
+|---|---|---|---|
+| EP-TASK-009 | Alta · primer hito | Carson conversacional en ChatGPT, integrado con BMAD Brainstorming y los tres modos. | SRC-PD-20261113-IDEACION-03 |
+| EP-TASK-010 | Alta · núcleo persistente | Guardado por ciclo, proyectos con nombre automático/etiquetas, versiones recuperables y biblioteca indexada/reutilizable. | SRC-PD-20261113-IDEACION-03 |
+| EP-TASK-011 | Baja · posterior a 009 | Evaluar/adaptar Brain Selector oficial como comodidad opcional; no como puerta de entrada. | SRC-PD-20261113-IDEACION-03 y SRC-PD-20261113-ALCANCE-02 |
+| EP-TASK-012 | Baja · posterior a 009/010 | Generación automática del HTML Keepsake desde el registro persistido, sin diseño del operador. | SRC-PD-20261113-IDEACION-03 y SRC-PD-20261113-ALCANCE-02 |
 
-1. Inspeccionar el OCP del frente Harmonia en SeryMente/khora/docs/frentes/harmonia/.
-2. Revisar su índice de tareas, núcleos/README y la relación entre cada instrucción fuente verbatim y sus tareas derivadas.
-3. Identificar su estructura real, campos, jerarquía, granularidad, matriz de trazabilidad, criterios de aceptación, dependencias y crónicas.
-4. Replicar ese arreglo en Product Design con el mismo rigor, no una versión aproximada ni una reinterpretación simplificada.
-5. Asociar cada tarea a las instrucciones originales que la sustentan: dictado verbatim → requisito → tarea → entregable → criterio de aceptación → evidencia.
-6. Separar los requisitos confirmados de las propuestas y preguntas técnicas abiertas.
-7. Crear el mínimo conjunto de tareas que permita ejecutar y aceptar los resultados independientemente, sin fraccionamiento artificial ni omisiones.
+Las dos tareas núcleo son independientes para aceptación técnica, pero el módulo solo satisface la experiencia completa cuando ambas están aceptadas. Las tareas 011 y 012 no son dependencias ni bloquean el primer uso. La Prótesis Cognitiva se registra como integración futura expresamente diferida, sin crear tarea ahora.
 
-La inspección de Harmonia está pendiente y se hará en esa fase, una vez concluido el documento de vaciado. La existencia del presente borrador no autoriza empezar a crear tareas.
+Cada núcleo de tarea conserva: solicitud original verbatim, lectura normalizada separada, matriz fuente → requisito → tarea → entregable → criterio de aceptación → evidencia, dependencias, limitaciones y crónica por ciclo. El ID de tarea no crea OCP, frente, titularidad ni autorización independiente.
 
 ---
 
@@ -570,18 +423,16 @@ La inspección de Harmonia está pendiente y se hará en esa fase, una vez concl
 
 | Ref. | Tema | Estado | Resolución prevista antes de implementación |
 |---|---|---|---|
-| R-01 | Capacidad real de ChatGPT para escribir en el host local al finalizar cada turno. | PENDIENTE | Prueba con RDC autorizado, identidad correcta, escritura/read-back y fallo controlado. |
-| R-02 | Selección correcta de sesión RDC cuando hay conexiones múltiples. | PENDIENTE | Descubrimiento en vivo y preflight de identidad; no inferir por hostname. |
-| R-03 | Integración de CIS y versiones compatibles con BMAD Core 6.12.4. | PENDIENTE | Revisar manifests oficiales y ejecutar pruebas por cada agente. |
-| R-04 | Generación del Keepsake bajo ChatGPT sin subagentes. | PROPUESTA | Prototipo controlado desde la fuente persistida y prueba de fidelidad. |
-| R-05 | Conflicto de lifecycle del memlog V6.12. | CONFIRMADO EN FUENTE UPSTREAM | Separar estado en manifiesto y mantener memlog append-only. |
-| R-06 | Disponibilidad de SQLite FTS5 en el entorno local. | PENDIENTE | Prueba de capacidad; índice reconstruible con alternativa si falla. |
-| R-07 | Ubicación y confinamiento de datos Product Design conforme al OEP vigente. | PENDIENTE | Revisar OEP, perfil EP y rutas permitidas antes de materializar. |
-| R-08 | Reanudación cuando el archivo de turno exista pero el manifiesto no se haya actualizado. | PENDIENTE DE DISEÑO DETALLADO | Protocolo de reconciliación desde registros inmutables. |
-| R-09 | Retención y restauración de versiones de artefactos de biblioteca. | PENDIENTE DE DISEÑO DETALLADO | Política de versionado, referencias, sustitución y exportación. |
-| R-10 | Presentación del Keepsake en el Chrome principal sin cambiar de perfil. | PENDIENTE | Prueba solo cuando sea necesaria y con la sesión principal ya abierta. |
-| R-11 | Contradicción entre el diseño actual y OEP §§142.19–142.20. | DETECTADA | Reconciliar el registro del OEP y la documentación heredada después de la revisión del operador, conservando los antecedentes. |
-| R-12 | Alcance de los agentes CIS y de Creative Squad/Design Pair. | PARCIALMENTE DOCUMENTADO | Verificar configuración oficial completa y runtime instalado antes de aceptar. |
+| Ref. | Tema | Estado actual | Siguiente acción de resolución |
+|---|---|---|---|
+| R-01 | Escritura local en workspace EP protegido. | BLOQUEADA · bóveda aún bloqueada en la observación de este ciclo. | Desbloqueo local del EP Vault por el operador; después prueba de escritura atómica y read-back bajo la identidad Fila4. |
+| R-02 | Respaldo remoto a largo plazo. | DEPENDENCIA EP-TASK-002 en curso; aceptación del backup para este módulo NO VERIFICADA. | Reutilizar únicamente el mecanismo EP cliente-cifrado una vez aceptado; exigir prueba de restore. |
+| R-03 | Flujo conversacional Carson. | FUENTE INSTALADA Y PERFIL DE CHAT DEFINIDO; prueba funcional end-to-end pendiente. | Ensayar los tres modos, el cambio de técnicas y una reanudación. |
+| R-04 | SQLite FTS5. | PASS EN MEMORIA en Python sqlite 3.45.1 bajo CENTRAL\\fila4. | Repetir dentro del workspace protegido al construir el índice real. |
+| R-05 | Memlog BMAD: instrucciones de lifecycle no coinciden. | DISCREPANCIA CONFIRMADA. memlog.py tiene set genérico pero documenta que no hay status de ciclo de vida. | Mantener estado en session.json; el registro de ciclos queda append-only. |
+| R-06 | Durabilidad «para siempre». | OBJETIVO DE CONSERVACIÓN; no existe garantía absoluta de permanencia. | Dos copias protegidas independientes, hashes, custodia de claves, monitoreo y restores periódicos. |
+| R-07 | Conexiones RDC con hostname común. | DOS CONTEXTOS WINDOWS DIFERENTES, mismo host aparente. | Fijar device UUID e identidad; no intercambiar perfiles ni raíces. |
+| R-08 | Integración Prótesis Cognitiva. | DIFERIDA POR EL OPERADOR. | Mantener punto de integración documentado; no iniciar ni crear tarea en esta secuencia. |
 
 ---
 
@@ -632,15 +483,17 @@ Este documento distingue la documentación upstream, los artefactos locales regi
 
 ---
 
-## 17. Estado del documento y siguiente paso
+## 17. Estado del diseño y arranque de implementación
 
-**Estado actual:** diseño integrado en borrador para revisión. La arquitectura propuesta es ChatGPT-first; Brain Selector es opcional/no requerido; Keepsake es un artefacto generado por el agente; autoguardado/versionado y biblioteca tienen esquema inicial; Cognición visoespacial y proyección visual está diferida.
+**Diseño base de la primera versión:** CERRADO DOCUMENTALMENTE para Carson conversacional + persistencia por ciclo + biblioteca básica. La cadena de integridad, el alcance mínimo y las condiciones de aceptación están definidos en §§3, 5, 7, 8 y 13. La revisión de Harmonia y el patrón de EP para las tareas ya fueron inspeccionados.
 
-**No ejecutado:** instalación/actualización de software, modificación del portal, uso de Chrome, creación de estructura de datos, autoguardado, biblioteca, generación local de Keepsake, modificación de OEP, cierre o alteración de EP-TASK-008 y creación de tareas provisionales.
+**Implementación material:** Carson-CHAT.md se entrega como perfil operativo reutilizable en el chat. El motor BMAD Brainstorming local y el perfil CIS Carson han sido inspeccionados. La persistencia y biblioteca aún no están activas: el EP Vault estaba bloqueado durante este ciclo y no se escribió fuera del perímetro cifrado. El primer hito conversacional no necesita Brain Selector, Keepsake, portal ni OpenCode.
 
-**Siguiente acción documental:** cotejar este borrador contra todo el acumulado fuente y corregir las discrepancias que aún falten; después, preparar la revisión integral de diseño. Tras esa revisión, inspeccionar Harmonia y construir las tareas provisionales con la matriz verbatim que allí se utiliza.
+**Secuencia:** EP-TASK-009 Carson; EP-TASK-010 persistencia por ciclo y biblioteca; después, sin bloquear el primer release, EP-TASK-011 Brain Selector y EP-TASK-012 Keepsake. La integración con Prótesis Cognitiva queda diferida.
 
-**Criterio de avance:** no pasar a ejecución hasta que el diseño extremo a extremo haya sido revisado y aceptado por el operador.
+**Límites de aceptación:** diseño documental = verificado; perfil de conversación = preparado; uso funcional real = pendiente de sesión de prueba; guardado local/remoto = pendiente de desbloqueo EP Vault y backup EP aceptado; integración total = NO ACEPTADA.
+
+**Siguiente paso:** probar Carson por chat con un tema real. En paralelo, la parte de almacenamiento solo continuará cuando la bóveda EP esté desbloqueada bajo el perfil autorizado; entonces se materializarán los archivos y el índice y se validará la restauración.
 
 
 ---
