@@ -54,7 +54,7 @@ Este inventario no se instala, ejecuta ni adopta. Su único uso permitido dentro
 ### 2.3 Matriz breve de procedencia de decisiones
 
 - PD-D-001, PD-D-002 y PD-D-006: instrucción A SRC-PD-20261113-ALCANCE-02; antecedente de selección visual en ChatGPT-Product Design-20261113-1212.md.
-- PD-D-003 y PD-D-004: instrucciones del operador en las exportaciones de Product Design del 13-11-2026 y selección expresa de todos los agentes CIS para V1.0.
+- PD-D-003: instrucciones del operador sobre BMAD. PD-D-004: la instrucción anterior de explorar seis agentes se conserva como intención de catálogo, pero el orden vigente SRC-PD-20261113-IDEACION-03 establece Carson primero y los demás posteriormente.
 - PD-D-005 y PD-D-013: corrección del operador en SRC-PD-20261113-CORRECCION-01 y decisión previa de mantener ChatGPT + RDC sin OpenCode como requisito.
 - PD-D-007: instrucción A SRC-PD-20261113-ALCANCE-02 y especificación oficial BMAD V6.12.
 - PD-D-008 y PD-D-009: instrucción A SRC-PD-20261113-CORRECCION-01.
@@ -86,7 +86,7 @@ La selección no exige una pantalla independiente. El operador puede invocar un 
 
 Son tres dimensiones distintas:
 
-- **Agente:** quién conduce la capacidad (por ejemplo, Carson para brainstorming).
+- **Agente:** quién conduce la capacidad. En el primer release el agente activo es Carson; los demás perfiles CIS quedan para fases posteriores.
 - **Modo/stance:** cómo participa el agente y cómo se distribuye la generación de ideas (Facilitator, Creative Partner o Ideate for me).
 - **Técnica:** el procedimiento concreto de ideación utilizado en una etapa o lote.
 
@@ -116,9 +116,9 @@ No se implementan todavía los otros cinco agentes CIS, Brain Selector ni Keepsa
 
 ---
 
-## 4. Catálogo CIS que debe soportar Product Design V1.0
+## 4. Catálogo CIS de referencia y secuencia de integración
 
-Los seis agentes que integran el alcance exploratorio de CIS son:
+CIS mantiene un catálogo de seis agentes como referencia de capacidades. La primera versión operativa desarrolla Carson; los otros cinco se mantienen en el catálogo y no bloquean el primer release:
 
 | Agente | Capacidad asociada | Función dentro de Product Design | Observación |
 |---|---|---|---|
@@ -465,7 +465,7 @@ Estos anclajes permiten recuperar las instrucciones anteriores sin reconstruirla
 | SRC-PD-20261112-TASK-01 | fuentes/ChatGPT-PRODUCT-20261113-0951.md, línea 1025 | El objetivo de usar ChatGPT para poblar tareas provisionales trazables a los dictados verbatim y crear el mínimo trabajo que agote la instrucción. | VIGENTE en cuanto a captura y trazabilidad; la referencia a Superpowers como complemento operativo queda rectificada. |
 | SRC-PD-20261113-OPENCODE-01 | fuentes/ChatGPT-Product Design-20261113-1212.md, líneas 700–729 | El operador aclara que no eligió OpenCode y pregunta si basta ChatGPT + RDC; la recomendación registrada es mantener OpenCode fuera del flujo necesario. | BASE DE LA DECISIÓN CHATGPT + RDC; OpenCode no es dependencia objetivo. |
 | SRC-PD-20261113-CHAT-RDC-01 | mismo archivo, líneas 1407–1413 | Adaptar CIS al flujo ChatGPT + RDC, conservar el método local y desarrollar una capacidad propia; en ese momento se consideraba Carson como primer foco. | VIGENTE en arquitectura; el alcance de agentes fue ampliado posteriormente a los seis para V1.0. |
-| SRC-PD-20261113-CIS-V1-01 | mismo archivo, líneas 2073–2075 | Explorar todos los agentes CIS uno por uno en V1.0; la instrucción inicial también pedía una interfaz HTML local para agentes y técnicas, además del Keepsake. | TODOS LOS AGENTES VIGENTES; la obligatoriedad de la interfaz quedó corregida por SRC-PD-20261113-ALCANCE-02: selección conversacional como ruta preferida. |
+| SRC-PD-20261113-CIS-V1-01 | mismo archivo, líneas 2073–2075 | Explorar los seis agentes CIS y una interfaz local. | ANTECEDENTE DE CATÁLOGO; el orden vigente comienza con Carson por SRC-PD-20261113-IDEACION-03, sin UI de selección en el primer release. |
 | SRC-PD-20261113-CORRECCION-01 | sección 18 de este documento | Superpowers solo como referencia de habilidades a desarrollar por cuenta propia; autoguardado tipo Office; biblioteca indexada; esquema visoespacial diferido; tareas según Harmonia. | VIGENTE. |
 | SRC-PD-20261113-ALCANCE-02 | sección 18 de este documento | Chat como interfaz suficiente; no crear interfaz si no aporta; Keepsake debe ser generado por el agente sin diseño del operador; investigar e integrar el autoguardado y la biblioteca. | VIGENTE; Brain Selector y Keepsake diferidos. |
 | SRC-PD-20261113-IDEACION-03 | mensaje del operador del 2026-11-13, reproducido literalmente en §18 | Carson chat-first; extras Brain Selector/Keepsake en tareas de baja prioridad; autoguardado por ciclo; proyecto con nombre automático/etiquetas esenciales; conservación de ideaciones parciales y maduras; biblioteca; integración futura con Prótesis Cognitiva; A/B fuera de la función de producto. | VIGENTE PARA LA PRIMERA VERSIÓN Y SU SECUENCIA. |
