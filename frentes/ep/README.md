@@ -3,7 +3,7 @@
 **Repositorio propietario:** `SeryMente/metodologia` (privado).  
 **Rama canónica vigente:** `main`; las ramas documentales anteriores se conservan como antecedentes y no prevalecen sobre `main`.
 
-**OEP vigente:** v0.3.93 (`OEP.md`), leído de vuelta desde `main`. La raíz local del workspace es `SeryMente/`: repositorios como carpetas hijas directas, dentro los frentes, y cada frente con `ambitos/` y `modulos/`. No utilizar `SeryMente/Repositorios/`.
+**OEP vigente:** v0.3.101 (`OEP.md`), leído de vuelta desde `main`. La raíz local del workspace es `SeryMente/`: repositorios como carpetas hijas directas, dentro los frentes, y cada frente con `ambitos/` y `modulos/`. No utilizar `SeryMente/Repositorios/`.
 
 
 - [Persistencia DTC EP/MCP-OCP](OEP.md#95-persistencia-dtc-integrada-epmetodologia-y-continuidad-mcp-ocp--v0325--vcu-ep-v27): continuidad multiubicación EP/Metodología y estado operativo MCP-OCP, con autoridad técnica propia de MCP-OCP.
@@ -82,3 +82,10 @@ Estado documental añadido: OEP v0.3.74, §§140–141. La organización física
 - [Documento acumulativo](documentos/ACUMULADO-DISENO-IMPLEMENTACION-EP-2026-11-11_A_2026-11-13.md): reconstrucción completa del sprint desde tres exportaciones EP, con decisiones, estados verificados, diferencias entre implementación y aceptación, pendientes y secuencia de cierre.
 - [OEP §145](OEP.md#145-reconstrucción-acumulativa-del-diseño-e-implementación-ep--2026-11-11-a-2026-11-13): registro del ciclo y estado.
 - [EP-TASK-003](./📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20EP-TASK-003%20-%20Mapa%20integral%20de%20construcción%20EP/README.md): crónica de la tarea de workspace Cryptomator y confinamiento.
+
+## Retoma EP Vault v2 · 2026-11-13 · 14:39
+
+- [Export original completo](originales/ChatGPT-EP-20261113-1439.md): 2.811 líneas, 158.982 bytes, SHA-256 registrado y transferencia byte por byte verificada.
+- [Salida literal del último ciclo](documentos/RETOMA-EP-2026-11-13-1439.md): reproducción exacta de la respuesta final del export.
+- [OEP §147](OEP.md#147-retoma-de-conversación-y-propuesta-ep-vault-v2--2026-11-13--1439-america-mexico_city): registra la continuidad y el alcance propuesto EP Vault v2.
+- [EP-TASK-004](./📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20EP-TASK-004%20-%20Reconstrucción%20de%20bóveda/README.md): adenda de alcance y gates, sin aceptación de implementación.
