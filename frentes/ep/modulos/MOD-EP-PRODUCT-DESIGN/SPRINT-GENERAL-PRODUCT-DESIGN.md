@@ -529,3 +529,28 @@ Este documento distingue la documentación upstream, los artefactos locales regi
 **Siguiente acción documental:** cotejar este borrador contra todo el acumulado fuente y corregir las discrepancias que aún falten; después, preparar la revisión integral de diseño. Tras esa revisión, inspeccionar Harmonia y construir las tareas provisionales con la matriz verbatim que allí se utiliza.
 
 **Criterio de avance:** no pasar a ejecución hasta que el diseño extremo a extremo haya sido revisado y aceptado por el operador.
+
+
+---
+
+## 18. Instrucciones originales verbatim de la conversación de consolidación
+
+Este apartado conserva las instrucciones A del operador literalmente para su posterior trazabilidad. No normaliza la transcripción ni convierte las correcciones de voz en una versión sustitutiva. Las decisiones normalizadas constan separadamente en §§2–3 y las futuras tareas deberán enlazar estos originales.
+
+### SRC-PD-20261113-CORRECCION-01 · instrucción A · 13-11-2026
+
+~~~text
+Cuando abras esas pestañas, hazlo en el navegador Chrome que está bajo mi sesión con mi correo principal de Víctor Hugo, porque las estás abriendo en un navegador aparte y así no es
+
+Superpowers es para uso solamente de referencia para que esas habildiades seanlas que desarrollemos por neustra cuenta.Esto lo he dicho varias vees y ya no lo quiero repetir. No lo quiero par otra cosa. Y esolo en esqa medida lo usaremos. Pwero si lo usaremos par aeso.
+
+Me parece extraño que hayas encontrado omisiones y contradicciones, porque no ha habido falta de claridad en las instrucciones que he venido dictando a lo largo de las últimas conversaciones que tienen que ver con esta acumulación. Sin embargo, aclaro. El autoguardado de versiones tipo Office hay que resolverlo. También la biblioteca indexada reutilizable para esta implementación, aunque sea de manera básica. No creo que sea muy difícil Luego, nada más quiero dos elementos. Y eso porque me los ofreciste y pensé que eran fáciles de obtener. Brain Selector en los términos de lo dicho en la conversación anterior. Porque ya dicté lo que tenía que dictar al respecto, ¿me explico? Pero bueno, eres una computadora y si algo tonto estarme frustrando contra ti. Cuando construyas las tareas bueno observa cómo está construido el frente de trabajo Armonía. Ahí construí tareas cuidadosamente asociándolas a las instrucciones verbatim que iba dictando. Quiero que cuando termines el documento del vaciado del diseño, observes ese arreglo y lo repliques con el mismo nivel de, con la misma estructura y la misma rigurosidad que se está haciendo en ese frente. Quiero decir con la misma estructura y la misma rigurosidad que se está haciendo en ese frente. Quiero que esa instrucción es suficiente para dejar claro cuál es el requerimiento Sí, la sombrilla va a ser cognición visoespacial y proyección visual. Por ahora nada más registra los documentos y la categoría y déjalo para después. No quiero invertirle más energía por ahora. Una sola, un solo archivo HTML en el host local para contener Brain Selector y Brainstorm HTML Keep Safe. Algo que tenga tabulaciones o algo, pero que queden en el mismo, o bueno, corrijo, está bien, dos elementos, uno para cada uno. Tenía la idea de que eran soluciones que ya se podían tener sacadas de la caja completas. Explícame cómo es porque lo que yo vi en el navegador que abriste parecía como que lo hiciste tú, al vapor
+~~~
+
+### SRC-PD-20261113-ALCANCE-02 · instrucción A · 13-11-2026
+
+~~~text
+Bueno, yo pensé que Brain Selector iba a poder ser utilizado para de alguna manera adecuarlo a la implementación para que cuando la empieces a usar se abra el selector y yo pueda seleccionar entre los recursos para la lluvia de ideas nada más los diferentes agentes y los tipos de técnica utilizada. La verdad es que vi lo que me mostraste y se me pareció muy desagradable porque estaba lleno de elementos por todos lados y fue como que un ataque radiactivo para mí, para mi atención. Entonces nada más necesito tener una interfaz, bueno, no la necesito. Se puede utilizar la plataforma de chat. Si es mucho problema, mejor lo hacemos únicamente por el chat. Y luego el otro elemento HTML, keep safe, pensé que era como una forma de obtener un resultado gráfico después de la lluvia de ideas, pero que no me tenga que poner a mí a diseñar ese elemento porque si lo tengo que diseñar, pues entonces no lo quiero tener. Y por lo que veo no lo conoces como para saber en qué medida va a ser trabajo adicional. Hay que investigar bien esa sugerencia que tú me hiciste Sigue avanzando construyendo un documento general del sprint, preparándote para crear las tareas provisionales conforme lo dicho. Y teniendo en cuenta que existen diseños pendientes como el autoguardado y la biblioteca indexada, que tampoco es mucho trabajo, pero sí tienes que crear un esquema porque antes de ejecutar vamos a revisar la integridad del diseño de extremo a extremo
+~~~
+
+**Regla de uso posterior:** cada requisito extraído de estas fuentes debe conservar vínculo al pasaje literal que lo origina. Las transcripciones erróneas se mantienen aquí intactas; cualquier normalización semántica se registra en campo separado y nunca se presenta como literal.
