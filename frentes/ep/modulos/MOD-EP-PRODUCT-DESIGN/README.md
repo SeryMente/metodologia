@@ -96,3 +96,10 @@ La configuración local de OpenCode incorpora el plugin V1 fijado a `v7.0.2`. La
 Para cada nuevo dictado, conservar literalmente el mensaje fuente y crear el menor número de tareas provisionales que cubra todos los resultados, restricciones y condiciones expresas. Cada requisito debe quedar trazado a una tarea, entregable y criterio de aceptación. No crear tareas para posibilidades mencionadas como opcionales ni añadir funcionalidades por iniciativa propia. Las tareas se alojan en el contenedor provisional del frente responsable; la gobernanza y el OCP padre no se duplican.
 
 Esta reorientación supersede como siguiente acción del módulo la espera de un documento general de implementación que no fue adjuntado en este ciclo. No altera el gobierno de EP ni promueve Product Design a FT independiente.
+
+
+## Continuidad conversacional · 2026-11-13
+
+La conversación completa que origina esta retoma quedó preservada en [fuentes/ChatGPT-PRODUCT-20261113-0951.md](./fuentes/ChatGPT-PRODUCT-20261113-0951.md). La última salida del modelo se reproduce literalmente en [EP-TASK-008 — retoma de contexto](../../📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20EP-TASK-008%20-%20vMAT%20Product%20Design%20-%20Captura%20verbatim%20y%20tareas%20ejecutables%20con%20Superpowers/README.md).
+
+**Continuidad:** conservar «Frente Product Design» como nombre de invocación. El término «vMAT» permanece sin confirmar como denominación formal; no atribuirle expansión ni significado aprobado. `EP-TASK-008` sigue `en_curso`; la verificación runtime de Superpowers continúa pendiente según el registro de la tarea.
