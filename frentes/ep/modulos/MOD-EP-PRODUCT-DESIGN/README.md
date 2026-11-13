@@ -136,3 +136,5 @@ Esta reorientación, dictada por el operador el 2026-11-13, fija como arquitectu
 - OpenCode no es requisito de la arquitectura objetivo ChatGPT + RDC; el estado de las configuraciones existentes se conserva como antecedente independiente.
 - Superpowers queda limitado a la consulta de sus habilidades como referencia para desarrollar capacidades propias. Su Visual Companion no forma parte del alcance actual.
 - El flujo de dictados debe mantener la relación fuente verbatim → requisito → tarea → entregable → criterio de aceptación → evidencia, con asignación al OCP responsable.
+
+**Última salida visible del ciclo:** [ULTIMA-SALIDA-PRODUCT-DESIGN-20261113-1350.md](./fuentes/ULTIMA-SALIDA-PRODUCT-DESIGN-20261113-1350.md). Conserva el checkpoint B y los anclajes A correspondientes.
