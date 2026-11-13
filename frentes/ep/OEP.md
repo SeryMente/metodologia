@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.101. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). **Versión documental:** v0.3.102. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -4902,3 +4902,58 @@ Esta actualización es documental. No instala ni actualiza paquetes, no modifica
 `EP_VAULT_V2=DESIGN_PROPOSAL_NOT_IMPLEMENTED`; `V1_CODE_AUDIT=INCOMPLETE`; `SELECTIVE_SECRET_USE=PROPOSED`; `AGENT_IDENTITY_ISOLATION=REQUIRED_NOT_VERIFIED`; `LOCATION_SESSION_TYPES=REQUIREMENTS_CAPTURED_NOT_IMPLEMENTED`; `AUTO_SEAL_120S=REQUIREMENT_CAPTURED_NOT_IMPLEMENTED`; `CANONICAL_EP_SESSION_FORMAT=DECISION_PENDING`.
 
 Esta sección registra continuidad y propuesta. No certifica paridad con un producto externo ni conformidad normativa; no cambia código, bóvedas, secretos, host, DUG ni criterios de aceptación existentes. La construcción de EP Vault v2 queda condicionada a auditoría del código real, especificación de interfaces y pruebas de seguridad.
+
+
+---
+
+## 148. Implementación inicial Product Design: Carson en chat y persistencia por ciclo · 2026-11-13
+
+### 148.1 Fuente, gobierno y alcance
+
+- Fuente rectora: instrucción directa SRC-PD-20261113-IDEACION-03, conservada literalmente en frentes/ep/modulos/MOD-EP-PRODUCT-DESIGN/SPRINT-GENERAL-PRODUCT-DESIGN.md §18 y en los núcleos de tareas pertinentes.
+- Gobierno adquirido al abrir/cerrar este ciclo: DUG v395 / NX-395m, blob 334522824074a3aff9683a8a389841c353bcd270; Metacanon 1.31; GOW 2.24. Frescura por edad de commit: NO VERIFICADA en esta revisión. MCP-NORMATIVO: DESACTIVADO.
+- Control EP leído: generación 3; no se creó control ni titularidad independiente para MOD-EP-PRODUCT-DESIGN. FOL1 no se activó y no se asignaron folios.
+- El diseño se mantiene dentro del FT EP y remite a este OEP. No modifica §§137–138 ni relaja confinamiento, autenticación o cifrado.
+
+### 148.2 Decisión de primera versión
+
+- Interfaz única: conversación ordinaria de ChatGPT. Primer agente conversacional operativo: Carson, coach CIS sobre el motor BMAD Core bmad-brainstorming.
+- Se soportan Facilitator, Creative Partner e Ideate for me. El catálogo local inspeccionado devuelve 108 técnicas en 13 categorías. Carson es el coach; BMAD Brainstorming es el motor. No se declara un runtime CIS nativo en ChatGPT.
+- Se creó y leyó de vuelta MOD-EP-PRODUCT-DESIGN/prompts/CARSON-CHAT.md, blob ef334c36d002e11c22b2de156fbff4775a3b56f3. La prueba de una sesión completa de usuario sigue pendiente.
+- Brain Selector y Brainstorm HTML Keepsake se relegan a tareas provisionales de baja prioridad EP-TASK-011 y EP-TASK-012; no son requisitos del primer release. Los otros cinco agentes CIS quedan para secuencia posterior.
+- Superpowers permanece solo como referencia para capacidades a desarrollar por cuenta propia. No es runtime, plugin ni dependencia operativa. EP-TASK-008 quedó pendiente de reconciliación; la configuración histórica se conserva intacta.
+- La integración con Prótesis Cognitiva queda expresamente diferida por el operador. A/B pertenece a trazabilidad documental externa, no al diseño funcional.
+
+### 148.3 Persistencia mínima acordada
+
+- EP-TASK-010 define proyecto, sesión y registro de ciclos. Un ciclo finaliza al cerrar una tanda de técnica(s), antes del paso divergencia→convergencia, al pausar/interrumpir o al cerrar.
+- El proyecto se nombra con el valor del operador o un título automático por tema/fecha; etiquetas mínimas de lluvia-de-ideas, tema/área y madurez. Ideas incompletas y maduras se conservan en su formulación íntegra; una síntesis no sustituye el contenido.
+- Biblioteca básica SQLite FTS5 indexa proyecto, sesión e ítems; el índice es derivado/reconstruible. El mismo ítem reutilizable se referencia desde varios proyectos sin perder la fuente.
+- El backup de larga duración reutiliza la arquitectura EP existente: solo ciphertext cifrado del lado cliente, con read-back y prueba de restauración. No se crea un almacén paralelo ni se promete permanencia absoluta.
+
+### 148.4 Tareas provisionales resultantes
+
+| Tarea | Estado | Resultado |
+|---|---|---|
+| EP-TASK-009 | en_curso | Carson conversacional en ChatGPT; perfil preparado/read-back, prueba real pendiente. |
+| EP-TASK-010 | pendiente | Guardado por ciclo, proyectos, versiones y biblioteca; depende del unlock de EP Vault y de backup EP aceptado. |
+| EP-TASK-011 | pendiente · baja prioridad | Brain Selector opcional; después del núcleo. |
+| EP-TASK-012 | pendiente · baja prioridad | Keepsake generado automáticamente desde registro persistido; después del núcleo. |
+
+El registro único de tareas provisionales EP fue actualizado y leído de vuelta. El patrón de rigor de Harmonia se inspeccionó en su OCP y README; su raíz no contiene índice separado de tareas provisionales, por lo que Product Design conserva la estructura de registro/núcleos del propio EP y adopta la trazabilidad verbatim, matriz de aceptación, evidencia y crónica de Harmonia.
+
+### 148.5 Evidencia técnica del ciclo y límites
+
+- Fuentes locales leídas: BMAD Core 6.12.4 bmad-brainstorming SKILL.md, finalize.md, brain.py y memlog.py. La habilidad de Carson y su customize.toml se leyeron desde el repositorio CIS.
+- Ejecución local brain.py categories: 13 categorías/108 técnicas observadas.
+- Python 3.11.9 / SQLite 3.45.1: creación y consulta FTS5 en memoria PASS. No se creó biblioteca en disco.
+- RDC mostró dos conexiones al mismo hostname, pero identidades Windows distintas: CENTRAL\fila4 y CENTRAL\MantenimientoRCI. El trabajo de lectura usó Fila4; no se seleccionó el perfil administrativo para almacenamiento.
+- Estado del almacenamiento: W: solo mostraba System Volume Information; la bóveda Cryptomator en C:\Users\fila4\entorno-persistente permanecía bloqueada. No hubo escrituras locales del módulo ni persistencia de ideaciones fuera del perímetro protegido.
+- EP-TASK-002 y la prueba real de backup/restore siguen pendientes para la aceptación de durabilidad.
+- No se abrió Chrome, no se modificó el perfil principal, no se instaló CIS, no se generó Keepsake ni se actualizó el portal.
+
+### 148.6 Estado ejecutivo
+
+`CARSON_CHAT_PROFILE=PREPARED_READBACK_PASS`; `BMAD_BRAINSTORMING_LOCAL=OBSERVED`; `TECHNIQUE_CATALOG=108_13_OBSERVED`; `FTS5=IN_MEMORY_PASS`; `CYCLE_AUTOSAVE=NOT_IMPLEMENTED`; `LIBRARY_INDEX=NOT_IMPLEMENTED`; `EP_VAULT=LOCKED`; `REMOTE_BACKUP_RESTORE=NOT_VERIFIED`; `CARSON_LIVE_ACCEPTANCE=PENDING`.
+
+**Siguiente secuencia:** probar Carson mediante chat; habilitar acceso local al workspace EP protegido para EP-TASK-010; verificar persistencia por ciclo, búsqueda, versiones y restauración; abordar EP-TASK-011/012 solo después y sin bloquear el primer release.
