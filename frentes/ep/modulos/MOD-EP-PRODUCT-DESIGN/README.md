@@ -103,3 +103,11 @@ Esta reorientación supersede como siguiente acción del módulo la espera de un
 La conversación completa que origina esta retoma quedó preservada en [fuentes/ChatGPT-PRODUCT-20261113-0951.md](./fuentes/ChatGPT-PRODUCT-20261113-0951.md). La última salida del modelo se reproduce literalmente en [EP-TASK-008 — retoma de contexto](../../📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20EP-TASK-008%20-%20vMAT%20Product%20Design%20-%20Captura%20verbatim%20y%20tareas%20ejecutables%20con%20Superpowers/README.md).
 
 **Continuidad:** conservar «Frente Product Design» como nombre de invocación. El término «vMAT» permanece sin confirmar como denominación formal; no atribuirle expansión ni significado aprobado. `EP-TASK-008` sigue `en_curso`; la verificación runtime de Superpowers continúa pendiente según el registro de la tarea.
+
+## Acumulado de diseño · BMAD, CIS y capacidades visoespaciales
+
+El diseño acumulado, el flujo local ChatGPT + RDC, el portal CIS/Brain Selector y los límites de integración están registrados en [DISENO-ACUMULADO-BMAD-PRODUCT-DESIGN.md](./DISENO-ACUMULADO-BMAD-PRODUCT-DESIGN.md).
+
+Las ideas recuperadas de Notion sobre cognición visoespacial, los once esquemas, la TCV, D-PROY y la taxonomía emergente se conservan en [FUENTES-CAPACIDADES-VISOESPACIALES.md](./FUENTES-CAPACIDADES-VISOESPACIALES.md). Esa categoría queda diferida a una etapa posterior, sin tareas provisionales creadas.
+
+**Corrección de nomenclatura:** «vMAT» fue un error de transcripción por dictado; la referencia pretendida es BMAD. No es una denominación de producto aprobada.
