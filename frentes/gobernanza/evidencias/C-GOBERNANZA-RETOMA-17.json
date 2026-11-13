@@ -1,0 +1,99 @@
+{
+  "schema": "ser-y-mente-front-cycle-evidence/v1",
+  "event_id": "C-GOBERNANZA-RETOMA-17",
+  "front": "Gobernanza",
+  "ocp_path": "frentes/gobernanza/",
+  "recorded_on": "2026-11-13",
+  "status": "WRITE_COMMITTED_READBACK_PENDING",
+  "scope": "Retomar la responsabilidad primaria del frente Gobernanza en esta conversación; conservar la corresponsabilidad activa; persistir sin transformación el export original de Downloads, registrar su salida final literalmente en GOBERNANZA.md y actualizar manifiesto/índice/control. No modificar DUG, GOW, IPZ nativa, FOL1, MCP-NORMATIVO ni otros frentes/código/hosts.",
+  "responsibility": {
+    "operation": "TRANSFER_PRIMARY_OWNER",
+    "generation_before": 21,
+    "generation_after": 22,
+    "previous_primary": {
+      "alias": "chatgpt-C-GOBERNANZA-RETOMA-16-01a1d0ea3e9e71b1b12dfbc1bc60d2f2",
+      "generation": 21,
+      "status": "superseded"
+    },
+    "new_primary": {
+      "alias": "chatgpt-C-GOBERNANZA-RETOMA-17-01a1d62f99ab7446a79ec75de7961ebd",
+      "generation": 22,
+      "instance": "chatgpt-gobernanza-1-2026-11-13-01a1d62f",
+      "local_conversation_uuidv7": "01a1d62f-99ab-7446-a79e-c75de7961ebd",
+      "native_conversation_id": "NOT_EXPOSED"
+    },
+    "retained_co_responsible": {
+      "alias": "chatgpt-C-GOBERNANZA-ASIENTO-02-OPTIMIZACION-01-SES-20261111-624B784A",
+      "generation": 20,
+      "folio": "SES-20261111-624B784A"
+    },
+    "active_responsibles_after_write": 2,
+    "maximum": 2,
+    "readback_verified": false
+  },
+  "cycle": {
+    "local_cycle_id": "C-GOBERNANZA-RETOMA-17-CY01",
+    "local_cycle_uuidv7": "01a1d62f-99ac-725e-b630-5b406ad7fcc5",
+    "global_folio": null,
+    "ocp_folio": null,
+    "status": "LEGACY_PRE_CUTOVER"
+  },
+  "source": {
+    "path": "C:\\Users\\fila4\\Downloads\\ChatGPT-GOBERNANZA (1)-20261113-1232.md",
+    "device": "PC10RCIF4EI4",
+    "device_id": "5182a6bc-db2c-452e-a52a-95d63f6c74d6",
+    "size_bytes": 101702,
+    "sha256": "DB1FEAFC9F1EA3744F723330640905DAE03F0BF4C72D6C636F34207F405A6020"
+  },
+  "artifacts": [
+    {
+      "path": "frentes/gobernanza/documentos/originales/ChatGPT-GOBERNANZA (1)-20261113-1232.md",
+      "role": "original_export",
+      "git_blob_sha": "f36a2319b8a70e526611509718814f2ec7ad1be8",
+      "status": "WRITE_COMMITTED_READBACK_PENDING"
+    },
+    {
+      "path": "frentes/gobernanza/GOBERNANZA.md",
+      "role": "front_state_and_literal_last_output"
+    },
+    {
+      "path": "frentes/gobernanza/documentos/MANIFIESTO-DOCUMENTAL.json",
+      "role": "document_manifest"
+    },
+    {
+      "path": "frentes/gobernanza/README.md",
+      "role": "front_index"
+    },
+    {
+      "path": "frentes/gobernanza/CONTROL-RESPONSABILIDAD.json",
+      "role": "responsibility_control"
+    }
+  ],
+  "continuity": {
+    "dug": "Samantha v393 · NX-393m",
+    "metacanon": "1.31",
+    "gow": "2.21",
+    "principles": 43,
+    "annexes": 25,
+    "ipz": "v0.7 baseline; native installation NOT_VERIFIED",
+    "fol1": "PREPARADO/NO ACTIVO",
+    "mcp_normativo": "DESACTIVADO",
+    "output_reproduced_literally": true
+  },
+  "non_actions": [
+    "DUG/GOW unchanged",
+    "IPZ native unchanged",
+    "FOL1 unchanged",
+    "MCP-NORMATIVO unchanged",
+    "no changes to code, hosts or other fronts"
+  ],
+  "operation": {
+    "main_parent_sha": "da868befda7c2ed988c460e996b489c01f6c5f3a",
+    "main_parent_tree_sha": "143e53965a8d44ac227e2443cd6a72a3a7b70dcc",
+    "source_sha256": "DB1FEAFC9F1EA3744F723330640905DAE03F0BF4C72D6C636F34207F405A6020",
+    "source_git_blob_sha": "f36a2319b8a70e526611509718814f2ec7ad1be8",
+    "cas_expected_parent": true,
+    "readback_required": true,
+    "readback_verified": false
+  }
+}

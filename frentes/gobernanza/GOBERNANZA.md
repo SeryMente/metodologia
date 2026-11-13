@@ -1,6 +1,6 @@
-## Estado operativo vigente · C-GOBERNANZA-STREAMLINE-RESPONSABILIDAD-FOLIACION-20261111-01
+## Estado operativo vigente · C-GOBERNANZA-RETOMA-17 · 2026-11-13
 
-DUG v389/NX-389m · Metacanon 1.30 · GOW 2.19. La instrucción explícita que identifica frente y actuación basta para asumir/retomar; «asume/retoma» releva al responsable operativo anterior. Corresponsabilidad solo por petición expresa. SES, UUID, alias, instancia y generación son metadatos opcionales. Un control único; SHA/read-back solo cuando cambie el asiento. Una entrada A/B consolidada por cambio material. Sink es preferente con respaldo de extracción exacta desde el DUG canónico. GOV-TASK-013 cancelada; no medir tiempo. FOL1 PREPARADO/no activo; IPZ sin tocar; MCP-NORMATIVO desactivado. Seguridad, permisos reales, privacidad y credenciales permanecen protegidos.
+DUG Samantha v393 · NX-393m · Metacanon 1.31 · GOW 2.21 · 43 principios · 25 anexos. Responsabilidad primaria generación 22; corresponsable generación 20 preservado. FOL1 PREPARADO/NO ACTIVO; IPZ v0.7 baseline declarada, instalación nativa NO VERIFICADA; MCP-NORMATIVO DESACTIVADO. La interfaz actual decidida por el operador contiene solo SAM (versión/firma) y vigencia en días, horas y minutos; nomenclatura compacta y fuente temporal exacta pendientes. El campo DUG `document.updated_at` es requisito/propuesta pendiente; GESTIÓN sigue como término recomendado, no ratificado. Objetivo operativo: reducir la carga recurrente de retoma, control y persistencia sin debilitar integridad ni read-back.
 
 ## Historial y auditorías anteriores
 
@@ -716,3 +716,77 @@ El export original [ChatGPT-GOBERNANZA-20261112-1635.md](documentos/originales/C
 **Siguiente actuación:** actualizar de forma coherente el pin y todos los artefactos derivados de MCP-OCP a DUG v393; superar después los gates propietarios de EP; finalmente ejecutar la aceptación de GOV-TASK-003 por el recorrido IPZ/RDC/STDIO real. No confundir preparación documental, smoke de consola, instalación local ni E2E aceptado.
 
 **Límites:** esta reanudación no modifica DUG, ART-032, IPZ nativa, OCP/código MCP-OCP, Harmonia ni hosts. AT sigue aplazada; FOL1 continúa PREPARADO/NO ACTIVO y MCP-NORMATIVO DESACTIVADO.
+
+
+---
+
+## Retoma 17 · C-GOBERNANZA-RETOMA-17 · 2026-11-13
+
+**Responsabilidad:** retoma primaria transferida de generación 21 a 22 por instrucción expresa del operador. Se conserva sin cambios la corresponsabilidad activa de generación 20; roster activo 2/2. FOL1 permanece PREPARADO/NO ACTIVO; no se asignan folios globales, SES ni OCP.
+
+**Export original:** [ChatGPT-GOBERNANZA (1)-20261113-1232.md](documentos/originales/ChatGPT-GOBERNANZA%20%281%29-20261113-1232.md). Origen: `C:\\Users\\fila4\\Downloads\\ChatGPT-GOBERNANZA (1)-20261113-1232.md`; dispositivo `PC10RCIF4EI4`, RDC device `5182a6bc-db2c-452e-a52a-95d63f6c74d6`. Tamaño: 101,702 bytes. SHA-256 de origen: `DB1FEAFC9F1EA3744F723330640905DAE03F0BF4C72D6C636F34207F405A6020`. Git blob previsto: `f36a2319b8a70e526611509718814f2ec7ad1be8`. La marca de exportación del original es 2026-11-13 12:32:43 -06:00.
+
+**Contexto para continuar:** DUG Samantha v393 · NX-393m; Metacanon 1.31; GOW 2.21; 43 principios y 25 anexos. Se mantiene la decisión del operador de limitar la salida a SAM (versión/firma) y antigüedad en días, horas y minutos; la nomenclatura compacta sigue pendiente. El DUG aún carece de `document.updated_at` global independiente de GitHub. **GESTIÓN** es la recomendación terminológica pendiente de ratificación, en oposición a telemetría. La revisión de carga identificó especial impacto en §§22–23/37, P008/§44, P018, §28/P035, ART-025 y ART-032; los controles de retoma y persistencia deben evitar repetición sin cambio, sin sacrificar autorización, integridad ni read-back.
+
+**Límite y continuidad:** esta retoma solo persiste el export y actualiza el estado documental/control del frente. No modifica DUG, GOW, ART-032, IPZ nativa, FOL1, MCP-NORMATIVO, código ni otros frentes. La siguiente tarea es continuar la depuración de la carga de GESTIÓN/telemetría y de los ciclos de retoma, manteniendo las decisiones ya adquiridas sin redescubrirlas.
+
+### Última salida del último ciclo · reproducción literal
+
+Hay que distinguir entre **documentos físicos** y componentes normativos incluidos dentro de ellos.
+
+### 1. Documento central
+
+Actualmente existe **1 documento canónico central**:
+
+1. [github.com](https://github.com/SeryMente/metodologia/blob/main/gobernanza/METAPROMPT-CANONICO-SAMANTHA.html?utm_source=chatgpt.com)
+
+Dentro de este único archivo están integrados:
+
+- **SAM:** gobierno general y 43 principios.
+- **Metacanon:** 52 secciones de metodología.
+- **GOW:** glosario operativo compartido.
+- **25 anexos normativos y operativos.**
+
+### 2. Los 25 anexos
+
+| Identificador | Nombre |
+|---|---|
+| ART-007 | Esqueleto del Prompt de Instanciación (Handoff) |
+| ART-008 | Ficha de Infraestructura Canónica |
+| ART-009 | Runbook cerrar_pr - Cierre de PR Jules |
+| ART-010 | Registro Canónico de Errores de Terminal |
+| ART-011 | MOTOR-1C - Protocolo Canónico Portable |
+| ART-012 | Matriz normativa de persistencia del OCP |
+| ART-013 | Procedimiento RDC |
+| ART-014 | Sistema de Persistencia Documental de Frentes |
+| ART-015 | Taxonomía estructural de Ser y Mente |
+| ART-016 | Taxonomía estructural de la cuenta de usuario de GitHub |
+| ART-017 | Taxonomía estructural de una organización GitHub |
+| ART-018 | Taxonomía estructural de un repositorio GitHub |
+| ART-019 | Taxonomía estructural de un frente de trabajo |
+| ART-020 | Taxonomía estructural de ámbitos y elementos conceptuales |
+| ART-021 | Taxonomía estructural de frentes de trabajo |
+| ART-022 | Ámbito funcional de persistencia documental |
+| ART-024 | Gestión conversacional y trazabilidad semántica |
+| ART-025 | IPZ: vocabulario, directorio y refuerzo del CNP |
+| ART-026 | Fundamento del PAI |
+| ART-027 | Consulta y telemetría de principios |
+| ART-028 | Persistencia de dos capas e integración con EP |
+| ART-029 | Módulos de frente de trabajo |
+| ART-030 | Arquitectura de persistencia local del workspace |
+| ART-031 | Directorio taxonómico vigente |
+| ART-032 | Arquitectura, composición, lectura y ejecución de IPZ |
+
+### 3. Documentos y componentes externos
+
+Además del DUG, la arquitectura utiliza elementos que se materializan fuera de él:
+
+- **IPZ:** campo de instrucciones personalizadas de ChatGPT; no es otro documento normativo central.
+- **OCP:** objeto de persistencia de cada frente, con su núcleo operativo.
+- **CONTROL-RESPONSABILIDAD.json:** control de titularidad y responsabilidad de cada frente.
+- **Documentos de estado, crónicas, originales, evidencias y artefactos:** materiales propios de cada OCP.
+
+**Conclusión:** hay un documento normativo central, tres grandes secciones internas y 25 anexos integrados. El número total de documentos operativos externos es variable porque depende de los frentes de trabajo.
+
+SAM: v393 · NX-393m
+Antigüedad desde la última actualización: **NO VERIFICADA**; el DUG todavía no contiene la fecha/hora global independiente que has solicitado.

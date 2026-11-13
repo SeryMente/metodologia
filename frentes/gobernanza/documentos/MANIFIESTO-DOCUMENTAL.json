@@ -5,7 +5,7 @@
   "event_id": "C-GOBERNANZA-RETOMA-16",
   "cycle_folio": null,
   "recorded_on": "2026-11-12",
-  "status": "PERSISTIDO_Y_VERIFICADO",
+  "status": "PERSISTENCIA_EN_CURSO",
   "rule": "P041 + ART-014 + ART-022; conservar originales sin transformar y declarar persistencia solo tras lectura de vuelta y cotejo.",
   "documents": [
     {
@@ -348,6 +348,33 @@
         "write_commit_sha": "b7453e141c251315a7e6a4aa22243621de0fa3ba"
       },
       "recorded_in_event_id": "C-GOBERNANZA-RETOMA-16"
+    },
+    {
+      "document_id": "DOC-GOV-CHATGPT-GOBERNANZA-20261113-1232",
+      "original_name": "ChatGPT-GOBERNANZA (1)-20261113-1232.md",
+      "path": "documentos/originales/ChatGPT-GOBERNANZA (1)-20261113-1232.md",
+      "class": "original",
+      "source_path": "C:\\Users\\fila4\\Downloads\\ChatGPT-GOBERNANZA (1)-20261113-1232.md",
+      "source_device": "PC10RCIF4EI4",
+      "source_device_id": "5182a6bc-db2c-452e-a52a-95d63f6c74d6",
+      "source_client_id": "89d05c4f-7a80-421e-8191-b53561208e4f",
+      "source_front": "Gobernanza",
+      "captured_via": "RDC; bytes originales transportados como Base64 desde el dispositivo, sin reformateo ni transformación.",
+      "media_type": "text/markdown; charset=utf-8",
+      "size_bytes": 101702,
+      "sha256": "DB1FEAFC9F1EA3744F723330640905DAE03F0BF4C72D6C636F34207F405A6020",
+      "git_blob_sha": "f36a2319b8a70e526611509718814f2ec7ad1be8",
+      "status": "WRITE_COMMITTED_READBACK_PENDING",
+      "recorded_in_event_id": "C-GOBERNANZA-RETOMA-17",
+      "verification": {
+        "readback": false,
+        "content_cotejo": false,
+        "method": "Pendiente de comparación Base64 origen RDC vs lectura de vuelta desde main."
+      },
+      "relations": {
+        "last_output_in": "frentes/gobernanza/GOBERNANZA.md",
+        "evidence_path": "frentes/gobernanza/evidencias/C-GOBERNANZA-RETOMA-17.json"
+      }
     }
   ],
   "originals_commit_sha": "c3c47a7f185d8e9482b55942e00c7da9ff1e802c",
@@ -360,11 +387,11 @@
     "method": "Dos originales transferidos vía RDC; SHA-256 de origen; lectura de vuelta Base64 exacta en main y Git blob SHA coincidente."
   },
   "latest_addition_event": {
-    "event_id": "C-GOBERNANZA-RETOMA-13",
-    "document_id": "DOC-GOV-CHATGPT-GOBERNANZA-1-20261108-1126",
-    "commit_sha": "c3c47a7f185d8e9482b55942e00c7da9ff1e802c",
-    "git_blob_sha": "bb78f30a7696bd1a4dd526e5d17283739e95e692",
-    "readback_verified": true
+    "event_id": "C-GOBERNANZA-RETOMA-17",
+    "document_id": "DOC-GOV-CHATGPT-GOBERNANZA-20261113-1232",
+    "commit_sha": null,
+    "git_blob_sha": "f36a2319b8a70e526611509718814f2ec7ad1be8",
+    "readback_verified": false
   },
   "latest_original_commit_sha": "c3c47a7f185d8e9482b55942e00c7da9ff1e802c"
 }
