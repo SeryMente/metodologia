@@ -1,7 +1,7 @@
 # EP-TASK-008 — vMAT Product Design: captura verbatim y tareas ejecutables con Superpowers
 
 **ID local:** EP-TASK-008.  
-**Estado:** `en_curso` · diseño funcional y configuración inicial de Superpowers materializados; aceptación de runtime y flujo completo pendientes.  
+**Estado:** `pendiente` · alcance anterior en reconciliación; configuración Superpowers v7.0.2 conservada como antecedente; runtime Superpowers no forma parte de la implementación Product Design vigente.  
 **Frente propietario:** Entorno Persistente (EP).  
 **Módulo funcional:** `MOD-EP-PRODUCT-DESIGN`, invocable como «Frente Product Design».  
 **Contenedor provisional:** `frentes/ep/📁 🧭 - Tareas provisionales/`.  
@@ -209,3 +209,12 @@ Por tanto, no debería haberlo establecido como denominación formal.
 - Conversación fuente archivada en `MOD-EP-PRODUCT-DESIGN/fuentes/`.
 - Última respuesta del modelo reproducida en este núcleo sin resumir ni reescribir.
 - La continuidad de trabajo permanece en `EP-TASK-008`; no se creó una tarea paralela ni se alteró el estado de aceptación Superpowers.
+
+
+## Rectificación de alcance y pausa · 2026-11-13
+
+**Fuente rectora:** SRC-PD-20261113-IDEACION-03, junto con las correcciones previas SRC-PD-20261113-CORRECCION-01 y SRC-PD-20261113-ALCANCE-02. La arquitectura vigente de Product Design se reorienta a Carson conversacional + BMAD Brainstorming y persistencia por ciclo en EP-TASK-009/010. El trabajo de Brain Selector y Keepsake queda diferido en EP-TASK-011/012.
+
+La integración operativa de Superpowers con OpenCode descrita en los bloques históricos de este README ya no es una dependencia ni un objetivo vigente de Product Design. Superpowers solo se conserva como catálogo de referencia de habilidades que podrán desarrollarse por cuenta propia. La configuración previa, sus respaldos y su historial permanecen intactos: esta rectificación no los desinstala, elimina ni modifica.
+
+EP-TASK-008 queda pendiente de una reconciliación de alcance independiente; no debe continuar su ruta de runtime Superpowers como parte del primer release de lluvia de ideas. No se declara completada ni se borra su historia.
