@@ -6,10 +6,10 @@
     "id": "EP",
     "name": "Entorno Persistente",
     "canonical_oep": "frentes/ep/OEP.md",
-    "oep_version": "v0.3.44"
+    "oep_version": "v0.3.93"
   },
   "coverage": {
-    "scope": "Registro de este original recibido el 2026-11-08; los originales históricos previos no se re-inventarían ni se declaran retrospectivamente auditados por esta entrada.",
+    "scope": "Registro documental del frente EP con alcance por entrada. La cobertura de cada conversación/original se limita a las fuentes listadas; no se presume auditoría retrospectiva de archivos no enumerados. Las exportaciones EP 2026-11-12/13 revisadas para el acumulado continúan en Downloads y no fueron transferidas a Git.",
     "legacy_originals_path_preserved": "frentes/ep/originales/"
   },
   "documents": [
@@ -45,6 +45,80 @@
         "second_authorized_instance_recovery": "NOT_TESTED"
       },
       "captured_on": "2026-11-08"
+    },
+    {
+      "id": "EP-DOC-20261113-DISENO-IMPLEMENTACION-ACUMULADO",
+      "original_name": "ACUMULADO-DISENO-IMPLEMENTACION-EP-2026-11-11_A_2026-11-13.md",
+      "canonical_path": "frentes/ep/documentos/ACUMULADO-DISENO-IMPLEMENTACION-EP-2026-11-11_A_2026-11-13.md",
+      "relative_path_from_front": "documentos/ACUMULADO-DISENO-IMPLEMENTACION-EP-2026-11-11_A_2026-11-13.md",
+      "kind": "design_implementation_accumulation",
+      "original_preserved": false,
+      "coverage": "Reconstrucción completa de tres exportaciones EP leídas de extremo a extremo, más cotejo de OEP §§136–144 e índices/fichas EP-TASK-002–008. Documento derivado no normativo; OEP conserva autoridad.",
+      "sources": [
+        {
+          "name": "ChatGPT-EP (1)-20261112-1127.md",
+          "source_path": "C:\\Users\\fila4\\Downloads\\ChatGPT-EP (1)-20261112-1127.md",
+          "lines": 1619,
+          "bytes": 64269,
+          "sha256": "A858D82807A7F08B4B1B4CAF828136224F22AD8A086284BF9CE65B2DD5BA6F56",
+          "created": "2026-11-11 17:18:03",
+          "updated": "2026-11-12 11:26:02",
+          "exported": "2026-11-12 11:27:58",
+          "fully_read": true
+        },
+        {
+          "name": "ChatGPT-EP (1)-20261112-1632.md",
+          "source_path": "C:\\Users\\fila4\\Downloads\\ChatGPT-EP (1)-20261112-1632.md",
+          "lines": 1926,
+          "bytes": 99410,
+          "sha256": "9A64A7265901B70D92DBB2752BB23E273915B99CEC3D98115979660766FCF617",
+          "created": "2026-11-12 12:34:50",
+          "updated": "2026-11-12 16:30:01",
+          "exported": "2026-11-12 16:32:16",
+          "fully_read": true
+        },
+        {
+          "name": "ChatGPT-EP-20261113-0958.md",
+          "source_path": "C:\\Users\\fila4\\Downloads\\ChatGPT-EP-20261113-0958.md",
+          "lines": 899,
+          "bytes": 42368,
+          "sha256": "17E8F33F3425C7B2DF2ADC859EEC36D02D8B956FEC1B9247AEDA4C3955E7380A",
+          "created": "2026-11-12 17:01:38",
+          "updated": "2026-11-13 09:55:15",
+          "exported": "2026-11-13 09:58:51",
+          "fully_read": true
+        }
+      ],
+      "cross_checked_sources": [
+        {
+          "path": "frentes/ep/OEP.md",
+          "version_before": "v0.3.92",
+          "blob_before": "ffb6d42cecfc546c3772b4e58adeab752dbc4e2f"
+        },
+        {
+          "path": "frentes/ep/📁 🧭 - Tareas provisionales/README.md",
+          "blob_before": "85196180677ed827fa50d184deedfc7227224687"
+        },
+        {
+          "path": "frentes/ep/📁 🧭 - Tareas provisionales/📁 🧩 - EP-TASK-003 - Mapa integral de construcción EP/README.md",
+          "blob_before": "0b1626fa6bc3d34a34c19c6acab26fc74511dcb4"
+        },
+        {
+          "path": "frentes/ep/📁 🧭 - Tareas provisionales/📁 🧩 - EP-TASK-002 - Persistencia provisional Backblaze/README.md",
+          "blob_before": "3264575224030ffffd60ce0dfc64a785e968124b"
+        }
+      ],
+      "persistence": {
+        "status": "PERSISTIDO_Y_VERIFICADO",
+        "branch": "main",
+        "commit": "aad27aa300a208aef67fedc3ae9ed42f30a9bed3",
+        "git_blob_sha1": "7afab9e61986cb870a7a895cc4d8dabb3128f892",
+        "readback_verified": true,
+        "readback_method": "GitHub fetch_file desde main; título, fuentes, hashes, estado de migración y secciones de Access Broker/Rclone comprobados",
+        "readback_lines": 420,
+        "readback_characters": 46480
+      },
+      "captured_on": "2026-11-13"
     }
   ]
 }
