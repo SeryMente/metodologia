@@ -252,6 +252,55 @@ Una sola GUI local de EP Vault, sin dashboard ni panel administrativo independie
 - Reabrir la ventana no renueva automáticamente el TTL ni reactiva una sesión bloqueada.
 - No se reutiliza la GUI legacy. La GUI clean-room existente se conserva como baseline visual solo si el retest exacto y la revisión presencial H10 lo aceptan; no se declara aceptada por el test de nombres/XAML.
 
+
+### 6.1 Dirección visual de inicio — propuesta del operador, pendiente de revisión B/C
+
+**Intención:** EP Vault debe sentirse como una bóveda física de custodia, no como un panel administrativo, una utilidad casera ni una interfaz genérica de ciberseguridad. La pantalla de inicio transmite masa, precisión mecánica, control y silencio. El tono es profesional, severo, ominoso y fotorrealista.
+
+**Composición de la pantalla bloqueada**
+
+- Una única puerta de bóveda como elemento visual dominante: acero industrial de gran espesor, geometría mecánica creíble, rueda central de cierre, pernos de bloqueo, bisagras pesadas y uniones mecanizadas. El material debe parecer acero real trabajado, no un icono ampliado ni una ilustración plana.
+- Render fotorrealista original de alta resolución, con materiales físicamente plausibles, microtextura metálica, desgaste mínimo y deliberado, iluminación cinematográfica lateral y sombras profundas. El acabado debe ser premium y contenido; no oxidación decorativa ni aspecto de videojuego.
+- Identidad EP VAULT discreta, tipografía técnica sobria y jerarquía editorial consistente. La marca no compite con la puerta.
+- Una acción primaria inequívoca: **Abrir bóveda**. La solicitud de contraseña aparece al iniciar esa acción; no se muestra un formulario de autenticación permanente si la bóveda está cerrada.
+- El estado real —por ejemplo, **BLOQUEADA**, **ABRIENDO**, **ABIERTA**, **SELLANDO** o **FALLO DE SELLADO**— se presenta con texto legible y una señal visual contenida. No inferir un estado por la animación ni mostrar apertura antes de confirmar el desbloqueo criptográfico.
+- Información secundaria estrictamente necesaria: ubicación/perfil activo y tipo de persistencia cuando corresponda. No mostrar secretos, nombres sensibles, estadísticas ficticias, indicadores ornamentales ni actividad que el sistema no mida.
+
+**Lenguaje material y cromático**
+
+- Base: negro grafito y antracita; superficies secundarias en acero pavonado y gunmetal.
+- Contraste: plata fría y blanco humo para texto, bordes funcionales y lectura.
+- Acento único y medido: latón envejecido o ámbar industrial para foco, selección y advertencias no críticas. Rojo oscuro únicamente para error crítico o fallo de sellado.
+- Iluminación volumétrica limitada al render principal. Los controles mantienen contraste, nitidez y legibilidad de aplicación de escritorio.
+- Tipografía de interfaz contemporánea y sobria; números tabulares para TTL y tiempos. Iconografía monocroma consistente, solo cuando sustituya texto o aclare una acción.
+
+**Interacción y realismo operativo**
+
+- La rueda, los pernos y la puerta pueden tener una transición breve y físicamente coherente al abrir o sellar, pero la transición comienza y termina únicamente en respuesta a estados confirmados por el Host. Nunca simula un desbloqueo exitoso mientras la operación sigue pendiente o ha fallado.
+- La animación es breve, determinista y no bloquea la interfaz. Respetar reducción de movimiento, foco de teclado, escalado DPI y contraste.
+- Contraseña y notas se presentan en superficies de entrada discretas, alineadas y protegidas; no se superponen sobre zonas con textura que comprometan su lectura.
+- La pantalla bloqueada no se convierte en dashboard. Al abrir, aparecen solo las funciones humanas ya aprobadas: sesión/ubicación, duración o expiración, pausa, notas y cierre/sellado. La operación headless continúa sin exigir que la ventana permanezca abierta.
+- Los estados PAUSED, SEALING, LOCKED y LOCK_FAILED deben distinguirse claramente. Un fallo de desmontaje no puede representarse visualmente como bóveda cerrada.
+
+**Elementos que se eliminan del lenguaje visual**
+
+- Gradientes genéricos, paneles translúcidos, tarjetas repetitivas, bordes luminosos, neón, estética cyberpunk, retículas HUD y animaciones decorativas.
+- Candados planos, escudos genéricos, iconos emoji, clipart, gráficos de stock, texturas repetidas, botones con estilos distintos y adornos sin función.
+- Métricas, medidores, logs en pantalla, barras de progreso permanentes, salud del sistema inventada y controles administrativos que no pertenezcan al flujo principal.
+- Textos de marketing, slogans, indicadores de “seguridad total” y cualquier promesa visual de protección no demostrada técnicamente.
+
+**Criterios de calidad visual (DoD)**
+
+1. La primera pantalla se reconoce inmediatamente como la entrada de una bóveda física; no parece un formulario, launcher casero o dashboard.
+2. La puerta y los materiales tienen escala, iluminación, sombras, perspectiva y detalle consistentes; no hay aspecto de render barato, textura artificial repetida ni estética de videojuego.
+3. La acción primaria, el estado criptográfico y los errores se entienden sin interpretar metáforas visuales.
+4. La jerarquía tipográfica, la alineación, los espaciados, los estados hover/focus/disabled y los controles son consistentes en todas las resoluciones soportadas.
+5. No hay datos falsos, elementos decorativos que aparenten telemetría ni animaciones que contradigan el estado real.
+6. La interfaz sigue siendo ligera y compatible con el runtime WPF/.NET objetivo; el render principal no reemplaza controles nativos ni sacrifica accesibilidad.
+7. Se comparan capturas de la pantalla inicial y estados principales contra esta dirección visual y se realiza revisión visual humana B/C antes de aceptar el diseño.
+
+**Estado:** dirección visual recibida del operador el 2026-11-13; incorporada como propuesta, no como aprobación H10/B/C. Los assets definitivos, el XAML y el código de interfaz no se modifican en esta fase. La puerta fotorrealista debe ser original y específica del producto; no se aprueba una imagen de stock ni se considera un render generado como interfaz funcional.
+
 ## 7. Seguridad, límites y calidad verificable
 
 Referencias de ingeniería: OWASP Secrets Management Cheat Sheet y Password Storage Cheat Sheet. Aplicación: mínimo privilegio, ciclo de creación/rotación/revocación/expiración, auditoría protegida, transmisión TLS y nunca registrar secretos. No se declara certificación OWASP.
