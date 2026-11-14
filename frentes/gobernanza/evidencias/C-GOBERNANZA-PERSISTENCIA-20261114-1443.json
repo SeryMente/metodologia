@@ -1,0 +1,100 @@
+{
+  "schema": "ser-y-mente-front-cycle-evidence/v1",
+  "event_id": "C-GOBERNANZA-PERSISTENCIA-20261114-1443",
+  "front": "Gobernanza",
+  "ocp_path": "frentes/gobernanza/",
+  "recorded_on": "2026-11-14",
+  "status": "PERSISTIDO_Y_VERIFICADO",
+  "local_identity": {
+    "conversation_uuidv7": "01a1dbd2-9faa-74e4-96e7-4ed0515a60eb",
+    "cycle_uuidv7": "01a1dbd2-9faa-788a-897b-fa769950edda",
+    "native_conversation_id": "NOT_EXPOSED",
+    "global_folio": null,
+    "ocp_folio": null,
+    "foliation_status": "FOL1_PREPARADO_NO_ACTIVO"
+  },
+  "instruction_verbatim": "ChatGPT-GOBERNANZA-20261114-1443.md\n\nFrente GOBERNANZA&#x20;\n\nPersiste conversacion, esta en  downloads, por RDC.  No tardes mucho, con cuestiones burocráticas innecesarias.\n\nMantén la burocracia relacionada al marco de trabajo, limitada a estrictamente lo esencial. Es absurdo el tiempo que nos estamos tardando en resolver los ciclos de retoma de responsabilidad, etcétera.&#x20;\n\nAdquiere cuidadosamente el contexto tomando el lugar del modelo en la conversación, adoptando su postura, su tono, su Lugar De manera que la transición sea sin costuras entre una conversación y otra.  Te pido que durante la conversación seas amigable, conciso, sobrio, poco extenso en lo que tiene que ver con la forma en la que utilizas el lenguaje en tus salidas    Finalmente, repite la salida del último ciclo en la conversación que te pido que adjuntes al frente de trabajo de manera literal y textual en el mismo formato visual que lo tenía el modelo en la conversación original.\n\n####",
+  "scope": "Persistir sin transformación el export original de Downloads; reproducir literalmente su última salida en GOBERNANZA.md; registrar el original en el manifiesto y añadir evidencia de read-back. No modificar el DUG/GOW ni realizar transferencia de responsabilidad.",
+  "source": {
+    "path": "C:\\Users\\fila4\\Downloads\\ChatGPT-GOBERNANZA-20261114-1443.md",
+    "device": "PC10RCIF4EI4",
+    "device_id": "5182a6bc-db2c-452e-a52a-95d63f6c74d6",
+    "client_id": "89d05c4f-7a80-421e-8191-b53561208e4f",
+    "size_bytes": 80903,
+    "sha256": "BE1AEABC78E5876BAA65E6E47222655B3AEB648188550313C0BDBA2D6FC05D9D",
+    "git_blob_sha": "d5077bf0c1b5d75843fe24a82dee3a9ad0de3419"
+  },
+  "artifacts": [
+    {
+      "path": "frentes/gobernanza/documentos/originales/ChatGPT-GOBERNANZA-20261114-1443.md",
+      "git_blob_sha": "d5077bf0c1b5d75843fe24a82dee3a9ad0de3419",
+      "source_sha256": "BE1AEABC78E5876BAA65E6E47222655B3AEB648188550313C0BDBA2D6FC05D9D",
+      "bytes": 80903,
+      "status": "PERSISTIDO_Y_VERIFICADO"
+    },
+    {
+      "path": "frentes/gobernanza/GOBERNANZA.md",
+      "git_blob_sha": "28fa0abefaa522149f30d172e43c4437f956d991",
+      "commit_sha": "626f3f99bf0829d50097a69224a260cf724816af",
+      "contains_literal_last_output": true,
+      "status": "PERSISTIDO_Y_VERIFICADO"
+    },
+    {
+      "path": "frentes/gobernanza/documentos/MANIFIESTO-DOCUMENTAL.json",
+      "git_blob_sha": "453b396c6a516a708175c0a62f3fdafa1ca2fd02",
+      "commit_sha": "daf1df9123866499868d46a723e4fef8950edd4a",
+      "document_count": 18,
+      "status": "PERSISTIDO_Y_VERIFICADO"
+    }
+  ],
+  "responsibility": {
+    "control_changed": false,
+    "control_blob_sha": "4a1829005d976aaee6a986764ee660e8688667fe",
+    "current_primary_generation": 23,
+    "current_primary_alias": "chatgpt-C-GOBERNANZA-RETOMA-18-01a1d6b356277d3d88f0f043c0db1e9b",
+    "current_co_responsible_generation": 20,
+    "current_co_responsible_alias": "chatgpt-C-GOBERNANZA-ASIENTO-02-OPTIMIZACION-01-SES-20261111-624B784A",
+    "active_responsibles_after_write": 2,
+    "status": "UNCHANGED"
+  },
+  "continuity": {
+    "dug": "Samantha v398 · NX-398m",
+    "dug_blob_sha": "410c85c9afd36202c1e56cb519c677f3bc0205a1",
+    "metacanon": "1.31",
+    "gow": "2.25",
+    "principles": 45,
+    "annexes": 27,
+    "athanor_visual_transfer": "PUBLISHED_AS_REPORTED_IN_LAST_OUTPUT",
+    "review_and_dictation": "PUBLISHED; real microphone test NOT_PERFORMED",
+    "semantic_review": "PENDING",
+    "outstanding_conflicts": [
+      "P012/P013",
+      "P005/P020"
+    ],
+    "ipz": "v0.7 baseline; native installation NOT_VERIFIED",
+    "fol1": "PREPARADO/NO ACTIVO",
+    "mcp_normativo": "DESACTIVADO"
+  },
+  "operation": {
+    "original_write_commit_sha": "a73d8adf9d7a6e37cecb74f03ee17c55961f684a",
+    "governance_write_commit_sha": "626f3f99bf0829d50097a69224a260cf724816af",
+    "manifest_write_commit_sha": "daf1df9123866499868d46a723e4fef8950edd4a",
+    "source_sha256": "BE1AEABC78E5876BAA65E6E47222655B3AEB648188550313C0BDBA2D6FC05D9D",
+    "source_git_blob_sha": "d5077bf0c1b5d75843fe24a82dee3a9ad0de3419",
+    "readback_required": true,
+    "readback_verified": true,
+    "readback_verified_on": "2026-11-14",
+    "readback_method": "RDC source SHA-256 + byte-for-byte Base64 read-back from GitHub main; literal output, manifest and evidence read-back.",
+    "readback_checks": {
+      "source_original_byte_for_byte_equal": true,
+      "source_sha256_matches": true,
+      "original_git_blob_matches": true,
+      "literal_last_output_present": true,
+      "manifest_document_count_18": true,
+      "responsibility_control_unchanged": true,
+      "active_responsibles_two": true,
+      "global_and_ocp_folios_unassigned": true,
+      "fol1_prepared_not_active": true
+    }
+  }
+}
