@@ -859,3 +859,97 @@ La llave pública anterior no fue copiada. Debes revocarla y crear una nueva. El
 - FOL1: PREPARADO / NO ACTIVO. UUIDv7 local: NO REGISTRADO.
 
 La lista y su mecanismo de revisión ya comparten un único HTML canónico, tanto en GitHub como en la carpeta física indicada.
+
+
+---
+
+## Captura documental · 2026-11-14 · ChatGPT-GOBERNANZA-20261114-1443
+
+**Export original:** [ChatGPT-GOBERNANZA-20261114-1443.md](documentos/originales/ChatGPT-GOBERNANZA-20261114-1443.md). Origen: `C:\Users\fila4\Downloads\ChatGPT-GOBERNANZA-20261114-1443.md`; dispositivo `PC10RCIF4EI4`, RDC device `5182a6bc-db2c-452e-a52a-95d63f6c74d6`. Tamaño: 80,903 bytes. SHA-256 de origen: `BE1AEABC78E5876BAA65E6E47222655B3AEB648188550313C0BDBA2D6FC05D9D`. Git blob: `d5077bf0c1b5d75843fe24a82dee3a9ad0de3419`.
+
+**Contexto vigente al cierre:** Samantha v398 · NX-398m; Metacanon 1.31; GOW 2.25; 45 principios y 27 anexos. Migración Athanor, revisión por principio y dictado publicados. Revisión semántica de los principios PENDIENTE; contradicciones P012/P013 y P005/P020 siguen abiertas. IPZ nativa NO VERIFICADA; FOL1 PREPARADO/NO ACTIVO; MCP-NORMATIVO DESACTIVADO.
+
+**Responsabilidad:** control sin cambios; titular primario generación 23 y corresponsable generación 20 siguen activos. No se crea una nueva transferencia ni se asignan folios.
+
+### Última salida del último ciclo · reproducción literal
+
+(Publicado y verificado)
+
+El DUG ya fue actualizado en `main` con la migración de Athanor y la representación normativa humana única.
+
+**Documento canónico\:** [github.com](https://github.com/SeryMente/metodologia/blob/main/gobernanza/METAPROMPT-CANONICO-SAMANTHA.html?utm_source=chatgpt.com)
+
+### Cambios publicados
+
+**1\. Estética Athanor**
+
+- Fondo negro, acentos dorados y bronce, violeta para elementos especiales.
+- Tipografías Cinzel, Crimson Pro y JetBrains Mono.
+- Tarjetas normativas, jerarquía visual, navegación lateral, indicadores de progreso, bloques destacados y adaptación móvil.
+
+**2\. Revisión y dictado**
+
+- Revisión individual de los 45 principios.
+- Estados de revisión, observaciones, valoraciones y progreso.
+- Dictado por navegador y alternativa Whisper mediante Groq.
+- Comandos de voz explícitos: «marcar revisado» y «marcar pendiente».
+- Las observaciones y los estados no ratifican ni modifican normas.
+
+**3\. Fuente normativa única**
+
+- Retirado `gov-data`, que contenía el JSON normativo.
+- Eliminada la sección de representación estructurada para máquinas.
+- Los principios y anexos se presentan directamente desde el contenido humano del DUG.
+- Las exportaciones JSON que permanecen corresponden exclusivamente a observaciones de revisión.
+- Incorporadas las 13 definiciones humanas que faltaban en el GOW y reparados sus enlaces.
+- Corregida la pertenencia al CNP: seis principios de categoría A.
+
+### Verificación técnica
+
+**Principios visibles** (45 / 45)
+
+**Anexos visibles** (27 / 27)
+
+**Enlaces internos sin destino** 0
+
+**IDs duplicados** 0
+
+**Sintaxis JavaScript** (Correcta)
+
+**JSON normativo paralelo** (Retirado)
+
+La lectura de vuelta confirmó que el blob publicado coincide con el resultado de GitHub.
+
+**Último commit\:** `805aafed15840621f4f7b0767c70af4ca663706e`
+
+**Blob SHA\:** `410c85c9afd36202c1e56cb519c677f3bc0205a1`
+
+No se realizó una prueba de micrófono en un navegador real desde esta sesión. El reconocimiento nativo no requiere llave API; para Whisper sí debes configurar tu llave Groq desde el panel del propio DUG. No me la compartas.
+
+### Revisión normativa pendiente
+
+La migración visual y técnica está publicada, pero **no considero terminada la revisión semántica de los principios**\. El diagnóstico del corpus original arroja\:
+
+| Criterio del §50 | Resultado |
+|--------|--------|
+| Enunciados mayores de 300 caracteres | 36 |
+| Principios con más de cinco oraciones | 12 |
+| Principios sin ponderación | 38 |
+| Microdescriptores fuera de 11-16 palabras | 0 |
+
+También siguen pendientes contradicciones importantes entre P012/P013 y P005/P020, además de separar contenido de gobierno general y procedimientos especializados.
+
+No he acortado ni fusionado esos principios todavía: hacerlo sin reconciliar sus obligaciones y anexos podría alterar su significado. La siguiente parte del mismo encargo es la revisión semántica, la redacción conforme al §50 y la conciliación de esas contradicciones.
+
+### Trazabilidad
+
+- **IPZ\:** v0.7 · edad NO VERIFICADA.
+- **DUG\:** Samantha v398 · NX-398m · Metacanon 1.31 · GOW 2.25.
+- **CONV / OCP\:** PENDIENTE / NO ASIGNADO.
+- **CICLO / OCP\:** PENDIENTE / NO ASIGNADO.
+- **A / OCP\:** PENDIENTE / NO ASIGNADO.
+- **B / OCP\:** PENDIENTE / NO ASIGNADO.
+- **FOL1\:** no activo; folios pendientes.
+- **MCP-NORMATIVO\:** DESACTIVADO.
+- **Persistencia\:** commit y blob cotejados por lectura de vuelta.
+- **Edad del último commit\:** NO VERIFICADA.
