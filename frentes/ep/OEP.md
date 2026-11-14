@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). 1v0.3.108. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). 1v0.3.109. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -5076,4 +5076,4 @@ El estado actual se obtiene de §§145, 150 y 151; las secciones 0–59 y el sna
 - Registro del ciclo, incluyendo procedencia y mensajes visibles intermedios: documentos/RETOMA-EP-2026-11-14-1632.md.
 - La última salida visible conservada del modelo anterior se recuperó desde documentos/ULTIMA-SALIDA-EP-20261114-1309.md (blob 57da7dabbe915432e7f79d0f0e93c86da83dce2e) y se presenta literalmente en la salida de este ciclo.
 - No se recibió un export completo de la conversación actual. Se preservan únicamente el A disponible y el B final; no se declara captura integral del chat. Los mensajes intermedios visibles se registran en la retoma, sin incorporar resultados internos ni razonamiento.
-- El manifiesto documental se actualiza para indexar estos artefactos. La aceptación de esta entrada queda condicionada al read-back final de los archivos y del manifiesto en main.
+- El manifiesto documental se actualizó y leyó de vuelta: 12 documentos; A, B y el registro de ciclo están indexados. El read-back final independiente del control, OEP, README, A, B, registro y manifiesto en main cerró sin diferencias.
