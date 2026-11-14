@@ -9,7 +9,7 @@
     "oep_version": "v0.3.109"
   },
   "coverage": {
-    "scope": "Registro documental del frente EP con alcance por entrada. La cobertura de cada conversación/original se limita a las fuentes listadas; no se presume auditoría retrospectiva de archivos no enumerados. La conversación EP-20261113-1439 y su salida literal están archivadas byte-exacto; el diseño integral y el sprint EP Vault v2 registran auditoría local v1.0.0 y programación, sin construcción ni cambios al almacén real. La exportación ChatGPT-EP-20261114-1309.md quedó archivada byte-exacto en originales/, con la última salida literal separada y la retoma del 14 de noviembre documentada en OEP §151; no se modificaron código ni almacenes reales. This cycle EP-RETOMA-20261114-1632 adds a directly supplied literal operator instruction, the current model output and a cycle record with visible intermediate updates. No complete export of the current conversation was supplied; no full-conversation capture is claimed. Ownership transferred to generation 5 and read-back verified; OEP v0.3.109 §152 is current. No code, vault data, ciphertext, secrets, B2 or host operations occurred. Final records B and retoma were refreshed to OEP v0.3.109 and their final Git blobs; README pointers were aligned to v0.3.109. The current main read-back verifies the three new entries and all existing records remain intact.",
+    "scope": "Registro documental del frente EP con alcance por entrada. La cobertura de cada conversación/original se limita a las fuentes listadas; no se presume auditoría retrospectiva de archivos no enumerados. La conversación EP-20261113-1439 y su salida literal están archivadas byte-exacto; el diseño integral y el sprint EP Vault v2 registran auditoría local v1.0.0 y programación, sin construcción ni cambios al almacén real. La exportación ChatGPT-EP-20261114-1309.md quedó archivada byte-exacto en originales/, con la última salida literal separada y la retoma del 14 de noviembre documentada en OEP §151; no se modificaron código ni almacenes reales. This cycle EP-RETOMA-20261114-1632 adds a directly supplied literal operator instruction, the current model output and a cycle record with visible intermediate updates. No complete export of the current conversation was supplied; no full-conversation capture is claimed. Ownership transferred to generation 5 and read-back verified; OEP v0.3.109 §152 is current. No code, vault data, ciphertext, secrets, B2 or host operations occurred. Final records B and retoma were refreshed to OEP v0.3.109 and their final Git blobs; README pointers were aligned to v0.3.109. The current main read-back verifies the three new entries and all existing records remain intact. The cycle record was finally refreshed to include the final README alignment (OEP v0.3.109, generation 5); its blob and read-back are indexed in this manifest revision.",
     "legacy_originals_path_preserved": "frentes/ep/originales/"
   },
   "documents": [
@@ -404,13 +404,15 @@
         "dug_version": "v398 / NX-398m",
         "metacanon_version": "1.28",
         "scope": "Literal A, visible intermediate updates, ownership transfer evidence, current state, limits and next checkpoint. No complete conversation export received.",
-        "oep_version": "v0.3.109"
+        "oep_version": "v0.3.109",
+        "readme_final_blob": "84af340ab668c68160a0e94a4104cb6121a313c7",
+        "readme_final_commit": "190a486c3eae89dbd8feec3e878db67acbe1eca2"
       },
       "persistence": {
         "status": "PERSISTIDO_Y_READBACK_VERIFICADO",
         "branch": "main",
-        "commit": "705b5130910b0c93d08347507ff31bd913b9b367",
-        "git_blob_sha1": "2ca2b6e015c7074e7f8872395d0eaa3867e5b522",
+        "commit": "816d8bb067ccc3d0c1935618d470d12a19d48cb3",
+        "git_blob_sha1": "841398d4222d9dd68c32a465867818564bf8865f",
         "readback_verified": true,
         "readback_method": "GitHub fetch_file; content exactly equals authored cycle record"
       },
