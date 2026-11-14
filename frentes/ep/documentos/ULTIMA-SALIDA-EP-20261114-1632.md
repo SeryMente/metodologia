@@ -13,7 +13,7 @@ B: B-G = PENDIENTE/NO ASIGNADO · salida final = documentos/ULTIMA-SALIDA-EP-202
 
 ## Titularidad del frente
 
-<badge>RELEVO EJECUTADO Y VERIFICADO</badge>
+**RELEVO EJECUTADO Y VERIFICADO**
 
 El control canónico registra a esta instancia como titular única del frente Entorno Persistente, generación 5. La generación 4 quedó transferida. El cambio se hizo por SHA compare-and-swap y se confirmó mediante read-back del control en main.
 
