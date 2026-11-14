@@ -183,9 +183,10 @@
       "scope": "Retake sole operational responsibility for the Entorno Persistente front frentes/ep/ in SeryMente/metodologia. Current scope is documentary governance, continuity, triage and coordination. Preserve all existing security, host, vault, ciphertext, backup, credential and implementation gates. This transfer does not itself authorize code construction, host/RDC operations, access to credentials or real vault/ciphertext/B2 data, destructive changes, DUG/GOW/MCP amendments, or bypass of the P012/P013 in-person review."
     },
     "readback_required": true,
-    "readback_verified": false,
+    "readback_verified": true,
     "source_control_blob_sha": "b5cb44f63823c077b57f7bcb3cae018394417199",
-    "alias": "chatgpt-C-EP-RETOMA-20261114-02-01a1dc30-edd1-7978-bb07-b0c2db72b0c3"
+    "alias": "chatgpt-C-EP-RETOMA-20261114-02-01a1dc30-edd1-7978-bb07-b0c2db72b0c3",
+    "readback_control_blob_sha": "7f9e7976c35e5c6c034dfe9902707d38e309b29d"
   },
   "active_responsibles": [
     {
@@ -243,9 +244,10 @@
         "scope": "Retake sole operational responsibility for the Entorno Persistente front frentes/ep/ in SeryMente/metodologia. Current scope is documentary governance, continuity, triage and coordination. Preserve all existing security, host, vault, ciphertext, backup, credential and implementation gates. This transfer does not itself authorize code construction, host/RDC operations, access to credentials or real vault/ciphertext/B2 data, destructive changes, DUG/GOW/MCP amendments, or bypass of the P012/P013 in-person review."
       },
       "readback_required": true,
-      "readback_verified": false,
+      "readback_verified": true,
       "source_control_blob_sha": "b5cb44f63823c077b57f7bcb3cae018394417199",
-      "alias": "chatgpt-C-EP-RETOMA-20261114-02-01a1dc30-edd1-7978-bb07-b0c2db72b0c3"
+      "alias": "chatgpt-C-EP-RETOMA-20261114-02-01a1dc30-edd1-7978-bb07-b0c2db72b0c3",
+      "readback_control_blob_sha": "7f9e7976c35e5c6c034dfe9902707d38e309b29d"
     }
   ],
   "co_responsibility": {
@@ -478,11 +480,22 @@
       },
       "native_conversation_id": "NOT_EXPOSED; operational alias + local UUIDv7 used",
       "method": "GitHub Contents API compare-and-swap against immediately re-read control blob SHA; canonical read-back required.",
-      "mutation_result": "COMMITTED_READBACK_PENDING",
+      "mutation_result": "COMMITTED_AND_READBACK_VERIFIED",
       "active_responsibles_after_write": 1,
       "maximum_active_responsibles": 2,
       "readback_required": true,
-      "readback_verified": false
+      "readback_verified": true,
+      "readback_blob_sha": "7f9e7976c35e5c6c034dfe9902707d38e309b29d",
+      "verification": {
+        "status": "read_back_verified",
+        "verified_on": "2026-11-14",
+        "generation": 5,
+        "owner_alias": "chatgpt-C-EP-RETOMA-20261114-02-01a1dc30-edd1-7978-bb07-b0c2db72b0c3",
+        "local_conversation_uuidv7": "01a1dc30-edd1-7978-bb07-b0c2db72b0c3",
+        "active_responsibles": 1,
+        "control_blob_readback": "7f9e7976c35e5c6c034dfe9902707d38e309b29d",
+        "scope_limit": "Control registration and canonical read-back only; not native ChatGPT identity, host security validation or server-enforced fencing."
+      }
     }
   ],
   "generation_semantics": "AUDIT_METADATA_ONLY_NOT_AUTHORITY_OR_EXECUTION_GATE",
