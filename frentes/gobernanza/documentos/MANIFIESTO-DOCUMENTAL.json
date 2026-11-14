@@ -2,9 +2,9 @@
   "schema": "ser-y-mente-document-manifest/v1",
   "front": "Gobernanza",
   "ocp_path": "frentes/gobernanza/",
-  "event_id": "C-GOBERNANZA-RETOMA-18",
+  "event_id": "C-GOBERNANZA-PERSISTENCIA-20261114-1443",
   "cycle_folio": null,
-  "recorded_on": "2026-11-13",
+  "recorded_on": "2026-11-14",
   "status": "PERSISTIDO_Y_VERIFICADO",
   "rule": "P041 + ART-014 + ART-022; conservar originales sin transformar y declarar persistencia solo tras lectura de vuelta y cotejo.",
   "documents": [
@@ -407,27 +407,57 @@
         "last_output_in": "frentes/gobernanza/GOBERNANZA.md",
         "evidence_path": "frentes/gobernanza/evidencias/C-GOBERNANZA-RETOMA-18.json"
       }
+    },
+    {
+      "document_id": "DOC-GOV-CHATGPT-GOBERNANZA-20261114-1443",
+      "original_name": "ChatGPT-GOBERNANZA-20261114-1443.md",
+      "path": "documentos/originales/ChatGPT-GOBERNANZA-20261114-1443.md",
+      "class": "original",
+      "source_path": "C:\\Users\\fila4\\Downloads\\ChatGPT-GOBERNANZA-20261114-1443.md",
+      "source_device": "PC10RCIF4EI4",
+      "source_device_id": "5182a6bc-db2c-452e-a52a-95d63f6c74d6",
+      "source_client_id": "89d05c4f-7a80-421e-8191-b53561208e4f",
+      "source_front": "Gobernanza",
+      "captured_via": "RDC; bytes originales transportados como Base64, decodificados como UTF-8 sin transformación; comparación Base64 byte por byte con GitHub main.",
+      "media_type": "text/markdown; charset=utf-8",
+      "size_bytes": 80903,
+      "sha256": "BE1AEABC78E5876BAA65E6E47222655B3AEB648188550313C0BDBA2D6FC05D9D",
+      "git_blob_sha": "d5077bf0c1b5d75843fe24a82dee3a9ad0de3419",
+      "status": "PERSISTIDO_Y_VERIFICADO",
+      "recorded_in_event_id": "C-GOBERNANZA-PERSISTENCIA-20261114-1443",
+      "verification": {
+        "readback": true,
+        "content_cotejo": true,
+        "method": "RDC source SHA-256 + Base64 byte-for-byte read-back from main; Git blob SHA cotejado.",
+        "readback_blob_sha": "d5077bf0c1b5d75843fe24a82dee3a9ad0de3419",
+        "verified_on": "2026-11-14",
+        "write_commit_sha": "a73d8adf9d7a6e37cecb74f03ee17c55961f684a"
+      },
+      "relations": {
+        "last_output_in": "frentes/gobernanza/GOBERNANZA.md",
+        "evidence_path": "frentes/gobernanza/evidencias/C-GOBERNANZA-PERSISTENCIA-20261114-1443.json"
+      }
     }
   ],
-  "originals_commit_sha": "49994e0cf349b7fbb743300e6139184977f4de9d",
+  "originals_commit_sha": "a73d8adf9d7a6e37cecb74f03ee17c55961f684a",
   "verification": {
     "readback": true,
     "content_cotejo": true,
-    "document_count": 17,
-    "source_sha256": "AD3ADFB310FCF4D170FEC2153A866796C3324EC6499424C3CF86835631842110",
-    "git_blob_sha": "021e0b968994fa6b34ab9c4839dcb62fd8e5938c",
-    "method": "RDC source SHA-256 + exact Git blob read-back and source-text comparison.",
-    "verified_on": "2026-11-13",
-    "write_commit_sha": "49994e0cf349b7fbb743300e6139184977f4de9d"
+    "document_count": 18,
+    "source_sha256": "BE1AEABC78E5876BAA65E6E47222655B3AEB648188550313C0BDBA2D6FC05D9D",
+    "git_blob_sha": "d5077bf0c1b5d75843fe24a82dee3a9ad0de3419",
+    "method": "RDC source SHA-256 + exact Base64 GitHub read-back; manifest record updated from verified original.",
+    "verified_on": "2026-11-14",
+    "write_commit_sha": "a73d8adf9d7a6e37cecb74f03ee17c55961f684a"
   },
   "latest_addition_event": {
-    "event_id": "C-GOBERNANZA-RETOMA-18",
-    "document_id": "DOC-GOV-CHATGPT-GOBERNANZA-20261113-1456",
-    "commit_sha": "49994e0cf349b7fbb743300e6139184977f4de9d",
-    "git_blob_sha": "021e0b968994fa6b34ab9c4839dcb62fd8e5938c",
+    "event_id": "C-GOBERNANZA-PERSISTENCIA-20261114-1443",
+    "document_id": "DOC-GOV-CHATGPT-GOBERNANZA-20261114-1443",
+    "commit_sha": "a73d8adf9d7a6e37cecb74f03ee17c55961f684a",
+    "git_blob_sha": "d5077bf0c1b5d75843fe24a82dee3a9ad0de3419",
     "readback_verified": true,
-    "readback_verified_on": "2026-11-13",
-    "evidence_path": "frentes/gobernanza/evidencias/C-GOBERNANZA-RETOMA-18.json"
+    "readback_verified_on": "2026-11-14",
+    "evidence_path": "frentes/gobernanza/evidencias/C-GOBERNANZA-PERSISTENCIA-20261114-1443.json"
   },
-  "latest_original_commit_sha": "49994e0cf349b7fbb743300e6139184977f4de9d"
+  "latest_original_commit_sha": "a73d8adf9d7a6e37cecb74f03ee17c55961f684a"
 }
