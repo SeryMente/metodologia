@@ -180,9 +180,10 @@
                                                      "scope":  "Retake EP continuity and persist the named conversation export and last visible output in the EP OCP; no new authorization for EP Vault code, real vault data, B2, host credentials or DUG/GOW/MCP changes."
                                                  },
                                "readback_required":  true,
-                               "readback_verified":  false,
+                               "readback_verified":  true,
                                "source_control_blob_sha":  "bc9e1b33a607d82e31ca05170831bfaeec8a3598",
-                               "alias":  "chatgpt-C-EP-RETOMA-20261114-01-01a1db7e-ac0b-7906-a15a-e00811b175c5"
+                               "alias":  "chatgpt-C-EP-RETOMA-20261114-01-01a1db7e-ac0b-7906-a15a-e00811b175c5",
+                               "readback_control_blob_sha":  "7183eccd15b15cb6e752d68fb1a6c06b8581116c"
                            },
     "active_responsibles":  [
                                 {
@@ -390,11 +391,22 @@
                                  },
                           "native_conversation_id":  "NOT_EXPOSED; source conversation export retained in originals/",
                           "method":  "Fast-forward Git main commit, followed by GitHub Contents API read-back of the control.",
-                          "mutation_result":  "COMMITTED; remote read-back pending",
+                          "mutation_result":  "COMMITTED_AND_READBACK_VERIFIED",
                           "active_responsibles_after_write":  1,
                           "maximum_active_responsibles":  2,
                           "readback_required":  true,
-                          "readback_verified":  false
+                          "readback_verified":  true,
+                          "readback_blob_sha":  "7183eccd15b15cb6e752d68fb1a6c06b8581116c",
+                          "verification":  {
+                                               "status":  "read_back_verified",
+                                               "verified_on":  "2026-11-14",
+                                               "generation":  4,
+                                               "owner_alias":  "chatgpt-C-EP-RETOMA-20261114-01-01a1db7e-ac0b-7906-a15a-e00811b175c5",
+                                               "local_conversation_uuidv7":  "01a1db7e-ac0b-7906-a15a-e00811b175c5",
+                                               "active_responsibles":  1,
+                                               "remote_main_commit":  "079ad945478b196b194536aee5d1fe8f0cbb9226",
+                                               "scope_limit":  "Control registration and canonical read-back only; not platform-native identity or server-enforced fencing."
+                                           }
                       }
                   ],
     "generation_semantics":  "AUDIT_METADATA_ONLY_NOT_AUTHORITY_OR_EXECUTION_GATE",
