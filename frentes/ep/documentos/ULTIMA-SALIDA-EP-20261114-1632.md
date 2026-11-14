@@ -1,10 +1,10 @@
 IPZ: v0.7 · NO VERIFICADO
-DUG: v398 · NX-398m · 0.1.58
-GOW: v2.25 (integrado en el DUG) · 0.1.58
-Metacanon: 1.28 · 0.1.58
-OEP: v0.3.108 · 0.0.00
-Control EP: generación 5 · 0.0.01
-Corte de edades: 2026-11-14 16:36:24 America/Mexico_City. IPZ no tiene en este ciclo una fuente/commit verificable; su edad y su instalación nativa quedan NO VERIFICADAS.
+DUG: v398 · NX-398m · 0.2.00
+GOW: v2.25 (integrado en el DUG) · 0.2.00
+Metacanon: 1.28 · 0.2.00
+OEP: v0.3.109 · 0.0.00
+Control EP: generación 5 · 0.0.03
+Corte de edades: 2026-11-14 16:38:32 America/Mexico_City. IPZ no tiene en este ciclo una fuente/commit verificable; su edad y su instalación nativa quedan NO VERIFICADAS.
 
 CONV: CV-G = PENDIENTE/NO ASIGNADO · OCP = frentes/ep/ (FOL1 PREPARADO/NO ACTIVO)
 CICLO 1: CY-G = PENDIENTE/NO ASIGNADO · referencia local = EP-RETOMA-20261114-1632 · OCP = frentes/ep/
@@ -70,7 +70,7 @@ La revisión presencial de seguridad/arquitectura P012/P013 continúa siendo una
 
 - A literal: preservado y leído de vuelta en main.
 - Control de responsabilidad: actualizado por SHA compare-and-swap y leído de vuelta; generación 5, un titular activo.
-- OEP: actualizado a v0.3.108; §152 contiene el relevo, el estado vivo, las pruebas pendientes y las restricciones.
+- OEP: actualizado a v0.3.109; §152 contiene el relevo, el estado vivo, las pruebas pendientes y las restricciones.
 - Registro de ciclo: documentos/RETOMA-EP-2026-11-14-1632.md.
 - Manifiesto documental: reconciliado y leído de vuelta antes de emitir este cierre.
 - No se recibió un export completo de esta conversación. Se preservan el A recibido y este B; no se afirma captura integral del chat.
