@@ -176,3 +176,12 @@ La exportación íntegra de esta retoma quedó archivada en [fuentes/ChatGPT-Pro
 La última salida visible del ciclo, fechada 13/11/2026 a las 14:48:59, se conserva literalmente en [fuentes/ULTIMA-SALIDA-PRODUCT-DESIGN-20261113-1505.md](./fuentes/ULTIMA-SALIDA-PRODUCT-DESIGN-20261113-1505.md), también verificada mediante lectura de vuelta exacta.
 
 Esta retoma confirma el estado registrado en §148 del OEP: Carson como coach conversacional sobre BMAD Brainstorming; 108 técnicas en 13 categorías observadas; SQLite FTS5 comprobado solo en memoria; tareas EP-TASK-009–012 ya creadas; EP Vault como compuerta para la persistencia durable. No cambia alcance, estados de tareas, configuración ni criterios de aceptación.
+
+
+## Continuidad conversacional · 2026-11-14 · 13:21
+
+La exportación íntegra de esta retoma quedó archivada en [fuentes/ChatGPT-PRODUCT DESIGN-20261114-1321.md](./fuentes/ChatGPT-PRODUCT%20DESIGN-20261114-1321.md). Procedencia: `C:\Users\fila4\Downloads\ChatGPT-PRODUCT DESIGN-20261114-1321.md`; 2.076 líneas, 106.600 bytes; SHA-256 `C13CF7FDDBB550833472BA57A901B9E36B695C2797D73E8DBCFFFE05EC9E0B8E`. La copia en el repositorio pasó cotejo SHA-256 idéntico al original.
+
+La última salida visible del ciclo, correspondiente a la respuesta del 14/11/2026 a las 13:19:21, se conserva en [fuentes/ULTIMA-SALIDA-PRODUCT-DESIGN-20261114-1321.md](./fuentes/ULTIMA-SALIDA-PRODUCT-DESIGN-20261114-1321.md). Su lectura de vuelta fue verificada.
+
+La retoma aclara que EP significa Entorno Persistente y que EP-TASK-009–012 son identificadores existentes en el repositorio. Los rótulos T-01–T-05 fueron referencias auxiliares de auditoría y quedan retirados como identificadores operativos. No se modificaron fichas de tareas, estados ni el diseño vigente.
