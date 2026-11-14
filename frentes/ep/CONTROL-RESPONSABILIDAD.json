@@ -1,414 +1,490 @@
 {
-    "schema":  "responsabilidad/1",
-    "front":  "ep",
-    "repository":  "SeryMente/metodologia",
-    "front_ocp":  "frentes/ep/",
-    "state_object":  "frentes/ep/OEP.md",
-    "status":  "owned",
-    "owner_thread":  "chatgpt-C-EP-RETOMA-20261114-01-01a1db7e-ac0b-7906-a15a-e00811b175c5",
-    "owner_thread_identity_kind":  "operational alias + local UUIDv7; native ChatGPT conversation ID is not exposed by available tools",
-    "instance":  "chatgpt-ep-owner-2026-11-14-01a1db7e-ac0b-7906-a15a-e00811b175c5",
-    "generation":  4,
-    "authorization_ref":  "C-EP-RETOMA-20261114-01; instrucción expresa del operador para retomar el frente EP y persistir el export conversacional del 2026-11-14.",
-    "scope":  "One active owner for Entorno Persistente (EP). This retake covers conversation continuity, exact archival of the supplied export, recovery of its last visible output, and documentary OEP/manifest updates. It preserves existing EP scope and all inherited security/host/vault restrictions. It does not newly authorize code construction, access to credentials, vault/ciphertext or B2 operations, destructive changes, or DUG/GOW/MCP amendments.",
-    "expiry":  null,
-    "handoff":  "Retoma operativa del frente EP el 2026-11-14 por instrucción expresa del operador. La sesión anterior de generación 3 queda relevada; la sesión actual queda como titular en generación 4. UUIDv7 local registrado; identidad nativa no expuesta; FOL1 no activo y sin folio nuevo.",
-    "previous_owner":  "chatgpt-C-EP-TRANSFER-RESPONSIBILITY-20261109-01-SES-20261109-E032FC60",
-    "initialization":  {
-                           "event_id":  "C-EP-RESPONSABILIDAD-INICIAL-20261108-88E05E17",
-                           "cycle_reference":  "C-EP-MOD-SCRIPTPWS-20261101-03",
-                           "cycle_identity_kind":  "existing legacy local EP cycle identifier; not a FOL1 global cycle folio",
-                           "recorded_on":  "2026-11-08",
-                           "status":  "initial_assignment",
-                           "authorization":  {
-                                                 "status":  "explicit",
-                                                 "source":  "operator response in this conversation to the direct question authorizing creation of the initial EP responsibility control",
-                                                 "question_verbatim":  "¿Autorizas crear el control canónico inicial en: SeryMente/metodologia/main/frentes/ep/CONTROL-RESPONSABILIDAD.json Registrando esta conversación como titular mediante asignación inicial (generación 1), dejando constancia de que no se pudo verificar un titular anterior?",
-                                                 "response_verbatim":  "Si",
-                                                 "scope":  "Create the initial canonical EP responsibility control and register this conversation as the sole active owner at generation 1; no prior owner or generation is asserted."
-                                             },
-                           "requested_resolution":  "TRANSFER_RESPONSIBILITY",
-                           "actual_resolution":  "INITIAL_ASSIGNMENT_NO_PRIOR_CONTROL",
-                           "prior_canonical_control":  "NOT_FOUND at frentes/ep/CONTROL-RESPONSABILIDAD.json before creation",
-                           "prior_owner":  "NOT_VERIFIABLE; no canonical EP responsibility control or owner/generation record was found",
-                           "previous_owner":  null,
-                           "discovery":  {
-                                             "accessible_repositories":  {
-                                                                             "owner":  "SeryMente",
-                                                                             "count":  11,
-                                                                             "coverage":  "all repositories exposed by the linked GitHub connection at the time of this check; not proof of the full organization"
-                                                                         },
-                                             "existing_authoritative_controls_read":  16,
-                                             "candidate_exact_code_searches":  [
-                                                                                   {
-                                                                                       "term":  "C-EP-RESPONSABILIDAD-INICIAL-20261108-88E05E17",
-                                                                                       "matches_found":  0
-                                                                                   },
-                                                                                   {
-                                                                                       "term":  "SES-20261108-0BD44C87",
-                                                                                       "matches_found":  0
-                                                                                   },
-                                                                                   {
-                                                                                       "term":  "chatgpt-C-EP-RESPONSABILIDAD-INICIAL-20261108-88E05E17-SES-20261108-0BD44C87",
-                                                                                       "matches_found":  0
-                                                                                   }
-                                                                               ],
-                                             "checked_controls":  [
-                                                                      {
-                                                                          "repository":  "SeryMente/khora",
-                                                                          "path":  "docs/frentes/dictado-voz/CONTROL-RESPONSABILIDAD.json",
-                                                                          "blob_sha":  "8fa5721013b47b88729b38869c712863bc6a69d7"
-                                                                      },
-                                                                      {
-                                                                          "repository":  "SeryMente/khora",
-                                                                          "path":  "docs/frentes/harmonia/CONTROL-RESPONSABILIDAD.json",
-                                                                          "blob_sha":  "0e090e1f3537b75891344af812e576e39a5f5e02"
-                                                                      },
-                                                                      {
-                                                                          "repository":  "SeryMente/khora",
-                                                                          "path":  "docs/frentes/observabilidad-mcp/CONTROL-RESPONSABILIDAD.json",
-                                                                          "blob_sha":  "4fba2187947730abca0cc338429dfacf4810594c"
-                                                                      },
-                                                                      {
-                                                                          "repository":  "SeryMente/khora",
-                                                                          "path":  "frentes/custodia/CONTROL-RESPONSABILIDAD.json",
-                                                                          "blob_sha":  "0fb1375028922407afdf34420b52fe094384081d"
-                                                                      },
-                                                                      {
-                                                                          "repository":  "SeryMente/signal-interpreter",
-                                                                          "path":  "docs/frentes/signal-interpreter/CONTROL-RESPONSABILIDAD.json",
-                                                                          "blob_sha":  "309b3ae07d1fb6b2398782d1c9f3c25d858899f4"
-                                                                      },
-                                                                      {
-                                                                          "repository":  "SeryMente/metodologia",
-                                                                          "path":  "ambitos/tareas/CONTROL-RESPONSABILIDAD.json",
-                                                                          "blob_sha":  "b0c19b0c2ce7db13a74243b03183756519f7cfe0"
-                                                                      },
-                                                                      {
-                                                                          "repository":  "SeryMente/metodologia",
-                                                                          "path":  "frentes/acceso/CONTROL-RESPONSABILIDAD.json",
-                                                                          "blob_sha":  "d77dbf55ca188d79d5126e168edd202ec63ac811"
-                                                                      },
-                                                                      {
-                                                                          "repository":  "SeryMente/metodologia",
-                                                                          "path":  "frentes/gobernanza/CONTROL-RESPONSABILIDAD.json",
-                                                                          "blob_sha":  "18c2d7fa57609465dced61884cec6685bf74f68d"
-                                                                      },
-                                                                      {
-                                                                          "repository":  "SeryMente/metodologia",
-                                                                          "path":  "frentes/khora-workstation-bootstrap/CONTROL-RESPONSABILIDAD.json",
-                                                                          "blob_sha":  "bb0f14c9c0955422c37ce085127d304a8fb2e62b"
-                                                                      },
-                                                                      {
-                                                                          "repository":  "SeryMente/metodologia",
-                                                                          "path":  "frentes/mcp-metodologia/CONTROL-RESPONSABILIDAD.json",
-                                                                          "blob_sha":  "1fcf4178d58b39cecc3028c92493932b2ca7ab60"
-                                                                      },
-                                                                      {
-                                                                          "repository":  "SeryMente/metodologia",
-                                                                          "path":  "frentes/metacanon/CONTROL-RESPONSABILIDAD.json",
-                                                                          "blob_sha":  "86f0e4fa59e37976704231290b460cf6dc9252b0"
-                                                                      },
-                                                                      {
-                                                                          "repository":  "SeryMente/metodologia",
-                                                                          "path":  "frentes/radar-profesional/CONTROL-RESPONSABILIDAD.json",
-                                                                          "blob_sha":  "ebedb865d9d813c731f6ebcf2b63bf37efe3efc1"
-                                                                      },
-                                                                      {
-                                                                          "repository":  "SeryMente/personal",
-                                                                          "path":  "frentes/repertorio-canto-personal/CONTROL-RESPONSABILIDAD.json",
-                                                                          "blob_sha":  "fa92efd677b3a57520b8d3a1cf4feb0fa792b978"
-                                                                      },
-                                                                      {
-                                                                          "repository":  "SeryMente/filo-sangriento",
-                                                                          "path":  "frentes/filo-sangriento/CONTROL-RESPONSABILIDAD.json",
-                                                                          "blob_sha":  "74dad207fd8ffac9724ad9842fdf2060839f4cdd"
-                                                                      },
-                                                                      {
-                                                                          "repository":  "SeryMente/filo-sangriento",
-                                                                          "path":  "frentes/huggingface/CONTROL-RESPONSABILIDAD.json",
-                                                                          "blob_sha":  "cc97939669ba686f6a38eea2a9a909e025df51f5"
-                                                                      },
-                                                                      {
-                                                                          "repository":  "SeryMente/Language",
-                                                                          "path":  "frentes/abdf/CONTROL-RESPONSABILIDAD.json",
-                                                                          "blob_sha":  "593ebd5e5c24d91fbb054f5419c2121b77725fe9"
-                                                                      }
-                                                                  ],
-                                             "global_uniqueness":  "NOT_VERIFIED outside the 11 accessible repositories and the 16 controls read"
-                                         },
-                           "source_state_before_creation":  {
-                                                                "repository":  "SeryMente/metodologia",
-                                                                "branch":  "main",
-                                                                "main_head_observed":  "d6ae190f22a5de28f45ae68ea6d4ba76955a5e59",
-                                                                "dug_path":  "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
-                                                                "dug_version":  "v383",
-                                                                "dug_signature":  "NX-383m",
-                                                                "dug_blob_sha":  "cad464717c43733aa84b49f8c9c3af0875597fbd",
-                                                                "dug_commit":  "c7495f8321e43a6dd763b2eb855eb8338c9c2294",
-                                                                "metacanon_version":  "1.29",
-                                                                "gow_version":  "2.18",
-                                                                "oep_path":  "frentes/ep/OEP.md",
-                                                                "oep_version":  "v0.3.39",
-                                                                "oep_blob_sha":  "bbb88d788e4a898c0780d327b87ba9a126a228d3",
-                                                                "readme_blob_sha":  "cbb2fe15892b94393cf8b2991b6d27d57a978462"
-                                                            },
-                           "ocp_path":  "frentes/ep/",
-                           "state_object":  "frentes/ep/OEP.md",
-                           "previous_control_path_state":  "NOT_FOUND"
-                       },
-    "session_folio":  null,
-    "session_assignment":  {
-                               "status":  "active",
-                               "role":  "titular",
-                               "folio":  null,
-                               "assigned_on":  "2026-11-14",
-                               "front_ocp":  "frentes/ep/",
-                               "owner_alias":  "chatgpt-C-EP-RETOMA-20261114-01-01a1db7e-ac0b-7906-a15a-e00811b175c5",
-                               "instance":  "chatgpt-ep-owner-2026-11-14-01a1db7e-ac0b-7906-a15a-e00811b175c5",
-                               "generation":  4,
-                               "identity_kind":  "operational alias + local UUIDv7; native ChatGPT conversation ID not exposed",
-                               "local_conversation_uuidv7":  "01a1db7e-ac0b-7906-a15a-e00811b175c5",
-                               "cycle_folio":  null,
-                               "event_id":  "C-EP-RETOMA-20261114-01",
-                               "authorization":  {
-                                                     "status":  "explicit",
-                                                     "source":  "direct operator instruction in this conversation",
-                                                     "operation":  "TRANSFER_RESPONSIBILITY",
-                                                     "verbatim":  "Frente ENTORNO PERSISTENTE\r\n\r\nPersiste conversacion, esta en  downloads, por RDC.\r\n\r\nAt quiere cuidadosamente el contexto tomando el lugar del modelo en la conversación, adoptando su postura, su tono, su Lugar De manera que la transición sea sin costuras entre una conversación y otra.",
-                                                     "prior_authorization_asserted_by_operator":  false,
-                                                     "scope":  "Retake EP continuity and persist the named conversation export and last visible output in the EP OCP; no new authorization for EP Vault code, real vault data, B2, host credentials or DUG/GOW/MCP changes."
-                                                 },
-                               "readback_required":  true,
-                               "readback_verified":  true,
-                               "source_control_blob_sha":  "bc9e1b33a607d82e31ca05170831bfaeec8a3598",
-                               "alias":  "chatgpt-C-EP-RETOMA-20261114-01-01a1db7e-ac0b-7906-a15a-e00811b175c5",
-                               "readback_control_blob_sha":  "7183eccd15b15cb6e752d68fb1a6c06b8581116c"
-                           },
-    "active_responsibles":  [
-                                {
-                                    "status":  "active",
-                                    "role":  "titular",
-                                    "folio":  null,
-                                    "assigned_on":  "2026-11-14",
-                                    "front_ocp":  "frentes/ep/",
-                                    "owner_alias":  "chatgpt-C-EP-RETOMA-20261114-01-01a1db7e-ac0b-7906-a15a-e00811b175c5",
-                                    "instance":  "chatgpt-ep-owner-2026-11-14-01a1db7e-ac0b-7906-a15a-e00811b175c5",
-                                    "generation":  4,
-                                    "identity_kind":  "operational alias + local UUIDv7; native ChatGPT conversation ID not exposed",
-                                    "local_conversation_uuidv7":  "01a1db7e-ac0b-7906-a15a-e00811b175c5",
-                                    "cycle_folio":  null,
-                                    "event_id":  "C-EP-RETOMA-20261114-01",
-                                    "authorization":  {
-                                                          "status":  "explicit",
-                                                          "source":  "direct operator instruction in this conversation",
-                                                          "operation":  "TRANSFER_RESPONSIBILITY",
-                                                          "verbatim":  "Frente ENTORNO PERSISTENTE\r\n\r\nPersiste conversacion, esta en  downloads, por RDC.\r\n\r\nAt quiere cuidadosamente el contexto tomando el lugar del modelo en la conversación, adoptando su postura, su tono, su Lugar De manera que la transición sea sin costuras entre una conversación y otra.",
-                                                          "prior_authorization_asserted_by_operator":  false,
-                                                          "scope":  "Retake EP continuity and persist the named conversation export and last visible output in the EP OCP; no new authorization for EP Vault code, real vault data, B2, host credentials or DUG/GOW/MCP changes."
-                                                      },
-                                    "readback_required":  true,
-                                    "readback_verified":  false,
-                                    "source_control_blob_sha":  "bc9e1b33a607d82e31ca05170831bfaeec8a3598",
-                                    "alias":  "chatgpt-C-EP-RETOMA-20261114-01-01a1db7e-ac0b-7906-a15a-e00811b175c5"
-                                }
-                            ],
-    "co_responsibility":  {
-                              "schema":  "co-responsibility/1",
-                              "mode":  "single_owner_after_transfer",
-                              "enabled":  false,
-                              "default_active_responsibles":  1,
-                              "max_active_responsibles":  2,
-                              "current_active_responsibles":  1,
-                              "primary_owner_alias":  "chatgpt-C-EP-RETOMA-20261114-01-01a1db7e-ac0b-7906-a15a-e00811b175c5",
-                              "co_responsible_alias":  null,
-                              "last_event_id":  "C-EP-RETOMA-20261114-01",
-                              "authorization_status":  "explicit",
-                              "control_protocol":  "same authoritative control; SHA compare-and-swap; read-back before canonical writes",
-                              "constraint":  "cooperative registration only; no native ChatGPT identity, universal fencing or protection against non-cooperating writers is claimed."
-                          },
-    "co_responsibility_events":  [
-                                     {
-                                         "event_id":  "C-EP-ADD-CO-RESPONSIBLE-20261109-01",
-                                         "operation":  "ADD_CO_RESPONSIBLE",
-                                         "recorded_on":  "2026-11-09",
-                                         "source_sha":  "4160dfed6c0833e88e9b9fee7d79e54ab7214006",
-                                         "generation_before":  1,
-                                         "generation_after":  2,
-                                         "retained_primary":  "chatgpt-C-EP-RESPONSABILIDAD-INICIAL-20261108-88E05E17-SES-20261108-0BD44C87",
-                                         "added_alias":  "chatgpt-C-EP-ADD-CO-RESPONSIBLE-20261109-01-SES-20261109-E032FC60",
-                                         "added_session_folio":  "SES-20261109-E032FC60",
-                                         "added_local_uuidv7":  "01a1c16c-f0fa-7273-a0f8-a1dde032fc60",
-                                         "active_responsibles_after_write":  2,
-                                         "maximum":  2,
-                                         "status":  "VERIFIED_READBACK",
-                                         "readback_required":  true,
-                                         "readback_verified":  true,
-                                         "readback_sha":  "2ac518cc4f272439e3d060b635e36d3772c7c8ae",
-                                         "readback_verified_on":  "2026-11-09"
-                                     },
-                                     {
-                                         "event_id":  "C-EP-TRANSFER-RESPONSIBILITY-20261109-01",
-                                         "operation":  "TRANSFER_RESPONSIBILITY",
-                                         "recorded_on":  "2026-11-09",
-                                         "source_sha":  "b6f719ac9d5b4e6fc9860ead666ac7268a145c77",
-                                         "generation_before":  2,
-                                         "generation_after":  3,
-                                         "replaced_primary":  "chatgpt-C-EP-RESPONSABILIDAD-INICIAL-20261108-88E05E17-SES-20261108-0BD44C87",
-                                         "promoted_corresponsible":  "chatgpt-C-EP-ADD-CO-RESPONSIBLE-20261109-01-SES-20261109-E032FC60",
-                                         "new_primary_alias":  "chatgpt-C-EP-TRANSFER-RESPONSIBILITY-20261109-01-SES-20261109-E032FC60",
-                                         "active_responsibles_after_write":  1,
-                                         "maximum":  2,
-                                         "status":  "VERIFIED_READBACK",
-                                         "readback_required":  true,
-                                         "readback_verified":  true,
-                                         "readback_sha":  "9e3074cd2b541a71520df1d0cce39a628002aeb7"
-                                     }
-                                 ],
-    "previous_session_assignment":  {
-                                        "status":  "transferred",
-                                        "role":  "titular",
-                                        "folio":  "SES-20261109-E032FC60",
-                                        "assigned_on":  "2026-11-09",
-                                        "front_ocp":  "frentes/ep/",
-                                        "owner_alias":  "chatgpt-C-EP-TRANSFER-RESPONSIBILITY-20261109-01-SES-20261109-E032FC60",
-                                        "instance":  "chatgpt-ep-owner-2026-11-09-E032FC60",
-                                        "generation":  3,
-                                        "identity_kind":  "operational alias + local UUIDv7; native ChatGPT conversation ID not exposed",
-                                        "local_conversation_uuidv7":  "01a1c16c-f0fa-7273-a0f8-a1dde032fc60",
-                                        "cycle_folio":  null,
-                                        "event_id":  "C-EP-TRANSFER-RESPONSIBILITY-20261109-01",
-                                        "authorization":  {
-                                                              "status":  "explicit",
-                                                              "source":  "instrucción directa del operador en esta conversación",
-                                                              "operation":  "TRANSFER_RESPONSIBILITY",
-                                                              "verbatim":  "Toma repsonsabilida del frente EP antes de continuar, me da la impreison que eos hace falta. pero hazlo super rapido TRANBSFER REPSONSIBLITY, prior autorization.",
-                                                              "prior_authorization_asserted_by_operator":  true,
-                                                              "scope":  "Transferencia única de titularidad primaria de frentes/ep/ a la sesión receptora ya registrada como corresponsable. Sustituye al titular previo, conserva el alcance de las autorizaciones y restricciones existentes, no activa FOL1 y no autoriza otros frentes ni cambios de DUG/GOW o controles ajenos."
-                                                          },
-                                        "readback_required":  true,
-                                        "readback_verified":  true,
-                                        "source_control_blob_sha":  "4160dfed6c0833e88e9b9fee7d79e54ab7214006",
-                                        "readback_control_blob_sha":  "9e3074cd2b541a71520df1d0cce39a628002aeb7",
-                                        "alias":  "chatgpt-C-EP-TRANSFER-RESPONSIBILITY-20261109-01-SES-20261109-E032FC60",
-                                        "promoted_from_role":  "corresponsable",
-                                        "promoted_from_alias":  "chatgpt-C-EP-ADD-CO-RESPONSIBLE-20261109-01-SES-20261109-E032FC60",
-                                        "ended_on":  "2026-11-14",
-                                        "transferred_to":  "chatgpt-C-EP-RETOMA-20261114-01-01a1db7e-ac0b-7906-a15a-e00811b175c5",
-                                        "transfer_event_id":  "C-EP-RETOMA-20261114-01"
-                                    },
-    "transfers":  [
-                      {
-                          "event_id":  "C-EP-TRANSFER-RESPONSIBILITY-20261109-01",
-                          "operation":  "TRANSFER_RESPONSIBILITY",
-                          "recorded_on":  "2026-11-09",
-                          "authorized_on":  "2026-11-09",
-                          "authorization":  {
-                                                "status":  "explicit",
-                                                "source":  "instrucción directa del operador en esta conversación",
-                                                "operation":  "TRANSFER_RESPONSIBILITY",
-                                                "verbatim":  "Toma repsonsabilida del frente EP antes de continuar, me da la impreison que eos hace falta. pero hazlo super rapido TRANBSFER REPSONSIBLITY, prior autorization.",
-                                                "prior_authorization_asserted_by_operator":  true,
-                                                "scope":  "Transferencia única de titularidad primaria de frentes/ep/ a la sesión receptora ya registrada como corresponsable. Sustituye al titular previo, conserva el alcance de las autorizaciones y restricciones existentes, no activa FOL1 y no autoriza otros frentes ni cambios de DUG/GOW o controles ajenos."
-                                            },
-                          "source_branch":  "main",
-                          "source_control_blob_sha":  "b6f719ac9d5b4e6fc9860ead666ac7268a145c77",
-                          "source_generation":  2,
-                          "from":  {
-                                       "owner_thread":  "chatgpt-C-EP-RESPONSABILIDAD-INICIAL-20261108-88E05E17-SES-20261108-0BD44C87",
-                                       "instance":  "chatgpt-ep-owner-2026-11-08-0BD44C87",
-                                       "generation":  1,
-                                       "session_folio":  "SES-20261108-0BD44C87",
-                                       "role":  "titular",
-                                       "status":  "active"
-                                   },
-                          "to":  {
-                                     "owner_thread":  "chatgpt-C-EP-TRANSFER-RESPONSIBILITY-20261109-01-SES-20261109-E032FC60",
-                                     "instance":  "chatgpt-ep-owner-2026-11-09-E032FC60",
-                                     "generation":  3,
-                                     "session_folio":  "SES-20261109-E032FC60",
-                                     "local_conversation_uuidv7":  "01a1c16c-f0fa-7273-a0f8-a1dde032fc60",
-                                     "identity_kind":  "operational alias + existing local UUIDv7; native ChatGPT conversation ID not exposed",
-                                     "promoted_from_role":  "corresponsable",
-                                     "promoted_from_alias":  "chatgpt-C-EP-ADD-CO-RESPONSIBLE-20261109-01-SES-20261109-E032FC60"
-                                 },
-                          "native_conversation_id":  "NOT_EXPOSED; operational alias used",
-                          "method":  "GitHub Contents API compare-and-swap against immediately observed control blob SHA, followed by canonical read-back.",
-                          "mutation_result":  "COMMITTED_AND_READBACK_VERIFIED",
-                          "previous_co_responsible_record":  {
-                                                                 "owner_alias":  "chatgpt-C-EP-ADD-CO-RESPONSIBLE-20261109-01-SES-20261109-E032FC60",
-                                                                 "session_folio":  "SES-20261109-E032FC60",
-                                                                 "local_conversation_uuidv7":  "01a1c16c-f0fa-7273-a0f8-a1dde032fc60",
-                                                                 "promoted_to_titular":  true
-                                                             },
-                          "active_responsibles_after_write":  1,
-                          "maximum_active_responsibles":  2,
-                          "readback_required":  true,
-                          "readback_verified":  true,
-                          "verification":  {
-                                               "status":  "read_back_verified",
-                                               "verified_on":  "2026-11-09",
-                                               "generation":  3,
-                                               "owner_alias":  "chatgpt-C-EP-TRANSFER-RESPONSIBILITY-20261109-01-SES-20261109-E032FC60",
-                                               "session_folio":  "SES-20261109-E032FC60",
-                                               "local_conversation_uuidv7":  "01a1c16c-f0fa-7273-a0f8-a1dde032fc60",
-                                               "active_responsibles":  1,
-                                               "scope_limit":  "Operational control record and canonical read-back; not cryptographic authentication of platform identity and not server-enforced fencing."
-                                           },
-                          "readback_blob_sha":  "9e3074cd2b541a71520df1d0cce39a628002aeb7"
-                      },
-                      {
-                          "event_id":  "C-EP-RETOMA-20261114-01",
-                          "operation":  "TRANSFER_RESPONSIBILITY",
-                          "recorded_on":  "2026-11-14",
-                          "authorized_on":  "2026-11-14",
-                          "authorization":  {
-                                                "status":  "explicit",
-                                                "source":  "direct operator instruction in this conversation",
-                                                "operation":  "TRANSFER_RESPONSIBILITY",
-                                                "verbatim":  "Frente ENTORNO PERSISTENTE\r\n\r\nPersiste conversacion, esta en  downloads, por RDC.\r\n\r\nAt quiere cuidadosamente el contexto tomando el lugar del modelo en la conversación, adoptando su postura, su tono, su Lugar De manera que la transición sea sin costuras entre una conversación y otra.",
-                                                "prior_authorization_asserted_by_operator":  false,
-                                                "scope":  "Retake EP continuity and persist the named conversation export and last visible output in the EP OCP; no new authorization for EP Vault code, real vault data, B2, host credentials or DUG/GOW/MCP changes."
-                                            },
-                          "source_branch":  "main",
-                          "source_control_blob_sha":  "bc9e1b33a607d82e31ca05170831bfaeec8a3598",
-                          "source_generation":  3,
-                          "from":  {
-                                       "owner_thread":  "chatgpt-C-EP-TRANSFER-RESPONSIBILITY-20261109-01-SES-20261109-E032FC60",
-                                       "instance":  "chatgpt-ep-owner-2026-11-09-E032FC60",
-                                       "generation":  3,
-                                       "session_folio":  "SES-20261109-E032FC60",
-                                       "role":  "titular",
-                                       "status":  "active"
-                                   },
-                          "to":  {
-                                     "owner_thread":  "chatgpt-C-EP-RETOMA-20261114-01-01a1db7e-ac0b-7906-a15a-e00811b175c5",
-                                     "instance":  "chatgpt-ep-owner-2026-11-14-01a1db7e-ac0b-7906-a15a-e00811b175c5",
-                                     "generation":  4,
-                                     "session_folio":  null,
-                                     "local_conversation_uuidv7":  "01a1db7e-ac0b-7906-a15a-e00811b175c5",
-                                     "identity_kind":  "operational alias + local UUIDv7; native ChatGPT conversation ID not exposed"
-                                 },
-                          "native_conversation_id":  "NOT_EXPOSED; source conversation export retained in originals/",
-                          "method":  "Fast-forward Git main commit, followed by GitHub Contents API read-back of the control.",
-                          "mutation_result":  "COMMITTED_AND_READBACK_VERIFIED",
-                          "active_responsibles_after_write":  1,
-                          "maximum_active_responsibles":  2,
-                          "readback_required":  true,
-                          "readback_verified":  true,
-                          "readback_blob_sha":  "7183eccd15b15cb6e752d68fb1a6c06b8581116c",
-                          "verification":  {
-                                               "status":  "read_back_verified",
-                                               "verified_on":  "2026-11-14",
-                                               "generation":  4,
-                                               "owner_alias":  "chatgpt-C-EP-RETOMA-20261114-01-01a1db7e-ac0b-7906-a15a-e00811b175c5",
-                                               "local_conversation_uuidv7":  "01a1db7e-ac0b-7906-a15a-e00811b175c5",
-                                               "active_responsibles":  1,
-                                               "remote_main_commit":  "079ad945478b196b194536aee5d1fe8f0cbb9226",
-                                               "scope_limit":  "Control registration and canonical read-back only; not platform-native identity or server-enforced fencing."
-                                           }
-                      }
-                  ],
-    "generation_semantics":  "AUDIT_METADATA_ONLY_NOT_AUTHORITY_OR_EXECUTION_GATE",
-    "operator_instruction_authority":  "Direct operator instructions determine authorized work within the described front and scope. Generation/session fields are provenance and audit metadata only, never an authority, veto or execution gate. Retain actual platform permissions, host security and explicit scope limits."
+  "schema": "responsabilidad/1",
+  "front": "ep",
+  "repository": "SeryMente/metodologia",
+  "front_ocp": "frentes/ep/",
+  "state_object": "frentes/ep/OEP.md",
+  "status": "owned",
+  "owner_thread": "chatgpt-C-EP-RETOMA-20261114-02-01a1dc30-edd1-7978-bb07-b0c2db72b0c3",
+  "owner_thread_identity_kind": "operational alias + local UUIDv7; native ChatGPT conversation ID not exposed by available tools",
+  "instance": "chatgpt-ep-owner-2026-11-14-02-01a1dc30-edd1-7978-bb07-b0c2db72b0c3",
+  "generation": 5,
+  "authorization_ref": "EP-RETOMA-20261114-1632; A literal conservada en frentes/ep/originales/INSTRUCCION-RETOMA-RESPONSABILIDAD-EP-20261114-1632.txt; DUG P037/P039.",
+  "scope": "Retake sole operational responsibility for the Entorno Persistente front frentes/ep/ in SeryMente/metodologia. Current scope is documentary governance, continuity, triage and coordination. Preserve all existing security, host, vault, ciphertext, backup, credential and implementation gates. This transfer does not itself authorize code construction, host/RDC operations, access to credentials or real vault/ciphertext/B2 data, destructive changes, DUG/GOW/MCP amendments, or bypass of the P012/P013 in-person review.",
+  "expiry": null,
+  "handoff": "Retoma y relevo de titularidad única del frente EP el 2026-11-14 por instrucción directa del operador. Generación 4 relevada; generación 5 queda como titular único. Función de esta instancia: asistente/documental y coordinación, sin designación como constructor de código. UUIDv7 local registrado; identidad nativa no expuesta; FOL1 no activo y sin folio nuevo. Se preservan gates y límites de seguridad heredados.",
+  "previous_owner": "chatgpt-C-EP-RETOMA-20261114-01-01a1db7e-ac0b-7906-a15a-e00811b175c5",
+  "initialization": {
+    "event_id": "C-EP-RESPONSABILIDAD-INICIAL-20261108-88E05E17",
+    "cycle_reference": "C-EP-MOD-SCRIPTPWS-20261101-03",
+    "cycle_identity_kind": "existing legacy local EP cycle identifier; not a FOL1 global cycle folio",
+    "recorded_on": "2026-11-08",
+    "status": "initial_assignment",
+    "authorization": {
+      "status": "explicit",
+      "source": "operator response in this conversation to the direct question authorizing creation of the initial EP responsibility control",
+      "question_verbatim": "¿Autorizas crear el control canónico inicial en: SeryMente/metodologia/main/frentes/ep/CONTROL-RESPONSABILIDAD.json Registrando esta conversación como titular mediante asignación inicial (generación 1), dejando constancia de que no se pudo verificar un titular anterior?",
+      "response_verbatim": "Si",
+      "scope": "Create the initial canonical EP responsibility control and register this conversation as the sole active owner at generation 1; no prior owner or generation is asserted."
+    },
+    "requested_resolution": "TRANSFER_RESPONSIBILITY",
+    "actual_resolution": "INITIAL_ASSIGNMENT_NO_PRIOR_CONTROL",
+    "prior_canonical_control": "NOT_FOUND at frentes/ep/CONTROL-RESPONSABILIDAD.json before creation",
+    "prior_owner": "NOT_VERIFIABLE; no canonical EP responsibility control or owner/generation record was found",
+    "previous_owner": null,
+    "discovery": {
+      "accessible_repositories": {
+        "owner": "SeryMente",
+        "count": 11,
+        "coverage": "all repositories exposed by the linked GitHub connection at the time of this check; not proof of the full organization"
+      },
+      "existing_authoritative_controls_read": 16,
+      "candidate_exact_code_searches": [
+        {
+          "term": "C-EP-RESPONSABILIDAD-INICIAL-20261108-88E05E17",
+          "matches_found": 0
+        },
+        {
+          "term": "SES-20261108-0BD44C87",
+          "matches_found": 0
+        },
+        {
+          "term": "chatgpt-C-EP-RESPONSABILIDAD-INICIAL-20261108-88E05E17-SES-20261108-0BD44C87",
+          "matches_found": 0
+        }
+      ],
+      "checked_controls": [
+        {
+          "repository": "SeryMente/khora",
+          "path": "docs/frentes/dictado-voz/CONTROL-RESPONSABILIDAD.json",
+          "blob_sha": "8fa5721013b47b88729b38869c712863bc6a69d7"
+        },
+        {
+          "repository": "SeryMente/khora",
+          "path": "docs/frentes/harmonia/CONTROL-RESPONSABILIDAD.json",
+          "blob_sha": "0e090e1f3537b75891344af812e576e39a5f5e02"
+        },
+        {
+          "repository": "SeryMente/khora",
+          "path": "docs/frentes/observabilidad-mcp/CONTROL-RESPONSABILIDAD.json",
+          "blob_sha": "4fba2187947730abca0cc338429dfacf4810594c"
+        },
+        {
+          "repository": "SeryMente/khora",
+          "path": "frentes/custodia/CONTROL-RESPONSABILIDAD.json",
+          "blob_sha": "0fb1375028922407afdf34420b52fe094384081d"
+        },
+        {
+          "repository": "SeryMente/signal-interpreter",
+          "path": "docs/frentes/signal-interpreter/CONTROL-RESPONSABILIDAD.json",
+          "blob_sha": "309b3ae07d1fb6b2398782d1c9f3c25d858899f4"
+        },
+        {
+          "repository": "SeryMente/metodologia",
+          "path": "ambitos/tareas/CONTROL-RESPONSABILIDAD.json",
+          "blob_sha": "b0c19b0c2ce7db13a74243b03183756519f7cfe0"
+        },
+        {
+          "repository": "SeryMente/metodologia",
+          "path": "frentes/acceso/CONTROL-RESPONSABILIDAD.json",
+          "blob_sha": "d77dbf55ca188d79d5126e168edd202ec63ac811"
+        },
+        {
+          "repository": "SeryMente/metodologia",
+          "path": "frentes/gobernanza/CONTROL-RESPONSABILIDAD.json",
+          "blob_sha": "18c2d7fa57609465dced61884cec6685bf74f68d"
+        },
+        {
+          "repository": "SeryMente/metodologia",
+          "path": "frentes/khora-workstation-bootstrap/CONTROL-RESPONSABILIDAD.json",
+          "blob_sha": "bb0f14c9c0955422c37ce085127d304a8fb2e62b"
+        },
+        {
+          "repository": "SeryMente/metodologia",
+          "path": "frentes/mcp-metodologia/CONTROL-RESPONSABILIDAD.json",
+          "blob_sha": "1fcf4178d58b39cecc3028c92493932b2ca7ab60"
+        },
+        {
+          "repository": "SeryMente/metodologia",
+          "path": "frentes/metacanon/CONTROL-RESPONSABILIDAD.json",
+          "blob_sha": "86f0e4fa59e37976704231290b460cf6dc9252b0"
+        },
+        {
+          "repository": "SeryMente/metodologia",
+          "path": "frentes/radar-profesional/CONTROL-RESPONSABILIDAD.json",
+          "blob_sha": "ebedb865d9d813c731f6ebcf2b63bf37efe3efc1"
+        },
+        {
+          "repository": "SeryMente/personal",
+          "path": "frentes/repertorio-canto-personal/CONTROL-RESPONSABILIDAD.json",
+          "blob_sha": "fa92efd677b3a57520b8d3a1cf4feb0fa792b978"
+        },
+        {
+          "repository": "SeryMente/filo-sangriento",
+          "path": "frentes/filo-sangriento/CONTROL-RESPONSABILIDAD.json",
+          "blob_sha": "74dad207fd8ffac9724ad9842fdf2060839f4cdd"
+        },
+        {
+          "repository": "SeryMente/filo-sangriento",
+          "path": "frentes/huggingface/CONTROL-RESPONSABILIDAD.json",
+          "blob_sha": "cc97939669ba686f6a38eea2a9a909e025df51f5"
+        },
+        {
+          "repository": "SeryMente/Language",
+          "path": "frentes/abdf/CONTROL-RESPONSABILIDAD.json",
+          "blob_sha": "593ebd5e5c24d91fbb054f5419c2121b77725fe9"
+        }
+      ],
+      "global_uniqueness": "NOT_VERIFIED outside the 11 accessible repositories and the 16 controls read"
+    },
+    "source_state_before_creation": {
+      "repository": "SeryMente/metodologia",
+      "branch": "main",
+      "main_head_observed": "d6ae190f22a5de28f45ae68ea6d4ba76955a5e59",
+      "dug_path": "gobernanza/METAPROMPT-CANONICO-SAMANTHA.html",
+      "dug_version": "v383",
+      "dug_signature": "NX-383m",
+      "dug_blob_sha": "cad464717c43733aa84b49f8c9c3af0875597fbd",
+      "dug_commit": "c7495f8321e43a6dd763b2eb855eb8338c9c2294",
+      "metacanon_version": "1.29",
+      "gow_version": "2.18",
+      "oep_path": "frentes/ep/OEP.md",
+      "oep_version": "v0.3.39",
+      "oep_blob_sha": "bbb88d788e4a898c0780d327b87ba9a126a228d3",
+      "readme_blob_sha": "cbb2fe15892b94393cf8b2991b6d27d57a978462"
+    },
+    "ocp_path": "frentes/ep/",
+    "state_object": "frentes/ep/OEP.md",
+    "previous_control_path_state": "NOT_FOUND"
+  },
+  "session_folio": null,
+  "session_assignment": {
+    "status": "active",
+    "role": "titular",
+    "folio": null,
+    "assigned_on": "2026-11-14",
+    "front_ocp": "frentes/ep/",
+    "owner_alias": "chatgpt-C-EP-RETOMA-20261114-02-01a1dc30-edd1-7978-bb07-b0c2db72b0c3",
+    "instance": "chatgpt-ep-owner-2026-11-14-02-01a1dc30-edd1-7978-bb07-b0c2db72b0c3",
+    "generation": 5,
+    "identity_kind": "operational alias + local UUIDv7; native ChatGPT conversation ID not exposed by available tools",
+    "local_conversation_uuidv7": "01a1dc30-edd1-7978-bb07-b0c2db72b0c3",
+    "cycle_folio": null,
+    "event_id": "EP-RETOMA-20261114-1632",
+    "functional_role": "asistente/documental y coordinación; no designación como constructor de código",
+    "authorization": {
+      "status": "explicit",
+      "source": "direct operator instruction A preserved in the EP OCP",
+      "operation": "TRANSFER_RESPONSIBILITY",
+      "verbatim": "Retoma responsaiblida del frente de trabajo, MEtodologia/Entorno Persistente",
+      "prior_authorization_asserted_by_operator": false,
+      "source_path": "frentes/ep/originales/INSTRUCCION-RETOMA-RESPONSABILIDAD-EP-20261114-1632.txt",
+      "source_sha256": "8f5220f0a6a5566210820ace76425d88993c93a3e5645a3a748b8487bd198c32",
+      "scope": "Retake sole operational responsibility for the Entorno Persistente front frentes/ep/ in SeryMente/metodologia. Current scope is documentary governance, continuity, triage and coordination. Preserve all existing security, host, vault, ciphertext, backup, credential and implementation gates. This transfer does not itself authorize code construction, host/RDC operations, access to credentials or real vault/ciphertext/B2 data, destructive changes, DUG/GOW/MCP amendments, or bypass of the P012/P013 in-person review."
+    },
+    "readback_required": true,
+    "readback_verified": false,
+    "source_control_blob_sha": "b5cb44f63823c077b57f7bcb3cae018394417199",
+    "alias": "chatgpt-C-EP-RETOMA-20261114-02-01a1dc30-edd1-7978-bb07-b0c2db72b0c3"
+  },
+  "active_responsibles": [
+    {
+      "status": "transferred",
+      "role": "titular",
+      "folio": null,
+      "assigned_on": "2026-11-14",
+      "front_ocp": "frentes/ep/",
+      "owner_alias": "chatgpt-C-EP-RETOMA-20261114-01-01a1db7e-ac0b-7906-a15a-e00811b175c5",
+      "instance": "chatgpt-ep-owner-2026-11-14-01a1db7e-ac0b-7906-a15a-e00811b175c5",
+      "generation": 4,
+      "identity_kind": "operational alias + local UUIDv7; native ChatGPT conversation ID not exposed",
+      "local_conversation_uuidv7": "01a1db7e-ac0b-7906-a15a-e00811b175c5",
+      "cycle_folio": null,
+      "event_id": "C-EP-RETOMA-20261114-01",
+      "authorization": {
+        "status": "explicit",
+        "source": "direct operator instruction in this conversation",
+        "operation": "TRANSFER_RESPONSIBILITY",
+        "verbatim": "Frente ENTORNO PERSISTENTE\r\n\r\nPersiste conversacion, esta en  downloads, por RDC.\r\n\r\nAt quiere cuidadosamente el contexto tomando el lugar del modelo en la conversación, adoptando su postura, su tono, su Lugar De manera que la transición sea sin costuras entre una conversación y otra.",
+        "prior_authorization_asserted_by_operator": false,
+        "scope": "Retake EP continuity and persist the named conversation export and last visible output in the EP OCP; no new authorization for EP Vault code, real vault data, B2, host credentials or DUG/GOW/MCP changes."
+      },
+      "readback_required": true,
+      "readback_verified": true,
+      "source_control_blob_sha": "bc9e1b33a607d82e31ca05170831bfaeec8a3598",
+      "alias": "chatgpt-C-EP-RETOMA-20261114-01-01a1db7e-ac0b-7906-a15a-e00811b175c5",
+      "readback_control_blob_sha": "7183eccd15b15cb6e752d68fb1a6c06b8581116c",
+      "ended_on": "2026-11-14",
+      "transferred_to": "chatgpt-C-EP-RETOMA-20261114-02-01a1dc30-edd1-7978-bb07-b0c2db72b0c3",
+      "transfer_event_id": "EP-RETOMA-20261114-1632"
+    },
+    {
+      "status": "active",
+      "role": "titular",
+      "folio": null,
+      "assigned_on": "2026-11-14",
+      "front_ocp": "frentes/ep/",
+      "owner_alias": "chatgpt-C-EP-RETOMA-20261114-02-01a1dc30-edd1-7978-bb07-b0c2db72b0c3",
+      "instance": "chatgpt-ep-owner-2026-11-14-02-01a1dc30-edd1-7978-bb07-b0c2db72b0c3",
+      "generation": 5,
+      "identity_kind": "operational alias + local UUIDv7; native ChatGPT conversation ID not exposed by available tools",
+      "local_conversation_uuidv7": "01a1dc30-edd1-7978-bb07-b0c2db72b0c3",
+      "cycle_folio": null,
+      "event_id": "EP-RETOMA-20261114-1632",
+      "functional_role": "asistente/documental y coordinación; no designación como constructor de código",
+      "authorization": {
+        "status": "explicit",
+        "source": "direct operator instruction A preserved in the EP OCP",
+        "operation": "TRANSFER_RESPONSIBILITY",
+        "verbatim": "Retoma responsaiblida del frente de trabajo, MEtodologia/Entorno Persistente",
+        "prior_authorization_asserted_by_operator": false,
+        "source_path": "frentes/ep/originales/INSTRUCCION-RETOMA-RESPONSABILIDAD-EP-20261114-1632.txt",
+        "source_sha256": "8f5220f0a6a5566210820ace76425d88993c93a3e5645a3a748b8487bd198c32",
+        "scope": "Retake sole operational responsibility for the Entorno Persistente front frentes/ep/ in SeryMente/metodologia. Current scope is documentary governance, continuity, triage and coordination. Preserve all existing security, host, vault, ciphertext, backup, credential and implementation gates. This transfer does not itself authorize code construction, host/RDC operations, access to credentials or real vault/ciphertext/B2 data, destructive changes, DUG/GOW/MCP amendments, or bypass of the P012/P013 in-person review."
+      },
+      "readback_required": true,
+      "readback_verified": false,
+      "source_control_blob_sha": "b5cb44f63823c077b57f7bcb3cae018394417199",
+      "alias": "chatgpt-C-EP-RETOMA-20261114-02-01a1dc30-edd1-7978-bb07-b0c2db72b0c3"
+    }
+  ],
+  "co_responsibility": {
+    "schema": "co-responsibility/1",
+    "mode": "single_owner_after_transfer",
+    "enabled": false,
+    "default_active_responsibles": 1,
+    "max_active_responsibles": 2,
+    "current_active_responsibles": 1,
+    "primary_owner_alias": "chatgpt-C-EP-RETOMA-20261114-02-01a1dc30-edd1-7978-bb07-b0c2db72b0c3",
+    "co_responsible_alias": null,
+    "last_event_id": "EP-RETOMA-20261114-1632",
+    "authorization_status": "explicit",
+    "control_protocol": "same authoritative control; SHA compare-and-swap; read-back before canonical writes",
+    "constraint": "cooperative registration only; no native ChatGPT identity, universal fencing or protection against non-cooperating writers is claimed."
+  },
+  "co_responsibility_events": [
+    {
+      "event_id": "C-EP-ADD-CO-RESPONSIBLE-20261109-01",
+      "operation": "ADD_CO_RESPONSIBLE",
+      "recorded_on": "2026-11-09",
+      "source_sha": "4160dfed6c0833e88e9b9fee7d79e54ab7214006",
+      "generation_before": 1,
+      "generation_after": 2,
+      "retained_primary": "chatgpt-C-EP-RESPONSABILIDAD-INICIAL-20261108-88E05E17-SES-20261108-0BD44C87",
+      "added_alias": "chatgpt-C-EP-ADD-CO-RESPONSIBLE-20261109-01-SES-20261109-E032FC60",
+      "added_session_folio": "SES-20261109-E032FC60",
+      "added_local_uuidv7": "01a1c16c-f0fa-7273-a0f8-a1dde032fc60",
+      "active_responsibles_after_write": 2,
+      "maximum": 2,
+      "status": "VERIFIED_READBACK",
+      "readback_required": true,
+      "readback_verified": true,
+      "readback_sha": "2ac518cc4f272439e3d060b635e36d3772c7c8ae",
+      "readback_verified_on": "2026-11-09"
+    },
+    {
+      "event_id": "C-EP-TRANSFER-RESPONSIBILITY-20261109-01",
+      "operation": "TRANSFER_RESPONSIBILITY",
+      "recorded_on": "2026-11-09",
+      "source_sha": "b6f719ac9d5b4e6fc9860ead666ac7268a145c77",
+      "generation_before": 2,
+      "generation_after": 3,
+      "replaced_primary": "chatgpt-C-EP-RESPONSABILIDAD-INICIAL-20261108-88E05E17-SES-20261108-0BD44C87",
+      "promoted_corresponsible": "chatgpt-C-EP-ADD-CO-RESPONSIBLE-20261109-01-SES-20261109-E032FC60",
+      "new_primary_alias": "chatgpt-C-EP-TRANSFER-RESPONSIBILITY-20261109-01-SES-20261109-E032FC60",
+      "active_responsibles_after_write": 1,
+      "maximum": 2,
+      "status": "VERIFIED_READBACK",
+      "readback_required": true,
+      "readback_verified": true,
+      "readback_sha": "9e3074cd2b541a71520df1d0cce39a628002aeb7"
+    }
+  ],
+  "previous_session_assignment": {
+    "status": "transferred",
+    "role": "titular",
+    "folio": null,
+    "assigned_on": "2026-11-14",
+    "front_ocp": "frentes/ep/",
+    "owner_alias": "chatgpt-C-EP-RETOMA-20261114-01-01a1db7e-ac0b-7906-a15a-e00811b175c5",
+    "instance": "chatgpt-ep-owner-2026-11-14-01a1db7e-ac0b-7906-a15a-e00811b175c5",
+    "generation": 4,
+    "identity_kind": "operational alias + local UUIDv7; native ChatGPT conversation ID not exposed",
+    "local_conversation_uuidv7": "01a1db7e-ac0b-7906-a15a-e00811b175c5",
+    "cycle_folio": null,
+    "event_id": "C-EP-RETOMA-20261114-01",
+    "authorization": {
+      "status": "explicit",
+      "source": "direct operator instruction in this conversation",
+      "operation": "TRANSFER_RESPONSIBILITY",
+      "verbatim": "Frente ENTORNO PERSISTENTE\r\n\r\nPersiste conversacion, esta en  downloads, por RDC.\r\n\r\nAt quiere cuidadosamente el contexto tomando el lugar del modelo en la conversación, adoptando su postura, su tono, su Lugar De manera que la transición sea sin costuras entre una conversación y otra.",
+      "prior_authorization_asserted_by_operator": false,
+      "scope": "Retake EP continuity and persist the named conversation export and last visible output in the EP OCP; no new authorization for EP Vault code, real vault data, B2, host credentials or DUG/GOW/MCP changes."
+    },
+    "readback_required": true,
+    "readback_verified": true,
+    "source_control_blob_sha": "bc9e1b33a607d82e31ca05170831bfaeec8a3598",
+    "alias": "chatgpt-C-EP-RETOMA-20261114-01-01a1db7e-ac0b-7906-a15a-e00811b175c5",
+    "readback_control_blob_sha": "7183eccd15b15cb6e752d68fb1a6c06b8581116c",
+    "ended_on": "2026-11-14",
+    "transferred_to": "chatgpt-C-EP-RETOMA-20261114-02-01a1dc30-edd1-7978-bb07-b0c2db72b0c3",
+    "transfer_event_id": "EP-RETOMA-20261114-1632"
+  },
+  "transfers": [
+    {
+      "event_id": "C-EP-TRANSFER-RESPONSIBILITY-20261109-01",
+      "operation": "TRANSFER_RESPONSIBILITY",
+      "recorded_on": "2026-11-09",
+      "authorized_on": "2026-11-09",
+      "authorization": {
+        "status": "explicit",
+        "source": "instrucción directa del operador en esta conversación",
+        "operation": "TRANSFER_RESPONSIBILITY",
+        "verbatim": "Toma repsonsabilida del frente EP antes de continuar, me da la impreison que eos hace falta. pero hazlo super rapido TRANBSFER REPSONSIBLITY, prior autorization.",
+        "prior_authorization_asserted_by_operator": true,
+        "scope": "Transferencia única de titularidad primaria de frentes/ep/ a la sesión receptora ya registrada como corresponsable. Sustituye al titular previo, conserva el alcance de las autorizaciones y restricciones existentes, no activa FOL1 y no autoriza otros frentes ni cambios de DUG/GOW o controles ajenos."
+      },
+      "source_branch": "main",
+      "source_control_blob_sha": "b6f719ac9d5b4e6fc9860ead666ac7268a145c77",
+      "source_generation": 2,
+      "from": {
+        "owner_thread": "chatgpt-C-EP-RESPONSABILIDAD-INICIAL-20261108-88E05E17-SES-20261108-0BD44C87",
+        "instance": "chatgpt-ep-owner-2026-11-08-0BD44C87",
+        "generation": 1,
+        "session_folio": "SES-20261108-0BD44C87",
+        "role": "titular",
+        "status": "active"
+      },
+      "to": {
+        "owner_thread": "chatgpt-C-EP-TRANSFER-RESPONSIBILITY-20261109-01-SES-20261109-E032FC60",
+        "instance": "chatgpt-ep-owner-2026-11-09-E032FC60",
+        "generation": 3,
+        "session_folio": "SES-20261109-E032FC60",
+        "local_conversation_uuidv7": "01a1c16c-f0fa-7273-a0f8-a1dde032fc60",
+        "identity_kind": "operational alias + existing local UUIDv7; native ChatGPT conversation ID not exposed",
+        "promoted_from_role": "corresponsable",
+        "promoted_from_alias": "chatgpt-C-EP-ADD-CO-RESPONSIBLE-20261109-01-SES-20261109-E032FC60"
+      },
+      "native_conversation_id": "NOT_EXPOSED; operational alias used",
+      "method": "GitHub Contents API compare-and-swap against immediately observed control blob SHA, followed by canonical read-back.",
+      "mutation_result": "COMMITTED_AND_READBACK_VERIFIED",
+      "previous_co_responsible_record": {
+        "owner_alias": "chatgpt-C-EP-ADD-CO-RESPONSIBLE-20261109-01-SES-20261109-E032FC60",
+        "session_folio": "SES-20261109-E032FC60",
+        "local_conversation_uuidv7": "01a1c16c-f0fa-7273-a0f8-a1dde032fc60",
+        "promoted_to_titular": true
+      },
+      "active_responsibles_after_write": 1,
+      "maximum_active_responsibles": 2,
+      "readback_required": true,
+      "readback_verified": true,
+      "verification": {
+        "status": "read_back_verified",
+        "verified_on": "2026-11-09",
+        "generation": 3,
+        "owner_alias": "chatgpt-C-EP-TRANSFER-RESPONSIBILITY-20261109-01-SES-20261109-E032FC60",
+        "session_folio": "SES-20261109-E032FC60",
+        "local_conversation_uuidv7": "01a1c16c-f0fa-7273-a0f8-a1dde032fc60",
+        "active_responsibles": 1,
+        "scope_limit": "Operational control record and canonical read-back; not cryptographic authentication of platform identity and not server-enforced fencing."
+      },
+      "readback_blob_sha": "9e3074cd2b541a71520df1d0cce39a628002aeb7"
+    },
+    {
+      "event_id": "C-EP-RETOMA-20261114-01",
+      "operation": "TRANSFER_RESPONSIBILITY",
+      "recorded_on": "2026-11-14",
+      "authorized_on": "2026-11-14",
+      "authorization": {
+        "status": "explicit",
+        "source": "direct operator instruction in this conversation",
+        "operation": "TRANSFER_RESPONSIBILITY",
+        "verbatim": "Frente ENTORNO PERSISTENTE\r\n\r\nPersiste conversacion, esta en  downloads, por RDC.\r\n\r\nAt quiere cuidadosamente el contexto tomando el lugar del modelo en la conversación, adoptando su postura, su tono, su Lugar De manera que la transición sea sin costuras entre una conversación y otra.",
+        "prior_authorization_asserted_by_operator": false,
+        "scope": "Retake EP continuity and persist the named conversation export and last visible output in the EP OCP; no new authorization for EP Vault code, real vault data, B2, host credentials or DUG/GOW/MCP changes."
+      },
+      "source_branch": "main",
+      "source_control_blob_sha": "bc9e1b33a607d82e31ca05170831bfaeec8a3598",
+      "source_generation": 3,
+      "from": {
+        "owner_thread": "chatgpt-C-EP-TRANSFER-RESPONSIBILITY-20261109-01-SES-20261109-E032FC60",
+        "instance": "chatgpt-ep-owner-2026-11-09-E032FC60",
+        "generation": 3,
+        "session_folio": "SES-20261109-E032FC60",
+        "role": "titular",
+        "status": "active"
+      },
+      "to": {
+        "owner_thread": "chatgpt-C-EP-RETOMA-20261114-01-01a1db7e-ac0b-7906-a15a-e00811b175c5",
+        "instance": "chatgpt-ep-owner-2026-11-14-01a1db7e-ac0b-7906-a15a-e00811b175c5",
+        "generation": 4,
+        "session_folio": null,
+        "local_conversation_uuidv7": "01a1db7e-ac0b-7906-a15a-e00811b175c5",
+        "identity_kind": "operational alias + local UUIDv7; native ChatGPT conversation ID not exposed"
+      },
+      "native_conversation_id": "NOT_EXPOSED; source conversation export retained in originals/",
+      "method": "Fast-forward Git main commit, followed by GitHub Contents API read-back of the control.",
+      "mutation_result": "COMMITTED_AND_READBACK_VERIFIED",
+      "active_responsibles_after_write": 1,
+      "maximum_active_responsibles": 2,
+      "readback_required": true,
+      "readback_verified": true,
+      "readback_blob_sha": "7183eccd15b15cb6e752d68fb1a6c06b8581116c",
+      "verification": {
+        "status": "read_back_verified",
+        "verified_on": "2026-11-14",
+        "generation": 4,
+        "owner_alias": "chatgpt-C-EP-RETOMA-20261114-01-01a1db7e-ac0b-7906-a15a-e00811b175c5",
+        "local_conversation_uuidv7": "01a1db7e-ac0b-7906-a15a-e00811b175c5",
+        "active_responsibles": 1,
+        "remote_main_commit": "079ad945478b196b194536aee5d1fe8f0cbb9226",
+        "scope_limit": "Control registration and canonical read-back only; not platform-native identity or server-enforced fencing."
+      }
+    },
+    {
+      "event_id": "EP-RETOMA-20261114-1632",
+      "operation": "TRANSFER_RESPONSIBILITY",
+      "recorded_on": "2026-11-14",
+      "authorized_on": "2026-11-14",
+      "authorization": {
+        "status": "explicit",
+        "source": "direct operator instruction A preserved in the EP OCP",
+        "operation": "TRANSFER_RESPONSIBILITY",
+        "verbatim": "Retoma responsaiblida del frente de trabajo, MEtodologia/Entorno Persistente",
+        "prior_authorization_asserted_by_operator": false,
+        "source_path": "frentes/ep/originales/INSTRUCCION-RETOMA-RESPONSABILIDAD-EP-20261114-1632.txt",
+        "source_sha256": "8f5220f0a6a5566210820ace76425d88993c93a3e5645a3a748b8487bd198c32",
+        "scope": "Retake sole operational responsibility for the Entorno Persistente front frentes/ep/ in SeryMente/metodologia. Current scope is documentary governance, continuity, triage and coordination. Preserve all existing security, host, vault, ciphertext, backup, credential and implementation gates. This transfer does not itself authorize code construction, host/RDC operations, access to credentials or real vault/ciphertext/B2 data, destructive changes, DUG/GOW/MCP amendments, or bypass of the P012/P013 in-person review."
+      },
+      "source_branch": "main",
+      "source_control_blob_sha": "b5cb44f63823c077b57f7bcb3cae018394417199",
+      "source_generation": 4,
+      "from": {
+        "owner_thread": "chatgpt-C-EP-RETOMA-20261114-01-01a1db7e-ac0b-7906-a15a-e00811b175c5",
+        "instance": "chatgpt-ep-owner-2026-11-14-01a1db7e-ac0b-7906-a15a-e00811b175c5",
+        "generation": 4,
+        "session_folio": null,
+        "role": "titular",
+        "status": "active"
+      },
+      "to": {
+        "owner_thread": "chatgpt-C-EP-RETOMA-20261114-02-01a1dc30-edd1-7978-bb07-b0c2db72b0c3",
+        "instance": "chatgpt-ep-owner-2026-11-14-02-01a1dc30-edd1-7978-bb07-b0c2db72b0c3",
+        "generation": 5,
+        "session_folio": null,
+        "local_conversation_uuidv7": "01a1dc30-edd1-7978-bb07-b0c2db72b0c3",
+        "identity_kind": "operational alias + local UUIDv7; native ChatGPT conversation ID not exposed by available tools",
+        "functional_role": "asistente/documental y coordinación; no designación como constructor de código"
+      },
+      "native_conversation_id": "NOT_EXPOSED; operational alias + local UUIDv7 used",
+      "method": "GitHub Contents API compare-and-swap against immediately re-read control blob SHA; canonical read-back required.",
+      "mutation_result": "COMMITTED_READBACK_PENDING",
+      "active_responsibles_after_write": 1,
+      "maximum_active_responsibles": 2,
+      "readback_required": true,
+      "readback_verified": false
+    }
+  ],
+  "generation_semantics": "AUDIT_METADATA_ONLY_NOT_AUTHORITY_OR_EXECUTION_GATE",
+  "operator_instruction_authority": "Direct operator instructions determine authorized work within the described front and scope. Generation/session fields are provenance and audit metadata only, never an authority, veto or execution gate. Retain actual platform permissions, host security and explicit scope limits."
 }
