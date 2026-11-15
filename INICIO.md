@@ -1,10 +1,10 @@
-> **Regla operativa vigente (C-GOBERNANZA-STREAMLINE-RESPONSABILIDAD-FOLIACION-20261111-01):** DUG Samantha v389/NX-389m · Metacanon 1.30 · GOW 2.19. Instrucción explícita frente + actuación = autorización suficiente; «asume/retoma» releva al titular anterior. Corresponsabilidad solo por petición expresa. Folios/UUID/alias/generación son metadatos, no permisos ni bloqueos. Un registro A/B consolidado por cambio sustantivo; FOL1 PREPARADO/NO ACTIVO; Sink preferente con fallback exacto del DUG; sin medición temporal. No modificar IPZ.
+> **Regla operativa vigente (C-GOBERNANZA-STREAMLINE-RESPONSABILIDAD-FOLIACION-20261111-01; registro ESPACIO: C-KHORA-ESPACIO-APERTURA-20261115-FCAE05C8):** DUG Samantha v399/NX-399m · Metacanon 1.31 · GOW 2.25. Instrucción explícita frente + actuación = autorización suficiente; «asume/retoma» releva al titular anterior. Corresponsabilidad solo por petición expresa. Folios/UUID/alias/generación son metadatos, no permisos ni bloqueos. Un registro A/B consolidado por cambio sustantivo; FOL1 PREPARADO/NO ACTIVO; Sink preferente con fallback exacto del DUG; sin medición temporal. No modificar IPZ.
 
 # Inicio del espacio de trabajo Ser y Mente
 
 Punto de entrada del repositorio; no es una fuente normativa.
 
-**Documento Único de Gobernanza:** [DUG · Samantha v389 · NX-389m](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html). Integra 43 principios, 24 anexos jerarquizados, Metacanon 1.30, GOW 2.19 con 132 términos definidos e indexados, §ARR con el vocabulario inicial, taxonomía estructural 1.4, navegación bidireccional y representación estructurada. Fuente, versión, firma y JSON embebido cotejados en `main` el 2026-11-11; commit de la ruta `199bf03ade7aceeedcabc10eeb1c06b1d0e53eaf`, blob `bcd99e72113f444a045d7f1c91b4ad36865b8ea8`.
+**Documento Único de Gobernanza:** [DUG · Samantha v399 · NX-399m](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html). Integra 45 principios, anexos jerarquizados, Metacanon 1.31, GOW 2.25, §ARR con el vocabulario inicial, taxonomía estructural y representación estructurada. La fuente normativa vigente es el HTML canónico de `main`; sus hashes y revisión exacta se comprueban en el historial Git y mediante lectura de vuelta. Este punto de entrada no sustituye la lectura del documento canónico.
 
 La sección humana gobierna la representación estructurada incorporada en el mismo archivo. No hay documentos normativos paralelos ni sincronización automática implícita con Notion, instrucciones personalizadas, memorias o copias locales. La rama `main` de `SeryMente/metodologia` es la fuente documental; si no puede leerse, declara `METODOLOGÍA NO VERIFICADA`. Las políticas obligatorias, los permisos reales y las autorizaciones aplicables conservan precedencia.
 
@@ -26,7 +26,7 @@ El histórico **Contexto → Gestión conversacional** está supersedido y rever
 
 ## Estrategia de dos capas de principios
 
-[DUG · ART-027](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-027) define un catálogo de 43 abstracciones, aliases individuales p001–p043 mediante Sink cuando esté disponible, con respaldo exacto del DUG canónico y telemetría separada de consideración/selección/consulta/aplicación. El documento está materializado en DUG v388. PR #27 contiene una implementación candidata limitada a P004, pero sigue OPEN/DRAFT/DIVERGED; no equivale a instancia instalada ni E2E. La herramienta observada estáticamente es sink_principle con principle_id=P004. No se acredita runtime, instalación EP ni respuesta visible desde IPZ. La telemetría sigue contando únicamente recuperaciones satisfactorias.
+[DUG · ART-027](gobernanza/METAPROMPT-CANONICO-SAMANTHA.html#ART-027) define un catálogo de 45 abstracciones, aliases individuales p001–p045 mediante Sink cuando esté disponible, con respaldo exacto del DUG canónico y telemetría separada de consideración/selección/consulta/aplicación. El documento está materializado en DUG v399. PR #27 contiene una implementación candidata limitada a P004, pero sigue OPEN/DRAFT/DIVERGED; no equivale a instancia instalada ni E2E. La herramienta observada estáticamente es sink_principle con principle_id=P004. No se acredita runtime, instalación EP ni respuesta visible desde IPZ. La telemetría sigue contando únicamente recuperaciones satisfactorias.
 
 ## Pendientes destacados
 
