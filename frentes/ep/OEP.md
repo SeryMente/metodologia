@@ -4,7 +4,7 @@
 
 ## Control e identidad
 
-**Nombre completo:** Persistencia de Entorno Operativo (OEP). 1v0.3.109. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
+**Nombre completo:** Persistencia de Entorno Operativo (OEP). 1v0.3.110. **Ancla:** la autoridad operativa deriva de la instrucción explícita del operador dentro del alcance vigente y de los permisos técnicos reales. Los titulares, sesiones, alias y generaciones que figuran en controles son metadatos de procedencia/auditoría; no son autorización, veto ni requisito de continuidad. Se preservan las decisiones técnicas anteriores, incluida la rectificación de destino B2 materializada en §91.
 **Naturaleza:** elemento documental temporal; actualización del objeto existente, no tablero/arquitectura ni segundo objeto. Horizonte orientativo del marco: aproximadamente un mes, sin caducidad automática.
 **Persistencia:** carpeta canónica `frentes/ep/` en `SeryMente/metodologia/main`, conforme a P038 del DUG vigente. La rama `docs/metacanon-objetos-20261011` conserva una copia documental que debe cotejarse contra `main` y no prevalece si diverge. La versión v0.3.24 es documental, no versión de software. Fuente única activa: `frentes/ep/OEP.md`; OEP de Khora queda como antecedente sin modificación. Base recuperada: v0.1.5, main `dbc73afada1ad29abf46f4599d22cc3158a9a986`, Git blob `362f878237045e6a88e905b8e561c9dba4e0c4d9`.
 
@@ -5077,3 +5077,22 @@ El estado actual se obtiene de §§145, 150 y 151; las secciones 0–59 y el sna
 - La última salida visible conservada del modelo anterior se recuperó desde documentos/ULTIMA-SALIDA-EP-20261114-1309.md (blob 57da7dabbe915432e7f79d0f0e93c86da83dce2e) y se presenta literalmente en la salida de este ciclo.
 - No se recibió un export completo de la conversación actual. Se preservan únicamente el A disponible y el B final; no se declara captura integral del chat. Los mensajes intermedios visibles se registran en la retoma, sin incorporar resultados internos ni razonamiento.
 - El manifiesto documental se actualizó y leyó de vuelta: 12 documentos; A, B y el registro de ciclo están indexados. El read-back final independiente del control, OEP, README, A, B, registro y manifiesto en main cerró sin diferencias.
+
+## 153. Retoma conversacional y continuidad del respaldo · 2026-11-15 · 11:24 America/Mexico_City
+
+### Export y salida preservados
+
+- **Export original:** `originales/ChatGPT-EP-20261115-1124.md`. Adquirido en modo lectura mediante RDC desde `C:\\Users\\PC\\Downloads\\ChatGPT-EP-20261115-1124.md`, en el dispositivo identificado por RDC como `015RENTA02`. 3.183 líneas, 199.757 bytes UTF-8, LF, sin BOM. SHA-256 de origen y de la reconstrucción cotejados: `5F82034A69729487843FCA56D451E4E2D331074D7AF23C1758D28B19F796B60D`. GitHub `main`: commit `45e96a183b6f108480125115e45fdb2be2cea354`, blob `acfb80d7e562776732c9f24a5f365521c4e77487`; lectura posterior exacta verificada.
+- **Última salida final del modelo:** `documentos/ULTIMA-SALIDA-EP-20261115-1124.md`. Extracto literal de la sección final `Estado de contingencia - PC10RCIF4EI4` del export; 107 líneas. SHA-256: `C3A14A322D8BA758410BE103A1983AE39172B392AB8BE6A5D69D3370479FA2CB`; GitHub `main`: commit `dde834e524ad3af02d89637e3f3c6f6438df324e`, blob `019807faa9d727df88c86bef8d6e6ed9d8dbdf94`; lectura posterior exacta verificada.
+
+### Titularidad y alcance de la retoma
+
+La instrucción directa del operador del 15/11/2026 ordena persistir la conversación y asumir la continuidad de la instancia anterior. Se registra el relevo de generación 5 a generación 6: titular único `chatgpt-C-EP-RETOMA-20261115-1124-01a1e043-37ba-7684-b55b-03fb38f3ef2f`; UUIDv7 local `01a1e043-37ba-7684-b55b-03fb38f3ef2f`. La identidad nativa de conversación no está expuesta y no se infiere. Control actualizado mediante SHA compare-and-swap y lectura posterior; un responsable activo. FOL1 continúa no activo; sin folios globales CV/CY/A/B ni SES.
+
+El alcance actual comprende continuidad, archivo, documentación, triage y coordinación del frente EP. No habilita construcción de código, apertura de EP Vault, acceso a credenciales/ciphertext/datos B2, ni ejecución del respaldo. Se conservan los originales y los gates existentes, incluida la revisión presencial P012/P013 previa a la construcción de EP Vault V2.
+
+### Estado heredado y checkpoint
+
+El B archivado conserva la inspección de solo lectura y la preparación del respaldo cifrado en `PC10RCIF4EI4`. A la hora de esa salida: no se había desbloqueado una bóveda, leído una credencial, creado un respaldo ni transferido datos; `rclone`, la autenticación B2, la copia Cryptomator y el read-back remoto seguían pendientes. Esos estados se registran como evidencia heredada del export, no como una nueva ejecución de esta retoma.
+
+El dispositivo desde el que se recuperó el archivo se muestra como `015RENTA02`; se preserva la exclusión operativa de `01RENTA02` indicada por el modelo anterior. No se ejecutó ninguna operación de host, bóveda, credenciales o B2 durante esta retoma. El respaldo permanece detenido hasta que el operador autorice expresamente el prompt local en PC10 con la frase `AUTORIZO PROMPT LOCAL EN PC10`.
