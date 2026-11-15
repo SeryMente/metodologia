@@ -275,9 +275,10 @@
         "scope": "Assume sole operational responsibility for frentes/ep/ and continue the named conversation. Archive the exact supplied export and the last visible assistant output in the EP OCP. Preserve all existing security and implementation gates. This transfer does not authorize opening EP Vault, accessing credentials/ciphertext/B2, starting or executing the backup, code construction, destructive changes, or changes to DUG/GOW/MCP; P012/P013 remains required before EP Vault V2 construction."
       },
       "readback_required": true,
-      "readback_verified": false,
+      "readback_verified": true,
       "source_control_blob_sha": "dc613c0bd279efe18ff1cf65dda24d6f037d8913",
-      "alias": "chatgpt-C-EP-RETOMA-20261115-1124-01a1e043-37ba-7684-b55b-03fb38f3ef2f"
+      "alias": "chatgpt-C-EP-RETOMA-20261115-1124-01a1e043-37ba-7684-b55b-03fb38f3ef2f",
+      "readback_control_blob_sha": "3a8cedbf5ed7b4fb250b03ea7e90cf310e29cc1a"
     }
   ],
   "co_responsibility": {
@@ -562,14 +563,22 @@
       },
       "native_conversation_id": "NOT_EXPOSED; operational alias + locally generated UUIDv7 used",
       "method": "GitHub Contents API SHA compare-and-swap against immediately re-read control blob; canonical read-back.",
-      "mutation_result": "COMMITTED_READBACK_PENDING",
+      "mutation_result": "COMMITTED_AND_READBACK_VERIFIED",
       "active_responsibles_after_write": 1,
       "maximum_active_responsibles": 2,
       "readback_required": true,
-      "readback_verified": false,
+      "readback_verified": true,
       "verification": {
-        "status": "pending"
-      }
+        "status": "read_back_verified",
+        "verified_on": "2026-11-15",
+        "generation": 6,
+        "owner_alias": "chatgpt-C-EP-RETOMA-20261115-1124-01a1e043-37ba-7684-b55b-03fb38f3ef2f",
+        "local_conversation_uuidv7": "01a1e043-37ba-7684-b55b-03fb38f3ef2f",
+        "active_responsibles": 1,
+        "control_blob_readback": "3a8cedbf5ed7b4fb250b03ea7e90cf310e29cc1a",
+        "scope_limit": "Control registration and canonical read-back only; not native ChatGPT identity, host security validation or server-enforced fencing."
+      },
+      "readback_blob_sha": "3a8cedbf5ed7b4fb250b03ea7e90cf310e29cc1a"
     }
   ],
   "generation_semantics": "AUDIT_METADATA_ONLY_NOT_AUTHORITY_OR_EXECUTION_GATE",
