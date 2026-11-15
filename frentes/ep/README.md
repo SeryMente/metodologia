@@ -96,3 +96,10 @@ Estado documental añadido: OEP v0.3.74, §§140–141. La organización física
 - [Sprint EP Vault v2](documentos/SPRINT-EP-VAULT-V2.md): ocho paquetes EV2-01…EV2-08 dentro de EP-TASK-004, cada uno con criterio fuente del operador verbatim. Estado: programado, bloqueado antes de construcción por P012/P013.
 - [OEP §150](OEP.md#150-diseño-integral-y-sprint-ep-vault-v2--2026-11-13): auditoría, compuertas, hashes y estados.
 - [EP-TASK-004](./📁%20🧭%20-%20Tareas%20provisionales/📁%20🧩%20-%20EP-TASK-004%20-%20Reconstrucción%20de%20bóveda/README.md): adenda de auditoría y continuidad.
+
+
+## Retoma conversacional EP · 2026-11-15 · 11:24
+
+- [Export original completo](originales/ChatGPT-EP-20261115-1124.md): 3.183 líneas, 199.757 bytes; SHA-256 cotejado y read-back exacto.
+- [Última salida literal del modelo](documentos/ULTIMA-SALIDA-EP-20261115-1124.md): salida final del export, archivada por separado y verificada.
+- [OEP §153](OEP.md#153-retoma-conversacional-y-continuidad-del-respaldo--2026-11-15--1124-america_mexico_city): titularidad, límites y siguiente checkpoint.
