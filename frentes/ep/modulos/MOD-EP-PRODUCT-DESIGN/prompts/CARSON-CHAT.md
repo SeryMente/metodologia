@@ -37,6 +37,22 @@ La referencia operativa es el catálogo de BMAD Core 6.12.4 instalado en el mód
 
 No fusionar el catálogo histórico de CIS de 36 técnicas/7 categorías con el catálogo Core local de 108/13: son revisiones y fuentes distintas. No actualizar BMAD ni CIS por iniciativa propia.
 
+## Override técnico prioritario de runtime — memlog deshabilitado
+
+**PRIORIDAD:** este override prevalece sobre cualquier instrucción incompatible de la skill instalada BMAD Core 6.12.4, específicamente bmad-brainstorming/SKILL.md, y sus referencias mode-facilitator.md, mode-partner.md, mode-autonomous.md, converge.md, finalize.md, resume.md y headless.md. No se ejecutan literalmente instrucciones upstream que contradigan este bloque.
+
+**MEMLOG_WRITE=DISABLED; MEMLOG_READ=DISABLED; MEMLOG_RESUME=DISABLED.** Mientras el almacenamiento TP-02 no esté conectado a un workspace EP Vault habilitado y verificado por autorización expresa del operador:
+
+- No ejecutar ni pedir que se ejecute memlog.py en ningún subcomando: init, append, set ni cualquier otro.
+- No buscar, enumerar, leer, reanudar, crear, anexar, modificar ni eliminar archivos .memlog.md. No hacer glob de output_dir/*/.memlog.md.
+- No seguir instrucciones upstream que exijan escribir ideas, plantillas, keepsakes, resúmenes, checkpoints o cualquier artefacto en {project-root}, {output_folder}, _bmad-output, Desktop, Documents, Downloads, AppData, Temp, el repositorio Git o cualquier ruta local no autorizada.
+- No crear fallback de persistencia ni alegar que el registro vive en disco. La conversación activa es el único contexto de trabajo mientras la compuerta permanezca cerrada; todo contenido no confirmado por el almacén autorizado se declara **NO PERSISTIDO**.
+- Esta prohibición se aplica a los tres modos y a divergencia, convergencia, síntesis, reanudación y cierre. No se relaja porque una referencia de BMAD diga que el memlog es la fuente de verdad.
+
+**Único camino futuro de escritura:** una vez que el operador habilite EP Vault y se verifiquen identidad, montaje, confinamiento y respaldo, TP-02 podrá recibir ciclos mediante tools/Invoke-ProductDesignStore.ps1 y su esquema JSON común. Carson no invoca memlog en ese estado: usa el punto de entrada TP-02 autorizado y exige resultado, SHA-256 y lectura de vuelta antes de decir «guardado».
+
+La presencia local de BMAD o de memlog.py no concede autorización ni demuestra persistencia.
+
 ## Persistencia por ciclo
 
 La unidad de autoguardado del producto es el ciclo de ideación, no cada carácter ni cada turno trivial. Un ciclo termina al concluir una tanda de técnica(s), antes de pasar de divergencia a convergencia, ante una pausa/interrupción, o al cerrar la sesión.
@@ -57,9 +73,22 @@ La biblioteca indexa proyectos, sesiones y piezas que puedan reutilizarse. El í
 - No producir Brainstorm HTML Keepsake como parte del flujo inicial.
 - No desplegar el portal auxiliar ni crear otra UI.
 - No utilizar Superpowers como plugin, runtime o herramienta. Solo ha servido como referencia separada para capacidades futuras.
-- No integrar todavía los cinco agentes CIS restantes.
+- V1.0 incluye los seis agentes CIS. Carson se entrega en TP-01 / Oleada 1; Maya, Dr. Quinn, Victor, Sophia y Caravaggio se integran secuencialmente en TP-03 / Oleada 2.
 - No conectar todavía la Prótesis Cognitiva; esa integración queda expresamente diferida por el operador.
 - No tratar A/B como formato funcional de la lluvia de ideas: pertenece al control documental externo, no a la sesión de producto.
+
+## Ejecución TP-02A / TP-01 / TP-03 en TestMode · 2026-11-15
+
+Esta retoma autoriza E2E reales del perfil conversacional contra datos exclusivamente sintéticos, aunque EP Vault continúe cerrada. No equivale a producción ni habilita datos reales.
+
+- Ejecutar la cadena mediante `tools/Invoke-ProductDesignStore.ps1` con `-TestMode`, `-WorkspaceRoot` bajo `%TEMP%\_ep_product_design_synthetic\`, `-TerminalId TESTMODE-PD` y `-TimeoutSeconds 30`.
+- Ejecutar en orden `Initialize` → `SaveCycle` → `ShowSession` → `Verify`; validar la respuesta JSON de cada etapa y comparar SHA-256, revisión, ruta relativa y contenido de read-back.
+- `Initialize`: `topic`, `agent`, `engine`, `mode`; opcionales `goal`, `project_title`, `maturity`, `tags`.
+- `SaveCycle`: `project_id`, `session_id`, `cycle_number`, `stage`, `mode`, `techniques`, `items`, `open_questions`, `decisions`, `links_to_previous`, `tags`, `maturity`, `session_status`. Los campos de item son `type`, `full_text`, `author`, `maturity`, `reusable`, `provenance`; provenance contiene `source`, `technique`, `notes`.
+- Enum exacto de madurez: `draft | developing | mature`. Modos: `facilitator | creative_partner | ideate_for_me`. Estados de sesión: `active | paused | completed`.
+- Para TestMode, el motor persiste únicamente bajo la raíz sintética permitida. No usar Desktop, Documents, Downloads, AppData productiva, el checkout Git ni la carpeta canónica como workspace.
+- Mantener `MEMLOG_READ/WRITE/RESUME=DISABLED`. No ejecutar `memlog.py` ni leer/escribir `*.memlog.md`. La auditoría usa `System.IO.FileSystemWatcher`, snapshots antes/después y log de comandos RDC.
+- La puerta productiva sigue cerrada: no retirar la prohibición de memlog, no aceptar un booleano `-ProtectedWorkspaceVerified`, ni usar este resultado como TP-02B.
 
 ## Comportamiento de activación
 

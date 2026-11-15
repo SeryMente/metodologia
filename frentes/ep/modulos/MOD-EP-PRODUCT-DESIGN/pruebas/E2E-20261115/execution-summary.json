@@ -1,0 +1,86 @@
+{
+    "created_at_utc":  "2026-11-15T17:47:50.8821615Z",
+    "overall_status":  "PASS",
+    "test_mode":  true,
+    "production_enabled":  false,
+    "tp02a":  {
+                  "status":  "PASS",
+                  "passed":  14,
+                  "failed":  0,
+                  "total":  14,
+                  "output_file":  "C:\\Users\\fila4\\Desktop\\SeryMente\\Metodologia-EP-RETOMA-20261114\\frentes\\ep\\modulos\\MOD-EP-PRODUCT-DESIGN\\pruebas\\E2E-20261115\\TP-02A-unittest-output.txt",
+                  "output_sha256":  "EC77EF7D74DA659622975E1BB2BD73F7534643E76D77CE9F5AA887ECAFFD0A4E",
+                  "concurrency":  "4 writers; revisions 1,2,3,4",
+                  "fault":  "INJECTED_FAILURE_AFTER_CYCLE_WRITE; no false success; journal recovery PASS",
+                  "lock":  "live owner retained; stale dead owner after TTL recovered",
+                  "timeout":  "1 second; Python process tree terminated",
+                  "other":  [
+                                "schema strictness",
+                                "idempotency/revisions",
+                                "search filters project/tag/maturity/agent",
+                                "FTS5/index parity and integrity check",
+                                "SQLite PRAGMA integrity_check",
+                                "RestoreVersion/ShowSession",
+                                "TestMode path confinement",
+                                "UTF-8 payload/stdout"
+                            ]
+              },
+    "tp01":  {
+                 "status":  "PASS",
+                 "agent":  "Carson",
+                 "sessions":  3,
+                 "modes":  [
+                               "facilitator",
+                               "creative_partner",
+                               "ideate_for_me"
+                           ],
+                 "bmad_version":  "6.12.4",
+                 "categories":  13,
+                 "techniques":  108,
+                 "collaborative_list_count":  8,
+                 "show":  "Random Stimulation",
+                 "script_sha256":  "F81B28FE590F607B95C7218A7CDD6FB6EB91D3A76B9671ACF54BCAF36FD4E6CA",
+                 "csv_sha256":  "FFF112EABCA1A9CB8B190F8314BC47678BECC5782A2372E11C83DAA0E33B6DFD"
+             },
+    "tp03":  {
+                 "status":  "PASS",
+                 "profiles":  [
+                                  "Maya",
+                                  "Dr. Quinn",
+                                  "Victor",
+                                  "Sophia",
+                                  "Caravaggio"
+                              ],
+                 "passed":  5,
+                 "failed":  0,
+                 "source_limit":  "Local ChatGPT conversational-profile adaptations; not a native CIS runtime"
+             },
+    "e2e":  {
+                "profiles":  6,
+                "sessions":  8,
+                "cycles":  8,
+                "sha_readback_matches":  8,
+                "sqlite_integrity_ok":  8,
+                "source_index_consistent":  8,
+                "pending_journals":  0,
+                "workspace":  "C:\\Users\\fila4\\AppData\\Local\\Temp\\_ep_product_design_synthetic\\PD-E2E-20261115",
+                "terminal_id":  "TESTMODE-PD"
+            },
+    "memlog":  {
+                   "status":  "PASS",
+                   "roots":  3,
+                   "events":  0,
+                   "files_before":  0,
+                   "files_after":  0,
+                   "differences":  0,
+                   "watcher_errors":  0,
+                   "start_utc":  "2026-11-15T17:22:11.0190898Z",
+                   "stop_utc":  "2026-11-15T17:45:20.6648200Z"
+               },
+    "rdc_command_log":  {
+                            "path":  "C:\\Users\\fila4\\Desktop\\SeryMente\\Metodologia-EP-RETOMA-20261114\\frentes\\ep\\modulos\\MOD-EP-PRODUCT-DESIGN\\pruebas\\E2E-20261115\\rdc-commands.jsonl",
+                            "lines":  33,
+                            "sha256":  "978E56752D75F32D2D41494D4246F8669C9F944A5FD780AC2C4A94FC45D94F6A"
+                        },
+    "profile_results":  "C:\\Users\\fila4\\Desktop\\SeryMente\\Metodologia-EP-RETOMA-20261114\\frentes\\ep\\modulos\\MOD-EP-PRODUCT-DESIGN\\pruebas\\E2E-20261115\\profiles-e2e-results.json"
+}

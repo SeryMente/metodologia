@@ -1,0 +1,175 @@
+{
+    "created_at_utc":  "2026-11-15T17:48:37.2007817Z",
+    "checkout_root":  "C:\\Users\\fila4\\Desktop\\SeryMente\\Metodologia-EP-RETOMA-20261114\\frentes\\ep\\modulos\\MOD-EP-PRODUCT-DESIGN",
+    "canonical_root":  "C:\\Users\\fila4\\Desktop\\SeryMente\\Metodologia\\frentes\\ep\\modulos\\MOD-EP-PRODUCT-DESIGN",
+    "junction_detected":  false,
+    "sync_mode":  "copy-only-missing-files; never overwrite nonmatching targets",
+    "file_count":  23,
+    "copied_files":  23,
+    "preexisting_identical_files":  0,
+    "status":  "PASS",
+    "files":  [
+                  {
+                      "path":  "prompts\\CARAVAGGIO-CHAT.md",
+                      "sha256":  "258BAE51E641094AB36FE1D881CE0F29699022DBA28F730C5F45A2B2A4ACAB38",
+                      "canonical_sha256":  "258BAE51E641094AB36FE1D881CE0F29699022DBA28F730C5F45A2B2A4ACAB38",
+                      "match":  true,
+                      "preexisting":  false
+                  },
+                  {
+                      "path":  "prompts\\CARSON-CHAT.md",
+                      "sha256":  "ED51FF0F675DDFB3F6933242D8CF937F4D7E21C7473B9AE4E66E95A4D0E7E484",
+                      "canonical_sha256":  "ED51FF0F675DDFB3F6933242D8CF937F4D7E21C7473B9AE4E66E95A4D0E7E484",
+                      "match":  true,
+                      "preexisting":  false
+                  },
+                  {
+                      "path":  "prompts\\DR-QUINN-CHAT.md",
+                      "sha256":  "7F9568D14AC4A4E2B95AA1345F11C26FAFE462DB7B68443DF72E6CA1AC304553",
+                      "canonical_sha256":  "7F9568D14AC4A4E2B95AA1345F11C26FAFE462DB7B68443DF72E6CA1AC304553",
+                      "match":  true,
+                      "preexisting":  false
+                  },
+                  {
+                      "path":  "prompts\\MAYA-CHAT.md",
+                      "sha256":  "04A59D4FA2F859C4BA99629EF8F2312EBE1F58FC9D21CA5F64C86EAEA66C8736",
+                      "canonical_sha256":  "04A59D4FA2F859C4BA99629EF8F2312EBE1F58FC9D21CA5F64C86EAEA66C8736",
+                      "match":  true,
+                      "preexisting":  false
+                  },
+                  {
+                      "path":  "prompts\\SOPHIA-CHAT.md",
+                      "sha256":  "803E7B72D5C2210AE4093B1FD0280EF4EB81FD2841B7C0AAF56A86A7239B3CAB",
+                      "canonical_sha256":  "803E7B72D5C2210AE4093B1FD0280EF4EB81FD2841B7C0AAF56A86A7239B3CAB",
+                      "match":  true,
+                      "preexisting":  false
+                  },
+                  {
+                      "path":  "prompts\\VICTOR-CHAT.md",
+                      "sha256":  "71A1D87D2478BCA17ABDE6B438F9619C0CDB297F0161A5AC61D7C25A4FCF1F21",
+                      "canonical_sha256":  "71A1D87D2478BCA17ABDE6B438F9619C0CDB297F0161A5AC61D7C25A4FCF1F21",
+                      "match":  true,
+                      "preexisting":  false
+                  },
+                  {
+                      "path":  "pruebas\\E2E-20261115\\brain-catalog-commands.jsonl",
+                      "sha256":  "EA701E1D0392170DC07AD5C87EB9FB1206C290E15275A0FDB5DB1E9FBE3E5957",
+                      "canonical_sha256":  "EA701E1D0392170DC07AD5C87EB9FB1206C290E15275A0FDB5DB1E9FBE3E5957",
+                      "match":  true,
+                      "preexisting":  false
+                  },
+                  {
+                      "path":  "pruebas\\E2E-20261115\\brain-catalog-rdc.json",
+                      "sha256":  "752FB41E490B5A970A20B285064BF9CD53734B33895B38FD1A6453FA3C65967B",
+                      "canonical_sha256":  "752FB41E490B5A970A20B285064BF9CD53734B33895B38FD1A6453FA3C65967B",
+                      "match":  true,
+                      "preexisting":  false
+                  },
+                  {
+                      "path":  "pruebas\\E2E-20261115\\execution-summary.json",
+                      "sha256":  "558C0EB227E01A4B7D26A978ADC85283CB6E57399750484316206D42CAD98738",
+                      "canonical_sha256":  "558C0EB227E01A4B7D26A978ADC85283CB6E57399750484316206D42CAD98738",
+                      "match":  true,
+                      "preexisting":  false
+                  },
+                  {
+                      "path":  "pruebas\\E2E-20261115\\memlog-audit-summary.json",
+                      "sha256":  "F0BE7559602339375E1A47C7F0C050CC536248905712B8DED9566BE7047498A4",
+                      "canonical_sha256":  "F0BE7559602339375E1A47C7F0C050CC536248905712B8DED9566BE7047498A4",
+                      "match":  true,
+                      "preexisting":  false
+                  },
+                  {
+                      "path":  "pruebas\\E2E-20261115\\memlog-snapshot-after.json",
+                      "sha256":  "99832F9CC1FB31788D3410CB312B6C3542175BB0C77266263744F759D091CE90",
+                      "canonical_sha256":  "99832F9CC1FB31788D3410CB312B6C3542175BB0C77266263744F759D091CE90",
+                      "match":  true,
+                      "preexisting":  false
+                  },
+                  {
+                      "path":  "pruebas\\E2E-20261115\\memlog-snapshot-before.json",
+                      "sha256":  "9DD75F78A6A40653C78689717619BF3994A1C8A3FB392ED3D74DF8B1936EEA45",
+                      "canonical_sha256":  "9DD75F78A6A40653C78689717619BF3994A1C8A3FB392ED3D74DF8B1936EEA45",
+                      "match":  true,
+                      "preexisting":  false
+                  },
+                  {
+                      "path":  "pruebas\\E2E-20261115\\memlog-watcher-ready.json",
+                      "sha256":  "F07ED68B576BA1E4641E52AA6BC1E55EC05D0556DDA83E68B4095D26C9FEC328",
+                      "canonical_sha256":  "F07ED68B576BA1E4641E52AA6BC1E55EC05D0556DDA83E68B4095D26C9FEC328",
+                      "match":  true,
+                      "preexisting":  false
+                  },
+                  {
+                      "path":  "pruebas\\E2E-20261115\\payloads\\profiles-e2e.json",
+                      "sha256":  "D16ADB367B6C152316FFEA2D3BBC25105E6B8068BE6D656CE8505CF3CF38532F",
+                      "canonical_sha256":  "D16ADB367B6C152316FFEA2D3BBC25105E6B8068BE6D656CE8505CF3CF38532F",
+                      "match":  true,
+                      "preexisting":  false
+                  },
+                  {
+                      "path":  "pruebas\\E2E-20261115\\profiles-e2e-results.json",
+                      "sha256":  "C84BEB5C9DF344E361063C64DFA0B031EDA71B67EC7B228155FFE58357AAEA64",
+                      "canonical_sha256":  "C84BEB5C9DF344E361063C64DFA0B031EDA71B67EC7B228155FFE58357AAEA64",
+                      "match":  true,
+                      "preexisting":  false
+                  },
+                  {
+                      "path":  "pruebas\\E2E-20261115\\rdc-commands.jsonl",
+                      "sha256":  "978E56752D75F32D2D41494D4246F8669C9F944A5FD780AC2C4A94FC45D94F6A",
+                      "canonical_sha256":  "978E56752D75F32D2D41494D4246F8669C9F944A5FD780AC2C4A94FC45D94F6A",
+                      "match":  true,
+                      "preexisting":  false
+                  },
+                  {
+                      "path":  "pruebas\\E2E-20261115\\TP-02A-unittest-output.txt",
+                      "sha256":  "EC77EF7D74DA659622975E1BB2BD73F7534643E76D77CE9F5AA887ECAFFD0A4E",
+                      "canonical_sha256":  "EC77EF7D74DA659622975E1BB2BD73F7534643E76D77CE9F5AA887ECAFFD0A4E",
+                      "match":  true,
+                      "preexisting":  false
+                  },
+                  {
+                      "path":  "SPRINT-GENERAL-PRODUCT-DESIGN.md",
+                      "sha256":  "4E9A7ECB2DCF590FEF7F95A6197EB1EBF65BA68DE6E8642AD7C30623358AE62A",
+                      "canonical_sha256":  "4E9A7ECB2DCF590FEF7F95A6197EB1EBF65BA68DE6E8642AD7C30623358AE62A",
+                      "match":  true,
+                      "preexisting":  false
+                  },
+                  {
+                      "path":  "tools\\Invoke-ProductDesignStore.ps1",
+                      "sha256":  "1F132E12F34F10F11F6B6A6046489A86DA462BE52FABBB31C7E11E80BB352655",
+                      "canonical_sha256":  "1F132E12F34F10F11F6B6A6046489A86DA462BE52FABBB31C7E11E80BB352655",
+                      "match":  true,
+                      "preexisting":  false
+                  },
+                  {
+                      "path":  "tools\\Invoke-ProfileE2E.ps1",
+                      "sha256":  "7669BBBDC018E22A431E65488C19FA813988574799771B019FCA225E7562A1E8",
+                      "canonical_sha256":  "7669BBBDC018E22A431E65488C19FA813988574799771B019FCA225E7562A1E8",
+                      "match":  true,
+                      "preexisting":  false
+                  },
+                  {
+                      "path":  "tools\\product_design_store.py",
+                      "sha256":  "1DA43D3E8B73E7EA127084CC2D26A8096DE4134ED55CD3374D8AAA1CB3A3C9D1",
+                      "canonical_sha256":  "1DA43D3E8B73E7EA127084CC2D26A8096DE4134ED55CD3374D8AAA1CB3A3C9D1",
+                      "match":  true,
+                      "preexisting":  false
+                  },
+                  {
+                      "path":  "tools\\tests\\test_product_design_store.py",
+                      "sha256":  "3682CECCCF7E8A3C48E6BECA150D98051DFCC28F9E8633EC764580C155AA8842",
+                      "canonical_sha256":  "3682CECCCF7E8A3C48E6BECA150D98051DFCC28F9E8633EC764580C155AA8842",
+                      "match":  true,
+                      "preexisting":  false
+                  },
+                  {
+                      "path":  "tools\\Watch-ProductDesignMemlog.ps1",
+                      "sha256":  "438F30C5608311CFF05571205A7E268BEAF72EA9B6E77A5962BE0A7762B8D7FB",
+                      "canonical_sha256":  "438F30C5608311CFF05571205A7E268BEAF72EA9B6E77A5962BE0A7762B8D7FB",
+                      "match":  true,
+                      "preexisting":  false
+                  }
+              ],
+    "final_sprint_sha256":  "4E9A7ECB2DCF590FEF7F95A6197EB1EBF65BA68DE6E8642AD7C30623358AE62A"
+}

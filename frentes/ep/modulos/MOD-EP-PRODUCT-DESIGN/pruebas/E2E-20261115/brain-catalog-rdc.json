@@ -1,0 +1,119 @@
+{
+    "validated":  true,
+    "executed_via":  "RDC PowerShell -\u003e py -3 -B -\u003e brain.py",
+    "package_version":  "6.12.4",
+    "brain_script":  "C:\\Users\\fila4\\Desktop\\SeryMente\\Metodologia\\frentes\\ep\\modulos\\MOD-EP-BMAD\\data\\Fila4\\bmad-opencode-smoke\\.agents\\skills\\bmad-brainstorming\\scripts\\brain.py",
+    "brain_script_sha256":  "F81B28FE590F607B95C7218A7CDD6FB6EB91D3A76B9671ACF54BCAF36FD4E6CA",
+    "catalog_csv":  "C:\\Users\\fila4\\Desktop\\SeryMente\\Metodologia\\frentes\\ep\\modulos\\MOD-EP-BMAD\\data\\Fila4\\bmad-opencode-smoke\\.agents\\skills\\bmad-brainstorming\\assets\\brain-methods.csv",
+    "catalog_csv_sha256":  "FFF112EABCA1A9CB8B190F8314BC47678BECC5782A2372E11C83DAA0E33B6DFD",
+    "category_count":  13,
+    "technique_count":  108,
+    "queried_categories":  [
+                               "collaborative"
+                           ],
+    "list_count":  8,
+    "selected_technique":  "Random Stimulation",
+    "categories":  [
+                       {
+                           "category":  "absurdist",
+                           "count":  6
+                       },
+                       {
+                           "category":  "biomimetic",
+                           "count":  6
+                       },
+                       {
+                           "category":  "collaborative",
+                           "count":  8
+                       },
+                       {
+                           "category":  "constraint",
+                           "count":  7
+                       },
+                       {
+                           "category":  "creative",
+                           "count":  10
+                       },
+                       {
+                           "category":  "cultural",
+                           "count":  7
+                       },
+                       {
+                           "category":  "deep",
+                           "count":  13
+                       },
+                       {
+                           "category":  "introspective_delight",
+                           "count":  8
+                       },
+                       {
+                           "category":  "quantum",
+                           "count":  6
+                       },
+                       {
+                           "category":  "speculative_future",
+                           "count":  8
+                       },
+                       {
+                           "category":  "structured",
+                           "count":  15
+                       },
+                       {
+                           "category":  "theatrical",
+                           "count":  7
+                       },
+                       {
+                           "category":  "wild",
+                           "count":  7
+                       }
+                   ],
+    "category_list":  [
+                          {
+                              "category":  "collaborative",
+                              "technique_name":  "Yes And Building",
+                              "description":  "Never negate; each person opens with \"Yes, and...\" and adds to the last idea, stacking a chain of accepted additions"
+                          },
+                          {
+                              "category":  "collaborative",
+                              "technique_name":  "Brain Writing Round Robin",
+                              "description":  "Everyone writes ideas silently, then passes their sheet; you build on whatever lands in front of you, round after round"
+                          },
+                          {
+                              "category":  "collaborative",
+                              "technique_name":  "Random Stimulation",
+                              "description":  "Pull a random word or image and force a link to the problem: \"how does THIS spark a solution?\""
+                          },
+                          {
+                              "category":  "collaborative",
+                              "technique_name":  "Role Playing",
+                              "description":  "Each person speaks as a different stakeholder, voicing what that role wants, fears, and would demand of the idea"
+                          },
+                          {
+                              "category":  "collaborative",
+                              "technique_name":  "Ideation Relay Race",
+                              "description":  "30-second turns, no pausing: add one idea, slap it to the next person, keep the baton moving before anyone overthinks"
+                          },
+                          {
+                              "category":  "collaborative",
+                              "technique_name":  "Idea Hot Potato",
+                              "description":  "One idea gets tossed around the circle; each catcher must mutate it in 10 seconds before passing, no repeats allowed"
+                          },
+                          {
+                              "category":  "collaborative",
+                              "technique_name":  "Steal And Upgrade",
+                              "description":  "Pick a neighbor\u0027s idea you envy, claim it out loud, then make it visibly better before handing it back improved"
+                          },
+                          {
+                              "category":  "collaborative",
+                              "technique_name":  "Fold The Paper",
+                              "description":  "Each person adds one line to a hidden drawing or sentence, sees only the previous fragment, then unfold the surreal whole"
+                          }
+                      ],
+    "show":  [
+                 {
+                     "category":  "collaborative",
+                     "technique_name":  "Random Stimulation",
+                     "description":  "Pull a random word or image and force a link to the problem: \"how does THIS spark a solution?\""
+                 }
+             ]
+}

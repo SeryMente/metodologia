@@ -1,0 +1,223 @@
+{
+    "status":  "PASS",
+    "created_at_utc":  "2026-11-15T17:45:07.2032873Z",
+    "test_mode":  true,
+    "production_enabled":  false,
+    "terminal_id":  "TESTMODE-PD",
+    "workspace_root":  "C:\\Users\\fila4\\AppData\\Local\\Temp\\_ep_product_design_synthetic\\PD-E2E-20261115",
+    "payload_file_sha256":  "D16ADB367B6C152316FFEA2D3BBC25105E6B8068BE6D656CE8505CF3CF38532F",
+    "profile_count":  6,
+    "session_count":  8,
+    "profiles":  [
+                     {
+                         "agent":  "Carson",
+                         "engine":  "bmad-brainstorming",
+                         "profile_file":  "CARSON-CHAT.md",
+                         "profile_sha256":  "ED51FF0F675DDFB3F6933242D8CF937F4D7E21C7473B9AE4E66E95A4D0E7E484",
+                         "declared_cis_source_commit":  null,
+                         "source_type":  "local ChatGPT conversation profile; not a native CIS runtime",
+                         "status":  "PASS",
+                         "sessions":  [
+                                          {
+                                              "mode":  "facilitator",
+                                              "status":  "PASS",
+                                              "project_id":  "01a1e04f-be5a-7f08-868e-c9d39c6175a1",
+                                              "session_id":  "01a1e04f-be5a-724b-8b7f-ba959e3be4f0",
+                                              "cycle_id":  "01a1e04f-c301-7257-855d-790dd9010773",
+                                              "version_id":  "01a1e04f-c301-72ce-9f66-647a949b7698",
+                                              "cycle_file":  "projects\\01a1e04f-be5a-7f08-868e-c9d39c6175a1\\sessions\\01a1e04f-be5a-724b-8b7f-ba959e3be4f0\\cycles\\000001-r001.json",
+                                              "cycle_sha256":  "977083890b74cff7bb8cdda33f291712d491fb37005514a60c08ee58544533d9",
+                                              "readback_sha256":  "977083890b74cff7bb8cdda33f291712d491fb37005514a60c08ee58544533d9",
+                                              "readback_content_match":  true,
+                                              "items":  2,
+                                              "show_session_cycles":  1,
+                                              "verify_sqlite_integrity":  "ok",
+                                              "verify_source_cycles":  1,
+                                              "verify_index_entries":  1
+                                          },
+                                          {
+                                              "mode":  "creative_partner",
+                                              "status":  "PASS",
+                                              "project_id":  "01a1e04f-ca57-7a40-b274-d1e29372e0fb",
+                                              "session_id":  "01a1e04f-ca58-713e-b307-04dffc7941a4",
+                                              "cycle_id":  "01a1e04f-cd51-7082-9ed6-9d84a1216145",
+                                              "version_id":  "01a1e04f-cd51-7862-9b49-02451e377e33",
+                                              "cycle_file":  "projects\\01a1e04f-ca57-7a40-b274-d1e29372e0fb\\sessions\\01a1e04f-ca58-713e-b307-04dffc7941a4\\cycles\\000001-r001.json",
+                                              "cycle_sha256":  "2327336e060621c13053a7d0111f91690af930e4c3c030e059679960b64e52d8",
+                                              "readback_sha256":  "2327336e060621c13053a7d0111f91690af930e4c3c030e059679960b64e52d8",
+                                              "readback_content_match":  true,
+                                              "items":  2,
+                                              "show_session_cycles":  1,
+                                              "verify_sqlite_integrity":  "ok",
+                                              "verify_source_cycles":  2,
+                                              "verify_index_entries":  2
+                                          },
+                                          {
+                                              "mode":  "ideate_for_me",
+                                              "status":  "PASS",
+                                              "project_id":  "01a1e04f-d4c4-7f6a-9606-03111b886789",
+                                              "session_id":  "01a1e04f-d4c5-7990-8436-fab97f06d406",
+                                              "cycle_id":  "01a1e04f-d75d-7429-b90c-b5be0ea8d37a",
+                                              "version_id":  "01a1e04f-d75d-7d75-9eec-c366b29be698",
+                                              "cycle_file":  "projects\\01a1e04f-d4c4-7f6a-9606-03111b886789\\sessions\\01a1e04f-d4c5-7990-8436-fab97f06d406\\cycles\\000001-r001.json",
+                                              "cycle_sha256":  "c528713167592d4f74505c4a1f6a0cd81482c4c4d1e2a7494dd3790b41bc636e",
+                                              "readback_sha256":  "c528713167592d4f74505c4a1f6a0cd81482c4c4d1e2a7494dd3790b41bc636e",
+                                              "readback_content_match":  true,
+                                              "items":  1,
+                                              "show_session_cycles":  1,
+                                              "verify_sqlite_integrity":  "ok",
+                                              "verify_source_cycles":  3,
+                                              "verify_index_entries":  3
+                                          }
+                                      ]
+                     },
+                     {
+                         "agent":  "Maya",
+                         "engine":  "bmad-cis-design-thinking",
+                         "profile_file":  "MAYA-CHAT.md",
+                         "profile_sha256":  "04A59D4FA2F859C4BA99629EF8F2312EBE1F58FC9D21CA5F64C86EAEA66C8736",
+                         "declared_cis_source_commit":  "658e71030be808181c1031f5461ee3613e7ff530",
+                         "source_type":  "local ChatGPT conversation profile; not a native CIS runtime",
+                         "status":  "PASS",
+                         "sessions":  [
+                                          {
+                                              "mode":  "creative_partner",
+                                              "status":  "PASS",
+                                              "project_id":  "01a1e04f-de6b-7b9a-bd64-af0de9b223ff",
+                                              "session_id":  "01a1e04f-de6b-751e-ba74-0a36caefe043",
+                                              "cycle_id":  "01a1e04f-e0f4-7a09-8fa3-059d75046810",
+                                              "version_id":  "01a1e04f-e0f4-7e6b-af1b-ef51dd3b199b",
+                                              "cycle_file":  "projects\\01a1e04f-de6b-7b9a-bd64-af0de9b223ff\\sessions\\01a1e04f-de6b-751e-ba74-0a36caefe043\\cycles\\000001-r001.json",
+                                              "cycle_sha256":  "09e30ff8e3d12daa1ff5837516f081d61f0251fd2320958047c23c63a4941773",
+                                              "readback_sha256":  "09e30ff8e3d12daa1ff5837516f081d61f0251fd2320958047c23c63a4941773",
+                                              "readback_content_match":  true,
+                                              "items":  2,
+                                              "show_session_cycles":  1,
+                                              "verify_sqlite_integrity":  "ok",
+                                              "verify_source_cycles":  4,
+                                              "verify_index_entries":  4
+                                          }
+                                      ]
+                     },
+                     {
+                         "agent":  "Dr. Quinn",
+                         "engine":  "bmad-cis-problem-solving",
+                         "profile_file":  "DR-QUINN-CHAT.md",
+                         "profile_sha256":  "7F9568D14AC4A4E2B95AA1345F11C26FAFE462DB7B68443DF72E6CA1AC304553",
+                         "declared_cis_source_commit":  "658e71030be808181c1031f5461ee3613e7ff530",
+                         "source_type":  "local ChatGPT conversation profile; not a native CIS runtime",
+                         "status":  "PASS",
+                         "sessions":  [
+                                          {
+                                              "mode":  "creative_partner",
+                                              "status":  "PASS",
+                                              "project_id":  "01a1e04f-e81e-781f-af75-1a8551564aa7",
+                                              "session_id":  "01a1e04f-e81e-764e-be56-27f7bda28e12",
+                                              "cycle_id":  "01a1e04f-eb53-70e1-8751-30229eddfec8",
+                                              "version_id":  "01a1e04f-eb53-7ce9-8650-92abd328a746",
+                                              "cycle_file":  "projects\\01a1e04f-e81e-781f-af75-1a8551564aa7\\sessions\\01a1e04f-e81e-764e-be56-27f7bda28e12\\cycles\\000001-r001.json",
+                                              "cycle_sha256":  "ab4f1763906c85c51d77bbd833fdd25e90a5d51ca8404d7af57fa87a975edf3f",
+                                              "readback_sha256":  "ab4f1763906c85c51d77bbd833fdd25e90a5d51ca8404d7af57fa87a975edf3f",
+                                              "readback_content_match":  true,
+                                              "items":  2,
+                                              "show_session_cycles":  1,
+                                              "verify_sqlite_integrity":  "ok",
+                                              "verify_source_cycles":  5,
+                                              "verify_index_entries":  5
+                                          }
+                                      ]
+                     },
+                     {
+                         "agent":  "Victor",
+                         "engine":  "bmad-cis-innovation-strategy",
+                         "profile_file":  "VICTOR-CHAT.md",
+                         "profile_sha256":  "71A1D87D2478BCA17ABDE6B438F9619C0CDB297F0161A5AC61D7C25A4FCF1F21",
+                         "declared_cis_source_commit":  "658e71030be808181c1031f5461ee3613e7ff530",
+                         "source_type":  "local ChatGPT conversation profile; not a native CIS runtime",
+                         "status":  "PASS",
+                         "sessions":  [
+                                          {
+                                              "mode":  "creative_partner",
+                                              "status":  "PASS",
+                                              "project_id":  "01a1e04f-f567-79cf-9d36-7d6216173e9a",
+                                              "session_id":  "01a1e04f-f567-75d2-a9b6-4814eebaafb1",
+                                              "cycle_id":  "01a1e04f-f883-79a0-82ad-d9d745a38940",
+                                              "version_id":  "01a1e04f-f883-763d-a7c4-aabe0f7d799c",
+                                              "cycle_file":  "projects\\01a1e04f-f567-79cf-9d36-7d6216173e9a\\sessions\\01a1e04f-f567-75d2-a9b6-4814eebaafb1\\cycles\\000001-r001.json",
+                                              "cycle_sha256":  "87080a42948002d20632058a5af06bb1091e6b2cd89a449f9d8a86fb98ab84ff",
+                                              "readback_sha256":  "87080a42948002d20632058a5af06bb1091e6b2cd89a449f9d8a86fb98ab84ff",
+                                              "readback_content_match":  true,
+                                              "items":  2,
+                                              "show_session_cycles":  1,
+                                              "verify_sqlite_integrity":  "ok",
+                                              "verify_source_cycles":  6,
+                                              "verify_index_entries":  6
+                                          }
+                                      ]
+                     },
+                     {
+                         "agent":  "Sophia",
+                         "engine":  "bmad-cis-storytelling",
+                         "profile_file":  "SOPHIA-CHAT.md",
+                         "profile_sha256":  "803E7B72D5C2210AE4093B1FD0280EF4EB81FD2841B7C0AAF56A86A7239B3CAB",
+                         "declared_cis_source_commit":  "658e71030be808181c1031f5461ee3613e7ff530",
+                         "source_type":  "local ChatGPT conversation profile; not a native CIS runtime",
+                         "status":  "PASS",
+                         "sessions":  [
+                                          {
+                                              "mode":  "creative_partner",
+                                              "status":  "PASS",
+                                              "project_id":  "01a1e050-01f2-7413-814b-9202b342bdd8",
+                                              "session_id":  "01a1e050-01f2-7a3b-9c9f-0a6bfc3a14c8",
+                                              "cycle_id":  "01a1e050-04e6-7018-a61b-b1b8d94954d9",
+                                              "version_id":  "01a1e050-04e7-7be3-af60-a72953a7ea92",
+                                              "cycle_file":  "projects\\01a1e050-01f2-7413-814b-9202b342bdd8\\sessions\\01a1e050-01f2-7a3b-9c9f-0a6bfc3a14c8\\cycles\\000001-r001.json",
+                                              "cycle_sha256":  "29bfca107a533aac95a8fb075d2fc42966bfeca1c57ee3c1f20b6a6a15caacad",
+                                              "readback_sha256":  "29bfca107a533aac95a8fb075d2fc42966bfeca1c57ee3c1f20b6a6a15caacad",
+                                              "readback_content_match":  true,
+                                              "items":  2,
+                                              "show_session_cycles":  1,
+                                              "verify_sqlite_integrity":  "ok",
+                                              "verify_source_cycles":  7,
+                                              "verify_index_entries":  7
+                                          }
+                                      ]
+                     },
+                     {
+                         "agent":  "Caravaggio",
+                         "engine":  "bmad-cis-agent-presentation-master",
+                         "profile_file":  "CARAVAGGIO-CHAT.md",
+                         "profile_sha256":  "258BAE51E641094AB36FE1D881CE0F29699022DBA28F730C5F45A2B2A4ACAB38",
+                         "declared_cis_source_commit":  "658e71030be808181c1031f5461ee3613e7ff530",
+                         "source_type":  "local ChatGPT conversation profile; not a native CIS runtime",
+                         "status":  "PASS",
+                         "sessions":  [
+                                          {
+                                              "mode":  "creative_partner",
+                                              "status":  "PASS",
+                                              "project_id":  "01a1e050-0cf1-72b0-8f67-2f95f51f4ffa",
+                                              "session_id":  "01a1e050-0cf1-7b67-a6e8-bda13f790ddd",
+                                              "cycle_id":  "01a1e050-0ffd-71d7-a0d5-793fc107e9e0",
+                                              "version_id":  "01a1e050-0ffd-7297-9ea3-4ebf0b11883f",
+                                              "cycle_file":  "projects\\01a1e050-0cf1-72b0-8f67-2f95f51f4ffa\\sessions\\01a1e050-0cf1-7b67-a6e8-bda13f790ddd\\cycles\\000001-r001.json",
+                                              "cycle_sha256":  "959f4ccb5866144db7f982b56933ccde4a6dabf0efb3900a57695c1ba37967d5",
+                                              "readback_sha256":  "959f4ccb5866144db7f982b56933ccde4a6dabf0efb3900a57695c1ba37967d5",
+                                              "readback_content_match":  true,
+                                              "items":  2,
+                                              "show_session_cycles":  1,
+                                              "verify_sqlite_integrity":  "ok",
+                                              "verify_source_cycles":  8,
+                                              "verify_index_entries":  8
+                                          }
+                                      ]
+                     }
+                 ],
+    "memlog_audit":  "PASS",
+    "rdc_command_log":  "C:\\Users\\fila4\\Desktop\\SeryMente\\Metodologia-EP-RETOMA-20261114\\frentes\\ep\\modulos\\MOD-EP-PRODUCT-DESIGN\\pruebas\\E2E-20261115\\rdc-commands.jsonl",
+    "memlog_events":  0,
+    "memlog_snapshot_differences":  0,
+    "memlog_watcher_errors":  0,
+    "memlog_watch_roots":  3,
+    "rdc_command_count":  33,
+    "rdc_command_log_sha256":  "978E56752D75F32D2D41494D4246F8669C9F944A5FD780AC2C4A94FC45D94F6A"
+}

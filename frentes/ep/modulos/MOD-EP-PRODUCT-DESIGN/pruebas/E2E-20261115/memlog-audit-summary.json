@@ -1,0 +1,24 @@
+{
+    "status":  "PASS",
+    "started_at_utc":  "2026-11-15T17:22:11.0190898Z",
+    "stopped_at_utc":  "2026-11-15T17:45:20.6648200Z",
+    "watcher_count":  3,
+    "roots":  [
+                  "C:\\Users\\fila4\\Desktop\\SeryMente\\Metodologia-EP-RETOMA-20261114\\frentes\\ep\\modulos\\MOD-EP-PRODUCT-DESIGN",
+                  "C:\\Users\\fila4\\Desktop\\SeryMente\\Metodologia\\frentes\\ep\\modulos\\MOD-EP-BMAD\\data\\Fila4\\bmad-opencode-smoke",
+                  "C:\\Users\\fila4\\AppData\\Local\\Temp\\_ep_product_design_synthetic\\PD-E2E-20261115"
+              ],
+    "filter":  "*.memlog.md",
+    "events":  0,
+    "watcher_errors":  0,
+    "before_files":  0,
+    "after_files":  0,
+    "snapshot_differences":  [
+
+                             ],
+    "snapshot_before_complete":  true,
+    "snapshot_after_complete":  true,
+    "before_path":  "C:\\Users\\fila4\\Desktop\\SeryMente\\Metodologia-EP-RETOMA-20261114\\frentes\\ep\\modulos\\MOD-EP-PRODUCT-DESIGN\\pruebas\\E2E-20261115\\memlog-snapshot-before.json",
+    "after_path":  "C:\\Users\\fila4\\Desktop\\SeryMente\\Metodologia-EP-RETOMA-20261114\\frentes\\ep\\modulos\\MOD-EP-PRODUCT-DESIGN\\pruebas\\E2E-20261115\\memlog-snapshot-after.json",
+    "events_path":  "C:\\Users\\fila4\\Desktop\\SeryMente\\Metodologia-EP-RETOMA-20261114\\frentes\\ep\\modulos\\MOD-EP-PRODUCT-DESIGN\\pruebas\\E2E-20261115\\memlog-events.jsonl"
+}

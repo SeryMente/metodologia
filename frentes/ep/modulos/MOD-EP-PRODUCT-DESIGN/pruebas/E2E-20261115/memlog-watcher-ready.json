@@ -1,0 +1,21 @@
+{
+    "ready":  true,
+    "pid":  19300,
+    "started_at_utc":  "2026-11-15T17:22:11.0190898Z",
+    "roots":  [
+                  "C:\\Users\\fila4\\Desktop\\SeryMente\\Metodologia-EP-RETOMA-20261114\\frentes\\ep\\modulos\\MOD-EP-PRODUCT-DESIGN",
+                  "C:\\Users\\fila4\\Desktop\\SeryMente\\Metodologia\\frentes\\ep\\modulos\\MOD-EP-BMAD\\data\\Fila4\\bmad-opencode-smoke",
+                  "C:\\Users\\fila4\\AppData\\Local\\Temp\\_ep_product_design_synthetic\\PD-E2E-20261115"
+              ],
+    "watcher_count":  3,
+    "filter":  "*.memlog.md",
+    "include_subdirectories":  true,
+    "events":  [
+                   "Created",
+                   "Changed",
+                   "Deleted",
+                   "Renamed",
+                   "Error"
+               ],
+    "snapshot_before":  "C:\\Users\\fila4\\Desktop\\SeryMente\\Metodologia-EP-RETOMA-20261114\\frentes\\ep\\modulos\\MOD-EP-PRODUCT-DESIGN\\pruebas\\E2E-20261115\\memlog-snapshot-before.json"
+}
