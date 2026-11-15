@@ -5098,7 +5098,7 @@ El B archivado conserva la inspección de solo lectura y la preparación del res
 El dispositivo desde el que se recuperó el archivo se muestra como `015RENTA02`; se preserva la exclusión operativa de `01RENTA02` indicada por el modelo anterior. No se ejecutó ninguna operación de host, bóveda, credenciales o B2 durante esta retoma. El respaldo permanece detenido hasta que el operador autorice expresamente el prompt local en PC10 con la frase `AUTORIZO PROMPT LOCAL EN PC10`.
 ## 154. Continuidad del desbloqueo Cryptomator y clasificación de la credencial · 2026-11-15 · 13:53 America/Mexico_City
 
-**Registro de retoma:** [RETOMA-EP-2026-11-15-1353.md](documentos/RETOMA-EP-2026-11-15-1353.md). Referencia local `EP-RETOMA-20261115-1353`; no es folio FOL1 ni identidad nativa. El registro captura el tramo visible posterior al export de las 11:24; no se recibió un export íntegro del chat actual. El export y la última salida del ciclo anterior permanecen en §153, sin duplicación.
+**Registro de retoma:** [RETOMA-EP-2026-11-15-1353.md](documentos/RETOMA-EP-2026-11-15-1353.md). Referencia local `EP-RETOMA-20261115-1353`; no es folio FOL1 ni identidad nativa. El registro captura el tramo visible posterior al export de las 11:24; no se recibió un export íntegro del chat actual. La salida extensa anterior que aportó el operador se preserva literalmente en [SALIDA-ANTERIOR-EP-20261115-RETOMA.md](documentos/SALIDA-ANTERIOR-EP-20261115-RETOMA.md). El artefacto `ULTIMA-SALIDA-EP-20261115-1124.md` conserva solo el bloque «Estado de contingencia» del export, no la salida extensa completa; ambas coberturas quedan diferenciadas.
 
 ### Estado técnico heredado y puente RSA
 
