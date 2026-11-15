@@ -107,4 +107,5 @@ Estado documental añadido: OEP v0.3.74, §§140–141. La organización física
 ## Continuidad Cryptomator · 2026-11-15 · 13:53
 
 - [Retoma visible y estado del puente RSA](documentos/RETOMA-EP-2026-11-15-1353.md): clasifica la incertidumbre sobre el material en el portapapeles sin leerlo ni transmitirlo; recoge el estado técnico conocido y los límites del intento.
+- [Última salida del ciclo (incluye la reproducción literal del último ciclo anterior)](documentos/ULTIMA-SALIDA-EP-20261115-1353.md).
 - [OEP §154](OEP.md#154-continuidad-del-desbloqueo-cryptomator-y-clasificacion-de-la-credencial--2026-11-15--1353-america_mexico_city): checkpoint vivo; no se ejecutó emisor, desbloqueo, montaje, copia de SeryMente ni transferencia B2 durante esta retoma.
