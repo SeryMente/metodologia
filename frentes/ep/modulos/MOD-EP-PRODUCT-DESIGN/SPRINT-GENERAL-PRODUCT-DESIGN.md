@@ -1,9 +1,9 @@
-# Sprint general · Product Design con BMAD y CIS
+# Sprint general · Product Design con Protocolo Forja y perfiles CIS
 
-**Revisión:** aprobado para ejecución en TestMode · 2026-11-15
-**Estado del documento:** APROBADO PARA EJECUCIÓN · ajustes de DAG, TestMode y auditoría memlog incorporados
-**Estado de ejecución:** TP-02A → TP-01 → TP-03 autorizados en workspace sintético; TP-02B bloqueado hasta EP-C0.1..C0.4; commit/push no autorizados
-**Versión de producto objeto del sprint:** V1.0 · seis perfiles de agente
+**Revisión:** Protocolo Forja 1.0 · 2026-11-15 · propuesta metodológica para evaluación del operador
+**Estado del documento:** PROPUESTA INTEGRADA · pendiente de aceptación del operador; motor de persistencia y pruebas aprobados se mantienen intactos
+**Estado de ejecución:** validación sintética Forja en TestMode; TP-02B permanece bloqueado hasta EP-C0.1..C0.4; commit/push de esta propuesta no autorizados
+**Versión de producto objeto del sprint:** V1.0 · seis perfiles CIS + perfil metodológico Forja
 **Módulo:** MOD-EP-PRODUCT-DESIGN · subordinado al frente Entorno Persistente (EP)
 **Tareas EP existentes:** EP-TASK-009 (TP-01) y EP-TASK-010 (TP-02). TP-03 no recibe un ID EP-TASK nuevo.
 
@@ -15,8 +15,8 @@
 
 V1.0 será una capacidad operable desde una conversación ordinaria de ChatGPT, conectada mediante RDC con los archivos locales autorizados, capaz de:
 
-1. Activar cualquiera de los seis perfiles: Carson, Maya, Dr. Quinn, Victor, Sophia y Caravaggio.
-2. Consultar las fuentes locales pertinentes al agente. Para Carson, consultar dinámicamente el catálogo BMAD 6.12.4 instalado en el host.
+1. Activar el perfil metodológico Forja como rector del diseño; conservar Carson, Maya, Dr. Quinn, Victor, Sophia y Caravaggio como perfiles CIS especialistas.
+2. Aplicar Protocolo Forja F0–F6: mapear referentes con evidencia actual, clasificar esenciales y modificadores, obtener elecciones del operador y sintetizar R# + DL#. El catálogo BMAD no dirige este flujo.
 3. Conducir una sesión real, producir ciclos de ideación con autoría y procedencia explícitas y generar el JSON contractual del almacén.
 4. Invocar realmente el CLI PowerShell mediante RDC y guardar proyectos, sesiones y ciclos en el workspace EP que haya sido verificado.
 5. Consultar, verificar, buscar y recuperar versiones persistidas; reconstruir el contexto de una sesión desde ShowSession.
@@ -29,9 +29,9 @@ V1.0 será una capacidad operable desde una conversación ordinaria de ChatGPT, 
 | Decisión | Estado | Aplicación |
 |---|---|---|
 | ChatGPT en conversación ordinaria es la interfaz principal. | CONFIRMADA | Sin portal, dashboard ni selector propio como requisito. |
-| V1.0 comprende los seis agentes CIS. | CONFIRMADA | Carson en TP-01; cinco perfiles restantes en TP-03. |
+| V1.0 comprende seis perfiles CIS y el perfil metodológico Forja. | ALCANCE AMPLIADO POR ESTA ADENDA | Forja es rector del diseño; los seis perfiles CIS se conservan como especialistas. La validación sintética de Forja no equivale a E2E aceptado. |
 | ChatGPT + RDC es el circuito de ejecución. | CONFIRMADA | ChatGPT conduce; RDC consulta fuentes y ejecuta el CLI local. |
-| BMAD Core 6.12.4 es el motor de Brainstorming de Carson. | CONFIRMADA COMO FUENTE LOCAL | Debe comprobarse dinámicamente en cada sesión aceptada; no basta citar el número de versión. |
+| Protocolo Forja es el método rector de ideación y diseño. | PROPUESTA DE ESTA ADENDA | F0–F6 obligatorios; salida R# + DL#; hard-gate de aprobación explícita antes de código o persistencia. |
 | Guardado por ciclo, no por carácter. | CONFIRMADA | Preservar contenido significativo íntegro, autoría y procedencia. |
 | Proyecto auto-nombrado y etiquetado cuando el operador no lo nombra. | CONFIRMADA | Título derivado de tema y fecha. |
 | Biblioteca FTS5 con filtros esenciales. | CONFIRMADA | Filtros: proyecto, etiqueta, madurez y agente. |
@@ -51,8 +51,8 @@ Los requisitos siguientes son acumulativos. Un requisito queda aceptado solo con
 | ID | Requisito verificable | Criterio de aceptación / evidencia |
 |---|---|---|
 | R-01 | Interfaz ChatGPT + RDC | Desde una conversación normal se activa un perfil, se consulta su fuente local, se produce una salida contractual, se invoca el CLI mediante RDC y se recupera el resultado. Sin intervención manual para copiar/reconstruir el JSON entre etapas. |
-| R-02 | Contrato común de los seis perfiles | Cada uno de los seis archivos de prompts contiene: fuentes y versión fijadas; parámetros exactos del wrapper; JSON estricto para Initialize, SaveCycle, ShowSession y Verify; enums exactos; tratamiento de errores; secuencia de read-back; prohibición de declarar guardado sin confirmación. |
-| R-03 | Catálogo dinámico de Carson | Carson consulta por RDC el brain.py instalado: categories y después list/show de las técnicas elegidas. Registra las técnicas realmente devueltas por el catálogo, no nombres recordados ni una lista escrita en el prompt. |
+| R-02 | Contrato común de perfiles | Los perfiles que persisten usan parámetros exactos del wrapper, JSON estricto para Initialize, SaveCycle, ShowSession y Verify, enums exactos, manejo de errores y read-back. Forja añade F0–F6 y hard-gate propios. |
+| R-03 | Protocolo Forja como método rector | El perfil Forja ejecuta secuencialmente F0–F6, presenta referentes con evidencia, ofrece cada esencial en Austero/Medio/De Lujo, analiza exclusión mutua y enfoques competitivos de cada modificador, y sintetiza el contrato completo R# + DL#. No usa BMAD Brainstorming como método rector. |
 | R-04 | Exclusión efectiva de memlog | En cada E2E de agente se ejecuta una auditoría negativa automatizada: cero invocaciones de memlog.py y cero eventos de creación, escritura, renombrado o eliminación de archivos .memlog.md en los roots monitorizados. El test falla ante cualquier evento. Una instrucción textual aislada no satisface R-04. |
 | R-05 | Proyecto y sesión | Initialize crea un proyecto auto-nombrado cuando falta project_title, con origen del nombre y tags esenciales; crea una sesión asociada al agente, motor y modo. |
 | R-06 | Ciclos completos e inmutables | SaveCycle conserva el texto íntegro de las ideas, autoría, madurez, técnicas, preguntas y decisiones. Repetir el mismo payload es idempotente; una corrección genera revisión nueva, no sobrescribe la versión anterior. |
@@ -67,20 +67,21 @@ Los requisitos siguientes son acumulativos. Un requisito queda aceptado solo con
 | R-15 | Workspace EP protegido | En producción no se acepta una compuerta booleana autodeclarada. El wrapper exige una comprobación verificable provista por EP que acredite montaje, bóveda, ruta, identidad de terminal, permisos y read-back. |
 | R-16 | Backup/restore específico | El mecanismo EP de backup incluye expresamente MOD-EP-PRODUCT-DESIGN/data/<TerminalId>/brainstorming. Se verifica carga, lectura de vuelta, hash y restauración en staging; los recibos de otros snapshots no sustituyen esta prueba. |
 | R-17 | Sincronización de repositorio | El clon de retoma, origin/main y la carpeta canónica SeryMente\Metodologia se mantienen separados. Toda promoción requiere aprobación, publicación autorizada, sincronización por el mecanismo EP confirmado y cotejo SHA/read-back de los tres estados. |
-| R-18 | Aceptación de agentes sin simulación | Cada uno de los seis perfiles completa al menos un flujo E2E real ChatGPT + RDC + fuentes + CLI + Verify + ShowSession + auditoría negativa memlog. Escenarios de texto guardados previamente no cuentan. |
+| R-18 | Aceptación de perfiles sin simulación | Cada perfil que se declare aceptado completa su E2E real ChatGPT + RDC + fuentes + CLI + Verify + ShowSession + auditoría memlog. La validación sintética de Forja acredita únicamente su flujo contractual; su aceptación interactiva se registra por separado. |
 
 **Perfiles contractuales y engine obligatorio:**
 
 | Archivo | agent | engine |
 |---|---|---|
-| prompts/CARSON-CHAT.md | Carson | bmad-brainstorming |
+| prompts/CARSON-CHAT.md | Carson (perfil CIS heredado) | bmad-brainstorming (compatibilidad de registro) |
+| prompts/FORJA-CHAT.md | Forja (perfil metodológico rector) | Carson / bmad-brainstorming (adaptador de compatibilidad únicamente) |
 | prompts/MAYA-CHAT.md | Maya | bmad-cis-design-thinking |
 | prompts/DR-QUINN-CHAT.md | Dr. Quinn | bmad-cis-problem-solving |
 | prompts/VICTOR-CHAT.md | Victor | bmad-cis-innovation-strategy |
 | prompts/SOPHIA-CHAT.md | Sophia | bmad-cis-storytelling |
 | prompts/CARAVAGGIO-CHAT.md | Caravaggio | bmad-cis-agent-presentation-master |
 
-Los seis perfiles comparten los mismos comandos, parámetros y schemas de persistencia. El valor mode describe el modo común de interacción almacenado; para los perfiles CIS distintos de Carson se usa creative_partner como valor neutro de colaboración, sin imponerles las tres reglas de stance específicas de BMAD Brainstorming. Cada perfil debe construir el JSON, invocar el CLI por RDC y comprobar la salida; no puede limitarse a describir cómo lo haría.
+Los perfiles que persisten comparten los mismos comandos, parámetros y schemas. Forja usa creative_partner como valor neutro admitido por el esquema; sus fases y hard-gates prevalecen sobre cualquier semántica heredada de Carson/BMAD. El registro actual no admite Forja como agent nativo: agent=Carson y engine=bmad-brainstorming son un adaptador de metadatos, no una activación del método BMAD. Forja debe construir el JSON, invocar el CLI por RDC y comprobar la salida; no puede limitarse a describir cómo lo haría.
 ### 3.1 Enums y formatos obligatorios
 
 No se traducen ni se aceptan alias para los valores de persistencia:
@@ -89,7 +90,7 @@ No se traducen ni se aceptan alias para los valores de persistencia:
 - modo: facilitator | creative_partner | ideate_for_me
 - estado de sesión: active | paused | completed
 - fase pública del ciclo: divergence | convergence | synthesis | pause | completed
-- autoría: operator o uno de los seis nombres de agente registrados en Initialize
+- autor?a: operator o el agent de sesi?n; Forja usa agent=Carson como adaptador y preserva la procedencia metodol?gica en provenance.
 - archivo: NNNNNN-rNNN.json
 
 El ciclo interno de restauración puede marcar stage=restore; ese valor lo asigna RestoreVersion, no el agente en un SaveCycle ordinario.
@@ -356,7 +357,7 @@ El comando es una especificación de interfaz para la versión corregida del wra
 ### 4.3 Reglas del ciclo de agente
 
 1. El perfil identifica agente, motor y modo antes de Initialize.
-2. El perfil consulta las fuentes que correspondan. Carson no puede recomendar técnicas antes de consultar el catálogo instalado.
+2. Forja consulta y documenta referentes de la industria en F1; Carson solo consulta el catálogo BMAD cuando el operador invoca expresamente el perfil heredado Carson.
 3. El perfil conserva todas las ideas con texto íntegro, autoría y madurez.
 4. Al finalizar una tanda, transición, pausa o cierre, construye el payload SaveCycle con las ideas y decisiones desde el último ciclo.
 5. Ejecuta SaveCycle mediante RDC y evalúa exit code y JSON de resultado.
@@ -365,7 +366,7 @@ El comando es una especificación de interfaz para la versión corregida del wra
 8. Si cualquiera de las verificaciones falla, informa NO CONFIRMADO / ERROR; no afirma que el ciclo esté guardado ni inicia silenciosamente un ciclo posterior.
 9. Una reanudación ejecuta ShowSession, verifica el contenido devuelto y recupera el último ciclo válido antes de continuar.
 
-## 5. Carson y catálogo BMAD 6.12.4
+## 5. Carson y catálogo BMAD (referencia heredada; no rector de diseño)
 
 La ruta local previamente observada es:
 
@@ -373,7 +374,7 @@ La ruta local previamente observada es:
 C:\Users\fila4\Desktop\SeryMente\Metodologia\frentes\ep\modulos\MOD-EP-BMAD\app\node_modules\bmad-method
 ~~~~
 
-El perfil Carson debe comprobar en tiempo de ejecución la versión instalada y la existencia de SKILL.md, brain.py y assets\brain-methods.csv. No basta con incorporar al prompt el dato histórico de 108 técnicas.
+Esta subsección documenta únicamente el perfil Carson heredado cuando se solicite expresamente. No gobierna ni se ejecuta como parte del flujo Forja. Forja no consulta brain.py para elegir el método de diseño; su procedimiento rector está especificado en docs/PROTOCOLO-FORJA.md.
 
 Secuencia RDC obligatoria:
 
@@ -625,7 +626,7 @@ La ruta crítica de esta autorización es estrictamente secuencial: TP-02A → T
 | B-03 | Identidad terminal | TerminalId se recibe como texto y no se contrasta con identidad de dispositivo/sesión. | EP vincula TerminalId, RDC UUID, SID y raíz autorizada. |
 | B-04 | Backup Product Design | Los recibos R2/R4 revisados no incluyen MOD-EP-PRODUCT-DESIGN ni su almacén de brainstorming. | Snapshot, upload, read-back, SHA y restore específicos PASS. |
 | B-05 | Agentes no conectados | Los seis prompts no ejecutan actualmente el ciclo del CLI. | Contrato común y seis E2E individuales PASS. |
-| B-06 | BMAD dinámico | El catálogo 6.12.4 existe y brain.py categories se ejecutó, pero Carson aún no acredita categories/list/show dentro de un E2E. | Consulta dinámica registrada y vinculada a la sesión persistida. |
+| B-06 | Forja sin E2E interactivo | La validación sintética del flujo Forja no acredita todavía una sesión interactiva aceptada con el operador. | E2E Forja ChatGPT + RDC tras evaluación y aprobación del perfil; no requiere categories/list/show de BMAD. |
 | B-07 | Memlog | El SKILL upstream contiene instrucciones memlog; el override de texto no bloquea por sí solo ejecución/escritura. | Auditoría de proceso y filesystem integrada; cero eventos en todos los E2E. |
 | B-08 | Consistencia de almacenamiento | El motor actual puede guardar JSON y devolver ok=true aunque el índice falle; no tiene verificación SQLite integral. | Journal/recovery, transacción de índice, Verify ampliado y fault-injection PASS. |
 | B-09 | Concurrencia y locks | Revisión/idempotencia se consulta antes de adquirir el lock; lock obsoleto sin recuperación verificada. | Lock previo a lectura, TTL seguro y pruebas concurrentes PASS. |
@@ -653,12 +654,12 @@ Flujo obligatorio después de aprobación expresa:
 
 V1.0 solo se acepta cuando se cumplen todos los siguientes gates:
 
-- G1 — Contrato: los seis perfiles respetan las entradas/salidas JSON y el CLI definidos aquí.
-- G2 — Carson/BMAD: una sesión real consulta categories/list/show por RDC y usa las técnicas devueltas.
+- G1 — Contrato: Forja respeta F0–F6, hard-gate, R# + DL# y el esquema exacto del wrapper; los seis perfiles CIS mantienen su contrato común de persistencia.
+- G2 — Forja: una sesión real completa F0–F5, presenta R# + DL#, espera aprobación explícita y solo después persiste mediante el wrapper; el método no depende del catálogo BMAD.
 - G3 — TP-02A: motor y wrapper pasan schema, rutas, locks, concurrencia, crash-recovery, índice, filtros, restore y Verify.
 - G4 — EP/TP-02B: workspace y terminal verificados mediante EP; backup y restore incluyen Product Design.
 - G5 — Memlog: cada E2E acredita cero invocaciones y cero escrituras .memlog.md mediante monitorización durante el ciclo.
-- G6 — Agentes: Carson y los otros cinco completan cada uno al menos un flujo E2E real.
+- G6 — Perfiles: Forja y los seis perfiles CIS se aceptan mediante evidencias E2E independientes; la prueba sintética no cuenta como aceptación interactiva.
 - G7 — Persistencia: cada perfil ejecuta Initialize, SaveCycle, ShowSession y Verify; SHA y contenido de lectura de vuelta coinciden.
 - G8 — Funciones V1.0: búsqueda por texto y filtros project/tag/maturity/agent; RestoreVersion conserva la fuente; ShowSession permite reanudar.
 - G9 — Integridad: no hay locks activos abandonados, journal pendiente, índice divergente, ruta fuera del workspace ni errores de integridad SQLite.
@@ -698,7 +699,7 @@ La evidencia de cada reejecución correctiva se vincula a código/hash, terminal
 - SRC-PD-20261113-ALCANCE-02: chat como interfaz suficiente; Brain Selector y Keepsake no deben introducir trabajo adicional para el operador.
 - SRC-PD-20261113-CORRECCION-01: Superpowers solo como referencia; estructura de tareas y rigurosidad esperada.
 - Rectificación del operador del 2026-11-14: V1.0 comprende seis agentes; Carson TP-01 y los cinco restantes TP-03.
-- BMAD Core local: paquete 6.12.4; skill bmad-brainstorming y scripts/brain.py.
+- BMAD Core local: paquete 6.12.4, skill bmad-brainstorming y scripts/brain.py son antecedentes del perfil Carson heredado, no autoridad del método Forja.
 - CIS: commit de referencia 658e71030be808181c1031f5461ee3613e7ff530. Debe revalidarse el contenido local de cada perfil antes de su E2E.
 - EP: OEP y tareas vigentes EP-TASK-002 y EP-TASK-004 son las fuentes para backup, bóveda, identidad y seguridad. No se crea un objeto EP ni una autoridad paralela desde Product Design.
 
@@ -706,10 +707,34 @@ La evidencia de cada reejecución correctiva se vincula a código/hash, terminal
 
 ## 18. Estado de autorización de esta revisión
 
-**Entregable de este turno:** exclusivamente esta revisión del Sprint.
+**Entregables de esta revisión:** docs/PROTOCOLO-FORJA.md, prompts/FORJA-CHAT.md y esta alineación del Sprint.
 
-**Permitido por esta instrucción:** corregir y materializar este documento de diseño en el clon de retoma para su evaluación.
+**Permitido:** crear y revisar esos dos documentos y ejecutar una validación sintética del flujo con el wrapper, exclusivamente en TestMode y bajo la raíz sintética autorizada. El motor Python, wrapper y suite aprobada permanecen intactos.
 
-**No autorizado en esta fase:** modificar perfiles, código Python, wrapper PowerShell, pruebas, READMEs de tareas, índices EP, OEP, controles, bóveda, Cryptomator, configuración de backup, ni archivos de la carpeta canónica; ejecutar pruebas de agentes o persistencia real; commit; push; sincronización/promoción.
+**No autorizado:** modificar código Python, wrapper, pruebas versionadas, perfiles ajenos a Forja, READMEs, archivos externos al módulo, controles/OEP/bóveda/backup o la carpeta canónica; usar datos reales o workspace productivo; commit, push o promoción.
 
-**Estado de cierre:** PENDIENTE DE EVALUACIÓN DEL OPERADOR. La autorización para implementar el código se solicitará únicamente después de aceptar esta revisión.
+**Estado:** PENDIENTE DE EVALUACIÓN DEL OPERADOR. La validación sintética no acepta el perfil en producción ni habilita TP-02B.
+
+## 19. Adenda metodológica — sustitución del brainstorming genérico por Protocolo Forja
+
+Esta adenda, con fecha 2026-11-15, prevalece sobre cualquier texto anterior de este Sprint que presente BMAD Brainstorming, Carson o brain.py como autoridad metodológica para ideación y diseño de producto. El método rector pasa a ser **Protocolo Forja**, formalizado en docs/PROTOCOLO-FORJA.md y ejecutado por prompts/FORJA-CHAT.md.
+
+### 19.1 Alcance metodológico
+
+- Forja opera F0 Enmarque → F1 Mapeo de referentes → F2 Extracción y clasificación → F3 Selección del operador → F4 Contrato R# + DL# → F5 Aprobación explícita → F6 Persistencia autorizada.
+- Cada esencial se presenta en Austero, Medio y De Lujo; el operador selecciona el alcance. Cada modificador se presenta individualmente y contiene análisis de exclusión mutua/dependencias y competencia entre enfoques de referentes.
+- El diseño final se divide exactamente en R# (invariantes cerrados) y DL# (decisiones delegadas explícitamente). R# prevalece sobre DL#; el constructor no puede alterar ni omitir R#.
+- Antes de la aprobación explícita del contrato completo está prohibido implementar, inicializar el almacén o persistir. La aprobación del diseño no autoriza por sí sola implementar código ni abrir compuertas EP.
+- Carson/BMAD permanece como perfil/catálogo heredado; no dirige el método Forja ni se requiere invocar brain.py para diseñar bajo este protocolo.
+
+### 19.2 Compatibilidad de persistencia sin alterar el motor
+
+El motor aprobado mantiene intactos su código, enums, pruebas y wrapper. Como el registro actual solo admite Carson ↔ bmad-brainstorming, el perfil Forja utiliza ese par exclusivamente como adaptador de metadatos, y etiqueta el registro con protocolo-forja y perfil:forja. El contenido de los items conserva la autoría real y los IDs R#/DL#. Esta limitación no equivale a registrar Forja como agente de primera clase; cualquier extensión del registro requiere alcance, pruebas y aprobación separados.
+
+Tras la aprobación del operador, el perfil utiliza el esquema existente: Initialize → SaveCycle → ShowSession → Verify. El payload no admite campos adicionales. TestMode solo opera bajo la raíz sintética autorizada; el workspace productivo sigue bloqueado hasta EP-C0/TP-02B.
+
+### 19.3 Validación y estado de esta adenda
+
+Se autoriza para esta fase una validación sintética de hard-gate, estructura documental y compatibilidad de los payloads con el wrapper existente. La prueba sintética no equivale a E2E interactivo con operador, aceptación productiva, verificación EP ni autorización de TP-02B.
+
+Archivos autorizados: docs/PROTOCOLO-FORJA.md, prompts/FORJA-CHAT.md y este Sprint. No modificar los archivos de EP externos al módulo. No modificar tools/product_design_store.py, tools/Invoke-ProductDesignStore.ps1 ni tools/tests. No hacer commit, push ni sincronización hasta que el operador evalúe el diseño y lo solicite expresamente.
