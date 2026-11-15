@@ -5,15 +5,15 @@
   "front_ocp": "frentes/ep/",
   "state_object": "frentes/ep/OEP.md",
   "status": "owned",
-  "owner_thread": "chatgpt-C-EP-RETOMA-20261114-02-01a1dc30-edd1-7978-bb07-b0c2db72b0c3",
-  "owner_thread_identity_kind": "operational alias + local UUIDv7; native ChatGPT conversation ID not exposed by available tools",
-  "instance": "chatgpt-ep-owner-2026-11-14-02-01a1dc30-edd1-7978-bb07-b0c2db72b0c3",
-  "generation": 5,
-  "authorization_ref": "EP-RETOMA-20261114-1632; A literal conservada en frentes/ep/originales/INSTRUCCION-RETOMA-RESPONSABILIDAD-EP-20261114-1632.txt; DUG P037/P039.",
-  "scope": "Retake sole operational responsibility for the Entorno Persistente front frentes/ep/ in SeryMente/metodologia. Current scope is documentary governance, continuity, triage and coordination. Preserve all existing security, host, vault, ciphertext, backup, credential and implementation gates. This transfer does not itself authorize code construction, host/RDC operations, access to credentials or real vault/ciphertext/B2 data, destructive changes, DUG/GOW/MCP amendments, or bypass of the P012/P013 in-person review.",
+  "owner_thread": "chatgpt-C-EP-RETOMA-20261115-1124-01a1e043-37ba-7684-b55b-03fb38f3ef2f",
+  "owner_thread_identity_kind": "operational alias + locally generated UUIDv7; native ChatGPT conversation ID not exposed",
+  "instance": "chatgpt-ep-owner-2026-11-15-01a1e043-37ba-7684-b55b-03fb38f3ef2f",
+  "generation": 6,
+  "authorization_ref": "EP-RETOMA-20261115-1124; autorización directa del operador en esta conversación; persistencia del export y última salida literal",
+  "scope": "Assume sole operational responsibility for frentes/ep/ and continue the named conversation. Archive the exact supplied export and the last visible assistant output in the EP OCP. Preserve all existing security and implementation gates. This transfer does not authorize opening EP Vault, accessing credentials/ciphertext/B2, starting or executing the backup, code construction, destructive changes, or changes to DUG/GOW/MCP; P012/P013 remains required before EP Vault V2 construction.",
   "expiry": null,
-  "handoff": "Retoma y relevo de titularidad única del frente EP el 2026-11-14 por instrucción directa del operador. Generación 4 relevada; generación 5 queda como titular único. Función de esta instancia: asistente/documental y coordinación, sin designación como constructor de código. UUIDv7 local registrado; identidad nativa no expuesta; FOL1 no activo y sin folio nuevo. Se preservan gates y límites de seguridad heredados.",
-  "previous_owner": "chatgpt-C-EP-RETOMA-20261114-01-01a1db7e-ac0b-7906-a15a-e00811b175c5",
+  "handoff": "Retoma directa del frente EP el 2026-11-15. Generación 5 relevada; generación 6 titular único. Se preserva el export ChatGPT-EP-20261115-1124.md y su última salida literal en main. La responsabilidad cubre continuidad, documentación, triage y coordinación. Sin autorización para abrir bóveda, usar secretos/B2, ejecutar respaldo ni construir código; P012/P013 permanece como gate.",
+  "previous_owner": "chatgpt-C-EP-RETOMA-20261114-02-01a1dc30-edd1-7978-bb07-b0c2db72b0c3",
   "initialization": {
     "event_id": "C-EP-RESPONSABILIDAD-INICIAL-20261108-88E05E17",
     "cycle_reference": "C-EP-MOD-SCRIPTPWS-20261101-03",
@@ -220,7 +220,7 @@
       "transfer_event_id": "EP-RETOMA-20261114-1632"
     },
     {
-      "status": "active",
+      "status": "transferred",
       "role": "titular",
       "folio": null,
       "assigned_on": "2026-11-14",
@@ -247,7 +247,37 @@
       "readback_verified": true,
       "source_control_blob_sha": "b5cb44f63823c077b57f7bcb3cae018394417199",
       "alias": "chatgpt-C-EP-RETOMA-20261114-02-01a1dc30-edd1-7978-bb07-b0c2db72b0c3",
-      "readback_control_blob_sha": "7f9e7976c35e5c6c034dfe9902707d38e309b29d"
+      "readback_control_blob_sha": "7f9e7976c35e5c6c034dfe9902707d38e309b29d",
+      "ended_on": "2026-11-15",
+      "transferred_to": "chatgpt-C-EP-RETOMA-20261115-1124-01a1e043-37ba-7684-b55b-03fb38f3ef2f",
+      "transfer_event_id": "EP-RETOMA-20261115-1124"
+    },
+    {
+      "status": "active",
+      "role": "titular",
+      "folio": null,
+      "assigned_on": "2026-11-15",
+      "front_ocp": "frentes/ep/",
+      "owner_alias": "chatgpt-C-EP-RETOMA-20261115-1124-01a1e043-37ba-7684-b55b-03fb38f3ef2f",
+      "instance": "chatgpt-ep-owner-2026-11-15-01a1e043-37ba-7684-b55b-03fb38f3ef2f",
+      "generation": 6,
+      "identity_kind": "operational alias + locally generated UUIDv7; native ChatGPT conversation ID not exposed",
+      "local_conversation_uuidv7": "01a1e043-37ba-7684-b55b-03fb38f3ef2f",
+      "cycle_folio": null,
+      "event_id": "EP-RETOMA-20261115-1124",
+      "functional_role": "titular y asistente de continuidad/documentación/triage/coordinación; constructor de código no habilitado",
+      "authorization": {
+        "status": "explicit",
+        "source": "direct operator instruction in this conversation",
+        "operation": "TRANSFER_RESPONSIBILITY",
+        "verbatim": "Frente ENTORNO PERSISTENTE\n\nPersiste conversacion, esta en  downloads, por RDC 01RENTA02.\n\nAdquiere cuidadosamente el contexto tomando el lugar del modelo en la conversación, adoptando su postura, su tono, su Lugar De manera que la transición sea sin costuras entre una conversación y otra.",
+        "prior_authorization_asserted_by_operator": false,
+        "scope": "Assume sole operational responsibility for frentes/ep/ and continue the named conversation. Archive the exact supplied export and the last visible assistant output in the EP OCP. Preserve all existing security and implementation gates. This transfer does not authorize opening EP Vault, accessing credentials/ciphertext/B2, starting or executing the backup, code construction, destructive changes, or changes to DUG/GOW/MCP; P012/P013 remains required before EP Vault V2 construction."
+      },
+      "readback_required": true,
+      "readback_verified": false,
+      "source_control_blob_sha": "dc613c0bd279efe18ff1cf65dda24d6f037d8913",
+      "alias": "chatgpt-C-EP-RETOMA-20261115-1124-01a1e043-37ba-7684-b55b-03fb38f3ef2f"
     }
   ],
   "co_responsibility": {
@@ -257,9 +287,9 @@
     "default_active_responsibles": 1,
     "max_active_responsibles": 2,
     "current_active_responsibles": 1,
-    "primary_owner_alias": "chatgpt-C-EP-RETOMA-20261114-02-01a1dc30-edd1-7978-bb07-b0c2db72b0c3",
+    "primary_owner_alias": "chatgpt-C-EP-RETOMA-20261115-1124-01a1e043-37ba-7684-b55b-03fb38f3ef2f",
     "co_responsible_alias": null,
-    "last_event_id": "EP-RETOMA-20261114-1632",
+    "last_event_id": "EP-RETOMA-20261115-1124",
     "authorization_status": "explicit",
     "control_protocol": "same authoritative control; SHA compare-and-swap; read-back before canonical writes",
     "constraint": "cooperative registration only; no native ChatGPT identity, universal fencing or protection against non-cooperating writers is claimed."
@@ -495,6 +525,50 @@
         "active_responsibles": 1,
         "control_blob_readback": "7f9e7976c35e5c6c034dfe9902707d38e309b29d",
         "scope_limit": "Control registration and canonical read-back only; not native ChatGPT identity, host security validation or server-enforced fencing."
+      }
+    },
+    {
+      "event_id": "EP-RETOMA-20261115-1124",
+      "operation": "TRANSFER_RESPONSIBILITY",
+      "recorded_on": "2026-11-15",
+      "authorized_on": "2026-11-15",
+      "authorization": {
+        "status": "explicit",
+        "source": "direct operator instruction in this conversation",
+        "operation": "TRANSFER_RESPONSIBILITY",
+        "verbatim": "Frente ENTORNO PERSISTENTE\n\nPersiste conversacion, esta en  downloads, por RDC 01RENTA02.\n\nAdquiere cuidadosamente el contexto tomando el lugar del modelo en la conversación, adoptando su postura, su tono, su Lugar De manera que la transición sea sin costuras entre una conversación y otra.",
+        "prior_authorization_asserted_by_operator": false,
+        "scope": "Assume sole operational responsibility for frentes/ep/ and continue the named conversation. Archive the exact supplied export and the last visible assistant output in the EP OCP. Preserve all existing security and implementation gates. This transfer does not authorize opening EP Vault, accessing credentials/ciphertext/B2, starting or executing the backup, code construction, destructive changes, or changes to DUG/GOW/MCP; P012/P013 remains required before EP Vault V2 construction."
+      },
+      "source_branch": "main",
+      "source_control_blob_sha": "dc613c0bd279efe18ff1cf65dda24d6f037d8913",
+      "source_generation": 5,
+      "from": {
+        "owner_thread": "chatgpt-C-EP-RETOMA-20261114-02-01a1dc30-edd1-7978-bb07-b0c2db72b0c3",
+        "instance": "chatgpt-ep-owner-2026-11-14-02-01a1dc30-edd1-7978-bb07-b0c2db72b0c3",
+        "generation": 5,
+        "session_folio": null,
+        "role": "titular",
+        "status": "active"
+      },
+      "to": {
+        "owner_thread": "chatgpt-C-EP-RETOMA-20261115-1124-01a1e043-37ba-7684-b55b-03fb38f3ef2f",
+        "instance": "chatgpt-ep-owner-2026-11-15-01a1e043-37ba-7684-b55b-03fb38f3ef2f",
+        "generation": 6,
+        "session_folio": null,
+        "local_conversation_uuidv7": "01a1e043-37ba-7684-b55b-03fb38f3ef2f",
+        "identity_kind": "operational alias + locally generated UUIDv7; native ChatGPT conversation ID not exposed",
+        "functional_role": "titular y asistente de continuidad/documentación/triage/coordinación; constructor de código no habilitado"
+      },
+      "native_conversation_id": "NOT_EXPOSED; operational alias + locally generated UUIDv7 used",
+      "method": "GitHub Contents API SHA compare-and-swap against immediately re-read control blob; canonical read-back.",
+      "mutation_result": "COMMITTED_READBACK_PENDING",
+      "active_responsibles_after_write": 1,
+      "maximum_active_responsibles": 2,
+      "readback_required": true,
+      "readback_verified": false,
+      "verification": {
+        "status": "pending"
       }
     }
   ],
