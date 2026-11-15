@@ -9,7 +9,7 @@
     "oep_version": "v0.3.110"
   },
   "coverage": {
-    "scope": "Registro documental del frente EP con alcance por entrada. La cobertura de cada conversación/original se limita a las fuentes listadas; no se presume auditoría retrospectiva de archivos no enumerados. La conversación EP-20261113-1439 y su salida literal están archivadas byte-exacto; el diseño integral y el sprint EP Vault v2 registran auditoría local v1.0.0 y programación, sin construcción ni cambios al almacén real. La exportación ChatGPT-EP-20261114-1309.md quedó archivada byte-exacto en originales/, con la última salida literal separada y la retoma del 14 de noviembre documentada en OEP §151; no se modificaron código ni almacenes reales. This cycle EP-RETOMA-20261114-1632 adds a directly supplied literal operator instruction, the current model output and a cycle record with visible intermediate updates. No complete export of the current conversation was supplied; no full-conversation capture is claimed. Ownership transferred to generation 5 and read-back verified; OEP v0.3.109 §152 is current. No code, vault data, ciphertext, secrets, B2 or host operations occurred. Final records B and retoma were refreshed to OEP v0.3.109 and their final Git blobs; README pointers were aligned to v0.3.109. The current main read-back verifies the three new entries and all existing records remain intact. The cycle record was finally refreshed to include the final README alignment (OEP v0.3.109, generation 5); its blob and read-back are indexed in this manifest revision. Retoma 2026-11-15: export original y última salida final preservados en originales/ y documentos/ con SHA/read-back exactos; titularidad transferida a generación 6 con control leído de vuelta. La inspección del respaldo permanece como estado heredado; no se ejecutaron operaciones de vault/B2/host.",
+    "scope": "Registro documental del frente EP con alcance por entrada. La cobertura de cada conversación/original se limita a las fuentes listadas; no se presume auditoría retrospectiva de archivos no enumerados. La conversación EP-20261113-1439 y su salida literal están archivadas byte-exacto; el diseño integral y el sprint EP Vault v2 registran auditoría local v1.0.0 y programación, sin construcción ni cambios al almacén real. La exportación ChatGPT-EP-20261114-1309.md quedó archivada byte-exacto en originales/, con la última salida literal separada y la retoma del 14 de noviembre documentada en OEP §151; no se modificaron código ni almacenes reales. This cycle EP-RETOMA-20261114-1632 adds a directly supplied literal operator instruction, the current model output and a cycle record with visible intermediate updates. No complete export of the current conversation was supplied; no full-conversation capture is claimed. Ownership transferred to generation 5 and read-back verified; OEP v0.3.109 §152 is current. No code, vault data, ciphertext, secrets, B2 or host operations occurred. Final records B and retoma were refreshed to OEP v0.3.109 and their final Git blobs; README pointers were aligned to v0.3.109. The current main read-back verifies the three new entries and all existing records remain intact. The cycle record was finally refreshed to include the final README alignment (OEP v0.3.109, generation 5); its blob and read-back are indexed in this manifest revision. Retoma 2026-11-15: export original y última salida final preservados en originales/ y documentos/ con SHA/read-back exactos; titularidad transferida a generación 6 con control leído de vuelta. La inspección del respaldo permanece como estado heredado; no se ejecutaron operaciones de vault/B2/host. Retoma EP 2026-11-15 13:53: se añade checkpoint parcial de la conversación visible y última salida de la instancia; no se recibió export completo. OEP actualizado a v0.3.111 §154; README alineado. El material reportado en portapapeles permanece no clasificado y no leído; emisor RSA no ejecutado; no se desbloqueó ni montó la bóveda, no se inició copia ni B2.",
     "legacy_originals_path_preserved": "frentes/ep/originales/"
   },
   "documents": [
@@ -477,6 +477,56 @@
         "readback_sha256": "C3A14A322D8BA758410BE103A1983AE39172B392AB8BE6A5D69D3370479FA2CB"
       },
       "captured_on": "2026-11-15"
+    },
+    {
+      "id": "EP-DOC-20261115-1353-RETOMA",
+      "original_name": "RETOMA-EP-2026-11-15-1353.md",
+      "canonical_path": "frentes/ep/documentos/RETOMA-EP-2026-11-15-1353.md",
+      "relative_path_from_front": "documentos/RETOMA-EP-2026-11-15-1353.md",
+      "kind": "conversation_retoma_checkpoint",
+      "original_preserved": false,
+      "source": {
+        "conversation_export": "frentes/ep/originales/ChatGPT-EP-20261115-1124.md",
+        "previous_last_output": "frentes/ep/documentos/ULTIMA-SALIDA-EP-20261115-1124.md",
+        "acquisition": "Mensajes visibles suministrados en la conversación actual; no se recibió export completo de esta conversación.",
+        "coverage": "Tramo posterior a 11:24: identificación pendiente del material en portapapeles, distinción entre contraseña y clave de recuperación, estado del puente RSA y condiciones de no ejecución. No incluye ni reproduce el valor secreto."
+      },
+      "persistence": {
+        "status": "PERSISTIDO_Y_READBACK_VERIFICADO",
+        "branch": "main",
+        "commit": "da12aee110040617d9ff24c11dd0f5865a53d7e5",
+        "git_blob_sha1": "728573b81d7e90f55d9e5de219ab8383d3b45306",
+        "readback_verified": true,
+        "readback_method": "GitHub Contents API read-back; contenido y secciones esperadas presentes.",
+        "readback_characters": 6162
+      },
+      "captured_on": "2026-11-15"
+    },
+    {
+      "id": "EP-DOC-20261115-1353-LAST-OUTPUT",
+      "original_name": "ULTIMA-SALIDA-EP-20261115-1353.md",
+      "canonical_path": "frentes/ep/documentos/ULTIMA-SALIDA-EP-20261115-1353.md",
+      "relative_path_from_front": "documentos/ULTIMA-SALIDA-EP-20261115-1353.md",
+      "kind": "assistant_output_verbatim",
+      "original_preserved": false,
+      "source": {
+        "conversation_export": "frentes/ep/originales/ChatGPT-EP-20261115-1124.md",
+        "retoma_record": "frentes/ep/documentos/RETOMA-EP-2026-11-15-1353.md",
+        "conversation_alias": "NOT_ASSIGNED",
+        "native_conversation_id": "NOT_EXPOSED",
+        "extraction": "Última salida visible del ciclo local; persistida como texto completo y leída de vuelta sin diferencias.",
+        "oep_version": "v0.3.111"
+      },
+      "persistence": {
+        "status": "PERSISTIDO_Y_READBACK_VERIFICADO",
+        "branch": "main",
+        "commit": "14a014b34cd42d5f1014ce3a6d4da95545f4533b",
+        "git_blob_sha1": "68d3f6c5a97145737f8a7edf3641bdc9e50040ed",
+        "readback_verified": true,
+        "readback_method": "GitHub Contents API; exact content equality.",
+        "readback_characters": 2309
+      },
+      "captured_on": "2026-11-15"
     }
   ],
   "cross_checked_sources": [
@@ -498,6 +548,22 @@
     {
       "path": "frentes/ep/📁 🧭 - Tareas provisionales/README.md",
       "blob_after": "a0783420c73eb821c3a6f120fc05a7d6ad1cc2eb"
+    },
+    {
+      "path": "frentes/ep/OEP.md",
+      "version_before": "v0.3.110",
+      "blob_before": "82a00eb8771b295f6c44c942738cfbc64d1e180d",
+      "version_after": "v0.3.111",
+      "blob_after": "73f3e2592a9f9c1cef9ecfb866dea612e8d1af04",
+      "commit_after": "4fb4916f9311f1343e79f5ee1bbc148960a332a0",
+      "readback_verified": true
+    },
+    {
+      "path": "frentes/ep/README.md",
+      "blob_before": "d9d635d1e3ff17ee4da3cf5afb8aba55b7778e85",
+      "blob_after": "8d52fe5f9306e194b8b48c6f42290239c0fa746b",
+      "commit_after": "49d3bb80ec1d0d55ea2bb4d4ddb5505769ccaec5",
+      "readback_verified": true
     }
   ]
 }
