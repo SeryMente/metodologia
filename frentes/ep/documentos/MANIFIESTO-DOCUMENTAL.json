@@ -9,7 +9,7 @@
     "oep_version": "v0.3.110"
   },
   "coverage": {
-    "scope": "Registro documental del frente EP con alcance por entrada. La cobertura de cada conversación/original se limita a las fuentes listadas; no se presume auditoría retrospectiva de archivos no enumerados. La conversación EP-20261113-1439 y su salida literal están archivadas byte-exacto; el diseño integral y el sprint EP Vault v2 registran auditoría local v1.0.0 y programación, sin construcción ni cambios al almacén real. La exportación ChatGPT-EP-20261114-1309.md quedó archivada byte-exacto en originales/, con la última salida literal separada y la retoma del 14 de noviembre documentada en OEP §151; no se modificaron código ni almacenes reales. This cycle EP-RETOMA-20261114-1632 adds a directly supplied literal operator instruction, the current model output and a cycle record with visible intermediate updates. No complete export of the current conversation was supplied; no full-conversation capture is claimed. Ownership transferred to generation 5 and read-back verified; OEP v0.3.109 §152 is current. No code, vault data, ciphertext, secrets, B2 or host operations occurred. Final records B and retoma were refreshed to OEP v0.3.109 and their final Git blobs; README pointers were aligned to v0.3.109. The current main read-back verifies the three new entries and all existing records remain intact. The cycle record was finally refreshed to include the final README alignment (OEP v0.3.109, generation 5); its blob and read-back are indexed in this manifest revision. Retoma 2026-11-15: export original y última salida final preservados en originales/ y documentos/ con SHA/read-back exactos; titularidad transferida a generación 6 con control leído de vuelta. La inspección del respaldo permanece como estado heredado; no se ejecutaron operaciones de vault/B2/host. Retoma EP 2026-11-15 13:53: se añade checkpoint parcial de la conversación visible y última salida de la instancia; no se recibió export completo. OEP actualizado a v0.3.111 §154; README alineado. El material reportado en portapapeles permanece no clasificado y no leído; emisor RSA no ejecutado; no se desbloqueó ni montó la bóveda, no se inició copia ni B2.",
+    "scope": "Registro documental del frente EP con alcance por entrada. La cobertura de cada conversación/original se limita a las fuentes listadas; no se presume auditoría retrospectiva de archivos no enumerados. La conversación EP-20261113-1439 y su salida literal están archivadas byte-exacto; el diseño integral y el sprint EP Vault v2 registran auditoría local v1.0.0 y programación, sin construcción ni cambios al almacén real. La exportación ChatGPT-EP-20261114-1309.md quedó archivada byte-exacto en originales/, con la última salida literal separada y la retoma del 14 de noviembre documentada en OEP §151; no se modificaron código ni almacenes reales. This cycle EP-RETOMA-20261114-1632 adds a directly supplied literal operator instruction, the current model output and a cycle record with visible intermediate updates. No complete export of the current conversation was supplied; no full-conversation capture is claimed. Ownership transferred to generation 5 and read-back verified; OEP v0.3.109 §152 is current. No code, vault data, ciphertext, secrets, B2 or host operations occurred. Final records B and retoma were refreshed to OEP v0.3.109 and their final Git blobs; README pointers were aligned to v0.3.109. The current main read-back verifies the three new entries and all existing records remain intact. The cycle record was finally refreshed to include the final README alignment (OEP v0.3.109, generation 5); its blob and read-back are indexed in this manifest revision. Retoma 2026-11-15: export original y última salida final preservados en originales/ y documentos/ con SHA/read-back exactos; titularidad transferida a generación 6 con control leído de vuelta. La inspección del respaldo permanece como estado heredado; no se ejecutaron operaciones de vault/B2/host. Retoma EP 2026-11-15 13:53: se añade checkpoint parcial de la conversación visible y última salida de la instancia; no se recibió export completo. OEP actualizado a v0.3.111 §154; README alineado. El material reportado en portapapeles permanece no clasificado y no leído; emisor RSA no ejecutado; no se desbloqueó ni montó la bóveda, no se inició copia ni B2. La salida del ciclo 13:53 integra una reproducción literal de la última salida del ciclo 11:24, seguida por el estado actualizado; README enlaza también esa salida.",
     "legacy_originals_path_preserved": "frentes/ep/originales/"
   },
   "documents": [
@@ -514,17 +514,17 @@
         "retoma_record": "frentes/ep/documentos/RETOMA-EP-2026-11-15-1353.md",
         "conversation_alias": "NOT_ASSIGNED",
         "native_conversation_id": "NOT_EXPOSED",
-        "extraction": "Última salida visible del ciclo local; persistida como texto completo y leída de vuelta sin diferencias.",
+        "extraction": "Salida final visible del ciclo: reproduce literalmente la última salida conservada del ciclo 11:24 y agrega el estado de retoma 13:53.",
         "oep_version": "v0.3.111"
       },
       "persistence": {
         "status": "PERSISTIDO_Y_READBACK_VERIFICADO",
         "branch": "main",
-        "commit": "14a014b34cd42d5f1014ce3a6d4da95545f4533b",
-        "git_blob_sha1": "68d3f6c5a97145737f8a7edf3641bdc9e50040ed",
+        "commit": "4e630abe53897a2827ea187a6fdaf8d3651b4cf1",
+        "git_blob_sha1": "f5efd2e8a30ae5b59ba9184a190fa07ec3aae723",
         "readback_verified": true,
-        "readback_method": "GitHub Contents API; exact content equality.",
-        "readback_characters": 2309
+        "readback_method": "GitHub Contents API; exact content equality after including the prior cycle's literal output.",
+        "readback_characters": 12403
       },
       "captured_on": "2026-11-15"
     }
@@ -563,6 +563,14 @@
       "blob_before": "d9d635d1e3ff17ee4da3cf5afb8aba55b7778e85",
       "blob_after": "8d52fe5f9306e194b8b48c6f42290239c0fa746b",
       "commit_after": "49d3bb80ec1d0d55ea2bb4d4ddb5505769ccaec5",
+      "readback_verified": true
+    },
+    {
+      "path": "frentes/ep/README.md",
+      "version_after": "v0.3.111",
+      "blob_before": "8d52fe5f9306e194b8b48c6f42290239c0fa746b",
+      "blob_after": "2bc34822a2ba444553b61facddc9050e85ecad25",
+      "commit_after": "3f3085cdb99a28e80fe53011d9ac476c488c5360",
       "readback_verified": true
     }
   ]
