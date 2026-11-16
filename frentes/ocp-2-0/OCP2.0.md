@@ -40,7 +40,7 @@ Antes de cada ciclo sustantivo:
 - Fuente única: [Metaprompt Canónico de Samantha](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html).
 - Identidad y estructura de FT: ART-015/019/020/021; Metacanon §§27, 29, 39, 42 y 46–48.
 - Registro literal y trazabilidad: ART-024; custodia documental: ART-014/022.
-- Blob SHA del DUG vigente cotejado en `main`: `7d32118eade502a26a12fc68b1f3b58dca9e2a87` (Samantha v400 · NX-400m).
+- Blob SHA del DUG vigente cotejado en `main`: `eae4e4d80e4d198b3417235c1e9f218a9ab9dd8e` (Samantha v400 · NX-400m).
 - La vigencia debe refrescarse contra `main` en cada ciclo; los datos de esta sección son el corte de creación, no una garantía de frescura perpetua.
 
 ## 4. Propósito y alcance
