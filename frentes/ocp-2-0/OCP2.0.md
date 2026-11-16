@@ -1,12 +1,12 @@
 # OCP2.0 · Objeto Canónico de Persistencia
 
 **Identidad:** OCP2.0  
-**Versión del núcleo:** OCP2.0-v0.1.0  
+**Versión del núcleo:** OCP2.0-v0.1.1  
 **Repositorio:** SeryMente/metodologia · rama `main`  
 **Ruta OCP:** `frentes/ocp-2-0/`  
 **Control:** [CONTROL-RESPONSABILIDAD.json](CONTROL-RESPONSABILIDAD.json)  
 **Propósito original:** [C-LOOP-001](conversaciones/C-LOOP-001-dialogo.jsonl)  
-**Estado:** FT creado; definición inicial y alcance documentados. El motor de ejecución recurrente aún no está implementado.
+**Estado:** FT existente, control transferido a generación 2 el 2026-11-16. El núcleo conserva el propósito y backlog previos; Chat/OpenWebUI en Khora se incorpora como trabajo de desarrollo y validación bajo OCP2.0. El motor de ejecución recurrente aún no está implementado.
 
 ---
 
@@ -17,9 +17,9 @@
 - OCP único: `frentes/ocp-2-0/`.
 - Núcleo operativo único: `OCP2.0.md`.
 - Control de responsabilidad: `CONTROL-RESPONSABILIDAD.json`.
-- Titular operativo inicial: `chatgpt-loop-01a1cb67-173a-785c-a7c4-98c377ce1960` (alias operacional; ID nativo de ChatGPT no expuesto).
-- UUIDv7 local: `01a1cb67-173a-785c-a7c4-98c377ce1960`.
-- Generación: 1.
+- Titular operativo actual: `chatgpt-ocp20-01a1e580-4422-7123-82d1-254a91a4b9da` (alias operacional; ID nativo de ChatGPT no expuesto).
+- UUIDv7 local actual: `01a1e580-4422-7123-82d1-254a91a4b9da`.
+- Generación actual: 2 (creación histórica en generación 1; transferencia registrada el 2026-11-16 en `CONTROL-RESPONSABILIDAD.json`).
 - FOL1: PREPARADO / NO ACTIVO. No se asignan folios CV, CY, A ni B.
 - No hay corresponsable registrado.
 - Evento de creación: `C-LOOP-INICIO-01`.
@@ -36,11 +36,11 @@ Antes de cada ciclo sustantivo:
 
 ## 3. Referencia metodológica
 
-- DUG: Samantha v388 · NX-388m.
+- DUG vigente en este corte: Samantha v400 · NX-400m.
 - Fuente única: [Metaprompt Canónico de Samantha](../../gobernanza/METAPROMPT-CANONICO-SAMANTHA.html).
 - Identidad y estructura de FT: ART-015/019/020/021; Metacanon §§27, 29, 39, 42 y 46–48.
 - Registro literal y trazabilidad: ART-024; custodia documental: ART-014/022.
-- Blob SHA del DUG adquirido al crear este FT: `4db0ebadfd1e48b2bdec9236ba7f344921e4a865`.
+- Blob SHA del DUG vigente cotejado en `main`: `7d32118eade502a26a12fc68b1f3b58dca9e2a87` (Samantha v400 · NX-400m).
 - La vigencia debe refrescarse contra `main` en cada ciclo; los datos de esta sección son el corte de creación, no una garantía de frescura perpetua.
 
 ## 4. Propósito y alcance
@@ -61,6 +61,7 @@ La aspiración de perfeccionamiento potencialmente indefinido no elimina los lí
 - Contrato para recibir instrucciones verbatim y mantener separada su lectura operativa.
 - Adaptadores de observabilidad específicos por proyecto, sin asumir que todos los frentes comparten telemetría o permisos.
 - Selección de tareas y experimentos con prioridad por reducción de incertidumbre, impacto y rendimiento medible.
+- Aplicación del proceso de desarrollo y verificación al Chat/OpenWebUI del producto Khora: integrar una superficie `/chat` separada de Consulta, proxy autenticado same-origin, middleware/allowlist, navegación, pruebas y documentación, preservando el historial y las restricciones del producto consumidor.
 - Verificación técnica y funcional, comparación contra baseline, regresión, procedencia y lectura de vuelta.
 - Mecanismo de parada cuando se alcance aceptación, no exista mejora demostrable, falte evidencia, se agote el presupuesto o aparezca una compuerta humana/seguridad.
 
@@ -103,6 +104,8 @@ No se modifican las normas generales desde este FT. Toda propuesta transversal s
 **Estado del frente:** inaugurado en `main` mediante `C-LOOP-INICIO-01`; OCP, núcleo y control único existentes. C-LOOP-003 amplía el contexto del mismo frente, no crea un FT paralelo.
 
 **Corte actual:** fuente literal C-LOOP-003 preservada y cotejada; análisis externo Groq/GPT-OSS 120B completado con continuación válida; crónica editorial filtrada persistida. La revisión externa es insumo analítico, no canon ratificado.
+
+**Continuidad 2026-11-16:** responsabilidad transferida a generación 2 mediante `C-OCP2.0-TRANSFERENCIA-20261116-01A1E580`. El FT provisional `KHORA-ESPACIO` fue retirado porque duplicaba el OCP2.0 existente. Su desarrollo Chat/OpenWebUI permanece como trabajo de producto de Khora bajo este frente; Consulta no se modifica. Véase [ChatGPT-OCP20-20261116-1153.md](conversaciones/ChatGPT-OCP20-20261116-1153.md).
 
 Materializado:
 - Núcleo de 13 bloques, control inicial y UUIDv7 local.
@@ -248,3 +251,17 @@ El operador solicitó persistir el tramo reciente de conversación sobre Superpo
 - La mutación del registro y los enlaces se verifica con los SHA y la lectura de vuelta del propio repositorio.
 - El control de responsabilidad no se modifica; titularidad y generación 1 se conservan; FOL1 continúa PREPARADO/NO ACTIVO y no se asignan folios globales.
 
+## 19. Continuidad · Chat/OpenWebUI y reversión de ESPACIO · 2026-11-16
+
+El operador aclaró que esta conversación pertenece al FT OCP2.0 ya existente y que el directorio independiente `KHORA-ESPACIO` fue una duplicación de responsabilidad. La instrucción ordenó retirar ese OCP y conservar el desarrollo de producto Chat/OpenWebUI en el alcance OCP2.0, junto con el propósito y backlog preexistentes.
+
+- **Reversión OCP ESPACIO:** los cinco artefactos canónicos de `SeryMente/khora/frentes/espacio/` fueron eliminados de `khora/main`; lectura de vuelta de las cinco rutas: `NOT_FOUND`. La reconciliación está asentada en el inventario central, ART-031 y `INICIO.md` de Metodología. Se conserva un registro histórico de la apertura y su reversión, no un OCP paralelo.
+- **Responsabilidad OCP2.0:** generación 2, alias operativo `chatgpt-ocp20-01a1e580-4422-7123-82d1-254a91a4b9da`, UUIDv7 local `01a1e580-4422-7123-82d1-254a91a4b9da`. El ID nativo de conversación no está expuesto. No se registra corresponsable. FOL1 PREPARADO/NO ACTIVO; sin folios globales.
+- **Desarrollo preservado:** `SeryMente/khora`, rama `feat/espacio-chat-openwebui-preserve-consulta-20261115`, PR #369. Incluye navegación Chat, ruta `/chat`, marco same-origin, proxy autenticado, middleware/allowlist, pruebas y documentación. El código permanece en el repositorio de producto Khora; OCP2.0 dirige y conserva la continuidad de ese trabajo.
+- **Invariante Consulta:** `/sistema/consulta`, `ConsultaView`, API de Consulta, GraphRAG y recuperador permanecen fuera del diff de Chat; no se sustituyen ni redirigen.
+- **Validación:** constan aprobados `api-tests`, `calidad` (Ruff, Pyright, pytest), G-4, `khora-web-gate` y `UI Contract` en ejecuciones registradas. La suite Playwright/E2E y el smoke completo no se declaran aprobados; hubo ejecuciones canceladas y reintentos pendientes.
+- **Runtime:** Render `https://khora-zy70.onrender.com` respondió 503. El redeploy del commit histórico `5192ec3232244f8d709b7c163b4643c52afd7c0e` terminó `update_failed`; Open WebUI 0.12.3 construyó y el probe de propiedad/historial PostgreSQL pasó, pero FastAPI no inició porque `a3883457.databases.neo4j.io` no resolvió en DNS (NXDOMAIN).
+- **Preview/producción:** se prepararon variables de activación y URL solo para Preview de la rama. No se transfirió `KHORA_API_KEY` a Preview; por ello el bridge firmado no se considera listo para E2E. Producción sigue deshabilitada; PR #369 continúa abierto, draft y sin merge. No hubo deploy de producción ni cambios de datos.
+- **Aceptación:** pendiente reparar/confirmar el endpoint Neo4j del runtime, completar autenticación end-to-end, Playwright/smoke y entregar Preview saludable para la prueba manual del operador.
+
+Registro de continuidad y A/B: [conversaciones/ChatGPT-OCP20-20261116-1153.md](conversaciones/ChatGPT-OCP20-20261116-1153.md). Evento: `C-OCP2.0-TRANSFERENCIA-20261116-01A1E580`.
