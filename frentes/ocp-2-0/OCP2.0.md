@@ -86,7 +86,7 @@ La aspiración de perfeccionamiento potencialmente indefinido no elimina los lí
 
 Precedencia: políticas y límites obligatorios → DUG y controles canónicos → autorización del operador → instrucciones verbatim y propósito del FT → núcleo/backlog → propuestas técnicas.
 
-OCP2.0 coordina el método de mejora; no adquiere autoridad sobre el código, datos, credenciales o controles de otros FT. Cada acción sobre Harmonia, Signal Interpreter u otro proyecto debe seguir el OCP, control y autorización de ese proyecto.
+OCP2.0 coordina el método de mejora y el desarrollo que el operador incluye expresamente en su alcance. En Khora, esta autorización incorpora el trabajo de producto Chat/OpenWebUI documentado en `SeryMente/khora`, rama `feat/espacio-chat-openwebui-preserve-consulta-20261115`, PR #369; no convierte a OCP2.0 en titular de los demás FT de Khora ni le transfiere sus controles. Consulta permanece protegida e independiente. Las demás acciones sobre Harmonia, Signal Interpreter u otros proyectos deben seguir su OCP, control y autorización específicos.
 
 No se modifican las normas generales desde este FT. Toda propuesta transversal se remite a Metacanon/Gobernanza para su procedimiento correspondiente.
 
