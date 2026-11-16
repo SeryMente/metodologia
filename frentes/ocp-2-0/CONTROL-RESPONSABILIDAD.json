@@ -8,27 +8,27 @@
   "status": "owned",
   "owner_thread": null,
   "owner_thread_identity_kind": "Native ChatGPT conversation ID not exposed; owner_alias is an operational alias",
-  "owner_alias": "chatgpt-loop-01a1cb67-173a-785c-a7c4-98c377ce1960",
+  "owner_alias": "chatgpt-ocp20-01a1e580-4422-7123-82d1-254a91a4b9da",
   "owner_alias_type": "operational_alias_not_native_thread_id",
-  "instance": "chatgpt-loop",
-  "uuidv7_local": "01a1cb67-173a-785c-a7c4-98c377ce1960",
-  "generation": 1,
-  "authorization_ref": "Instrucción directa del operador en esta conversación (2026-11-11): «Bueno, crea un frente de trabajo en el repositorio Metodología y nómbrale Loop, así nada más.» El propósito del FT ya había sido dictado literalmente en esta conversación y queda preservado en conversaciones/C-LOOP-001-dialogo.jsonl#1-2. Nueva instrucción explícita del operador (2026-11-11): renombrar el frente a OCP2.0 y cambiar su ruta canónica.",
-  "authorization_event": "C-LOOP-INICIO-01",
-  "scope": "Crear y mantener el FT OCP2.0 para diseñar y desarrollar un mecanismo reutilizable de desarrollo semiautomatizado/autoperfeccionamiento basado en instrucciones verbatim, propósito y alcance declarados, observabilidad, intervenciones del operador, acciones autorizadas y validación con evidencia. Este control no transfiere titularidad ni autoriza mutaciones dentro de Harmonia, Signal Interpreter u otros FT; cada frente conserva su propio OCP, control, permisos y gates. No autoriza credenciales, APIs externas, consumo pagado, automatización de plataformas web, despliegues ni cambios al DUG.",
+  "instance": "ChatGPT · GPT-6 · OCP2.0 · 2026-11-16",
+  "uuidv7_local": "01a1e580-4422-7123-82d1-254a91a4b9da",
+  "generation": 2,
+  "authorization_ref": "Instrucción directa y explícita del operador en esta conversación (2026-11-16, America/Mexico_City): «Da marcha atrás con lo que tiene que ver con el haber creado un frente de trabajo denominado Espacio porque ya había un frente de trabajo en metodología llamado OCP 2.0. Y más bien, esta conversación corresponde al frente de trabajo OCP 2.0. Entonces reitero, uno, borra el espacio de trabajo que creamos en la metodología denominado espacio. Y cuando ya hayas deconstruido y le hayas dado marcha atrás a esa parte vamos a tomar responsabilidad del frente de trabajo OCP 2.0. Y lo que hayamos hecho durante esta conversación en términos de desarrollo sí va a seguir formando parte de OCP 2.0, o sea el chat OpenWebUI y todo lo que además ya formaba parte de OCP 2.0 va a ser parte del alcance de ese frente»",
+  "authorization_event": "C-OCP2.0-TRANSFERENCIA-20261116-01A1E580",
+  "scope": "Mantener el FT OCP2.0 para diseñar y desarrollar un mecanismo reutilizable de desarrollo semiautomatizado/autoperfeccionamiento basado en instrucciones verbatim, propósito y alcance declarados, observabilidad, intervenciones del operador, acciones autorizadas y validación con evidencia. Dentro de este FT queda incluido como trabajo de desarrollo el Chat/OpenWebUI de Khora registrado en SeryMente/khora, rama feat/espacio-chat-openwebui-preserve-consulta-20261115, PR #369: superficie /chat, proxy autenticado same-origin, middleware/allowlist, navegación, pruebas y documentación; Consulta debe permanecer intacta. El núcleo conserva el alcance anterior de OCP2.0, incluido el desarrollo del mecanismo y la futura gestión administrativa tipo Notion. Este control no transfiere titularidad ni autoriza mutaciones dentro de otros FT de Khora, Harmonia, Signal Interpreter u otros proyectos no expresamente incluidos. No autoriza el merge de PR #369, despliegues a producción, cambios de runtime Render, transferencia de secretos a Preview, migraciones, escrituras de datos, APIs pagadas ni credenciales sin sus gates y autorizaciones específicas.",
   "expiry": null,
-  "handoff": "Asignación inicial de un FT nuevo cuya ruta/control no existían en main. Sin titular previo conocido en la ruta canónica. Generación inicial 1. Alias operativo, no ID nativo. FOL1 permanece PREPARADO/NO ACTIVO; no se asigna folio CV/CY/A/B. SES no asignado en este registro.",
+  "handoff": "Transferencia expresa de responsabilidad de generación 1 a generación 2 por instrucción directa del operador del 2026-11-16. El titular anterior (chatgpt-loop-01a1cb67-173a-785c-a7c4-98c377ce1960) queda relevado para este OCP; no se añade corresponsable. La nueva titularidad se identifica mediante alias operativo y UUIDv7 local, no ID nativo. El alcance previo se conserva y se amplía únicamente para incluir la continuidad del desarrollo Chat/OpenWebUI indicado en el control. FOL1 permanece PREPARADO/NO ACTIVO; no se asigna folio CV/CY/A/B ni SES.",
   "session_folio": null,
   "folio_status": "FOL1 PREPARADO_PENDIENTE_ACTIVACION_IPZ; CV/CY/A/B PENDIENTES/NO ASIGNADOS.",
   "session_assignment": {
     "status": "active_unfoliated",
     "folio": null,
-    "assigned_on": "2026-11-11",
+    "assigned_on": "2026-11-16",
     "front_ocp": "frentes/ocp-2-0/",
-    "owner_alias": "chatgpt-loop-01a1cb67-173a-785c-a7c4-98c377ce1960",
-    "instance": "chatgpt-loop",
-    "uuidv7_local": "01a1cb67-173a-785c-a7c4-98c377ce1960",
-    "generation": 1,
+    "owner_alias": "chatgpt-ocp20-01a1e580-4422-7123-82d1-254a91a4b9da",
+    "instance": "ChatGPT · GPT-6 · OCP2.0 · 2026-11-16",
+    "uuidv7_local": "01a1e580-4422-7123-82d1-254a91a4b9da",
+    "generation": 2,
     "identity_kind": "operational alias + local UUIDv7; not a native ChatGPT conversation ID",
     "foliation": "FOL1 PREPARADO, NO ACTIVO; no folio CV/CY/A/B assigned."
   },
@@ -92,6 +92,33 @@
         "C-LOOP-002",
         "C-LOOP-003"
       ]
+    }
+  ],
+  "responsibility_transfers": [
+    {
+      "event_id": "C-OCP2.0-TRANSFERENCIA-20261116-01A1E580",
+      "recorded_on": "2026-11-16",
+      "source": "Instrucción directa del operador en esta conversación; ID nativo no expuesto.",
+      "from": {
+        "owner_alias": "chatgpt-loop-01a1cb67-173a-785c-a7c4-98c377ce1960",
+        "owner_alias_type": "operational_alias_not_native_thread_id",
+        "instance": "chatgpt-loop",
+        "uuidv7_local": "01a1cb67-173a-785c-a7c4-98c377ce1960",
+        "generation": 1,
+        "owner_thread": null
+      },
+      "to": {
+        "owner_alias": "chatgpt-ocp20-01a1e580-4422-7123-82d1-254a91a4b9da",
+        "owner_alias_type": "operational_alias_not_native_thread_id",
+        "instance": "ChatGPT · GPT-6 · OCP2.0 · 2026-11-16",
+        "uuidv7_local": "01a1e580-4422-7123-82d1-254a91a4b9da",
+        "generation": 2,
+        "owner_thread": null
+      },
+      "authorization": "El operador ordena revertir el FT ESPACIO y asumir responsabilidad de OCP2.0; la conversación y el desarrollo Chat/OpenWebUI continúan dentro de OCP2.0.",
+      "scope_delta": "Se incluye Chat/OpenWebUI en Khora PR #369 como trabajo de desarrollo del OCP2.0; no se crea un FT separado ni se alteran los límites de permisos, credenciales o producción.",
+      "co_responsible": null,
+      "foliation": "FOL1 PREPARADO/NO ACTIVO; no se emiten folios globales."
     }
   ]
 }
